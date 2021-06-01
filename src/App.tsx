@@ -7,8 +7,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <h1>Jangan lupa pake Sass buat CSS :D</h1>
+        <h1>Jangan lupa pake bikin branch masing-masing juga :D</h1>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <p>
+          <a href="https://jspmarc.my.id" target="_blank">Josep</a> was here! :D
         </p>
         <a
           className="App-link"

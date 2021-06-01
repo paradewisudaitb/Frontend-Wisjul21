@@ -20,7 +20,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "lint": "eslint src/**/*.tsx src/**/*.ts",
+    "lint": "yarn run eslint src/",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

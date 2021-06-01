@@ -1,12 +1,9 @@
 # build environment
-FROM node:14 as build
+FROM node:fermium-alpine
+COPY . /app
 WORKDIR /app
-ENV PATH /app/node_modules/.bin:$PATH
-COPY package.json ./
-COPY package-lock.json ./
+
 RUN yarn install --frozen-lockfile
-RUN yarn add react-scripts
-COPY . ./
 RUN yarn build
 
 # production environment

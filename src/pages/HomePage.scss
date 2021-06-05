@@ -4,6 +4,14 @@ $accentcolour1: rgb(218, 167, 0);
 $borderradius: 3px;
 $bg: 'https://cdn.statically.io/img/wallpaperplay.com/walls/full/3/0/7/17345.jpg';
 
+@mixin cloud($duration) {
+  position: absolute;
+  top: 0px;
+  animation-name: wind;
+  animation-iteration-count: infinite;
+  animation-duration: $duration;
+}
+
 * {
   align-items: center;
   text-align: center;
@@ -34,11 +42,11 @@ button {
 }
 
 .layer-1 {
-  position: absolute;
-  top: 0px;
-  animation-name: wind;
-  animation-iteration-count: infinite;
-  animation-duration: 60s;
+  @include cloud(60s)
+}
+
+.layer-2 {
+  @include cloud(100s)
 }
 
 .container {
@@ -87,34 +95,6 @@ button {
   .misi {
     grid-column: 1 / span 3;
     grid-row: 2;
-    background-color: $accentcolour1;
-  }
-}
-
-.visi-misi-mobile {
-  display: grid;
-  grid-template-columns: repeat(4, 25%);
-  grid-template-rows: repeat(4, 25%);
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-left: $marginLR;
-  margin-right: $marginLR;
-  .VISI {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  .visi {
-    grid-column: 2 / span 3;
-    grid-row: 2;
-    background-color: $accentcolour1;
-  }
-  .MISI {
-    grid-column: 4;
-    grid-row: 4;
-  }
-  .misi {
-    grid-column: 1 / span 3;
-    grid-row: 4;
     background-color: $accentcolour1;
   }
 }

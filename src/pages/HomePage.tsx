@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './HomePage.scss';
 import Logo from '/mnt/d/Cave/Wisjul2021/Frontend-Wisjul21/src/images/logo/logo-dark-2020.png';
 import Cloud from '/mnt/d/Cave/Wisjul2021/Frontend-Wisjul21/src/images/bg/cloud.png';
 
 const HomePage = () => {
-
   return (
     <>
       <div className='layers'>
         <img className='layer-1' src={Cloud} height='300px'/>
+        <img className='layer-2' src={Cloud} height='200px'/>
       </div>
       <div className='container'>
         <div>

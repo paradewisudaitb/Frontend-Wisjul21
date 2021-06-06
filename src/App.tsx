@@ -26,7 +26,7 @@ function App() {
       <Route path=''><HomePage /></Route>
       <Route path='/dummy'><DummyPage /></Route>
       <Route path='/form'><Form /></Route>
-      
+
       {/* Barangkali linknya dibutuhin ntar */}
       {/* <a
         href="https://bit.ly/Phoenix1Wisjul"

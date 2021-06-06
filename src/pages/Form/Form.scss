@@ -1,8 +1,7 @@
-body {
-}
-
 .form-page {
-  background-image: url("bg.jpg");
+  background-image: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/form-bg-compressed.jpg");
+  // background-image: url("bg.jpg");
+  background-color: #adadad5b;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -46,6 +45,10 @@ body {
   background-color: #00000085;
 }
 
+.form-error {
+  color: #d84e4e;
+}
+
 .form-input {
   width: 100%;
   border-radius: 10px;
@@ -60,6 +63,14 @@ body {
   border-radius: 15px;
 }
 
+.form-success {
+  background-color: #4aa96c;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 15px;
+  visibility: hidden;
+}
+
 .form-select {
   padding: 5px;
   margin: 5px;
@@ -67,6 +78,12 @@ body {
 
 .form-title {
   text-align: center;
+}
+
+.form-year {
+  option {
+    text-align-last: center;
+  }
 }
 
 .nopadding {

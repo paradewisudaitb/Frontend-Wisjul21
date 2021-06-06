@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Route } from 'wouter';
 
 import './App.css';
 import HomePage from './pages/HomePage';
@@ -8,7 +7,11 @@ import { DummyPage } from './pages/DummyPage';
 import { Footer } from './component/Footer';
 import { Navbar } from './component/Navbar';
 
+import { Route } from 'wouter';
 import { AllRoutes } from './routes/routes';
+
+import Form from './pages/Form/Form';
+
 
 function App() {
   return (
@@ -20,10 +23,9 @@ function App() {
           { component }
         </Route>
       )) } */}
-      <Navbar />
       <Route path=''><HomePage /></Route>
       <Route path='/dummy'><DummyPage /></Route>
-      <Footer />
+      <Route path='/form'><Form /></Route>
       
       {/* Barangkali linknya dibutuhin ntar */}
       {/* <a

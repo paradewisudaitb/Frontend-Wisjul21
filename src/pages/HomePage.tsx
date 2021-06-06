@@ -3,14 +3,18 @@ import './HomePage.scss';
 import Logo from '../images/logo/logo-dark-2020.png';
 import Cloud from '../images/bg/cloud.png';
 
+import { Navbar } from '../component/Navbar';
+import { Footer } from '../component/Footer';
+
 const HomePage = () => {
   return (
-    <div className="">
+    <>
+      <Navbar />
       <div className='layers mt-5'>
         <img className='layer-1' src={Cloud} height='300px'/>
         <img className='layer-2' src={Cloud} height='200px'/>
       </div>
-      <div className='container'>
+      <div className='home-container'>
         <div>
           <img src={Logo} alt='Logo Wisuda Juli 2021' className='logo' />
           <h6>Ini tagline Wisjul 2021 Lorem Ipsum Lorem Ipsum</h6>
@@ -29,7 +33,8 @@ const HomePage = () => {
         <button className='event-btn'>Gather Town</button>
         <button className='event-btn'>Majalah</button>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

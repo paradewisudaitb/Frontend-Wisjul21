@@ -15,7 +15,6 @@ $bg: 'https://cdn.statically.io/img/wallpaperplay.com/walls/full/3/0/7/17345.jpg
 * {
   align-items: center;
   text-align: center;
-  // overflow-x: hidden; // kalau diaktif-in jadi error
 }
 
 button {
@@ -32,6 +31,8 @@ button {
   left: 0px;
   height: 34.5vh;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 @keyframes wind {
@@ -49,7 +50,7 @@ button {
   @include cloud(100s)
 }
 
-.container {
+.home-container {
   background: url($bg);
   height: 100vh;
   width: 100%;

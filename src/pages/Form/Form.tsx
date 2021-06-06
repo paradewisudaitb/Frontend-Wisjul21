@@ -50,7 +50,8 @@ export default function Form() {
     resolver: yupResolver(schema),
   });
 
-  const submitForm = (data: any) => {
+  const submitForm = async (data: any) => {
+    const linkFoto = `https://wisjul21.sgp1.cdn.digitaloceanspaces.com/${data.foto[0].name}`;
     // isi data
     const req: {[k: string]: any} = {
       nim: data.nim,
@@ -64,7 +65,7 @@ export default function Form() {
       kotaAsal: data.kota,
       tanggalLahir: data.tanggallahir,
       angkatan: data.angkatan,
-      linkPasFoto: data.foto[0],
+      linkPasFoto: linkFoto,
     };
 
     if (data.karya && data.karya != '') {
@@ -81,20 +82,39 @@ export default function Form() {
     }
 
     // bikin HTTP request ke backend
-    fetch(`${config.BACKEND_URL}/form/create`, {
+    const tmp = await fetch(`${config.BACKEND_URL}/form/create`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'X-Content-Type-Options': 'nosniff',
       },
       body: JSON.stringify(req),
+    });
+    const res = await tmp.json();
+    if (!tmp.ok) {
+      console.error(tmp.statusText);
+      window.alert('Ada kesalahan pada data. Jika data sudah benar dan masih gagal, harap hubungi panitia.');
+      return;
+    }
+
+    // upload gambar
+    const fd = new FormData();
+    fd.append('foto', data.foto[0]);
+    fetch(`${config.BACKEND_URL}/form/uploadFoto`, {
+      method: 'POST',
+      headers: {
+        'X-Content-Type-Options': 'nosniff',
+      },
+      body: fd,
     })
       .then(res => res.json())
       .then(res => {
-        // document.querySelector('.form-success')?.style.visible = 'block';
+        window.alert('Penambahan data berhasil.');
         const tmp = document.querySelector('.form-success');
+        console.log(tmp);
         if (tmp)
-          tmp.setAttribute('style', 'visible: block;');
+          tmp.setAttribute('style', 'visibility: block;');
+        console.log(res);
       })
       .catch(err => {
         console.error(err);
@@ -107,17 +127,18 @@ export default function Form() {
   const [jurusanOption, setJurusanOption] = useState([]);
 
   useEffect(() => {
-    setJurusanOption([]);
-    fetch(`${config.BACKEND_URL}/jurusan/get?nama=${watchHimpunan}`, {
-      headers: {
-        'X-Content-Type-Options': 'nosniff',
-      }
-    })
-      .then(res => res.json())
-      .then(res => {
-        console.log(res);
-        setJurusanOption(res.jurusan.map((e: string) => <option key={e} value={e}>{e}</option>));
-      });
+    if (watchHimpunan) {
+      setJurusanOption([]);
+      fetch(`${config.BACKEND_URL}/jurusan/get?nama=${watchHimpunan}`, {
+        headers: {
+          'X-Content-Type-Options': 'nosniff',
+        }
+      })
+        .then(res => res.json())
+        .then(res => {
+          setJurusanOption(res.jurusan.map((e: string) => <option key={e} value={e}>{e}</option>));
+        });
+    }
   }, [watchHimpunan]);
 
   return (
@@ -125,7 +146,7 @@ export default function Form() {
       <div className="form-container mx-auto">
         <Row>
           <form className="form my-4" onSubmit={handleSubmit(submitForm)}>
-            <h1 className="form-title"> Database Terpusat </h1>
+            <h1 className="form-title"> Database Wisudawan Wisuda Juli ITB 2021 </h1>
             <div className="form-content">
               <Col>
                 <label htmlFor="jurusan">Pilihan jurusan mungkin butuh waktu untuk loading</label>
@@ -152,19 +173,20 @@ export default function Form() {
                       <option value="Himpunan Mahasiswa Mesin"> HMM (Himpunan Mahasiswa Mesin) </option>
                       <option value="Himpunan Mahasiswa Meteorologi"> HMME 'ATMOSPHAIRA' (Himpunan Mahasiswa Meteorologi) </option>
                       <option value="Himpunan Mahasiswa Oseanografi"> HMO 'TRITON'(Himpunan Mahasiswa Oseanografi) </option>
-                      <option value="Himpunan Mahasiswa Planologi"> HMP 'PANGRIPTA LOKA' (Himpunan Mahasiswa Planologi) </option>
+                      <option value="Himpunan Mahasiswa Perencanaan Wilayah dan Kota Pangripta Loka"> HMP 'PANGRIPTA LOKA' (Himpunan Mahasiswa Planologi) </option>
                       <option value="Himpunan Mahasiswa Teknik Pangan"> HMPG (Himpunan Mahasiswa Teknik Pangan) </option>
-                      <option value="Himpunan Mahasiswa Teknologi Pascapanen 'VADRA' ITB"> HMPP 'VADRA' ITB (Himpunan Mahasiswa Teknologi Pascapanen 'VADRA' ITB) </option>
+                      <option value="Himpunan Mahasiswa Teknologi Pascapanen"> HMPP 'VADRA' ITB (Himpunan Mahasiswa Teknologi Pascapanen 'VADRA' ITB) </option>
                       <option value="Himpunan Mahasiswa Rekayasa Hayati"> HMRH  (Himpunan Mahasiswa Rekayasa Hayati) </option>
                       <option value="Himpunan Mahasiswa Sipil"> HMS (Himpunan Mahasiswa Sipil) </option>
                       <option value="Himpunan Mahasiswa Tambang"> HMT (Himpunan Mahasiswa Tambang) </option>
-                      <option value="Himpunan Mahasiswa Teknik Bioenergi"> HMTB (Himpunan Mahasiswa Teknik Bioenergi) </option>
+                      <option value="Himpunan Mahasiswa Teknik Bioenergi dan Kemurgi"> HMTB (Himpunan Mahasiswa Teknik Bioenergi) </option>
                       <option value="Himpunan Mahasiswa Teknik Geologi"> HMTG 'GEA' (Himpunan Mahasiswa Teknik Geologi) </option>
                       <option value="Himpunan Mahasiswa Teknik Lingkungan"> HMTL (Himpunan Mahasiswa Teknik Lingkungan) </option>
                       <option value="Himpunan Mahasiswa Teknik Perminyakan"> HMTM 'PATRA' (Himpunan Mahasiswa Teknik Perminyakan) </option>
                       <option value="Ikatan Mahasiswa Arsitektur Gunadharma"> IMA-G (Ikatan Mahasiswa Arsitektur Gunadharma) </option>
                       <option value="Ikatan Mahasiswa Desain Interior"> IMDI (Ikatan Mahasiswa Desain Interior) </option>
                       <option value="Ikatan Mahasiswa Geodesi"> IMG (Ikatan Mahasiswa Geodesi) </option>
+                      <option value="Ikatan Mahasiswa Kewirausahaan"> IMK (Ikatan Mahasiswa Kewirausahaan) </option>
                       <option value="Ikatan Mahasiswa Teknik Metalurgi"> IMMG (Ikatan Mahasiswa Teknik Metalurgi) </option>
                       <option value="Ikatan Mahasiswa Telekomunikasi"> IMT (Ikatan Mahasiswa Telekomunikasi) </option>
                       <option value="Keluarga Mahasiswa Desain Produk"> INDDES (Keluarga Mahasiswa Desain Produk) </option>
@@ -173,7 +195,6 @@ export default function Form() {
                       <option value="Keluarga Mahasiswa Teknik Kelautan"> KMKL (Keluarga Mahasiswa Teknik Kelautan) </option>
                       <option value="Keluarga Mahasiswa Manajemen"> KMM (Keluarga Mahasiswa Manajemen) </option>
                       <option value="Keluarga Mahasiswa Teknik Penerbangan"> KMPN 'OTTO LILIENTHAL' (Keluarga Mahasiswa Teknik Penerbangan) </option>
-                      <option value="Keluarga Mahasiswa Sekolah Bisnis dan Manajemen"> KMSBM (Keluarga Mahasiswa Sekolah Bisnis dan Manajemen) </option>
                       <option value="Keluarga Mahasiswa Teknik Industri"> MTI (Keluarga Mahasiswa Teknik Industri) </option>
                       <option value="Himpunan Mahasiswa Teknik Material"> MTM (Himpunan Mahasiswa Teknik Material) </option>
                       <option value="Himpunan Mahasiswa Biologi"> NYMPHAEA (Himpunan Mahasiswa Biologi) </option>
@@ -199,7 +220,6 @@ export default function Form() {
                   <input placeholder="NIM" type="text" className="form-input" {...register('nim')}/>
                 </div>
                 {errors.namapanggilan && <p className="form-error"> {errors.namapanggilan.message}</p>}
-                {/* {errors.nim && <p className="form-error"> {errors.nim.message}</p>} */}
                 {errors.nim && <p className="form-error">NIM tidak valid</p>}
               </Row>
               <Row>
@@ -216,17 +236,17 @@ export default function Form() {
                 {errors.tips && <p className="form-error"> {errors.tips.message}</p>}
               </Row>
               <Row>
-                <textarea placeholder="Kontribusi di HMJ (Jika ada lebih dari 1, pisahkan dengan koma)" className="form-textarea" {...register('kontribusi')}>
+                <textarea placeholder="Kontribusi di HMJ (Jika ada lebih dari 1, pisahkan dengan koma). Jika tidak ada tuliskan '-'." className="form-textarea" {...register('kontribusi')}>
                 </textarea>
                 {errors.kontribusi && <p className="form-error"> {errors.kontribusi.message}</p>}
               </Row>
               <Row>
-                <textarea placeholder="Prestasi (Jika ada lebih dari 1, pisahkan dengan koma)" className="form-textarea" {...register('prestasi')}>
+                <textarea placeholder="Prestasi (Jika ada lebih dari 1, pisahkan dengan koma). Jika tidak ada tuliskan '-'." className="form-textarea" {...register('prestasi')}>
                 </textarea>
                 {errors.prestasi && <p className="form-error"> {errors.prestasi.message}</p>}
               </Row>
               <Row>
-                <textarea placeholder="Karya (Jika ada lebih dari 1, pisahkann dengan koma)" className="form-input" {...register('karya')}>
+                <textarea placeholder="Karya (Jika ada lebih dari 1, pisahkann dengan koma). Jika tidak ada tuliskan '-'." className="form-input" {...register('karya')}>
                 </textarea>
                 {errors.karya && <p className="form-error"> {errors.karya.message}</p>}
               </Row>
@@ -235,7 +255,7 @@ export default function Form() {
                 {errors.email && <p className="form-error"> {errors.email.message}</p>}
               </Row>
               <Row>
-                <textarea placeholder="Keterlibatan pada lembaga non-HMJ (Jika ada lebih dari 1, pisahkan dengan koma)" className="form-textarea" {...register('nonhmj')}>
+                <textarea placeholder="Keterlibatan pada lembaga non-HMJ (Jika ada lebih dari 1, pisahkan dengan koma). Jika tidak ada tuliskan '-'." className="form-textarea" {...register('nonhmj')}>
                 </textarea>
                 {errors.nonhmj && <p className="form-error"> {errors.nonhmj.message}</p>}
               </Row>
@@ -258,7 +278,7 @@ export default function Form() {
                 {errors.angkatan && <p className="form-error"> {errors.angkatan.message}</p>}
               </Row>
               <Row>
-                <label htmlFor="foto">Foto wisudawan (maksimal 5MB)</label>
+                <label htmlFor="foto">Foto wisudawan (maksimal 5MB):</label>
                 <input placeholder="foto" type="file" className="form-input" {...register('foto')}/>
                 {errors.foto && <p className="form-error"> {errors.foto.message}</p>}
               </Row>

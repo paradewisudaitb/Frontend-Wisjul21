@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Link } from 'wouter';
 import { Brand } from './Navbar';
 
 import { ReactComponent as InstagramIcon } from '../icons/instagram.svg';
@@ -25,10 +24,10 @@ export const Footer = () => {
         </div>
         <div className="right-footer me-4 mt-5">
           <div className="social-media-sec d-flex">
-            <a href="#" className="social-media-container d-flex align-items-center justify-content-center">
+            <a href="https://www.instagram.com/paradewisudaitb/" target="_blank" className="social-media-container d-flex align-items-center justify-content-center">
               <InstagramIcon className='social-media' />
             </a>
-            <a href="#" className="social-media-container d-flex align-items-center justify-content-center">
+            <a href="https://twitter.com/paradewisudaitb" target="_blank" className="social-media-container d-flex align-items-center justify-content-center">
               <TwitterIcon className='' />
             </a>
           </div>

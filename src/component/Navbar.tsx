@@ -17,11 +17,11 @@ export const Brand = () => {
 export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg">
-      <div className="ms-5">
+      <div className="ms-xl-5 ms-2 h-100">
         <Brand />
       </div>
       <div className="collapse navbar-collapse" id="navbarSupportedContent"> 
-        <div className="navbar-nav ms-auto me-4">
+        <div className="navbar-nav ms-auto me-xl-4 me-2">
           <NavbarLinks />
         </div>
       </div>

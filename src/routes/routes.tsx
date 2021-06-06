@@ -1,5 +1,6 @@
 
 import { DummyPage } from '../pages/DummyPage';
+import HomePage from '../pages/HomePage';
 
 export type route = {
     label: string
@@ -18,6 +19,7 @@ export const toRoute = (label:string, path:string, component?:() => JSX.Element)
   label, path, component
 });
 
+export const HOME_PAGE = toRoute('Home', '', HomePage);
 export const DUMMY_PAGE = toRoute('Dummy', '/dummy', DummyPage);
 
 export const DUMMY_SUB_INDEX = toRoute('SubDummyIndex', '/subdummydropdown');
@@ -35,4 +37,9 @@ export const NavbarRoutes: navroutes[] = [
     isDropdown: true,
     parentPath: '/subdummydropdown'
   }
+];
+
+export const AllRoutes = [
+  HOME_PAGE,
+  DUMMY_PAGE,
 ];

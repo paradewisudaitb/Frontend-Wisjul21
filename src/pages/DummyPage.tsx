@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { Navbar } from '../component/Navbar';
-
 export const DummyPage = () => {
+  const dummystyle = {
+    height: '26rem'
+  };
+
   return (
-    <div className="dummy-page">
-      <Navbar />
+    <div className="dummy-page" style={ dummystyle }>
       <h1>Ini dummy</h1>
     </div>
   );

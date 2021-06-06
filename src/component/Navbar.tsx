@@ -5,13 +5,21 @@ import './Navbar.scss';
 
 import { NavbarLinks } from './NavbarLinks';
 
+export const Brand = () => {
+  return (
+    <Link to='/'>          
+      <h4 className="float-start me-2">LOGO</h4>
+      <h4 className="float-start">WISJUL 2021</h4>
+    </Link>
+  );
+};
+
 export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg">
-      <Link to='/' className='ms-5 navbar-brand'>          
-        <h4 className="float-start me-2">LOGO</h4>
-        <h4 className="float-start">WISJUL 2021</h4>
-      </Link>
+      <div className="ms-5">
+        <Brand />
+      </div>
       <div className="collapse navbar-collapse" id="navbarSupportedContent"> 
         <div className="navbar-nav ms-auto me-4">
           <NavbarLinks />

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import { Navbar } from './component/Navbar';
+import { Footer } from './component/Footer';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         className="App-link" >
         PHOENIX: Sebongkah Asa
       </a>
+      <Footer />
     </div>
   );
 }

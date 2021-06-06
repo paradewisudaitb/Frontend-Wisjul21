@@ -1,7 +1,7 @@
 import React from 'react';
-import WisudawanCardContainer from '../../components/WisudawanCard/WisudawanCardContainer';
+import WisudawanCardContainer from '../../component/WisudawanCard/WisudawanCardContainer';
 import Logo from '../../images/ukj.png';
-import ApresiasiCarousel from '../../components/ApresiasiCarousel/ApresiasiCarousel';
+import ApresiasiCarousel from '../../component/ApresiasiCarousel/ApresiasiCarousel';
 import './GaleriApresiasi.scss';
 
 const GaleriApresiasi = () => {

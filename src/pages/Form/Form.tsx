@@ -64,9 +64,8 @@ export default function Form() {
       kotaAsal: data.kota,
       tanggalLahir: data.tanggallahir,
       angkatan: data.angkatan,
-      linkPasFoto: data.foto, // ini dari CDN harus nya
+      linkPasFoto: data.foto[0],
     };
-    console.log(data.foto);
 
     if (data.karya && data.karya != '') {
       req.karya = data.karya;
@@ -99,6 +98,7 @@ export default function Form() {
       })
       .catch(err => {
         console.error(err);
+        window.alert('Ada kesalahan pada data. Jika data sudah benar dan masih gagal, harap hubungi Line: otong1403');
       });
   };
 
@@ -116,7 +116,7 @@ export default function Form() {
       .then(res => res.json())
       .then(res => {
         console.log(res);
-        setJurusanOption(res.jurusan.map((e: string) => <option value={e}>{e}</option>));
+        setJurusanOption(res.jurusan.map((e: string) => <option key={e} value={e}>{e}</option>));
       });
   }, [watchHimpunan]);
 

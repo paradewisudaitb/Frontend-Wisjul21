@@ -1,9 +1,7 @@
 import dotenv from 'dotenv';
-const envFound = dotenv.config();
+dotenv.config();
 
-console.log(envFound);
-
-export default {
+const config = {
   /**
    * URL ke backend. Jangan diakhiri dengan '/'
    * @default http://localhost:8080
@@ -11,3 +9,5 @@ export default {
    */
   BACKEND_URL: process.env.REACT_APP_BACKEND_URL || 'http://localhost:8080',
 };
+
+export default config;

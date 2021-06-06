@@ -1,29 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+
 import './App.css';
+import HomePage from './pages/HomePage';
+import { DummyPage } from './pages/DummyPage';
+
+import { Footer } from './component/Footer';
+import { Navbar } from './component/Navbar';
+
+import { Route } from 'wouter';
+import { AllRoutes } from './routes/routes';
+
+import Form from './pages/Form/Form';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Jangan lupa pake Sass buat CSS :D</h1>
-        <h1>Jangan lupa pake bikin branch masing-masing juga :D</h1>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <p>
-          <a href="https://jspmarc.my.id" target="_blank">Josep</a> was here! :D
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      {/* { AllRoutes.map(({ path, component }) => (
+        <Route
+          path = { path }
         >
-          Learn React
-        </a>
-      </header>
+          { component }
+        </Route>
+      )) } */}
+      <Route path=''><HomePage /></Route>
+      <Route path='/dummy'><DummyPage /></Route>
+      <Route path='/form'><Form /></Route>
+      
+      {/* Barangkali linknya dibutuhin ntar */}
+      {/* <a
+        href="https://bit.ly/Phoenix1Wisjul"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="App-link" >
+        PHOENIX: Sebongkah Asa
+      </a> */}
     </div>
   );
 }

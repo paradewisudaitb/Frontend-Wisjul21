@@ -1,0 +1,24 @@
+.galeri-apresiasi-page {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.list-wisudawan {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.apresiasi-wisudawan {
+  justify-content: center;
+}
+
+.daftar-wisudawan {
+  input {
+    margin: 1rem;
+    font-size: 1.3rem;
+    width: 40rem;
+  }
+}  

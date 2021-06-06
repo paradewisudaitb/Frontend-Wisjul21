@@ -1,9 +1,9 @@
 import { UseFormRegister, DeepMap, FieldError } from 'react-hook-form';
 
 export default (
-    register: UseFormRegister<Record<string, any>>,
-    errors: DeepMap<Record<string,any>, FieldError>
-  ) => {
+  register: UseFormRegister<Record<string, any>>,
+  errors: DeepMap<Record<string,any>, FieldError>
+) => {
   <div className="d-flex justify-content-between">
     <select className="form-select" {...register('himpunan')}>
       <option disabled selected> Himpunan </option>
@@ -57,5 +57,5 @@ export default (
     </select>
     {errors.himpunan && <p className="form-error">{errors.himpunan.message}</p>}
     {errors.jurusan && <p className="form-error"> {errors.jurusan.message}</p>}
-  </div>
+  </div>;
 };

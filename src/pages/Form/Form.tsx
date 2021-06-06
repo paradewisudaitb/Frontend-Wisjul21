@@ -56,7 +56,6 @@ export default function Form() {
               <div className="d-flex justify-content-between nopadding">
                 <input placeholder="Nama Panggilan"  type="text" className="form-input" {...register('namapanggilan')}/>
                 <input placeholder="NIM" type="text" className="form-input" {...register('nim')}/>
-
               </div>
             </Row>
             <Row>
@@ -93,7 +92,7 @@ export default function Form() {
               <input placeholder="Tanggal Lahir" type="date" className="form-input" {...register('tanggallahir')}/>
             </Row>
             <Row>
-              <input type="text" className="form-input" {...register('angkatan')}/>
+              <input placeholder="Angkatan" type="text" className="form-input" {...register('angkatan')}/>
             </Row>
           </div>
           <div className="d-flex justify-content-end">

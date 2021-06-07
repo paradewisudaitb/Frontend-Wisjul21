@@ -8,7 +8,7 @@ import { Row, Col } from 'react-bootstrap';
 import { API_URL } from '../../api';
 
 const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/gif', 'image/png'];
-const FILE_SIZE = 5E9; // 5 MB
+const FILE_SIZE = 5E6; // 5 MB
 
 export const validateImageType = (value: string): boolean => {
   if(value) {
@@ -24,18 +24,18 @@ export const validateImageType = (value: string): boolean => {
 const schema = yup.object().shape({
   'himpunan': yup.string().required('Himpunan tidak boleh kosong.'),
   'jurusan': yup.string().required('Jurusan tidak boleh kosong.'),
-  'namalengkap': yup.string().required('Nama lengkap tidak boleh kosong.'),
-  'namapanggilan': yup.string().required('Nama panggilan tidak boleh kosong.'),
+  'namalengkap': yup.string().max(255).required('Nama lengkap tidak boleh kosong.'),
+  'namapanggilan': yup.string().max(255).required('Nama panggilan tidak boleh kosong.'),
   'nim': yup.string().matches(/^\d{3}(14|15|16|17)\d{3}$/).required('NIM tidak boleh kosong.'),
-  'judulta': yup.string().required('Judul TA tidak boleh kosong.'),
-  'funfact': yup.string().required('Fun fact tidak boleh kosong.'),
-  'tips': yup.string().required('Tips tidak boleh kosong.'),
+  'judulta': yup.string().max(255).required('Judul TA tidak boleh kosong.'),
+  'funfact': yup.string().max(255).required('Fun fact tidak boleh kosong.'),
+  'tips': yup.string().max(255).required('Tips tidak boleh kosong.'),
   'kontribusi': yup.string(),
   'prestasi': yup.string(),
   'karya': yup.string(),
   'nonhmj': yup.string(),
-  'email': yup.string().email().required('Email tidak boleh kosong'),
-  'kota': yup.string().required('Kota tidak boleh kosong'),
+  'email': yup.string().email().max(255).required('Email tidak boleh kosong'),
+  'kota': yup.string().max(255).required('Kota tidak boleh kosong'),
   'tanggallahir': yup.date().required('Tanggal lahir tidak boleh kosong'),
   'angkatan': yup.number().integer().positive().required('Angkatan tidak boleh kosong'),
   'foto' : yup.mixed()
@@ -51,11 +51,11 @@ export default function Form() {
   });
 
   const submitForm = async (data: any) => {
-    window.alert('Data dan foto sedang diupload, harap menunggu.');
     if (data.nim != data.foto[0].name.substring(0, 8)) {
       window.alert('Nama file gambar salah.');
       return;
     }
+    window.alert('Data dan foto sedang diupload, harap menunggu.');
     const errMsg = 'Ada kesalahan pada data. Jika data sudah benar dan masih gagal atau ingin melakukan perubahan data, harap hubungi panitia.';
     const linkFoto = `https://wisjul21.sgp1.cdn.digitaloceanspaces.com/fotoWisudawan/${data.foto[0].name}`;
     // isi data
@@ -87,30 +87,36 @@ export default function Form() {
       req.lembaga = data.nonhmj;
     }
 
+    // upload gambar
+    const fd = new FormData();
+    fd.append('foto', data.foto[0]);
+    let succ = true;
+    await fetch(`${API_URL}/form/uploadFoto`, {
+      method: 'POST',
+      headers: {
+        'X-Content-Type-Options': 'nosniff',
+      },
+      body: fd,
+    })
+      .then(res => res.json())
+      .catch(err => {
+        succ = false;
+        console.error(err);
+        window.alert(errMsg);
+      });
+
+    if (!succ) {
+      return;
+    }
+
     // bikin HTTP request ke backend
-    const tmp = await fetch(`${API_URL}/form/create`, {
+    fetch(`${API_URL}/form/create`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'X-Content-Type-Options': 'nosniff',
       },
       body: JSON.stringify(req),
-    });
-    if (!tmp.ok) {
-      console.error(tmp.statusText);
-      window.alert(errMsg);
-      return;
-    }
-
-    // upload gambar
-    const fd = new FormData();
-    fd.append('foto', data.foto[0]);
-    fetch(`${API_URL}/form/uploadFoto`, {
-      method: 'POST',
-      headers: {
-        'X-Content-Type-Options': 'nosniff',
-      },
-      body: fd,
     })
       .then(res => res.json())
       .then(_ => {

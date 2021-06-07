@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import './Form.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col } from 'react-bootstrap';
-import config from '../../config';
+import { API_URL } from '../../api';
 
 const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/gif', 'image/png'];
 const FILE_SIZE = 5E9; // 5 MB
@@ -88,7 +88,7 @@ export default function Form() {
     }
 
     // bikin HTTP request ke backend
-    const tmp = await fetch(`${config.BACKEND_URL}/form/create`, {
+    const tmp = await fetch(`${API_URL}/form/create`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -105,7 +105,7 @@ export default function Form() {
     // upload gambar
     const fd = new FormData();
     fd.append('foto', data.foto[0]);
-    fetch(`${config.BACKEND_URL}/form/uploadFoto`, {
+    fetch(`${API_URL}/form/uploadFoto`, {
       method: 'POST',
       headers: {
         'X-Content-Type-Options': 'nosniff',
@@ -132,7 +132,7 @@ export default function Form() {
   useEffect(() => {
     if (watchHimpunan) {
       setJurusanOption([]);
-      fetch(`${config.BACKEND_URL}/jurusan/get?nama=${watchHimpunan}`, {
+      fetch(`${API_URL}/jurusan/get?nama=${watchHimpunan}`, {
         headers: {
           'X-Content-Type-Options': 'nosniff',
         }

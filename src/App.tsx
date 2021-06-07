@@ -9,7 +9,6 @@ function App() {
   return (
     <div className="App">
       <Route path=''><HomePage /></Route>
-      <Route path='/dummy'><DummyPage /></Route>
       <Route path='/form'><Form /></Route>
     </div>
   );

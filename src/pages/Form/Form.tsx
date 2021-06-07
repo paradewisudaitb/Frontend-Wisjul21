@@ -51,7 +51,13 @@ export default function Form() {
   });
 
   const submitForm = async (data: any) => {
-    const linkFoto = `https://wisjul21.sgp1.cdn.digitaloceanspaces.com/${data.foto[0].name}`;
+    window.alert('Data dan foto sedang diupload, harap menunggu.');
+    if (data.nim != data.foto[0].name.substring(0, 8)) {
+      window.alert('Nama file gambar salah.');
+      return;
+    }
+    const errMsg = 'Ada kesalahan pada data. Jika data sudah benar dan masih gagal atau ingin melakukan perubahan data, harap hubungi panitia.';
+    const linkFoto = `https://wisjul21.sgp1.cdn.digitaloceanspaces.com/fotoWisudawan/${data.foto[0].name}`;
     // isi data
     const req: {[k: string]: any} = {
       nim: data.nim,
@@ -90,10 +96,9 @@ export default function Form() {
       },
       body: JSON.stringify(req),
     });
-    const res = await tmp.json();
     if (!tmp.ok) {
       console.error(tmp.statusText);
-      window.alert('Ada kesalahan pada data. Jika data sudah benar dan masih gagal, harap hubungi panitia.');
+      window.alert(errMsg);
       return;
     }
 
@@ -108,17 +113,15 @@ export default function Form() {
       body: fd,
     })
       .then(res => res.json())
-      .then(res => {
+      .then(_ => {
         window.alert('Penambahan data berhasil.');
         const tmp = document.querySelector('.form-success');
-        console.log(tmp);
         if (tmp)
-          tmp.setAttribute('style', 'visibility: block;');
-        console.log(res);
+          tmp.setAttribute('style', 'visibility: visible;');
       })
       .catch(err => {
         console.error(err);
-        window.alert('Ada kesalahan pada data. Jika data sudah benar dan masih gagal, harap hubungi Line: otong1403');
+        window.alert(errMsg);
       });
   };
 
@@ -278,7 +281,7 @@ export default function Form() {
                 {errors.angkatan && <p className="form-error"> {errors.angkatan.message}</p>}
               </Row>
               <Row>
-                <label htmlFor="foto">Foto wisudawan (maksimal 5MB):</label>
+                <label htmlFor="foto">Foto wisudawan (maksimal 5MB, format nama: [NIM].jpg atau [NIM].png atau [NIM].jpeg):</label>
                 <input placeholder="foto" type="file" className="form-input" required {...register('foto')}/>
                 {errors.foto && <p className="form-error"> {errors.foto.message}</p>}
               </Row>

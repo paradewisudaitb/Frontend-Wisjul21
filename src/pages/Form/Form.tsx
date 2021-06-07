@@ -133,7 +133,7 @@ export default function Form() {
               <Row>
                 <Col className="nopadding">
                   <div className="d-flex justify-content-between">
-                    <select className="form-select" {...register('himpunan')}>
+                    <select className="form-select" required {...register('himpunan')}>
                       <option disabled selected> Himpunan </option>
                       <option value="Himpunan Mahasiswa Fisika"> HIMAFI (Himpunan Mahasiswa Fisika) </option>
                       <option value="Himpunan Mahasiswa Mikrobiologi"> HIMAMIKRO 'ARCHAEA' (Himpunan Mahasiswa Mikrobiologi) </option>
@@ -180,7 +180,7 @@ export default function Form() {
                       <option value="Himpunan Mahasiswa Kriya"> TERIKAT (Himpunan Mahasiswa Kriya) </option>
                       <option value="Visual Art Student Aggregate"> VASA (Visual Art Student Aggregate) / (Seni Rupa) </option>
                     </select>
-                    <select className="form-select" id="pilihanJurusan" {...register('jurusan')}>
+                    <select className="form-select" id="pilihanJurusan" required {...register('jurusan')}>
                       <option disabled selected> Jurusan </option>
                       {jurusanOption}
                     </select>
@@ -190,29 +190,29 @@ export default function Form() {
                 </Col>
               </Row>
               <Row>
-                <input placeholder="Nama Lengkap" type="text" className="form-input" {...register('namalengkap')}/>
+                <input placeholder="Nama Lengkap" type="text" className="form-input" required {...register('namalengkap')}/>
                 {errors.namalengkap && <p className="form-error"> {errors.namalengkap.message}</p>}
               </Row>
               <Row>
                 <div className="d-flex justify-content-between nopadding">
-                  <input placeholder="Nama Panggilan"  type="text" className="form-input" {...register('namapanggilan')}/>
-                  <input placeholder="NIM" type="text" className="form-input" {...register('nim')}/>
+                  <input placeholder="Nama Panggilan"  type="text" className="form-input" required {...register('namapanggilan')}/>
+                  <input placeholder="NIM" type="text" className="form-input" required {...register('nim')}/>
                 </div>
                 {errors.namapanggilan && <p className="form-error"> {errors.namapanggilan.message}</p>}
                 {/* {errors.nim && <p className="form-error"> {errors.nim.message}</p>} */}
                 {errors.nim && <p className="form-error">NIM tidak valid</p>}
               </Row>
               <Row>
-                <input placeholder="Judul TA" type="text" className="form-input" {...register('judulta')}/>
+                <input placeholder="Judul TA" type="text" className="form-input" required {...register('judulta')}/>
                 {errors.judulta && <p className="form-error"> {errors.judulta.message}</p>}
 
               </Row>
               <Row>
-                <input placeholder="Fun Fact" type="text" className="form-input" {...register('funfact')}/>
+                <input placeholder="Fun Fact" type="text" className="form-input" required {...register('funfact')}/>
                 {errors.funfact && <p className="form-error"> {errors.funfact.message}</p>}
               </Row>
               <Row>
-                <textarea placeholder="Tips sukses ala wisudawan" className="form-textarea" {...register('tips')}></textarea>
+                <textarea placeholder="Tips sukses ala wisudawan" className="form-textarea" required {...register('tips')}></textarea>
                 {errors.tips && <p className="form-error"> {errors.tips.message}</p>}
               </Row>
               <Row>
@@ -231,7 +231,7 @@ export default function Form() {
                 {errors.karya && <p className="form-error"> {errors.karya.message}</p>}
               </Row>
               <Row>
-                <input placeholder="Email" type="email" className="form-input" {...register('email')}/>
+                <input placeholder="Email" type="email" className="form-input" required {...register('email')}/>
                 {errors.email && <p className="form-error"> {errors.email.message}</p>}
               </Row>
               <Row>
@@ -240,15 +240,15 @@ export default function Form() {
                 {errors.nonhmj && <p className="form-error"> {errors.nonhmj.message}</p>}
               </Row>
               <Row>
-                <input placeholder="Kota Asal" type="text" className="form-input" {...register('kota')}/>
+                <input placeholder="Kota Asal" type="text" className="form-input" required {...register('kota')}/>
                 {errors.kota && <p className="form-error"> {errors.kota.message}</p>}
               </Row>
               <Row>
                 <label htmlFor="tangallahir">Tanggal lahir:</label>
-                <input placeholder="Tanggal Lahir" type="date" className="form-input" {...register('tanggallahir')}/>
+                <input placeholder="Tanggal Lahir" type="date" className="form-input" required {...register('tanggallahir')}/>
               </Row>
               <Row>
-                <select className="form-year form-input" {...register('angkatan')}>
+                <select className="form-year form-input" required {...register('angkatan')}>
                   <option disabled selected> Angkatan </option>
                   <option value="2017"> 2017 </option>
                   <option value="2016"> 2016 </option>
@@ -259,7 +259,7 @@ export default function Form() {
               </Row>
               <Row>
                 <label htmlFor="foto">Foto wisudawan (maksimal 5MB)</label>
-                <input placeholder="foto" type="file" className="form-input" {...register('foto')}/>
+                <input placeholder="foto" type="file" className="form-input" required {...register('foto')}/>
                 {errors.foto && <p className="form-error"> {errors.foto.message}</p>}
               </Row>
             </div>

@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Component } from 'react';
 import './HomePage.scss';
 import Logo from '/mnt/d/Cave/Wisjul2021/Frontend-Wisjul21/src/images/logo/logo-dark-2020.png';
 import Cloud from '/mnt/d/Cave/Wisjul2021/Frontend-Wisjul21/src/images/bg/cloud.png';
+import Template from './Template';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import ButtonCarousel from './ButtonCarousel';
 
 const HomePage = () => {
   //Parallax
@@ -34,10 +38,13 @@ const HomePage = () => {
       </div>
       <h1>Wisuda Juli 2021</h1>
       <div className='btns'>
+        <button className='Arrow'>-</button>
         <button className='Galeri-btn'>Galeri Wisudawan</button>
         <button className='Gather-btn'>Gather Town</button>
         <button className='Majalah-btn'>Majalah</button>
+        <button className='Arrow'>+</button>
       </div>
+      <ButtonCarousel />
     </>
   );
 };

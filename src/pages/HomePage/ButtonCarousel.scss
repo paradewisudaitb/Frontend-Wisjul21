@@ -1,0 +1,39 @@
+@mixin event-btn($url) {
+  height: 500px;
+  width: 300px;
+  margin: 50px;
+  
+  text-align: center;
+  transition: 0.3s;
+  background-image: url($url);
+  background-position: center;
+  &:hover {
+    transform: translateY(-10px);
+    transition: 0.3s;
+  }
+}
+
+.carousel {
+  display: flex;
+  width: 25%;
+  height: auto;
+  transform: translateX(75%);
+}
+
+.Galeri-btn {
+  @include event-btn('https://i.pinimg.com/originals/24/33/43/243343f8b1aa8fa14d6193e6080281fe.jpg');
+}
+
+.Gather-btn {
+  @include event-btn('https://i.pinimg.com/originals/50/40/49/504049f26228049add642b58dc8dfcf1.jpg');
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.Majalah-btn {
+  @include event-btn('https://i.pinimg.com/originals/fb/f6/8b/fbf68b12f8aaaa6fbd0a8abe21225450.jpg');
+  @media screen and (max-width: 1300px) {
+    display: none;
+  }
+}

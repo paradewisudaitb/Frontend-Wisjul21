@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Footer } from '../component/Footer';
-import { Navbar } from '../component/Navbar';
+import { Footer } from '../component/HeaderFooter/Footer';
+import { Navbar } from '../component/HeaderFooter/Navbar';
 
 export const DummyPage = () => {
   const dummystyle = {

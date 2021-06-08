@@ -1,6 +1,6 @@
 
 import { DummyPage } from '../pages/DummyPage';
-import HomePage from '../pages/HomePage';
+import HomePage from '../pages/Home/HomePage';
 
 export type route = {
     label: string

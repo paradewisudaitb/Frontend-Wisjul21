@@ -1,0 +1,53 @@
+$label-padding: 0.5rem;
+
+.kirimpesan {
+    min-height: 30rem;
+}
+
+.foto-wisudawan {
+    max-height: 15rem;
+    max-width: 15rem;
+}
+
+.nama-wisudawan {
+    background: red;
+    height: 2.5rem;
+    width: 75%;
+}
+
+.sender {
+    min-height: 25rem;
+    background: blue;
+    width: 75%;
+    border-radius: 0.8rem;
+}
+
+.sender-name-label {
+    padding: $label-padding;
+    background: green;
+    border-radius: 1rem 0rem 0rem 1rem ;
+}
+
+.sender-name-content {
+    padding: $label-padding;
+    background: aquamarine;
+    border-radius: 0rem 1rem 1rem 0rem ;
+}
+
+.message-content-label {
+    padding: $label-padding;
+    background: green;
+    border-radius: 1rem 0rem 0rem 0rem ;
+}
+
+.message-content-toolbar {
+    padding: $label-padding;
+    background: aquamarine;
+    border-radius: 0rem 1rem 0rem 0rem ;
+}
+
+.message-content-content {
+    background: azure;
+    border-radius: 0rem 0rem 1rem 1rem ;
+    
+}

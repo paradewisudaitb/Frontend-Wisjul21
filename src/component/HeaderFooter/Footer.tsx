@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Brand } from './Navbar';
 
-import { ReactComponent as InstagramIcon } from '../icons/instagram.svg';
-import { ReactComponent as TwitterIcon } from '../icons/twitter.svg';
+import { ReactComponent as InstagramIcon } from '../../icons/instagram.svg';
+import { ReactComponent as TwitterIcon } from '../../icons/twitter.svg';
 
 import './Footer.scss';
 

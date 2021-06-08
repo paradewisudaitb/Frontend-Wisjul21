@@ -5,13 +5,13 @@ import { Navbar } from '../component/HeaderFooter/Navbar';
 
 export const DummyPage = () => {
   const dummystyle = {
-    height: '26rem'
+    minHeight: '26rem'
   };
 
   return (
-    <div className="dummy-page" style={ dummystyle }>
+    <div className="dummy-page">
       <Navbar />
-      <div className="content">
+      <div className="content" style={ dummystyle }>
         <h1>Ini dummy</h1>
       </div>
       <Footer />

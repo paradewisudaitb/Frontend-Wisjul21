@@ -9,9 +9,10 @@ import Form from './pages/Form/Form';
 function App() {
   return (
     <div className="App">
-      <Route path=''><KirimPesanPage /></Route>
-      {/* <Route path=''><HomePage /></Route> */}
+      <Route path=''><HomePage /></Route>
+      <Route path='/kirimpesan'><KirimPesanPage /></Route>
       <Route path='/form'><Form /></Route>
+      <Route path='/dummy'><DummyPage /></Route>
     </div>
   );
 }

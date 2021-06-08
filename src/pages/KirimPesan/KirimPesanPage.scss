@@ -28,10 +28,18 @@ $label-padding: 0.5rem;
     border-radius: 1rem 0rem 0rem 1rem ;
 }
 
-.sender-name-content {
+.sender-name-input-background {
     padding: $label-padding;
     background: aquamarine;
     border-radius: 0rem 1rem 1rem 0rem ;
+}
+
+.sender-name-input {
+    background: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
 }
 
 .message-content-label {
@@ -49,5 +57,16 @@ $label-padding: 0.5rem;
 .message-content-content {
     background: azure;
     border-radius: 0rem 0rem 1rem 1rem ;
-    
+    text-align: justify;
+    min-height: 16rem;
+}
+
+.message-content {
+    min-height: 12rem;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.submit-button {
 }

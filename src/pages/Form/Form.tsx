@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import './Form.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col } from 'react-bootstrap';
-import { API_URL } from '../../api';
+import { API_URL, ASSET_URL } from '../../api';
 
 const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/gif', 'image/png'];
 const FILE_SIZE = 5E6; // 5 MB
@@ -51,13 +51,9 @@ export default function Form() {
   });
 
   const submitForm = async (data: any) => {
-    if (data.nim != data.foto[0].name.substring(0, 8)) {
-      window.alert('Nama file gambar salah.');
-      return;
-    }
     window.alert('Data dan foto sedang diupload, harap menunggu.');
     const errMsg = 'Ada kesalahan pada data. Jika data sudah benar dan masih gagal atau ingin melakukan perubahan data, harap hubungi panitia.';
-    const linkFoto = `https://wisjul21.sgp1.cdn.digitaloceanspaces.com/fotoWisudawan/${data.foto[0].name}`;
+    const linkFoto = ASSET_URL + '/fotoWisudawan/';
     // isi data
     const req: {[k: string]: any} = {
       nim: data.nim,
@@ -99,6 +95,9 @@ export default function Form() {
       body: fd,
     })
       .then(res => res.json())
+      .then(res => {
+        req.linkPasFoto = `${linkFoto}/${res.filename}`;
+      })
       .catch(err => {
         succ = false;
         console.error(err);
@@ -287,7 +286,7 @@ export default function Form() {
                 {errors.angkatan && <p className="form-error"> {errors.angkatan.message}</p>}
               </Row>
               <Row>
-                <label htmlFor="foto">Foto wisudawan (maksimal 5MB, format nama: [NIM].jpg atau [NIM].png atau [NIM].jpeg):</label>
+                <label htmlFor="foto">Foto wisudawan (maksimal 5MB):</label>
                 <input placeholder="foto" type="file" className="form-input" required {...register('foto')}/>
                 {errors.foto && <p className="form-error"> {errors.foto.message}</p>}
               </Row>

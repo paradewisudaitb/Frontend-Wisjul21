@@ -1,5 +1,10 @@
+* {
+  align-items: stretch;
+  text-align: stretch;
+}
+
 .header-jumbotron {
-  margin-top: 15vh;
+  margin-top: 10vh;
   font-weight: bold;
   h1 {
     color: black;
@@ -27,35 +32,75 @@
   margin-bottom: 35vh;
 }
 
-.majalah {
-  color: black;
-}
-
 .majalah-pdf {
   margin-top: 5vh;
   img {
     height: 70vh;
-    width: 30vw;
+    // width: 30vw;
     margin-top: 10px;
     border: solid black 2px;
   }
 }
 
-.doc-button {
-  position: relative;
-  font-size: 40px !important;
-  margin-right: 50px;
-  margin-left: 50px;
-  text-decoration: none !important;
+.index-majalah {
+  color: white !important;
+  align-self: center;
+  margin-top: 20px;
+}
 
-  button {
-    margin-top: 10px;
-    border-radius: 20px;
-    height: 60px;
-    width: 60px;
-  }
+.doc-button {
+  font-size: 40px !important;
+  border-radius: 30px;
+  margin-top: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 iframe::-webkit-scrollbar {
   display: none;
+}
+
+footer {
+  clear: both;
+  position: relative;
+  height: 200px;
+  margin-top: -200px;
+}
+
+.mega-container {
+  margin-bottom: 20px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .container-page {
+    height: 100vh;
+    margin-bottom: 35vh;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 912px) {
+  .container-page {
+    height: 600px;
+    margin-bottom: 0vh;
+  }
+
+  .header-jumbotron {
+    margin-top: 5vh;
+  }
+
+  .majalah-pdf {
+    margin-top: 5vh;
+    img {
+      height: 60vh;
+      // width: 30vw;
+      margin-top: 10px;
+      border: solid black 2px;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
 }

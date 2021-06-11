@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './Majalah.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Jumbotron, Button } from 'react-bootstrap';
 import { Footer } from '../../component/Footer';
 import { Navbar } from '../../component/Navbar';
+import './Majalah.scss';
 
 export default function Majalah() {
   const [index, setIndex] = useState(1);
@@ -38,7 +38,7 @@ export default function Majalah() {
         <div className="container-page">
           <div className="container">
             <Row>
-              <Col>
+              <Col xs={12} md={6}>
                 <div className="header-jumbotron">
                   <h1 className="header-title">Lorem Ipsum <br/> Dolor <br /> Sit Amet </h1>
                   <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -49,23 +49,25 @@ export default function Majalah() {
                   </p>
                 </div>
               </Col>
-              <Col>
+              <Col xs={12} md={6}>
                 <div className="majalah">
                   <div className="majalah-pdf">
-                    <div className="p#">
-                      <img id="img-majalah" src={getImage(index)} />
-                    </div>
+                    <img id="img-majalah img-fluid" src={getImage(index)} />
                   </div>
-                  <a className="doc-button previous round"> <button onClick={prev}>&#8249; </button></a>
-                  <a className="doc-button next round"> <button onClick={next}>&#8250; </button> </a>
+                  <div className="d-flex justify-content-center">
+                    <button className="doc-button previous" onClick={prev}> &#8249; </button>
+                    <div className="index-majalah"> {index} / 6 </div>
+                    <button className="doc-button next" onClick={next}> &#8250; </button>
+                  </div>
                 </div>
               </Col>
             </Row>
-            
           </div>
+          <Col>
+            <Footer />
+          </Col>
         </div>
       </Jumbotron>
-      <Footer />
     </div>
   );
 }

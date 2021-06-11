@@ -1,0 +1,61 @@
+.header-jumbotron {
+  margin-top: 15vh;
+  font-weight: bold;
+  h1 {
+    color: black;
+    font-weight: 800;
+  }
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+.hero {
+  h1,
+  p {
+    align-items: left;
+    text-align: left;
+  }
+}
+
+.container-page {
+  background: url("../../images/paper.svg");
+  background-size: cover;
+  background-position-y: top;
+  height: 60vh;
+  width: 100vw;
+  margin-bottom: 35vh;
+}
+
+.majalah {
+  color: black;
+}
+
+.majalah-pdf {
+  margin-top: 5vh;
+  img {
+    height: 70vh;
+    width: 30vw;
+    margin-top: 10px;
+    border: solid black 2px;
+  }
+}
+
+.doc-button {
+  position: relative;
+  font-size: 40px !important;
+  margin-right: 50px;
+  margin-left: 50px;
+  text-decoration: none !important;
+
+  button {
+    margin-top: 10px;
+    border-radius: 20px;
+    height: 60px;
+    width: 60px;
+  }
+}
+
+iframe::-webkit-scrollbar {
+  display: none;
+}

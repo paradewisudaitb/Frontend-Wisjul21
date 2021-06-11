@@ -2,7 +2,7 @@ $marginLR: 20vw;
 $maincolour: rgb(4, 4, 37);
 $accentcolour1: rgb(218, 167, 0);
 $borderradius: 3px;
-$bg: 'https://cdn.statically.io/img/wallpaperplay.com/walls/full/3/0/7/17345.jpg';
+$bg: "https://cdn.statically.io/img/wallpaperplay.com/walls/full/3/0/7/17345.jpg";
 
 @mixin cloud($duration) {
   position: absolute;
@@ -12,10 +12,12 @@ $bg: 'https://cdn.statically.io/img/wallpaperplay.com/walls/full/3/0/7/17345.jpg
   animation-duration: $duration;
 }
 
+/*
 * {
   align-items: center;
   text-align: center;
 }
+*/
 
 button {
   border: none;
@@ -36,18 +38,30 @@ button {
 }
 
 @keyframes wind {
-  0% {left: 0%; z-index: 1;}
-  98% {left: 100%; z-index: 1;}
-  99% {left: 100%; z-index: -1;}
-  100% {left: 0%; z-index: -1;}
+  0% {
+    left: 0%;
+    z-index: 1;
+  }
+  98% {
+    left: 100%;
+    z-index: 1;
+  }
+  99% {
+    left: 100%;
+    z-index: -1;
+  }
+  100% {
+    left: 0%;
+    z-index: -1;
+  }
 }
 
 .layer-1 {
-  @include cloud(60s)
+  @include cloud(60s);
 }
 
 .layer-2 {
-  @include cloud(100s)
+  @include cloud(100s);
 }
 
 .home-container {
@@ -111,10 +125,10 @@ button {
   height: 500px;
   width: 300px;
   margin: 50px;
-  
+
   text-align: center;
   transition: 0.3s;
-  background-image: url('https://cdnb.artstation.com/p/assets/images/images/020/747/129/large/ross-tran-grandpa-web.jpg?1569002367');
+  background-image: url("https://cdnb.artstation.com/p/assets/images/images/020/747/129/large/ross-tran-grandpa-web.jpg?1569002367");
   &:hover {
     transform: translateY(-10px);
     transition: 0.3s;

@@ -1,0 +1,42 @@
+.card-container {
+  background-color: #C4C4C4;
+  display: flex;
+  margin: 1rem;
+  flex-direction: column;
+  text-align: center;
+  width: 20rem;
+
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    img {
+      max-width: 50%;
+    }
+  }
+}
+
+.card-container h1 {
+  margin-bottom: 0rem;
+}
+
+.card-container h3 {
+  margin-top: 0.3rem;
+}
+
+.unit-list {
+  list-style: none;
+}
+
+.unit-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.unit-logo {
+  width: 10%;
+  height: auto;
+  padding-right: 1rem;
+}

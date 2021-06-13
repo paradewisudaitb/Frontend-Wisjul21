@@ -1,8 +1,6 @@
 # build environment
 FROM node:fermium-alpine as build
 
-ARG REACT_APP_API
-
 COPY . /app
 WORKDIR /app
 

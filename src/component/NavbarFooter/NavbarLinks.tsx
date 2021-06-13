@@ -22,7 +22,7 @@ export const NavbarLinks = () => {
     ) : (
       <NavLink
         route = { route.path }
-        className='btn shadow-none mx-3'
+        className='btn shadow-none'
       >
         { route.label }
       </NavLink>

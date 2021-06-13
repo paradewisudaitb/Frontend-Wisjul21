@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Jumbotron, Button } from 'react-bootstrap';
-import { Footer } from '../../component/NavbarFooter/Footer';
-import { Navbar } from '../../component/NavbarFooter/Navbar';
 import './Majalah.scss';
 
 export default function Majalah() {
@@ -32,14 +30,14 @@ export default function Majalah() {
 
   
   return (
-    <div>
-      <Navbar />
-      <Jumbotron className="hero">
+    <div className="majalah-page pb-5">
+      <div className="hero">
+        <div className="majalah-background" />
         <div className="container-page">
-          <div className="container">
+          <div className="container majalah-content">
             <Row>
               <Col xs={12} md={6}>
-                <div className="header-jumbotron">
+                <div className="header-jumbotron text-left">
                   <h1 className="header-title">Lorem Ipsum <br/> Dolor <br /> Sit Amet </h1>
                   <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
                   <hr className="my-4" />
@@ -63,11 +61,8 @@ export default function Majalah() {
               </Col>
             </Row>
           </div>
-          <Col>
-            <Footer />
-          </Col>
         </div>
-      </Jumbotron>
+      </div>
     </div>
   );
 }

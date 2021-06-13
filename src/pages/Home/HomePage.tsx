@@ -3,13 +3,10 @@ import './HomePage.scss';
 import Logo from '../../images/logo/logo-dark-2020.png';
 import Cloud from '../../images/bg/cloud.png';
 
-import { Navbar } from '../../component/NavbarFooter/Navbar';
-import { Footer } from '../../component/NavbarFooter/Footer';
 
 const HomePage = () => {
   return (
     <>
-      <Navbar />
       <div className='layers mt-5'>
         <img className='layer-1' src={Cloud} height='300px'/>
         <img className='layer-2' src={Cloud} height='200px'/>
@@ -33,7 +30,6 @@ const HomePage = () => {
         <button className='event-btn'>Gather Town</button>
         <button className='event-btn'>Majalah</button>
       </div>
-      <Footer />
     </>
   );
 };

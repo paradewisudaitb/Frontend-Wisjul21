@@ -1,6 +1,6 @@
 
 import Majalah from '../pages/Majalah/Majalah';
-import HomePage from '../pages/Home/HomePage';
+import HomePage from '../pages/HomePage/HomePage';
 import Form from '../pages/Form/Form';
 import FormApresiasi from '../pages/FormApresiasi/FormApresiasi';
 import GaleriApresiasi from '../pages/GaleriApresiasi/GaleriApresiasi';

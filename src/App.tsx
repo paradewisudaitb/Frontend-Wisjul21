@@ -12,6 +12,7 @@ function App() {
     <div className="App">
       <Route path=''><HomePage /></Route>
       <Route path='/form'><Form /></Route>
+      {API_URL}
     </div>
   );
 }

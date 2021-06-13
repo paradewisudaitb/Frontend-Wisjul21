@@ -168,7 +168,7 @@ export default function Form() {
                   <option value="Lainnya"> Lainnya </option>
                 </select>
               </div>
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-md-6 my-3">
                 {nerimaFile && <input placeholder="File apresiasi" type="file" className="form-input" required {...register('kontenApresiasiFile')}/>}
                 {!nerimaFile && <input placeholder="Link ke website" type="text" className="form-input weblink-input" required {...register('kontenApresiasiLink')}/>}
               </div>

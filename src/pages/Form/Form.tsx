@@ -286,7 +286,7 @@ export default function Form() {
                 {errors.angkatan && <p className="form-error"> {errors.angkatan.message}</p>}
               </Row>
               <Row>
-                <label htmlFor="foto">Foto wisudawan (maksimal 5MB):</label>
+                <label htmlFor="foto">Foto wisudawan (maksimal 5MB)</label>
                 <input placeholder="foto" type="file" className="form-input" required {...register('foto')}/>
                 {errors.foto && <p className="form-error"> {errors.foto.message}</p>}
               </Row>

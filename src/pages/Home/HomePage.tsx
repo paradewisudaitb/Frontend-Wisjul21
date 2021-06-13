@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './HomePage.scss';
-import Logo from '../images/logo/logo-dark-2020.png';
-import Cloud from '../images/bg/cloud.png';
+import Logo from '../../images/logo/logo-dark-2020.png';
+import Cloud from '../../images/bg/cloud.png';
 
-import { Navbar } from '../component/Navbar';
-import { Footer } from '../component/Footer';
+import { Navbar } from '../../component/NavbarFooter/Navbar';
+import { Footer } from '../../component/NavbarFooter/Footer';
 
 const HomePage = () => {
   return (
@@ -17,9 +17,9 @@ const HomePage = () => {
       <div className='home-container'>
         <div>
           <img src={Logo} alt='Logo Wisuda Juli 2021' className='logo' />
-          <h6>Ini tagline Wisjul 2021 Lorem Ipsum Lorem Ipsum</h6>
+          <h5 className='tagline'>Ini tagline Wisjul 2021 Lorem Ipsum Lorem Ipsum</h5>
         </div>
-        <button className='youtube'>Youtube</button>
+        <button className='youtube mx-auto'>Youtube</button>
       </div>
       <div className='visi-misi'>
         <h1 className='VISI'>VISI</h1>

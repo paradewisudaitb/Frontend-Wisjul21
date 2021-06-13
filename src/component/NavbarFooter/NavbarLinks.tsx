@@ -2,15 +2,15 @@ import React from 'react';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 
-import { NavbarRoutes } from '../routes/routes';
+import { NavbarRoutes } from '../../routes/routes';
 import { NavLink } from './NavLink';
 
 
 export const NavbarLinks = () => {
   const contents = NavbarRoutes.map(({ content:route, children_routes, parentPath, isDropdown }) => (
     isDropdown ? (
-      <Dropdown>
-        <Dropdown.Toggle variant='default'>
+      <Dropdown className="dropdown-nooutline">
+        <Dropdown.Toggle variant=''>
           { route.label }
         </Dropdown.Toggle> 
         <Dropdown.Menu className='custom-dropdown-style'>
@@ -22,7 +22,7 @@ export const NavbarLinks = () => {
     ) : (
       <NavLink
         route = { route.path }
-        className='mx-3'
+        className='btn shadow-none mx-3'
       >
         { route.label }
       </NavLink>

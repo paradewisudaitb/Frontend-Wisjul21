@@ -17,6 +17,13 @@ $bg: "https://cdn.statically.io/img/wallpaperplay.com/walls/full/3/0/7/17345.jpg
   text-align: center;
 }
 
+.tagline {
+  background-color: rgba($color: #FFFFFF, $alpha: 0.2);
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
 button {
   border: none;
   border-radius: $borderradius;

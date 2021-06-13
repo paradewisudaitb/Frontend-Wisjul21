@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './App.css';
-import HomePage from './pages/HomePage';
+import HomePage from './pages/Home/HomePage';
 import { Route } from 'wouter';
 
 import Form from './pages/Form/Form';

@@ -156,8 +156,8 @@ export default function Form() {
                 {errors.himpunan && <p className="form-error">{errors.himpunan.message}</p>}
               </div>
             </div>
-            <div className="row">
-              <div className="col-12 col-md-6">
+            <div className="row my-3">
+              <div className="col-12 col-md-6 mt-2">
                 <select className="form-select" required {...register('tipeApresiasi')}>
                   <option value="Tipe File" disabled selected> Tipe File </option>
                   <option value="Poster"> Poster </option>
@@ -168,7 +168,7 @@ export default function Form() {
                   <option value="Lainnya"> Lainnya </option>
                 </select>
               </div>
-              <div className="col-12 col-md-6 my-3">
+              <div className="col-12 col-md-6">
                 {nerimaFile && <input placeholder="File apresiasi" type="file" className="form-input" required {...register('kontenApresiasiFile')}/>}
                 {!nerimaFile && <input placeholder="Link ke website" type="text" className="form-input weblink-input" required {...register('kontenApresiasiLink')}/>}
               </div>

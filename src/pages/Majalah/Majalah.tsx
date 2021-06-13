@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Jumbotron, Button } from 'react-bootstrap';
-import { Footer } from '../../component/Footer';
-import { Navbar } from '../../component/Navbar';
+import { Footer } from '../../component/NavbarFooter/Footer';
+import { Navbar } from '../../component/NavbarFooter/Navbar';
 import './Majalah.scss';
 
 export default function Majalah() {

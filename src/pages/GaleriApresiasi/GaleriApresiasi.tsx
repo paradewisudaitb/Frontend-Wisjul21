@@ -7,6 +7,25 @@ import './GaleriApresiasi.scss';
 const GaleriApresiasi = () => {
   // const logoHimpunan = '../../images/ukj.png';
 
+  const dataApresiasi = {
+    'himpunan': 'hmif',
+    'apresiasi':
+    [
+      {
+        'tipeKontenApresiasi': 'poster',
+        'linkKeKonten': 'https://townsquare.media/site/442/files/2013/05/TheFW_Up.jpg?w=630&h=932&q=75',
+      },
+      {
+        'tipeKontenApresiasi': 'poster',
+        'linkKeKonten': 'https://image.freepik.com/free-vector/space-vintage-colorful-horizontal-poster_225004-2209.jpg'
+      },{
+        'tipeKontenApresiasi': 'video',
+        'linkKeKonten': 'https://storage.googleapis.com/spatial-thinker-315205/POS2B5695_EE/22a_1623528845_163209.mp4'
+      },{
+        'tipeKontenApresiasi': 'audio',
+        'linkKeKonten': 'https://cdn.piapro.jp/mp3_a/s9/s9ihs6vgwgu9uv4u_20210306210143_audition.mp3'
+      }]};
+
   return (
     <div className='galeri-apresiasi-page'>
       <div className='himpunan'>
@@ -17,7 +36,7 @@ const GaleriApresiasi = () => {
       <div className='apresiasi-wisudawan'>
         <h1>Apresiasi Wisudawan</h1>
         <h2>Judul/Keterangan</h2>
-        <ApresiasiCarousel />
+        <ApresiasiCarousel {...dataApresiasi} />
       </div>
       
       <div className='daftar-wisudawan'>

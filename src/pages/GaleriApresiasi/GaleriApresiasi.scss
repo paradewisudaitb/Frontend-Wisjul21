@@ -12,7 +12,10 @@
 }
 
 .apresiasi-wisudawan {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .daftar-wisudawan {

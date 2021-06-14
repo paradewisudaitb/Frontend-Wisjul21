@@ -6,7 +6,17 @@ import Form from './pages/Form/Form';
 import Gathertown from './pages/Gathertown/Gathertown';
 
 function App() {
-  return <Gathertown />;
+  return (
+    <div className='App'>
+      <Gathertown />
+      {/* <Route path=''>
+        <HomePage />
+      </Route>
+      <Route path='/form'>
+        <Form />
+      </Route> */}
+    </div>
+  );
 }
 
 export default App;

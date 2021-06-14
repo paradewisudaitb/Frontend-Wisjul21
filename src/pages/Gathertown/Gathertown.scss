@@ -1,5 +1,17 @@
 .info {
+  background-color: grey;
   text-align: center;
+
+  h1 {
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+  }
+
+  p {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 1.5em;
+  }
 }
 
 .list-hmj li {

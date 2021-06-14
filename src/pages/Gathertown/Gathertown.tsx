@@ -1,58 +1,36 @@
+import { update } from 'lodash';
 import { FC } from 'react';
+import { useState } from 'react';
 import { Fragment } from 'react';
 import './Gathertown.scss';
-
-type HMJ = {
-  namaFakultas: string;
-  namaHMJ: string;
-  jurusan: string;
-  link: string;
-};
-
-const LIST_FAKULTAS = [
-  'FITB',
-  'FMIPA',
-  'FSRD',
-  'FTI',
-  'FTMD',
-  'FTSL',
-  'FTTM',
-  'SAPPK',
-  'SBM',
-  'SF',
-  'SITH',
-  'STEI',
-];
-
-const LIST_HMJ: HMJ[] = [
-  {
-    namaFakultas: 'STEI',
-    namaHMJ: 'HMIF ITB',
-    jurusan: 'Teknik Informatika & Sistem dan Teknologi Informasi',
-    link: 'bit.ly/HMIFterbaiksedunia',
-  },
-  {
-    namaFakultas: 'STEI',
-    namaHMJ: 'HME ITB',
-    jurusan: 'Teknik Elektro, Teknik Biomedis, Teknik Tenaga Listrik',
-    link: 'bit.ly/HMIFterbaiksedunia',
-  },
-  {
-    namaFakultas: 'FITB',
-    namaHMJ: 'HMME \'ATMOSPHAIRA\' ITB',
-    jurusan: 'Meteorologi',
-    link: 'bit.ly/FITBuhuyasoycihuy',
-  },
-];
+import { LIST_FAKULTAS, LIST_HMJ } from './GathertownConstant';
 
 const Gathertown: FC = () => {
-  const listFakultas = LIST_FAKULTAS.map((fakultas) => (
-    <div className="fakultas" key={fakultas}>
+  const [listGathertownHMJ, setListGathertownHMJ] = useState(LIST_HMJ);
+
+  const buttonClickHandler = (event: React.MouseEvent<HTMLElement>) => {
+    const clickedFakultas = event.currentTarget.getAttribute('value');
+
+    const updatedHMJ = LIST_HMJ.filter(
+      (hmj) => hmj.namaFakultas === clickedFakultas
+    );
+
+    setListGathertownHMJ(updatedHMJ);
+  };
+
+  const listButtonFakultas = LIST_FAKULTAS.map((fakultas) => (
+    <button
+      onClick={buttonClickHandler}
+      type='button'
+      className='fakultas'
+      value={fakultas}
+      key={fakultas}
+    >
       {fakultas}
-    </div>
+    </button>
   ));
 
-  const listHMJ = LIST_HMJ.map((hmj) => (
+  const listDisplayedHMJ = listGathertownHMJ.map((hmj) => (
     <li key={hmj.namaHMJ}>
       <div>{hmj.namaHMJ}</div>
       <div>{hmj.jurusan}</div>
@@ -64,16 +42,23 @@ const Gathertown: FC = () => {
 
   return (
     <Fragment>
-      <div className="info">
-        <h1>Lorem Ipsum</h1>
+      <div className='info'>
+        <h1>Gathertown</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet
-          malesuada nibh ornare non. Praesent placerat eros ac ultrices mauris
-          faucibus. Proin porta ultricies sem id pretium
+          Ultricies leo integer malesuada nunc vel risus commodo. Mollis nunc
+          sed id semper risus in hendrerit gravida rutrum. Volutpat est velit
+          egestas dui. Purus semper eget duis at tellus at urna condimentum
+          mattis. Iaculis eu non diam phasellus vestibulum lorem. Est sit amet
+          facilisis magna etiam tempor orci. Nunc aliquet bibendum enim
+          facilisis. Laoreet id donec ultrices tincidunt arcu. Diam maecenas
+          ultricies mi eget mauris. Faucibus a pellentesque sit amet porttitor
+          eget. Diam donec adipiscing tristique risus nec feugiat in.
+          Sollicitudin aliquam ultrices sagittis orci a scelerisque purus
+          semper.
         </p>
       </div>
-      <div>{listFakultas}</div>
-      <ul className="list-hmj">{listHMJ}</ul>
+      <div>{listButtonFakultas}</div>
+      <ul className='list-hmj'>{listDisplayedHMJ}</ul>
     </Fragment>
   );
 };

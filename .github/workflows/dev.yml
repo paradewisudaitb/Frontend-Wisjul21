@@ -16,7 +16,6 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
           registry: docker.pkg.github.com
           tags: "development"
-          buildargs: REACT_APP_API
   deploy:
     runs-on: ubuntu-latest
     needs: [build]

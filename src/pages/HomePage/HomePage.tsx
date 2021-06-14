@@ -10,12 +10,23 @@ import ButtonCarousel from './ButtonCarousel';
 const HomePage = () => {
   //Parallax
   const [offsetY, setOffsetY] = useState(0);
+  const [clickCount, setClickCount] = useState(0);
+  const [visible, setVisible] = useState('visible');
   const handleScroll = () => setOffsetY(window.pageYOffset);
+  const click = () => {
+    setClickCount((clickCount+2)%3);
+  };
+
+  const ini = clickCount + 1;
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, []);  
+
+  useEffect(() => {
+    console.log(clickCount);
+  }, [clickCount]);
 
   return (
     <>
@@ -37,14 +48,15 @@ const HomePage = () => {
         <p className='misi'>misi msis sismsi misis msims smis smisms misms msimis smismism smismis smismis ms smsi smsims msims s Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <h1>Wisuda Juli 2021</h1>
-      <div className='btns'>
-        <button className='Arrow'>-</button>
-        <button className='Galeri-btn'>Galeri Wisudawan</button>
-        <button className='Gather-btn'>Gather Town</button>
-        <button className='Majalah-btn'>Majalah</button>
+      <div className='btn-container'>
+        <button className='Arrow' onClick={click}>{clickCount}</button>
+        <div className='btns'>
+          <button className='Galeri-btn' style={{ gridColumn: `${clickCount+1}`, zIndex: 4 }}>Galeri Wisudawan</button>
+          <button className='Gather-btn' style={{ gridColumn: `${clickCount+2}` }}>Gather Town</button>
+          <button className='Majalah-btn' style={{ gridColumn: `${clickCount+3}` }}>Majalah</button>
+        </div>
         <button className='Arrow'>+</button>
       </div>
-      <ButtonCarousel />
     </>
   );
 };

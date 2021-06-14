@@ -17,7 +17,7 @@ $bg: 'https://cdn.statically.io/img/wallpaperplay.com/walls/full/3/0/7/17345.jpg
   height: 500px;
   width: 300px;
   margin: 50px;
-  
+  grid-row: 1;
   text-align: center;
   transition: 0.3s;
   background-image: url($url);
@@ -161,36 +161,51 @@ button {
     }
   }
 }
+
 .btns {
-  display: block;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 1;
+  grid-template-columns: 3;
 }
+
 .Galeri-btn {
   @include event-btn('https://i.pinimg.com/originals/24/33/43/243343f8b1aa8fa14d6193e6080281fe.jpg');
+
 }
 
 .Gather-btn {
   @include event-btn('https://i.pinimg.com/originals/50/40/49/504049f26228049add642b58dc8dfcf1.jpg');
   @media screen and (max-width: 900px) {
-    display: none;
+    //display: none;
   }
 }
 
 .Majalah-btn {
   @include event-btn('https://i.pinimg.com/originals/fb/f6/8b/fbf68b12f8aaaa6fbd0a8abe21225450.jpg');
   @media screen and (max-width: 1300px) {
-    display: none;
+    //display: none;
   }
 }
 
 .Galeri-btn, 
 .Gather-btn, 
 .Majalah-btn {
+  @media screen and (max-width: 1300px) {
+    margin: 50px 30px;
+  }
   @media screen and (max-width: 430px) {
     width: 60vw;
   }
 }
 
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
 .Arrow {
+  grid-row: 1;
   visibility: hidden;
   @media screen and (max-width: 1300px) {
     visibility: visible;

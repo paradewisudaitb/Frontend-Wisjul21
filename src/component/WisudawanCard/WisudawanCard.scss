@@ -1,0 +1,52 @@
+.card-container {
+  background-color: #C4C4C4;
+  display: flex;
+  margin: 1rem;
+  flex-direction: column;
+  text-align: center;
+  width: 20rem;
+  height: 27rem;
+
+  h1 {
+    margin-bottom: 0rem;
+  }
+
+  h3 {
+    margin-top: 0.3rem;
+  }
+
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    img {
+      max-width: 50%;
+    }
+  }
+  
+  .unit-container {
+    .unit-list {
+      list-style: none;
+    }
+
+    .unit-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 0.8rem;
+
+      .unit-logo {
+        width: 2.3rem;
+        height: auto;
+        margin-right: 1rem;
+      }
+
+      p {
+        margin-bottom: 0rem;
+      }
+    }
+  }
+}
+
+

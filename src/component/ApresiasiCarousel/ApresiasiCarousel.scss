@@ -1,0 +1,23 @@
+.carousel {
+  display: flex;
+  width: 30rem;  
+  height: auto;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+
+    video {
+      width: 100%;
+    }
+
+    audio {
+      width: 100%;
+    }
+  }
+}

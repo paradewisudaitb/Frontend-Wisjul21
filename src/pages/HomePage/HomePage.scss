@@ -7,7 +7,7 @@ $bg: 'https://cdn.statically.io/img/wallpaperplay.com/walls/full/3/0/7/17345.jpg
 
 @mixin cloud($duration) {
   position: absolute;
-  top: 0px;
+  top: 0;
   animation-name: wind;
   animation-iteration-count: infinite;
   animation-duration: $duration;
@@ -17,7 +17,7 @@ $bg: 'https://cdn.statically.io/img/wallpaperplay.com/walls/full/3/0/7/17345.jpg
   height: 500px;
   width: 300px;
   margin: 50px;
-  grid-row: 1;
+  
   text-align: center;
   transition: 0.3s;
   background-image: url($url);
@@ -36,7 +36,13 @@ $bg: 'https://cdn.statically.io/img/wallpaperplay.com/walls/full/3/0/7/17345.jpg
 * {
   align-items: center;
   text-align: center;
-  overflow-x: hidden;
+}
+
+.tagline {
+  background-color: rgba($color: #FFFFFF, $alpha: 0.2);
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
 }
 
 button {
@@ -51,15 +57,29 @@ button {
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 100vh;
+  height: 34.5vh;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 @keyframes wind {
-  0% {left: 0%; z-index: 1;}
-  98% {left: 100%; z-index: 1;}
-  99% {left: 100%; z-index: -1;}
-  100% {left: 0%; z-index: -1;}
+  0% {
+    left: 0%;
+    z-index: 1;
+  }
+  98% {
+    left: 100%;
+    z-index: 1;
+  }
+  99% {
+    left: 100%;
+    z-index: -1;
+  }
+  100% {
+    left: 0%;
+    z-index: -1;
+  }
 }
 
 @keyframes flicker {
@@ -73,10 +93,10 @@ button {
 }
 
 .layer-2 {
-  @include cloud(100s)
+  @include cloud(100s);
 }
 
-.container {
+.home-container {
   background: url($bg);
   height: 100vh;
   width: 100%;

@@ -1,7 +1,8 @@
 import React, { useEffect, useState, Component } from 'react';
 import './HomePage.scss';
-import Logo from '/mnt/d/Cave/Wisjul2021/Frontend-Wisjul21/src/images/logo/logo-dark-2020.png';
-import Cloud from '/mnt/d/Cave/Wisjul2021/Frontend-Wisjul21/src/images/bg/cloud.png';
+import Logo from '../../images/logo/logo-dark-2020.png';
+import Cloud from '../../images/bg/cloud.png';
+
 import Template from './Template';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -29,17 +30,17 @@ const HomePage = () => {
   }, [clickCount]);
 
   return (
-    <>
-      <div className='layers'>
-        <img className='layer-1' src={Cloud} height='300px' style={{ transform: `translateY(-${offsetY * 0.5}px)` }}/>
-        <img className='layer-2' src={Cloud} height='200px' style={{ transform: `translateY(-${offsetY * 0.3}px)` }}/>
+    <div className="pb-5">
+      <div className='layers mt-5'>
+        <img className='layer-1' src={Cloud} height='300px' style={{ transform: `translateY(-${offsetY * 0.5}px)` }} />
+        <img className='layer-2' src={Cloud} height='200px' style={{ transform: `translateY(-${offsetY * 0.3}px)` }} /> 
       </div>
-      <div className='container'>
+      <div className='home-container pt-5'>
         <div>
           <img src={Logo} alt='Logo Wisuda Juli 2021' className='logo' />
-          <h6>Ini tagline Wisjul 2021 Lorem Ipsum Lorem Ipsum</h6>
+          <h5 className='tagline'>Ini tagline Wisjul 2021 Lorem Ipsum Lorem Ipsum</h5>
         </div>
-        <button className='youtube'>Youtube</button>
+        <button className='youtube mx-auto'>Youtube</button>
       </div>
       <div className='visi-misi'>
         <h1 className='VISI'>VISI</h1>
@@ -57,7 +58,7 @@ const HomePage = () => {
         </div>
         <button className='Arrow'>+</button>
       </div>
-    </>
+    </div>
   );
 };
 

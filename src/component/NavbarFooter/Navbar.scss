@@ -1,0 +1,8 @@
+.navbar {
+    background-color: red;
+    min-width: 100%;
+}
+
+.btn-check:focus+.btn, .btn:focus {
+    box-shadow: none !important;
+}

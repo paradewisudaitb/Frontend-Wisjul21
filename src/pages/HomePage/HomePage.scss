@@ -1,0 +1,229 @@
+$marginLR: 20vw;
+$maincolour: rgb(4, 4, 37);
+$accentcolour1: rgb(218, 167, 0);
+$borderradius: 3px;
+$randomNumber: random(5);
+$bg: 'https://cdn.statically.io/img/wallpaperplay.com/walls/full/3/0/7/17345.jpg';
+
+@mixin cloud($duration) {
+  position: absolute;
+  top: 0;
+  animation-name: wind;
+  animation-iteration-count: infinite;
+  animation-duration: $duration;
+}
+
+@mixin event-btn($url) {
+  height: 500px;
+  width: 300px;
+  margin: 50px;
+  
+  text-align: center;
+  transition: 0.3s;
+  background-image: url($url);
+  background-position: center;
+  &:hover {
+    transform: translateY(-10px);
+    transition: 0.3s;
+  }
+}
+
+@mixin visi-misi() {
+  position: relative;
+  top: 65%;
+}
+
+* {
+  align-items: center;
+  text-align: center;
+}
+
+.tagline {
+  background-color: rgba($color: #FFFFFF, $alpha: 0.2);
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+button {
+  border: none;
+  border-radius: $borderradius;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.layers {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 34.5vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+@keyframes wind {
+  0% {
+    left: 0%;
+    z-index: 1;
+  }
+  98% {
+    left: 100%;
+    z-index: 1;
+  }
+  99% {
+    left: 100%;
+    z-index: -1;
+  }
+  100% {
+    left: 0%;
+    z-index: -1;
+  }
+}
+
+@keyframes flicker {
+  0% {opacity: random(1);}
+  50% {opacity: 0;}
+  75% {top:100px; left: 100px;}
+}
+
+.layer-1 {
+  @include cloud(60s);
+}
+
+.layer-2 {
+  @include cloud(100s);
+}
+
+.home-container {
+  background: url($bg);
+  height: 100vh;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  .logo {
+    height: 300px;
+    width: 300px;
+  }
+  .youtube {
+    margin: 50px 50px;
+    height: 50px;
+    width: 20vw;
+    color: $accentcolour1;
+    background-color: transparent;
+    outline: $accentcolour1 solid 3px;
+    z-index: 100;
+    @media screen and (max-width: 1080px) {
+      width: 0,2*1080px;
+    }
+    &:hover {
+      color: $maincolour;
+      background-color: $accentcolour1;
+      transition: 0.3s;
+    }
+  }
+}
+
+.visi-misi {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 50%);
+  margin: 50px $marginLR;
+  h1 {
+    font-size: 5vw;
+  }
+  p {
+    color: $maincolour;
+  }
+  .VISI {
+    text-align: left;
+  }
+  .visi {
+    padding: 30px;
+    grid-column: 2 / span 3;
+    grid-row: 1;
+    background-color: $accentcolour1;
+  }
+  .MISI {
+    text-align: right;
+  }
+  .misi {
+    padding: 30px;
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    background-color: $accentcolour1;
+  }
+  @media screen and (max-width: 1080px) {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px auto 50px auto;
+    h1 {
+      font-size: 50px;
+    }
+    .VISI {
+      @include visi-misi();
+      left: 10px;
+    }
+    .visi {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .MISI {
+      @include visi-misi();
+      right: 10px;
+    }
+    .misi {
+      grid-column: 1;
+      grid-row: 4;
+    }
+  }
+}
+.btns {
+  display: block;
+}
+.Galeri-btn {
+  @include event-btn('https://i.pinimg.com/originals/24/33/43/243343f8b1aa8fa14d6193e6080281fe.jpg');
+}
+
+// .event-btn {
+//   height: 500px;
+//   width: 300px;
+//   margin: 50px;
+//   text-align: center;
+//   transition: 0.3s;
+//   background-image: url("https://cdnb.artstation.com/p/assets/images/images/020/747/129/large/ross-tran-grandpa-web.jpg?1569002367");
+//   &:hover {
+//     transform: translateY(-10px);
+//     transition: 0.3s;
+
+.Gather-btn {
+  @include event-btn('https://i.pinimg.com/originals/50/40/49/504049f26228049add642b58dc8dfcf1.jpg');
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.Majalah-btn {
+  @include event-btn('https://i.pinimg.com/originals/fb/f6/8b/fbf68b12f8aaaa6fbd0a8abe21225450.jpg');
+  @media screen and (max-width: 1300px) {
+    display: none;
+  }
+}
+
+.Galeri-btn, 
+.Gather-btn, 
+.Majalah-btn {
+  @media screen and (max-width: 430px) {
+    width: 60vw;
+  }
+}
+
+.Arrow {
+  visibility: hidden;
+  @media screen and (max-width: 1300px) {
+    visibility: visible;
+  }
+}

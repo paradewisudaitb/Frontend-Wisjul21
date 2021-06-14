@@ -1,6 +1,9 @@
 
-import { DummyPage } from '../pages/DummyPage';
-import HomePage from '../pages/HomePage';
+import Majalah from '../pages/Majalah/Majalah';
+import HomePage from '../pages/HomePage/HomePage';
+import Form from '../pages/Form/Form';
+import FormApresiasi from '../pages/FormApresiasi/FormApresiasi';
+import GaleriApresiasi from '../pages/GaleriApresiasi/GaleriApresiasi';
 
 export type route = {
     label: string
@@ -20,26 +23,29 @@ export const toRoute = (label:string, path:string, component?:() => JSX.Element)
 });
 
 export const HOME_PAGE = toRoute('Home', '', HomePage);
-export const DUMMY_PAGE = toRoute('Dummy', '/dummy', DummyPage);
+export const MAJALAH_PAGE = toRoute('Majalah', '/majalah', Majalah);
+export const GALERI_APRESIASI_PAGE = toRoute('Galeri Apresiasi', '/galeri-apresiasi', GaleriApresiasi);
+export const FORM_PAGE = toRoute('Form', 'form/', Form);
+export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', 'form-apresiasi/', FormApresiasi);
 
-export const DUMMY_SUB_INDEX = toRoute('SubDummyIndex', '/subdummydropdown');
-export const DUMMY_SUB_ROUTE1 = toRoute('SubDummy1', '/subdummy1');
-export const DUMMY_SUB_ROUTE2 = toRoute('SubDummy2', '/subdummy2');
-export const DUMMY_SUB_ROUTE3 = toRoute('SubDummy3', '/subdummy3');
+export const FORM_INDEX = toRoute('Forms', '/forms');
 
 export const NavbarRoutes: navroutes[] = [
   {
-    content: DUMMY_PAGE,
+    content: MAJALAH_PAGE,
   },
   {
-    content: DUMMY_SUB_INDEX,
-    children_routes: [DUMMY_SUB_ROUTE1, DUMMY_SUB_ROUTE2, DUMMY_SUB_ROUTE3],
+    content: GALERI_APRESIASI_PAGE,
+  },
+  {
+    content: FORM_INDEX,
+    children_routes: [FORM_PAGE, FORM_APRESIASI_PAGE],
     isDropdown: true,
-    parentPath: '/subdummydropdown'
+    parentPath: '',
   }
 ];
 
 export const AllRoutes = [
   HOME_PAGE,
-  DUMMY_PAGE,
+  MAJALAH_PAGE,
 ];

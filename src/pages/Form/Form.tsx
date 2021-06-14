@@ -10,7 +10,7 @@ import { API_URL, ASSET_URL } from '../../api';
 const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/gif', 'image/png'];
 const FILE_SIZE = 5E6; // 5 MB
 
-export const validateImageType = (value: string): boolean => {
+const validateImageType = (value: string): boolean => {
   if(value) {
     const type = value.match(/[^:]\w+\/[\w-+\d.]+(?=;|,)/);
     if (!type)
@@ -286,7 +286,7 @@ export default function Form() {
                 {errors.angkatan && <p className="form-error"> {errors.angkatan.message}</p>}
               </Row>
               <Row>
-                <label htmlFor="foto">Foto wisudawan (maksimal 5MB):</label>
+                <label htmlFor="foto">Foto wisudawan (maksimal 5MB)</label>
                 <input placeholder="foto" type="file" className="form-input" required {...register('foto')}/>
                 {errors.foto && <p className="form-error"> {errors.foto.message}</p>}
               </Row>

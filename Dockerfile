@@ -1,5 +1,6 @@
 # build environment
 FROM node:fermium-alpine as build
+
 COPY . /app
 WORKDIR /app
 

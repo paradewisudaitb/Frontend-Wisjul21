@@ -1,9 +1,9 @@
 import React from 'react';
-
-import './App.css';
-import HomePage from './pages/HomePage/HomePage';
 import { Route } from 'wouter';
 
+import './App.css';
+
+import HomePage from './pages/HomePage/HomePage';
 import Form from './pages/Form/Form';
 import FormApresiasi from './pages/FormApresiasi/FormApresiasi';
 import Majalah from './pages/Majalah/Majalah';
@@ -11,6 +11,7 @@ import GaleriApresiasi from './pages/GaleriApresiasi/GaleriApresiasi';
 
 import { Footer } from './component/NavbarFooter/Footer';
 import { Navbar } from './component/NavbarFooter/Navbar';
+import { API_URL } from './api';
 
 
 function App() {

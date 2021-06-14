@@ -1,33 +1,28 @@
 import React, { useEffect, useState, Component } from 'react';
 import './HomePage.scss';
+import { Link } from 'wouter';
+
+//Asset
 import Logo from '../../images/logo/logo-dark-2020.png';
 import Cloud from '../../images/bg/cloud.png';
-
-import Template from './Template';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import ButtonCarousel from './ButtonCarousel';
 
 const HomePage = () => {
   //Parallax
   const [offsetY, setOffsetY] = useState(0);
-  const [clickCount, setClickCount] = useState(0);
-  const [visible, setVisible] = useState('visible');
   const handleScroll = () => setOffsetY(window.pageYOffset);
-  const click = () => {
-    setClickCount((clickCount+2)%3);
-  };
-
-  const ini = clickCount + 1;
-
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);  
 
-  useEffect(() => {
-    console.log(clickCount);
-  }, [clickCount]);
+  //Carousel
+  const [clickCount, setClickCount] = useState(0);
+  const prev = () => {
+    setClickCount(clickCount+2);
+  };
+  const next = () => {
+    setClickCount(clickCount+1);
+  };
 
   return (
     <div className="pb-5">
@@ -50,13 +45,13 @@ const HomePage = () => {
       </div>
       <h1>Wisuda Juli 2021</h1>
       <div className='btn-container'>
-        <button className='Arrow' onClick={click}>{clickCount}</button>
+        <button className='Arrow' onClick={prev}>-</button>
         <div className='btns'>
-          <button className='Galeri-btn' style={{ gridColumn: `${clickCount+1}`, zIndex: 4 }}>Galeri Wisudawan</button>
-          <button className='Gather-btn' style={{ gridColumn: `${clickCount+2}` }}>Gather Town</button>
-          <button className='Majalah-btn' style={{ gridColumn: `${clickCount+3}` }}>Majalah</button>
+          <Link to='/majalah'><button className={'button'+((clickCount)%3+1)} style={{ backgroundImage: 'https://i.pinimg.com/originals/24/33/43/243343f8b1aa8fa14d6193e6080281fe.jpg' }}>Majalah</button></Link>
+          <Link to='/galeri-apresiasi'><button className={'button'+((clickCount+1)%3+1)} style={{ backgroundImage: 'https://i.pinimg.com/originals/50/40/49/504049f26228049add642b58dc8dfcf1.jpg' }}>Galeri Wisudawan</button></Link>
+          <button className={'button'+((clickCount+2)%3+1)} style={{ backgroundImage: 'https://i.pinimg.com/originals/fb/f6/8b/fbf68b12f8aaaa6fbd0a8abe21225450.jpg' }}>Gather Town</button>
         </div>
-        <button className='Arrow'>+</button>
+        <button className='Arrow' onClick={next}>+</button>
       </div>
     </div>
   );

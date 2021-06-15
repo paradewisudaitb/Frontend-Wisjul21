@@ -3,8 +3,8 @@ import './App.css';
 import { Route } from 'wouter';
 
 import './App.css';
-
 import HomePage from './pages/HomePage/HomePage';
+
 import Form from './pages/Form/Form';
 import FormApresiasi from './pages/FormApresiasi/FormApresiasi';
 import Majalah from './pages/Majalah/Majalah';

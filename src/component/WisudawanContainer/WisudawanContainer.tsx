@@ -84,7 +84,7 @@ const WisudawanContainer = (data: DataWisudawan) => {
           <h4>Karya</h4>
           {data.karya.length > 0 ?
             <ol className='list-karya'>
-              {data.prestasi.map((karya: string, idx: number) => (
+              {data.karya.map((karya: string, idx: number) => (
                 <li key = {idx}>
                   {karya}
                 </li>

@@ -28,20 +28,20 @@ export const Footer = () => {
             <a href="https://www.instagram.com/paradewisudaitb/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="social-media-container d-flex align-items-center justify-content-center">
+              className="social-media-container d-flex instagram">
               <InstagramIcon className='social-media' />
             </a>
             <a href="https://twitter.com/paradewisudaitb" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="social-media-container d-flex align-items-center justify-content-center">
-              <TwitterIcon className='' />
+              className="social-media-container d-flex twitter">
+              <TwitterIcon className='social-media' />
             </a>
             <a href="https://bit.ly/Phoenix1Wisjul" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="social-media-container d-flex align-items-center justify-content-center">
-              <SpotifyIcon className='' />
+              className="social-media-container d-flex spotify">
+              <SpotifyIcon className='social-media' />
             </a>
           </div>
         </div>

@@ -10,7 +10,7 @@ export const NavbarLinks = () => {
   const contents = NavbarRoutes.map(({ content:route, children_routes, parentPath, isDropdown }) => (
     isDropdown ? (
       <Dropdown className="dropdown-nooutline">
-        <Dropdown.Toggle variant=''>
+        <Dropdown.Toggle variant='' className="nav-item">
           { route.label }
         </Dropdown.Toggle> 
         <Dropdown.Menu className='custom-dropdown-style'>
@@ -22,7 +22,7 @@ export const NavbarLinks = () => {
     ) : (
       <NavLink
         route = { route.path }
-        className='btn shadow-none'
+        className='btn shadow-none nav-item'
       >
         { route.label }
       </NavLink>

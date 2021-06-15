@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 import { Route } from 'wouter';
 
 import './App.css';
@@ -10,6 +11,7 @@ import Majalah from './pages/Majalah/Majalah';
 import GaleriApresiasi from './pages/GaleriApresiasi/GaleriApresiasi';
 import Wisudawan from './pages/Wisudawan/Wisudawan';
 
+import { KirimPesanPage } from './pages/KirimPesan/KirimPesanPage';
 import { Footer } from './component/NavbarFooter/Footer';
 import { Navbar } from './component/NavbarFooter/Navbar';
 import { API_URL } from './api';
@@ -25,6 +27,7 @@ function App() {
       <Route path='/majalah'><Majalah /></Route>
       <Route path='/galeri-apresiasi'><GaleriApresiasi /></Route>
       <Route path='/wisudawan'><Wisudawan /></Route>
+      <Route path='/kirim-pesan'><KirimPesanPage /></Route>
       <Footer />
     </div>
   );

@@ -4,6 +4,7 @@ import HomePage from '../pages/HomePage/HomePage';
 import Form from '../pages/Form/Form';
 import FormApresiasi from '../pages/FormApresiasi/FormApresiasi';
 import GaleriApresiasi from '../pages/GaleriApresiasi/GaleriApresiasi';
+import { KirimPesanPage } from '../pages/KirimPesan/KirimPesanPage';
 
 export type route = {
     label: string
@@ -27,6 +28,7 @@ export const MAJALAH_PAGE = toRoute('Majalah', '/majalah', Majalah);
 export const GALERI_APRESIASI_PAGE = toRoute('Galeri Apresiasi', '/galeri-apresiasi', GaleriApresiasi);
 export const FORM_PAGE = toRoute('Form', 'form/', Form);
 export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', 'form-apresiasi/', FormApresiasi);
+export const KIRIM_PESAN_PAGE = toRoute('Kirim Pesan', '/kirim-pesan', KirimPesanPage);
 
 export const FORM_INDEX = toRoute('Forms', '/forms');
 
@@ -36,6 +38,9 @@ export const NavbarRoutes: navroutes[] = [
   },
   {
     content: GALERI_APRESIASI_PAGE,
+  },
+  {
+    content: KIRIM_PESAN_PAGE,
   },
   {
     content: FORM_INDEX,

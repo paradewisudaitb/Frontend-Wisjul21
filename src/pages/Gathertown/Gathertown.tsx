@@ -1,44 +1,119 @@
-import { update } from 'lodash';
 import { FC } from 'react';
 import { useState } from 'react';
+import { useEffect } from 'react';
 import { Fragment } from 'react';
+import ButtonFakultas from './ButtonFakultas';
 import './Gathertown.scss';
 import { LIST_FAKULTAS, LIST_HMJ } from './GathertownConstant';
 
+type HMJ = {
+  namaFakultas: string;
+  namaHMJ: string;
+  jurusan: string;
+  link: string;
+};
+
 const Gathertown: FC = () => {
+  const [activeButton, setActiveButton] = useState('FITB');
   const [listGathertownHMJ, setListGathertownHMJ] = useState(LIST_HMJ);
+  const [listButtonState, setListButtonState] = useState<JSX.Element[]>();
 
-  const buttonClickHandler = (event: React.MouseEvent<HTMLElement>) => {
-    const clickedFakultas = event.currentTarget.getAttribute('value');
+  const buttonFakultasClickHandler = (listHMJ: HMJ[], namaFakultas: string) => {
+    setListGathertownHMJ(listHMJ);
+    setActiveButton(namaFakultas);
 
-    const updatedHMJ = LIST_HMJ.filter(
-      (hmj) => hmj.namaFakultas === clickedFakultas
+    console.log(activeButton);
+
+    const clickedFakultasIndex = LIST_FAKULTAS.findIndex(
+      (fakultas) => fakultas === activeButton
     );
 
-    setListGathertownHMJ(updatedHMJ);
+    console.log(clickedFakultasIndex);
+
+    // const updatedListButtonFakultas = [...defaultListButtonFakultas];
+    // updatedListButtonFakultas[clickedFakultasIndex] = (
+    //   <ButtonFakultas
+    //     onButtonClick={buttonFakultasClickHandler}
+    //     className='active'
+    //     value={activeButton}
+    //     key={activeButton}
+    //   >
+    //     {activeButton}
+    //   </ButtonFakultas>
+    // );
+
+    // listButtonFakultas[clickedFakultasIndex] = (
+    //   <ButtonFakultas
+    //     onButtonClick={buttonFakultasClickHandler}
+    //     className='active'
+    //     value={activeButton}
+    //     key={activeButton}
+    //   >
+    //     {activeButton}
+    //   </ButtonFakultas>
+    // );
+
+    // setListButtonState(updatedListButtonFakultas);
   };
 
-  const listButtonFakultas = LIST_FAKULTAS.map((fakultas) => (
-    <button
-      onClick={buttonClickHandler}
-      type='button'
-      className='fakultas'
+  const defaultListButtonFakultas = LIST_FAKULTAS.map((fakultas) => (
+    <ButtonFakultas
+      onButtonClick={buttonFakultasClickHandler}
+      className=''
       value={fakultas}
       key={fakultas}
     >
       {fakultas}
-    </button>
+    </ButtonFakultas>
   ));
 
   const listDisplayedHMJ = listGathertownHMJ.map((hmj) => (
     <li key={hmj.namaHMJ}>
-      <div>{hmj.namaHMJ}</div>
-      <div>{hmj.jurusan}</div>
-      <div>
-        <a href={hmj.link}>{hmj.link}</a>
+      <div className='card-hmj'>
+        <div className='image-hmj'>
+          <img
+            alt={'logo ' + hmj.namaHMJ}
+            src='../../images/ukj.png'
+            width='185'
+            height='185'
+          />
+        </div>
+        <div className='info-hmj'>
+          <h5>{hmj.namaHMJ}</h5>
+          <p>{hmj.jurusan}</p>
+          <div className='link-hmj'>
+            <a href={hmj.link} target='_blank'>
+              {hmj.link}
+            </a>
+          </div>
+        </div>
       </div>
     </li>
   ));
+
+  useEffect(() => {
+    setListButtonState(defaultListButtonFakultas);
+  }, []);
+
+  // useEffect(() => {
+  //   console.log('useEffect');
+  //   const clickedFakultasIndex = listButtonFakultas.findIndex(
+  //     (button) => button.key === activeButton
+  //   );
+
+  //   listButtonFakultas[clickedFakultasIndex] = (
+  //     <ButtonFakultas
+  //       onButtonClick={buttonFakultasClickHandler}
+  //       className='active'
+  //       value={activeButton}
+  //       key={activeButton}
+  //     >
+  //       {activeButton}
+  //     </ButtonFakultas>
+  //   );
+
+  //   setListButtonState(listButtonFakultas);
+  // }, [activeButton]);
 
   return (
     <Fragment>
@@ -57,8 +132,9 @@ const Gathertown: FC = () => {
           semper.
         </p>
       </div>
-      <div>{listButtonFakultas}</div>
+      <div>{listButtonState}</div>
       <ul className='list-hmj'>{listDisplayedHMJ}</ul>
+      <br />
     </Fragment>
   );
 };

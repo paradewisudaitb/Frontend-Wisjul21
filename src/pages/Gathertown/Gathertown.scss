@@ -14,6 +14,48 @@
   }
 }
 
+.button {
+  border: none;
+  outline: none;
+  background-color: grey;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #666;
+    color: white;
+  }
+}
+
+.active.button {
+  background-color: #666;
+  color: white;
+}
+
 .list-hmj li {
   list-style: none;
+}
+
+.card-hmj {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  background-color: grey;
+}
+
+.info-hmj {
+  width: 85%;
+  text-align: start;
+  margin: 0em 0em 1em 1em;
+}
+
+.link-hmj {
+  padding: 0.5em;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.image-hmj {
+  border-radius: 10px;
 }

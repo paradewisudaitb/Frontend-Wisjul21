@@ -13,14 +13,13 @@ $bg: 'https://cdn.statically.io/img/wallpaperplay.com/walls/full/3/0/7/17345.jpg
   animation-duration: $duration;
 }
 
-@mixin event-btn($url) {
+@mixin event-btn() {
   height: 500px;
   width: 300px;
   margin: 50px;
-  
+  grid-row: 1;
   text-align: center;
   transition: 0.3s;
-  background-image: url($url);
   background-position: center;
   &:hover {
     transform: translateY(-10px);
@@ -30,7 +29,7 @@ $bg: 'https://cdn.statically.io/img/wallpaperplay.com/walls/full/3/0/7/17345.jpg
 
 @mixin visi-misi() {
   position: relative;
-  top: 65%;
+  top: 30%;
 }
 
 * {
@@ -181,33 +180,36 @@ button {
     }
   }
 }
+
 .btns {
-  display: block;
-}
-.Galeri-btn {
-  @include event-btn('https://i.pinimg.com/originals/24/33/43/243343f8b1aa8fa14d6193e6080281fe.jpg');
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  @media screen and (max-width: 1300px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 }
 
-// .event-btn {
-//   height: 500px;
-//   width: 300px;
-//   margin: 50px;
-//   text-align: center;
-//   transition: 0.3s;
-//   background-image: url("https://cdnb.artstation.com/p/assets/images/images/020/747/129/large/ross-tran-grandpa-web.jpg?1569002367");
-//   &:hover {
-//     transform: translateY(-10px);
-//     transition: 0.3s;
+.button1 {
+  @include event-btn();
+  grid-column: 1;
+}
 
-.Gather-btn {
-  @include event-btn('https://i.pinimg.com/originals/50/40/49/504049f26228049add642b58dc8dfcf1.jpg');
+.button2 {
+  @include event-btn();
+  grid-column: 2;
   @media screen and (max-width: 900px) {
     display: none;
   }
 }
 
-.Majalah-btn {
-  @include event-btn('https://i.pinimg.com/originals/fb/f6/8b/fbf68b12f8aaaa6fbd0a8abe21225450.jpg');
+.button3 {
+  @include event-btn();
+  grid-column: 3;
   @media screen and (max-width: 1300px) {
     display: none;
   }
@@ -216,12 +218,21 @@ button {
 .Galeri-btn, 
 .Gather-btn, 
 .Majalah-btn {
+  @media screen and (max-width: 1300px) {
+    margin: 50px 30px;
+  }
   @media screen and (max-width: 430px) {
     width: 60vw;
   }
 }
 
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
 .Arrow {
+  grid-row: 1;
   visibility: hidden;
   @media screen and (max-width: 1300px) {
     visibility: visible;

@@ -52,7 +52,7 @@ export default function Form() {
 
   const submitForm = async (data: any) => {
     window.alert('Data dan foto sedang diupload, harap menunggu.');
-    const errMsg = 'Ada kesalahan pada data. Jika data sudah benar dan masih gagal atau ingin melakukan perubahan data, harap hubungi panitia.';
+    const errMsg = 'Ada kesalahan pada data. Jika data sudah benar dan masih gagal atau ingin melakukan perubahan data, harap hubungi panitia (LINE: otong1403, lexax).';
     const linkFoto = ASSET_URL + '/fotoWisudawan/';
     // isi data
     const req: {[k: string]: any} = {

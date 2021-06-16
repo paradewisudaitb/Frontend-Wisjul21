@@ -10,7 +10,7 @@ import { API_URL, ASSET_URL } from '../../api';
 const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/gif', 'image/png'];
 const FILE_SIZE = 5E6; // 5 MB
 
-export const validateImageType = (value: string): boolean => {
+const validateImageType = (value: string): boolean => {
   if(value) {
     const type = value.match(/[^:]\w+\/[\w-+\d.]+(?=;|,)/);
     if (!type)

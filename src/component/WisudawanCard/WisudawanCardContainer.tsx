@@ -62,8 +62,9 @@ const WisudawanCardContainer = () => {
   return (
     <div className='wisudawan-card-container'>
       {data.length > 0 ? (
-        data.map((row) => 
-          <WisudawanCard 
+        data.map((row, i) => 
+          <WisudawanCard
+            key={i} 
             {...row}
           />
         )

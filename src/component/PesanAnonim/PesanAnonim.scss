@@ -1,0 +1,22 @@
+.pesan-container {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.pesan-wrapper {
+  padding: 15px 25px;
+}
+
+.header-pesan {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nama-pengirim {
+  font-weight: bold;
+}
+
+.body-content {
+  text-align: left;
+}

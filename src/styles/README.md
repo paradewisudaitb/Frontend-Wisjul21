@@ -1,4 +1,4 @@
-# important
+# IMPORTANT
 Semua file SCSS yang butuh font, media query, dan copal bisa import:
 ```scss
 @import '<path/ke/App.scss>';
@@ -40,3 +40,23 @@ font-family: 'Aller';
 ```
 
 # Responsive mixins
+```scss
+// Buat HP / layar kecil
+@include breakpoint('small') {
+  // kode SCSS
+}
+
+// Buat desktop / layar laptop
+@include breakpoint('large') {
+  // kode SCSS
+}
+
+// Buat layar extra-gede
+@include breakpoint('giant') {
+  // kode SCSS
+}
+```
+
+# Contoh lainnya
+Bisa diliat di [sini](../pages/ComingSoon/ComingSoon.scss) atau di
+[sini](../pages/Form/Form.scss)

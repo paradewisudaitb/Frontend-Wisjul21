@@ -1,10 +1,34 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/colorpalette.scss';
+
+$form-width: 50vw;
+
+.form {
+  color: #f4f4f4;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 50px 50px 0px 50px;
+  background-color: #00000085;
+  overflow-x: hidden;
+  width: $form-width;
+  margin-left: (100vw - $form-width) / 2;
+
+  * {
+    background-color: transparent;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
 .form-page {
-  background-image: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/form-bg-compressed.jpg");
+  background-image: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/main.jpg");
+  background-repeat: repeat;
   background-color: #adadad5b;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 5px;
 }
 
 .form-btn {
@@ -14,7 +38,7 @@
   height: 40px;
   border-radius: 20px;
   color: #f4f4f4;
-  background-color: #3ad33ab6;
+  background-color: $cyan-medium;
   &:hover {
     background-color: #4aa96c;
     color: #ffffff;
@@ -23,25 +47,16 @@
 
 .form-container {
   max-width: 50%;
+  background-color: transparent;
 }
 
 .form-content {
-  margin: 10px;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-.form {
-  color: #f4f4f4;
-  border: 2px solid black;
-  border-radius: 15px;
-  padding: 50px;
-  margin: 5px;
-  background-color: #00000085;
+  margin: 10px 50px;
+  background-color: transparent;
 }
 
 .form-error {
-  color: #d84e4e;
+  color: $red-medium;
 }
 
 .form-input {
@@ -56,10 +71,17 @@
   margin-top: 5px;
   margin-bottom: 5px;
   border-radius: 15px;
+  height: 5em;
 }
 
-.form-success {
-  background-color: #4aa96c;
+.form-field {
+  background-color: white;
+  color: black;
+}
+
+.form-status {
+  background-color: $blue-medium;
+  color: white;
   padding: 10px;
   margin-top: 5px;
   border-radius: 15px;
@@ -69,10 +91,17 @@
 .form-select {
   padding: 5px;
   margin: 5px;
+  font-size: 16px !important;
+}
+
+.form-select-option {
+  color: black;
 }
 
 .form-title {
   text-align: center;
+  color: #FC690A;
+  font-size: 48px;
 }
 
 .form-year {
@@ -81,7 +110,46 @@
   }
 }
 
-.nopadding {
+.form-nopadding {
   padding: 0 !important;
   margin: 0 !important;
+}
+
+.form-warn {
+  color: $red-medium;
+  font-size: 20px;
+}
+
+@media (max-width: $breakpoint-large - 1px) {
+  .form {
+    width: 100vw;
+    overflow-x: hidden;
+    padding: 10px 1px;
+    width: $form-width * 1.7;
+    margin-left: (100vw - ($form-width * 1.7)) / 2;
+    * {
+      font-size: 12px;
+    }
+  }
+
+  .form-btn {
+    margin-right: 10vw;
+  }
+
+  .form-select {
+    font-size: 12px !important;
+  }
+
+  .form-title {
+    font-size: 32px;
+  }
+
+  .form-page {
+    font-size: 12px;
+  }
+
+  .form-container {
+    max-width: 100%;
+    width: 25em;
+  }
 }

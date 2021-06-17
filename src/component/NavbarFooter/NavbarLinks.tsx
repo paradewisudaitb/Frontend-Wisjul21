@@ -15,7 +15,7 @@ export const NavbarLinks = () => {
         </Dropdown.Toggle> 
         <Dropdown.Menu className='custom-dropdown-style'>
           { children_routes?.map(route => (
-            <Dropdown.Item href={ parentPath + route.path}>{route.label}</Dropdown.Item>
+            <Dropdown.Item href={ parentPath + route.path }>{route.label}</Dropdown.Item>
           )) }
         </Dropdown.Menu>
       </Dropdown>
@@ -30,7 +30,9 @@ export const NavbarLinks = () => {
   ));
 
   return <>{
-    contents.map( content => content )
+    (
+      contents.map( content => content )
+    )
   }
   </>
   ;

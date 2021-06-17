@@ -2,7 +2,8 @@
 
 .brand {
     color: $navfootfont;
-    
+    text-decoration: none;
+    flex-direction: row;
 }
 
 .brand:hover {
@@ -10,12 +11,24 @@
     transition: 0.3s;
 }
 
+$navbarheight: 4rem;
+
 .navbar {
     background-color: $teal;
-    min-width: 100%;
+    width: 100%;
+    height: $navbarheight;
+    z-index: 3;
 }
 
+.navbar-nav {
+    flex-direction: row !important;
+}
+
+$drops-top: -12rem;
+
 .nav-item {
+    float: left;
+    display: block;
     color: $navfootfont !important;
 }
 
@@ -26,4 +39,106 @@
 
 .btn-check:focus+.btn, .btn:focus {
     box-shadow: none !important;
+}
+
+.burger-button {
+    @extend .nav-item;
+    display: none;
+    background: none;
+    cursor: pointer;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.drops {
+    width: 100%;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {    
+    .navbar-nav {
+        display: none !important;
+    }
+    
+    .burger-button {
+        float: right;
+        display: block;
+    }
+    
+    nav.responsive {
+        position: relative;
+    }
+    
+    .active {
+        color: white !important;
+    }
+
+    .toggle {
+        width: 28px;
+        height: 4px;
+        background-color: $cadetblue;
+        cursor: pointer;
+        box-shadow: 2px 2px black;
+        transition: 0.6s;
+        
+        &::before, 
+        &::after {
+            content: '';
+            width: 28px;
+            height: 4px;
+            background-color: $cadetblue;
+            display: block;
+            position: absolute;
+            transition: all 0.6s;
+            box-shadow: 2px 2px black;
+        }
+        
+        &::before {
+            top: 1.3em;
+            transform-origin: center;
+            transform: rotateZ(0deg);
+        }
+        
+        &::after {
+            top: 2.4em;
+            transform-origin: center;
+            transform: rotateZ(0deg);
+        }
+    }
+    
+    
+    .toggle-active::before {
+        box-shadow: none;
+        transform: rotateZ(360 * 3 + 43deg) translateX(5px) translateY(7px);
+    }
+    .toggle-active::after {
+        box-shadow: none;
+        transform: rotateZ(-(360 * 3 + 43deg)) translateX(5px) translateY(-7px);
+    }
+    
+    .toggle-active {
+        background-color: transparent;
+        box-shadow: none;
+    }
+    
+    .toggle-active {
+        transition: 0.6s;
+    }
+
+    .drops {
+        background-color: $midnightblue;
+        flex-direction: column !important;
+        align-items: flex-start;
+        position: absolute;
+        top: $drops-top;
+        transition: 0.5s;
+        z-index: 2;
+        display: flex;
+    }
+    
+    .drops-active {
+        width: 100%;
+        transform: translateY(-($drops-top) + $navbarheight);
+        transition: 0.6s;
+    }
 }

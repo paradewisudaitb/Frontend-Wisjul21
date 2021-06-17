@@ -1,15 +1,9 @@
-import React, { useState } from 'react';
 import './HomePage.scss';
-import Logo from '../images/logo/logo-dark-2020.png';
-import Cloud from '../images/bg/cloud.png';
-
-import { Navbar } from '../component/Navbar';
-import { Footer } from '../component/Footer';
 
 const HomePage = () => {
   return (
     <div className="App-header">
-      <img src={'https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logo/logo/Logo-sementara-400x400.jpg'} className="App-logo" alt="logo" />
+      <img src={'https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/logo/Logo-sementara-400x400.jpg'} className="App-logo" alt="logo" />
       <h1>
         Wisjul 2021 is coming!
       </h1>

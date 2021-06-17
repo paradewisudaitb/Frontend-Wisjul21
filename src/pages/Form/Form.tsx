@@ -244,17 +244,17 @@ export default function Form() {
                 {errors.tips && <p className="form-error"> {errors.tips.message}</p>}
               </Row>
               <Row>
-                <textarea placeholder="Kontribusi di HMJ (Jika ada lebih dari 1, pisahkan dengan koma). Jika tidak ada tuliskan '-'." className="form-textarea" {...register('kontribusi')}>
+                <textarea placeholder="Kontribusi di HMJ*" className="form-textarea" {...register('kontribusi')}>
                 </textarea>
                 {errors.kontribusi && <p className="form-error"> {errors.kontribusi.message}</p>}
               </Row>
               <Row>
-                <textarea placeholder="Prestasi (Jika ada lebih dari 1, pisahkan dengan koma). Jika tidak ada tuliskan '-'." className="form-textarea" {...register('prestasi')}>
+                <textarea placeholder="Prestasi*" className="form-textarea" {...register('prestasi')}>
                 </textarea>
                 {errors.prestasi && <p className="form-error"> {errors.prestasi.message}</p>}
               </Row>
               <Row>
-                <textarea placeholder="Karya (Jika ada lebih dari 1, pisahkann dengan koma). Jika tidak ada tuliskan '-'." className="form-input" {...register('karya')}>
+                <textarea placeholder="Karya*" className="form-textarea" {...register('karya')}>
                 </textarea>
                 {errors.karya && <p className="form-error"> {errors.karya.message}</p>}
               </Row>
@@ -263,7 +263,7 @@ export default function Form() {
                 {errors.email && <p className="form-error"> {errors.email.message}</p>}
               </Row>
               <Row>
-                <textarea placeholder="Keterlibatan pada lembaga non-HMJ (Jika ada lebih dari 1, pisahkan dengan koma). Jika tidak ada tuliskan '-'." className="form-textarea" {...register('nonhmj')}>
+                <textarea placeholder="Keterlibatan pada lembaga non-HMJ*" className="form-textarea" {...register('nonhmj')}>
                 </textarea>
                 {errors.nonhmj && <p className="form-error"> {errors.nonhmj.message}</p>}
               </Row>
@@ -284,6 +284,11 @@ export default function Form() {
                   <option value="2014"> 2014 </option>
                 </select>
                 {errors.angkatan && <p className="form-error"> {errors.angkatan.message}</p>}
+              </Row>
+              <Row>
+                <span>
+                  * Jika ada lebih dari 1, pisahkan dengan koma. Jika tidak ada tuliskan '-'.
+                </span>
               </Row>
               <Row>
                 <label htmlFor="foto">Foto wisudawan (maksimal 5MB):</label>

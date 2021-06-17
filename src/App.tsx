@@ -1,6 +1,5 @@
 import './App.css';
 import HomePage from './pages/HomePage';
-import { DummyPage } from './pages/DummyPage';
 import { Route } from 'wouter';
 import Form from './pages/Form/Form';
 

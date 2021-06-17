@@ -45,15 +45,16 @@ const schema = yup.object().shape({
 });
 
 
+const errMsg = 'Ada kesalahan pada data. Jika data sudah benar dan masih gagal atau ingin melakukan perubahan data, harap hubungi panitia (LINE: otong1403, lexax).';
 export default function Form() {
   const { register, watch, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
 
   const submitForm = async (data: any) => {
-    window.alert('Data dan foto sedang diupload, harap menunggu.');
-    const errMsg = 'Ada kesalahan pada data. Jika data sudah benar dan masih gagal atau ingin melakukan perubahan data, harap hubungi panitia (LINE: otong1403, lexax).';
+    window.alert('Data dan foto sedang diupload, harap menunggu sampai pesan berhasil upload keluar.');
     const linkFoto = ASSET_URL + '/fotoWisudawan/';
+    const status = document.querySelector('.form-status');
     // isi data
     const req: {[k: string]: any} = {
       nim: data.nim,
@@ -97,11 +98,17 @@ export default function Form() {
       .then(res => res.json())
       .then(res => {
         req.linkPasFoto = `${linkFoto}/${res.filename}`;
+        if (status)
+          status.setAttribute('style', 'visibility: visible;');
       })
       .catch(err => {
         succ = false;
         console.error(err);
         window.alert(errMsg);
+        if (status) {
+          status.setAttribute('style', 'visibility: visible; background-color: red;');
+          status.innerHTML = 'Gagal mengupload foto.';
+        }
       });
 
     if (!succ) {
@@ -120,13 +127,18 @@ export default function Form() {
       .then(res => res.json())
       .then(_ => {
         window.alert('Penambahan data berhasil.');
-        const tmp = document.querySelector('.form-success');
-        if (tmp)
-          tmp.setAttribute('style', 'visibility: visible;');
+        if (status) {
+          status?.setAttribute('style', 'visibility: visible; background-color: #4aa96c;');
+          status.innerHTML = 'Data berhasil disubmit';
+        }
       })
       .catch(err => {
         console.error(err);
         window.alert(errMsg);
+        if (status) {
+          status.setAttribute('style', 'visibility: visible; background-color: red;');
+          status.innerHTML = 'Terjadi kesalahan ketika menambahkan data. Harap segera hubungi panitia.';
+        }
       });
   };
 
@@ -300,11 +312,24 @@ export default function Form() {
               {errors.foto && <p className="form-error"> {errors.foto.message}</p>}
             </Row>
           </div>
-          <div className="d-flex justify-content-end">
-            <button className="form-btn" type="submit">Submit</button>
-          </div>
+          <Row>
+            <div className="d-flex justify-content-center">
+              <div className="form-status"> Data sedang ditambahkan... </div>
+            </div>
+            <div className="d-flex justify-content-end">
+              <button className="form-btn" type="submit">Submit</button>
+            </div>
+          </Row>
           <div className="d-flex justify-content-center">
-            <div className="form-success"> Submit Success </div>
+            Contact person:
+            <ul>
+              <li>
+                Josep, LINE: otong1403
+              </li>
+              <li>
+                Axel, LINE: lexax
+              </li>
+            </ul>
           </div>
         </form>
       </div>

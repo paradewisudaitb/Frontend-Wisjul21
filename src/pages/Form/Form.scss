@@ -7,7 +7,7 @@ $form-width: 50vw;
   color: #f4f4f4;
   border: 2px solid black;
   border-radius: 15px;
-  padding: 50px;
+  padding: 50px 50px 0px 50px;
   background-color: #00000085;
   overflow-x: hidden;
   width: $form-width;
@@ -56,7 +56,7 @@ $form-width: 50vw;
 }
 
 .form-error {
-  color: #d84e4e;
+  color: $red-medium;
 }
 
 .form-input {
@@ -79,8 +79,9 @@ $form-width: 50vw;
   color: black;
 }
 
-.form-success {
-  background-color: #4aa96c;
+.form-status {
+  background-color: $blue-medium;
+  color: white;
   padding: 10px;
   margin-top: 5px;
   border-radius: 15px;

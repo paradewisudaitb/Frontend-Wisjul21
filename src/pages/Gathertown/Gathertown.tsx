@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { Fragment } from 'react';
 import ButtonFakultas from './ButtonFakultas';
 import './Gathertown.scss';
+import dummyImage from '../../images/ukj.png';
 import { LIST_FAKULTAS, LIST_HMJ } from './GathertownConstant';
 
 type HMJ = {
@@ -63,7 +64,7 @@ const Gathertown: FC = () => {
       value={fakultas}
       key={fakultas}
     >
-      {fakultas}
+      <h5>{fakultas}</h5>
     </ButtonFakultas>
   ));
 
@@ -73,14 +74,13 @@ const Gathertown: FC = () => {
         <div className='image-hmj'>
           <img
             alt={'logo ' + hmj.namaHMJ}
-            src='../../images/ukj.png'
+            src={dummyImage}
             width='185'
             height='185'
           />
         </div>
         <div className='info-hmj'>
-          <h5>{hmj.namaHMJ}</h5>
-          <p>{hmj.jurusan}</p>
+          <h2>{hmj.namaHMJ}</h2>
           <div className='link-hmj'>
             <a href={hmj.link} target='_blank'>
               {hmj.link}
@@ -132,7 +132,7 @@ const Gathertown: FC = () => {
           semper.
         </p>
       </div>
-      <div>{listButtonState}</div>
+      <div className='list-button'>{listButtonState}</div>
       <ul className='list-hmj'>{listDisplayedHMJ}</ul>
       <br />
     </Fragment>

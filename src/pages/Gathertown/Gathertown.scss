@@ -14,11 +14,23 @@
   }
 }
 
+.list-button {
+  margin-left: 2em;
+  margin-right: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
 .button {
   border: none;
   outline: none;
   background-color: grey;
   cursor: pointer;
+  width: fit-content;
+  padding: 1.5% 3.5%;
+  margin: 0.75vh;
+  border-radius: 30px;
+  display: inline-block;
 
   &:hover {
     background-color: #666;
@@ -42,20 +54,26 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   background-color: grey;
-}
 
-.info-hmj {
-  width: 85%;
-  text-align: start;
-  margin: 0em 0em 1em 1em;
-}
+  .image-hmj {
+    border-radius: 10px;
+  }
 
-.link-hmj {
-  padding: 0.5em;
-  background-color: white;
-  border-radius: 8px;
-}
+  .info-hmj {
+    position: relative;
+    width: 85%;
+    text-align: start;
+    margin: 1em 1em 1em 1em;
 
-.image-hmj {
-  border-radius: 10px;
+    h2 {
+      margin-bottom: 1.5em;
+    }
+
+    .link-hmj {
+      margin: 0;
+      padding: 0.5em;
+      background-color: white;
+      border-radius: 8px;
+    }
+  }
 }

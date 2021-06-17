@@ -1,9 +1,10 @@
 import './ComingSoon.scss';
+import { ASSET_URL } from '../../api';
 
 const ComingSoon = () => {
   return (
     <div className="App-header">
-      <img src={'https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/logo/Logo-sementara-400x400.jpg'} className="App-logo" alt="logo" />
+      <img src={`${ASSET_URL}/assets/logo/min.png`} className="App-logo" alt="logo" />
       <h1>
         Wisjul 2021 is coming!
       </h1>

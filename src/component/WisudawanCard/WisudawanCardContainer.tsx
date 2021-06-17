@@ -2,6 +2,19 @@ import React from 'react';
 import WisudawanCard from './WisudawanCard';
 import './WisudawanCardContainer.scss';
 
+interface ListUnit {
+  logoUnit: string,
+  namaUnit: string
+}
+
+interface Data {
+  name: string,
+  nim: string,
+  jurusan: string,
+  judulTA: string,
+  listUnit: ListUnit[]
+}
+
 const WisudawanCardContainer = () => {
   // interface ListUnit {
   //   logoUnit: string,

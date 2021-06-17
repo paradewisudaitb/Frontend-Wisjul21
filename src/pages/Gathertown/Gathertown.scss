@@ -15,32 +15,24 @@
 }
 
 .list-button {
-  margin-left: 2em;
-  margin-right: 2em;
-  padding-left: 2em;
-  padding-right: 2em;
-}
+  margin-top: 3em;
+  margin-bottom: 3em;
 
-.button {
-  border: none;
-  outline: none;
-  background-color: grey;
-  cursor: pointer;
-  width: fit-content;
-  padding: 1.5% 3.5%;
-  margin: 0.75vh;
-  border-radius: 30px;
-  display: inline-block;
+  .button {
+    border: none;
+    outline: none;
+    background-color: grey;
+    cursor: pointer;
+    padding: 1.5% 3.5%;
+    margin: 0.75em;
+    border-radius: 30px;
+    display: inline-block;
 
-  &:hover {
-    background-color: #666;
-    color: white;
+    &:hover {
+      background-color: #666;
+      color: white;
+    }
   }
-}
-
-.active.button {
-  background-color: #666;
-  color: white;
 }
 
 .list-hmj li {
@@ -54,13 +46,13 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   background-color: grey;
+  width: auto;
 
   .image-hmj {
     border-radius: 10px;
   }
 
   .info-hmj {
-    position: relative;
     width: 85%;
     text-align: start;
     margin: 1em 1em 1em 1em;

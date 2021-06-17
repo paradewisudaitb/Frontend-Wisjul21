@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  margin-top: 150px;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-image: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/main.jpg");
+  background-size: cover;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+h1, h2, span {
+  color: #FC690A;
+}

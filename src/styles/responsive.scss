@@ -1,13 +1,47 @@
-$breakpoint-small: 720px;
-$breakpoint-large: 721px;
-$breakpoint-giant: 1081px;
+// https://css-tricks.com/snippets/sass/mixin-manage-breakpoints/
+// Dengan perubahan secukupnya
 
-@mixin breakpoint($type) {
-  @if $type == 'giant' {
-    @media (min-width: $breakpoint-giant) { @content ; }
-  } @else if $type == 'large' {
-    @media (min-width: $breakpoint-large) { @content ; }
-  } @else if $type == 'phone' {
-    @media (min-width: $breakpoint-small) { @content ; }
+$breakpoints: (
+  'phone': 720px, // HP
+  'tabblt': 721px, // tablet
+  'desktop': 961px, // desktop
+  'large': 1201px, // big screen
+) !default;
+
+/// Mixin to manage responsive breakpoints
+/// @author Hugo Giraudel
+/// @author Josep Marcello
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @if $breakpoint == 'phone' {
+      @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+    @else if $breakpoint == 'tablet' {
+      @media (min-width: map-get($breakpoints, 'tablet')) and (max-width: map-get($breakpoints, 'desktop') - 1px) {
+        @content;
+      }
+    }
+    @else if $breakpoint == 'desktop' {
+      @media (min-width: map-get($breakpoints, 'desktop')) and (max-width: map-get($breakpoints, 'large') - 1px) {
+        @content;
+      }
+    }
+    @else if $breakpoint == 'large' {
+      @media (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }

@@ -1,0 +1,13 @@
+$breakpoint-small: 720px;
+$breakpoint-large: 721px;
+$breakpoint-giant: 1081px;
+
+@mixin breakpoint($type) {
+  @if $type == 'giant' {
+    @media (min-width: $breakpoint-giant) { @content ; }
+  } @else if $type == 'large' {
+    @media (min-width: $breakpoint-large) { @content ; }
+  } @else if $type == 'phone' {
+    @media (min-width: $breakpoint-small) { @content ; }
+  }
+}

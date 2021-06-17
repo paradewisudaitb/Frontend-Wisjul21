@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import HomePage from './pages/HomePage';
 import { Route } from 'wouter';
 import Form from './pages/Form/Form';

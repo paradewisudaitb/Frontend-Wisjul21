@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import Event from '../component/EventTable';
+import Event from '../../component/EventTable/EventTable';
 import './EventPage.scss';
-import Logo from '../images/logo/logo-dark-2020.png';
-import Cloud from '../images/bg/cloud.png';
 import {
   EVENTS,
   isPastEvent,
@@ -10,8 +8,8 @@ import {
   getUpcomingText,
 } from './EventContent';
 
-import { Navbar } from '../component/Navbar';
-import { Footer } from '../component/Footer';
+import { Navbar } from '../../component/Navbar';
+import { Footer } from '../../component/Footer';
 
 const EventPage = () => {
   return (

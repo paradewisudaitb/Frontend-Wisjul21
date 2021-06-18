@@ -149,7 +149,7 @@ export default function Form() {
     }
   }, [watchHimpunan]);
 
-  const warnMany = '* Jika ada lebih dari 1 prestasi, karya, kontribusi, atau lembaga non-HMJ, pisahkan dengan koma.\nJika tidak ada tuliskan \'-\'.';
+  const warnMany = '* Jika ada lebih dari 1 prestasi, karya, kontribusi, atau lembaga non-HMJ, pisahkan dengan baris baru (enter).\nJika tidak ada tuliskan \'-\'.';
 
   return (
     <div className="form-page">

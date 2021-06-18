@@ -1,4 +1,4 @@
-export default interface IDataWisudawan {
+interface IDataWisudawan {
   nim: string;
   namaJurusan: string;
   namaHimpunan: string;
@@ -17,3 +17,5 @@ export default interface IDataWisudawan {
   lembaga?: string[];
   prestasi?: string[];
 }
+
+export default IDataWisudawan;

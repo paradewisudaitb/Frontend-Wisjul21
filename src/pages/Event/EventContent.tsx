@@ -1,4 +1,6 @@
-export const EVENTS = [
+import IEvent from '../../interfaces/IEvent';
+
+export const EVENTS: IEvent[] = [
   {
     date: new Date('2021-02-28'),
     title: 'WISDOM #1',
@@ -38,27 +40,27 @@ export const EVENTS = [
   },
 ];
 
-export const isPastEvent = (event: { date: any; }) => {
+export const isPastEvent = (event: { date: Date; }) => {
   return calculateDays(event.date) < 0;
 };
 
-export const findUpcomingEvent = (events: any[]) => {
+export const findUpcomingEvent = (events: IEvent[]) => {
   const futureEvents = events.filter(({ date }) => calculateDays(date) >= 0);
   return futureEvents[0];
 };
 
-export const calculateDays = (date: { getTime: () => number; }) => {
+export const calculateDays = (date: Date): number => {
   const today = new Date();
   const timeDifference = date.getTime() - today.getTime();
   return Math.round(timeDifference / (1000 * 60 * 60 * 24));
 };
 
-export const getUpcomingText = (date: any) => {
+export const getUpcomingText = (date: Date) => {
   const days = calculateDays(date);
   let text = '';
-  if (days === 0) {
+  if (days == 0) {
     text = 'Hari ini';
-  } else if (days === 1) {
+  } else if (days == 1) {
     text = 'Besok';
   } else {
     text = `${days + 1} hari lagi`;

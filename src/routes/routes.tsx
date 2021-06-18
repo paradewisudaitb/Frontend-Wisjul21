@@ -1,7 +1,7 @@
 
 import { DummyPage } from '../pages/DummyPage';
 import HomePage from '../pages/HomePage';
-import EventPage from '../pages/EventPage';
+import EventPage from '../pages/Event/EventPage';
 
 export type route = {
     label: string

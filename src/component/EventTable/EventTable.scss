@@ -22,18 +22,18 @@ table {
     font-style: normal;
     font-weight: normal;
     line-height: 22px;
-    text-shadow: 1px 1px 0px $black;
+    text-shadow: 1px 1px 0px black;
     color: #fdfddf;
   }
 
   .keterangan {
     padding-left: 20px;
-    text-shadow: 1px 1px 0px $black;
+    text-shadow: 1px 1px 0px black;
     text-align: left;
   }
 
   .line {
-    border-left: 1px solid $yellow;
+    border-left: 1px solid yellow;
     height: 50px;
   }
 
@@ -45,15 +45,15 @@ table {
     }
   }
   &-coming-soon {
-    background: $darkBlue;
+    background: darkblue;
     .jam,
     .keterangan {
-      color: $yellow;
+      color: yellow;
       font-weight: bold;
     }
   }
   &-main-event {
-    outline: 2px solid $blueTransparent;
+    outline: 2px solid blue;
   }
 }
 
@@ -80,24 +80,24 @@ table {
 //    background-color: rgba(21, 51, 59, 0.644) !important;
 //  }
 
-@media only screen and (max-width: $breakpoint) {
-  .ukurantabel {
-    position: relative;
-    width: 300px;
-  }
-  .rundown {
-    width: 400px;
+// @media only screen and (max-width: $breakpoint) {
+//   .ukurantabel {
+//     position: relative;
+//     width: 300px;
+//   }
+//   .rundown {
+//     width: 400px;
 
-    .jam {
-      width: 120px;
-      padding-left: 15px;
-    }
-    .keterangan {
-      padding: 10px 15px;
-    }
-    .line {
-      width: 1%;
-      border-left: 1px solid $yellow;
-    }
-  }
-}
+//     .jam {
+//       width: 120px;
+//       padding-left: 15px;
+//     }
+//     .keterangan {
+//       padding: 10px 15px;
+//     }
+//     .line {
+//       width: 1%;
+//       border-left: 1px solid yellow;
+//     }
+//   }
+// }

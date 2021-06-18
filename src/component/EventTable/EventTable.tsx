@@ -1,29 +1,31 @@
 import React from 'react';
+import IEventTable from '../../interfaces/IEventTable';
+import { getUpcomingText } from '../../pages/Event/EventContent';
 import './EventTable.scss';
 
-const DAFTAR_BULAN:any = {
-  0: 'Januari',
-  1: 'Februari',
-  2: 'Maret',
-  3: 'April',
+const DAFTAR_BULAN: any = {
+  0: 'Mei',
+  1: 'Juni',
+  2: 'Juli',
+  3: 'Agustus',
   4: 'Mei',
   5: 'Juni',
-  // Cuma sampe sini soalnya harusnya acaranya ga bakal selama itu
+  6: 'Juli',
+  7: 'Agustus',
 };
 
-const dateToText:any = (date: { getMonth: () => string | number; getDate: () => any; }) => {
+const dateToText = (date: Date): string => {
   const month = DAFTAR_BULAN[date.getMonth()];
   return `${date.getDate()} ${month}`;
 };
 
-const Event:any = ({
+const Event: any = ({
   isPastEvent,
   isComingSoon,
   isMainEvent,
   date,
   title,
-  getUpcomingText,
-}) => {
+}: IEventTable) => {
   return (
     <tr
       className={`rundown${isComingSoon ? ' rundown-coming-soon' : ''}${

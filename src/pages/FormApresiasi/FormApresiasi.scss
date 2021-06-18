@@ -1,0 +1,96 @@
+.form-page {
+  // background-image: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/bg/Background%20Web%20revisi-01-compressed.png");
+  background-color: #adadad5b;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-btn {
+  border: none;
+  margin-top: 30px;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  color: #f4f4f4;
+  background-color: #3ad33ab6;
+  &:hover {
+    background-color: #4aa96c;
+    color: #ffffff;
+  }
+}
+
+.form-container {
+  max-width: 50%;
+  min-height: 10rem;
+}
+
+.form-content {
+  margin: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.form {
+  color: #f4f4f4;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 50px;
+  margin: 5px;
+  background-color: #00000085;
+}
+
+.form-error {
+  color: #d84e4e;
+}
+
+.form-input {
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  outline: none;
+}
+
+.weblink-input {
+  margin-top: 1.3vh;
+  margin-bottom: 1.3vh;
+  border: none;
+  outline: none;
+}
+
+.form-textarea {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+}
+
+.form-success {
+  background-color: #4aa96c;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 15px;
+  visibility: hidden;
+}
+
+.form-select {
+  padding: 5px;
+  margin: 5px;
+}
+
+.form-title {
+  text-align: center;
+}
+
+.form-year {
+  option {
+    text-align-last: center;
+  }
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}

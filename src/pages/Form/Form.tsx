@@ -10,7 +10,7 @@ import { API_URL, ASSET_URL } from '../../api';
 const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/gif', 'image/png'];
 const FILE_SIZE = 5E6; // 5 MB
 
-export const validateImageType = (value: string): boolean => {
+const validateImageType = (value: string): boolean => {
   if(value) {
     const type = value.match(/[^:]\w+\/[\w-+\d.]+(?=;|,)/);
     if (!type)
@@ -52,11 +52,11 @@ export default function Form() {
   });
 
   const submitForm = async (data: any) => {
-    
-    window.alert('Data dan foto sedang diupload, harap menunggu sampai pesan berhasil upload keluar.');
+    window.alert('Data dan foto sedang diupload, harap menunggu.');
     const linkFoto = ASSET_URL + '/fotoWisudawan/';
     const status = document.querySelector('.form-status');
     const tombol = document.querySelector('.form-btn');
+    const errMsg = 'Ada kesalahan pada data. Jika data sudah benar dan masih gagal atau ingin melakukan perubahan data, harap hubungi panitia.';
     // isi data
     const req: {[k: string]: any} = {
       nim: data.nim,
@@ -115,8 +115,6 @@ export default function Form() {
       .then(res => res.json())
       .then(res => {
         req.linkPasFoto = `${linkFoto}/${res.filename}`;
-        if (status)
-          status.setAttribute('style', 'visibility: visible;');
       })
       .catch(err => {
         succ = false;
@@ -269,74 +267,64 @@ export default function Form() {
 
             </Row>
             <Row>
-              <input placeholder="Fun Fact" type="text" className="form-input form-field" required {...register('funfact')}/>
+              <input placeholder="Fun Fact" type="text" className="form-input" required {...register('funfact')}/>
               {errors.funfact && <p className="form-error"> {errors.funfact.message}</p>}
             </Row>
             <Row>
-              <textarea placeholder="Tips sukses ala wisudawan" className="form-textarea form-field" required {...register('tips')}></textarea>
+              <textarea placeholder="Tips sukses ala wisudawan" className="form-textarea" required {...register('tips')}></textarea>
               {errors.tips && <p className="form-error"> {errors.tips.message}</p>}
             </Row>
             <Row>
-              <textarea placeholder="Kontribusi di HMJ*" className="form-textarea form-field" {...register('kontribusi')}>
+              <textarea placeholder="Kontribusi di HMJ (Jika ada lebih dari 1, pisahkan dengan koma). Jika tidak ada tuliskan '-'." className="form-textarea" {...register('kontribusi')}>
               </textarea>
               {errors.kontribusi && <p className="form-error"> {errors.kontribusi.message}</p>}
             </Row>
             <Row>
-              <textarea placeholder="Prestasi*" className="form-textarea form-field" {...register('prestasi')}>
+              <textarea placeholder="Prestasi (Jika ada lebih dari 1, pisahkan dengan koma). Jika tidak ada tuliskan '-'." className="form-textarea" {...register('prestasi')}>
               </textarea>
               {errors.prestasi && <p className="form-error"> {errors.prestasi.message}</p>}
             </Row>
             <Row>
-              <textarea placeholder="Karya*" className="form-textarea form-field" {...register('karya')}>
+              <textarea placeholder="Karya (Jika ada lebih dari 1, pisahkann dengan koma). Jika tidak ada tuliskan '-'." className="form-input" {...register('karya')}>
               </textarea>
-              {errors.karya && <p className="form-error form-field"> {errors.karya.message}</p>}
+              {errors.karya && <p className="form-error"> {errors.karya.message}</p>}
             </Row>
             <Row>
-              <input placeholder="Email" type="email" className="form-input form-field" required {...register('email')}/>
+              <input placeholder="Email" type="email" className="form-input" required {...register('email')}/>
               {errors.email && <p className="form-error"> {errors.email.message}</p>}
             </Row>
             <Row>
-              <textarea placeholder="Keterlibatan pada lembaga non-HMJ*" className="form-textarea form-field" {...register('nonhmj')}>
+              <textarea placeholder="Keterlibatan pada lembaga non-HMJ (Jika ada lebih dari 1, pisahkan dengan koma). Jika tidak ada tuliskan '-'." className="form-textarea" {...register('nonhmj')}>
               </textarea>
               {errors.nonhmj && <p className="form-error"> {errors.nonhmj.message}</p>}
             </Row>
             <Row>
-              <input placeholder="Kota Asal" type="text" className="form-input form-field" required {...register('kota')}/>
+              <input placeholder="Kota Asal" type="text" className="form-input" required {...register('kota')}/>
               {errors.kota && <p className="form-error"> {errors.kota.message}</p>}
             </Row>
             <Row>
               <label htmlFor="tangallahir">Tanggal lahir:</label>
-              <input placeholder="Tanggal Lahir" type="date" className="form-input form-field" required {...register('tanggallahir')}/>
+              <input placeholder="Tanggal Lahir" type="date" className="form-input" required {...register('tanggallahir')}/>
             </Row>
             <Row>
-              <select className="form-year form-input form-field" required {...register('angkatan')}>
-                <option className="form-select-option" disabled selected> Angkatan </option>
-                <option className="form-select-option" value="2017"> 2017 </option>
-                <option className="form-select-option" value="2016"> 2016 </option>
-                <option className="form-select-option" value="2015"> 2015 </option>
-                <option className="form-select-option" value="2014"> 2014 </option>
+              <select className="form-year form-input" required {...register('angkatan')}>
+                <option disabled selected> Angkatan </option>
+                <option value="2017"> 2017 </option>
+                <option value="2016"> 2016 </option>
+                <option value="2015"> 2015 </option>
+                <option value="2014"> 2014 </option>
               </select>
               {errors.angkatan && <p className="form-error"> {errors.angkatan.message}</p>}
             </Row>
             <Row>
-              <span className="form-warn">
-                {warnMany}
-              </span>
-            </Row>
-            <Row>
-              <label htmlFor="foto">Foto wisudawan (maksimal 5MB):</label>
+              <label htmlFor="foto">Foto wisudawan (maksimal 5MB)</label>
               <input placeholder="foto" type="file" className="form-input" required {...register('foto')}/>
               {errors.foto && <p className="form-error"> {errors.foto.message}</p>}
             </Row>
           </div>
-          <Row>
-            <div className="d-flex justify-content-center">
-              <div className="form-status"> Data sedang ditambahkan... </div>
-            </div>
-            <div className="d-flex justify-content-end">
-              <button className="form-btn" type="submit">Submit</button>
-            </div>
-          </Row>
+          <div className="d-flex justify-content-end">
+            <button className="form-btn" type="submit">Submit</button>
+          </div>
           <div className="d-flex justify-content-center">
             Contact person:
             <ul>

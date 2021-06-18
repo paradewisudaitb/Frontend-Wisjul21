@@ -1,0 +1,29 @@
+@import '../../colorpalette.scss';
+
+.brand {
+    color: $navfootfont;
+    
+}
+
+.brand:hover {
+    color: white;
+    transition: 0.3s;
+}
+
+.navbar {
+    background-color: $teal;
+    min-width: 100%;
+}
+
+.nav-item {
+    color: $navfootfont !important;
+}
+
+.nav-item:hover {
+    color: white !important;
+    transition: 0.3s;
+}
+
+.btn-check:focus+.btn, .btn:focus {
+    box-shadow: none !important;
+}

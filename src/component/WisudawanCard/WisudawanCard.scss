@@ -5,6 +5,15 @@
   flex-direction: column;
   text-align: center;
   width: 20rem;
+  height: 27rem;
+
+  h1 {
+    margin-bottom: 0rem;
+  }
+
+  h3 {
+    margin-top: 0.3rem;
+  }
 
   .image {
     display: flex;
@@ -15,28 +24,29 @@
       max-width: 50%;
     }
   }
+  
+  .unit-container {
+    .unit-list {
+      list-style: none;
+    }
+
+    .unit-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 0.8rem;
+
+      .unit-logo {
+        width: 2.3rem;
+        height: auto;
+        margin-right: 1rem;
+      }
+
+      p {
+        margin-bottom: 0rem;
+      }
+    }
+  }
 }
 
-.card-container h1 {
-  margin-bottom: 0rem;
-}
 
-.card-container h3 {
-  margin-top: 0.3rem;
-}
-
-.unit-list {
-  list-style: none;
-}
-
-.unit-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.unit-logo {
-  width: 10%;
-  height: auto;
-  padding-right: 1rem;
-}

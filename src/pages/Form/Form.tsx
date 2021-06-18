@@ -5,7 +5,9 @@ import * as yup from 'yup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Form.scss';
 import { Row, Col } from 'react-bootstrap';
-import { API_URL, ASSET_URL } from '../../api';
+import { API_URL } from '../../api';
+import IDataWisudawan from '../../interfaces/IDataWisudawan';
+import * as WC from '../../controller/wisudawan';
 
 const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/gif', 'image/png'];
 const FILE_SIZE = 5E6; // 5 MB
@@ -53,14 +55,44 @@ export default function Form() {
 
   const submitForm = async (data: any) => {
     window.alert('Data dan foto sedang diupload, harap menunggu sampai pesan berhasil upload keluar.');
-    const linkFoto = ASSET_URL + '/fotoWisudawan/';
     const status = document.querySelector('.form-status');
     const tombol = document.querySelector('.form-btn');
     const errMsg = 'Ada kesalahan pada data. Jika data sudah benar dan masih gagal atau ingin melakukan perubahan data, harap hubungi panitia.';
+
+    if (tombol) {
+      tombol.setAttribute('style', 'visibility: hidden;');
+    }
+    if (status) {
+      status.setAttribute('style', 'visibility: visible;');
+    }
+
+    try {
+      await WC.getByNIM(data.nim);
+      window.alert(`NIM ${data.nim} sudah terdaftar di database.`);
+      if (tombol)
+        tombol.setAttribute('style', 'visibility: visible;');
+      if (status) {
+        status.innerHTML = `NIM ${data.nim} sudah terdaftar di database.`;
+        status.setAttribute('style', 'visibility: visible; background-color: red;');
+        status.setAttribute('visibility', 'visibility: visible;');
+      }
+      return;
+    } catch (_) {
+      // ga perlu ngapa-ngapain
+    }
+
+    const linkFoto = await WC.uploaderFoto(data.foto[0]).catch(_ => {
+      window.alert('Gagal mengupload foto.');
+      if (tombol)
+        tombol.setAttribute('style', 'visibility: hidden;');
+    });
+    if (!linkFoto) return;
+
     // isi data
-    const req: {[k: string]: any} = {
+    const req: IDataWisudawan = {
       nim: data.nim,
-      jurusan: data.jurusan,
+      namaHimpunan: data.himpunan,
+      namaJurusan: data.jurusan,
       namaLengkap: data.namalengkap,
       namaPanggilan: data.namapanggilan,
       judulTA: data.judulta,
@@ -70,91 +102,30 @@ export default function Form() {
       kotaAsal: data.kota,
       tanggalLahir: data.tanggallahir,
       angkatan: data.angkatan,
-      linkPasFoto: linkFoto,
+      pasfoto: linkFoto,
+      lembaga: data.nonhmj.split('\n').map((e: string) => e.trim()),
+      kontribusi: data.kontribusi.split('\n').map((e: string) => e.trim()),
+      prestasi: data.prestasi.split('\n').map((e: string) => e.trim()),
+      karya: data.karya.split('\n').map((e: string) => e.trim()),
     };
 
-    if (tombol) {
-      tombol.setAttribute('style', 'visibility: hidden;');
-    }
-
-    if (data.karya && data.karya != '') {
-      req.karya = data.karya;
-    }
-    if (data.prestasi && data.prestasi != '') {
-      req.prestasi = data.prestasi;
-    }
-    if (data.kontribusi && data.kontribusi != '') {
-      req.kontribusi = data.kontribusi;
-    }
-    if (data.nonhmj && data.nonhmj != '') {
-      req.lembaga = data.nonhmj;
-    }
-
-    // cek NIM udah ada di DB atau belum
-    await fetch(`${API_URL}/wisudawan/get?nim=${req.nim}`)
-      .then(res => res.json())
+    WC.creator(req)
       .then(res => {
-        if (res.length > 2 ) {
-          window.alert(`NIM ${req.nim} sudah terdaftar di database.`);
-          return;
-        }
-      })
-      .catch(err =>{ /* do nothing */ });
-
-    // upload gambar
-    const fd = new FormData();
-    fd.append('foto', data.foto[0]);
-    let succ = true;
-    await fetch(`${API_URL}/form/uploadFoto`, {
-      method: 'POST',
-      headers: {
-        'X-Content-Type-Options': 'nosniff',
-      },
-      body: fd,
-    })
-      .then(res => res.json())
-      .then(res => {
-        req.linkPasFoto = `${linkFoto}/${res.filename}`;
-        if (status)
-          status.setAttribute('style', 'visibility: visible;');
-      })
-      .catch(err => {
-        succ = false;
-        console.error(err);
-        window.alert(errMsg);
-        if (status) {
-          status.setAttribute('style', 'visibility: visible; background-color: red;');
-          status.innerHTML = 'Gagal mengupload foto.';
-        }
-      });
-
-    if (!succ) {
-      return;
-    }
-
-    // bikin HTTP request ke backend
-    fetch(`${API_URL}/form/create`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Content-Type-Options': 'nosniff',
-      },
-      body: JSON.stringify(req),
-    })
-    // Kalau berhasil masuk ke sini
-      .then(_ => {
-        window.alert('Penambahan data berhasil.');
+        window.alert(`Penambahan data wisudawan ${res.nim} (${res.name}) berhasil.`);
         if (status) {
           status?.setAttribute('style', 'visibility: visible; background-color: #4aa96c;');
           status.innerHTML = 'Data berhasil disubmit';
         }
       })
       .catch(err => {
-        console.error(err);
         window.alert(errMsg);
         if (status) {
           status.setAttribute('style', 'visibility: visible; background-color: red;');
           status.innerHTML = 'Terjadi kesalahan ketika menambahkan data. Harap segera hubungi panitia.';
+        }
+
+        if (tombol) {
+          tombol.setAttribute('style', 'visibility: visible;');
         }
       });
   };

@@ -1,8 +1,7 @@
-@import '../../colorpalette.scss';
+@import '../../App.scss';
 
 .brand {
     color: $navfootfont;
-    
 }
 
 .brand:hover {
@@ -11,7 +10,7 @@
 }
 
 .navbar {
-    background-color: $teal;
+    background-color: $blue-darker;
     min-width: 100%;
 }
 

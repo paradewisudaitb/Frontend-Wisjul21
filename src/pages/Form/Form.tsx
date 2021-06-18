@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import './Form.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Form.scss';
 import { Row, Col } from 'react-bootstrap';
 import { API_URL, ASSET_URL } from '../../api';
 
@@ -52,9 +52,11 @@ export default function Form() {
   });
 
   const submitForm = async (data: any) => {
+    
     window.alert('Data dan foto sedang diupload, harap menunggu sampai pesan berhasil upload keluar.');
     const linkFoto = ASSET_URL + '/fotoWisudawan/';
     const status = document.querySelector('.form-status');
+    const tombol = document.querySelector('.form-btn');
     // isi data
     const req: {[k: string]: any} = {
       nim: data.nim,
@@ -71,6 +73,10 @@ export default function Form() {
       linkPasFoto: linkFoto,
     };
 
+    if (tombol) {
+      tombol.setAttribute('style', 'visibility: hidden;');
+    }
+
     if (data.karya && data.karya != '') {
       req.karya = data.karya;
     }
@@ -83,6 +89,17 @@ export default function Form() {
     if (data.nonhmj && data.nonhmj != '') {
       req.lembaga = data.nonhmj;
     }
+
+    // cek NIM udah ada di DB atau belum
+    await fetch(`${API_URL}/wisudawan/get?nim=${req.nim}`)
+      .then(res => res.json())
+      .then(res => {
+        if (res.length > 2 ) {
+          window.alert(`NIM ${req.nim} sudah terdaftar di database.`);
+          return;
+        }
+      })
+      .catch(err =>{ /* do nothing */ });
 
     // upload gambar
     const fd = new FormData();
@@ -124,7 +141,7 @@ export default function Form() {
       },
       body: JSON.stringify(req),
     })
-      .then(res => res.json())
+    // Kalau berhasil masuk ke sini
       .then(_ => {
         window.alert('Penambahan data berhasil.');
         if (status) {
@@ -176,7 +193,7 @@ export default function Form() {
               <label htmlFor="jurusan">Pilihan jurusan mungkin butuh waktu untuk loading</label>
             </Row>
             <Row>
-              <Col className="nopadding">
+              <Col className="form-nopadding">
                 <div className="d-flex justify-content-between">
                   <select className="form-select form-field" required {...register('himpunan')}>
                     <option className="form-select-option" disabled selected> Himpunan </option>

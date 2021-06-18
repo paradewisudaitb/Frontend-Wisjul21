@@ -1,5 +1,5 @@
-@import '../../styles/responsive.scss';
-@import '../../styles/colorpalette.scss';
+@import "../../styles/responsive.scss";
+@import "../../styles/colorpalette.scss";
 
 $form-width: 50vw;
 
@@ -32,6 +32,7 @@ $form-width: 50vw;
 }
 
 .form-btn {
+  visibility: visible;
   border: none;
   margin-top: 30px;
   width: 100px;
@@ -100,7 +101,7 @@ $form-width: 50vw;
 
 .form-title {
   text-align: center;
-  color: #FC690A;
+  color: #fc690a;
   font-size: 48px;
 }
 

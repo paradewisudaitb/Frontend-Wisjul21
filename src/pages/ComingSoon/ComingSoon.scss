@@ -1,14 +1,17 @@
-.App {
+@import '../../App.scss';
+
+.CS {
   text-align: center;
 }
 
-.App-logo {
-  margin-top: 150px;
-  height: 40vmin;
+.CS-logo {
+  width: auto;
+  height: 40vh;
   pointer-events: none;
+  background-color: transparent;
 }
 
-.App-header {
+.CS-header {
   background-image: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/main.jpg");
   background-size: cover;
   background-color: #282c34;
@@ -21,10 +24,11 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.CS-links {
+  background-color: transparent;
 }
 
-h1, h2, span {
-  color: #FC690A;
+.CS-link {
+  background-color: transparent;
+  color: $yellow-lighter;
 }

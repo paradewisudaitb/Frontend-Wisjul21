@@ -1,4 +1,4 @@
-@import '../../colorpalette.scss';
+@import '../../App.scss';
 
 .brand {
     color: $navfootfont;
@@ -14,7 +14,8 @@
 $navbarheight: 4rem;
 
 .navbar {
-    background-color: $teal;
+    // background-color: $teal;
+    background-color: $blue-darker;
     width: 100%;
     height: $navbarheight;
     z-index: 3;
@@ -76,7 +77,7 @@ $drops-top: -12rem;
     .toggle {
         width: 28px;
         height: 4px;
-        background-color: $cadetblue;
+        background-color: $blue-medium;
         cursor: pointer;
         box-shadow: 2px 2px black;
         transition: 0.6s;
@@ -86,7 +87,7 @@ $drops-top: -12rem;
             content: '';
             width: 28px;
             height: 4px;
-            background-color: $cadetblue;
+            background-color: $blue-medium;
             display: block;
             position: absolute;
             transition: all 0.6s;
@@ -126,7 +127,7 @@ $drops-top: -12rem;
     }
 
     .drops {
-        background-color: $midnightblue;
+        background-color: $blue-medium;
         flex-direction: column !important;
         align-items: flex-start;
         position: absolute;

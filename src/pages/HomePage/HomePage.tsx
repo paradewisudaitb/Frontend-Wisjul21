@@ -66,7 +66,7 @@ const HomePage = () => {
         </div>
 
         {/* Buttons */}
-        <h1>Wisuda Juli 2021</h1>
+        <h1 className="text-center">Wisuda Juli 2021</h1>
         <div className='btn-container'>
           <button className='Arrow' onClick={prev}>-</button>
           <div className='btns'>

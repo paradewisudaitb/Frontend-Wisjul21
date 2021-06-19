@@ -98,18 +98,24 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
   .logotagline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     z-index: 5;
+
     .logo {
+      display: flex;
       height: 300px;
       width: 300px;
       z-index: 100;
     }
     .tagline {
       background-color: rgba($color: #FFFFFF, $alpha: 0.2);
-      margin-left: auto;
-      margin-right: auto;
       width: 25%;
+      text-align: center;
+      font-style: italic;
     }
   }
   .youtube {

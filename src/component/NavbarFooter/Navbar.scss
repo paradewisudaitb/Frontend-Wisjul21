@@ -1,9 +1,21 @@
 @import '../../App.scss';
 
 .brand {
-    color: $navfootfont;
     text-decoration: none;
-    flex-direction: row;
+}
+
+#brand-logo {
+    height: 4rem;
+    width: 4rem;
+    float: left;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+#brand-text {
+    margin-top: auto;
+    margin-bottom: auto;
+    letter-spacing: -1px;
 }
 
 .brand:hover {
@@ -11,14 +23,16 @@
     transition: 0.3s;
 }
 
-$navbarheight: 4rem;
+$navbarheight: 4.4rem;
 
 .navbar {
     // background-color: $teal;
-    background-color: $blue-darker;
+    background-color: $red-darker;
     width: 100%;
     height: $navbarheight;
     z-index: 3;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 .navbar-nav {
@@ -30,7 +44,7 @@ $drops-top: -12rem;
 .nav-item {
     float: left;
     display: block;
-    color: $navfootfont !important;
+    color: $red-lighter !important;
 }
 
 .nav-item:hover {
@@ -77,7 +91,7 @@ $drops-top: -12rem;
     .toggle {
         width: 28px;
         height: 4px;
-        background-color: $blue-medium;
+        background-color: $red-medium;
         cursor: pointer;
         box-shadow: 2px 2px black;
         transition: 0.6s;
@@ -87,7 +101,7 @@ $drops-top: -12rem;
             content: '';
             width: 28px;
             height: 4px;
-            background-color: $blue-medium;
+            background-color: $red-medium;
             display: block;
             position: absolute;
             transition: all 0.6s;
@@ -95,13 +109,13 @@ $drops-top: -12rem;
         }
         
         &::before {
-            top: 1.3em;
+            top: 1.5em;
             transform-origin: center;
             transform: rotateZ(0deg);
         }
         
         &::after {
-            top: 2.4em;
+            top: 2.6em;
             transform-origin: center;
             transform: rotateZ(0deg);
         }
@@ -127,7 +141,7 @@ $drops-top: -12rem;
     }
 
     .drops {
-        background-color: $blue-medium;
+        background-color: $red-darker;
         flex-direction: column !important;
         align-items: flex-start;
         position: absolute;

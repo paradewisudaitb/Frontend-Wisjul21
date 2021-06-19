@@ -3,17 +3,16 @@
 .footer {
   width: 100%;
   margin-top: auto;
-  background: fixed $blue-darker;
+  background: fixed $red-darker;
   height: 10rem;
   overflow: auto;
-  color: $navfootfont;
 }
 
 .social-media-container {
   width: 3rem;
   height: 3rem;
   border-radius: 2rem;
-  background-color: $blue-lighter;
+  background-color: $red-medium;
   margin: 0.2rem;
 }
 

@@ -17,9 +17,9 @@ export const Footer = () => {
             <Brand />
           </div>
           <div className="d-flex flex-row">
-            <h5>Ini tema atau jargon</h5>
+            Ini tema atau jargon
           </div>
-          <div className="d-flex flex-row mt-4">
+          <div className="d-flex flex-row">
             © Perayaan Wisuda Juli ITB 2021
           </div>
         </div>

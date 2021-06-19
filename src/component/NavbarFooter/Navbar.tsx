@@ -7,9 +7,9 @@ import { NavbarLinks } from './NavbarLinks';
 
 export const Brand = () => {
   return (
-    <Link to='/' className="brand float-start my-auto">          
-      <h4 className="float-start me-2">LOGO</h4>
-      <h4 className="float-start">WISJUL 2021</h4>
+    <Link to='/' className="brand d-flex my-auto">          
+      <img src="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/logo/min.png" id="brand-logo" alt="Logo Wisjul" />
+      <h2 className="" id="brand-text">WISJUL 2021</h2>
     </Link>
   );
 };

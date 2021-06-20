@@ -4,7 +4,7 @@ import { Route } from 'wouter';
 import Form from './pages/Form/Form';
 
 
-function App() {
+function App(): JSX.Element {
   return (
     <div className="App">
       <Route path=''><HomePage /></Route>

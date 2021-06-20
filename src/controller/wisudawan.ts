@@ -3,7 +3,7 @@ import { ASSET_URL, API_URL } from '../api';
 
 type WisudawnIdty = {
   nim: string;
-  name: string;
+  nama: string;
 }
 
 /**
@@ -35,6 +35,7 @@ export const creator = async (data: IDataWisudawan): Promise<WisudawnIdty> => {
     kotaAsal: data.kotaAsal,
     tanggalLahir: data.tanggalLahir,
     angkatan: data.angkatan,
+    nonhim: data.nonhim,
     prestasi: data.prestasi?.join(',') || '-',
     karya: data.karya?.join(',') || '-',
     kontribusi: data.kontribusi?.join(',') || '-',
@@ -53,8 +54,7 @@ export const creator = async (data: IDataWisudawan): Promise<WisudawnIdty> => {
   const res: WisudawnIdty =
     await (
       await fetch(`${API_URL}/form/create`, req)
-        .catch(err => {
-          console.error(err);
+        .catch(() => {
           throw new Error('Gagal menambahkan data baru wisudawan.');
         })
     ).json();
@@ -85,8 +85,7 @@ export const uploaderFoto = async (foto: File): Promise<string> => {
   const res =
   await (
     await fetch(`${API_URL}/form/uploadFoto`, req)
-      .catch(err => {
-        console.error(err);
+      .catch(() => {
         throw new Error('Gagal mengupload foto.');
       })
   ).json();
@@ -105,8 +104,7 @@ export const getByNIM = async (nim: string): Promise<IDataWisudawan> => {
   const res: IDataWisudawan[] =
     await (
       await fetch(`${API_URL}/wisudawan/get?nim=${nim}`)
-        .catch(err => {
-          console.error(err);
+        .catch(() => {
           throw new Error('Gagal membuat koneksi ke backend atau terjadi kesalahan pada backend.');
         })
     ).json();

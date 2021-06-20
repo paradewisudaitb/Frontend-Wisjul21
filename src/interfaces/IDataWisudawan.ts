@@ -12,6 +12,7 @@ interface IDataWisudawan {
   judulTA: string;
   funFact: string;
   pasfoto: string;
+  nonhim: boolean;
   karya?: string[];
   kontribusi?: string[];
   lembaga?: string[];

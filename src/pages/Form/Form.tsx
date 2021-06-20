@@ -5,9 +5,9 @@ import * as yup from 'yup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Form.scss';
 import { Row, Col } from 'react-bootstrap';
-import { API_URL } from '../../api';
 import IDataWisudawan from '../../interfaces/IDataWisudawan';
 import * as WC from '../../controller/wisudawan';
+import * as JC from '../../controller/jurusan';
 
 const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/gif', 'image/png'];
 const FILE_SIZE = 5E6; // 5 MB
@@ -48,7 +48,7 @@ const schema = yup.object().shape({
 
 
 const errMsg = 'Ada kesalahan pada data. Jika data sudah benar dan masih gagal atau ingin melakukan perubahan data, harap hubungi panitia (LINE: otong1403, lexax).';
-export default function Form() {
+export default function Form(): JSX.Element {
   const { register, watch, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
@@ -57,12 +57,12 @@ export default function Form() {
     window.alert('Data dan foto sedang diupload, harap menunggu sampai pesan berhasil upload keluar.');
     const status = document.querySelector('.form-status');
     const tombol = document.querySelector('.form-btn');
-    const errMsg = 'Ada kesalahan pada data. Jika data sudah benar dan masih gagal atau ingin melakukan perubahan data, harap hubungi panitia.';
 
     if (tombol) {
       tombol.setAttribute('style', 'visibility: hidden;');
     }
     if (status) {
+      status.innerHTML = 'Data sedang ditambahkan...';
       status.setAttribute('style', 'visibility: visible;');
     }
 
@@ -81,7 +81,7 @@ export default function Form() {
       // ga perlu ngapa-ngapain
     }
 
-    const linkFoto = await WC.uploaderFoto(data.foto[0]).catch(_ => {
+    const linkFoto = await WC.uploaderFoto(data.foto[0]).catch(() => {
       window.alert('Gagal mengupload foto.');
       if (tombol)
         tombol.setAttribute('style', 'visibility: hidden;');
@@ -103,6 +103,7 @@ export default function Form() {
       tanggalLahir: data.tanggallahir,
       angkatan: data.angkatan,
       pasfoto: linkFoto,
+      nonhim: data.himpunan == 'nonhim',
       lembaga: data.nonhmj.split('\n').map((e: string) => e.trim()),
       kontribusi: data.kontribusi.split('\n').map((e: string) => e.trim()),
       prestasi: data.prestasi.split('\n').map((e: string) => e.trim()),
@@ -111,13 +112,13 @@ export default function Form() {
 
     WC.creator(req)
       .then(res => {
-        window.alert(`Penambahan data wisudawan ${res.nim} (${res.name}) berhasil.`);
+        window.alert(`Penambahan data wisudawan ${res.nim} (${res.nama}) berhasil.`);
         if (status) {
           status?.setAttribute('style', 'visibility: visible; background-color: #4aa96c;');
           status.innerHTML = 'Data berhasil disubmit';
         }
       })
-      .catch(err => {
+      .catch(() => {
         window.alert(errMsg);
         if (status) {
           status.setAttribute('style', 'visibility: visible; background-color: red;');
@@ -132,20 +133,26 @@ export default function Form() {
 
   const watchHimpunan = watch('himpunan');
 
-  const [jurusanOption, setJurusanOption] = useState([]);
+  const [jurusanOption, setJurusanOption] = useState<JSX.Element[]>([]);
 
   useEffect(() => {
     if (watchHimpunan) {
-      setJurusanOption([]);
-      fetch(`${API_URL}/jurusan/get?nama=${watchHimpunan}`, {
-        headers: {
-          'X-Content-Type-Options': 'nosniff',
-        }
-      })
-        .then(res => res.json())
-        .then(res => {
-          setJurusanOption(res.jurusan.map((e: string) => <option className="form-select-option" key={e} value={e}>{e}</option>));
-        });
+
+      if (watchHimpunan == 'nonhim') {
+        JC.get()
+          .then(res => {
+            setJurusanOption(res.map((e: string) =>
+              <option className="form-select-option" key={e} value={e}>{e}</option>
+            ));
+          });
+      } else {
+        JC.get(watchHimpunan)
+          .then(res => {
+            setJurusanOption(res.map((e: string) =>
+              <option className="form-select-option" key={e} value={e}>{e}</option>
+            ));
+          });
+      }
     }
   }, [watchHimpunan]);
 
@@ -168,6 +175,7 @@ export default function Form() {
                 <div className="d-flex justify-content-between">
                   <select className="form-select form-field" required {...register('himpunan')}>
                     <option className="form-select-option" disabled selected> Himpunan </option>
+                    <option className="form-select-option" value="nonhim"> Non-himpunan </option>
                     <option className="form-select-option" value="Himpunan Mahasiswa Fisika"> HIMAFI (Himpunan Mahasiswa Fisika) </option>
                     <option className="form-select-option" value="Himpunan Mahasiswa Mikrobiologi"> HIMAMIKRO 'ARCHAEA' (Himpunan Mahasiswa Mikrobiologi) </option>
                     <option className="form-select-option" value="Himpunan Mahasiswa Rekayasa Pertanian"> HIMAREKTA 'AGRAPANA' (Himpunan Mahasiswa Rekayasa Pertanian) </option>
@@ -214,7 +222,7 @@ export default function Form() {
                     <option className="form-select-option" value="Visual Art Student Aggregate"> VASA (Visual Art Student Aggregate) </option>
                   </select>
                   <select className="form-select form-field" id="pilihanJurusan" required {...register('jurusan')}>
-                    <option disabled selected> Jurusan </option>
+                    <option className="form-select-option" disabled selected> Jurusan </option>
                     {jurusanOption}
                   </select>
                 </div>

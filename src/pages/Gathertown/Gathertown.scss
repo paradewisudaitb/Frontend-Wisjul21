@@ -28,6 +28,11 @@
     border-radius: 30px;
     display: inline-block;
 
+    & > * {
+      margin: 0;
+      padding: 0;
+    }
+
     &.active {
       background-color: #666;
       color: white;
@@ -58,15 +63,17 @@
   }
 
   .info-hmj {
-    width: 85%;
+    width: 75%;
     text-align: start;
     margin: 1em 1em 1em 1em;
 
     h2 {
+      text-align: start;
       margin-bottom: 1.5em;
     }
 
     .link-hmj {
+      text-align: start;
       word-break: break-word;
       -webkit-hyphens: auto;
       -moz-hyphens: auto;

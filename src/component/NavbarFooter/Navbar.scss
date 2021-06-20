@@ -70,7 +70,7 @@ $drops-top: -12rem;
     display: none;
 }
 
-@media screen and (max-width: 768px) {    
+@include respond-to('phone') {    
     .navbar-nav {
         display: none !important;
     }

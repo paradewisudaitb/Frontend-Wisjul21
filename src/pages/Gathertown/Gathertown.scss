@@ -28,6 +28,11 @@
     border-radius: 30px;
     display: inline-block;
 
+    &.active {
+      background-color: #666;
+      color: white;
+    }
+
     &:hover {
       background-color: #666;
       color: white;

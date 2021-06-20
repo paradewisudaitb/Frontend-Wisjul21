@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { useState } from 'react';
-import { useEffect } from 'react';
 import { Fragment } from 'react';
 import ButtonFakultas from './ButtonFakultas';
 import './Gathertown.scss';
@@ -15,52 +14,21 @@ type HMJ = {
 };
 
 const Gathertown: FC = () => {
-  const [activeButton, setActiveButton] = useState('FITB');
+  const [activeButton, setActiveButton] = useState('');
   const [listGathertownHMJ, setListGathertownHMJ] = useState(LIST_HMJ);
-  const [listButtonState, setListButtonState] = useState<JSX.Element[]>();
 
   const buttonFakultasClickHandler = (listHMJ: HMJ[], namaFakultas: string) => {
     setListGathertownHMJ(listHMJ);
     setActiveButton(namaFakultas);
 
+    console.log(namaFakultas);
     console.log(activeButton);
-
-    const clickedFakultasIndex = LIST_FAKULTAS.findIndex(
-      (fakultas) => fakultas === activeButton
-    );
-
-    console.log(clickedFakultasIndex);
-
-    // const updatedListButtonFakultas = [...defaultListButtonFakultas];
-    // updatedListButtonFakultas[clickedFakultasIndex] = (
-    //   <ButtonFakultas
-    //     onButtonClick={buttonFakultasClickHandler}
-    //     className='active'
-    //     value={activeButton}
-    //     key={activeButton}
-    //   >
-    //     {activeButton}
-    //   </ButtonFakultas>
-    // );
-
-    // listButtonFakultas[clickedFakultasIndex] = (
-    //   <ButtonFakultas
-    //     onButtonClick={buttonFakultasClickHandler}
-    //     className='active'
-    //     value={activeButton}
-    //     key={activeButton}
-    //   >
-    //     {activeButton}
-    //   </ButtonFakultas>
-    // );
-
-    // setListButtonState(updatedListButtonFakultas);
   };
 
   const defaultListButtonFakultas = LIST_FAKULTAS.map((fakultas) => (
     <ButtonFakultas
       onButtonClick={buttonFakultasClickHandler}
-      className=''
+      className={activeButton === fakultas ? 'active' : ''}
       value={fakultas}
       key={fakultas}
     >
@@ -91,30 +59,6 @@ const Gathertown: FC = () => {
     </li>
   ));
 
-  useEffect(() => {
-    setListButtonState(defaultListButtonFakultas);
-  }, []);
-
-  // useEffect(() => {
-  //   console.log('useEffect');
-  //   const clickedFakultasIndex = listButtonFakultas.findIndex(
-  //     (button) => button.key === activeButton
-  //   );
-
-  //   listButtonFakultas[clickedFakultasIndex] = (
-  //     <ButtonFakultas
-  //       onButtonClick={buttonFakultasClickHandler}
-  //       className='active'
-  //       value={activeButton}
-  //       key={activeButton}
-  //     >
-  //       {activeButton}
-  //     </ButtonFakultas>
-  //   );
-
-  //   setListButtonState(listButtonFakultas);
-  // }, [activeButton]);
-
   return (
     <Fragment>
       <div className='info'>
@@ -132,7 +76,7 @@ const Gathertown: FC = () => {
           semper.
         </p>
       </div>
-      <div className='list-button'>{listButtonState}</div>
+      <div className='list-button'>{defaultListButtonFakultas}</div>
       <ul className='list-hmj'>{listDisplayedHMJ}</ul>
       <br />
     </Fragment>

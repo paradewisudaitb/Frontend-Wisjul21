@@ -28,7 +28,7 @@ const schema = yup.object().shape({
   'jurusan': yup.string().required('Jurusan tidak boleh kosong.'),
   'namalengkap': yup.string().max(255).required('Nama lengkap tidak boleh kosong.'),
   'namapanggilan': yup.string().max(255).required('Nama panggilan tidak boleh kosong.'),
-  'nim': yup.string().matches(/^\d{3}(14|15|16|17)\d{3}$/).required('NIM tidak boleh kosong.'),
+  'nim': yup.string().matches(/^\d{3}(14|15|16|17|18)\d{3}$/).required('NIM tidak boleh kosong.'),
   'judulta': yup.string().max(255).required('Judul TA tidak boleh kosong.'),
   'funfact': yup.string().max(255).required('Fun fact tidak boleh kosong.'),
   'tips': yup.string().max(255).required('Tips tidak boleh kosong.'),
@@ -304,6 +304,7 @@ export default function Form(): JSX.Element {
               <label htmlFor="angkatan">Angkatan</label>
               <select className="form-select form-field" required {...register('angkatan')}>
                 <option className="form-select-name" disabled selected> Angkatan </option>
+                <option className="form-select-option" value="2018"> 2018 </option>
                 <option className="form-select-option" value="2017"> 2017 </option>
                 <option className="form-select-option" value="2016"> 2016 </option>
                 <option className="form-select-option" value="2015"> 2015 </option>

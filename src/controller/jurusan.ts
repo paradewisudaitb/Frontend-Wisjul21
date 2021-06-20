@@ -5,6 +5,7 @@ import { API_URL } from '../api';
  * Jika tidak diberikan argumen namaHimpunan maka mendapatkan semua jurusan di ITB.
  * @param {string} namaHimpunan nama himpunan pemilik jurusan (jika ada)
  * @returns {string[]} list seluruh jurusan suatu himpunan, jika tidak ada namaHimpunan, maka semua jurusan di ITB
+ * @throws {Error}
  * @async
  */
 export const get = async (namaHimpunan?: string): Promise<string[]> => {
@@ -19,8 +20,7 @@ export const get = async (namaHimpunan?: string): Promise<string[]> => {
     const res =
       await (
         await fetch(`${API_URL}/jurusan/getAll`, req)
-          .catch(err => {
-            // console.error(err);
+          .catch(() => {
             throw new Error('Gagal membuat request mendapatkan jurusan ke backend.');
           })
       ).json();
@@ -29,8 +29,7 @@ export const get = async (namaHimpunan?: string): Promise<string[]> => {
     const res =
         await (
           await fetch(`${API_URL}/jurusan/get?nama=${namaHimpunan}`, req)
-            .catch(err => {
-              // console.error(err);
+            .catch(() => {
               throw new Error('Gagal membuat request mendapatkan jurusan ke backend.');
             })
         ).json();

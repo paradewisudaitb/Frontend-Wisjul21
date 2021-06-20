@@ -8,6 +8,13 @@ type PesanResp = {
   pengirim: string,
 };
 
+/**
+ * Funngsi untuk membuat pesan baru untuk seorang wisudawan
+ * @param {IPesanOut} data metadata pesan yang akan dikirim
+ * @returns NIM penerima, isi pesan, dan nama pengirim. Jika nama pengirimm kosong maka 'Anonymous'
+ * @throws {Error}
+ * @async
+ */
 export const sendPesan = async (data: IPesanOut): Promise<PesanResp> => {
   const req = {
     method: 'POST',
@@ -29,6 +36,14 @@ export const sendPesan = async (data: IPesanOut): Promise<PesanResp> => {
   return res;
 };
 
+/**
+ * Fungsi untuk mendapatkan semua pesan yang ditujukan kepada wisudawan dengan
+ * NIM `nim`.
+ * @param {string} nim NIM wisudawan
+ * @returns List pesan untuk wisudawan dengan NIM `nim`
+ * @throws {Error}
+ } @async
+ */
 export const getPesan = async (nim: string): Promise<IPesanIn[]> => {
   const req = {
     method: 'GET',

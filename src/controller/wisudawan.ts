@@ -39,7 +39,7 @@ export const creator = async (data: IDataWisudawan): Promise<WisudawnIdty> => {
     prestasi: data.prestasi?.join(',') || '-',
     karya: data.karya?.join(',') || '-',
     kontribusi: data.kontribusi?.join(',') || '-',
-    lembaga: data.kontribusi?.join(',') || '-',
+    lembaga: data.lembaga?.join(',') || '-',
   };
 
   const req = {

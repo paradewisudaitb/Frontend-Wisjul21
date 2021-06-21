@@ -44,10 +44,18 @@ const HomePage = () => {
       </div>
 
       {/* Header Content */}
+
+      {/* (Kinda Inventive) Shadows */}
       <div className='tagline'>
-        <h1 className='tagline1'>Metamorphose to find</h1>
-        <h1 className='tagline2'>the path to the blossom</h1>
+        <h3 className='tagline1-shadow' style={{ transform: `translateY(${(offsetY * 0.65)}px) translateX(${offsetY * 0.3}px)` }}>Metamorphose to find</h3>
+        <h3 className='tagline2-shadow' style={{ transform: `translateY(${(offsetY * 0.55)}px) translateX(-${offsetY * 0.3}px)` }}>the path to the blossom</h3>
       </div>
+
+      <div className='tagline'>
+        <h1 className='tagline1' style={{ transform: `translateY(${(offsetY * 0.65)}px) translateX(${offsetY * 0.3}px)` }}>Metamorphose to find</h1>
+        <h1 className='tagline2' style={{ transform: `translateY(${(offsetY * 0.55)}px) translateX(-${offsetY * 0.3}px)` }}>the path to the blossom</h1>
+      </div>
+      
       <div className='home-container pt-5' style={{ transform: `translateY(-${offsetY * 0.6}px)`, opacity: `${1-(offsetY/window.outerHeight)}` }}>
         <div className='logotagline'>
           <img src={`${ASSET_URL}/assets/logo/min.png`} alt='Logo Wisuda Juli 2021' className='logo' />

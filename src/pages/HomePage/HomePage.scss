@@ -1,19 +1,16 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/colorpalette.scss';
+
 $marginLR: 20vw;
 $maincolour: rgb(4, 4, 37);
 $accentcolour1: rgb(218, 167, 0);
 $borderradius: 3px;
 $randomNumber: random(5);
 
-
-@mixin radial-gradient($from, $to) {
-	background: -moz-radial-gradient(center, circle cover, $from 0%, $to 100%);
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $from), color-stop(100%, $to));
-	background: -webkit-radial-gradient(center, circle cover, $from 0%, $to 100%);
-	background: -o-radial-gradient(center, circle cover, $from 0%, $to 100%);
-	background: -ms-radial-gradient(center, circle cover, $from 0%, $to 100%);
-	background: radial-gradient(center, circle cover, $from 0%, $to 100%);
-	background-color: $from;
+* {
+  text-align: center;
 }
+
 
 .main {
   background: radial-gradient(#532F65, #201125, #201125);
@@ -141,14 +138,26 @@ button {
   position: absolute;
   display: flex;
   flex-direction: column;
-  height: 80%;
+  height: 105%;
   width: 100%;
   justify-content: center;
-  .tagline1 {
-    margin-right: 50%;
+  overflow: hidden;
+  h1,h3 {
+    font-size: 3.5vw;
   }
-  .tagline2 {
-    margin-left: 50%;
+  h3 {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    color: $red-darker;
+  }
+  .tagline1, .tagline1-shadow {
+    margin-right: 60%;
+    margin-bottom: 80px;
+  }
+  .tagline2, .tagline2-shadow {
+    margin-left: 60%;
+    margin-bottom: 200px;
   }
 }
 
@@ -162,9 +171,12 @@ button {
   .logotagline {
     z-index: 5;
     .logo {
+      position: relative;
+      bottom: 30%;
       height: 300px;
       width: 300px;
       z-index: 100;
+      filter: drop-shadow(5px 5px 4px #590A07);
     }
     .tagline {
       background-color: rgba($color: #FFFFFF, $alpha: 0.2);
@@ -196,7 +208,7 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  margin: -70px $marginLR 50px $marginLR;
+  margin: 50px $marginLR 50px $marginLR;
   align-items: center;
   h1 {
     font-size: 5vw;

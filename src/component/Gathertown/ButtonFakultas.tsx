@@ -1,6 +1,5 @@
 import { FC } from 'react';
-import { LIST_HMJ } from './GathertownConstant';
-import './Gathertown.scss';
+import { LIST_HMJ } from '../../pages/Gathertown/GathertownConstant';
 
 type HMJ = {
   namaFakultas: string;

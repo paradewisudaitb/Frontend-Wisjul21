@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useState } from 'react';
 import { Fragment } from 'react';
-import ButtonFakultas from './ButtonFakultas';
+import ButtonFakultas from '../../component/Gathertown/ButtonFakultas';
 import './Gathertown.scss';
 import dummyImage from '../../images/ukj.png';
 import { LIST_FAKULTAS, LIST_HMJ } from './GathertownConstant';
@@ -20,12 +20,9 @@ const Gathertown: FC = () => {
   const buttonFakultasClickHandler = (listHMJ: HMJ[], namaFakultas: string) => {
     setListGathertownHMJ(listHMJ);
     setActiveButton(namaFakultas);
-
-    console.log(namaFakultas);
-    console.log(activeButton);
   };
 
-  const defaultListButtonFakultas = LIST_FAKULTAS.map((fakultas) => (
+  const listButtonFakultas = LIST_FAKULTAS.map((fakultas) => (
     <ButtonFakultas
       onButtonClick={buttonFakultasClickHandler}
       className={activeButton === fakultas ? 'active' : ''}
@@ -76,7 +73,7 @@ const Gathertown: FC = () => {
           semper.
         </p>
       </div>
-      <div className='list-button'>{defaultListButtonFakultas}</div>
+      <div className='list-button'>{listButtonFakultas}</div>
       <ul className='list-hmj'>{listDisplayedHMJ}</ul>
       <br />
     </Fragment>

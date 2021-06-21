@@ -4,6 +4,21 @@ $accentcolour1: rgb(218, 167, 0);
 $borderradius: 3px;
 $randomNumber: random(5);
 
+
+@mixin radial-gradient($from, $to) {
+	background: -moz-radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $from), color-stop(100%, $to));
+	background: -webkit-radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background: -o-radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background: -ms-radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background: radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background-color: $from;
+}
+
+.main {
+  background: radial-gradient(#532F65, #201125, #201125);
+}
+
 @mixin event-btn() {
   height: 500px;
   width: 300px;
@@ -26,7 +41,7 @@ button {
   }
 }
 
-.bg {
+.bg-container {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -40,9 +55,38 @@ button {
   overflow: hidden;
 }
 
+.bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: repeat-x;
+}
+
+@mixin cloud-container($topposition) {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  top: $topposition*145vh;
+  height: 100%;
+  width: 100%;
+  //z-index: ;
+  justify-content: start;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.cloud-container1 {
+  @include cloud-container(1)
+}
+
+.cloud-container2 {
+  @include cloud-container(2)
+}
+
 @keyframes wind {
   from {
-    margin-left: calc(-290px - 60vw);
+    margin-left: calc( - 60vw);
   }
   to {
     transform: translateX(550vw);
@@ -65,7 +109,7 @@ button {
   opacity: (random(30)+50)/100;
 }
 
-@for $i from 2 through 7 {
+@for $i from 2 through 14 {
   .cloud:nth-of-type(#{$i}) {
     width: calc(#{random(10)}vw + #{random(100)+200}px);
     top: percentage((random(80) - 10) / 100);
@@ -78,17 +122,34 @@ button {
 .volcano {
   position: absolute;
   justify-self: center;
-  transform: scale(1.4) translateY(-50px);
+  bottom: 1px;
+  width: 1920px;
 }
 
 .smoke {
+  position: absolute;
   justify-self: center;
 }
 
 .volcanoes {
   position: absolute;
-  transform: translateY(-200px);
+  bottom: 50px;
   width: 1920px;
+}
+
+.tagline {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 100%;
+  justify-content: center;
+  .tagline1 {
+    margin-right: 50%;
+  }
+  .tagline2 {
+    margin-left: 50%;
+  }
 }
 
 .home-container {
@@ -135,7 +196,7 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  margin: 50px $marginLR;
+  margin: -70px $marginLR 50px $marginLR;
   align-items: center;
   h1 {
     font-size: 5vw;

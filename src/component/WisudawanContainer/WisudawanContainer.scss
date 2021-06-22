@@ -1,12 +1,31 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/colorpalette.scss';
+
 .wisudawan-container {
-    background-color:#facefa;
+    background-color:rgba(14, 30, 98, 0.3);
     margin: 2em;
     padding: 40px;
     display: flex;
     justify-content: space-evenly;
+    @include respond-to('phone') {
+        display:flex;
+        flex-direction: column;
+    }
 }
+
 .list-kontribusi {
     text-align: left;
+}
+
+.wisudawan {
+  background-image: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg");
+  background-repeat: repeat;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 5px;
+
 }
 .unit-wisudawan {
     .unit-logo {
@@ -20,9 +39,14 @@
         align-items: center;
         margin-bottom: 0.8rem;
     }
-    
     .unit-list {
         margin-top: 2rem;
+
+    }
+    @include respond-to('phone') {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -33,10 +57,20 @@
 .foto-wisudawan img {
     width: 16rem;
     height: 16rem;
-    // width: 360px;
-    // height: 360px;
+    @include respond-to('phone') {
+        width: 12rem;
+        height: 12rem;
+    }
 }
 
 .wisudawan-left {
     margin-right: 2rem;
+    @include respond-to('phone') {
+        margin-right: 0rem;
+        margin-bottom: 2rem;
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+    }
 }
+

@@ -16,10 +16,10 @@ export const Footer = () => {
           <div className="d-flex flex-row">
             <Brand />
           </div>
-          <div className="d-flex flex-row">
-            Ini tema atau jargon
+          <div className="d-flex flex-row fst-italic">
+            Metamorphose to find the path to the blossom
           </div>
-          <div className="d-flex flex-row">
+          <div className="d-flex flex-row copyright">
             © Perayaan Wisuda Juli ITB 2021
           </div>
         </div>

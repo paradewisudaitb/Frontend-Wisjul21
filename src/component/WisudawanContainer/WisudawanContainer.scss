@@ -1,0 +1,42 @@
+.wisudawan-container {
+    background-color:#facefa;
+    margin: 2em;
+    padding: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.list-kontribusi {
+    text-align: left;
+}
+.unit-wisudawan {
+    .unit-logo {
+        width: 2.3rem;
+        height: auto;
+        margin-right: 1rem;
+    }
+    .unit-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 0.8rem;
+    }
+    
+    .unit-list {
+        margin-top: 2rem;
+    }
+}
+
+.data-wisudawan p, .data-wisudawan h1, .data-wisudawan h2, .data-wisudawan h3, .data-wisudawan h4, .data-wisudawan li {
+    text-align:left;
+}
+
+.foto-wisudawan img {
+    width: 16rem;
+    height: 16rem;
+    // width: 360px;
+    // height: 360px;
+}
+
+.wisudawan-left {
+    margin-right: 2rem;
+}

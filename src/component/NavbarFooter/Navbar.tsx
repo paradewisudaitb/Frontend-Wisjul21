@@ -7,8 +7,8 @@ import { NavbarLinks } from './NavbarLinks';
 
 export const Brand = () => {
   return (
-    <Link to='/'>          
-      <h4 className="float-start me-2">LOGO</h4>
+    <Link to='/' className="brand me-2">          
+      <h4 className="float-start">LOGO</h4>
       <h4 className="float-start">WISJUL 2021</h4>
     </Link>
   );

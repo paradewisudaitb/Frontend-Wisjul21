@@ -3,7 +3,6 @@ import './Wisudawan.scss';
 import PesanAnonim from '../../component/PesanAnonim/PesanAnonim';
 import WisudawanContainer from '../../component/WisudawanContainer/WisudawanContainer';
 
-
 const dataDummy = [{
   'nama': 'John Doe',
   'nim': '13519001',
@@ -73,17 +72,16 @@ export default function Wisudawan() {
     <div className='wisudawan'>
       <div className='wisudawan-tes'>
         <WisudawanContainer {...dataDummy[0]}/>
-
       </div>
-
-      {/* pesan anonim */}
 
       <div className='pesan-anonim'>
         <div className='pesan-anonim-wrapper'>
           <PesanAnonim />
         </div>
         <div className='kirim-button-wrapper'>
-          <button className='kirim-button'>Kirim Ucapan</button>
+          <a href="/kirim-pesan">
+            <button className='kirim-button'>Kirim Ucapan</button>
+          </a>
         </div>
       </div>
     </div>

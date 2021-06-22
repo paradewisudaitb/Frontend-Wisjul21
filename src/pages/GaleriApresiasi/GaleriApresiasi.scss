@@ -3,25 +3,44 @@
   flex-direction: column;
   text-align: center;
   justify-content: center;
-}
 
-.list-wisudawan {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
-
-.apresiasi-wisudawan {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.daftar-wisudawan {
-  input {
-    margin: 1rem;
-    font-size: 1.3rem;
-    width: 40rem;
+  .apresiasi-wisudawan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-}  
+
+  .daftar-wisudawan {
+    input {
+      margin: 1rem;
+      font-size: 1.3rem;
+      width: 40rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .galeri-apresiasi-page {
+    .himpunan {
+      h1 {
+        font-size: 6vw;
+        margin-bottom: 3vh;
+      }
+
+      img {
+        max-width: 40vw;
+      }
+    }
+
+    .apresiasi-wisudawan {
+      h1 {
+        font-size: 5vw;
+      }
+
+      h2 {
+        font-size: 4vw;
+      }
+    }
+  }
+}

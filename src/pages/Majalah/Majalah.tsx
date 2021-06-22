@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Row, Col, Jumbotron, Button } from 'react-bootstrap';
+import { Row, Col, Jumbotron, Button, Modal } from 'react-bootstrap';
 import { Footer } from '../../component/Footer';
 import { Navbar } from '../../component/Navbar';
 import './Majalah.scss';
 
 export default function Majalah() {
   const [index, setIndex] = useState(1);
+
+  // Modal
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   function getImage(index: number)
   {
@@ -22,7 +27,6 @@ export default function Majalah() {
   }
   
   function prev() {
-    // alert(index);
     if (index < 2) {
       setIndex(6);
     } else {
@@ -30,13 +34,19 @@ export default function Majalah() {
     }
   }
 
+  function test(){
+    alert('a');
+  }
+
   
   return (
-    <div>
+    <div className="outer-heaven">
+      <img src="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/main/awan%204-01.png" className="awan-kiri" />
       <Navbar />
       <Jumbotron className="hero">
         <div className="container-page">
           <div className="container">
+            
             <Row>
               <Col xs={12} md={6}>
                 <div className="header-jumbotron">
@@ -51,8 +61,9 @@ export default function Majalah() {
               </Col>
               <Col xs={12} md={6}>
                 <div className="majalah">
-                  <div className="majalah-pdf">
-                    <img id="img-majalah img-fluid" src={getImage(index)} />
+                  <img src="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/main/spark%202%20atas%20matahari.png" className="kembang-api" />
+                  <div className="majalah-pdf" >
+                    <img id="img-majalah img-fluid" src={getImage(index)} onClick={handleShow} />
                   </div>
                   <div className="d-flex justify-content-center">
                     <button className="doc-button previous" onClick={prev}> &#8249; </button>
@@ -60,9 +71,31 @@ export default function Majalah() {
                     <button className="doc-button next" onClick={next}> &#8250; </button>
                   </div>
                 </div>
+                <img src="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/main/awan%205-01.png" className="awan-kanan" />
               </Col>
             </Row>
           </div>
+          <Modal
+            show={show}
+            onHide={() => setShow(false)}
+            aria-labelledby="example-custom-modal-styling-title"
+          >
+            <Button variant="danger" onClick={handleClose}>
+              Close
+            </Button>
+            <img className="image-modal" src={getImage(index)} />
+            <Modal.Footer>
+              <Button variant="primary" onClick={prev}>
+                Prev
+              </Button>
+              <Button variant="secondary" disabled onClick={handleClose}>
+                {index} / 6
+              </Button>
+              <Button variant="primary" onClick={next}>
+                Next
+              </Button>
+            </Modal.Footer>
+          </Modal>
           <Col>
             <Footer />
           </Col>
@@ -71,4 +104,3 @@ export default function Majalah() {
     </div>
   );
 }
-

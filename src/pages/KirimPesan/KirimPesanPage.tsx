@@ -7,6 +7,18 @@ const maxMessageLength = 255;
 const maxSenderNameLength = 30;
 
 export const KirimPesanPage = () => {
+  const limit = 200;
+  
+  const nameinputresize = () => {
+    const nameinput = document.getElementById('nameinput');
+    if (nameinput) {
+      console.log(nameinput.scrollHeight);
+      nameinput.style.height = '';
+      nameinput.style.height = Math.min(nameinput.scrollHeight, limit) + 'px';
+    
+    }
+  };
+
   const wisudawan = {
     'nim':'13519188',
     'nama':'Josep Marcello',
@@ -44,8 +56,8 @@ export const KirimPesanPage = () => {
           <form action="" className='mx-4'>
             <div className="sender-name mt-4">
               <label className='sender-name-label'>Dari</label>
-              <div className="text-start sender-name-input-background">
-                <input className="sender-name-input float-start" placeholder="Nama pengirim (opsional)" maxLength={maxSenderNameLength} onChange={(e) => senderCount(e.target.value)}/>
+              <div className="sender-name-input-container">
+                <textarea id="nameinput" rows={1}  className="sender-name-input float-start" placeholder="Nama pengirim (opsional)" maxLength={maxSenderNameLength} onChange={(e) => senderCount(e.target.value)} onInput={nameinputresize}/>
                 <label className='float-end small' id='sender-char-counter'>0/{maxSenderNameLength}</label>
               </div>
             </div>

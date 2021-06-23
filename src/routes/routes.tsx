@@ -46,12 +46,6 @@ export const NavbarRoutes: navroutes[] = [
     content: GALERI_APRESIASI_PAGE,
   },
   {
-    content: KIRIM_PESAN_PAGE,
-  },
-  {
-    content: WISUDAWAN_PAGE,
-  },
-  {
     content: FORM_INDEX,
     children_routes: [FORM_PAGE, FORM_APRESIASI_PAGE],
     isDropdown: true,

@@ -44,7 +44,7 @@ const Gathertown = () => {
   return (
     <div>
       <div className='info'>
-        <h1>Gathertown</h1>
+        <h1>Gather Town</h1>
         <p>
           Ultricies leo integer malesuada nunc vel risus commodo. Mollis nunc
           sed id semper risus in hendrerit gravida rutrum. Volutpat est velit

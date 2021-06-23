@@ -78,13 +78,13 @@ export default function Wisudawan(): JSX.Element {
   const [loadingPesan, setLoadingPesan] = useState(true);
   const [pesanToShow, setPesanToShow] = useState<JSX.Element[]>([]);
 
-  useEffect(() => {
-    // bagian pesan
+  const getMessageToShow = () => {
     const tmp: JSX.Element[] = [];
     getPesan(nim).then(pesans => {
+      setLoadingPesan(true);
       if (pesans.length != 0) {
         pesans.forEach(pesan => {
-          tmp.push(<PesanAnonim {...pesan} />);
+          tmp.push(<PesanAnonim key={pesan.idPesan} {...pesan} />);
         });
       } else {
         tmp.push(<p className='pesan-kosong'>Tidak ada pesan untuk wisudawan</p>);
@@ -93,6 +93,13 @@ export default function Wisudawan(): JSX.Element {
       setLoadingPesan(false);
       setPesanToShow(tmp);
     });
+  };
+
+  useEffect(() => {
+    // bagian pesan
+    getMessageToShow();
+    const interval = 5 * 60 * 1000;
+    setInterval(getMessageToShow, interval); // ambil pesan baru setiap `interval`
   }, []);
 
   return (
@@ -103,8 +110,7 @@ export default function Wisudawan(): JSX.Element {
 
       <div className='pesan-anonim'>
         <div className='pesan-anonim-wrapper'>
-          {loadingPesan && <Loading />}
-          {!loadingPesan && pesanToShow}
+          {loadingPesan ? <Loading /> : pesanToShow}
         </div>
         <div className='kirim-button-wrapper'>
           <a href="/kirim-pesan">

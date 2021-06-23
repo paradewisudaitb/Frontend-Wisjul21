@@ -48,7 +48,7 @@ export default function PesanAnonim({ createdAt, namaPengirim, pesan }: IPesanIn
     <div className='pesan-container'>
       <div className='pesan-wrapper'>
         <div className='header-wrapper'>
-          <p className='header-content pesan-pengirim'>{namaPengirim}</p>
+          <p className='header-content'>{namaPengirim}</p>
           <p className='header-content'>{fmtTanggal}</p>
         </div>
         <div>

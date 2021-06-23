@@ -1,4 +1,5 @@
 @import '../../styles/colorpalette.scss';
+@import '../../styles/responsive.scss';
 
 .pesan-anonim {
   background-color: $blue-darker;
@@ -7,6 +8,10 @@
 
   .pesan-anonim-wrapper {
     padding: 15px;
+
+    @include respond-to('phone') {
+      padding: 15px 0;
+    }
 
     .pesan-kosong {
       margin: auto;

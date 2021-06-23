@@ -76,14 +76,13 @@ export default function Wisudawan({ nim }: props): JSX.Element {
   const [pesanToShow, setPesanToShow] = useState<JSX.Element[]>([]);
 
   useEffect(() => {
-    console.error('yes');
+    // bagian pesan
     const tmp: JSX.Element[] = [];
-    // const pesans = await getPesan(nim);
     getPesan(nim).then(pesans => {
       pesans.forEach(pesan => {
         tmp.push(<PesanAnonim {...pesan} />);
-
       });
+
       setPesanToShow(tmp);
     });
   }, []);

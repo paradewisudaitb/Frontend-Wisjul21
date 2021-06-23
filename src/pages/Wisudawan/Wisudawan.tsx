@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Wisudawan.scss';
 import PesanAnonim from '../../component/PesanAnonim/PesanAnonim';
 import WisudawanContainer from '../../component/WisudawanContainer/WisudawanContainer';
+import {getByNIM} from '../../controller/wisudawan';
 
+// TODO ubah data dummy jadi sama kayak interface data wisudawan (ada di interfaces IDataWisudawan.ts)
 
 const dataDummy = [{
   'nama': 'John Doe',
@@ -68,12 +70,27 @@ const dataDummy = [{
   'karya': ['Karya seni 1','Karya seni 2','Karya seni 3']
 }];
 
+type props = {
+  nim: string,
+};
+
 export default function Wisudawan() {
+  const nim = '13716059';
+  const [dataWisudawan, setDataWisudawan] = useState<JSX.Element>();
+
+  useEffect(() => {
+    getByNIM(nim).then(dataWisudawan => {
+      // lakukan sesuatu denngan data wisudawan
+      // setDataWisudawan(<WisudawanContainer {...dataWisudawan}/>);
+      console.log(dataWisudawan);
+      setDataWisudawan(<WisudawanContainer {...dataDummy[0]}/>);
+    });
+  }, []);
+
   return (
     <div className='wisudawan'>
       <div className='wisudawan-tes'>
-        <WisudawanContainer {...dataDummy[0]}/>
-
+        {dataWisudawan}
       </div>
 
       {/* pesan anonim */}

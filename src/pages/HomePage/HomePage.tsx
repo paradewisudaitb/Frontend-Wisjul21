@@ -11,6 +11,7 @@ import Background from '../../images/bg/header.png';
 const HomePage = () => {
 
   const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
+  const youtubelogo = 'https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png';
 
   //Parallax
   const [offsetY, setOffsetY] = useState(0);
@@ -37,36 +38,36 @@ const HomePage = () => {
       {/* Header */}
       <div className='bg-container mt-5'>
         {/* Volcano */}
-        <div className='bg' style={{ backgroundImage: `url(${ASSET_URL}/assets/images/background/header.jpg)`, transform: `translateY(-${offsetY * 0.1}px)`, opacity: `${1-(offsetY/window.outerHeight)*1.7}` }}></div>
-        <img className='smoke' alt='Asap' src={`${ASSET_URL}/assets/images/vistock/header/asap.png`} style={{ transform: `translateY(-${offsetY * 0.5}px)`, opacity: `${1-(offsetY/window.outerHeight)*2}` }} />
-        <img className='volcanoes' alt='Gunung Berapi' src={`${ASSET_URL}/assets/images/vistock/header/gunung%20pinggir.png`} style={{ transform: `translateY(-${offsetY * 0.1}px)`, opacity: `${1-(offsetY/window.outerHeight)*1.2}` }} />
-        <img className='volcano' alt='Gunung Berapi Meletus' src={`${ASSET_URL}/assets/images/vistock/header/gunung%20tengah.png`} style={{ transform: `translateY(-${offsetY * 0.4}px)`, opacity: `${1-(offsetY/window.outerHeight)*1.7}` }} />
+        <div className='bg' style={{ backgroundImage: `url(${ASSET_URL}/assets/images/background/header.jpg)`, opacity: `${1-(offsetY/window.outerHeight)*1.7}` }}></div>
+        <img className='smoke' alt='Asap' src={`${ASSET_URL}/assets/images/vistock/header/asap.png`} style={{ transform: `translateY(-${offsetY * 0.3}px)`, opacity: `${1-(offsetY/window.outerHeight)*2}` }} />
+        <img className='volcanoes' alt='Gunung Berapi' src={`${ASSET_URL}/assets/images/vistock/header/gunung%20pinggir.png`} style={{ opacity: `${1-(offsetY/window.outerHeight)*1.7}` }} />
+        <img className='volcano' alt='Gunung Berapi Meletus' src={`${ASSET_URL}/assets/images/vistock/header/gunung%20tengah.png`} style={{ transform: `translateY(-${offsetY * 0.2}px)`, opacity: `${1-(offsetY/window.outerHeight)*1.5}` }} />
       </div>
 
       {/* Header Content */}
 
       {/* (Kinda Inventive) Shadows */}
       <div className='tagline'>
-        <h3 className='tagline1-shadow' style={{ transform: `translateY(${(offsetY * 0.65)}px) translateX(${offsetY * 0.3}px)` }}>Metamorphose to find</h3>
-        <h3 className='tagline2-shadow' style={{ transform: `translateY(${(offsetY * 0.55)}px) translateX(-${offsetY * 0.3}px)` }}>the path to the blossom</h3>
+        <h3 className='tagline1-shadow' style={{ transform: `translateY(${offsetY*0.21 - offsetY*offsetY*0.00015}vh) translateX(${offsetY*0.03}vw) scale(${1-(offsetY/window.innerHeight)*0.6})` }}>Metamorphose to find</h3>
+        <h3 className='tagline2-shadow' style={{ transform: `translateY(${offsetY*0.195 - offsetY*offsetY*0.00015}vh) translateX(-${offsetY * 0.03}vw) scale(${1-(offsetY/window.innerHeight)*0.6}` }}>the path to the blossom</h3>
       </div>
 
       <div className='tagline'>
-        <h1 className='tagline1' style={{ transform: `translateY(${(offsetY * 0.65)}px) translateX(${offsetY * 0.3}px)` }}>Metamorphose to find</h1>
-        <h1 className='tagline2' style={{ transform: `translateY(${(offsetY * 0.55)}px) translateX(-${offsetY * 0.3}px)` }}>the path to the blossom</h1>
+        <h1 className='tagline1' style={{ transform: `translateY(${offsetY*0.21 - offsetY*offsetY*0.00015}vh) translateX(${offsetY*0.03}vw) scale(${1-(offsetY/window.innerHeight)*0.6}` }}>Metamorphose to find</h1>
+        <h1 className='tagline2' style={{ transform: `translateY(${offsetY*0.195 - offsetY*offsetY*0.00015}vh) translateX(-${offsetY * 0.03}vw) scale(${1-(offsetY/window.innerHeight)*0.6}` }}>the path to the blossom</h1>
       </div>
       
-      <div className='home-container pt-5' style={{ transform: `translateY(-${offsetY * 0.6}px)`, opacity: `${1-(offsetY/window.outerHeight)}` }}>
+      <div className='home-container pt-5'>
         <div className='logotagline'>
-          <img src={`${ASSET_URL}/assets/logo/min.png`} alt='Logo Wisuda Juli 2021' className='logo' />
+          <img src={`${ASSET_URL}/assets/logo/min.png`} alt='Logo Wisuda Juli 2021' className='logo' style={{ transform: `translateY(${offsetY*0.2 - offsetY*offsetY*0.00015}vh)` }} />
           {/*<h5 className='tagline'>Metamorphose to find the path to the blossom.</h5>*/}
         </div>
-        <button className='youtube mx-auto'>Youtube</button>
+        <button className='youtube mx-auto' style={{ backgroundImage: `url(${youtubelogo})`, transform: `translateY(-${offsetY * 0.6}px)`, opacity: `${1-(offsetY/window.outerHeight)}` }}>Youtube</button>
       </div>
 
       <div className='main-container'>
 
-        {/* Clouds */}
+        {/* Clouds 
         <div className='cloud-container1'>
           <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%201-01.png`} style={{ transform: `translateY(-${(offsetY * 0.6)}px)`, zIndex: 6 }} />
           <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`} style={{ transform: `translateY(-${(offsetY * 0.7)}px)`, zIndex: 7 }} /> 
@@ -76,6 +77,7 @@ const HomePage = () => {
           <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/header/awan%20kanan.png`} style={{ transform: `translateY(-${(offsetY * 0.5)}px)`, zIndex: 5 }} />
           <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/header/awan%20kiri.png`} style={{ transform: `translateY(-${(offsetY * 0.1)}px)`, zIndex: 1 }} />
         </div>
+        */}
 
         {/* Visi-Misi */}
         <div className='visi-misi'>

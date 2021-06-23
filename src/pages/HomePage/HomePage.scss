@@ -45,7 +45,7 @@ button {
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 100vh;
+  height: 95vh;
   width: 100%;
   background-repeat: repeat-x;
   background-size: auto 100vh;
@@ -57,6 +57,24 @@ button {
   height: 100%;
   width: 100%;
   background-repeat: repeat-x;
+}
+
+.volcano {
+  position: absolute;
+  justify-self: center;
+  bottom: -100px;
+  width: 1920px;
+}
+
+.smoke {
+  position: absolute;
+  justify-self: center;
+}
+
+.volcanoes {
+  position: absolute;
+  bottom: 0px;
+  width: 1920px;
 }
 
 @mixin cloud-container($topposition) {
@@ -116,32 +134,16 @@ button {
   }
 }
 
-.volcano {
-  position: absolute;
-  justify-self: center;
-  bottom: 1px;
-  width: 1920px;
-}
 
-.smoke {
-  position: absolute;
-  justify-self: center;
-}
-
-.volcanoes {
-  position: absolute;
-  bottom: 50px;
-  width: 1920px;
-}
 
 .tagline {
   position: absolute;
   display: flex;
   flex-direction: column;
-  height: 105%;
+  height: 100vh;
   width: 100%;
   justify-content: center;
-  overflow: hidden;
+  margin-left: -20px;
   h1,h3 {
     font-size: 3.5vw;
   }
@@ -187,11 +189,11 @@ button {
   }
   .youtube {
     margin: 50px 50px;
-    height: 50px;
-    width: 20vw;
-    color: $accentcolour1;
-    background-color: transparent;
-    outline: $accentcolour1 solid 3px;
+    height: 5vw;
+    width: 10vw;
+    //color: $accentcolour1;
+    //background-color: transparent;
+    //outline: $accentcolour1 solid 3px;
     z-index: 10;
     @media screen and (max-width: 1080px) {
       width: 0,2*1080px;
@@ -204,6 +206,11 @@ button {
   }
 }
 
+.main-container {
+  position: relative;
+  top: 10vh;
+}
+
 .visi-misi {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -214,7 +221,7 @@ button {
     font-size: 5vw;
   }
   p {
-    color: $maincolour;
+    //color: $maincolour;
   }
   .VISI {
     position: relative;
@@ -225,7 +232,7 @@ button {
     padding: 30px;
     grid-column: 2 / span 3;
     grid-row: 1;
-    background-color: $accentcolour1;
+    background-color: $red-darker;
   }
   .MISI {
     position: relative;
@@ -236,7 +243,7 @@ button {
     padding: 30px;
     grid-column: 1 / span 3;
     grid-row: 2;
-    background-color: $accentcolour1;
+    background-color: $red-darker;
   }
   @media screen and (max-width: 1080px) {
     margin: 50px 10vw;

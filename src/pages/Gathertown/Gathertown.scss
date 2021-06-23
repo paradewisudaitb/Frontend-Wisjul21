@@ -21,32 +21,8 @@
 }
 
 .list-button {
-  margin: 3em 3em 3em 3em;
-
-  .button {
-    border: none;
-    outline: none;
-    background-color: grey;
-    cursor: pointer;
-    padding: 1.5% 3.5%;
-    margin: 0.75em;
-    border-radius: 20px;
-
-    & > * {
-      margin: 0;
-      padding: 0;
-    }
-
-    &.active {
-      background-color: $red-medium;
-      color: $yellow-lighter;
-    }
-
-    &:hover {
-      background-color: $red-medium;
-      color: $yellow-lighter;
-    }
-  }
+  margin: 3em 1.5em 3em 1.5em;
+  text-align: center;
 }
 
 .list-hmj {

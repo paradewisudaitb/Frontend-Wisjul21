@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Wisudawan.scss';
 import PesanAnonim from '../../component/PesanAnonim/PesanAnonim';
 import WisudawanContainer from '../../component/WisudawanContainer/WisudawanContainer';
+import { getPesan } from '../../controller/pesan';
+
+type props = {
+  nim: string,
+}
 
 const dataDummy = [{
   'nama': 'John Doe',
@@ -67,7 +72,22 @@ const dataDummy = [{
   'karya': ['Karya seni 1','Karya seni 2','Karya seni 3']
 }];
 
-export default function Wisudawan() {
+export default function Wisudawan({ nim }: props): JSX.Element {
+  const [pesanToShow, setPesanToShow] = useState<JSX.Element[]>([]);
+
+  useEffect(() => {
+    console.error('yes');
+    const tmp: JSX.Element[] = [];
+    // const pesans = await getPesan(nim);
+    getPesan(nim).then(pesans => {
+      pesans.forEach(pesan => {
+        tmp.push(<PesanAnonim {...pesan} />);
+
+      });
+      setPesanToShow(tmp);
+    });
+  }, []);
+
   return (
     <div className='wisudawan'>
       <div className='wisudawan-tes'>
@@ -76,13 +96,13 @@ export default function Wisudawan() {
 
       <div className='pesan-anonim'>
         <div className='pesan-anonim-wrapper'>
-          <PesanAnonim />
-          <PesanAnonim />
-          <PesanAnonim />
+          {pesanToShow.length == 0
+            ? <p className='pesan-kosong'>Tidak ada pesan untuk wisudawan </p>
+            : pesanToShow}
         </div>
         <div className='kirim-button-wrapper'>
           <a href="/kirim-pesan">
-            <button className='kirim-button'>Kirim Ucapan</button>
+            <button className='kirim-button'>Kirim Pesan</button>
           </a>
         </div>
       </div>

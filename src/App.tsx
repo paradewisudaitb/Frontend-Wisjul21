@@ -39,16 +39,13 @@ function App() {
         <GaleriApresiasi />
       </Route>
       <Route path='/wisudawan'>
-        <Wisudawan />
+        <Wisudawan nim='13716059' />
       </Route>
       <Route path='/kirim-pesan'>
         <KirimPesanPage />
       </Route>
       <Route path='/gathertown'>
         <Gathertown />
-      </Route>
-      <Route path='/pesan'>
-        <Pesan />
       </Route>
       <Footer />
     </div>

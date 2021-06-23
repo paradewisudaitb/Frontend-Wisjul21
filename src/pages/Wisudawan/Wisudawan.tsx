@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import  { Loading } from '../Loading/Loading';
 import './Wisudawan.scss';
 import PesanAnonim from '../../component/PesanAnonim/PesanAnonim';
 import WisudawanContainer from '../../component/WisudawanContainer/WisudawanContainer';
@@ -72,7 +73,8 @@ const dataDummy = [{
   'karya': ['Karya seni 1','Karya seni 2','Karya seni 3']
 }];
 
-export default function Wisudawan({ nim }: props): JSX.Element {
+export default function Wisudawan(): JSX.Element {
+  const nim = '13716059';
   const [loadingPesan, setLoadingPesan] = useState(true);
   const [pesanToShow, setPesanToShow] = useState<JSX.Element[]>([]);
 
@@ -101,7 +103,7 @@ export default function Wisudawan({ nim }: props): JSX.Element {
 
       <div className='pesan-anonim'>
         <div className='pesan-anonim-wrapper'>
-          {loadingPesan && pesanToShow}
+          {loadingPesan && <Loading />}
           {!loadingPesan && pesanToShow}
         </div>
         <div className='kirim-button-wrapper'>

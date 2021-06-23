@@ -81,33 +81,35 @@ export default function Wisudawan(): JSX.Element {
     const nim = params.nim;
     const getMessageToShow = () => {
       const tmp: JSX.Element[] = [];
-      getPesan(nim).then(pesans => {
-        setLoadingPesan(true);
-        if (pesans.length != 0) {
-          pesans.forEach(pesan => {
-            tmp.push(<PesanAnonim key={pesan.idPesan} {...pesan} />);
-          });
-        } else {
-          tmp.push(<p className='pesan-kosong'>Tidak ada pesan untuk wisudawan</p>);
-        }
+      getPesan(nim)
+        .then(pesans => {
+          setLoadingPesan(true);
+          if (pesans.length != 0) {
+            pesans.forEach(pesan => {
+              tmp.push(<PesanAnonim key={pesan.idPesan} {...pesan} />);
+            });
+          } else {
+            tmp.push(<p className='pesan-kosong'>Tidak ada pesan untuk wisudawan</p>);
+          }
 
-        setLoadingPesan(false);
-        setPesanToShow(tmp);
-      });
+          setLoadingPesan(false);
+          setPesanToShow(tmp);
+        });
     };
 
     useEffect(() => {
-      getByNIM(nim).then(dataWisudawan => {
-        // bagian data wisudawan
-        // setDataWisudawan(<WisudawanContainer {...dataWisudawan}/>);
-        console.log(dataWisudawan);
-        setDataWisudawan(<WisudawanContainer {...dataDummy[0]}/>);
+      getByNIM(nim)
+        .then(dataWisudawan => {
+          // bagian data wisudawan
+          // setDataWisudawan(<WisudawanContainer {...dataWisudawan}/>);
+          setDataWisudawan(<WisudawanContainer {...dataDummy[0]}/>);
+        })
+        .catch(err => console.error(err));
 
-        // bagian pesan
-        getMessageToShow();
-        const interval = 5 * 60 * 1000;
-        setInterval(getMessageToShow, interval); // ambil pesan baru setiap `interval`
-      });
+      // bagian pesan
+      getMessageToShow();
+      const interval = 5 * 60 * 1000;
+      setInterval(getMessageToShow, interval); // ambil pesan baru setiap `interval`
     }, []);
 
     return (
@@ -121,7 +123,7 @@ export default function Wisudawan(): JSX.Element {
             {loadingPesan ? <Loading /> : pesanToShow}
           </div>
           <div className='kirim-button-wrapper'>
-            <Link href="/kirim-pesan">
+            <Link href={`/wisudawan/${nim}/kirim-pesan`}>
               <button className='kirim-button'>Kirim Pesan</button>
             </Link>
           </div>

@@ -18,6 +18,7 @@ const LIST_FAKULTAS = [
   'SF',
   'SITH',
   'STEI',
+  'ETC',
 ];
 
 const LIST_HMJ: HMJ[] = [
@@ -41,4 +42,4 @@ const LIST_HMJ: HMJ[] = [
   },
 ];
 
-export {LIST_FAKULTAS, LIST_HMJ};
+export { LIST_FAKULTAS, LIST_HMJ };

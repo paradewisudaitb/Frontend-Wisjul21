@@ -1,8 +1,14 @@
+@import '../../App.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/colorpalette.scss';
+@import '../../styles/responsive.scss';
+
 .info {
   background-color: grey;
   text-align: center;
 
   h1 {
+    @include gradient-header-1;
     padding-top: 1em;
     padding-bottom: 0.5em;
   }
@@ -15,8 +21,7 @@
 }
 
 .list-button {
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin: 3em 3em 3em 3em;
 
   .button {
     border: none;
@@ -25,8 +30,7 @@
     cursor: pointer;
     padding: 1.5% 3.5%;
     margin: 0.75em;
-    border-radius: 30px;
-    display: inline-block;
+    border-radius: 20px;
 
     & > * {
       margin: 0;
@@ -34,19 +38,24 @@
     }
 
     &.active {
-      background-color: #666;
-      color: white;
+      background-color: $red-medium;
+      color: $yellow-lighter;
     }
 
     &:hover {
-      background-color: #666;
-      color: white;
+      background-color: $red-medium;
+      color: $yellow-lighter;
     }
   }
 }
 
-.list-hmj li {
-  list-style: none;
+.list-hmj {
+  margin: 0em 1vw 0em 1vw;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
 }
 
 .card-hmj {
@@ -54,14 +63,14 @@
   padding: 1rem;
   margin: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  background-color: grey;
+  border-radius: 30px;
+  background-color: $blue-darker;
   width: auto;
 
   .image-hmj {
     background-color: white;
     border-radius: 25px;
-    padding: .5em;
+    padding: .5rem;
     align-self: center;
 
     img {
@@ -73,12 +82,13 @@
   .info-hmj {
     width: 75%;
     text-align: start;
-    margin: 1em 1em 1em 1em;
+    margin: 1rem 1rem 1rem 2.5rem;
 
     h2 {
+      @include gradient-header-1;
       text-align: start;
       word-break: break-word;
-      margin-bottom: 1.5em;
+      margin-bottom: 1.5rem;
     }
 
     .link-hmj {
@@ -89,8 +99,12 @@
       hyphens: auto;
       margin: 0;
       padding: 0.5em;
-      background-color: white;
-      border-radius: 8px;
+      background-color: $red-medium;
+
+      a {
+        text-decoration: none;
+        color: $yellow-lighter;
+      }
     }
   }
 }

@@ -1,9 +1,7 @@
-import { FC } from 'react';
 import { useState } from 'react';
-import { Fragment } from 'react';
 import ButtonFakultas from '../../component/Gathertown/ButtonFakultas';
+import HMJCardContainer from '../../component/Gathertown/HMJCardContainer';
 import './Gathertown.scss';
-import dummyImage from '../../images/ukj.png';
 import { LIST_FAKULTAS, LIST_HMJ } from './GathertownConstant';
 
 type HMJ = {
@@ -29,30 +27,17 @@ const Gathertown = () => {
       value={fakultas}
       key={fakultas}
     >
-      <h5>{fakultas}</h5>
+      <h4>{fakultas}</h4>
     </ButtonFakultas>
   ));
 
   const listDisplayedHMJ = listGathertownHMJ.map((hmj) => (
     <li key={hmj.namaHMJ}>
-      <div className='card-hmj'>
-        <div className='image-hmj'>
-          <img
-            alt={'logo ' + hmj.namaHMJ}
-            src={dummyImage}
-            width='185'
-            height='185'
-          />
-        </div>
-        <div className='info-hmj'>
-          <h2>{hmj.namaHMJ}</h2>
-          <div className='link-hmj'>
-            <a href={hmj.link} target='_blank'>
-              {hmj.link}
-            </a>
-          </div>
-        </div>
-      </div>
+      <HMJCardContainer
+        namaHMJ={hmj.namaHMJ}
+        namaFakultas={hmj.namaFakultas}
+        link={hmj.link}
+      />
     </li>
   ));
 

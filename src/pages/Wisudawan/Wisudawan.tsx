@@ -73,7 +73,10 @@ const dataDummy = [{
 
 export default function Wisudawan(): JSX.Element {
   const [match, params] = useRoute('/wisudawan/:nim');
+
+  const [loadingWisudawan, setLoadingWisudawan] = useState(true);
   const [dataWisudawan, setDataWisudawan] = useState<JSX.Element>();
+
   const [loadingPesan, setLoadingPesan] = useState(true);
   const [pesanToShow, setPesanToShow] = useState<JSX.Element[]>([]);
 
@@ -103,6 +106,7 @@ export default function Wisudawan(): JSX.Element {
           // bagian data wisudawan
           // setDataWisudawan(<WisudawanContainer {...dataWisudawan}/>);
           setDataWisudawan(<WisudawanContainer {...dataDummy[0]}/>);
+          setLoadingWisudawan(false);
         })
         .catch(err => console.error(err));
 
@@ -113,22 +117,48 @@ export default function Wisudawan(): JSX.Element {
     }, []);
 
     return (
-      <div className='wisudawan'>
-        <div className='wisudawan-tes'>
-          {dataWisudawan}
-        </div>
 
-        <div className='pesan-anonim'>
-          <div className='pesan-anonim-wrapper'>
-            {loadingPesan ? <Loading /> : pesanToShow}
+      <div className='bg-page-wisudawan'>
+        <div className='container'>
+          <div className='wisudawan-tes'>
+            {loadingWisudawan ? (
+              <div>
+                <Loading />
+                <h2 className="loading-msg">
+                  Loading data wisudawan
+                </h2>
+              </div>
+            ) : dataWisudawan}
           </div>
-          <div className='kirim-button-wrapper'>
+
+          <div className='pemisah'></div>
+
+          <h3 className='judul-section'>
+            Pesan Untuk Wisudawan
+          </h3>
+          <div className='pesan-anonim'>
+            <div className='pesan-anonim-wrapper'>
+              {loadingPesan
+                ? (
+                  <div>
+                    <Loading />
+                    <h2 className='loading-msg'>
+                      Loading pesan wisudawan
+                    </h2>
+                  </div>
+                ) : (
+                  pesanToShow
+                )}
+            </div>
+          </div>
+          <div className='kirim-pesan-button-wrapper'>
             <Link href={`/wisudawan/${nim}/kirim-pesan`}>
-              <button className='kirim-button'>Kirim Pesan</button>
+              <button className='kirim-pesan-button'>Kirim Pesan</button>
             </Link>
           </div>
         </div>
       </div>
+
     );
   } else {
     return (<h1> cari apa mas? </h1>);

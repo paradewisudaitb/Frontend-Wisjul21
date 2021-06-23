@@ -9,7 +9,7 @@
   margin: 1em 0;
 
   @include respond-to('phone') {
-    padding: 0 1em;
+    padding: 0;
   }
 
   .pesan-wrapper {
@@ -21,7 +21,8 @@
 
     @include respond-to('phone') {
       margin: 0;
-      width: 80vw;
+      padding: 25px;
+      max-width: 80vw;
     }
 
     .header-wrapper {

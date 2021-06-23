@@ -2,14 +2,13 @@
 @import '../../styles/colorpalette.scss';
 
 .wisudawan-container {
-    background-color:rgba(14, 30, 98, 0.3);
-    margin: 2em;
     padding: 40px;
     display: flex;
     justify-content: space-evenly;
-    @include respond-to('phone') {
+    @include respond-to('phone', 'tablet') {
         display:flex;
         flex-direction: column;
+        padding: 0px;
     }
 }
 
@@ -57,7 +56,7 @@
 .foto-wisudawan img {
     width: 16rem;
     height: 16rem;
-    @include respond-to('phone') {
+    @include respond-to('phone', 'tablet') {
         width: 12rem;
         height: 12rem;
     }
@@ -65,11 +64,13 @@
 
 .wisudawan-left {
     margin-right: 2rem;
-    @include respond-to('phone') {
+    @include respond-to('phone', 'tablet') {
         margin-right: 0rem;
         margin-bottom: 2rem;
         display:flex;
-        flex-direction: row;
+        // flex-direction: row;
+        // aku ubah jadi ke bnawah dulu - Josep
+        flex-direction: column;
         align-items: center;
     }
 }

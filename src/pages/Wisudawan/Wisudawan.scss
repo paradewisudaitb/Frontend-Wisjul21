@@ -1,10 +1,93 @@
 @import '../../styles/colorpalette.scss';
 @import '../../styles/responsive.scss';
 
+$scroll-thumb-color: $red-darker;
+
+.loading-msg {
+  text-align: center;
+}
+
+.bg-page-wisudawan {
+  background-image: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  padding: 40px;
+
+  @include respond-to('phone', 'tablet') {
+    padding: 40px 20px;
+    margin: auto 0;
+  }
+
+  .container {
+    background-color:unquote($blue-darker + '4D');
+    padding: 40px;
+    border-radius: 40px;
+    background-size: cover;
+    margin: 0 auto;
+  }
+
+  .judul-section {
+    text-align: center;
+    max-width: fit-content;
+    margin: auto;
+
+    @include respond-to('phone', 'tablet') {
+      max-width: 200px;
+    }
+  }
+
+  .pemisah {
+    background-color: $yellow-lighter;
+    margin-bottom: 2em;
+    height: 3px;
+  }
+}
+
 .pesan-anonim {
-  background-color: $blue-darker;
-  margin: 2em;
-  border-radius: 30px;
+  margin-bottom: 0;
+  height: 60vh;
+  overflow: auto;
+
+  @include respond-to('phone', 'tablet') {
+  }
+
+  scrollbar-color: $scroll-thumb-color transparent;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    padding-top: 1000px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    &:start {
+      margin-top: 17px;
+    }
+    &:end {
+      margin-bottom: 17px;
+    }
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: $scroll-thumb-color;
+    }
+  }
 
   .pesan-anonim-wrapper {
     padding: 15px;
@@ -18,18 +101,22 @@
       text-align: center;
     }
   }
+}
 
-  .kirim-button-wrapper {
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 15px;
-    padding: 20px 0;
-    padding-bottom: 35px;
+.kirim-pesan-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 2vh;
+  padding-right: 15vw;
 
-    .kirim-button {
-      width: 15em;
-      height: 2.5em;
-      background-color: #686363;
-    }
+  @include respond-to('phone', 'tablet') {
+    padding-right: 5vw;
+  }
+
+  .kirim-pesan-button {
+    width: fit-content;
+    border-radius: 10px;
+    height: 2.5em;
+    background-color: $blue-medium;
   }
 }

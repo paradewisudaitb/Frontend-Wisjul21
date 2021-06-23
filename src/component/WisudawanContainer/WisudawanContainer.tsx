@@ -54,7 +54,6 @@ const WisudawanContainer = (data: DataWisudawan) => {
     <div className='wisudawan-container'>
       {/* <div className='row'> */}
       <div className='wisudawan-left'>
-         
         <div className='foto-wisudawan'>
           <img src={data.foto} />
         </div>

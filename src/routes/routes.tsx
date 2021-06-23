@@ -1,13 +1,13 @@
 
-import Majalah from '../pages/Majalah/Majalah';
 import HomePage from '../pages/HomePage/HomePage';
+import ComingSoon from '../pages/ComingSoon/ComingSoon';
+import Majalah from '../pages/Majalah/Majalah';
 import Form from '../pages/Form/Form';
 import FormApresiasi from '../pages/FormApresiasi/FormApresiasi';
 import GaleriApresiasi from '../pages/GaleriApresiasi/GaleriApresiasi';
 import { KirimPesanPage } from '../pages/KirimPesan/KirimPesanPage';
 import Wisudawan from '../pages/Wisudawan/Wisudawan';
-import ComingSoon from '../pages/ComingSoon/ComingSoon';
-// import Gathertown from '../pages/Gathertown/Gathertown';
+import Gathertown from '../pages/Gathertown/Gathertown';
 
 export type route = {
     label: string
@@ -32,11 +32,11 @@ export const MAJALAH_PAGE = toRoute('Majalah', '/majalah', Majalah);
 export const GALERI_APRESIASI_PAGE = toRoute('Galeri Apresiasi', '/galeri-apresiasi', GaleriApresiasi);
 export const KIRIM_PESAN_PAGE = toRoute('Kirim Pesan', '/wisudawan/:nim/kirim-pesan', KirimPesanPage);
 export const WISUDAWAN_PAGE = toRoute('Wisudawan', '/wisudawan/:nim', Wisudawan);
-// export const GATHERTOWN_PAGE = toRoute('Gather Town', '/gathertown', Gathertown);
+export const GATHERTOWN_PAGE = toRoute('Gather Town', '/gathertown', Gathertown);
 export const FORM_PAGE = toRoute('Form', '/form', Form);
 export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', '/form-apresiasi', FormApresiasi);
 
-export const FORM_INDEX = toRoute('Forms', '/forms');
+export const FORM_INDEX = toRoute('Forms', 'forms');
 
 export const NavbarRoutes: navroutes[] = [
   {
@@ -62,4 +62,10 @@ export const NavbarRoutes: navroutes[] = [
 export const AllRoutes = [
   HOME_PAGE,
   MAJALAH_PAGE,
+  GALERI_APRESIASI_PAGE,
+  KIRIM_PESAN_PAGE,
+  WISUDAWAN_PAGE,
+  GATHERTOWN_PAGE,
+  FORM_APRESIASI_PAGE,
+  FORM_PAGE,
 ];

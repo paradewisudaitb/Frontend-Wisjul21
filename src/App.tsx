@@ -1,31 +1,29 @@
 import React, { Suspense } from 'react';
 import './App.scss';
-import { Route, Switch } from 'wouter';
+import { Route, Switch, Redirect } from 'wouter';
 
 import { Footer } from './component/NavbarFooter/Footer';
 import { Navbar } from './component/NavbarFooter/Navbar';
-
-import { AllRoutes } from './routes/routes';
-
-import { Loading } from './component/Loading/Loading';
+import { AllRoutes, HOME_PAGE, COMINGSOON_PAGE } from './routes/routes';
+import { Loading } from './pages/Loading/Loading';
 
 function App() {
   return (
     <div className='App'>
       <Suspense fallback={<Loading />}>
-        <Navbar />
-        <Switch>
-          { AllRoutes.map(({ label, path, component: Component}) => (
-            <Route
-              key={label}
-              path={ path }
-              component={ Component }
-            />
-          ))}
-          {/* <Redirect to={ HOME_PAGE.path }/> */}
-        </Switch>
-        <Footer />
+
       </Suspense>
+      <Navbar />
+      <Switch>
+        { AllRoutes.map(({ path, component: Component}) => (
+          <Route
+            path={ path }
+            component={ Component }
+          />
+        ))}
+        {/* <Redirect to={ HOME_PAGE.path }/> */}
+      </Switch>
+      <Footer />
     </div>
   );
 }

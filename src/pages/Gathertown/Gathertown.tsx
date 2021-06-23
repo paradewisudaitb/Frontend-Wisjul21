@@ -13,7 +13,7 @@ type HMJ = {
   link: string;
 };
 
-const Gathertown: FC = () => {
+const Gathertown = () => {
   const [activeButton, setActiveButton] = useState('');
   const [listGathertownHMJ, setListGathertownHMJ] = useState(LIST_HMJ);
 
@@ -57,7 +57,7 @@ const Gathertown: FC = () => {
   ));
 
   return (
-    <Fragment>
+    <div>
       <div className='info'>
         <h1>Gathertown</h1>
         <p>
@@ -76,7 +76,7 @@ const Gathertown: FC = () => {
       <div className='list-button'>{listButtonFakultas}</div>
       <ul className='list-hmj'>{listDisplayedHMJ}</ul>
       <br />
-    </Fragment>
+    </div>
   );
 };
 

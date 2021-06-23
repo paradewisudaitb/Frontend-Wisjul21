@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link, useRoute } from 'wouter';
 import './Wisudawan.scss';
 import PesanAnonim from '../../component/PesanAnonim/PesanAnonim';
 import WisudawanContainer from '../../component/WisudawanContainer/WisudawanContainer';
-
 
 const dataDummy = [{
   'nama': 'John Doe',
@@ -69,23 +69,31 @@ const dataDummy = [{
 }];
 
 export default function Wisudawan() {
-  return (
-    <div className='wisudawan'>
-      <div className='wisudawan-tes'>
-        <WisudawanContainer {...dataDummy[0]}/>
+  const [match, params] = useRoute('/wisudawan/:nim');
 
-      </div>
+  if (match && params) {
+    return (
+      <div className='wisudawan'>
+        <div className='wisudawan-tes'>
+          <WisudawanContainer {...dataDummy[0]}/>
 
-      {/* pesan anonim */}
-
-      <div className='pesan-anonim'>
-        <div className='pesan-anonim-wrapper'>
-          <PesanAnonim />
         </div>
-        <div className='kirim-button-wrapper'>
-          <button className='kirim-button'>Kirim Ucapan</button>
+
+        {/* pesan anonim */}
+
+        <div className='pesan-anonim'>
+          <div className='pesan-anonim-wrapper'>
+            <PesanAnonim />
+          </div>
+          <div className='kirim-button-wrapper'>
+            <Link href={`${params.nim}/kirim-pesan`}>
+              <button className='kirim-button'>Kirim Ucapan</button>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (<h1> cari apa mas? </h1>);
+  }
 }

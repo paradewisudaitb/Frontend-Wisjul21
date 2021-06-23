@@ -17,6 +17,7 @@ import { Navbar } from './component/NavbarFooter/Navbar';
 
 function App() {
   return (
+<<<<<<< Updated upstream
     <div className="App">
       <Navbar />
       <Route path=''><HomePage /></Route>
@@ -28,6 +29,23 @@ function App() {
       <Route path='/wisudawan'><Wisudawan /></Route>
       <Route path='/kirim-pesan'><KirimPesanPage /></Route>
       <Footer />
+=======
+    <div className='App'>
+      <Suspense fallback={<Loading />}>
+        <Navbar />
+        <Switch>
+          { AllRoutes.map(({ label, path, component: Component}) => (
+            <Route
+              key={label}
+              path={ path }
+              component={ Component }
+            />
+          ))}
+          {/* <Redirect to={ HOME_PAGE.path }/> */}
+        </Switch>
+        <Footer />
+      </Suspense>
+>>>>>>> Stashed changes
     </div>
   );
 }

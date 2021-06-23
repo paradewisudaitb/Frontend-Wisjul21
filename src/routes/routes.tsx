@@ -26,7 +26,7 @@ export const toRoute = (label:string, path:string, component?:() => JSX.Element)
   label, path, component
 });
 
-export const EVENT_PAGE = toRoute('Events', '', EventPage);
+export const EVENT_PAGE = toRoute('Events', '/events', EventPage);
 export const HOME_PAGE = toRoute('Home', '/', HomePage);
 export const COMINGSOON_PAGE = toRoute('Coming Soon', '/coming-soon', ComingSoon);
 export const MAJALAH_PAGE = toRoute('Majalah', '/majalah', Majalah);

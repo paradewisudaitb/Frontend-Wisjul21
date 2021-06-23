@@ -5,10 +5,6 @@ import PesanAnonim from '../../component/PesanAnonim/PesanAnonim';
 import WisudawanContainer from '../../component/WisudawanContainer/WisudawanContainer';
 import { getPesan } from '../../controller/pesan';
 
-type props = {
-  nim: string,
-}
-
 const dataDummy = [{
   'nama': 'John Doe',
   'nim': '13519001',
@@ -73,11 +69,16 @@ const dataDummy = [{
   'karya': ['Karya seni 1','Karya seni 2','Karya seni 3']
 }];
 
+type props = {
+  nim: string,
+};
+    
 export default function Wisudawan(): JSX.Element {
   const nim = '13716059';
+  const [dataWisudawan, setDataWisudawan] = useState<JSX.Element>();
   const [loadingPesan, setLoadingPesan] = useState(true);
   const [pesanToShow, setPesanToShow] = useState<JSX.Element[]>([]);
-
+  
   const getMessageToShow = () => {
     const tmp: JSX.Element[] = [];
     getPesan(nim).then(pesans => {
@@ -96,16 +97,23 @@ export default function Wisudawan(): JSX.Element {
   };
 
   useEffect(() => {
-    // bagian pesan
-    getMessageToShow();
-    const interval = 5 * 60 * 1000;
-    setInterval(getMessageToShow, interval); // ambil pesan baru setiap `interval`
+    getByNIM(nim).then(dataWisudawan => {
+      // bagian data wisudawan
+      // setDataWisudawan(<WisudawanContainer {...dataWisudawan}/>);
+      console.log(dataWisudawan);
+      setDataWisudawan(<WisudawanContainer {...dataDummy[0]}/>);
+
+      // bagian pesan
+      getMessageToShow();
+      const interval = 5 * 60 * 1000;
+      setInterval(getMessageToShow, interval); // ambil pesan baru setiap `interval`
+    });
   }, []);
 
   return (
     <div className='wisudawan'>
       <div className='wisudawan-tes'>
-        <WisudawanContainer {...dataDummy[0]}/>
+        {dataWisudawan}
       </div>
 
       <div className='pesan-anonim'>

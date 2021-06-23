@@ -3,7 +3,9 @@ import React from 'react';
 // import './WisudawanCardContainer.scss';
 import './WisudawanContainer.scss';
 import logo from '../../images/ukj.png';
+// import IDataWisudawan from '../../interfaces/IDataWisudawan';
 
+// TODO: API (hm gangerti), tambahin gambar2/assets/percantik lagi biar lebih sesuai sama figma
 interface ListUnit {
   logoUnit: string,
   namaUnit: string
@@ -22,6 +24,28 @@ interface DataWisudawan {
     kontribusi: string[],
     listUnit: ListUnit[]
 }
+
+
+// const req: IDataWisudawan = {
+//   nim: data.nim,
+//   namaHimpunan: data.himpunan,
+//   namaJurusan: data.jurusan,
+//   namaLengkap: data.namalengkap,
+//   namaPanggilan: data.namapanggilan,
+//   judulTA: data.judulta,
+//   funFact: data.funfact,
+//   tipsSukses: data.tips,
+//   email: data.email,
+//   kotaAsal: data.kota,
+//   tanggalLahir: data.tanggallahir,
+//   angkatan: data.angkatan,
+//   pasfoto: linkFoto,
+//   nonhim: data.himpunan == 'nonhim',
+//   lembaga: data.nonhmj.split('\n').map((e: string) => e.trim()),
+//   kontribusi: data.kontribusi.split('\n').map((e: string) => e.trim()),
+//   prestasi: data.prestasi.split('\n').map((e: string) => e.trim()),
+//   karya: data.karya.split('\n').map((e: string) => e.trim()),
+// };
 
 // TODO tampilan mobile, image rapihin
 

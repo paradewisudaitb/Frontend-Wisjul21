@@ -1,10 +1,35 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/colorpalette.scss';
+
 .wisudawan-filter {
+  ::placeholder {
+    color: $yellow-darker;
+    opacity: 80%;
+  }
+
   form {
+    position: relative;
+    margin-bottom: 5vh;
+
     input[type='text'] {
+      background: $red-darker;
       margin: 1rem;
-      font-size: 1.2rem;
-      width: 40rem;
+      font-size: 1.6vw;
+      width: 50vw;
+      border-radius: 3rem;
+      border: none;
+      box-shadow: none;
+      height: 7.2vh;
+      // height: 3rem;
+      padding-left: 6vw;
     }
+
+    // .bulu-bg {
+    //   position: absolute;
+    //   width: 6.5vw;
+    //   left: 50px;
+    //   // transform: translate(-54vw, -2.5vh);
+    // }
   }
 
   .list-wisudawan {
@@ -12,14 +37,21 @@
     justify-content: center;
     flex-direction: row;
   }
+  
+  *:focus {
+    outline: none;
+  }
 }
 
-@media only screen and (max-width: 780px) {
+@include respond-to('phone') {
   .wisudawan-filter {
     form {
       input[type='text'] {
         width: 60vw;
-        font-size: 2.4vw;
+        height: 7vh;
+        font-size: 1.1rem;
+        // font-size: 2.4vw;
+        padding-left: 8vw;
       }
     }
   }

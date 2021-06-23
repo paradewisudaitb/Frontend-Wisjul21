@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import WisudawanCardContainer from './WisudawanCardContainer';
+import Bulu from '../../images/bg/bulu_atas_matahari_01.png';
 import './FilterWisudawan.scss';
 
 const FilterWisudawan = () => {
@@ -9,12 +10,13 @@ const FilterWisudawan = () => {
   return(
     <div className='wisudawan-filter'>
       <form>
-        <h1>Daftar Wisudawan</h1>
+        <h2>Daftar Wisudawan</h2>
         <input
           onChange={(e) => setText(e.target.value)}
           type='text'
           placeholder={'Cari Nama atau NIM'}
         />
+        {/* <img src={Bulu} alt='' className='bulu-bg' /> */}
       </form>
       <div className='list-wisudawan'>
         <WisudawanCardContainer />

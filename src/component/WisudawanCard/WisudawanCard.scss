@@ -1,23 +1,36 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/colorpalette.scss';
+
 .card-container {
-  background-color: #C4C4C4;
   display: flex;
   margin: 1rem;
   flex-direction: column;
   text-align: center;
-  width: 20rem;
+  width: 30vw;
   height: auto;
   padding: 1vh 0;
+  border-radius: 1rem;
+  background-color: $blue-darker;
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: translateY(-2%);
+    cursor: pointer;
+    background-color: $blue-medium;
+  }
 
   h3 {
-    margin-top: 0.5rem;
+    // color: $yellow-darker;
+    margin-top: 1.5vh;
     margin-bottom: 0;
-    font-size: 2.1rem;
+    font-size: 3vw;
   }
 
   h4 {
+    // color: $yellow-lighter;
     margin-top: 0.1rem;
-    font-size: 1.4rem;
-    margin-bottom: 0.2rem;
+    font-size: 1.8vw;
+    margin-bottom: 2vw;
   }
 
   .image {
@@ -26,14 +39,32 @@
     align-items: center;
     margin: 0.7rem 0.7rem;
     
-    img {
-      max-width: 50%;
+    .spark-bg {
+      width: 17vw;
+      position: absolute;
+      transform: translate(35%, -30%);
     }
+
+    .foto-wisudawan {
+      background-color: #C4C4C4;
+      position: relative;
+      object-fit: cover;
+      border-radius: 50%;
+      max-width: 60%;
+    }
+
+    .awan-bg {
+      position: absolute;
+      width: 23vw;
+      transform: translate(-15%, 20%);
+    }
+
   }
   
   p {
-    margin-top: 0.5rem;
-    font-size: 1.1rem;
+    margin: 2vw 0;
+    font-size: 1.3vw;
+    padding: 0 2vw;
   }
 
   .unit-container {
@@ -50,21 +81,21 @@
       justify-content: flex-start;
 
       .unit-logo {
-        width: 2.3rem;
+        width: 3.2vw;
         height: auto;
-        margin-right: 1rem;
+        margin-right: 1vw;
       }
 
       p {
-        margin-bottom: 0;
-        margin-top: 0;
-        font-size: 1rem;
+        margin: 0 0;
+        font-size: 1.3vw;
+        padding-left: 0.5vw;
       }
     }
   }
 }
 
-@media only screen and (max-width: 780px) {
+@include respond-to('phone') {
   .card-container {
     width: 40vw;
     margin: 0 2vw;
@@ -72,26 +103,36 @@
     height: auto;
   
     h3 {
-      margin-top: 0.1rem;
-      font-size: 4.8vw;
+      margin-top: 2vh;
+      font-size: 4vw;
     }
 
     h4 {
-      font-size: 3.3vw;
+      font-size: 2.5vw;
     }
 
     .image {
       margin: 1rem;
-      img {
+
+      .spark-bg {
+        width: 22vw;
+        transform: translate(35%, -28%);
+      }
+
+      .foto-wisudawan {
         max-width: 60%;
+      }
+
+      .awan-bg {
+        width: 30vw;
+        transform: translate(-15%, 21%);
       }
     }
 
     p {
-      font-size: 2.5vw;
-      margin-top: -0.1rem;
+      font-size: 2vw;
+      margin: 2vh 0;
       padding: 0 1rem;
-      margin-bottom: 1vh;
     }
 
     .unit-container {
@@ -111,7 +152,9 @@
           }
 
           p {
-            font-size: 2.1vw;
+            padding-left: 1.8vw;
+            font-size: 1.7vw;
+            letter-spacing: 0.2vw;
           }
         }
       }

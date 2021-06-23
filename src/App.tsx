@@ -3,7 +3,7 @@ import './App.scss';
 import { Route } from 'wouter';
 import EventPage from './pages/Event/EventPage';
 
-import HomePage from './pages/HomePage/HomePage';
+// import HomePage from './pages/HomePage/HomePage';
 import Form from './pages/Form/Form';
 import FormApresiasi from './pages/FormApresiasi/FormApresiasi';
 import Majalah from './pages/Majalah/Majalah';

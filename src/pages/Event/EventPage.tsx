@@ -8,12 +8,14 @@ import {
   getUpcomingText,
 } from './EventContent';
 
-import { Navbar } from '../../component/Navbar';
-import { Footer } from '../../component/Footer';
+import { Navbar } from '../../component/NavbarFooter/Navbar';
+import { Footer } from '../../component/NavbarFooter/Footer';
 
 const EventPage = () => {
+  const comingSoonEvent = findUpcomingEvent(EVENTS)?.title;
   return (
     <div className="App-header">
+      <img src={`${ASSET_URL}/assets/images/background/main.jpg`} className='abc'/>
       <h1>What's On Wisjul</h1>
       <p>
         Check our instagram, {' '}
@@ -22,18 +24,23 @@ const EventPage = () => {
             @paradewisudaitb
           </a>
         </strong>{' '}
-        for futher information
+        for futher information.
       </p>
       <table>
-        <tr>
-          lorem ipsum
-        </tr>
-        <tr>
-          lorem ipsum
-        </tr>
-        <tr>
-          lorem ipsum
-        </tr>
+        <tbody className="ukurantabel">
+          {EVENTS.map((row, idx) => (
+            <Event
+              data={row}
+              key={idx}
+              date={row.date}
+              isMainEvent={row.main}
+              isPastEvent={isPastEvent(row)}
+              isComingSoon={row.title == comingSoonEvent}
+              getUpcomingText={getUpcomingText}
+              title={row.title}
+            />
+          ))}
+        </tbody>
       </table>
     </div>
   );

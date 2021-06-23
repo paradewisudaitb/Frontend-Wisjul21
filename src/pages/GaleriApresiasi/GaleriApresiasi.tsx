@@ -1,5 +1,6 @@
 import React from 'react';
 import WisudawanCardContainer from '../../component/WisudawanCard/WisudawanCardContainer';
+import FilterWisudawan from '../../component/WisudawanCard/FilterWisudawan';
 import Logo from '../../images/ukj.png';
 import ApresiasiCarousel from '../../component/ApresiasiCarousel/ApresiasiCarousel';
 import './GaleriApresiasi.scss';
@@ -43,16 +44,7 @@ const GaleriApresiasi = () => {
       </div>
       
       <div className='daftar-wisudawan'>
-        <h1>Daftar Wisudawan</h1>
-        <form>
-          <input
-            placeholder='Cari Nama atau NIM'
-            type='text'
-          />
-        </form>
-        <div className='list-wisudawan'>
-          <WisudawanCardContainer />
-        </div>
+        <FilterWisudawan />
       </div>
 
     </div>

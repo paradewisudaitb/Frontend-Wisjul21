@@ -4,6 +4,8 @@ import './Wisudawan.scss';
 import PesanAnonim from '../../component/PesanAnonim/PesanAnonim';
 import WisudawanContainer from '../../component/WisudawanContainer/WisudawanContainer';
 import { getPesan } from '../../controller/pesan';
+import { getByNIM } from '../../controller/wisudawan';
+import { useRoute } from 'wouter';
 
 const dataDummy = [{
   'nama': 'John Doe',
@@ -69,16 +71,12 @@ const dataDummy = [{
   'karya': ['Karya seni 1','Karya seni 2','Karya seni 3']
 }];
 
-type props = {
-  nim: string,
-};
-    
 export default function Wisudawan(): JSX.Element {
   const nim = '13716059';
   const [dataWisudawan, setDataWisudawan] = useState<JSX.Element>();
   const [loadingPesan, setLoadingPesan] = useState(true);
   const [pesanToShow, setPesanToShow] = useState<JSX.Element[]>([]);
-  
+
   const getMessageToShow = () => {
     const tmp: JSX.Element[] = [];
     getPesan(nim).then(pesans => {

@@ -6,6 +6,7 @@ interface IPesanIn {
   nim: string;
   namaPengirim: string;
   pesan: string;
+  createdAt: string;
 }
 
 export default IPesanIn;

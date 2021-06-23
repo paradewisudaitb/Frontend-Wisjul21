@@ -1,9 +1,22 @@
+@import '../../styles/colorpalette.scss';
+@import '../../styles/responsive.scss';
+
 .pesan-anonim {
-  background-color: #dddddd;
+  background-color: $blue-darker;
   margin: 2em;
-  
+  border-radius: 30px;
+
   .pesan-anonim-wrapper {
     padding: 15px;
+
+    @include respond-to('phone') {
+      padding: 15px 0;
+    }
+
+    .pesan-kosong {
+      margin: auto;
+      text-align: center;
+    }
   }
 
   .kirim-button-wrapper {
@@ -12,9 +25,8 @@
     margin: 0 15px;
     padding: 20px 0;
     padding-bottom: 35px;
-    
+
     .kirim-button {
-      font-size: 20px;
       width: 15em;
       height: 2.5em;
       background-color: #686363;

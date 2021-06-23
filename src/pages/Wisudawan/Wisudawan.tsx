@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import  { Loading } from '../Loading/Loading';
 import './Wisudawan.scss';
 import PesanAnonim from '../../component/PesanAnonim/PesanAnonim';
 import WisudawanContainer from '../../component/WisudawanContainer/WisudawanContainer';
-import {getByNIM} from '../../controller/wisudawan';
-
-// TODO ubah data dummy jadi sama kayak interface data wisudawan (ada di interfaces IDataWisudawan.ts)
+import { getPesan } from '../../controller/pesan';
 
 const dataDummy = [{
   'nama': 'John Doe',
@@ -73,17 +72,41 @@ const dataDummy = [{
 type props = {
   nim: string,
 };
-
-export default function Wisudawan() {
+    
+export default function Wisudawan(): JSX.Element {
   const nim = '13716059';
   const [dataWisudawan, setDataWisudawan] = useState<JSX.Element>();
+  const [loadingPesan, setLoadingPesan] = useState(true);
+  const [pesanToShow, setPesanToShow] = useState<JSX.Element[]>([]);
+  
+  const getMessageToShow = () => {
+    const tmp: JSX.Element[] = [];
+    getPesan(nim).then(pesans => {
+      setLoadingPesan(true);
+      if (pesans.length != 0) {
+        pesans.forEach(pesan => {
+          tmp.push(<PesanAnonim key={pesan.idPesan} {...pesan} />);
+        });
+      } else {
+        tmp.push(<p className='pesan-kosong'>Tidak ada pesan untuk wisudawan</p>);
+      }
+
+      setLoadingPesan(false);
+      setPesanToShow(tmp);
+    });
+  };
 
   useEffect(() => {
     getByNIM(nim).then(dataWisudawan => {
-      // lakukan sesuatu denngan data wisudawan
+      // bagian data wisudawan
       // setDataWisudawan(<WisudawanContainer {...dataWisudawan}/>);
       console.log(dataWisudawan);
       setDataWisudawan(<WisudawanContainer {...dataDummy[0]}/>);
+
+      // bagian pesan
+      getMessageToShow();
+      const interval = 5 * 60 * 1000;
+      setInterval(getMessageToShow, interval); // ambil pesan baru setiap `interval`
     });
   }, []);
 
@@ -93,14 +116,14 @@ export default function Wisudawan() {
         {dataWisudawan}
       </div>
 
-      {/* pesan anonim */}
-
       <div className='pesan-anonim'>
         <div className='pesan-anonim-wrapper'>
-          <PesanAnonim />
+          {loadingPesan ? <Loading /> : pesanToShow}
         </div>
         <div className='kirim-button-wrapper'>
-          <button className='kirim-button'>Kirim Ucapan</button>
+          <a href="/kirim-pesan">
+            <button className='kirim-button'>Kirim Pesan</button>
+          </a>
         </div>
       </div>
     </div>

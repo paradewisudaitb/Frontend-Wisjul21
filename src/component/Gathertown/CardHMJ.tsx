@@ -1,4 +1,6 @@
+import { FC } from 'react';
 import dummyImage from '../../images/ukj.png';
+import './CardHMJ.scss';
 
 const HMJCardContainer = (props: {
   namaHMJ: string;

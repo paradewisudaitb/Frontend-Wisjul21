@@ -1,0 +1,55 @@
+@import '../../App.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/colorpalette.scss';
+@import '../../styles/responsive.scss';
+
+.card-hmj {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  background-color: $blue-darker;
+  width: auto;
+
+  .image-hmj {
+    background-color: white;
+    border-radius: 25px;
+    padding: 0.5rem;
+    align-self: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .info-hmj {
+    width: 75%;
+    text-align: start;
+    margin: 1rem 1rem 1rem 2.5rem;
+
+    h2 {
+      @include gradient-header-1;
+      text-align: start;
+      word-break: break-word;
+      margin-bottom: 1.5rem;
+    }
+
+    .link-hmj {
+      text-align: start;
+      word-break: break-word;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      hyphens: auto;
+      margin: 0;
+      padding: 0.5em;
+      background-color: $red-medium;
+
+      a {
+        text-decoration: none;
+        color: $yellow-lighter;
+      }
+    }
+  }
+}

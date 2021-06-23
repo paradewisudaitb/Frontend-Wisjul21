@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ButtonFakultas from '../../component/Gathertown/ButtonFakultas';
-import HMJCardContainer from '../../component/Gathertown/HMJCardContainer';
+import HMJCardContainer from '../../component/Gathertown/CardHMJ';
 import './Gathertown.scss';
 import { LIST_FAKULTAS, LIST_HMJ } from './GathertownConstant';
 

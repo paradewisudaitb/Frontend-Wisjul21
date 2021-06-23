@@ -9,6 +9,7 @@ import Majalah from './pages/Majalah/Majalah';
 import GaleriApresiasi from './pages/GaleriApresiasi/GaleriApresiasi';
 import Wisudawan from './pages/Wisudawan/Wisudawan';
 import ComingSoon from './pages/ComingSoon/ComingSoon';
+import Pesan from './component/PesanAnonim/PesanAnonim';
 
 import { KirimPesanPage } from './pages/KirimPesan/KirimPesanPage';
 import { Footer } from './component/NavbarFooter/Footer';
@@ -45,6 +46,9 @@ function App() {
       </Route>
       <Route path='/gathertown'>
         <Gathertown />
+      </Route>
+      <Route path='/pesan'>
+        <Pesan />
       </Route>
       <Footer />
     </div>

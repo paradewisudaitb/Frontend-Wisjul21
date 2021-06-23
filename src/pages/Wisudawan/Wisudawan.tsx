@@ -77,6 +77,8 @@ export default function Wisudawan() {
       <div className='pesan-anonim'>
         <div className='pesan-anonim-wrapper'>
           <PesanAnonim />
+          <PesanAnonim />
+          <PesanAnonim />
         </div>
         <div className='kirim-button-wrapper'>
           <a href="/kirim-pesan">

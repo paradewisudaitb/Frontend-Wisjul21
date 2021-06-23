@@ -1,25 +1,30 @@
 @import '../../styles/colorpalette.scss';
 
 .pesan-container {
-  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em 0;
 
   .pesan-wrapper {
+    width: 60vw;
+    border-radius: 10px;
     padding: 15px 25px;
     background-color: unquote($red-darker + '70');
-  }
 
-  .header-pesan {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    .header-pesan {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
 
-    .header-content {
-      color: $yellow-darker;
+      .header-content {
+        color: $yellow-darker;
+      }
     }
-  }
 
-  .pesan-content {
-    color: $yellow-lighter;
-    text-align: left;
+    .pesan-content {
+      color: $yellow-lighter;
+      text-align: center;
+    }
   }
 }

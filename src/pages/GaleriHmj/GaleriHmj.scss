@@ -1,0 +1,72 @@
+@import '../../styles/colorpalette.scss';
+@import '../../styles/fonts.scss';
+
+.galeri-hmj {
+  height: 100%;
+  .galeri-hmj-title {
+    .title {
+      margin: 1em 0;
+      font-size: 3.5rem;
+    }
+  }
+
+  .fakultas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+
+    button {
+      background-color: $red-darker;
+      height: 3em;
+      width: 5em;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 1em;
+      font-size: 24px;
+      transition: .3s ease-in-out;
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      &:hover {
+        background-color: $red-medium;
+      }
+
+      &.active {
+        background-color: $red-lighter;
+      }
+    }
+  }
+
+  .himpunan-container {
+    margin: 3em 0;
+    display: flex;
+    justify-content: center;
+    gap: 4em;
+    flex-wrap: wrap;
+    
+    .himpunan-card {
+      height: 30em;
+      width: 20em;
+      background-color: $blue-darker;
+      border-radius: 40px;
+      .himpunan-wrapper {
+        display: flex;
+        height: inherit;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .image {
+          height: 250px;
+          width: 260px;
+          margin: 20px 0;
+          background-color: grey;
+        }
+      }
+    }
+  }
+}

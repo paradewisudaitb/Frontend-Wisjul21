@@ -49,13 +49,13 @@ const HomePage = () => {
 
         {/* (Kinda Inventive) Shadows */}
         <div className='tagline'>
-          <h3 className='tagline1-shadow' style={{ transform: `translateY(${offsetY*227 - offsetY*offsetY*175}vh) translateX(${offsetY*32.5}vw) scale(${1-(offsetY*0.6)})` }}>Metamorphose to find</h3>
-          <h3 className='tagline2-shadow' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${offsetY * 32.5}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h3>
+          <h3 className='tagline1-shadow' style={{ transform: `translateY(${offsetY*227 - offsetY*offsetY*175}vh) translateX(${(offsetY*32.5)%window.innerWidth}vw) scale(${1-(offsetY*0.6)})` }}>Metamorphose to find</h3>
+          <h3 className='tagline2-shadow' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%window.innerWidth}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h3>
         </div>
 
         <div className='tagline'>
-          <h1 className='tagline1' style={{ transform: `translateY(${offsetY*227 - offsetY*offsetY*175}vh) translateX(${offsetY*32.5}vw) scale(${1-(offsetY*0.6)}` }}>Metamorphose to find</h1>
-          <h1 className='tagline2' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${offsetY * 32.5}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h1>
+          <h1 className='tagline1' style={{ transform: `translateY(${offsetY*227 - offsetY*offsetY*175}vh) translateX(${(offsetY*32.5)%window.innerWidth}vw) scale(${1-(offsetY*0.6)}` }}>Metamorphose to find</h1>
+          <h1 className='tagline2' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%window.innerWidth}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h1>
         </div>
         
         <div className='home-container pt-5'>

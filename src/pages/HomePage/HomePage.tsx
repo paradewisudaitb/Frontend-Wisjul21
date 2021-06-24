@@ -14,7 +14,7 @@ const HomePage = () => {
 
   //Parallax
   const [offsetY, setOffsetY] = useState(0);
-  const handleScroll = () => setOffsetY(window.pageYOffset);
+  const handleScroll = () => setOffsetY(window.pageYOffset/window.innerHeight);
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -39,31 +39,31 @@ const HomePage = () => {
         {/* Header */}
         <div className='bg-container mt-5'>
           {/* Volcano */}
-          <div className='bg' style={{ backgroundImage: `url(${ASSET_URL}/assets/images/background/header.jpg)`, opacity: `${1-(offsetY/window.outerHeight)*1.7}` }}></div>
-          <img className='smoke' alt='Asap' src={`${ASSET_URL}/assets/images/vistock/header/asap.png`} style={{ transform: `translateY(-${offsetY * 0.3}px)`, opacity: `${1-(offsetY/window.outerHeight)*2}` }} />
-          <img className='volcanoes' alt='Gunung Berapi' src={`${ASSET_URL}/assets/images/vistock/header/gunung%20pinggir.png`} style={{ opacity: `${1-(offsetY/window.outerHeight)*1.7}` }} />
-          <img className='volcano' alt='Gunung Berapi Meletus' src={`${ASSET_URL}/assets/images/vistock/header/gunung%20tengah.png`} style={{ transform: `translateY(-${offsetY * 0.2}px)`, opacity: `${1-(offsetY/window.outerHeight)*1.5}` }} />
+          <div className='bg' style={{ backgroundImage: `url(${ASSET_URL}/assets/images/background/header.jpg)`, opacity: `${1-(offsetY)*1.7}` }}></div>
+          <img className='smoke' alt='Asap' src={`${ASSET_URL}/assets/images/vistock/header/asap.png`} style={{ transform: `translateY(-${offsetY * 200}px)`, opacity: `${1-(offsetY)*2}` }} />
+          <img className='volcanoes' alt='Gunung Berapi' src={`${ASSET_URL}/assets/images/vistock/header/gunung%20pinggir.png`} style={{ opacity: `${1-(offsetY)*1.7}` }} />
+          <img className='volcano' alt='Gunung Berapi Meletus' src={`${ASSET_URL}/assets/images/vistock/header/gunung%20tengah.png`} style={{ transform: `translateY(-${offsetY * 200}px)`, opacity: `${1-(offsetY)*1.5}` }} />
         </div>
 
         {/* Header Content */}
 
         {/* (Kinda Inventive) Shadows */}
         <div className='tagline'>
-          <h3 className='tagline1-shadow' style={{ transform: `translateY(${offsetY*0.21 - offsetY*offsetY*0.00015}vh) translateX(${offsetY*0.03}vw) scale(${1-(offsetY/window.innerHeight)*0.6})` }}>Metamorphose to find</h3>
-          <h3 className='tagline2-shadow' style={{ transform: `translateY(${offsetY*0.195 - offsetY*offsetY*0.00015}vh) translateX(-${offsetY * 0.03}vw) scale(${1-(offsetY/window.innerHeight)*0.6}` }}>the path to the blossom</h3>
+          <h3 className='tagline1-shadow' style={{ transform: `translateY(${offsetY*227 - offsetY*offsetY*175}vh) translateX(${offsetY*32.5}vw) scale(${1-(offsetY*0.6)})` }}>Metamorphose to find</h3>
+          <h3 className='tagline2-shadow' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${offsetY * 32.5}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h3>
         </div>
 
         <div className='tagline'>
-          <h1 className='tagline1' style={{ transform: `translateY(${offsetY*0.21 - offsetY*offsetY*0.00015}vh) translateX(${offsetY*0.03}vw) scale(${1-(offsetY/window.innerHeight)*0.6}` }}>Metamorphose to find</h1>
-          <h1 className='tagline2' style={{ transform: `translateY(${offsetY*0.195 - offsetY*offsetY*0.00015}vh) translateX(-${offsetY * 0.03}vw) scale(${1-(offsetY/window.innerHeight)*0.6}` }}>the path to the blossom</h1>
+          <h1 className='tagline1' style={{ transform: `translateY(${offsetY*227 - offsetY*offsetY*175}vh) translateX(${offsetY*32.5}vw) scale(${1-(offsetY*0.6)}` }}>Metamorphose to find</h1>
+          <h1 className='tagline2' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${offsetY * 32.5}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h1>
         </div>
         
         <div className='home-container pt-5'>
           <div className='logotagline'>
-            <img src={`${ASSET_URL}/assets/logo/min.png`} alt='Logo Wisuda Juli 2021' className='logo' style={{ transform: `translateY(${offsetY*0.2 - offsetY*offsetY*0.00015}vh)` }} />
+            <img src={`${ASSET_URL}/assets/logo/min.png`} alt='Logo Wisuda Juli 2021' className='logo' style={{ transform: `translateY(${offsetY*215 - offsetY*offsetY*175}vh)` }} />
             {/*<h5 className='tagline'>Metamorphose to find the path to the blossom.</h5>*/}
           </div>
-          <button className='youtube mx-auto' style={{ backgroundImage: Youtube, transform: `translateY(-${offsetY * 0.6}px)`, opacity: `${1-(offsetY/window.outerHeight)}` }}></button>
+          <button className='youtube mx-auto' style={{ backgroundImage: Youtube, transform: `translateY(-${offsetY * 648}px)`, opacity: `${1-offsetY}` }}></button>
         </div>
 
         <div className='main-container'>

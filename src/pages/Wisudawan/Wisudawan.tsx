@@ -7,6 +7,7 @@ import WisudawanContainer from '../../component/WisudawanContainer/WisudawanCont
 import { getPesan } from '../../controller/pesan';
 import { getByNIM } from '../../controller/wisudawan';
 
+// TODO hapus data dummy
 
 const dataDummy = [{
   'nama': 'John Doe',
@@ -71,25 +72,6 @@ const dataDummy = [{
   'kontribusi': ['Staf Divisi Website Wisjul 2021', 'Kadiv Divisi Website Wisjul 2021', 'Kabid IT Wisjul 2021'],
   'karya': ['Karya seni 1','Karya seni 2','Karya seni 3']
 }];
-
-// nim: string;
-// namaJurusan: string;
-// namaHimpunan: string;
-// namaLengkap: string;
-// namaPanggilan: string;
-// email: string;
-// angkatan: number;
-// tipsSukses: string;
-// kotaAsal: string;
-// tanggalLahir: Date;
-// judulTA: string;
-// funFact: string;
-// pasfoto: string;
-// nonhim: boolean;
-// karya?: string[];
-// kontribusi?: string[];
-// lembaga?: string[];
-// prestasi?: string[];
 
 const dataDummy2 = [{
   'namaPanggilan':'John',

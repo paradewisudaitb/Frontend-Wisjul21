@@ -12,10 +12,6 @@
     }
 }
 
-// .list-kontribusi {
-//     text-align: left;
-// }
-
 .wisudawan {
   background-image: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg");
   background-repeat: repeat;
@@ -25,54 +21,17 @@
   background-size: cover;
   padding-top: 5px;
 }
-// .unit-wisudawan {
-    // gada unit logo
-//     .unit-logo {
-//         width: 2.3rem;
-//         height: auto;
-//         margin-right: 1rem;
-//     }
-    // .unit-item {
-    //     display: flex;
-    //     flex-direction: row;
-    //     align-items: center;
-    //     margin-bottom: 0.8rem;
-    // }
-    // .unit-list {
-    //     margin-top: 2rem;
-    // }
-//     @include respond-to('phone') {
-//         display:flex;
-//         flex-direction: column;
-//         align-items: center;
-//     }
-// }
 
 .data-wisudawan p, .data-wisudawan h1, .data-wisudawan h2, .data-wisudawan h3, .data-wisudawan h4, .data-wisudawan li {
     text-align:left;
 }
 
-// .foto-wisudawan img {
-//     // .pas-foto {
-//         // width: 15rem;
-//         // height: 20rem;
-//         width: 180px;
-//         height: 240px;
-//         // margin-bottom: 2rem;
-//         // @include respond-to('phone', 'tablet') {
-//         //     width: 12rem;
-//         //     height: 16rem;
-//         // }
-//         // }
-
-// }
 #pas-foto {
     width: 180px;
     height: 240px;
 }
 .foto-wisudawan {
     margin-bottom: 2rem;
-
 }
 
 // 400 x 560

@@ -44,7 +44,7 @@ const Gathertown = () => {
   ));
 
   return (
-    <div>
+    <div className='background'>
       <div className='info'>
         <h1>Gather Town</h1>
         <p>
@@ -60,7 +60,7 @@ const Gathertown = () => {
           semper.
         </p>
       </div>
-      <div className='main'>
+      <div>
         <div className='list-button'>{listButtonFakultas}</div>
         <ul className='list-hmj'>{listDisplayedHMJ}</ul>
         <br />

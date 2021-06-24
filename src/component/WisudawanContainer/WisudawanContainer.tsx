@@ -1,18 +1,21 @@
 import React from 'react';
 import './WisudawanContainer.scss';
 import IDataWisudawan from '../../interfaces/IDataWisudawan';
+import { ASSET_URL } from '../../api';
 
 const WisudawanContainer = (data: IDataWisudawan) => {
+  const bulu = `${ASSET_URL}/assets/images/vistock/main/bulu.png`;
+  const spark = `${ASSET_URL}/assets/images/vistock/main/spark%201%20bawah%20matahari.png`;
   return (
     <div className='wisudawan-container'>
       <img
-        src="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/main/spark%201%20bawah%20matahari.png"
+        src={spark}
         className='spark'
       />
       <div className='wisudawan-left'>
         <div className='foto-wisudawan'>
           <img id='pas-foto' src={data.pasfoto}></img>
-          <img id='bulu' src="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/main/bulu.png"/>
+          <img id='bulu' src={bulu}/>
         </div>
 
         <div className='lembaga-wisudawan'>
@@ -32,8 +35,6 @@ const WisudawanContainer = (data: IDataWisudawan) => {
       </div>
 
       <div className='wisudawan-right'>
-
-
         <div className='data-wisudawan'>
           <h2>{data.namaHimpunan}</h2>
           <p>{data.namaJurusan}</p>
@@ -70,7 +71,6 @@ const WisudawanContainer = (data: IDataWisudawan) => {
             </ol>
             : <p>-</p>
           }
-
           <h4>Kontribusi di HMJ</h4>
           {((data.kontribusi) && (data.kontribusi[0] != '-')) ?
             <ol className='list-kontribusi'>
@@ -85,9 +85,7 @@ const WisudawanContainer = (data: IDataWisudawan) => {
 
         </div>
       </div>
-
     </div>
-
   );
 };
 

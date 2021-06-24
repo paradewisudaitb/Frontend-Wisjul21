@@ -45,7 +45,7 @@ $scroll-thumb-color: $red-darker;
 
 .pesan-anonim {
   margin-bottom: 0;
-  height: 60vh;
+  max-height: 60vh;
   overflow: auto;
 
   @include respond-to('phone', 'tablet') {

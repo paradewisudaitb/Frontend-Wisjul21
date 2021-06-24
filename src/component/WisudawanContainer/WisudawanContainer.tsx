@@ -126,8 +126,11 @@ const WisudawanContainer = (data: IDataWisudawan) => {
       />
       <div className='wisudawan-left'>
         <div className='foto-wisudawan'>
-          <img src={data.pasfoto}></img>
+          <img id='pas-foto' src={data.pasfoto}></img>
+          <img id='bulu' src="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/main/bulu.png"/>
         </div>
+        {/* <div className='hiasan-bulu'>
+        </div> */}
 
         <div className='lembaga-wisudawan'>
           <h4>Lembaga </h4>

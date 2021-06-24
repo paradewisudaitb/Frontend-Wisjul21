@@ -1,3 +1,5 @@
+@import '../../styles/responsive.scss';
+
 .header-jumbotron {
   z-index: 1;
   position: relative;
@@ -107,7 +109,10 @@ footer {
 }
 
 .image-modal {
-  width: 90vw;
+  width: 50vw;
+  @include respond-to('phone') {
+    width: 100vw;
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */

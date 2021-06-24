@@ -1,53 +1,65 @@
-@import '../../App.scss';
-@import '../../styles/fonts.scss';
 @import '../../styles/colorpalette.scss';
-@import '../../styles/responsive.scss';
 
-.card-hmj {
-  display: flex;
-  padding: 1rem;
-  margin: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
-  background-color: $blue-darker;
-  width: auto;
+.card-hmj-container {
+  padding-right: 1.5em;
+  position: relative;
 
-  .image-hmj {
-    background-color: white;
-    border-radius: 25px;
-    padding: 0.5rem;
-    align-self: center;
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+  .spark-card {
+    position: absolute;
+    bottom: 25%;
+    right: -5%;
+    width: 15%;
+    height: auto;
+    // z-index: 100;
+    transform: rotate(-70deg);
   }
 
-  .info-hmj {
-    width: 75%;
-    text-align: start;
-    margin: 1rem 1rem 1rem 2.5rem;
+  .card-hmj {
+    display: flex;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    background-color: $blue-darker;
+    width: auto;
 
-    h2 {
-      text-align: start;
-      word-break: break-word;
-      margin-bottom: 2.5rem;
+    .image-hmj {
+      background-color: white;
+      border-radius: 25px;
+      padding: 0.5rem;
+      align-self: center;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
     }
 
-    .link-hmj {
+    .info-hmj {
+      width: 75%;
       text-align: start;
-      word-break: break-word;
-      -webkit-hyphens: auto;
-      -moz-hyphens: auto;
-      hyphens: auto;
-      margin: 0;
-      padding: 0.5em;
-      background-color: $red-medium;
+      margin: 1rem 1rem 1rem 2.5rem;
 
-      a {
-        text-decoration: none;
-        color: $yellow-lighter;
+      h2 {
+        text-align: start;
+        word-break: break-word;
+        margin-bottom: 2.5rem;
+      }
+
+      .link-hmj {
+        text-align: start;
+        word-break: break-word;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+        margin: 0;
+        padding: 0.5em;
+        background-color: $red-medium;
+
+        a {
+          text-decoration: none;
+          color: $yellow-lighter;
+        }
       }
     }
   }

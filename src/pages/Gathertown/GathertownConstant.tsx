@@ -26,7 +26,7 @@ const LIST_HMJ: HMJ[] = [
     namaFakultas: 'STEI',
     namaHMJ: 'HMIF ITB',
     jurusan: 'Teknik Informatika & Sistem dan Teknologi Informasi',
-    link: 'https://bit.ly/HMIFterbaiksedunia',
+    link: 'bit.ly/HMIFterbaiksedunia',
   },
   {
     namaFakultas: 'STEI',

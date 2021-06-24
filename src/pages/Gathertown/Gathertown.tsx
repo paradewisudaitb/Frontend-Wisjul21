@@ -29,7 +29,7 @@ const Gathertown = () => {
       value={fakultas}
       key={fakultas}
     >
-      <h4>{fakultas}</h4>
+      <p>{fakultas}</p>
     </ButtonFakultas>
   ));
 
@@ -47,18 +47,25 @@ const Gathertown = () => {
     <div className='background'>
       <div className='info'>
         <h1>Gather Town</h1>
-        <p>
-          Ultricies leo integer malesuada nunc vel risus commodo. Mollis nunc
-          sed id semper risus in hendrerit gravida rutrum. Volutpat est velit
-          egestas dui. Purus semper eget duis at tellus at urna condimentum
-          mattis. Iaculis eu non diam phasellus vestibulum lorem. Est sit amet
-          facilisis magna etiam tempor orci. Nunc aliquet bibendum enim
-          facilisis. Laoreet id donec ultrices tincidunt arcu. Diam maecenas
-          ultricies mi eget mauris. Faucibus a pellentesque sit amet porttitor
-          eget. Diam donec adipiscing tristique risus nec feugiat in.
-          Sollicitudin aliquam ultrices sagittis orci a scelerisque purus
-          semper.
-        </p>
+        <div>
+          {/* <img
+            src={`${ASSET_URL}/assets/images/vistock/main/awan%201-01.png`}
+            className='cloud-header'
+            alt='Awan'
+          /> */}
+          <p>
+            Ultricies leo integer malesuada nunc vel risus commodo. Mollis nunc
+            sed id semper risus in hendrerit gravida rutrum. Volutpat est velit
+            egestas dui. Purus semper eget duis at tellus at urna condimentum
+            mattis. Iaculis eu non diam phasellus vestibulum lorem. Est sit amet
+            facilisis magna etiam tempor orci. Nunc aliquet bibendum enim
+            facilisis. Laoreet id donec ultrices tincidunt arcu. Diam maecenas
+            ultricies mi eget mauris. Faucibus a pellentesque sit amet porttitor
+            eget. Diam donec adipiscing tristique risus nec feugiat in.
+            Sollicitudin aliquam ultrices sagittis orci a scelerisque purus
+            semper.
+          </p>
+        </div>
       </div>
       <div>
         <div className='list-button'>{listButtonFakultas}</div>

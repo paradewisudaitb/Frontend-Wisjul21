@@ -14,6 +14,10 @@
   color: $yellow-lighter;
   display: inline-block;
 
+  h4 {
+    color: $yellow-lighter;
+  }
+
   & > * {
     margin: 0;
     padding: 0;

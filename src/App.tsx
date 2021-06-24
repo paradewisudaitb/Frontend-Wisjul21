@@ -7,6 +7,7 @@ import { Navbar } from './component/NavbarFooter/Navbar';
 import { AllRoutes, HOME_PAGE, COMINGSOON_PAGE } from './routes/routes';
 import { Loading } from './pages/Loading/Loading';
 
+
 function App() {
   return (
     <div className='App'>

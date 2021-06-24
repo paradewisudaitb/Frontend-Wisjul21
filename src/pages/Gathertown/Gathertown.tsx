@@ -46,13 +46,15 @@ const Gathertown = () => {
   return (
     <div className='background'>
       <div className='info'>
-        <h1>Gather Town</h1>
+        <div className='title'>
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/spark%202%20atas%20matahari.png`}
+            className='spark-title'
+            alt='Percikan api'
+          />
+          <h1>Gather Town</h1>
+        </div>
         <div>
-          {/* <img
-            src={`${ASSET_URL}/assets/images/vistock/main/awan%201-01.png`}
-            className='cloud-header'
-            alt='Awan'
-          /> */}
           <p>
             Ultricies leo integer malesuada nunc vel risus commodo. Mollis nunc
             sed id semper risus in hendrerit gravida rutrum. Volutpat est velit

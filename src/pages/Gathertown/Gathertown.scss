@@ -3,8 +3,24 @@
 @import '../../styles/colorpalette.scss';
 @import '../../styles/responsive.scss';
 
+* {
+  overflow-x: visible;
+}
+
 .info {
   text-align: center;
+
+  .title {
+    position: relative;
+
+    .spark-title {
+      position: absolute;
+      top: -40%;
+      right: 36%;
+      width: 10%;
+      height: auto;
+    }
+  }
 
   h1 {
     padding-top: 1em;
@@ -16,14 +32,6 @@
     padding-left: 15%;
     padding-right: 15%;
     margin-bottom: 1.5em;
-  }
-
-  .cloud-header {
-    position: relative;
-    top: 60%;
-    right: 40%;
-    width: 50%;
-    height: auto;
   }
 }
 

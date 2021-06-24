@@ -1,16 +1,14 @@
 @import '../../styles/colorpalette.scss';
 
 .card-hmj-container {
-  padding-right: 1.5em;
   position: relative;
 
   .spark-card {
     position: absolute;
-    bottom: 25%;
-    right: -5%;
+    bottom: 40%;
+    right: -6%;
     width: 15%;
     height: auto;
-    // z-index: 100;
     transform: rotate(-70deg);
   }
 

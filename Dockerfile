@@ -4,7 +4,7 @@ FROM node:fermium-alpine as build
 COPY . /app
 WORKDIR /app
 
-RUN yarn
+RUN yarn install --production=true
 RUN yarn build
 
 # production environment

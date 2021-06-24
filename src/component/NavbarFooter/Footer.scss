@@ -1,20 +1,48 @@
 @import '../../App.scss';
 
 .footer {
-  min-width: 100%;
+  width: 100%;
   margin-top: auto;
-  background: fixed $blue-darker;
-  height: 10rem;
+  background: fixed $red-darker;
+  height: 12rem;
   overflow: auto;
-  color: $navfootfont;
+}
+
+.copyright {
+  margin-top: 2rem;
 }
 
 .social-media-container {
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 2rem;
-  background-color: $blue-lighter;
+  background-color: $red-medium;
   margin: 0.2rem;
+
+  @include respond-to('desktop', 'large') {
+    .social-media {
+      svg {
+        width: 1px;
+        height: 1px;
+      }
+    }
+
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.social-media-sec {
+  margin-top: 4vh;
+  margin-right: 4vw;
+  display: flex;
+  flex-direction: column;
+
+  @include respond-to('desktop', 'large') {
+    margin-top: 8vh;
+    margin-right: 20px;
+    flex-direction: row;
+  }
 }
 
 .social-media-container:hover {

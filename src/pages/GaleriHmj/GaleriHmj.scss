@@ -3,10 +3,16 @@
 
 .galeri-hmj {
   height: 100%;
+  background: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg');
+  background-size: cover;
+  background-position: center;
+  margin: 0;
   .galeri-hmj-title {
+    display: flex;
+    justify-content: center;
     .title {
-      margin: 1em 0;
       font-size: 3.5rem;
+      margin: 1em;
     }
   }
 
@@ -43,12 +49,12 @@
   }
 
   .himpunan-container {
-    margin: 3em 0;
+    margin-top: 3em;
     display: flex;
     justify-content: center;
     gap: 4em;
     flex-wrap: wrap;
-    
+    padding: 1em 0 3em 0;
     .himpunan-card {
       height: 30em;
       width: 20em;
@@ -65,6 +71,14 @@
           width: 260px;
           margin: 20px 0;
           background-color: grey;
+        }
+
+        .himpunan-text {
+          display: flex;
+          justify-content: center;
+          .title {
+            text-align: center;
+          }
         }
       }
     }

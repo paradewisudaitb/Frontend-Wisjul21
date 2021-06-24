@@ -34,13 +34,13 @@ const Gathertown = () => {
   ));
 
   const listDisplayedHMJ = listGathertownHMJ.map((hmj) => (
-    <li key={hmj.namaHMJ}>
+    <div key={hmj.namaHMJ}>
       <HMJCardContainer
         namaHMJ={hmj.namaHMJ}
         namaFakultas={hmj.namaFakultas}
         link={hmj.link}
       />
-    </li>
+    </div>
   ));
 
   return (
@@ -76,7 +76,14 @@ const Gathertown = () => {
       </div>
       <div>
         <div className='list-button'>{listButtonFakultas}</div>
-        <ul className='list-hmj'>{listDisplayedHMJ}</ul>
+        <div className='list-hmj'>
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`}
+            alt='Bulu Phoenix'
+            className='feather-hmj'
+          />
+          {listDisplayedHMJ}
+        </div>
         <br />
       </div>
     </div>

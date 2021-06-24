@@ -63,9 +63,24 @@
   .list-hmj {
     margin: 0em 2vw 0em 2vw;
     padding: 0;
+    position: relative;
+    z-index: 2;
+    display: block;
+    text-align: center;
 
-    li {
-      list-style: none;
+    .feather-hmj {
+      position: absolute;
+      width: 15%;
+      height: auto;
+      transform: rotate(-90deg);
+      left: 45%;
+      top: 45%;
+      z-index: 1;
+    }
+
+    .card-hmj-container {
+      position: relative;
+      z-index: 2;
     }
   }
 }

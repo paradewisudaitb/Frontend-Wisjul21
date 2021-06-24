@@ -49,13 +49,13 @@ const HomePage = () => {
 
         {/* (Kinda Inventive) Shadows */}
         <div className='tagline'>
-          <h3 className='tagline1-shadow' style={{ transform: `translateY(${offsetY*227 - offsetY*offsetY*175}vh) translateX(${(offsetY*32.5)%window.innerWidth}vw) scale(${1-(offsetY*0.6)})` }}>Metamorphose to find</h3>
-          <h3 className='tagline2-shadow' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%window.innerWidth}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h3>
+          <h3 className='tagline1-shadow' style={{ transform: `translateY(${offsetY*230 - offsetY*offsetY*175}vh) translateX(${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)})` }}>Metamorphose to find</h3>
+          <h3 className='tagline2-shadow' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h3>
         </div>
 
         <div className='tagline'>
-          <h1 className='tagline1' style={{ transform: `translateY(${offsetY*227 - offsetY*offsetY*175}vh) translateX(${(offsetY*32.5)%window.innerWidth}vw) scale(${1-(offsetY*0.6)}` }}>Metamorphose to find</h1>
-          <h1 className='tagline2' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%window.innerWidth}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h1>
+          <h1 className='tagline1' style={{ transform: `translateY(${offsetY*230 - offsetY*offsetY*175}vh) translateX(${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)}` }}>Metamorphose to find</h1>
+          <h1 className='tagline2' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h1>
         </div>
         
         <div className='home-container pt-5'>
@@ -118,13 +118,13 @@ const HomePage = () => {
           <div className='event-buttons'>
             <h1>Ada apa di Perayaan Wisuda Juli ITB 2021?</h1>
             <div className='btn-container'>
-              <button className='arrow' onClick={prev}></button>
+              <button className='arrow' onClick={prev}>-</button>
               <div className='btns'>
                 <Link to='/majalah'><button className={'button'+((clickCount)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/majalah.png')` }}><h2>Majalah</h2></button></Link>
                 <Link to='/galeri-apresiasi'><button className={'button'+((clickCount+1)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/hmj.png')` }}><h2>Galeri Apresiasi</h2></button></Link>
                 <button className={'button'+((clickCount+2)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/gathertown.png')` }}><h2>Gather Town</h2></button>
               </div>
-              <button className='arrow' onClick={next}></button>
+              <button className='arrow' onClick={next}>+</button>
             </div>
           </div>
         </div>

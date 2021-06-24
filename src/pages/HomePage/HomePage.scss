@@ -138,8 +138,8 @@ button {
 }
 
 .cloud:nth-of-type(1) {
-  width: calc(#{random(10)}vw + #{random(90)+200}px);
-  top: percentage((random(70) + 10) / 100);
+  height: #{random(20)+10}vh;
+  top: percentage((random(60) + 10) / 100);
   animation-duration: (random(60)+60) + s;
   animation-delay: 0s;
   opacity: (random(30)+50)/100;
@@ -147,8 +147,8 @@ button {
 
 @for $i from 2 through 14 {
   .cloud:nth-of-type(#{$i}) {
-    width: calc(#{random(10)}vw + #{random(100)+200}px);
-    top: percentage((random(70) + 10 ) / 100);
+    height: #{random(20)+10}vh;
+    top: percentage((random(60) + 10) / 100);
     animation-duration: #{random(60)+60}s;
     animation-delay: #{random(20)+($i - 2)*40}s;
     opacity: (random(30)+50)/100;
@@ -197,8 +197,8 @@ button {
     .logo {
       position: relative;
       bottom: 30%;
-      height: 300px;
-      width: 300px;
+      height: 35vh;
+      width: 35vh;
       z-index: 100;
       filter: drop-shadow(5px 5px 4px #590A07);
     }
@@ -374,6 +374,7 @@ button {
   height: 50px;
   width: 50px;
   grid-row: 1;
+  background-color: transparent;
   align-self: center;
   visibility: hidden;
   @media screen and (max-width: 1300px) {

@@ -68,6 +68,22 @@
     display: block;
     text-align: center;
 
+    .cloud-hmj-01 {
+      position: absolute;
+      width: 25%;
+      top: -10%;
+      right: -7.5%;
+      z-index: 1;
+    }
+
+    .cloud-hmj-02 {
+      position: absolute;
+      width: 45%;
+      bottom: -3.5%;
+      right: -12.5%;
+      z-index: 1;
+    }
+
     .feather-hmj {
       position: absolute;
       width: 15%;

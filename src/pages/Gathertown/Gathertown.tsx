@@ -82,6 +82,16 @@ const Gathertown = () => {
             alt='Bulu Phoenix'
             className='feather-hmj'
           />
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`}
+            className='cloud-hmj-01'
+            alt='Awan'
+          />
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`}
+            className='cloud-hmj-02'
+            alt='Awan'
+          />
           {listDisplayedHMJ}
         </div>
         <br />

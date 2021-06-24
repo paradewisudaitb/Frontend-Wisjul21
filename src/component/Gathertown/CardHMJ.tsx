@@ -31,6 +31,7 @@ const HMJCardContainer = (props: {
       </div>
       <img
         src={`${ASSET_URL}/assets/images/vistock/main/spark%201%20kanan%20atas-01.png`}
+        alt='Percikan api'
         className='spark-card'
       />
     </div>

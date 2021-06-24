@@ -37,20 +37,20 @@
 
 .awan-kiri {
   position: absolute;
-  top: -400px;
-  left: -250px;
-  width: 900px;
-  // height: 400px;
+  top: 100px;
+  left: -100px;
+  width: 700px;
   z-index: 1;
+  overflow: hidden;
 }
 
 .awan-kanan {
   position: absolute !important;
   right: 0;
-  bottom: -200px;
-  height: 900px;
+  bottom: 200px;
   width: 600px !important;
   z-index: 0;
+  overflow: hidden;
 }
 
 .kembang-api {
@@ -104,6 +104,10 @@ footer {
   position: relative;
   height: 200px;
   margin-top: -200px;
+}
+
+.image-modal {
+  width: 90vw;
 }
 
 /* Extra small devices (phones, 600px and down) */

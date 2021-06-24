@@ -74,19 +74,20 @@ button {
 .volcano {
   position: absolute;
   justify-self: center;
-  bottom: -100px;
-  width: 1920px;
+  bottom: -5vw;
+  height: 125vh;
 }
 
 .smoke {
   position: absolute;
   justify-self: center;
+  height: 100vh;
 }
 
 .volcanoes {
   position: absolute;
   bottom: 0px;
-  width: 1920px;
+  width: 100vw;
 }
 
 .cloud-wrapper {
@@ -210,18 +211,20 @@ button {
   }
   .youtube {
     margin: 50px 50px;
-    height: 7vw;
-    width: 10vw;
+    height: 125px;
+    width: 150px;
     background-position: center;
-    background-size: 10vw auto;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
     background-color: transparent;
     background-image: url('../../icons/YoutubeWhite.png');
     //color: $accentcolour1;
     //background-color: transparent;
     //outline: $accentcolour1 solid 3px;
     z-index: 10;
-    @media screen and (max-width: 1080px) {
-      width: 0.2*1080px;
+    @media screen and (max-width: 720px) {
+      height: 18vw;
+      width: 20vw;
     }
     &:hover {
       color: $maincolour;

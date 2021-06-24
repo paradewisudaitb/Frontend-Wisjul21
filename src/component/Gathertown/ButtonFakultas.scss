@@ -6,11 +6,13 @@
 .button {
   border: none;
   outline: none;
-  background-color: grey;
+  background-color: $red-darker;
   cursor: pointer;
   padding: 1.5% 3.5%;
   margin: 0.75em;
   border-radius: 20px;
+  color: $yellow-lighter;
+  display: inline-block;
 
   & > * {
     margin: 0;

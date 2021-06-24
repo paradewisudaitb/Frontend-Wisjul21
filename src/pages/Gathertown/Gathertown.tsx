@@ -11,6 +11,8 @@ type HMJ = {
   link: string;
 };
 
+const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
+
 const Gathertown = () => {
   const [activeButton, setActiveButton] = useState('');
   const [listGathertownHMJ, setListGathertownHMJ] = useState(LIST_HMJ);
@@ -58,9 +60,11 @@ const Gathertown = () => {
           semper.
         </p>
       </div>
-      <div className='list-button'>{listButtonFakultas}</div>
-      <ul className='list-hmj'>{listDisplayedHMJ}</ul>
-      <br />
+      <div className='main'>
+        <div className='list-button'>{listButtonFakultas}</div>
+        <ul className='list-hmj'>{listDisplayedHMJ}</ul>
+        <br />
+      </div>
     </div>
   );
 };

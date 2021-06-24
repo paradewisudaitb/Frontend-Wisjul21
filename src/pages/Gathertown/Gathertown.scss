@@ -4,11 +4,10 @@
 @import '../../styles/responsive.scss';
 
 .info {
-  background-color: grey;
+  background-image: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/header.jpg');
   text-align: center;
 
   h1 {
-    @include gradient-header-1;
     padding-top: 1em;
     padding-bottom: 0.5em;
   }
@@ -16,17 +15,25 @@
   p {
     padding-left: 5%;
     padding-right: 5%;
-    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
   }
 }
 
+.main {
+  background-image: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg');
+}
+
 .list-button {
-  margin: 3em 1.5em 3em 1.5em;
+  margin: 3em 2.5em 3em 2.5em;
   text-align: center;
+
+  @include respond-to('phone') {
+    margin: 1.5em 0.75em 1.5em 0.75em;
+  }
 }
 
 .list-hmj {
-  margin: 0em 1vw 0em 1vw;
+  margin: 0em 2vw 0em 2vw;
   padding: 0;
 
   li {

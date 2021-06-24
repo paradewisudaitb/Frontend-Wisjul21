@@ -12,6 +12,7 @@ $scroll-thumb-color: $red-darker;
   background-size: cover;
   background-repeat: repeat;
   padding: 40px;
+  min-height: 100vh;
 
   @include respond-to('phone', 'tablet') {
     padding: 40px 20px;

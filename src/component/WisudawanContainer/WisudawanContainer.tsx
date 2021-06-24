@@ -10,7 +10,7 @@ const WisudawanContainer = (data: IDataWisudawan) => {
     <div className='wisudawan-container'>
       <img
         src={spark}
-        className='spark'
+        id='spark'
       />
       <div className='wisudawan-left'>
         <div className='foto-wisudawan'>

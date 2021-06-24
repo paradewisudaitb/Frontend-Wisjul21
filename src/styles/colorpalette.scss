@@ -1,0 +1,39 @@
+$red-darker: #590a07;
+$red-lighter: #f4705a;
+$red-medium: #b93531;
+
+$orange-lighter: #fc690a;
+$orange-darker: #f63c18;
+
+$yellow-lighter: #fee56c;
+$yellow-darker: #f8d31c;
+
+$purple-medium: #8970f6;
+$purple-darker: #7d56c1;
+$purple-lighter: #ac9afb;
+
+$blue-medium: #205d8e;
+$blue-darker: #0e1e62;
+$blue-lighter: #63a5bd;
+
+$cyan-medium: #01a29a;
+
+@mixin gradient-header-1 {
+  background-image: linear-gradient(84.2deg, $yellow-darker 12.06%, $orange-darker 92.4%);
+  background-clip: text;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+@mixin gradient-header-2 {
+  background-image: linear-gradient(94.89deg, $yellow-lighter 4.45%, $orange-lighter 100.53%);
+  background-clip: text;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}

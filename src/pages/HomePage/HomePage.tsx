@@ -12,6 +12,7 @@ const HomePage = () => {
 
   const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
   const youtubelogo = 'https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png';
+  const galeri = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/home-buttons/hmj.png';
 
   //Parallax
   const [offsetY, setOffsetY] = useState(0);
@@ -33,7 +34,8 @@ const HomePage = () => {
   return (
     <div className='main pb-5'>
       {/* THIS IS AN 'I HAVE NO IDEA HOW TO COVER THE WHOLE SCREEN WITH CLOUDS MOMENT, PLS HELP MAKE THIS MORE EFFICIENT */}
-
+      {/* Clouds */}
+      
       
       {/* Header */}
       <div className='bg-container mt-5'>
@@ -67,17 +69,15 @@ const HomePage = () => {
 
       <div className='main-container'>
 
-        {/* Clouds 
         <div className='cloud-container1'>
-          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%201-01.png`} style={{ transform: `translateY(-${(offsetY * 0.6)}px)`, zIndex: 6 }} />
-          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`} style={{ transform: `translateY(-${(offsetY * 0.7)}px)`, zIndex: 7 }} /> 
-          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`} style={{ transform: `translateY(-${(offsetY * 0.2)}px)`, zIndex: 2 }} />
-          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} style={{ transform: `translateY(-${(offsetY * 0.3)}px)`, zIndex: 3 }} />
-          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`} style={{ transform: `translateY(-${(offsetY * 0.4)}px)`, zIndex: 4 }} />
-          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/header/awan%20kanan.png`} style={{ transform: `translateY(-${(offsetY * 0.5)}px)`, zIndex: 5 }} />
-          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/header/awan%20kiri.png`} style={{ transform: `translateY(-${(offsetY * 0.1)}px)`, zIndex: 1 }} />
+          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%201-01.png`}  />
+          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`}  /> 
+          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`}  />
+          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`}  />
+          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`}  />
+          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/header/awan%20kanan.png`}  />
+          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/header/awan%20kiri.png`}  />
         </div>
-        */}
 
         {/* Visi-Misi */}
         <div className='visi-misi'>
@@ -90,15 +90,17 @@ const HomePage = () => {
         
 
         {/* Buttons */}
-        <h1>Wisuda Juli 2021</h1>
-        <div className='btn-container'>
-          <button className='Arrow' onClick={prev}>-</button>
-          <div className='btns'>
-            <Link to='/majalah'><button className={'button'+((clickCount)%3+1)} style={{ backgroundImage: 'https://i.pinimg.com/originals/24/33/43/243343f8b1aa8fa14d6193e6080281fe.jpg' }}>Majalah</button></Link>
-            <Link to='/galeri-apresiasi'><button className={'button'+((clickCount+1)%3+1)} style={{ backgroundImage: 'https://i.pinimg.com/originals/50/40/49/504049f26228049add642b58dc8dfcf1.jpg' }}>Galeri Wisudawan</button></Link>
-            <button className={'button'+((clickCount+2)%3+1)} style={{ backgroundImage: 'https://i.pinimg.com/originals/fb/f6/8b/fbf68b12f8aaaa6fbd0a8abe21225450.jpg' }}>Gather Town</button>
+        <div className='event-buttons'>
+          <h1>Wisuda Juli 2021</h1>
+          <div className='btn-container'>
+            <button className='Arrow' onClick={prev}>-</button>
+            <div className='btns'>
+              <Link to='/majalah'><button className={'button'+((clickCount)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/majalah.png')` }}>Majalah</button></Link>
+              <Link to='/galeri-apresiasi'><button className={'button'+((clickCount+1)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/hmj.png')` }}>Galeri Apresiasi</button></Link>
+              <button className={'button'+((clickCount+2)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/gathertown.png')` }}>Gather Town</button>
+            </div>
+            <button className='Arrow' onClick={next}>+</button>
           </div>
-          <button className='Arrow' onClick={next}>+</button>
         </div>
       </div>
     </div>

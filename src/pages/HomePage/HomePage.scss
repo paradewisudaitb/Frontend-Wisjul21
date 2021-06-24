@@ -24,6 +24,9 @@ $randomNumber: random(5);
   text-align: center;
   transition: 0.3s;
   background-position: center;
+  background-size: 300px auto;
+  background-color: transparent;
+  z-index: 10;
   &:hover {
     transform: translateY(-10px);
     transition: 0.3s;
@@ -77,18 +80,26 @@ button {
   width: 1920px;
 }
 
+.cloud-wrapper {
+  position: absolute;
+  top: 80vh;
+  height: 120%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 @mixin cloud-container($topposition) {
   display: flex;
   flex-direction: column;
   position: absolute;
   left: 0;
-  top: $topposition*145vh;
+  top: 100vh;
   height: 100%;
   width: 100%;
-  //z-index: ;
+  //z-index: 100;
   justify-content: start;
   overflow-x: hidden;
-  overflow-y: visible;
+  //overflow: visible;
 }
 
 .cloud-container1 {
@@ -101,10 +112,10 @@ button {
 
 @keyframes wind {
   from {
-    margin-left: calc( - 60vw);
+    margin-left: calc(-290px - 60vw);
   }
   to {
-    transform: translateX(550vw);
+    transform: translateX(200vw);
   }
 }
 
@@ -118,8 +129,8 @@ button {
 
 .cloud:nth-of-type(1) {
   width: calc(#{random(10)}vw + #{random(90)+200}px);
-  top: percentage((random(80) - 10) / 100);
-  animation-duration: (random(120)+120) + s;
+  top: percentage((random(70) + 10) / 100);
+  animation-duration: (random(60)+60) + s;
   animation-delay: 0s;
   opacity: (random(30)+50)/100;
 }
@@ -127,9 +138,9 @@ button {
 @for $i from 2 through 14 {
   .cloud:nth-of-type(#{$i}) {
     width: calc(#{random(10)}vw + #{random(100)+200}px);
-    top: percentage((random(80) - 10) / 100);
-    animation-duration: #{random(120)+120}s;
-    animation-delay: #{random(20)+($i - 2)*60}s;
+    top: percentage((random(70) + 10 ) / 100);
+    animation-duration: #{random(60)+60}s;
+    animation-delay: #{random(20)+($i - 2)*40}s;
     opacity: (random(30)+50)/100;
   }
 }
@@ -144,6 +155,7 @@ button {
   width: 100%;
   justify-content: center;
   margin-left: -20px;
+  z-index: 10;
   h1,h3 {
     font-size: 3.5vw;
   }
@@ -207,8 +219,7 @@ button {
 }
 
 .main-container {
-  position: relative;
-  top: 10vh;
+  margin-top: 15vh;
 }
 
 .visi-misi {
@@ -217,11 +228,9 @@ button {
   grid-template-rows: repeat(2, 1fr);
   margin: 50px $marginLR 50px $marginLR;
   align-items: center;
+  z-index: 10;
   h1 {
     font-size: 5vw;
-  }
-  p {
-    //color: $maincolour;
   }
   .VISI {
     position: relative;
@@ -233,6 +242,7 @@ button {
     grid-column: 2 / span 3;
     grid-row: 1;
     background-color: $red-darker;
+    z-index: 10;
   }
   .MISI {
     position: relative;
@@ -244,6 +254,7 @@ button {
     grid-column: 1 / span 3;
     grid-row: 2;
     background-color: $red-darker;
+    z-index: 10;
   }
   @media screen and (max-width: 1080px) {
     margin: 50px 10vw;
@@ -279,6 +290,7 @@ button {
   justify-content: center;
   grid-template-rows: 100%;
   grid-template-columns: 1fr 1fr 1fr;
+  z-index: 10;
   @media screen and (max-width: 1300px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -323,6 +335,7 @@ button {
 .btn-container {
   display: flex;
   justify-content: center;
+  z-index: 10;
 }
 
 .Arrow {

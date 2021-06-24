@@ -6,6 +6,8 @@ import logo from '../../images/ukj.png';
 // import IDataWisudawan from '../../interfaces/IDataWisudawan';
 
 // TODO: API (hm gangerti), tambahin gambar2/assets/percantik lagi biar lebih sesuai sama figma
+// TODO sparks
+// TODO tambahin tanggalLahir ke interfacenya.
 interface ListUnit {
   logoUnit: string,
   namaUnit: string
@@ -25,6 +27,26 @@ interface DataWisudawan {
     listUnit: ListUnit[]
 }
 
+interface DataWisudawan2 {
+  nim: string;
+  namaJurusan: string;
+  namaHimpunan: string;
+  namaLengkap: string;
+  namaPanggilan: string;
+  email: string;
+  angkatan: number;
+  tipsSukses: string;
+  kotaAsal: string;
+  // tanggalLahir: Date; // NI gimana ya
+  judulTA: string;
+  funFact: string;
+  pasfoto: string;
+  nonhim: boolean;
+  karya?: string[];
+  kontribusi?: string[];
+  lembaga?: string[];
+  prestasi?: string[];
+}
 
 // const req: IDataWisudawan = {
 //   nim: data.nim,
@@ -47,28 +69,117 @@ interface DataWisudawan {
 //   karya: data.karya.split('\n').map((e: string) => e.trim()),
 // };
 
-// TODO tampilan mobile, image rapihin
 
-const WisudawanContainer = (data: DataWisudawan) => {
+// const WisudawanContainer = (data: DataWisudawan) => {
+//   return (
+//     <div className='wisudawan-container'>
+
+//       <div className='wisudawan-left'>
+//         <div className='foto-wisudawan'>
+//           <img src={data.foto} />
+//         </div>
+
+//         <div className='unit-wisudawan'>
+
+//           {data.listUnit.length > 0 ?
+//             <ol className='unit-list'>
+//               {data.listUnit.map((unit: ListUnit, i: number) => (
+//                 <li
+//                   key = {i}
+//                   className='unit-item'
+//                 >
+//                   <img src={logo} className='unit-logo' />
+//                   <p>{unit.namaUnit}</p>
+//                 </li>
+//               ))}
+//             </ol>
+//             : <></>
+
+//           }
+//         </div>
+
+
+//       </div>
+//       <div className='wisudawan-right'>
+//         <div className='data-wisudawan'>
+//           <h2>{data.himpunan}</h2>
+//           <p>{data.jurusan}</p>
+
+//           <h1>{data.nama}</h1>
+//           <p>{data.nim}</p>
+
+//           <p>{data.judulTA}</p>
+
+//           <h4>Tips sukses ala wisudawan</h4>
+//           <p>{data.tipsSukses}</p>
+
+//           <h4>Prestasi</h4>
+//           {data.prestasi.length > 0 ?
+//             <ol className='list-prestasi'>
+//               {data.prestasi.map((prestasi: string, idx: number) => (
+//                 <li key = {idx}>
+//                   {prestasi}
+//                 </li>
+//               ))}
+//             </ol>
+//             : <p>-</p>
+//           }
+  
+//           <h4>Karya</h4>
+//           {data.karya.length > 0 ?
+//             <ol className='list-karya'>
+//               {data.karya.map((karya: string, idx: number) => (
+//                 <li key = {idx}>
+//                   {karya}
+//                 </li>
+//               ))}
+//             </ol>
+//             : <p>-</p>
+//           }
+
+//           <h4>Kontribusi di HMJ</h4>
+//           {data.kontribusi.length > 0 ?
+//             <ol className='list-kontribusi'>
+//               {data.kontribusi.map((kontribusi: string, idx: number) => (
+//                 <li key = {idx}>
+//                   {kontribusi}
+//                 </li>
+//               ))}
+//             </ol>
+//             : <p>-</p>
+//           }
+
+//         </div>
+//       </div>
+
+
+
+//     </div>
+
+//   );
+// };
+
+const WisudawanContainer = (data: DataWisudawan2) => {
   return (
     <div className='wisudawan-container'>
-      {/* <div className='row'> */}
+
       <div className='wisudawan-left'>
         <div className='foto-wisudawan'>
-          <img src={data.foto} />
+          <img src={data.pasfoto} />
         </div>
 
         <div className='unit-wisudawan'>
-
-          {data.listUnit.length > 0 ?
+          <br></br><br></br><h4>Lembaga: </h4>
+          {data.lembaga ?
             <ol className='unit-list'>
-              {data.listUnit.map((unit: ListUnit, i: number) => (
+              
+              {data.lembaga.map((lembaga: string, i: number) => (
                 <li
                   key = {i}
                   className='unit-item'
                 >
-                  <img src={logo} className='unit-logo' />
-                  <p>{unit.namaUnit}</p>
+                  {/* <img src={logo} className='unit-logo' /> */}
+                  <p>{lembaga}</p>
                 </li>
               ))}
             </ol>
@@ -81,10 +192,10 @@ const WisudawanContainer = (data: DataWisudawan) => {
       </div>
       <div className='wisudawan-right'>
         <div className='data-wisudawan'>
-          <h2>{data.himpunan}</h2>
-          <p>{data.jurusan}</p>
+          <h2>{data.namaHimpunan}</h2>
+          <p>{data.namaJurusan}</p>
 
-          <h1>{data.nama}</h1>
+          <h1>{data.namaLengkap}</h1>
           <p>{data.nim}</p>
 
           <p>{data.judulTA}</p>
@@ -93,7 +204,7 @@ const WisudawanContainer = (data: DataWisudawan) => {
           <p>{data.tipsSukses}</p>
 
           <h4>Prestasi</h4>
-          {data.prestasi.length > 0 ?
+          {data.prestasi ?
             <ol className='list-prestasi'>
               {data.prestasi.map((prestasi: string, idx: number) => (
                 <li key = {idx}>
@@ -105,7 +216,7 @@ const WisudawanContainer = (data: DataWisudawan) => {
           }
   
           <h4>Karya</h4>
-          {data.karya.length > 0 ?
+          {data.karya ?
             <ol className='list-karya'>
               {data.karya.map((karya: string, idx: number) => (
                 <li key = {idx}>
@@ -115,10 +226,9 @@ const WisudawanContainer = (data: DataWisudawan) => {
             </ol>
             : <p>-</p>
           }
-          {/* <br></br>   */}
 
           <h4>Kontribusi di HMJ</h4>
-          {data.kontribusi.length > 0 ?
+          {data.kontribusi ?
             <ol className='list-kontribusi'>
               {data.kontribusi.map((kontribusi: string, idx: number) => (
                 <li key = {idx}>
@@ -129,8 +239,6 @@ const WisudawanContainer = (data: DataWisudawan) => {
             : <p>-</p>
           }
 
-
-          {/* <br></br> */}
         </div>
       </div>
 
@@ -138,7 +246,6 @@ const WisudawanContainer = (data: DataWisudawan) => {
 
     </div>
 
-  // </div>
   );
 };
 

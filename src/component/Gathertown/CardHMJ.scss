@@ -23,7 +23,7 @@
     width: auto;
 
     .image-hmj {
-      background-color: rgb(207, 192, 192);
+      background-color: white;
       border-radius: 25px;
       padding: 0.5rem;
       align-self: center;
@@ -35,7 +35,7 @@
     }
 
     .info-hmj {
-      width: 75%;
+      width: 85%;
       text-align: start;
       margin: 1rem 1rem 1rem 2.5rem;
 
@@ -63,16 +63,30 @@
       }
     }
 
-    @include respond-to('phone') {
+    @media only screen and (max-width: 480px) {
       .info-hmj {
         width: 75%;
         text-align: start;
-        margin: 0.5rem 0.5rem 0.5rem 1rem;
+        margin: 0.5rem 0.5rem 0.5rem 2.5rem;
 
         h2 {
           text-align: start;
           word-break: break-word;
           margin-bottom: 1.5rem;
+        }
+      }
+    }
+
+    @include respond-to('phone') {
+      .info-hmj {
+        width: 75%;
+        text-align: start;
+        margin: 1rem 1rem 1rem 1.5rem;
+
+        h2 {
+          text-align: start;
+          word-break: break-word;
+          margin-bottom: 3rem;
         }
       }
     }

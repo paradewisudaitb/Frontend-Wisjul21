@@ -1,0 +1,55 @@
+@import 'styles/colorpalette.scss';
+@import 'styles/fonts.scss';
+@import 'styles/responsive.scss';
+
+* {
+  font-family: 'Vollkorn';
+  color: $yellow-lighter;
+  scrollbar-color: $red-medium $red-darker;
+  scrollbar-width: thin;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Aller';
+}
+
+h1 {
+  @include gradient-header-1;
+}
+
+h2 {
+  @include gradient-header-2;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: $red-medium;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 2rem !important;
+}
+
+::-webkit-scrollbar-track {
+  background: $red-darker;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $red-medium;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $red-lighter;
+}
+
+.App {
+}

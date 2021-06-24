@@ -9,15 +9,21 @@ $randomNumber: random(5);
 
 * {
   text-align: center;
+  
 }
 
 
 .main {
-  background: radial-gradient(#532F65, #201125, #201125);
+  background-image: url('../../images/bg/Filter.png'), radial-gradient(#532F65, #201125, #201125);
+  background-blend-mode: overlay;
+}
+
+.event-buttons {
+  margin: 5vw;
 }
 
 @mixin event-btn() {
-  height: 500px;
+  height: 400px;
   width: 300px;
   margin: 50px;
   grid-row: 1;
@@ -27,7 +33,10 @@ $randomNumber: random(5);
   background-size: 300px auto;
   background-color: transparent;
   z-index: 10;
+  padding-top: 100%;
+  //padding-bottom: 100%;
   &:hover {
+    filter: drop-shadow(10px 10px 7px $purple-darker);
     transform: translateY(-10px);
     transition: 0.3s;
   }
@@ -201,19 +210,24 @@ button {
   }
   .youtube {
     margin: 50px 50px;
-    height: 5vw;
+    height: 7vw;
     width: 10vw;
+    background-position: center;
+    background-size: 10vw auto;
+    background-color: transparent;
+    background-image: url('../../icons/YoutubeWhite.png');
     //color: $accentcolour1;
     //background-color: transparent;
     //outline: $accentcolour1 solid 3px;
     z-index: 10;
     @media screen and (max-width: 1080px) {
-      width: 0,2*1080px;
+      width: 0.2*1080px;
     }
     &:hover {
       color: $maincolour;
-      background-color: $accentcolour1;
-      transition: 0.3s;
+      background-image: url('../../icons/YoutubeIcon.png');
+      //background-color: $accentcolour1;
+      //transition: 1s;
     }
   }
 }
@@ -225,17 +239,21 @@ button {
 .visi-misi {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  margin: 50px $marginLR 50px $marginLR;
+  grid-template-rows: repeat(2, 0.5fr);
+  margin: 50px $marginLR;
   align-items: center;
   z-index: 10;
   h1 {
     font-size: 5vw;
   }
+  li {
+    text-align: left;
+  }
   .VISI {
     position: relative;
     top: -15px;
     text-align: left;
+    z-index: 11;
   }
   .visi {
     padding: 30px;
@@ -243,18 +261,26 @@ button {
     grid-row: 1;
     background-color: $red-darker;
     z-index: 10;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 20px 20px 2px $orange-darker;
   }
   .MISI {
     position: relative;
     top: -15px;
     text-align: right;
+    z-index: 11;
   }
   .misi {
     padding: 30px;
     grid-column: 1 / span 3;
     grid-row: 2;
     background-color: $red-darker;
+    text-align: left;
     z-index: 10;
+    border-radius: 10px;
+    box-shadow: 20px 20px 2px $orange-darker;
   }
   @media screen and (max-width: 1080px) {
     margin: 50px 10vw;
@@ -328,7 +354,10 @@ button {
     margin: 50px 30px;
   }
   @media screen and (max-width: 430px) {
-    width: 60vw;
+    width: 50vw;
+    height: 60vw;
+    background-size: 50vw auto;
+    margin-top: 0;
   }
 }
 
@@ -338,8 +367,11 @@ button {
   z-index: 10;
 }
 
-.Arrow {
+.arrow {
+  height: 50px;
+  width: 50px;
   grid-row: 1;
+  align-self: center;
   visibility: hidden;
   @media screen and (max-width: 1300px) {
     visibility: visible;

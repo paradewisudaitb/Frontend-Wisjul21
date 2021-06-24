@@ -44,7 +44,7 @@ const Gathertown = () => {
   ));
 
   return (
-    <div className='background'>
+    <div className='gathertown-container'>
       <div className='info'>
         <div className='title'>
           <img

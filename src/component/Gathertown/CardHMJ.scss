@@ -1,4 +1,5 @@
 @import '../../styles/colorpalette.scss';
+@import '../../styles/responsive.scss';
 
 .card-hmj-container {
   position: relative;
@@ -16,13 +17,13 @@
     display: flex;
     padding: 1rem;
     margin: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px black;
     border-radius: 30px;
     background-color: $blue-darker;
     width: auto;
 
     .image-hmj {
-      background-color: white;
+      background-color: rgb(207, 192, 192);
       border-radius: 25px;
       padding: 0.5rem;
       align-self: center;
@@ -53,10 +54,25 @@
         margin: 0;
         padding: 0.5em;
         background-color: $red-medium;
+        box-shadow: 0 2px 5px black;
 
         a {
           text-decoration: none;
           color: $yellow-lighter;
+        }
+      }
+    }
+
+    @include respond-to('phone') {
+      .info-hmj {
+        width: 75%;
+        text-align: start;
+        margin: 0.5rem 0.5rem 0.5rem 1rem;
+
+        h2 {
+          text-align: start;
+          word-break: break-word;
+          margin-bottom: 1.5rem;
         }
       }
     }

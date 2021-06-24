@@ -3,12 +3,11 @@ import React from 'react';
 // import './WisudawanCardContainer.scss';
 import './WisudawanContainer.scss';
 import logo from '../../images/ukj.png';
-// import IDataWisudawan from '../../interfaces/IDataWisudawan';
-
+import IDataWisudawan from '../../interfaces/IDataWisudawan';
 // TODO: API (hm gangerti), tambahin gambar2/assets/percantik lagi biar lebih sesuai sama figma
 // TODO sparks
-// TODO masih kurang srek sama penempatan lembaga yang mobile
-// TODO gambar dibuat proporsional
+// TODO masih kurang srek sama penempatan lembaga yang mobile - OK done
+// TODO gambar dibuat proporsional - OK done
 
 interface ListUnit {
   logoUnit: string,
@@ -27,27 +26,6 @@ interface DataWisudawan {
     karya: string[],
     kontribusi: string[],
     listUnit: ListUnit[]
-}
-
-interface DataWisudawan2 {
-  nim: string;
-  namaJurusan: string;
-  namaHimpunan: string;
-  namaLengkap: string;
-  namaPanggilan: string;
-  email: string;
-  angkatan: number;
-  tipsSukses: string;
-  kotaAsal: string;
-  tanggalLahir: Date; // NI gimana ya
-  judulTA: string;
-  funFact: string;
-  pasfoto: string;
-  nonhim: boolean;
-  karya?: string[];
-  kontribusi?: string[];
-  lembaga?: string[];
-  prestasi?: string[];
 }
 
 // const WisudawanContainer = (data: DataWisudawan) => {
@@ -139,10 +117,13 @@ interface DataWisudawan2 {
 //   );
 // };
 
-const WisudawanContainer = (data: DataWisudawan2) => {
+const WisudawanContainer = (data: IDataWisudawan) => {
   return (
     <div className='wisudawan-container'>
-
+      <img
+        src="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/main/spark%201%20bawah%20matahari.png"
+        className='spark'
+      />
       <div className='wisudawan-left'>
         <div className='foto-wisudawan'>
           <img src={data.pasfoto}></img>
@@ -179,8 +160,10 @@ const WisudawanContainer = (data: DataWisudawan2) => {
 
         {/* <img src={logo} className='unit-logo' /> */}
       </div>
-      
+
       <div className='wisudawan-right'>
+
+
         <div className='data-wisudawan'>
           <h2>{data.namaHimpunan}</h2>
           <p>{data.namaJurusan}</p>

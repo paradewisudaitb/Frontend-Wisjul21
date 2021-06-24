@@ -3,10 +3,6 @@
 @import '../../styles/colorpalette.scss';
 @import '../../styles/responsive.scss';
 
-* {
-  overflow-x: visible;
-}
-
 .info {
   text-align: center;
 
@@ -20,18 +16,32 @@
       width: 10%;
       height: auto;
     }
+
+    h1 {
+      padding-top: 1em;
+      padding-bottom: 0.5em;
+    }
   }
 
-  h1 {
-    padding-top: 1em;
-    padding-bottom: 0.5em;
-  }
+  .text {
+    position: relative;
 
-  p {
-    z-index: 100;
-    padding-left: 15%;
-    padding-right: 15%;
-    margin-bottom: 1.5em;
+    .cloud-text {
+      position: absolute;
+      width: 30%;
+      height: auto;
+      left: -10%;
+      bottom: -75%;
+      z-index: 1;
+    }
+
+    p {
+      position: relative;
+      z-index: 2;
+      padding-left: 15%;
+      padding-right: 15%;
+      margin-bottom: 1.5em;
+    }
   }
 }
 

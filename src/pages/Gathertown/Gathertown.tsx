@@ -54,7 +54,12 @@ const Gathertown = () => {
           />
           <h1>Gather Town</h1>
         </div>
-        <div>
+        <div className='text'>
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/awan%201-01.png`}
+            alt='Awan'
+            className='cloud-text'
+          />
           <p>
             Ultricies leo integer malesuada nunc vel risus commodo. Mollis nunc
             sed id semper risus in hendrerit gravida rutrum. Volutpat est velit

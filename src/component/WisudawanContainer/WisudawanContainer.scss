@@ -12,9 +12,9 @@
     }
 }
 
-.list-kontribusi {
-    text-align: left;
-}
+// .list-kontribusi {
+//     text-align: left;
+// }
 
 .wisudawan {
   background-image: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg");
@@ -24,50 +24,58 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 5px;
-
 }
-.unit-wisudawan {
-    .unit-logo {
-        width: 2.3rem;
-        height: auto;
-        margin-right: 1rem;
-    }
-    .unit-item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 0.8rem;
-    }
-    .unit-list {
-        margin-top: 2rem;
-
-    }
-    @include respond-to('phone') {
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
+// .unit-wisudawan {
+    // gada unit logo
+//     .unit-logo {
+//         width: 2.3rem;
+//         height: auto;
+//         margin-right: 1rem;
+//     }
+    // .unit-item {
+    //     display: flex;
+    //     flex-direction: row;
+    //     align-items: center;
+    //     margin-bottom: 0.8rem;
+    // }
+    // .unit-list {
+    //     margin-top: 2rem;
+    // }
+//     @include respond-to('phone') {
+//         display:flex;
+//         flex-direction: column;
+//         align-items: center;
+//     }
+// }
 
 .data-wisudawan p, .data-wisudawan h1, .data-wisudawan h2, .data-wisudawan h3, .data-wisudawan h4, .data-wisudawan li {
     text-align:left;
 }
 
 .foto-wisudawan img {
-    width: 16rem;
-    height: 16rem;
-    @include respond-to('phone', 'tablet') {
-        width: 12rem;
-        height: 12rem;
-    }
+    // width: 15rem;
+    // height: 20rem;
+    width: 180px;
+    height: 240px;
+    // margin-bottom: 2rem;
+    // @include respond-to('phone', 'tablet') {
+    //     width: 12rem;
+    //     height: 16rem;
+    // }
+}
+
+.foto-wisudawan {
+    margin-bottom: 2rem;
 }
 
 .wisudawan-left {
     margin-right: 2rem;
+    // margin-bottom:2rem;
+    // justify-content: space-evenly;
     @include respond-to('phone', 'tablet') {
         margin-right: 0rem;
         margin-bottom: 2rem;
-        display:flex;
+        display: flex;
         // flex-direction: row;
         // aku ubah jadi ke bnawah dulu - Josep
         flex-direction: column;

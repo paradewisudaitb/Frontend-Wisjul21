@@ -197,8 +197,8 @@ export default function Wisudawan(): JSX.Element {
       getByNIM(nim)
         .then(dataWisudawan => {
           // bagian data wisudawan
-          // setDataWisudawan(<WisudawanContainer {...dataWisudawan}/>);
-          setDataWisudawan(<WisudawanContainer {...dataDummy2[0]}/>);
+          setDataWisudawan(<WisudawanContainer {...dataWisudawan}/>);
+          // setDataWisudawan(<WisudawanContainer {...dataDummy2[0]}/>);
           setLoadingWisudawan(false);
         })
         .catch(err => console.error(err));

@@ -7,7 +7,9 @@ import logo from '../../images/ukj.png';
 
 // TODO: API (hm gangerti), tambahin gambar2/assets/percantik lagi biar lebih sesuai sama figma
 // TODO sparks
-// TODO tambahin tanggalLahir ke interfacenya.
+// TODO masih kurang srek sama penempatan lembaga yang mobile
+// TODO gambar dibuat proporsional
+
 interface ListUnit {
   logoUnit: string,
   namaUnit: string
@@ -37,7 +39,7 @@ interface DataWisudawan2 {
   angkatan: number;
   tipsSukses: string;
   kotaAsal: string;
-  // tanggalLahir: Date; // NI gimana ya
+  tanggalLahir: Date; // NI gimana ya
   judulTA: string;
   funFact: string;
   pasfoto: string;
@@ -47,28 +49,6 @@ interface DataWisudawan2 {
   lembaga?: string[];
   prestasi?: string[];
 }
-
-// const req: IDataWisudawan = {
-//   nim: data.nim,
-//   namaHimpunan: data.himpunan,
-//   namaJurusan: data.jurusan,
-//   namaLengkap: data.namalengkap,
-//   namaPanggilan: data.namapanggilan,
-//   judulTA: data.judulta,
-//   funFact: data.funfact,
-//   tipsSukses: data.tips,
-//   email: data.email,
-//   kotaAsal: data.kota,
-//   tanggalLahir: data.tanggallahir,
-//   angkatan: data.angkatan,
-//   pasfoto: linkFoto,
-//   nonhim: data.himpunan == 'nonhim',
-//   lembaga: data.nonhmj.split('\n').map((e: string) => e.trim()),
-//   kontribusi: data.kontribusi.split('\n').map((e: string) => e.trim()),
-//   prestasi: data.prestasi.split('\n').map((e: string) => e.trim()),
-//   karya: data.karya.split('\n').map((e: string) => e.trim()),
-// };
-
 
 // const WisudawanContainer = (data: DataWisudawan) => {
 //   return (
@@ -165,31 +145,41 @@ const WisudawanContainer = (data: DataWisudawan2) => {
 
       <div className='wisudawan-left'>
         <div className='foto-wisudawan'>
-          <img src={data.pasfoto} />
+          <img src={data.pasfoto}></img>
         </div>
 
-        <div className='unit-wisudawan'>
-          <br></br><br></br><h4>Lembaga: </h4>
+        <div className='lembaga-wisudawan'>
+          <h4>Lembaga </h4>
+          {((data.lembaga) && (data.lembaga[0] != '-')) ?
+            <ol className='list-lembaga'>
+              {data.lembaga.map((kontribusi: string, idx: number) => (
+                <li key = {idx}>
+                  {kontribusi}
+                </li>
+              ))}
+            </ol>
+            : <p>-</p>
+          }
+        </div>
+        {/* <div className='unit-wisudawan'>
           {data.lembaga ?
             <ol className='unit-list'>
-              
               {data.lembaga.map((lembaga: string, i: number) => (
                 <li
                   key = {i}
                   className='unit-item'
                 >
-                  {/* <img src={logo} className='unit-logo' /> */}
                   <p>{lembaga}</p>
                 </li>
               ))}
             </ol>
             : <></>
-
           }
-        </div>
+        </div> */}
 
-
+        {/* <img src={logo} className='unit-logo' /> */}
       </div>
+      
       <div className='wisudawan-right'>
         <div className='data-wisudawan'>
           <h2>{data.namaHimpunan}</h2>
@@ -198,13 +188,14 @@ const WisudawanContainer = (data: DataWisudawan2) => {
           <h1>{data.namaLengkap}</h1>
           <p>{data.nim}</p>
 
+          <h4>Judul Tugas Akhir</h4>
           <p>{data.judulTA}</p>
 
           <h4>Tips sukses ala wisudawan</h4>
           <p>{data.tipsSukses}</p>
 
           <h4>Prestasi</h4>
-          {data.prestasi ?
+          {((data.prestasi) && (data.prestasi[0] != '-')) ?
             <ol className='list-prestasi'>
               {data.prestasi.map((prestasi: string, idx: number) => (
                 <li key = {idx}>
@@ -216,7 +207,7 @@ const WisudawanContainer = (data: DataWisudawan2) => {
           }
   
           <h4>Karya</h4>
-          {data.karya ?
+          {((data.karya) && (data.karya[0] != '-')) ?
             <ol className='list-karya'>
               {data.karya.map((karya: string, idx: number) => (
                 <li key = {idx}>
@@ -228,7 +219,7 @@ const WisudawanContainer = (data: DataWisudawan2) => {
           }
 
           <h4>Kontribusi di HMJ</h4>
-          {data.kontribusi ?
+          {((data.kontribusi) && (data.kontribusi[0] != '-')) ?
             <ol className='list-kontribusi'>
               {data.kontribusi.map((kontribusi: string, idx: number) => (
                 <li key = {idx}>

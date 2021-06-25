@@ -11,16 +11,16 @@ const ApresiasiSelection = ({ register, watch, nama }: props) => {
   const watchTipeApresiasi = watch(nama);
 
   const [nerimaFile, setNerimaFile] = useState(true);
-  const [batal, setBatal] = useState(false);
+  const [batal, setBatal] = useState(true);
 
   useEffect(() => {
     switch (watchTipeApresiasi) {
-      case 'Tipe File':
-      case 'Batal':
+      case 'tipe file':
+      case 'batal':
         setBatal(true);
         setNerimaFile(false);
         break;
-      case 'Website':
+      case 'website':
         setBatal(false);
         setNerimaFile(false);
         break;
@@ -28,21 +28,20 @@ const ApresiasiSelection = ({ register, watch, nama }: props) => {
         setBatal(false);
         setNerimaFile(true);
     }
-    console.log(batal);
   }, [watchTipeApresiasi]);
 
   return (
-    <div className="row my-2">
-      <div className="col-12 col-md-6 mt-2">
+    <div className="row my-4">
+      <div className="col-12 col-md-6">
         <select className="form-apresiasi-select" required {...register(nama)}>
-          <option value="Tipe File" disabled selected> Tipe File </option>
-          <option value="Poster"> Poster </option>
-          <option value="Video"> Video </option>
-          <option value="Puisi"> Puisi </option>
-          <option value="Website"> Website </option>
-          <option value="Lagu"> Lagu </option>
-          <option value="Lainnya"> Lainnya </option>
-          <option value="Batal"> Batal </option>
+          <option value="tipe file" disabled defaultValue='true'> Tipe File </option>
+          <option value="poster"> Poster </option>
+          <option value="video"> Video </option>
+          <option value="puisi"> Puisi </option>
+          <option value="website"> Website </option>
+          <option value="musik"> Musik </option>
+          <option value="lainnya"> Lainnya </option>
+          <option value="batal"> Batal </option>
         </select>
       </div>
       <div className="col-12 col-md-6">

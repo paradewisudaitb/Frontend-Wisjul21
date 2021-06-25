@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import './FormApresiasi.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { API_URL, ASSET_URL } from '../../api';
+import { uploader } from '../../controller/kontenApresiasi';
 import ApresiasiSelection from '../../component/ApresiasiSelection/ApresiasiSelection';
 
 const SUPPORTED_FORMATS = [
@@ -34,39 +33,18 @@ enum ContentType {
 
 const errMsg = 'Ada kesalahan pada data. Jika data sudah benar dan masih gagal atau ingin melakukan perubahan data, harap hubungi panitia.';
 
-// const uploadFile = async (f: File, type: string, namaHimpunan: string) => {
-//   const fd = new FormData();
-//   fd.append('apresiasi', f);
-//   let succ = true;
-//   await fetch(`${API_URL}/form/uploadFoto`, {
-//     method: 'POST',
-//     headers: {
-//       'X-Content-Type-Options': 'nosniff',
-//     },
-//     body: fd,
-//   })
-//     .then(res => res.json())
-//     .then(res => {
-//       const linkPasFoto = `apresiasiHMJ/${namaHimpunan}/${f.name}`;
-//     })
-//     .catch(err => {
-//       succ = false;
-//       console.error(err);
-//       window.alert(errMsg);
-//     });
-// };
 
 const schema = yup.object().shape({
   'himpunan': yup.string().required('Himpunan tidak boleh kosong.'),
-  'tipeApresiasi1': yup.string().required('Harus setidaknya 1 apresiasi.'),
-  'tipeApresiasi1Link1' : yup.string().matches(/^((https?):\/\/)/i, 'Link invalid (awali dengan `https://` atau `http://`)'),
-  'tipeApresiasi1File1' : yup.mixed(),
-  'tipeApresiasi2': yup.string(),
-  'tipeApresiasi1Link2' : yup.string().matches(/^((https?):\/\/)/i, 'Link invalid (awali dengan `https://` atau `http://`)'),
-  'tipeApresiasi1File2' : yup.mixed(),
-  'tipeApresiasi3': yup.string(),
-  'tipeApresiasi1Link3' : yup.string().matches(/^((https?):\/\/)/i, 'Link invalid (awali dengan `https://` atau `http://`)'),
-  'tipeApresiasi1File3' : yup.mixed(),
+  'apresiasi1': yup.string().required('Harus setidaknya 1 apresiasi.'),
+  'apresiasi1Link' : yup.string().matches(/^((https?):\/\/)/i, 'Link invalid (awali dengan `https://` atau `http://`)'),
+  'apresiasi1File' : yup.mixed(),
+  'apresiasi2': yup.string(),
+  'apresiasi2Link' : yup.string().matches(/^((https?):\/\/)/i, 'Link invalid (awali dengan `https://` atau `http://`)'),
+  'apresiasi2File' : yup.mixed(),
+  'apresiasi3': yup.string(),
+  'apresiasi3Link' : yup.string().matches(/^((https?):\/\/)/i, 'Link invalid (awali dengan `https://` atau `http://`)'),
+  'apresiasi3File' : yup.mixed(),
 });
 
 
@@ -75,16 +53,57 @@ export default function Form() {
     resolver: yupResolver(schema),
   });
 
-  const submitForm = (data: any) => {
-    // di sini xel
+  const submitForm = async (data: any) => {
     console.log(data);
-    if (data.kontenApresiasiFile && data.kontenApresiasiFile.length > 0) {
-      const tmp = data.kontenApresiasiFile[0];
-      const isValid = tmp.size > 0 || !SUPPORTED_FORMATS.includes(tmp.type);
-      if (isValid) {
-        alert('Bruh moment detected');
-        return;
-      }
+    const __uploader = (tipeApresiasi: string, konten: any, angka: number) => {
+      uploader(data.himpunan, tipeApresiasi, konten)
+        .then(_ => window.alert(`Berhasil upload konten apresiasi ${angka}`))
+        .catch(err => {
+          window.alert(`Gagal mengupload konten apresiasi ${angka}`);
+          console.error(err);
+        });
+    };
+
+    if ((data.apresiasi1 == 'batal' || data.apresiasi1 == 'tipe file')
+        && (data.apresiasi2 == 'batal' || data.apresiasi2 == 'tipe file')
+        && (data.apresiasi3 == 'batal' || data.apresiasi3 == 'tipe file')) {
+      window.alert('Ga ada konten dong :(');
+      return;
+    }
+
+    if (data.apresiasi1 == data.apresiasi2 || data.apresiasi1 == data.apresiasi3 || data.apresiasi2 == data.apresiasi3) {
+      window.alert('1 tipe konten cuman bisa muncul kali');
+      return;
+    }
+
+    if (data.himpunan == 'Himpunan') {
+      window.alert('Belom milih himpunan :(');
+    }
+
+    let count = 0;
+    if (data.apresiasi1 != 'batal' && data.apresiasi1 != 'tipe file') {
+      const konten = data.apresiasi1 != 'website'
+        ? data.apresiasi1File[0] : data.apresiasi1Link;
+      __uploader(data.apresiasi1, konten, 1);
+      count++;
+    }
+
+    if (data.apresiasi2 != 'batal' && data.apresiasi2 != 'tipe file') {
+      const konten = data.apresiasi2 != 'website'
+        ? data.apresiasi2File[0] : data.apresiasi2Link;
+      __uploader(data.apresiasi2, konten, 2);
+      count++;
+    }
+
+    if (data.apresiasi3 != 'batal' && data.apresiasi3 != 'tipe file') {
+      const konten = data.apresiasi3 != 'website'
+        ? data.apresiasi3File[0] : data.apresiasi3Link;
+      __uploader(data.apresiasi3, konten, 3);
+      count ++;
+    }
+
+    if (count == 0) {
+      window.alert('Apa yang diupload? :(');
     }
   };
 
@@ -97,8 +116,8 @@ export default function Form() {
             <div className="row">
               <div className="col-12">
                 <div className="d-flex justify-content-between">
-                  <select className="form-apresiasi-select" required {...register('himpunan')}>
-                    <option className="form-apresiasi-select-option" disabled selected> Himpunan </option>
+                  <select className="form-apresiasi-select" required defaultValue="Himpunan" {...register('himpunan')}>
+                    <option className="form-apresiasi-select-option" value="Himpunan" disabled> Himpunan </option>
                     <option className="form-apresiasi-select-option" value="TPB FITB"> TPB FITB </option>
                     <option className="form-apresiasi-select-option" value="Himpunan Mahasiswa Meteorologi"> HMME 'ATMOSPHAIRA' (Himpunan Mahasiswa Meteorologi) </option>
                     <option className="form-apresiasi-select-option" value="Himpunan Mahasiswa Oseanografi"> HMO 'TRITON'(Himpunan Mahasiswa Oseanografi) </option>
@@ -173,9 +192,9 @@ export default function Form() {
                 {errors.himpunan && <p className="form-apresiasi-error">{errors.himpunan.message}</p>}
               </div>
             </div>
-            <ApresiasiSelection register={register} watch={watch} nama='tipeApresiasi1' />
-            <ApresiasiSelection register={register} watch={watch} nama='tipeApresiasi2' />
-            <ApresiasiSelection register={register} watch={watch} nama='tipeApresiasi3' />
+            <ApresiasiSelection register={register} watch={watch} nama='apresiasi1' />
+            <ApresiasiSelection register={register} watch={watch} nama='apresiasi2' />
+            <ApresiasiSelection register={register} watch={watch} nama='apresiasi3' />
           </div>
           <div className="d-flex justify-content-end">
             <button className="form-btn mb-2" type="submit">Submit</button>

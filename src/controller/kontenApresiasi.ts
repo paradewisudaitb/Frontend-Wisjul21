@@ -1,6 +1,6 @@
 import { API_URL, ASSET_URL } from '../api';
 
-const uploader = async (namaHimpunan: string, tipeApresiasi: string, konten: File | string): Promise<string> => {
+export const uploader = async (namaHimpunan: string, tipeApresiasi: string, konten: File | string): Promise<string> => {
   const linkKonten = `${ASSET_URL}/kontenApresiasi`;
   const fd = new FormData();
   fd.append('kontenApresiasi', konten);
@@ -17,11 +17,11 @@ const uploader = async (namaHimpunan: string, tipeApresiasi: string, konten: Fil
 
   const res =
     await (
-      await fetch(`${API_URL}/kontenApresiasi/upload`)
+      await fetch(`${API_URL}/kontenApresiasi/upload`, req)
         .catch(err => {
           throw new Error('Gagal mengupload konten apresiasi');
         })
     ).json();
 
-    return `${linkKonten}/${res.filename}`;
+  return `${linkKonten}/${res.filename}`;
 };

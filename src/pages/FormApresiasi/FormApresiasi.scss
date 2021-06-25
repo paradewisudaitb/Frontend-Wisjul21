@@ -89,8 +89,8 @@ $form-apresiasi-width: 50vw;
 .form-apresiasi-input {
   width: 100%;
   border-radius: 10px;
-  padding: 10px;
-  // margin-top: 5px;
+  // padding: 10px;
+  // margin-top: 0.3rem;
   // margin-bottom: 5px;
 }
 
@@ -116,9 +116,11 @@ $form-apresiasi-width: 50vw;
 }
 
 .form-apresiasi-select {
+  display: block;
   padding: 5px;
-  margin: 5px;
+  margin: 0px auto auto auto;
   font-size: 16px !important;
+  width: 100%;
 
   @include respond-to('phone') {
     font-size: 12px !important;
@@ -156,7 +158,7 @@ $form-apresiasi-width: 50vw;
 }
 
 .weblink-input {
-  padding: 0.5rem;
+  // padding: 0.5rem;
   border-style: solid;
   outline: none;
 }

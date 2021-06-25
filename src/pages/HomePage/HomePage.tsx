@@ -3,10 +3,14 @@ import './HomePage.scss';
 import { Link } from 'wouter';
 import { ASSET_URL } from '../../api';
 
+
 //Asset
 import Youtube from '../../icons/YoutubeIcon.svg';
 
 const HomePage = () => {
+
+  const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
+
   //Parallax
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset/window.innerHeight);
@@ -26,32 +30,36 @@ const HomePage = () => {
 
   return (
     <div className='main pb-5'>
-      {/* HEADER ASSETS */}
-      <div className='bg-container mt-5'>
-        {/* Volcano */}
-        <div className='bg' style={{ backgroundImage: `url(${ASSET_URL}/assets/images/background/header.jpg)`, opacity: `${1-(offsetY)*1.7}` }}></div>
-        <img className='smoke' alt='Asap' src={`${ASSET_URL}/assets/images/vistock/header/asap.png`} style={{ transform: `translateY(-${offsetY * 200}px)`, opacity: `${1-(offsetY)*2}` }} />
-        <img className='volcanoes' alt='Gunung Berapi' src={`${ASSET_URL}/assets/images/vistock/header/gunung%20pinggir.png`} style={{ transform: `translateY(${offsetY * 100}px)`, opacity: `${1-(offsetY)*1.7}` }} />
-        <img className='volcano' alt='Gunung Berapi Meletus' src={`${ASSET_URL}/assets/images/vistock/header/gunung%20tengah.png`} style={{ transform: `translateY(-${offsetY * 200}px)`, opacity: `${1-(offsetY)*1.5}` }} />
-      </div>
 
-      {/* HEADER CONTENT */}
-      {/* Tagline */}
-      <div className='tagline-container'>
-        <h3 className='tagline1-shadow' style={{ transform: `translateY(${offsetY*230 - offsetY*offsetY*175}vh) translateX(${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)})` }}>Metamorphose to find</h3>
-        <h3 className='tagline2-shadow' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h3>
-      </div>
-      <div className='tagline-container'>
-        <h1 className='tagline1' style={{ transform: `translateY(${offsetY*230 - offsetY*offsetY*175}vh) translateX(${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)}` }}>Metamorphose to find</h1>
-        <h1 className='tagline2' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h1>
-      </div>
-      {/* Logo, Phone Tagline, and Youtube Button */}
-      <div className='home-container pt-5'>
-        <div className='logotagline' style={{ transform: `translateY(${offsetY*215 - offsetY*offsetY*175}vh)` }}>
-          <img src={`${ASSET_URL}/assets/logo/min.png`} alt='Logo Wisuda Juli 2021' className='logo' />
-          <h6 className='tagline'>Metamorphose to find <br /> the path to the blossom.</h6>
+      <div className="upper-home pt-5">
+        {/* HEADER ASSETS */}
+        <div className='bg-container'>
+          {/* Volcano */}
+          <div className='bg' style={{ backgroundImage: `url(${ASSET_URL}/assets/images/background/header.jpg)`, opacity: `${1-(offsetY)*1.7}` }}></div>
+          <img className='smoke' alt='Asap' src={`${ASSET_URL}/assets/images/vistock/header/asap.png`} style={{ transform: `translateY(-${offsetY * 200}px)`, opacity: `${1-(offsetY)*2}` }} />
+          <img className='volcanoes' alt='Gunung Berapi' src={`${ASSET_URL}/assets/images/vistock/header/gunung%20pinggir.png`} style={{ transform: `translateY(${offsetY * 100}px)`, opacity: `${1-(offsetY)*1.7}` }} />
+          <img className='volcano' alt='Gunung Berapi Meletus' src={`${ASSET_URL}/assets/images/vistock/header/gunung%20tengah.png`} style={{ transform: `translateY(-${offsetY * 200}px)`, opacity: `${1-(offsetY)*1.5}` }} />
         </div>
-        <button className='youtube mx-auto' style={{ transform: `translateY(-${offsetY * 648}px)`, opacity: `${1-offsetY}` }}></button>
+
+        {/* HEADER CONTENT */}
+        {/* Tagline */}
+        <div className='tagline-container'>
+          <h3 className='tagline1-shadow' style={{ transform: `translateY(${offsetY*230 - offsetY*offsetY*175}vh) translateX(${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)})` }}>Metamorphose to find</h3>
+          <h3 className='tagline2-shadow' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h3>
+        </div>
+        <div className='tagline-container'>
+          <h1 className='tagline1' style={{ transform: `translateY(${offsetY*230 - offsetY*offsetY*175}vh) translateX(${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)}` }}>Metamorphose to find</h1>
+          <h1 className='tagline2' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h1>
+        </div>
+        {/* Logo, Phone Tagline, and Youtube Button */}
+        <div className='home-container pt-5'>
+          <div className='logotagline' style={{ transform: `translateY(${offsetY*215 - offsetY*offsetY*175}vh)` }}>
+            <img src={`${ASSET_URL}/assets/logo/min.png`} alt='Logo Wisuda Juli 2021' className='logo' />
+            <h6 className='tagline'>Metamorphose to find <br /> the path to the blossom.</h6>
+          </div>
+          <button className='youtube mx-auto' style={{ transform: `translateY(-${offsetY * 648}px)`, opacity: `${1-offsetY}` }}></button>
+        </div>
+
       </div>
 
       {/* MAIN ASSETS */}

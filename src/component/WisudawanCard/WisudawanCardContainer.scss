@@ -1,9 +1,22 @@
 .wisudawan-card-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
   margin: 0 8vw;
   box-sizing: border-box;
   width: 44rem;
+}
+
+@media only screen and (max-width: 1080px) {
+  .wisudawan-card-container {
+    margin: 0 1vw;
+    width: 45rem;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .wisudawan-card-container {
+    margin: 1vh 0.3vw;
+    width: 50rem;
+  }
 }

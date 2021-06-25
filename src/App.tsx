@@ -15,10 +15,11 @@ function App() {
       </Suspense>
       <Navbar />
       <Switch>
-        { AllRoutes.map(({ path, component: Component}) => (
+        { AllRoutes.map(({ label, path, component: Component}) => (
           <Route
-            path={ path }
-            component={ Component }
+            key={label}
+            path={path}
+            component={Component}
           />
         ))}
         {/* <Redirect to={ HOME_PAGE.path }/> */}

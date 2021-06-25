@@ -1,10 +1,9 @@
-import { FC } from 'react';
 import { useState } from 'react';
-import { Fragment } from 'react';
-import ButtonFakultas from '../../component/Gathertown/ButtonFakultas';
+import ButtonFakultas from '../../component/ButtonFakultas/ButtonFakultas';
 import './Gathertown.scss';
 import dummyImage from '../../images/ukj.png';
-import { LIST_FAKULTAS, LIST_HMJ } from './GathertownConstant';
+import LIST_FAKULTAS from '../../data/fakultas.json';
+import LIST_HMJ from '../../data/hmj.json';
 
 type HMJ = {
   namaFakultas: string;
@@ -25,7 +24,7 @@ const Gathertown = () => {
   const listButtonFakultas = LIST_FAKULTAS.map((fakultas) => (
     <ButtonFakultas
       onButtonClick={buttonFakultasClickHandler}
-      className={activeButton === fakultas ? 'active' : ''}
+      className={activeButton == fakultas ? 'active' : ''}
       value={fakultas}
       key={fakultas}
     >

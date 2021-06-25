@@ -83,7 +83,7 @@ const Gathertown = () => {
           </p>
         </div>
       </div>
-      <div>
+      <div className='container'>
         <div className='list-button'>{listButtonFakultas}</div>
         <div className='list-hmj'>
           <img

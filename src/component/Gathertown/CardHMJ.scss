@@ -19,8 +19,8 @@
     margin: 1rem;
     box-shadow: 0 2px 8px black;
     border-radius: 30px;
-    opacity: 0.8;
-    background-color: $blue-darker;
+    background: rgba($blue-darker, 0.8);
+    // ini pake rgba supaya bisa opacity tanpa ngaruh ke child
     width: auto;
 
     @media only screen and (max-width: 480px) {
@@ -29,7 +29,8 @@
     }
 
     .image-hmj {
-      background-color: white;
+      background-color: #ffffff;
+      border: 1px solid #e5e5e5;
       border-radius: 25px;
       padding: 0.5rem;
       align-self: center;
@@ -59,7 +60,8 @@
         hyphens: auto;
         margin: 0;
         padding: 0.5em;
-        background-color: $red-medium;
+        background-color: rgba($red-medium, 0.8);
+        // ini pake rgba supaya bisa opacity tanpa ngaruh ke child
         box-shadow: 0 2px 5px black;
 
         a {

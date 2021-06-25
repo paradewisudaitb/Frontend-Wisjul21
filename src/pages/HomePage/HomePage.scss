@@ -9,13 +9,27 @@ $randomNumber: random(5);
 
 * {
   text-align: center;
-  
 }
-
 
 .main {
   background-image: url('../../images/bg/Filter.png'), radial-gradient(#532F65, #201125, #201125);
   background-blend-mode: overlay;
+}
+
+.feather-wrap {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  .feather {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10vw;
+    height: auto;
+    margin: -0.2vw 0 0 9.8vw;
+    //animation: ease 200s alternate infinite;
+    pointer-events: none;
+  }
 }
 
 .event-buttons {
@@ -74,20 +88,24 @@ button {
 .volcano {
   position: absolute;
   justify-self: center;
-  bottom: -5vw;
+  bottom: -10vh;
   height: 125vh;
+  z-index: 12;
 }
 
 .smoke {
   position: absolute;
   justify-self: center;
   height: 100vh;
+  z-index: 11;
 }
 
 .volcanoes {
+  justify-self: center;
   position: absolute;
   bottom: 0px;
-  width: 100vw;
+  min-width: 100vw;
+  height: 125vh;
 }
 
 .cloud-wrapper {
@@ -138,26 +156,26 @@ button {
 }
 
 .cloud:nth-of-type(1) {
-  height: #{random(20)+10}vh;
+  height: #{random(5)+7}vh;
   top: percentage((random(60) + 10) / 100);
   animation-duration: (random(60)+60) + s;
   animation-delay: 0s;
   opacity: (random(30)+50)/100;
 }
 
-@for $i from 2 through 14 {
+@for $i from 2 through 7 {
   .cloud:nth-of-type(#{$i}) {
     height: #{random(20)+10}vh;
     top: percentage((random(60) + 10) / 100);
     animation-duration: #{random(60)+60}s;
-    animation-delay: #{random(20)+($i - 2)*40}s;
+    animation-delay: #{random(20)+($i - 2)*80}s;
     opacity: (random(30)+50)/100;
   }
 }
 
 
 
-.tagline {
+.tagline-container {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -183,6 +201,9 @@ button {
     margin-left: 60%;
     margin-bottom: 200px;
   }
+  @include respond-to('tablet','phone') {
+    visibility: hidden;
+  }
 }
 
 .home-container {
@@ -193,7 +214,9 @@ button {
   flex-direction: column;
   justify-content: space-around;
   .logotagline {
-    z-index: 5;
+    z-index: 15;
+    text-align: center;
+    //display: flex;
     .logo {
       position: relative;
       bottom: 30%;
@@ -203,10 +226,15 @@ button {
       filter: drop-shadow(5px 5px 4px #590A07);
     }
     .tagline {
-      background-color: rgba($color: #FFFFFF, $alpha: 0.2);
-      margin-left: auto;
-      margin-right: auto;
-      width: 25%;
+      padding: 10px;
+      transform: translateY(-10vh);
+      background-color: rgba($color: $yellow-darker, $alpha: 0.8);
+      //background: linear-gradient(84.2deg, $yellow-darker 12.06%, $orange-darker 92.4%);
+      box-shadow: 0 0 20px rgba($color: $orange-darker, $alpha: 1);
+      visibility: hidden;
+      @include respond-to('tablet','phone') {
+        visibility: visible;
+      }
     }
   }
   .youtube {
@@ -217,20 +245,21 @@ button {
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-color: transparent;
-    background-image: url('../../icons/YoutubeWhite.png');
+    background-image: url('../../icons/YoutubeIcon.png');
+    filter: drop-shadow(10px 10px 10px #201125);
     //color: $accentcolour1;
     //background-color: transparent;
     //outline: $accentcolour1 solid 3px;
-    z-index: 10;
+    z-index: 15;
     @media screen and (max-width: 720px) {
       height: 18vw;
       width: 20vw;
     }
     &:hover {
-      color: $maincolour;
-      background-image: url('../../icons/YoutubeIcon.png');
+      filter: drop-shadow(-10px -10px 10px #201125);
+      //background-image: url('../../icons/YoutubeIcon.png');
       //background-color: $accentcolour1;
-      //transition: 1s;
+      transition: 0.2s;
     }
   }
 }

@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { LIST_HMJ } from '../../pages/Gathertown/GathertownConstant';
 import './ButtonFakultas.scss';
+import LIST_HMJ from '../../data/hmj.json';
 
 type HMJ = {
   namaFakultas: string;
@@ -21,7 +21,7 @@ const ButtonFakultas: FC<{
       event.currentTarget.getAttribute('value') || 'default';
 
     const updatedHMJ = LIST_HMJ.filter(
-      (hmj) => hmj.namaFakultas === clickedFakultas
+      (hmj) => hmj.namaFakultas == clickedFakultas
     );
 
     props.onButtonClick(updatedHMJ, clickedFakultas);

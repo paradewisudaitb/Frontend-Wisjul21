@@ -1,8 +1,10 @@
-import { useState } from 'react';
-import ButtonFakultas from '../../component/Gathertown/ButtonFakultas';
-import HMJCardContainer from '../../component/Gathertown/CardHMJ';
+import { useState, useEffect } from 'react';
+import HMJCardContainer from '../../component/ButtonFakultas/CardHMJ';
+import ButtonFakultas from '../../component/ButtonFakultas/ButtonFakultas';
 import './Gathertown.scss';
-import { LIST_FAKULTAS, LIST_HMJ } from './GathertownConstant';
+import dummyImage from '../../images/ukj.png';
+import LIST_FAKULTAS from '../../data/fakultas.json';
+import LIST_HMJ from '../../data/hmj.json';
 
 type HMJ = {
   namaFakultas: string;
@@ -17,15 +19,22 @@ const Gathertown = () => {
   const [activeButton, setActiveButton] = useState('');
   const [listGathertownHMJ, setListGathertownHMJ] = useState(LIST_HMJ);
 
+
   const buttonFakultasClickHandler = (listHMJ: HMJ[], namaFakultas: string) => {
     setListGathertownHMJ(listHMJ);
     setActiveButton(namaFakultas);
   };
 
+  useEffect(() => {
+    const defaultFakultas = 'FITB';
+    setListGathertownHMJ(LIST_HMJ.filter(him => him.namaFakultas == defaultFakultas ));
+    setActiveButton(defaultFakultas);
+  }, []); 
+  
   const listButtonFakultas = LIST_FAKULTAS.map((fakultas) => (
     <ButtonFakultas
       onButtonClick={buttonFakultasClickHandler}
-      className={activeButton === fakultas ? 'active' : ''}
+      className={activeButton == fakultas ? 'active' : ''}
       value={fakultas}
       key={fakultas}
     >

@@ -30,3 +30,9 @@ h5,
 h6 {
   color: $red-medium;
 }
+
+.bg {
+  background-image: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+}

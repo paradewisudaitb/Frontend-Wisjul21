@@ -1,9 +1,7 @@
-import { FC } from 'react';
 import { useState } from 'react';
-import { Fragment } from 'react';
 import ButtonFakultas from '../../component/Gathertown/ButtonFakultas';
+import HMJCardContainer from '../../component/Gathertown/CardHMJ';
 import './Gathertown.scss';
-import dummyImage from '../../images/ukj.png';
 import { LIST_FAKULTAS, LIST_HMJ } from './GathertownConstant';
 
 type HMJ = {
@@ -12,6 +10,8 @@ type HMJ = {
   jurusan: string;
   link: string;
 };
+
+const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
 
 const Gathertown = () => {
   const [activeButton, setActiveButton] = useState('');
@@ -29,53 +29,73 @@ const Gathertown = () => {
       value={fakultas}
       key={fakultas}
     >
-      <h5>{fakultas}</h5>
+      <p>{fakultas}</p>
     </ButtonFakultas>
   ));
 
   const listDisplayedHMJ = listGathertownHMJ.map((hmj) => (
-    <li key={hmj.namaHMJ}>
-      <div className='card-hmj'>
-        <div className='image-hmj'>
-          <img
-            alt={'logo ' + hmj.namaHMJ}
-            src={dummyImage}
-            width='185'
-            height='185'
-          />
-        </div>
-        <div className='info-hmj'>
-          <h2>{hmj.namaHMJ}</h2>
-          <div className='link-hmj'>
-            <a href={hmj.link} target='_blank'>
-              {hmj.link}
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
+    <div key={hmj.namaHMJ}>
+      <HMJCardContainer
+        namaHMJ={hmj.namaHMJ}
+        namaFakultas={hmj.namaFakultas}
+        link={hmj.link}
+      />
+    </div>
   ));
 
   return (
-    <div>
+    <div className='gathertown-container'>
       <div className='info'>
-        <h1>Gathertown</h1>
-        <p>
-          Ultricies leo integer malesuada nunc vel risus commodo. Mollis nunc
-          sed id semper risus in hendrerit gravida rutrum. Volutpat est velit
-          egestas dui. Purus semper eget duis at tellus at urna condimentum
-          mattis. Iaculis eu non diam phasellus vestibulum lorem. Est sit amet
-          facilisis magna etiam tempor orci. Nunc aliquet bibendum enim
-          facilisis. Laoreet id donec ultrices tincidunt arcu. Diam maecenas
-          ultricies mi eget mauris. Faucibus a pellentesque sit amet porttitor
-          eget. Diam donec adipiscing tristique risus nec feugiat in.
-          Sollicitudin aliquam ultrices sagittis orci a scelerisque purus
-          semper.
-        </p>
+        <div className='title'>
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/spark%202%20atas%20matahari.png`}
+            className='spark-title'
+            alt='Percikan api'
+          />
+          <h1>Gather Town</h1>
+        </div>
+        <div className='text'>
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/awan%201-01.png`}
+            alt='Awan'
+            className='cloud-text'
+          />
+          <p>
+            Ultricies leo integer malesuada nunc vel risus commodo. Mollis nunc
+            sed id semper risus in hendrerit gravida rutrum. Volutpat est velit
+            egestas dui. Purus semper eget duis at tellus at urna condimentum
+            mattis. Iaculis eu non diam phasellus vestibulum lorem. Est sit amet
+            facilisis magna etiam tempor orci. Nunc aliquet bibendum enim
+            facilisis. Laoreet id donec ultrices tincidunt arcu. Diam maecenas
+            ultricies mi eget mauris. Faucibus a pellentesque sit amet porttitor
+            eget. Diam donec adipiscing tristique risus nec feugiat in.
+            Sollicitudin aliquam ultrices sagittis orci a scelerisque purus
+            semper.
+          </p>
+        </div>
       </div>
-      <div className='list-button'>{listButtonFakultas}</div>
-      <ul className='list-hmj'>{listDisplayedHMJ}</ul>
-      <br />
+      <div>
+        <div className='list-button'>{listButtonFakultas}</div>
+        <div className='list-hmj'>
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`}
+            alt='Bulu Phoenix'
+            className='feather-hmj'
+          />
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`}
+            className='cloud-hmj-01'
+            alt='Awan'
+          />
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`}
+            className='cloud-hmj-02'
+            alt='Awan'
+          />
+          {listDisplayedHMJ}
+        </div>
+        <br />
+      </div>
     </div>
   );
 };

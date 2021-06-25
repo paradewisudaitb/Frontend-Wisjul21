@@ -23,6 +23,11 @@
     background-color: $blue-darker;
     width: auto;
 
+    @media only screen and (max-width: 480px) {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
     .image-hmj {
       background-color: white;
       border-radius: 25px;

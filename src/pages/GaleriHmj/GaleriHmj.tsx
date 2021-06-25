@@ -2,7 +2,9 @@ import React, {useState} from 'react';
 import './GaleriHmj.scss';
 
 import ButtonFakultas from '../../component/Gathertown/ButtonFakultas';
-import { LIST_FAKULTAS, LIST_HMJ } from './GaleriHmjData';
+
+//Antara bikin data baru atau reuse data dari Gathertown
+import { LIST_FAKULTAS, LIST_HMJ } from './GaleriHmjData'; 
 
 type HMJ = {
   namaFakultas: string;
@@ -12,6 +14,10 @@ type HMJ = {
 };
 
 const GaleriHmj = () => {
+
+  const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
+
+
   const [activeButton, setActiveButton] = useState('');
   const [listGaleriHMJ, setListGaleriHMJ] = useState(LIST_HMJ);
 
@@ -33,6 +39,7 @@ const GaleriHmj = () => {
 
   const listCardHMJ = listGaleriHMJ.map((hmj) => (
     <div className='himpunan-card' key={hmj.namaHMJ}>
+      <img className='spark' src={`${ASSET_URL}/assets/images/vistock/main/spark%201%20kanan%20atas-01.png`} />
       <div className='himpunan-wrapper'>
         <div className='image'></div>
         <div className='himpunan-text'>
@@ -44,6 +51,10 @@ const GaleriHmj = () => {
 
   return (
     <div className='galeri-hmj'>
+      <img className='cloud-1' src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`} />
+      <img className='cloud-2' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`} />
+      <img className='cloud-3' src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} />
+      <img className='feather' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
       <div className='galeri-hmj-title'>
         <h1 className='title'>Himpunan (HMJ)</h1>
       </div>

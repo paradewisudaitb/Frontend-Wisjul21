@@ -5,9 +5,6 @@ import Logo from '../../images/ukj.png';
 import ApresiasiCarousel from '../../component/ApresiasiCarousel/ApresiasiCarousel';
 import './GaleriApresiasi.scss';
 
-import { Footer } from '../../component/NavbarFooter/Footer';
-import { Navbar } from '../../component/NavbarFooter/Navbar';
-
 const GaleriApresiasi = () => {
   // const logoHimpunan = '../../images/ukj.png';
 
@@ -35,14 +32,14 @@ const GaleriApresiasi = () => {
       <div className='himpunan'>
         <h1>Himpunan A</h1>
         <img src={Logo} className='himpunan-logo'/>
-      </div> 
-      
+      </div>
+
       <div className='apresiasi-wisudawan my-5'>
         <h1>Apresiasi Wisudawan</h1>
         <h2>Judul/Keterangan</h2>
         <ApresiasiCarousel {...dataApresiasi} />
       </div>
-      
+
       <div className='daftar-wisudawan'>
         <FilterWisudawan />
       </div>

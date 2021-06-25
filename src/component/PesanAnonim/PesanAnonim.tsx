@@ -1,16 +1,58 @@
 import React from 'react';
+import IPesanIn from '../../interfaces/IPesanIn';
 import './PesanAnonim.scss';
 
-export default function PesanAnonim() {
+const getMonthName = (num: number): string => {
+  switch (num) {
+    case 1:
+      return 'Januari';
+    case 2:
+      return 'Februari';
+    case 3:
+      return 'Maret';
+    case 4:
+      return 'April';
+    case 5:
+      return 'Mei';
+    case 6:
+      return 'Juni';
+    case 7:
+      return 'Juli';
+    case 8:
+      return 'Agustus';
+    case 9:
+      return 'September';
+    case 10:
+      return 'Oktober';
+    case 11:
+      return 'November';
+    case 12:
+      return 'Desember';
+    default:
+      return 'N/A';
+  }
+};
+
+export default function PesanAnonim({ createdAt, namaPengirim, pesan }: IPesanIn): JSX.Element {
+  const tanggal = new Date(createdAt);
+  const tahun = tanggal.getFullYear();
+  const day = tanggal.getDay();
+  const bulan = getMonthName(tanggal.getMonth() + 1);
+  const tmpJam = tanggal.getHours();
+  const jam = tmpJam < 10 ? `0${tmpJam}` : tmpJam;
+  const tmpMenit = tanggal.getMinutes();
+  const menit = tmpMenit < 10 ? `0${tmpMenit}` : tmpMenit;
+  const fmtTanggal =
+    `${day} ${bulan} ${tahun} - ${jam}:${menit}`;
   return (
     <div className='pesan-container'>
       <div className='pesan-wrapper'>
-        <div className='header-pesan'>
-          <p className='nama-pengirim'>Anonim</p>
-          <p>23.59 PM - 28/05/2021</p>
+        <div className='header-wrapper'>
+          <p className='header-content'>{namaPengirim}</p>
+          <p className='header-content'>{fmtTanggal}</p>
         </div>
-        <div className='body-pesan'>
-          <p className='body-content'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab harum qui, laudantium animi libero velit reprehenderit architecto eius maxime tempora minima nihil! Quia, perspiciatis assumenda voluptatum a illum quis ea autem. Placeat a suscipit eum reprehenderit, dolor voluptate error minima beatae velit sapiente non modi corporis quia sunt blanditiis libero quis, provident quam officia, architecto esse accusamus vero explicabo ipsum. Odio similique quae odit dolor nobis architecto, placeat deleniti maxime tenetur maiores consequatur voluptatibus eius rerum facilis iusto eos aperiam assumenda expedita fuga quas dolorum. Deleniti voluptatem, ratione illo illum, dolorem maiores officiis dolor amet perspiciatis explicabo reiciendis non voluptates.</p>
+        <div>
+          <p className='pesan-content'>{pesan}</p>
         </div>
       </div>
     </div>

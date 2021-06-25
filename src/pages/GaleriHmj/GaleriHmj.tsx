@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
 import './GaleriHmj.scss';
+import { ASSET_URL } from '../../api';
 
 import logoImage from '../../images/ukj.png';
 
-import ButtonFakultas from '../../component/Gathertown/ButtonFakultas';
+import ButtonFakultas from '../../component/ButtonFakultas/ButtonFakultas';
 
 //Antara bikin data baru atau reuse data dari Gathertown
-import { LIST_FAKULTAS, LIST_HMJ } from './GaleriHmjData'; 
+import LIST_FAKULTAS from '../../data/fakultas.json';
+import LIST_HMJ from '../../data/hmj.json';
+import { useEffect } from 'react';
 
 type HMJ = {
   namaFakultas: string;
@@ -16,10 +19,6 @@ type HMJ = {
 };
 
 const GaleriHmj = () => {
-
-  const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
-
-
   const [activeButton, setActiveButton] = useState('');
   const [listGaleriHMJ, setListGaleriHMJ] = useState(LIST_HMJ);
 
@@ -31,7 +30,7 @@ const GaleriHmj = () => {
   const listButtonFakultas = LIST_FAKULTAS.map((fakultas) => (
     <ButtonFakultas
       onButtonClick={buttonFakultasClickHandler}
-      className={activeButton === fakultas ? 'active' : ''}
+      className={activeButton == fakultas ? 'active' : ''}
       value={fakultas}
       key={fakultas}
     >
@@ -50,6 +49,12 @@ const GaleriHmj = () => {
       </div>
     </div>
   ));
+
+  useEffect(() => {
+    const defaultFakultas = 'FITB';
+    setListGaleriHMJ(LIST_HMJ.filter(him => him.namaFakultas == defaultFakultas ));
+    setActiveButton(defaultFakultas);
+  }, []);
 
   return (
     <div className='galeri-hmj'>

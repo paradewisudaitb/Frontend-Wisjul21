@@ -40,6 +40,7 @@ $form-apresiasi-width: 50vw;
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 5px;
+  padding-bottom: 5px;
 
   @include respond-to('phone') {
     font-size: 12px;
@@ -49,11 +50,13 @@ $form-apresiasi-width: 50vw;
 .form-apresiasi-btn {
   border: none;
   margin-top: 30px;
+  margin-bottom: 30px;
   width: 100px;
   height: 40px;
   border-radius: 20px;
   color: #f4f4f4;
   background-color: $cyan-medium;
+  text-align: center;
   &:hover {
     background-color: #4aa96c;
     color: #ffffff;
@@ -87,8 +90,8 @@ $form-apresiasi-width: 50vw;
   width: 100%;
   border-radius: 10px;
   padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  // margin-top: 5px;
+  // margin-bottom: 5px;
 }
 
 .form-apresiasi-textarea {
@@ -150,4 +153,10 @@ $form-apresiasi-width: 50vw;
 .form-apresiasi-warn {
   color: $red-medium;
   font-size: 20px;
+}
+
+.weblink-input {
+  padding: 0.5rem;
+  border-style: solid;
+  outline: none;
 }

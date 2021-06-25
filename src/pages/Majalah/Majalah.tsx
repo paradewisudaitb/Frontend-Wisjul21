@@ -33,11 +33,6 @@ export default function Majalah() {
       setIndex(index-1);
     }
   }
-
-  function test(){
-    alert('a');
-  }
-
   
   return (
     <div className="outer-heaven">
@@ -50,12 +45,12 @@ export default function Majalah() {
             <Row>
               <Col xs={12} md={6}>
                 <div className="header-jumbotron">
-                  <h1 className="header-title">Lorem Ipsum <br/> Dolor <br /> Sit Amet </h1>
+                  <h1 className="header-title"> Majalah <br/> Metamorfosis </h1>
                   <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
                   <hr className="my-4" />
                   <p>It uses utility classNamees for typography and spacing to space content out within the larger container.</p>
                   <p className="lead">
-                    <a className="btn btn-success btn-lg mt-3" href="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/Majalah/devel.pdf" role="button">Download</a>
+                    <a className="btn btn-success btn-lg mt-3 dwn-btn" href="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/Majalah/devel.pdf" role="button">Download</a>
                   </p>
                 </div>
               </Col>

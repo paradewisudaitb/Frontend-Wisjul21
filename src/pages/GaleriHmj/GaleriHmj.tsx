@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './GaleriHmj.scss';
 
+import logoImage from '../../images/ukj.png';
+
 import ButtonFakultas from '../../component/Gathertown/ButtonFakultas';
 
 //Antara bikin data baru atau reuse data dari Gathertown
@@ -41,7 +43,7 @@ const GaleriHmj = () => {
     <div className='himpunan-card' key={hmj.namaHMJ}>
       <img className='spark' src={`${ASSET_URL}/assets/images/vistock/main/spark%201%20kanan%20atas-01.png`} />
       <div className='himpunan-wrapper'>
-        <div className='image'></div>
+        <img src={logoImage} className='logo-hmj' />
         <div className='himpunan-text'>
           <h1 className='title'>{hmj.namaHMJ}</h1>
         </div>

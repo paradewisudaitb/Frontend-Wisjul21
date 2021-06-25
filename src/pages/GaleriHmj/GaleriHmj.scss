@@ -1,6 +1,4 @@
-@import '../../styles/colorpalette.scss';
-@import '../../styles/fonts.scss';
-
+@import '../../App.scss';
 
 html, body {
   max-width: 100%;
@@ -41,9 +39,15 @@ html, body {
     position: absolute;
     z-index: 8;
     width: 13em;
-    transform: rotate(96.5deg) scaleX(-1);
+    transform: rotate(90deg) scaleX(-1);
     top: 80%;
-    left: 50px;
+    left: 1%;
+  }
+
+  @include respond-to('phone') {
+    .cloud-1, .cloud-2, .cloud-3, .feather {
+      display: none;
+    }
   }
 
   .galeri-hmj-title {
@@ -52,8 +56,10 @@ html, body {
     .title {
       font-size: 3.5rem;
       margin: 1em;
-      z-index: 10;
-
+      z-index: 1;
+      @include respond-to('phone'){
+        font-size: 2.4em;
+      }
     }
   }
 
@@ -63,6 +69,12 @@ html, body {
     justify-content: center;
     gap: 1em;
     padding: 0 4.5em;
+
+    @include respond-to('phone') {
+      padding: 0 1em;
+      gap: 0.5em;
+    }
+
     button {
       background-color: $red-darker;
       height: 4.5em;
@@ -74,10 +86,21 @@ html, body {
       margin: 0 .8em;
       transition: .3s ease-in-out;
       z-index: 20;
+
+      @include respond-to('phone') {
+        width: 5em;
+        margin: .5em;
+        height: 4em;
+        border-radius: 0;
+      }
+
       p {
         margin: 0;
         padding: 0;
         font-size: 28px;
+        @include respond-to('phone') {
+          font-size: 16px;
+        }
       }
 
       &:hover {
@@ -94,16 +117,29 @@ html, body {
     margin-top: 3em;
     display: flex;
     justify-content: center;
-    gap: 4em;
+    gap: 3.5em;
     flex-wrap: wrap;
     padding: 1em 0 3em 0;
+
+    @include respond-to('phone') {
+      gap: 1em;
+    }
+
     .himpunan-card {
       height: 30em;
-      width: 20em;
+      width: 22em;
       background-color: rgba($blue-darker, 0.5);
-      border-radius: 40px;
+      border-radius: 30px;
       position: relative;
       z-index: 10;
+      padding: 10px;
+      @include respond-to('phone') {
+        width: 11em;
+        height: 15em;
+        padding: 10px;
+      }
+
+
       .spark {
         position: absolute;
         width: 7.5em;
@@ -111,6 +147,11 @@ html, body {
         transform: rotate(-74.62deg);
         top: -5%;
         right: -10%;
+
+        @include respond-to('phone') {
+          width: 4em;
+        }
+
       }
 
       .himpunan-wrapper {
@@ -119,11 +160,15 @@ html, body {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        .image {
-          height: 250px;
-          width: 260px;
-          margin: 20px 0;
-          background-color: grey;
+
+        
+        .logo-hmj {
+          width: 14em;
+          margin: 20px;
+          @include respond-to('phone') {
+          width: 7em;
+          margin: 10px;
+          }
         }
 
         .himpunan-text {
@@ -131,6 +176,9 @@ html, body {
           justify-content: center;
           .title {
             text-align: center;
+            @include respond-to('phone') {
+              font-size: 20px;
+            }
           }
         }
       }

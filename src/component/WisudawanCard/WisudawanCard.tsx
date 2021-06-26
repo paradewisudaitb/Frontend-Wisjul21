@@ -19,7 +19,7 @@ interface Data {
 
 const WisudawanCard = (data: Data) => {
   return (
-    <Link href={`wisudawan/${data.nim}`} className='card-container'>
+    <Link href={`/wisudawan/${data.nim}`} className='card-container'>
       <h3>{data.nama}</h3>
       <h4>{data.nim} - {data.jurusan}</h4>
       <div className='image'>

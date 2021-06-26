@@ -9,7 +9,7 @@
 
   form {
     position: relative;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
 
     input[type='text'] {
       background: $red-darker;
@@ -20,16 +20,9 @@
       border: none;
       box-shadow: none;
       height: 7.2vh;
-      // height: 3rem;
-      padding-left: 6vw;
+      text-align: start;
+      padding-left: 2vw;
     }
-
-    // .bulu-bg {
-    //   position: absolute;
-    //   width: 6.5vw;
-    //   left: 50px;
-    //   // transform: translate(-54vw, -2.5vh);
-    // }
   }
 
   .list-wisudawan {

@@ -1,29 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'wouter';
+import { DataWisudawan, ListUnit } from './Interface';
 import './WisudawanCard.scss';
 import logo from '../../images/ukj.png';
 import Spark from '../../images/bg/spark_1_bawah_matahari.png';
 import Awan from '../../images/bg/awan_3_01.png';
 
-interface ListUnit {
-  logoUnit: string,
-  namaUnit: string
-}
-
-interface Data {
-  nama: string,
-  nim: string,
-  jurusan: string,
-  foto: string,
-  judulTA: string,
-  listUnit: ListUnit[]
-}
-
-const WisudawanCard = (data: Data) => {
+const WisudawanCard = (data: DataWisudawan) => {
   const textLimit = 70;
   const showToolTip = data.judulTA.length > textLimit;
   const shownJudulTA = showToolTip ? data.judulTA.slice(0, textLimit) + '...' : data.judulTA; 
   const [isToolTipVisible, setToolTipVisible] = useState(false);
+  const [isLoaded, setLoaded] = useState(false);
 
   return (
     <Link href={`wisudawan/${data.nim}`} className='card-container'>

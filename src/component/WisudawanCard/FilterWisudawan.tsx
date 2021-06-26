@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import WisudawanCardContainer from './WisudawanCardContainer';
-import Bulu from '../../images/bg/bulu_atas_matahari_01.png';
+import { DataWisudawan, ListHimpunan } from './Interface';
 import './FilterWisudawan.scss';
 
-const FilterWisudawan = () => {
-  const [wisudawan, setWisudawan] = useState();
+const FilterWisudawan = ({ data } : { data: DataWisudawan[] }) => {
+  const [wisudawan, setWisudawan] = useState(data);
   const [text, setText] = useState('');
+
+  useEffect(() => {
+    setWisudawan(
+      data.filter(
+        (wisudawan: DataWisudawan) =>
+          wisudawan.nama.toLowerCase().includes(text.toLowerCase()) ||
+          ('' + wisudawan.nim).includes(text.toLowerCase())
+      )
+    );
+  }, [text]);
 
   return(
     <div className='wisudawan-filter'>
@@ -16,10 +26,9 @@ const FilterWisudawan = () => {
           type='text'
           placeholder={'Cari Nama atau NIM'}
         />
-        {/* <img src={Bulu} alt='' className='bulu-bg' /> */}
       </form>
       <div className='list-wisudawan'>
-        <WisudawanCardContainer />
+        <WisudawanCardContainer data={wisudawan}/>
       </div>
     </div>
   );

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Jumbotron, Button, Modal } from 'react-bootstrap';
-import { Footer } from '../../component/Footer';
-import { Navbar } from '../../component/Navbar';
 import './Majalah.scss';
 
 export default function Majalah() {
@@ -25,7 +23,7 @@ export default function Majalah() {
       setIndex(index+1);
     }
   }
-  
+
   function prev() {
     if (index < 2) {
       setIndex(6);
@@ -37,11 +35,9 @@ export default function Majalah() {
   return (
     <div className="outer-heaven">
       <img src="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/main/awan%204-01.png" className="awan-kiri" />
-      <Navbar />
       <Jumbotron className="hero">
         <div className="container-page">
           <div className="container">
-            
             <Row>
               <Col xs={12} md={12} lg={6}>
                 <div className="header-jumbotron">
@@ -91,9 +87,6 @@ export default function Majalah() {
               </Button>
             </Modal.Footer>
           </Modal>
-          <Col>
-            <Footer />
-          </Col>
         </div>
       </Jumbotron>
     </div>

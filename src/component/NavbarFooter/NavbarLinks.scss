@@ -1,0 +1,9 @@
+@media (max-width: 765px) {
+  .dropdown-item {
+    display: none;
+  }
+
+  .open {
+    display: block !important;
+  }
+}

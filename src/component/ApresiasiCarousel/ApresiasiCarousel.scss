@@ -1,6 +1,29 @@
 .carousel {
   display: flex;
-  width: 25%;
+  width: 30rem;  
   height: auto;
-  transform: translateX(75%);
+  justify-content: center;
+  align-items: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+
+    video {
+      width: 100%;
+    }
+
+    audio {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .carousel {
+    width: 40vw;
+  }
 }

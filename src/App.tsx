@@ -1,18 +1,36 @@
-import './App.scss';
-import HomePage from './pages/HomePage';
-import { DummyPage } from './pages/DummyPage';
-import { Route } from 'wouter';
-import Form from './pages/Form/Form';
-import Majalah from './pages/Majalah/Majalah';
+import React, { Suspense, Component } from 'react';
 
+import './App.scss';
+import { Route, Switch, Redirect, useLocation } from 'wouter';
+
+import { Footer } from './component/NavbarFooter/Footer';
+import { Navbar } from './component/NavbarFooter/Navbar';
+import { AllRoutes, HOME_PAGE, COMINGSOON_PAGE } from './routes/routes';
+import { Loading } from './pages/Loading/Loading';
+
+import { ScrollToTop } from './routes/ScrollToTop/ScrollToTop';
 
 function App() {
+
   return (
-    <div className="App">
-      <Route path=''><HomePage /></Route>
-      <Route path='/dummy'><DummyPage /></Route>
-      <Route path='/form'><Form /></Route>
-      <Route path='/majalah'><Majalah /></Route>
+    <div className='App'>
+
+      <Suspense fallback={<Loading />}>
+        <ScrollToTop />
+        <Navbar />
+        <Switch>
+          { AllRoutes.map(({ label, path, component: Component}) => (
+            <Route
+              key={label}
+              path={path}
+              component={Component}
+            />
+          ))}
+          {/* <Redirect to={ HOME_PAGE.path }/> */}
+        </Switch>
+        <Footer />
+
+      </Suspense>
     </div>
   );
 }

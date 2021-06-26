@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'wouter';
 import './WisudawanCard.scss';
 import logo from '../../images/ukj.png';
 
@@ -18,9 +19,9 @@ interface Data {
 
 const WisudawanCard = (data: Data) => {
   return (
-    <div className='card-container'>
-      <h1>{data.nama}</h1>
-      <h3>{data.nim} - {data.jurusan}</h3>
+    <Link href={`wisudawan/${data.nim}`} className='card-container'>
+      <h3>{data.nama}</h3>
+      <h4>{data.nim} - {data.jurusan}</h4>
       <div className='image'>
         <img src={data.foto} />
       </div>
@@ -39,9 +40,9 @@ const WisudawanCard = (data: Data) => {
             ))}
           </ol>
         </div>
-        : <></>
+        : <>Tidak ada unit</>
       }
-    </div>
+    </Link>
   );
 };
 

@@ -78,9 +78,15 @@
   z-index: 2;
 }
 
+.modal-button {
+  width: 100px;
+}
+
 .modal-content {
   background-color: transparent !important;
   border: none !important;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-backdrop {

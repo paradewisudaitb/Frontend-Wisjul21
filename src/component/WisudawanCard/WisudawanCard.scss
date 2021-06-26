@@ -1,24 +1,38 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/colorpalette.scss';
+
 .card-container {
-  background-color: #C4C4C4;
   display: flex;
   margin: 1rem;
   flex-direction: column;
   text-align: center;
   text-decoration: none;
-  width: 20rem;
+  width: 28vw;
   height: auto;
   padding: 1vh 0;
+  border-radius: 1rem;
+  background-color: rgba($blue-darker, 80%);
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: translateY(-2%);
+    cursor: pointer;
+    background-color: rgba($blue-medium, 80%);
+    box-shadow: 0px 2px 17px rgba($yellow-darker, 80%);
+  }
 
   h3 {
-    margin-top: 0.5rem;
+    // color: $yellow-darker;
+    margin-top: 1.5vh;
     margin-bottom: 0;
-    font-size: 2.1rem;
+    font-size: 2.5vw;
   }
 
   h4 {
+    // color: $yellow-lighter;
     margin-top: 0.1rem;
-    font-size: 1.4rem;
-    margin-bottom: 0.2rem;
+    font-size: 1.8vw;
+    margin-bottom: 1.5vw;
   }
 
   .image {
@@ -26,15 +40,35 @@
     justify-content: center;
     align-items: center;
     margin: 0.7rem 0.7rem;
+    margin-bottom: 0;
     
-    img {
+    .spark-bg {
+      width: 17vw;
+      position: absolute;
+      transform: translate(30%, -28%);
+    }
+
+    .foto-wisudawan {
+      background-color: #C4C4C4;
+      position: relative;
+      object-fit: cover;
+      border-radius: 50%;
       max-width: 50%;
     }
+
+    .awan-bg {
+      position: absolute;
+      width: 23vw;
+      transform: translate(-13%, 15%);
+    }
+
   }
   
   p {
-    margin-top: 0.5rem;
-    font-size: 1.1rem;
+    margin: 0.5vw 0;
+    margin-bottom: 1vw;
+    font-size: 1.3vw;
+    padding: 0 2vw;
   }
 
   .unit-container {
@@ -51,52 +85,67 @@
       justify-content: flex-start;
 
       .unit-logo {
-        width: 2.3rem;
+        width: 2.7vw;
         height: auto;
-        margin-right: 1rem;
+        margin-right: 1vw;
       }
 
       p {
-        margin-bottom: 0;
-        margin-top: 0;
-        font-size: 1rem;
+        margin: 0 0;
+        font-size: 1.2vw;
+        padding-left: 0.5vw;
       }
     }
   }
 }
 
-@media only screen and (max-width: 780px) {
+@include respond-to('phone') {
   .card-container {
     width: 40vw;
     margin: 0 2vw;
     margin-bottom: 2rem;
     height: auto;
+    border-radius: 2vw;
   
     h3 {
-      margin-top: 0.1rem;
-      font-size: 4.8vw;
+      margin-top: 1vh;
+      font-size: 4vw;
     }
 
     h4 {
-      font-size: 3.3vw;
+      font-size: 2.5vw;
     }
 
     .image {
       margin: 1rem;
-      img {
+      margin-top: 1.5vh;
+      margin-bottom: 0;
+
+      .spark-bg {
+        width: 22vw;
+        transform: translate(30%, -40%);
+      }
+
+      .foto-wisudawan {
         max-width: 60%;
+      }
+
+      .awan-bg {
+        width: 30vw;
+        transform: translate(-15%, 13%);
       }
     }
 
     p {
-      font-size: 2.5vw;
-      margin-top: -0.1rem;
+      font-size: 2vw;
+      margin: 2vh 0;
+      margin-top: 0;
       padding: 0 1rem;
-      margin-bottom: 1vh;
     }
 
     .unit-container {
       margin-top: 0.5vh;
+      margin-bottom: 0;
 
       .unit-list {
         padding-left: 2vw;
@@ -112,7 +161,9 @@
           }
 
           p {
-            font-size: 2.1vw;
+            padding-left: 1.8vw;
+            font-size: 1.7vw;
+            letter-spacing: 0.2vw;
           }
         }
       }

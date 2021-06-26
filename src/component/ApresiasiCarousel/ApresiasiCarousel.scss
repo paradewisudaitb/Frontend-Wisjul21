@@ -1,6 +1,10 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/colorpalette.scss';
+
 .carousel {
+  background-color: $purple-medium;
   display: flex;
-  width: 30rem;  
+  width: 30vw;  
   height: auto;
   justify-content: center;
   align-items: center;
@@ -22,7 +26,8 @@
   }
 }
 
-@media only screen and (max-width: 780px) {
+@include respond-to('phone') {
+// @media only screen and (max-width: 780px) {
   .carousel {
     width: 40vw;
   }

@@ -3,11 +3,10 @@ import WisudawanCardContainer from '../../component/WisudawanCard/WisudawanCardC
 import FilterWisudawan from '../../component/WisudawanCard/FilterWisudawan';
 import Logo from '../../images/ukj.png';
 import ApresiasiCarousel from '../../component/ApresiasiCarousel/ApresiasiCarousel';
+import { ListHimpunan } from '../../component/WisudawanCard/Interface';
 import './GaleriApresiasi.scss';
 
 const GaleriApresiasi = () => {
-  // const logoHimpunan = '../../images/ukj.png';
-
   const dataApresiasi = {
     'himpunan': 'hmif',
     'apresiasi':
@@ -25,7 +24,48 @@ const GaleriApresiasi = () => {
       },{
         'tipeKontenApresiasi': 'audio',
         'linkKeKonten': 'https://cdn.piapro.jp/mp3_a/s9/s9ihs6vgwgu9uv4u_20210306210143_audition.mp3'
-      }]};
+      }],
+    'wisudawan':
+    [
+      {
+        'nama': 'John Doe',
+        'nim': '10117240',
+        'jurusan': 'IF',
+        'foto': 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Keqing.png',
+        'judulTA': 'Apel Kucing Pisang Mangga Buah Binatang Dhuar',
+        'listUnit': [{
+          'logoUnit': 'ukj.png',
+          'namaUnit': 'UKJ ITB'
+        },
+        {
+          'logoUnit': 'ukj.png',
+          'namaUnit': 'UKJ ITB'
+        }]},
+      {
+        'nama': 'Bukan John Doe',
+        'nim': '10117241',
+        'jurusan': 'IF',
+        'foto': 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Xiao.png',
+        'judulTA': 'Apel Kucing Pisang',
+        'listUnit': [{
+          'logoUnit': 'ukj.png',
+          'namaUnit': 'UKJ ITB'
+        }]},
+      {
+        'nama': 'Mungkin Doe',
+        'nim': '10117242',
+        'jurusan': 'IF',
+        'foto': 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Albedo.png',
+        'judulTA': 'Apel Kucing Pisang Mangga Buah Binatang Dhuar',
+        'listUnit': [{
+          'logoUnit': 'ukj.png',
+          'namaUnit': 'UKJ ITB'
+        },
+        {
+          'logoUnit': 'ukj.png',
+          'namaUnit': 'UKJ ITB'
+        }]}]
+  };
 
   return (
     <div className='galeri-apresiasi-page py-5'>
@@ -35,13 +75,13 @@ const GaleriApresiasi = () => {
       </div>
 
       <div className='apresiasi-wisudawan my-5'>
-        <h1>Apresiasi Wisudawan</h1>
-        <h2>Judul/Keterangan</h2>
-        <ApresiasiCarousel {...dataApresiasi} />
+        <h2>Apresiasi Wisudawan</h2>
+        <h3>Judul/Keterangan</h3>
+        <ApresiasiCarousel data={dataApresiasi.apresiasi} />
       </div>
 
       <div className='daftar-wisudawan'>
-        <FilterWisudawan />
+        <FilterWisudawan data={dataApresiasi.wisudawan} />
       </div>
 
     </div>

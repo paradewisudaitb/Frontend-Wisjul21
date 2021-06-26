@@ -32,19 +32,19 @@
     @include respond-to('desktop') {
         height: 10rem;
         left: 6vw;
-        bottom: 13vh;
+        bottom: 10vh;
     }
 
     @include respond-to('tablet') {
         height: 8rem;
         left: -10vw;
-        bottom: -28vh;
+        bottom: -30vh;
     }
 
     @include respond-to('phone') {
         height: 8rem;
-        bottom: -47vh;
-        left: -12vw;
+        bottom: -55vh;
+        left: -18vw;
     }
 }
 
@@ -112,6 +112,15 @@
     }
 }
 
+.sender-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.sender-name-input-container {
+    display: flex;
+    justify-content: space-between;
+}
 
 .sender-name-label {
     color: $yellow-darker;
@@ -121,19 +130,24 @@
 }
 
 
-.kirimpesan-line {
-    height: 3px;
-    background-color: $yellow-darker;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-}
-
-.sender-name-input {
+#nameinput {
     background: none;
     outline: none;
     border: none;
     text-align: left;
+    width: 80%;
+    resize: none;
+    overflow-y: hidden;
 }
+
+.kirimpesan-line {
+    float: start;
+    height: 3px;
+    background-color: $yellow-darker;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 
 .message-content-label {
     color: $yellow-darker;

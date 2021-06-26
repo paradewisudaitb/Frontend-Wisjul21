@@ -7,6 +7,7 @@ import WisudawanContainer from '../../component/WisudawanContainer/WisudawanCont
 import { getPesan } from '../../controller/pesan';
 import { getByNIM } from '../../controller/wisudawan';
 
+
 export default function Wisudawan(): JSX.Element {
   const [match, params] = useRoute('/wisudawan/:nim');
 
@@ -81,9 +82,7 @@ export default function Wisudawan(): JSX.Element {
                       Loading pesan wisudawan
                     </h2>
                   </div>
-                ) : (
-                  pesanToShow
-                )}
+                ) : pesanToShow}
             </div>
           </div>
           <div className='kirim-pesan-button-wrapper'>
@@ -93,7 +92,6 @@ export default function Wisudawan(): JSX.Element {
           </div>
         </div>
       </div>
-
     );
   } else {
     return (<h1> cari apa mas? </h1>);

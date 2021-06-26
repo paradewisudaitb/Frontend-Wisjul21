@@ -43,7 +43,7 @@ export default function Majalah() {
           <div className="container">
             
             <Row>
-              <Col xs={12} md={6}>
+              <Col xs={12} md={12}>
                 <div className="header-jumbotron">
                   <h1 className="header-title"> Majalah <br/> Metamorfosis </h1>
                   <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -54,7 +54,7 @@ export default function Majalah() {
                   </p>
                 </div>
               </Col>
-              <Col xs={12} md={6}>
+              <Col xs={12} md={12}>
                 <div className="majalah">
                   <img src="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/main/spark%202%20atas%20matahari.png" className="kembang-api" />
                   <div className="majalah-pdf" >

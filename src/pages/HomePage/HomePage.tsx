@@ -27,6 +27,16 @@ const HomePage = () => {
   return (
     <div className='main pb-5'>
       {/* HEADER ASSETS */}
+      {/* Clouds */}
+      <div className='cloud-container'>
+        <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%201-01.png`} style={{ transform: `translateY(-${offsetY * 674}px)` }} />
+        <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`} style={{ transform: `translateY(-${offsetY * 746}px)` }} /> 
+        <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`} style={{ transform: `translateY(-${offsetY * 800}px)` }} />
+        <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} style={{ transform: `translateY(-${offsetY * 723}px)` }} />
+        <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`} style={{ transform: `translateY(-${offsetY * 653}px)` }} />
+        <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/header/awan%20kanan.png`} style={{ transform: `translateY(-${offsetY *634}px)` }} />
+        <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/header/awan%20kiri.png`} style={{ transform: `translateY(-${offsetY * 673}px)` }} />
+      </div>
       <div className='bg-container mt-5'>
         {/* Volcano */}
         <div className='bg' style={{ backgroundImage: `url(${ASSET_URL}/assets/images/background/header.jpg)`, opacity: `${1-(offsetY)*1.7}` }}></div>
@@ -56,16 +66,7 @@ const HomePage = () => {
 
       {/* MAIN ASSETS */}
       <div className='main-container'>
-        {/* Clouds */}
-        <div className='cloud-container1'>
-          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%201-01.png`}  />
-          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`}  /> 
-          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`}  />
-          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`}  />
-          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`}  />
-          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/header/awan%20kanan.png`}  />
-          <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/header/awan%20kiri.png`}  />
-        </div>
+        <img className='cloud-main' src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} />
         {/* Feathers */}
         <div className='feather-wrap'>
           <img className='feather' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />

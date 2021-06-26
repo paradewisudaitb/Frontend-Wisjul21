@@ -2,10 +2,6 @@
 @import "../../styles/fonts.scss";
 @import "../../styles/colorpalette.scss";
 
-html {
-  overflow-y: hidden;
-}
-
 .header-jumbotron {
   z-index: 1;
   position: relative;
@@ -121,6 +117,7 @@ html {
   margin-top: 20px;
   margin-left: 25px;
   margin-right: 25px;
+  margin-bottom: 10px;
   padding-top: 0px;
   padding-bottom: 0px;
   padding-left: 17px;

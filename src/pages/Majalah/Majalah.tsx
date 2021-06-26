@@ -6,11 +6,23 @@ import { ASSET_URL } from '../../api';
 
 export default function Majalah() {
   const [index, setIndex] = useState(1);
+  const htmlTag = document.querySelector('html');
 
   // Modal
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+    setShow(true);
+    if (htmlTag) {
+      htmlTag.setAttribute('style', 'overflow-y: hidden;');
+    }
+  };
+
+  const handleClose = () => {
+    setShow(false);
+    if (htmlTag) {
+      htmlTag.setAttribute('style', 'overflow-y: scroll;');
+    }
+  };
 
   function getImage(index: number)
   {
@@ -71,8 +83,10 @@ export default function Majalah() {
             show={show}
             onHide={() => setShow(false)}
             aria-labelledby="example-custom-modal-styling-title"
+            backdrop="static"
+            keyboard={false}
           >
-            <Button variant="danger" className="modal-button" onClick={handleClose}>
+            <Button variant="danger" className="modal-button mb-3" onClick={handleClose}>
               Close
             </Button>
             <img className="image-modal" src={getImage(index)} />

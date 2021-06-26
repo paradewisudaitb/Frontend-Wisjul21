@@ -17,7 +17,7 @@ const HomePage = () => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);  
+  }, []);
 
   //Carousel
   const [clickCount, setClickCount] = useState(0);
@@ -86,7 +86,7 @@ const HomePage = () => {
           <img className='feather' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
         </div>
 
-        {/* MAIN CONTENT */}  
+        {/* MAIN CONTENT */}
         {/* Visi-Misi */}
         <div className='visi-misi'>
           <h1 className='VISI'>VISI</h1>
@@ -119,7 +119,7 @@ const HomePage = () => {
               </li>
             </ol>
           </p>
-        </div>        
+        </div>
         {/* Buttons */}
         <div className='event-buttons'>
           <h1>Ada apa di Perayaan Wisuda Juli ITB 2021?</h1>
@@ -127,8 +127,8 @@ const HomePage = () => {
             <button className='arrow' onClick={prev}>-</button>
             <div className='btns'>
               <Link to='/majalah'><button className={'button'+((clickCount)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/majalah.png')` }}><h2>Majalah</h2></button></Link>
-              <Link to='/galeri-apresiasi'><button className={'button'+((clickCount+1)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/hmj.png')` }}><h2>Galeri Apresiasi</h2></button></Link>
-              <button className={'button'+((clickCount+2)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/gathertown.png')` }}><h2>Gather Town</h2></button>
+              <Link to='/hmj'><button className={'button'+((clickCount+1)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/hmj.png')` }}><h2>Galeri Apresiasi</h2></button></Link>
+              <Link to='/gathertown'><button className={'button'+((clickCount+2)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/gathertown.png')` }}><h2>Gather Town</h2></button></Link>
             </div>
             <button className='arrow' onClick={next}>+</button>
           </div>

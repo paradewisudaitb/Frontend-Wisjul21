@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'wouter';
 import './WisudawanCard.scss';
 import logo from '../../images/ukj.png';
 import Spark from '../../images/bg/spark_1_bawah_matahari.png';
@@ -25,7 +26,7 @@ const WisudawanCard = (data: Data) => {
   const [isToolTipVisible, setToolTipVisible] = useState(false);
 
   return (
-    <div className='card-container'>
+    <Link href={`wisudawan/${data.nim}`} className='card-container'>
       <h3>{data.nama}</h3>
       <h4>{data.nim} - {data.jurusan}</h4>
       <div className='image'>
@@ -48,9 +49,9 @@ const WisudawanCard = (data: Data) => {
             ))}
           </ol>
         </div>
-        : <></>
+        : <>Tidak ada unit</>
       }
-    </div>
+    </Link>
   );
 };
 

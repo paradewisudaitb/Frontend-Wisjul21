@@ -27,8 +27,8 @@ function App() {
             />
           ))}
           {/* <Redirect to={ HOME_PAGE.path }/> */}
-       </Switch>
-       <Footer />
+        </Switch>
+        <Footer />
 
       </Suspense>
     </div>

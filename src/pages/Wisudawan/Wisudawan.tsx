@@ -92,6 +92,7 @@ export default function Wisudawan(): JSX.Element {
           </div>
         </div>
       </div>
+    );
   } else {
     return (<h1> cari apa mas? </h1>);
   }

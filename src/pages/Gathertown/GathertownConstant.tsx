@@ -18,6 +18,7 @@ const LIST_FAKULTAS = [
   'SF',
   'SITH',
   'STEI',
+  'ETC',
 ];
 
 const LIST_HMJ: HMJ[] = [
@@ -25,7 +26,7 @@ const LIST_HMJ: HMJ[] = [
     namaFakultas: 'STEI',
     namaHMJ: 'HMIF ITB',
     jurusan: 'Teknik Informatika & Sistem dan Teknologi Informasi',
-    link: 'https://bit.ly/HMIFterbaiksedunia',
+    link: 'bit.ly/HMIFterbaiksedunia',
   },
   {
     namaFakultas: 'STEI',
@@ -41,4 +42,4 @@ const LIST_HMJ: HMJ[] = [
   },
 ];
 
-export {LIST_FAKULTAS, LIST_HMJ};
+export { LIST_FAKULTAS, LIST_HMJ };

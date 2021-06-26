@@ -18,7 +18,7 @@ interface Data {
 const WisudawanCardContainer = () => {
   const data = [{
     'nama': 'John Doe',
-    'nim': '13519001',
+    'nim': '10117240',
     'jurusan': 'IF',
     'foto': 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Keqing.png',
     'judulTA': 'Apel Kucing Pisang Mangga Buah Binatang Dhuar',
@@ -33,7 +33,7 @@ const WisudawanCardContainer = () => {
     ]
   },{
     'nama': 'John Doe',
-    'nim': '13519002',
+    'nim': '10117240',
     'jurusan': 'IF',
     'foto': 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Xiao.png',
     'judulTA': 'Apel Kucing Pisang',
@@ -44,7 +44,7 @@ const WisudawanCardContainer = () => {
     ]
   },{
     'nama': 'John Doe',
-    'nim': '13519003',
+    'nim': '10117240',
     'jurusan': 'IF',
     'foto': 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Albedo.png',
     'judulTA': 'Apel Kucing Pisang Mangga Buah Binatang Dhuar',

@@ -30,7 +30,7 @@ $navbarheight: 4.4rem;
     background-color: $red-darker;
     width: 100%;
     height: $navbarheight;
-    z-index: 3;
+    z-index: 999;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 }
@@ -147,7 +147,7 @@ $drops-top: -12rem;
         position: absolute;
         top: $drops-top;
         transition: 0.5s;
-        z-index: 2;
+        z-index: 998;
         display: flex;
     }
     

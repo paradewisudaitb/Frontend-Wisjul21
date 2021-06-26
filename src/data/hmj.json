@@ -1,0 +1,26 @@
+[
+  {
+    "namaFakultas": "STEI",
+    "namaHMJ": "HMIF ITB",
+    "jurusan": "Teknik Informatika & Sistem dan Teknologi Informasi",
+    "link": "https://bit.ly/HMIFterbaiksedunia"
+  },
+  {
+    "namaFakultas": "STEI",
+    "namaHMJ": "HME ITB",
+    "jurusan": "Teknik Elektro, Teknik Biomedis, Teknik Tenaga Listrik",
+    "link": "bit.ly/HMIFterbaiksedunia"
+  },
+  {
+    "namaFakultas": "FITB",
+    "namaHMJ": "HMME \"ATMOSPHAIRA\" ITB",
+    "jurusan": "Meteorologi",
+    "link": "bit.ly/FITBuhuyasoycihuy"
+  },
+  {
+    "namaFakultas": "STEI",
+    "namaHMJ": "IMT SIGNUM",
+    "jurusan": "Teknik Telekomunikasi",
+    "link": "bit.ly/FITBuhuyasoycihuy"
+  }
+]

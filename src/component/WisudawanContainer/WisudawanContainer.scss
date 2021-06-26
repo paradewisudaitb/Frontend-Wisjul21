@@ -1,42 +1,71 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/colorpalette.scss';
+
 .wisudawan-container {
-    background-color:#facefa;
-    margin: 2em;
-    padding: 40px;
-    display: flex;
-    justify-content: space-evenly;
-}
-.list-kontribusi {
-    text-align: left;
-}
-.unit-wisudawan {
-    .unit-logo {
-        width: 2.3rem;
-        height: auto;
-        margin-right: 1rem;
-    }
-    .unit-item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 0.8rem;
-    }
-    
-    .unit-list {
-        margin-top: 2rem;
-    }
+  padding: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  @include respond-to('phone', 'tablet') {
+    display:flex;
+    flex-direction: column;
+    padding: 0px;
+  }
 }
 
-.data-wisudawan p, .data-wisudawan h1, .data-wisudawan h2, .data-wisudawan h3, .data-wisudawan h4, .data-wisudawan li {
+.data-wisudawan p,
+.data-wisudawan h1,
+.data-wisudawan h2,
+.data-wisudawan h3,
+.data-wisudawan h4,
+.data-wisudawan li {
     text-align:left;
 }
 
-.foto-wisudawan img {
-    width: 16rem;
-    height: 16rem;
-    // width: 360px;
-    // height: 360px;
+#pas-foto {
+  display: block;
+  height: 240px;
+  // width: 180px;
+  margin: 0 auto;
+}
+.foto-wisudawan {
+  margin-bottom: 2rem;
+}
+
+// 400 x 560
+// 371 x 520
+// 357 x 500
+#bulu {
+  height: 150px;
+  width: auto;
+  position: relative;
+  right: 70px;
+  bottom: 115px;
+  rotate: 12deg;
+}
+
+#spark {
+  height: 200px;
+  width: auto;
+  position: absolute;
+  right: 50px;
+  top: 70px;
+  @include respond-to('phone', 'tablet') {
+    width: 100px;
+    height: auto;
+    right: 0px;
+    overflow: hidden;
+  }
 }
 
 .wisudawan-left {
-    margin-right: 2rem;
+  margin-right: 2rem;
+
+  @include respond-to('phone', 'tablet') {
+    margin-right: 0rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }

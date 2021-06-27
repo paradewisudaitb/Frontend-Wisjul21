@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useRoute } from 'wouter';
 import { getByNIM } from '../../controller/wisudawan';
 import './KirimPesanPage.scss';
 import { Loading } from '../../component/Loading/Loading';
 import { useEffect } from 'react';
+import { sendPesan } from '../../controller/pesan';
+import IPesanOut from '../../interfaces/IPesanOut';
 
 const maxMessageLength = 255;
 const maxSenderNameLength = 30;
@@ -16,7 +18,6 @@ export const KirimPesanPage = () => {
     const nameinputresize = () => {
       const nameinput = document.getElementById('nameinput');
       if (nameinput) {
-        console.log(nameinput.scrollHeight);
         nameinput.style.height = '';
         nameinput.style.height = Math.min(nameinput.scrollHeight, limit) + 'px';
       }
@@ -54,6 +55,34 @@ export const KirimPesanPage = () => {
       if (display) charCount(text, display, maxSenderNameLength);
     };
 
+    const submitPesan = (event: any) => {
+      event.preventDefault();
+      const namaPengirimInput: HTMLInputElement | null = document.querySelector('#nameinput');
+      const isiPesanInput: HTMLTextAreaElement | null = document.querySelector('#message-content');
+
+      const namaPengirim = namaPengirimInput?.value;
+      const isiPesan = isiPesanInput?.value;
+
+      console.log(namaPengirim, isiPesan);
+
+      if (isiPesan) {
+        const pesan: IPesanOut = {
+          nim: nim,
+          pesan: isiPesan,
+          namaPengirim: namaPengirim,
+        };
+
+        sendPesan(pesan)
+          .then(_ => {
+            window.alert('Pesan berhasil dikirim');
+          })
+          .catch(err => {
+            window.alert('Pesan gagal dikirim');
+            console.error(err);
+          });
+      }
+    };
+
     return (
       <div className="kirimpesan">
         { loading ? (
@@ -74,7 +103,7 @@ export const KirimPesanPage = () => {
                 </div>
               </div>
               <div className="message">
-                <form action="" className='mx-4'>
+                <form action="" className='mx-4' onSubmit={submitPesan}>
                   <div className="sender-name mt-4">
                     <label className='sender-name-label'>Dari</label>
                     <div className="sender-name-input-container">
@@ -87,7 +116,7 @@ export const KirimPesanPage = () => {
                     <div className='message-content-label'>Pesan</div>
                   </div>
                   <div className="message-content-content">
-                    <textarea name='message' placeholder="Ketik pesan di sini ... " id='message-content' className='w-100 message-content' maxLength={maxMessageLength} onChange={(e) => messageCount(e.target.value)}/>
+                    <textarea name='message' placeholder="Ketik pesan di sini... " id='message-content' className='w-100 message-content' maxLength={maxMessageLength} onChange={(e) => messageCount(e.target.value)}/>
                   </div>
                   <div className="mb-2 float-end">
                     <label className="message-char-counter small m-2" id='message-char-counter'>0/{maxMessageLength}</label>

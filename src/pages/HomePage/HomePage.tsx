@@ -25,7 +25,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className='main pb-5'>
+    <div className='homepage pb-5'>
       {/* HEADER ASSETS */}
       {/* Clouds */}
       <div className='cloud-container'>
@@ -48,8 +48,8 @@ const HomePage = () => {
       {/* HEADER CONTENT */}
       {/* Tagline */}
       <div className='tagline-container'>
-        <h3 className='tagline1-shadow' style={{ transform: `translateY(${offsetY*230 - offsetY*offsetY*175}vh) translateX(${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)})` }}>Metamorphose to find</h3>
-        <h3 className='tagline2-shadow' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h3>
+        <h3 className='tagline1-shadow' style={{ transform: `translateY(${offsetY*230 - offsetY*offsetY*175}vh) translateX(${(offsetY * 32.5)%(window.innerWidth/41)}vw) scale(${1-(offsetY*0.6)})` }}>Metamorphose to find</h3>
+        <h3 className='tagline2-shadow' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%(window.innerWidth/41)}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h3>
       </div>
       <div className='tagline-container'>
         <h1 className='tagline1' style={{ transform: `translateY(${offsetY*230 - offsetY*offsetY*175}vh) translateX(${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)}` }}>Metamorphose to find</h1>
@@ -66,7 +66,9 @@ const HomePage = () => {
 
       {/* MAIN ASSETS */}
       <div className='main-container'>
-        <img className='cloud-main' src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} />
+        <img className='cloud-main1' src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} />
+        <img className='cloud-main2' src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`} />
+        <img className='cloud-main3' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`} />
         {/* Feathers */}
         <div className='feather-wrap'>
           <img className='feather' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
@@ -119,7 +121,7 @@ const HomePage = () => {
           <div className='btn-container'>
             <button className='arrow' onClick={prev}>-</button>
             <div className='btns'>
-              <Link to='/majalah'><button className={'button'+((clickCount)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/majalah.png')` }}><h2>Majalah</h2></button></Link>
+              <Link to='/majalah'><button className={'button'+((clickCount)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/majalah.png')` }}><h2>Majalah Metamorfosis</h2></button></Link>
               <Link to='/galeri-apresiasi'><button className={'button'+((clickCount+1)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/hmj.png')` }}><h2>Galeri Apresiasi</h2></button></Link>
               <button className={'button'+((clickCount+2)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/gathertown.png')` }}><h2>Gather Town</h2></button>
             </div>

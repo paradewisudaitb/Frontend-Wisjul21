@@ -1,5 +1,5 @@
-@import '../../styles/colorpalette.scss';
-@import '../../styles/responsive.scss';
+@import "../../styles/colorpalette.scss";
+@import "../../styles/responsive.scss";
 
 .button {
   border: none;
@@ -13,6 +13,21 @@
   box-shadow: 0 2px 5px black;
   width: 6em;
   height: 3em;
+
+  @include respond-to("phone") {
+    font-size: 10px;
+    // width: 3em;
+    // height: 2em;
+    margin: 0.75em 0.4em;
+  }
+
+  @include respond-to("tablet") {
+    font-size: 20px;
+    display: flexbox;
+    flex-direction: row;
+    // width: 10em;
+    // height: 5em;
+  }
 
   h4 {
     color: $yellow-lighter;

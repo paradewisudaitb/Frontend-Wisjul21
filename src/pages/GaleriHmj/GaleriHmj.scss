@@ -80,6 +80,11 @@ body {
       padding: 0 1em;
       gap: 0.5em;
     }
+
+    @include respond-to("tablet") {
+      padding: 0 1em;
+      gap: 0.5em;
+    }
   }
 
   .himpunan-container {

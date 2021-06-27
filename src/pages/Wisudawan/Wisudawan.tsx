@@ -7,7 +7,6 @@ import WisudawanContainer from '../../component/WisudawanContainer/WisudawanCont
 import { getPesan } from '../../controller/pesan';
 import { getByNIM } from '../../controller/wisudawan';
 
-
 export default function Wisudawan(): JSX.Element {
   const [match, params] = useRoute('/wisudawan/:nim');
 

@@ -5,6 +5,8 @@
   padding: 40px;
   display: flex;
   justify-content: space-evenly;
+  position: relative;
+
   @include respond-to('phone', 'tablet') {
     display:flex;
     flex-direction: column;
@@ -22,15 +24,16 @@
 }
 
 #spark {
-  height: 200px;
+  height: 20vh;
   width: auto;
   position: absolute;
-  right: 50px;
-  top: 70px;
+  right: -7vw;
+  top: -10vh;
   @include respond-to('phone', 'tablet') {
-    width: 100px;
+    width: 40vw;
     height: auto;
-    right: 0px;
+    right: -22vw;
+    top: -13vh;
     overflow: hidden;
   }
 }

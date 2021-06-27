@@ -6,12 +6,13 @@
   outline: none;
   background-color: $red-darker;
   cursor: pointer;
-  padding: 1.5% 3.5%;
   margin: 0.75em;
   border-radius: 20px;
   color: $yellow-lighter;
   display: inline-block;
   box-shadow: 0 2px 5px black;
+  width: 6em;
+  height: 3em;
 
   h4 {
     color: $yellow-lighter;
@@ -28,7 +29,7 @@
   }
 
   &:hover {
-    background-color: $red-medium;
+    background-color: $red-lighter;
     color: $yellow-lighter;
   }
 }

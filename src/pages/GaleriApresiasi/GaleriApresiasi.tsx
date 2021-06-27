@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRoute } from 'wouter';
 import WisudawanCardContainer from '../../component/WisudawanCard/WisudawanCardContainer';
 import FilterWisudawan from '../../component/WisudawanCard/FilterWisudawan';
 import Logo from '../../images/ukj.png';
@@ -7,6 +8,7 @@ import { ListHimpunan } from '../../component/WisudawanCard/Interface';
 import './GaleriApresiasi.scss';
 
 const GaleriApresiasi = () => {
+
   const dataApresiasi = {
     'himpunan': 'hmif',
     'apresiasi':
@@ -68,7 +70,7 @@ const GaleriApresiasi = () => {
   };
 
   return (
-    <div className='galeri-apresiasi-page py-5'>
+    <div className='galeri-apresiasi-page py-5 bg'>
       <div className='himpunan'>
         <h1>Himpunan A</h1>
         <img src={Logo} className='himpunan-logo'/>

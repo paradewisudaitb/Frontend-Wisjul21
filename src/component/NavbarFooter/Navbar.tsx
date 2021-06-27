@@ -33,7 +33,7 @@ export const Navbar = () => {
   return (
     <>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-      <nav className="navbar px-2 px-xl-5">
+      <nav className="navbar px-2 px-xl-3">
         <Brand />
         <div className="navbar-nav ms-auto">
           <NavbarLinks />

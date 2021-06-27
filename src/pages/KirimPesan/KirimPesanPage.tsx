@@ -40,40 +40,38 @@ export const KirimPesanPage = () => {
   };
 
   return (
-    <div className="kirimpesan">
+    <div className="kirimpesan bg p-5">
       <img className='jeduar' src={'https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/main/spark%202%20atas%20matahari.png'} alt="" />
       <img className='kumo' src={'https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/header/awan%20kiri.png'} alt="" />
-      <div className="kirimpesan-container p-5">
-        <div className="receiver">
-          <div className='nama-wisudawan'>
-            <div className="text-center my-2">{ wisudawan.nim + ' ' + wisudawan.nama }</div>
-          </div>
-          <div className="foto-wisudawan-container">
-            <img className='foto-wisudawan' src={wisudawan.foto} alt="Foto Wisudawan" />
-          </div>
+      <div className="receiver">
+        <div className='nama-wisudawan'>
+          <div className="text-center my-2">{ wisudawan.nim + ' ' + wisudawan.nama }</div>
         </div>
-        <div className="message">
-          <form action="" className='mx-4'>
-            <div className="sender-name mt-4">
-              <label className='sender-name-label'>Dari</label>
-              <div className="sender-name-input-container">
-                <textarea id="nameinput" rows={1}  className="sender-name-input float-start" placeholder="Nama pengirim (opsional)" maxLength={maxSenderNameLength} onChange={(e) => senderCount(e.target.value)} onInput={nameinputresize}/>
-                <label className='float-end small' id='sender-char-counter'>0/{maxSenderNameLength}</label>
-              </div>
-            </div>
-            <div className="kirimpesan-line"></div>
-            <div className="message-label">
-              <div className='message-content-label'>Pesan</div>
-            </div>
-            <div className="message-content-content">
-              <textarea name='message' placeholder="Ketik pesan di sini ... " id='message-content' className='w-100 message-content' maxLength={maxMessageLength} onChange={(e) => messageCount(e.target.value)}/>
-            </div>
-            <div className="mb-2 float-end">
-              <label className="message-char-counter small m-2" id='message-char-counter'>0/{maxMessageLength}</label>
-              <input type="submit" value="Submit" className='btn btn-primary submit-button' />
-            </div>
-          </form>
+        <div className="foto-wisudawan-container">
+          <img className='foto-wisudawan' src={wisudawan.foto} alt="Foto Wisudawan" />
         </div>
+      </div>
+      <div className="message">
+        <form action="" className='mx-4'>
+          <div className="sender-name mt-4">
+            <label className='sender-name-label'>Dari</label>
+            <div className="sender-name-input-container">
+              <textarea id="nameinput" rows={1}  className="sender-name-input float-start" placeholder="Nama pengirim (opsional)" maxLength={maxSenderNameLength} onChange={(e) => senderCount(e.target.value)} onInput={nameinputresize}/>
+              <label className='float-end small' id='sender-char-counter'>0/{maxSenderNameLength}</label>
+            </div>
+          </div>
+          <div className="kirimpesan-line"></div>
+          <div className="message-label">
+            <div className='message-content-label'>Pesan</div>
+          </div>
+          <div className="message-content-content">
+            <textarea name='message' placeholder="Ketik pesan di sini ... " id='message-content' className='w-100 message-content' maxLength={maxMessageLength} onChange={(e) => messageCount(e.target.value)}/>
+          </div>
+          <div className="mb-2 float-end">
+            <label className="message-char-counter small m-2" id='message-char-counter'>0/{maxMessageLength}</label>
+            <input type="submit" value="Submit" className='btn btn-primary submit-button' />
+          </div>
+        </form>
       </div>
     </div>
   ); 

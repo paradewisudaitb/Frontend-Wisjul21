@@ -7,9 +7,6 @@ $accentcolour1: rgb(218, 167, 0);
 $borderradius: 3px;
 $randomNumber: random(5);
 
-* {
-  text-align: center;
-}
 
 .main {
   background-image: url('../../images/bg/Filter.png'), radial-gradient(#532F65, #201125, #201125);
@@ -184,7 +181,9 @@ button {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  
   width: 100%;
+  text-align: center;
   justify-content: center;
   margin-left: -20px;
   z-index: 10;

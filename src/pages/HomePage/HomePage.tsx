@@ -122,7 +122,7 @@ const HomePage = () => {
         </div>
         {/* Buttons */}
         <div className='event-buttons'>
-          <h1>Ada apa di Perayaan Wisuda Juli ITB 2021?</h1>
+          <h1 className='text-center'>Ada apa di Perayaan Wisuda Juli ITB 2021?</h1>
           <div className='btn-container'>
             <button className='arrow' onClick={prev}>-</button>
             <div className='btns'>

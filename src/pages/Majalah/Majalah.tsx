@@ -46,7 +46,7 @@ export default function Majalah() {
   }
 
   return (
-    <div className="outer-heaven">
+    <div className="outer-heaven bg">
       <img src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} className="awan-kiri" />
       <Jumbotron className="hero">
         <div className="container-page">
@@ -70,9 +70,9 @@ export default function Majalah() {
                     <img id="img-majalah img-fluid" src={getImage(index)} onClick={handleShow} />
                   </div>
                   <div className="d-flex justify-content-center">
-                    <button className="doc-button previous" onClick={prev}> &#8249; </button>
+                    <button className="doc-button previous" onClick={prev}> <i className="fa fa-chevron-left fa-lg text-white"></i> </button>
                     <div className="index-majalah"> {index} / 6 </div>
-                    <button className="doc-button next" onClick={next}> &#8250; </button>
+                    <button className="doc-button next" onClick={next}> <i className="fa fa-chevron-right fa-lg text-white"></i> </button>
                   </div>
                 </div>
                 <img src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`} className="awan-kanan" />
@@ -87,18 +87,18 @@ export default function Majalah() {
             keyboard={false}
           >
             <Button variant="danger" className="modal-button mb-3" onClick={handleClose}>
-              Close
+              <i className="fa fa-close fa-lg text-white me-1"></i>Close
             </Button>
             <img className="image-modal" src={getImage(index)} />
             <Modal.Footer>
               <Button variant="primary" onClick={prev}>
-                Prev
+                <i className="fa fa-chevron-left text-white"></i>
               </Button>
               <Button variant="secondary" disabled onClick={handleClose}>
                 {index} / 6
               </Button>
               <Button variant="primary" onClick={next}>
-                Next
+                <i className="fa fa-chevron-right text-white"></i>
               </Button>
             </Modal.Footer>
           </Modal>

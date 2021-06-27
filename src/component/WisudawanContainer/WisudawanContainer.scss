@@ -24,14 +24,13 @@
 }
 
 #spark {
-  height: 20vh;
+  max-height: 20vh;
   width: auto;
   position: absolute;
   right: -7vw;
   top: -10vh;
   @include respond-to('phone', 'tablet') {
     width: 40vw;
-    height: auto;
     right: -23vw;
     top: -13vh;
     overflow: hidden;
@@ -76,8 +75,8 @@
       rotate: 12deg;
 
       @include respond-to('phone') {
-        right: 20vw;
-        bottom: 15vh;
+        right: 15vw;
+        bottom: 12vh;
       }
 
       @include respond-to('tablet') {

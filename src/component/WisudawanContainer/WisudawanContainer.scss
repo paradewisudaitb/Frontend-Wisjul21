@@ -32,7 +32,7 @@
   @include respond-to('phone', 'tablet') {
     width: 40vw;
     height: auto;
-    right: -22vw;
+    right: -23vw;
     top: -13vh;
     overflow: hidden;
   }
@@ -67,7 +67,7 @@
     // 371 x 520
     // 357 x 500
     #bulu {
-      height: 150px;
+      height: 15vh;
       width: auto;
       align-self: flex-start;
       position: relative;

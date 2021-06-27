@@ -132,6 +132,14 @@ $scroll-thumb-color: $red-medium;
       border-radius: 10px;
       height: 2.5em;
       background-color: $blue-medium;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: $blue-lighter;
+        color: $yellow-darker;
+
+        transition: 0.3s;
+      }
     }
   }
 }

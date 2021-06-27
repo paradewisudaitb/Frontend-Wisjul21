@@ -20,14 +20,17 @@ export const Brand = () => {
 const toggleOpen = () => {
   let open = false;
   const drops = document.getElementById('drops');
+  const navbar = document.getElementById('navbar');
   const but = document.getElementById('toggle');
 
-  if (drops && but) {
+  if (drops && but && navbar) {
     if (!drops.className.includes('active')) {
+      navbar.className += ' navbar-active';
       but.className += ' toggle-active';
       drops.className += ' drops-active';
       open = true;
     } else {
+      navbar.className = navbar.className.replace('navbar-active', '').trim();
       but.className = but.className.replace('toggle-active', '').trim();
       drops.className = drops.className.replace('drops-active', '').trim();
       open = false;
@@ -56,7 +59,7 @@ export const Navbar = ({ homePage }: INavbarHome) => {
   return (
     <>
       <div className="navbar-container">
-        <nav className={`navbar ${homePage ? '' : 'default-color'} px-2 px-xl-3`} style={{ backgroundColor: `rgba(${red_darker}, ${opacity})`}}>
+        <nav id='navbar' className={`navbar ${homePage ? '' : 'default-color'} px-2 px-xl-3`} style={{ backgroundColor: `rgba(${red_darker}, ${opacity})`}}>
           <Brand />
           <div className="navbar-nav ms-auto">
             <NavbarLinks />
@@ -65,7 +68,7 @@ export const Navbar = ({ homePage }: INavbarHome) => {
             <div id='toggle' className='toggle'/>
           </button>
         </nav>
-        <div className={`drops ${homePage ? 'homepage-color' : 'default-color'} `} id='drops'>
+        <div className={`drops ${homePage ? 'homepage-color' : 'default-color'} `} id='drops' style={{ backgroundColor: `rgba(${red_darker}, ${opacity})`}}>
           <NavbarLinks />
         </div>
       </div>

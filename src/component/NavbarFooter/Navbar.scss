@@ -23,10 +23,15 @@
     transition: 0.3s;
 }
 
-$navbarheight: 4.4rem;
+
+.navbar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
 
 .navbar {
-    // background-color: $teal;
     background-color: $red-darker;
     width: 100%;
     height: $navbarheight;
@@ -39,7 +44,7 @@ $navbarheight: 4.4rem;
     flex-direction: row !important;
 }
 
-$drops-top: -12rem;
+$drops-top: -4.4rem;
 
 .nav-item {
     float: left;
@@ -153,7 +158,7 @@ $drops-top: -12rem;
     
     .drops-active {
         width: 100%;
-        transform: translateY(-($drops-top) + $navbarheight);
+        transform: translateY(-($drops-top) + $navbarheight - 0.1rem);
         transition: 0.6s;
     }
 }

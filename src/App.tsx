@@ -14,22 +14,24 @@ function App() {
 
   return (
     <div className='App'>
-
       <Suspense fallback={<Loading />}>
         <ScrollToTop />
         <Navbar />
-        <Switch>
-          { AllRoutes.map(({ label, path, component: Component}) => (
-            <Route
-              key={label}
-              path={path}
-              component={Component}
-            />
-          ))}
-          {/* <Redirect to={ HOME_PAGE.path }/> */}
-        </Switch>
-        <Footer />
+        <div className="app-content">
 
+          <Switch>
+            { AllRoutes.map(({ label, path, component: Component}) => (
+              <Route
+                key={label}
+                path={path}
+                component={Component}
+              />
+            ))}
+          </Switch>
+          {/* <Redirect to={ HOME_PAGE.path }/> */}
+          <Footer />
+
+        </div>
       </Suspense>
     </div>
   );

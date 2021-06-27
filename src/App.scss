@@ -57,3 +57,10 @@ h6 {
   background-repeat: repeat;
   position: inherit;
 }
+
+
+$navbarheight: 4.4rem;
+
+.app-content {
+  margin-top: $navbarheight;
+}

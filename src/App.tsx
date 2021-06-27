@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 
 import './App.scss';
-import { Route, Switch, Redirect } from 'wouter';
+import { Route, Switch, Redirect, useRoute } from 'wouter';
 
 import { Footer } from './component/NavbarFooter/Footer';
 import { Navbar } from './component/NavbarFooter/Navbar';
@@ -11,12 +11,15 @@ import { Loading } from './pages/Loading/Loading';
 import { ScrollToTop } from './routes/ScrollToTop/ScrollToTop';
 
 function App() {
+  const [isHomePage, _] = useRoute('/');
 
   return (
     <div className='App'>
       <Suspense fallback={<Loading />}>
         <ScrollToTop />
-        <Navbar />
+
+        { isHomePage ? <Navbar homePage={true} /> : <Navbar />}
+        {/* <Navbar /> */}
         <div className="app-content">
 
           <Switch>

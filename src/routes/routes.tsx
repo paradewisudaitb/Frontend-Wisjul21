@@ -47,6 +47,9 @@ export const FORM_INDEX = toRoute('Forms', 'forms');
 
 export const NavbarRoutes: navroutes[] = [
   {
+    content: HOME_PAGE,
+  },
+  {
     content: MAJALAH_PAGE,
   },
   {

@@ -31,8 +31,11 @@
     z-index: 999;
 }
 
+.default-color {
+    background-color: rgba($red-darker, 1) !important;
+}
+
 .navbar {
-    background-color: $red-darker;
     width: 100%;
     height: $navbarheight;
     z-index: 999;
@@ -44,7 +47,7 @@
     flex-direction: row !important;
 }
 
-$drops-top: -4.4rem;
+$drops-top: -10rem;
 
 .nav-item {
     float: left;
@@ -146,7 +149,6 @@ $drops-top: -4.4rem;
     }
 
     .drops {
-        background-color: $red-darker;
         flex-direction: column !important;
         align-items: flex-start;
         position: absolute;

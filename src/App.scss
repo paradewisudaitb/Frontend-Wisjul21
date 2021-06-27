@@ -58,9 +58,8 @@ h6 {
   position: inherit;
 }
 
-
 $navbarheight: 4.4rem;
 
 .app-content {
-  margin-top: $navbarheight;
+  padding-top: $navbarheight;
 }

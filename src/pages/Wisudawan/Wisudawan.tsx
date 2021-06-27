@@ -9,7 +9,7 @@ import { getByNIM } from '../../controller/wisudawan';
 import { ASSET_URL } from '../../api';
 
 export default function Wisudawan(): JSX.Element {
-  const [match, params] = useRoute('/wisudawan/:nim');
+  const [match, params] = useRoute('/hmj/:hmj/:nim');
 
   const [loadingWisudawan, setLoadingWisudawan] = useState(true);
   const [dataWisudawan, setDataWisudawan] = useState<JSX.Element>();
@@ -19,6 +19,8 @@ export default function Wisudawan(): JSX.Element {
 
   if (match && params) {
     const nim = params.nim;
+    const hmj = params.hmj;
+
     const getMessageToShow = () => {
       const tmp: JSX.Element[] = [];
       getPesan(nim)
@@ -90,7 +92,7 @@ export default function Wisudawan(): JSX.Element {
             </div>
           </div>
           <div className='kirim-pesan-button-wrapper'>
-            <Link href={`/wisudawan/${nim}/kirim-pesan`}>
+            <Link href={`/hmj/${hmj}/${nim}/kirim-pesan`}>
               <button className='kirim-pesan-button'>Kirim Pesan</button>
             </Link>
           </div>

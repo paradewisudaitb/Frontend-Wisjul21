@@ -27,25 +27,33 @@ export const toRoute = (label:string, path:string, component?:(props?: any | any
   label, path, component
 });
 
-export const HOME_PAGE = toRoute('Home', '/', HomePage);
 export const COMINGSOON_PAGE = toRoute('Coming Soon', '/coming-soon', ComingSoon);
+
+export const HOME_PAGE = toRoute('Home', '/', HomePage);
+
 export const MAJALAH_PAGE = toRoute('Majalah', '/majalah', Majalah);
-export const GALERI_APRESIASI_PAGE = toRoute('Galeri Apresiasi', '/apresiasi/:fak', GaleriApresiasi);
-export const KIRIM_PESAN_PAGE = toRoute('Kirim Pesan', '/wisudawan/:nim/kirim-pesan', KirimPesanPage);
-export const WISUDAWAN_PAGE = toRoute('Wisudawan', '/wisudawan/:nim', Wisudawan);
+
+export const GALERI_HMJ_PAGE = toRoute('Galeri HMJ', '/hmj', GaleriHmj);
+export const GALERI_APRESIASI_PAGE = toRoute('Galeri Apresiasi', '/hmj/:hmj', GaleriApresiasi);
+export const WISUDAWAN_PAGE = toRoute('Wisudawan', '/hmj/:hmj/:nim', Wisudawan);
+export const KIRIM_PESAN_PAGE = toRoute('Kirim Pesan', '/hmj/:hmj/:nim/kirim-pesan', KirimPesanPage);
+
 export const GATHERTOWN_PAGE = toRoute('Gather Town', '/gathertown', Gathertown);
+
 export const FORM_PAGE = toRoute('Form', '/form', Form);
 export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', '/form-apresiasi', FormApresiasi);
-export const GALERI_HMJ_PAGE = toRoute('Galeri HMJ', '/hmj', GaleriHmj);
 
 export const FORM_INDEX = toRoute('Forms', 'forms');
 
 export const NavbarRoutes: navroutes[] = [
   {
+    content: HOME_PAGE,
+  },
+  {
     content: MAJALAH_PAGE,
   },
   {
-    content: GALERI_APRESIASI_PAGE,
+    content: GALERI_HMJ_PAGE,
   },
   {
     content: FORM_INDEX,

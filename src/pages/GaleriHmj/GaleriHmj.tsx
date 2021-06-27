@@ -6,6 +6,9 @@ import logoImage from '../../images/ukj.png';
 
 import ButtonFakultas from '../../component/ButtonFakultas/ButtonFakultas';
 
+import { Link, Route } from 'wouter';
+import slugify from 'slugify';
+
 //Antara bikin data baru atau reuse data dari Gathertown
 import LIST_FAKULTAS from '../../data/fakultas.json';
 import LIST_HMJ from '../../data/hmj.json';
@@ -39,7 +42,11 @@ const GaleriHmj = () => {
   ));
 
   const listCardHMJ = listGaleriHMJ.map((hmj) => (
-    <div className='himpunan-card' key={hmj.namaHMJ}>
+    <Link className='himpunan-card' key={hmj.namaHMJ} href={`/hmj/${slugify(
+      hmj.namaHMJ, {
+        lower:true,
+        remove:/["']/g}
+    )}`}>
       <img className='spark' src={`${ASSET_URL}/assets/images/vistock/main/spark%201%20kanan%20atas-01.png`} />
       <div className='himpunan-wrapper'>
         <img src={logoImage} className='logo-hmj' />
@@ -47,7 +54,7 @@ const GaleriHmj = () => {
           <h1 className='title'>{hmj.namaHMJ}</h1>
         </div>
       </div>
-    </div>
+    </Link>
   ));
 
   useEffect(() => {

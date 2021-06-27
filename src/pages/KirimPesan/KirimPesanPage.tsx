@@ -12,7 +12,7 @@ const maxMessageLength = 255;
 const maxSenderNameLength = 30;
 
 export const KirimPesanPage = () => {
-  const [match, params] = useRoute('/wisudawan/:nim/kirim-pesan');
+  const [match, params] = useRoute('/hmj/:fak/:nim/kirim-pesan');
   const limit = 200;
 
   if (match && params) {
@@ -25,6 +25,7 @@ export const KirimPesanPage = () => {
     };
 
     const nim = params.nim;
+    const fak = params.fak;
 
     const [location, setLocation] = useLocation();
     const [loading, setLoading] = useState(true);
@@ -77,7 +78,7 @@ export const KirimPesanPage = () => {
         sendPesan(pesan)
           .then(_ => {
             window.alert('Pesan berhasil dikirim');
-            setLocation(`/wisudawan/${nim}`);
+            setLocation(`/hmj/${fak}/${nim}`);
           })
           .catch(err => {
             window.alert('Pesan gagal dikirim');
@@ -87,7 +88,7 @@ export const KirimPesanPage = () => {
     };
 
     return (
-      <div className="kirimpesan">
+      <div className="kirimpesan bg p-5">
         { loading ? (
           <div className='loading-screen'>
             <Loading />

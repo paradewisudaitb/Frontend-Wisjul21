@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '../../styles/responsive.scss';
 @import '../../styles/colorpalette.scss';
 
@@ -158,19 +159,19 @@ button {
 
 .cloud:nth-of-type(1) {
   height: #{random(5)+7}vh;
-  top: percentage((random(60) + 10) / 100);
+  top: percentage(math.div((random(60) + 10), 100));
   animation-duration: (random(60)+60) + s;
   animation-delay: 0s;
-  opacity: (random(30)+50)/100;
+  opacity: math.div((random(30)+50), 100);
 }
 
 @for $i from 2 through 7 {
   .cloud:nth-of-type(#{$i}) {
     height: #{random(20)+10}vh;
-    top: percentage((random(60) + 10) / 100);
+    top: percentage(math.div((random(60) + 10), 100));
     animation-duration: #{random(60)+60}s;
     animation-delay: #{random(20)+($i - 2)*80}s;
-    opacity: (random(30)+50)/100;
+    opacity: math.div((random(30)+50), 100);
   }
 }
 

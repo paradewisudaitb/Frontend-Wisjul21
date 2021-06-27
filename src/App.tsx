@@ -1,7 +1,7 @@
-import React, { Suspense, Component } from 'react';
+import React, { Suspense } from 'react';
 
 import './App.scss';
-import { Route, Switch, Redirect, useLocation } from 'wouter';
+import { Route, Switch, Redirect } from 'wouter';
 
 import { Footer } from './component/NavbarFooter/Footer';
 import { Navbar } from './component/NavbarFooter/Navbar';

@@ -71,9 +71,6 @@ $scroll-thumb-color: $red-medium;
     max-height: 60vh;
     overflow: auto;
 
-    @include respond-to('phone', 'tablet') {
-    }
-
     scrollbar-color: $scroll-thumb-color transparent;
     scrollbar-width: thin;
 
@@ -91,7 +88,7 @@ $scroll-thumb-color: $red-medium;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: transparent;
+      background-color: $scroll-thumb-color;
       box-shadow: none;
       -webkit-box-shadow: none;
       border-radius: 10px;
@@ -103,12 +100,6 @@ $scroll-thumb-color: $red-medium;
       }
       &:end {
         margin-bottom: 17px;
-      }
-    }
-
-    &:hover {
-      &::-webkit-scrollbar-thumb {
-        background-color: $scroll-thumb-color;
       }
     }
 

@@ -87,7 +87,7 @@ export default function Majalah() {
             keyboard={false}
           >
             <Button variant="danger" className="modal-button mb-3" onClick={handleClose}>
-              <i className="fa fa-close fa-lg text-white me-1"></i>Close
+              <i className="fa fa-times fa-lg text-white me-1"></i>Close
             </Button>
             <img className="image-modal" src={getImage(index)} />
             <Modal.Footer>

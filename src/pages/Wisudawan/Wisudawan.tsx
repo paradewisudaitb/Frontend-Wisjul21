@@ -8,7 +8,6 @@ import { getPesan } from '../../controller/pesan';
 import { getByNIM } from '../../controller/wisudawan';
 import { ASSET_URL } from '../../api';
 
-
 export default function Wisudawan(): JSX.Element {
   const [match, params] = useRoute('/wisudawan/:nim');
 

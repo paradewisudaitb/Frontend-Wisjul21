@@ -1,6 +1,7 @@
-@import '../../App.scss';
+@import "../../App.scss";
 
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -8,7 +9,7 @@ html, body {
 .galeri-hmj {
   height: 100%;
   width: 100%;
-  background: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg');
+  background: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg");
   background-size: cover;
   background-position: center;
   margin: 0;
@@ -44,8 +45,11 @@ html, body {
     left: 1%;
   }
 
-  @include respond-to('phone') {
-    .cloud-1, .cloud-2, .cloud-3, .feather {
+  @include respond-to("phone") {
+    .cloud-1,
+    .cloud-2,
+    .cloud-3,
+    .feather {
       display: none;
     }
   }
@@ -57,7 +61,7 @@ html, body {
       font-size: 3.5rem;
       margin: 1em;
       z-index: 1;
-      @include respond-to('phone'){
+      @include respond-to("phone") {
         font-size: 2.4em;
       }
     }
@@ -68,38 +72,41 @@ html, body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1em;
-    padding: 0 4.5em;
+    padding: 0 20em;
 
-    @include respond-to('phone') {
+    @include respond-to("phone") {
       padding: 0 1em;
       gap: 0.5em;
     }
 
     button {
       background-color: $red-darker;
-      height: 4.5em;
-      width: 7em;
+      // height: 4.5em;
+      // width: 7em;
       border-radius: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0 .8em;
-      transition: .3s ease-in-out;
+      // margin: 0 0.8em;
+      // margin: 7.5em 3.5em 5em 3.5em;
+      padding: 1.5% 3.5% !important;
+      transition: 0.3s ease-in-out;
       z-index: 20;
+      font-size: inherit;
 
-      @include respond-to('phone') {
-        width: 5em;
-        margin: .5em;
-        height: 4em;
+      @include respond-to("phone") {
+        // width: 5em;
+        // margin: 0.5em;
+        // height: 4em;
         border-radius: 0;
       }
 
       p {
-        margin: 0;
-        padding: 0;
-        font-size: 28px;
-        @include respond-to('phone') {
-          font-size: 16px;
+        // margin: 0;
+        // padding: 0;
+        // font-size: 28px;
+        @include respond-to("phone") {
+          // font-size: 16px;
         }
       }
 
@@ -108,7 +115,7 @@ html, body {
       }
 
       &.active {
-        background-color: $red-lighter;
+        background-color: $red-medium;
       }
     }
   }
@@ -121,7 +128,7 @@ html, body {
     flex-wrap: wrap;
     padding: 1em 0 3em 0;
 
-    @include respond-to('phone') {
+    @include respond-to("phone") {
       gap: 2em;
     }
 
@@ -133,12 +140,11 @@ html, body {
       position: relative;
       z-index: 10;
       padding: 10px;
-      @include respond-to('phone') {
+      @include respond-to("phone") {
         width: 11em;
         height: 15em;
         padding: 10px;
       }
-
 
       .spark {
         position: absolute;
@@ -148,10 +154,9 @@ html, body {
         top: -5%;
         right: -10%;
 
-        @include respond-to('phone') {
+        @include respond-to("phone") {
           width: 4em;
         }
-
       }
 
       .himpunan-wrapper {
@@ -161,13 +166,12 @@ html, body {
         justify-content: center;
         flex-direction: column;
 
-        
         .logo-hmj {
           width: 14em;
           margin: 20px;
-          @include respond-to('phone') {
-          width: 7em;
-          margin: 10px;
+          @include respond-to("phone") {
+            width: 7em;
+            margin: 10px;
           }
         }
 
@@ -176,7 +180,7 @@ html, body {
           justify-content: center;
           .title {
             text-align: center;
-            @include respond-to('phone') {
+            @include respond-to("phone") {
               font-size: 20px;
             }
           }

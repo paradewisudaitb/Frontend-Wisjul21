@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLocation, useRoute } from 'wouter';
 import { getByNIM } from '../../controller/wisudawan';
 import './KirimPesanPage.scss';
@@ -6,6 +6,7 @@ import { Loading } from '../../component/Loading/Loading';
 import { useEffect } from 'react';
 import { sendPesan } from '../../controller/pesan';
 import IPesanOut from '../../interfaces/IPesanOut';
+import sensor from '../../middleware/sensorKataKasar';
 
 const maxMessageLength = 255;
 const maxSenderNameLength = 30;
@@ -69,8 +70,8 @@ export const KirimPesanPage = () => {
       if (isiPesan) {
         const pesan: IPesanOut = {
           nim: nim,
-          pesan: isiPesan,
-          namaPengirim: namaPengirim,
+          pesan: sensor(isiPesan) || isiPesan,
+          namaPengirim: sensor(namaPengirim),
         };
 
         sendPesan(pesan)

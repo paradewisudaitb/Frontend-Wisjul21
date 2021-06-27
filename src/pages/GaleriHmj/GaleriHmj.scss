@@ -68,11 +68,13 @@ body {
   }
 
   .fakultas-container {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1em;
     padding: 0 20em;
+    z-index: 1;
 
     @include respond-to("phone") {
       padding: 0 1em;

@@ -4,14 +4,10 @@ import { getUpcomingText } from '../../pages/Event/EventContent';
 import './EventTable.scss';
 
 const DAFTAR_BULAN: any = {
-  0: 'Mei',
-  1: 'Juni',
-  2: 'Juli',
-  3: 'Agustus',
-  4: 'Mei',
-  5: 'Juni',
-  6: 'Juli',
-  7: 'Agustus',
+  4: 'May',
+  5: 'June',
+  6: 'July',
+  7: 'August',
 };
 
 const dateToText = (date: Date): string => {

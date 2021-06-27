@@ -1,83 +1,83 @@
+@import '../../styles/colorpalette.scss';
 
 table {
-  padding: 2px;
+  padding: 0px;
   position: relative;
-  width: 100%;
+  width: 80%;
   border-collapse: seperate;
   border-spacing: 0 8px;
 }
 
 .rundown {
   height: 50px;
-  width: 599px;
+  // width: 700px;
   left: 0px;
   top: 0px;
   border-radius: 0px;
-  background-color: rgba(47, 60, 79, 0.3);
 
   .jam {
     padding-left: 35px;
+    // text-align: center;
     height: 50px;
     width: 150px;
     font-style: normal;
+    border-radius: 25px 0px 0px 25px;
     font-weight: normal;
     line-height: 22px;
-    text-shadow: 1px 1px 0px black;
-    color: #fdfddf;
+    // text-shadow: 1px 1px 0px black;
+    color: $yellow-lighter;
+    background-image: linear-gradient(84.2deg, unquote($orange-darker + 'c0') 12.06%, unquote($red-medium + 'c0') 92.4%);
+    background-size: 100%;
   }
 
   .keterangan {
     padding-left: 20px;
+    border-radius: 0px 25px 25px 0px;
     text-shadow: 1px 1px 0px black;
     text-align: left;
+    background-color: unquote($red-medium + 'c0');
   }
 
   .line {
-    border-left: 1px solid yellow;
-    height: 50px;
+    width: 1px;
+    border-right: 5px solid $yellow-lighter;
+    // border-left: 2px solid $yellow-lighter;
+    height: 0px;
   }
 
   &-past-event {
     .jam,
     .keterangan {
       text-decoration: line-through;
-      opacity: 0.5;
+      opacity: 0.6;
     }
   }
   &-coming-soon {
-    background: darkblue;
-    .jam,
+    // background: $red-medium;
+    .jam {
+      color: unquote($yellow-darker + 'ff');
+      background-image: linear-gradient(84.2deg, unquote($orange-darker + 'f0') 12.06%, unquote($red-medium + 'f0') 92.4%);
+      background-size: 100%;
+      font-weight: bold;
+    }
     .keterangan {
-      color: yellow;
+      color: $yellow-darker;
+      background-color: unquote($red-medium + 'f0');
       font-weight: bold;
     }
   }
   &-main-event {
-    outline: 2px solid blue;
+    // outline: 2px solid $yellow-lighter;
+    border : 2px solid $yellow-darker;
+    border-radius: 25px;
+    -moz-outline-radius: 25px;
   }
 }
 
-.rundown:first-child {
-  td:first-child {
-    border-top-left-radius: 25px;
-  }
-  td:last-child {
-    border-top-right-radius: 25px;
-  }
-}
 
-.rundown:last-child {
-  td:first-child {
-    border-bottom-left-radius: 25px;
-  }
-  td:last-child {
-    border-bottom-right-radius: 25px;
-  }
-}
-
-//table tr:hover td {
+// table tr:hover td {
 //    border-radius: 3px;
-//    background-color: rgba(21, 51, 59, 0.644) !important;
+//    background-color: $red-lighter !important;
 //  }
 
 // @media only screen and (max-width: $breakpoint) {

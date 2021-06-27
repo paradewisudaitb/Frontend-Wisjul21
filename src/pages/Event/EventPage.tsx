@@ -9,13 +9,10 @@ import {
 } from './EventContent';
 import { ASSET_URL } from '../../api';
 
-import { Navbar } from '../../component/NavbarFooter/Navbar';
-import { Footer } from '../../component/NavbarFooter/Footer';
-
 const EventPage = () => {
   const comingSoonEvent = findUpcomingEvent(EVENTS)?.title;
   return (
-    <div className="App-header">
+    <div className="event-page">
       <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%20matahari-01.png`}  />
       <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`}  />
       <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`}  />
@@ -24,7 +21,7 @@ const EventPage = () => {
       <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/spark%202%20atas%20matahari.png`}  />
       <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`}  />
       <img className='cloud' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`}  />
-      
+
       <h1>What's On Wisjul</h1>
       <p>
         Check our instagram, {' '}

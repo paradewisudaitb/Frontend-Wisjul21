@@ -1,32 +1,18 @@
 @import '../../styles/base.scss';
 @import '../../styles/colorpalette.scss';
 
-.App {
-    text-align: center;
+.event-page {
+  background-image: url($bg);
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  .cloud {
+    animation: none;
   }
-  
-  .App-logo {
-    margin-top: 150px;
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  .App-header {
-    background-image: url($bg);
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
-  
-  h1, h2, span {
-    color: #f8813c;
-  }
+}

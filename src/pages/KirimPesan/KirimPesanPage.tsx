@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useRoute } from 'wouter';
+import { useLocation, useRoute } from 'wouter';
 import { getByNIM } from '../../controller/wisudawan';
 import './KirimPesanPage.scss';
 import { Loading } from '../../component/Loading/Loading';
@@ -25,6 +25,7 @@ export const KirimPesanPage = () => {
 
     const nim = params.nim;
 
+    const [location, setLocation] = useLocation();
     const [loading, setLoading] = useState(true);
     const [wisudawan, setWisudawan] = useState({
       nim: nim,
@@ -75,6 +76,7 @@ export const KirimPesanPage = () => {
         sendPesan(pesan)
           .then(_ => {
             window.alert('Pesan berhasil dikirim');
+            setLocation(`/wisudawan/${nim}`);
           })
           .catch(err => {
             window.alert('Pesan gagal dikirim');

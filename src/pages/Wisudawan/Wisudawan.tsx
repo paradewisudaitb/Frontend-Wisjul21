@@ -6,7 +6,7 @@ import PesanAnonim from '../../component/PesanAnonim/PesanAnonim';
 import WisudawanContainer from '../../component/WisudawanContainer/WisudawanContainer';
 import { getPesan } from '../../controller/pesan';
 import { getByNIM } from '../../controller/wisudawan';
-
+import { ASSET_URL } from '../../api';
 
 export default function Wisudawan(): JSX.Element {
   const [match, params] = useRoute('/hmj/:hmj/:nim');
@@ -55,18 +55,22 @@ export default function Wisudawan(): JSX.Element {
     }, []);
 
     return (
-
-      <div className='bg-page-wisudawan'>
+      <div className='page-wisudawan'>
         <div className='container'>
           <div className='wisudawan-tes'>
             {loadingWisudawan ? (
               <div>
                 <Loading />
-                <h2 className="loading-msg">
+                <h2 className='loading-msg'>
                   Loading data wisudawan
                 </h2>
               </div>
             ) : dataWisudawan}
+          </div>
+
+          <div className="awan">
+            <img src={`${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`} alt="awan" className="awan-bawah" />
+            <img src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} alt="awan" className="awan-atas" />
           </div>
 
           <div className='pemisah'></div>

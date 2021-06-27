@@ -18,40 +18,15 @@ const WisudawanContainer = (data: IDataWisudawan) => {
           <img id='bulu' src={bulu}/>
         </div>
 
-        <div className='lembaga-wisudawan'>
+        <div className='biodata-wisudawan'>
           <h2>{data.namaLengkap}</h2>
           <p>{data.nim} / {data.namaJurusan}</p>
-          {/* <h2>{data.namaHimpunan}</h2>
-          <p>{data.namaJurusan}</p> */}
-
-
-
-          {/* <h4>Lembaga </h4>
-          {((data.lembaga) && (data.lembaga[0] != '-')) ?
-            <ol className='list-lembaga'>
-              {data.lembaga.map((kontribusi: string, idx: number) => (
-                <li key = {idx}>
-                  {kontribusi}
-                </li>
-              ))}
-            </ol>
-            : <p>-</p>
-          } */}
         </div>
 
       </div>
 
       <div className='wisudawan-right'>
         <div className='data-wisudawan'>
-          {/* <h2>{data.namaHimpunan}</h2>
-          <p>{data.namaJurusan}</p>
-
-          <h1>{data.namaLengkap}</h1>
-          <p>{data.nim}</p> */}
-
-
-
-
           <h4>Judul Tugas Akhir</h4>
           <p>{data.judulTA}</p>
 
@@ -69,7 +44,6 @@ const WisudawanContainer = (data: IDataWisudawan) => {
             </ol>
             : <p>-</p>
           }
-  
           <h4>Karya</h4>
           {((data.karya) && (data.karya[0] != '-')) ?
             <ol className='list-karya'>
@@ -92,12 +66,12 @@ const WisudawanContainer = (data: IDataWisudawan) => {
             </ol>
             : <p>-</p>
           }
-          <h4>Lembaga </h4>
+          <h4>Keterlibatan pada Lembaga non-HMJ </h4>
           {((data.lembaga) && (data.lembaga[0] != '-')) ?
             <ol className='list-lembaga'>
-              {data.lembaga.map((kontribusi: string, idx: number) => (
+              {data.lembaga.map((lembaga: string, idx: number) => (
                 <li key = {idx}>
-                  {kontribusi}
+                  {lembaga}
                 </li>
               ))}
             </ol>

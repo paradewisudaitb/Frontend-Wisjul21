@@ -5,6 +5,8 @@
   padding: 40px;
   display: flex;
   justify-content: space-evenly;
+  position: relative;
+
   @include respond-to('phone', 'tablet') {
     display:flex;
     flex-direction: column;
@@ -21,51 +23,66 @@
     text-align:left;
 }
 
-#pas-foto {
-  display: block;
-  height: 240px;
-  // width: 180px;
-  margin: 0 auto;
-}
-.foto-wisudawan {
-  margin-bottom: 2rem;
-}
-
-// 400 x 560
-// 371 x 520
-// 357 x 500
-#bulu {
-  height: 150px;
-  width: auto;
-  position: relative;
-  right: 70px;
-  bottom: 115px;
-  rotate: 12deg;
-}
-
 #spark {
-  height: 200px;
+  max-height: 20vh;
   width: auto;
   position: absolute;
-  right: 50px;
-  top: 70px;
+  right: -7vw;
+  top: -10vh;
   @include respond-to('phone', 'tablet') {
-    width: 100px;
-    height: auto;
-    right: 0px;
+    width: 40vw;
+    right: -23vw;
+    top: -13vh;
     overflow: hidden;
   }
 }
 
 .wisudawan-left {
   margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 
   @include respond-to('phone', 'tablet') {
     margin-right: 0rem;
     margin-bottom: 2rem;
+    justify-content: center;
+  }
+
+  .foto-wisudawan {
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+    #pas-foto {
+      display: block;
+      height: 240px;
+      // width: 180px;
+      margin: 0 auto;
+    }
+
+    // 400 x 560
+    // 371 x 520
+    // 357 x 500
+    #bulu {
+      height: 15vh;
+      width: auto;
+      align-self: flex-start;
+      position: relative;
+      right: 4vw;
+      bottom: 12vh;
+      rotate: 12deg;
+
+      @include respond-to('phone') {
+        right: 15vw;
+        bottom: 12vh;
+      }
+
+      @include respond-to('tablet') {
+        right: 10vw;
+        bottom: 10vh;
+      }
+    }
   }
 }

@@ -4,7 +4,7 @@ import { Link } from 'wouter';
 import { ASSET_URL } from '../../api';
 
 //Asset
-import Youtube from '../../icons/YoutubeIcon.svg';
+import Stroke from '../../images/bg/Stroke.png';
 
 const HomePage = () => {
   //Parallax
@@ -59,33 +59,26 @@ const HomePage = () => {
       <div className='home-container pt-5'>
         <div className='logotagline' style={{ transform: `translateY(${offsetY*215 - offsetY*offsetY*175}vh)` }}>
           <img src={`${ASSET_URL}/assets/logo/min.png`} alt='Logo Wisuda Juli 2021' className='logo' />
-          <h6 className='tagline'>Metamorphose to find <br /> the path to the blossom.</h6>
+          <h6 className='tagline' style={{ backgroundImage: `url(${Stroke})` }}>Metamorphose to find <br /> the path to the blossom.</h6>
         </div>
         <button className='youtube mx-auto' style={{ transform: `translateY(-${offsetY * 648}px)`, opacity: `${1-offsetY}` }}></button>
       </div>
 
       {/* MAIN ASSETS */}
       <div className='main-container'>
+        {/* Clouds */}
         <img className='cloud-main1' src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} />
         <img className='cloud-main2' src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`} />
         <img className='cloud-main3' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`} />
         {/* Feathers */}
-        <div className='feather-wrap'>
-          <img className='feather' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
-          <img className='feather' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
-          <img className='feather' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
-          <img className='feather' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
-          <img className='feather' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
-          <img className='feather' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
-          <img className='feather' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
-          <img className='feather' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
-        </div>
+        <img className='feather1' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
+        <img className='feather2' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
 
         {/* MAIN CONTENT */}  
         {/* Visi-Misi */}
         <div className='visi-misi'>
           <h1 className='VISI'>VISI</h1>
-          <p className='visi'>“Perayaan Wisuda Juli 2021 sebagai wadah apresiasi purnastudi dengan kolaborasi seluruh elemen yang bergelora dan memberikan inspirasi dalam meraih mimpi.”</p>
+          <p className='visi'>“Perayaan Wisuda Juli 2021 sebagai wadah apresiasi purnastudi dengan kolaborasi seluruh elemen yang bergelora dan memberikan inspirasi dalam meraih mimpi.”</p> 
           <h1 className='MISI'>MISI</h1>
           <p className='misi'>
             <ol>
@@ -113,6 +106,7 @@ const HomePage = () => {
                 </ul>
               </li>
             </ol>
+            
           </p>
         </div>        
         {/* Buttons */}

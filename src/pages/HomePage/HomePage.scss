@@ -157,7 +157,6 @@ $borderradius: 3px;
     height: 100vh;
     width: 100%;
     justify-content: center;
-    //margin-left: -20px;
     z-index: 15;
     h1,h3 {
       font-size: 3.5vw;
@@ -177,11 +176,13 @@ $borderradius: 3px;
       margin-bottom: 200px;
     }
     @include respond-to('tablet','phone') {
+      width: 0;
       visibility: hidden;
     }
   }
   
   .home-container {
+    position: relative;
     height: 100vh;
     width: 100%;
     z-index: 100;
@@ -194,7 +195,7 @@ $borderradius: 3px;
       //display: flex;
       .logo {
         position: relative;
-        bottom: 10%;
+        margin-bottom: 10vh;
         height: 35vh;
         width: 35vh;
         z-index: 100;
@@ -238,6 +239,11 @@ $borderradius: 3px;
   
   .main-container {
     margin-top: 15vh;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .assets-container {
     overflow-x: hidden;
   }
   
@@ -274,9 +280,9 @@ $borderradius: 3px;
     top: 160vh;
     left: 8vw;
     width: 10vw;
+    overflow-x: hidden;
     @include respond-to('phone') {
-      width: 40vw;
-      top: 300vh;
+      top: 250vh;
     }
   }
 
@@ -286,27 +292,14 @@ $borderradius: 3px;
     left: 80vw;
     width: 10vw;
     transform: rotate(190deg);
+    overflow-x: hidden;
     @include respond-to('phone') {
-      width: 40vw;
       top: 300vh;
     }
   }
-
-  .sparks1 {
-    position: relative;
-    //top: 2vh;
-    //left: 3vw;
-    width: 5vw;
-  }
-
-  .sparks2 {
-    position: relative;
-    top: 1vh;
-    left: 3vw;
-    width: 5vw;
-  }  
   
   .visi-misi {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 0.5fr);

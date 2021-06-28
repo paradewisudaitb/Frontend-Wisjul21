@@ -61,7 +61,12 @@ const HomePage = () => {
           <img src={`${ASSET_URL}/assets/logo/min.png`} alt='Logo Wisuda Juli 2021' className='logo' />
           <h6 className='tagline' style={{ backgroundImage: `url(${Stroke})` }}>Metamorphose to find <br /> the path to the blossom.</h6>
         </div>
-        <button className='youtube mx-auto' style={{ transform: `translateY(-${offsetY * 648}px)`, opacity: `${1-offsetY}` }}></button>
+        <a href='https://www.youtube.com' 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className='youtube mx-auto' 
+          style={{ transform: `translateY(-${offsetY * 648}px)`, opacity: `${1-offsetY}` }}>
+        </a>
       </div>
 
       {/* MAIN ASSETS */}
@@ -72,8 +77,8 @@ const HomePage = () => {
         <img className='cloud-main3' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`} />
         {/* Feathers */}
         <img className='feather1' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
-        <img className='feather2' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
-
+        <img className='feather2' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} /> 
+        
         {/* MAIN CONTENT */}  
         {/* Visi-Misi */}
         <div className='visi-misi'>
@@ -106,9 +111,9 @@ const HomePage = () => {
                 </ul>
               </li>
             </ol>
-            
           </p>
-        </div>        
+        </div>
+               
         {/* Buttons */}
         <div className='event-buttons'>
           <h1 className='text-center'>Ada apa di Perayaan Wisuda Juli ITB 2021?</h1>
@@ -117,7 +122,7 @@ const HomePage = () => {
             <div className='btns'>
               <Link to='/majalah'><button className={'button'+((clickCount)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/majalah.png')` }}><h2>Majalah Metamorfosis</h2></button></Link>
               <Link to='/galeri-apresiasi'><button className={'button'+((clickCount+1)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/hmj.png')` }}><h2>Galeri Apresiasi</h2></button></Link>
-              <button className={'button'+((clickCount+2)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/gathertown.png')` }}><h2>Gather Town</h2></button>
+              <Link to='/gathertown'><button className={'button'+((clickCount+2)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/gathertown.png')` }}><h2>Gather Town</h2></button></Link>
             </div>
             <button className='arrow' onClick={next}><i className="fa fa-chevron-right fa-lg"></i></button>
           </div>

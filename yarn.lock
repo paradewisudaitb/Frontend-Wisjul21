@@ -1772,6 +1772,11 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/bad-words@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/bad-words/-/bad-words-3.0.0.tgz#73a753d691cf98359b25a844dfb6c9978d60ed81"
+  integrity sha512-QTOy+vQbDbRg0rbaSLb99bOJa16UZGO9cW4Qt0f/JAUghPXQcoH2eMdcNlYbPbpxhGpgur9+skGATssMCBSArA==
+
 "@types/bootstrap@4.6.0":
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/@types/bootstrap/-/bootstrap-4.6.0.tgz#ed7199081947f68d4b37700f8b0a662bd9af622d"
@@ -2934,6 +2939,18 @@ babylon@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
   integrity sha512-q/UEjfGJ2Cm3oKV71DJz9d25TPnq5rhBVL2Q4fA5wcC3jcrdn7+SssEybFIxwAvvP+YCsCYNKughoF33GxgycQ==
+
+bad-words@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/bad-words/-/bad-words-3.0.4.tgz#044c83935c4c363a905d47b5e0179f7241fecaec"
+  integrity sha512-v/Q9uRPH4+yzDVLL4vR1+S9KoFgOEUl5s4axd6NIAq8SV2mradgi4E8lma/Y0cw1ltVdvyegCQQKffCPRCp8fg==
+  dependencies:
+    badwords-list "^1.0.0"
+
+badwords-list@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/badwords-list/-/badwords-list-1.0.0.tgz#5e9856dbf13482a295c3b0b304afb9d4cfc5c579"
+  integrity sha1-XphW2/E0gqKVw7CzBK+51M/FxXk=
 
 balanced-match@^1.0.0:
   version "1.0.2"
@@ -10617,6 +10634,11 @@ slice-ansi@^4.0.0:
     ansi-styles "^4.0.0"
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
+
+slugify@^1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.5.3.tgz#36e009864f5476bfd5db681222643d92339c890d"
+  integrity sha512-/HkjRdwPY3yHJReXu38NiusZw2+LLE2SrhkWJtmlPDB1fqFSvioYj62NkPcrKiNCgRLeGcGK7QBvr1iQwybeXw==
 
 snapdragon-node@^2.0.1:
   version "2.1.1"

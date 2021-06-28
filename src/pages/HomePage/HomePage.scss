@@ -1,5 +1,5 @@
-@import '../../styles/responsive.scss';
-@import '../../styles/colorpalette.scss';
+@use 'sass:math';
+@import '../../App.scss';
 
 $marginLR: 20vw;
 $maincolour: rgb(4, 4, 37);
@@ -7,13 +7,14 @@ $accentcolour1: rgb(218, 167, 0);
 $borderradius: 3px;
 $randomNumber: random(5);
 
-* {
-  text-align: center;
+.navbar .main {
+  background-color: rgba($color: $blue-darker, $alpha: 1.0);
 }
 
 .main {
   background-image: url('../../images/bg/Filter.png'), radial-gradient(#532F65, #201125, #201125);
   background-blend-mode: overlay;
+  margin-top: -$navbarheight;
 }
 
 .feather-wrap {
@@ -75,7 +76,7 @@ button {
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 95vh;
+  height: 100vh;
   width: 100%;
   background-repeat: repeat-x;
   background-size: auto 100vh;
@@ -170,7 +171,7 @@ button {
 @for $i from 2 through 7 {
   .cloud:nth-of-type(#{$i}) {
     height: #{random(20)+10}vh;
-    top: percentage((random(60) + 10) / 100);
+    top: percentage(math.div((random(60) + 10), 100));
     animation-duration: #{random(60)+60}s;
     animation-delay: #{random(20)+($i - 2)*80}s;
     opacity: (random(30)+50)/100;
@@ -184,7 +185,9 @@ button {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  
   width: 100%;
+  text-align: center;
   justify-content: center;
   margin-left: -20px;
   z-index: 10;

@@ -32,9 +32,9 @@ function App() {
             ))}
           </Switch>
           {/* <Redirect to={ HOME_PAGE.path }/> */}
-          <Footer />
 
         </div>
+        <Footer />
       </Suspense>
     </div>
   );

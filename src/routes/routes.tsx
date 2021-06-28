@@ -31,26 +31,35 @@ export const COMINGSOON_PAGE = toRoute('Coming Soon', '/coming-soon', ComingSoon
 
 export const HOME_PAGE = toRoute('Home', '/', HomePage);
 
-export const MAJALAH_PAGE = toRoute('Majalah', '/majalah', Majalah);
-
 export const GALERI_HMJ_PAGE = toRoute('Galeri HMJ', '/hmj', GaleriHmj);
 export const GALERI_APRESIASI_PAGE = toRoute('Galeri Apresiasi', '/hmj/:hmj', GaleriApresiasi);
 export const WISUDAWAN_PAGE = toRoute('Wisudawan', '/hmj/:hmj/:nim', Wisudawan);
 export const KIRIM_PESAN_PAGE = toRoute('Kirim Pesan', '/hmj/:hmj/:nim/kirim-pesan', KirimPesanPage);
 
-export const GATHERTOWN_PAGE = toRoute('Gather Town', '/gathertown', Gathertown);
 
+export const FORM_INDEX = toRoute('Forms', 'forms');
 export const FORM_PAGE = toRoute('Form', '/form', Form);
 export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', '/form-apresiasi', FormApresiasi);
 
-export const FORM_INDEX = toRoute('Forms', 'forms');
+
+export const PRODUK_INDEX = toRoute('Produk', '/produk');
+export const GATHERTOWN_PAGE = toRoute('Gather Town', '/gathertown', Gathertown);
+export const MAJALAH_PAGE = toRoute('Majalah', '/majalah', Majalah);
+
+export const EVENT_PAGE = toRoute('Event', '/event', ComingSoon);
 
 export const NavbarRoutes: navroutes[] = [
   {
     content: HOME_PAGE,
   },
   {
-    content: MAJALAH_PAGE,
+    content: EVENT_PAGE,
+  },
+  {
+    content: PRODUK_INDEX,
+    children_routes: [GATHERTOWN_PAGE, MAJALAH_PAGE],
+    isDropdown: true,
+    parentPath: '',
   },
   {
     content: GALERI_HMJ_PAGE,
@@ -65,12 +74,13 @@ export const NavbarRoutes: navroutes[] = [
 
 export const AllRoutes = [
   HOME_PAGE,
-  MAJALAH_PAGE,
+  EVENT_PAGE,
+  GALERI_HMJ_PAGE,
   GALERI_APRESIASI_PAGE,
   KIRIM_PESAN_PAGE,
   WISUDAWAN_PAGE,
+  MAJALAH_PAGE,
   GATHERTOWN_PAGE,
   FORM_APRESIASI_PAGE,
   FORM_PAGE,
-  GALERI_HMJ_PAGE,
 ];

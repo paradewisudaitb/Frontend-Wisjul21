@@ -18,8 +18,6 @@ $blue-lighter: #63a5bd;
 
 $cyan-medium: #01a29a;
 
-$navfootfont: $blue-lighter;
-
 @mixin gradient-header-1 {
   background-image: linear-gradient(84.2deg, $yellow-darker 12.06%, $orange-darker 92.4%);
   background-clip: text;

@@ -1,19 +1,10 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import { Apresiasi } from '../WisudawanCard/Interface';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ApresiasiCarousel.scss';
 
-interface DataApresiasi {
-  himpunan: string,
-  apresiasi: Apresiasi[]
-}
-
-interface Apresiasi {
-  tipeKontenApresiasi: string,
-  linkKeKonten: string
-}
-
-const ApresiasiCarousel = (data: DataApresiasi) => {
+const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
 
   const RenderComponent = (data: Apresiasi) => {
     if (data.tipeKontenApresiasi === 'video') 
@@ -33,7 +24,7 @@ const ApresiasiCarousel = (data: DataApresiasi) => {
         showStatus={false} 
         showArrows={false}
       >
-        {data.apresiasi.map((row: Apresiasi, i: number) => (
+        {data.map((row: Apresiasi, i: number) => (
           <div
             key={i}
           >

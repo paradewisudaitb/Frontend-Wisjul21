@@ -1,0 +1,51 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/colorpalette.scss';
+
+.wisudawan-filter {
+  ::placeholder {
+    color: $yellow-darker;
+    opacity: 80%;
+  }
+
+  form {
+    position: relative;
+    margin-bottom: 3vh;
+
+    input[type='text'] {
+      background: $red-darker;
+      margin: 1rem;
+      font-size: 1.6vw;
+      width: 50vw;
+      border-radius: 3rem;
+      border: none;
+      box-shadow: none;
+      height: 7.2vh;
+      text-align: start;
+      padding-left: 2vw;
+    }
+  }
+
+  .list-wisudawan {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  
+  *:focus {
+    outline: none;
+  }
+}
+
+@include respond-to('phone') {
+  .wisudawan-filter {
+    form {
+      input[type='text'] {
+        width: 60vw;
+        height: 7vh;
+        font-size: 1.1rem;
+        // font-size: 2.4vw;
+        padding-left: 8vw;
+      }
+    }
+  }
+}

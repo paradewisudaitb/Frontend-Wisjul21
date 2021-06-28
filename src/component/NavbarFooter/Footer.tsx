@@ -16,34 +16,32 @@ export const Footer = () => {
           <div className="d-flex flex-row">
             <Brand />
           </div>
-          <div className="d-flex flex-row">
-            <h5>Ini tema atau jargon</h5>
+          <div className="d-flex flex-row fst-italic">
+            Metamorphose to find the path to the blossom
           </div>
-          <div className="d-flex flex-row mt-4">
+          <div className="d-flex flex-row copyright">
             © Perayaan Wisuda Juli ITB 2021
           </div>
         </div>
-        <div className="right-footer me-4 mt-5">
-          <div className="social-media-sec d-flex">
-            <a href="https://www.instagram.com/paradewisudaitb/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="social-media-container d-flex instagram">
-              <InstagramIcon className='social-media' />
-            </a>
-            <a href="https://twitter.com/paradewisudaitb" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="social-media-container d-flex twitter">
-              <TwitterIcon className='social-media' />
-            </a>
-            <a href="https://bit.ly/Phoenix1Wisjul" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="social-media-container d-flex spotify">
-              <SpotifyIcon className='social-media' />
-            </a>
-          </div>
+        <div className="social-media-sec">
+          <a href="https://www.instagram.com/paradewisudaitb/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="social-media-container d-flex instagram">
+            <InstagramIcon className='social-media' />
+          </a>
+          <a href="https://twitter.com/paradewisudaitb" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="social-media-container d-flex twitter">
+            <TwitterIcon className='social-media' />
+          </a>
+          <a href="https://bit.ly/Phoenix1Wisjul" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="social-media-container d-flex spotify">
+            <SpotifyIcon className='social-media' />
+          </a>
         </div>
       </div>
         

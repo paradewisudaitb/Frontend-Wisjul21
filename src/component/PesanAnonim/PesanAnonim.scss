@@ -1,25 +1,54 @@
+@import '../../styles/colorpalette.scss';
+@import '../../styles/responsive.scss';
+
 .pesan-container {
-  background-color: #fff;
-  border-radius: 10px;
+  padding: 0 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em 0;
+
+  @include respond-to('phone') {
+    padding: 0;
+  }
 
   .pesan-wrapper {
-    padding: 15px 25px;
+    width: 60vw;
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 25px 50px;
+    background-color: unquote($red-darker + '70');
 
-    .header-pesan {
+    @include respond-to('phone') {
+      margin: 0;
+      padding: 25px;
+      max-width: 80vw;
+    }
+
+    .header-wrapper {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      
-      .nama-pengirim {
-        font-weight: bold;
-        font-size: 18px;
+      margin: auto auto 1em auto;
+
+      @include respond-to('phone', 'tablet') {
+        justify-content: left;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+
+      .header-content {
+        text-align: center;
+        color: $yellow-darker;
+        word-wrap: anywhere;
+        margin: 0;
       }
     }
-    
-    .body-pesan {
-      .body-content {
-        text-align: left;
-      }
+
+    .pesan-content {
+      color: $yellow-lighter;
+      text-align: left;
+      word-wrap: break-word;
     }
   }
 }

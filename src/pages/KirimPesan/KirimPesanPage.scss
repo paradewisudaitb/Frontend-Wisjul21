@@ -1,71 +1,183 @@
-$label-padding: 0.5rem;
+@import '../../App.scss';
 
 .kirimpesan {
-    min-height: 30rem;
+    background-image: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.jeduar {
+    height: 15rem;
+
+    position: absolute;
+    top: 15px;
+    right: 0;
+
+    @include respond-to('phone') {
+        height: 8rem;
+        top: 44px;
+    }
+}
+
+.kumo {
+    
+    position: absolute;
+    
+    @include respond-to('large') {
+        height: 12rem;
+        left: 10vw;
+        bottom: 10vh;
+    }
+
+    @include respond-to('desktop') {
+        height: 10rem;
+        left: 6vw;
+        bottom: 10vh;
+    }
+
+    @include respond-to('tablet') {
+        height: 8rem;
+        left: -10vw;
+        bottom: -30vh;
+    }
+
+    @include respond-to('phone') {
+        height: 8rem;
+        bottom: -55vh;
+        left: -18vw;
+    }
+}
+
+.kirimpesan-container {
+    overflow: hidden;
 }
 
 .foto-wisudawan {
     max-height: 15rem;
     max-width: 15rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.foto-wisudawan-container {
+    display: flex;
+    margin: 0;
+    margin-top: 1rem;
+    
+    @include respond-to('desktop', 'large') {
+        position: absolute;
+        float: left;
+        margin-left: 2rem;
+        top: 8rem;
+    }
+
 }
 
 .nama-wisudawan {
-    background: red;
+    overflow: hidden;
+    background: rgba($color: $blue-darker, $alpha: 0.7);
+    border-radius: 20px;
     height: 2.5rem;
-    width: 75%;
+    
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @include respond-to('desktop', 'large') {
+        width: 70%;
+        margin: 0;
+    }
 }
 
-.sender {
-    min-height: 25rem;
-    background: blue;
-    width: 75%;
-    border-radius: 0.8rem;
+
+.message {
+    float: right;
+    background: rgba($color: $blue-darker, $alpha: 0.7);
+    border-radius: 1rem;
+    margin-top: 2rem;
+    
+    width: 100%;
+    @include respond-to('desktop', 'large') {
+        width: 75%;
+    }
+}
+
+.submit-button {
+    background-color: $blue-medium !important;
+    border: none !important;
+    
+    &:hover {
+        background-color: $blue-lighter !important;
+        transition: 0.3s;
+    }
+}
+
+.sender-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.sender-name-input-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .sender-name-label {
-    padding: $label-padding;
-    background: green;
+    color: $yellow-darker;
+    margin-left: 3px;
+    font-weight: bold;
     border-radius: 1rem 0rem 0rem 1rem ;
 }
 
-.sender-name-input-background {
-    padding: $label-padding;
-    background: aquamarine;
-    border-radius: 0rem 1rem 1rem 0rem ;
-}
 
-.sender-name-input {
+#nameinput {
     background: none;
-    margin: 0;
-    padding: 0;
     outline: none;
     border: none;
     text-align: left;
+    width: 80%;
+    resize: none;
+    overflow-y: hidden;
 }
 
+.kirimpesan-line {
+    float: start;
+    height: 3px;
+    background-color: $yellow-darker;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
 .message-content-label {
-    padding: $label-padding;
-    background: green;
+    color: $yellow-darker;
+    margin-left: 3px;
+    font-weight: bold;
     border-radius: 1rem 0rem 0rem 0rem ;
 }
 
-.message-content-toolbar {
-    padding: $label-padding;
-    background: aquamarine;
-    border-radius: 0rem 1rem 0rem 0rem ;
-}
-
 .message-content-content {
-    background: white;
     border-radius: 0rem 0rem 1rem 1rem ;
     text-align: justify;
-    min-height: 16rem;
 }
 
 .message-content {
-    min-height: 12rem;
+    background: none;
     border: none;
     outline: none;
     resize: none;
-    text-align: left;
+    text-align: justify;
+    
+    @include respond-to('desktop', 'large') {
+        min-height: 7rem;
+    }
+    
+    @include respond-to('tablet') {
+        min-height: 8rem;
+    }
+    
+    @include respond-to('phone') {
+        min-height: 15rem;
+        min-width: 15rem;
+    }
 }

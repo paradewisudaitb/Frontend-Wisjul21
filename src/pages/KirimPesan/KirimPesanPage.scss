@@ -1,16 +1,17 @@
 @import '../../App.scss';
 
 .kirimpesan {
-    background-image: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg');
     background-size: cover;
     background-position: center;
+    overflow: hidden;
+    position: relative !important;
 }
 
 .jeduar {
     height: 15rem;
 
     position: absolute;
-    top: 15px;
+    top: -4rem;
     right: 0;
 
     @include respond-to('phone') {
@@ -22,34 +23,19 @@
 .kumo {
     
     position: absolute;
-    
-    @include respond-to('large') {
-        height: 12rem;
-        left: 10vw;
-        bottom: 10vh;
-    }
-
-    @include respond-to('desktop') {
-        height: 10rem;
-        left: 6vw;
-        bottom: 10vh;
-    }
+    width: 35vw;
+    left: 7vw;
+    bottom: -3vw;
 
     @include respond-to('tablet') {
-        height: 8rem;
+        bottom: 0vw;
         left: -10vw;
-        bottom: -30vh;
     }
 
     @include respond-to('phone') {
-        height: 8rem;
-        bottom: -55vh;
-        left: -18vw;
+        bottom: 0vw;
+        left: -5vw;
     }
-}
-
-.kirimpesan-container {
-    overflow: hidden;
 }
 
 .foto-wisudawan {
@@ -68,7 +54,7 @@
         position: absolute;
         float: left;
         margin-left: 2rem;
-        top: 8rem;
+        top: 3rem;
     }
 
 }

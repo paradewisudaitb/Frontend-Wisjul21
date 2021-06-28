@@ -55,4 +55,11 @@ h6 {
   background-image: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg');
   background-size: cover;
   background-repeat: repeat;
+  position: inherit;
+}
+
+$navbarheight: 4.4rem;
+
+.app-content {
+  padding-top: $navbarheight;
 }

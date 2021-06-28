@@ -1,16 +1,17 @@
-@import '../../styles/responsive.scss';
-@import '../../styles/colorpalette.scss';
+@use 'sass:math';
+@import '../../App.scss';
 
 $marginLR: 20vw;
 $borderradius: 3px;
 
-* {
-  text-align: center;
+.navbar .main {
+  background-color: rgba($color: $blue-darker, $alpha: 1.0);
 }
 
 .homepage {
   background-image: url('../../images/bg/Filter.png'), radial-gradient(#532F65, #201125, #201125);
   background-blend-mode: overlay;
+  margin-top: -$navbarheight;
   .feather-wrap {
     position: fixed;
     height: 100%;
@@ -57,6 +58,10 @@ $borderradius: 3px;
     &:hover {
       cursor: pointer;
     }
+  }
+  
+  .upper-home {
+    position: relative;
   }
   
   .bg-container {

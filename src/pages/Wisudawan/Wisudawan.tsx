@@ -6,10 +6,10 @@ import PesanAnonim from '../../component/PesanAnonim/PesanAnonim';
 import WisudawanContainer from '../../component/WisudawanContainer/WisudawanContainer';
 import { getPesan } from '../../controller/pesan';
 import { getByNIM } from '../../controller/wisudawan';
-
+import { ASSET_URL } from '../../api';
 
 export default function Wisudawan(): JSX.Element {
-  const [match, params] = useRoute('/wisudawan/:nim');
+  const [match, params] = useRoute('/hmj/:hmj/:nim');
 
   const [loadingWisudawan, setLoadingWisudawan] = useState(true);
   const [dataWisudawan, setDataWisudawan] = useState<JSX.Element>();
@@ -19,6 +19,8 @@ export default function Wisudawan(): JSX.Element {
 
   if (match && params) {
     const nim = params.nim;
+    const hmj = params.hmj;
+
     const getMessageToShow = () => {
       const tmp: JSX.Element[] = [];
       getPesan(nim)
@@ -53,18 +55,22 @@ export default function Wisudawan(): JSX.Element {
     }, []);
 
     return (
-
-      <div className='bg-page-wisudawan'>
+      <div className='page-wisudawan'>
         <div className='container'>
           <div className='wisudawan-tes'>
             {loadingWisudawan ? (
               <div>
                 <Loading />
-                <h2 className="loading-msg">
+                <h2 className='loading-msg'>
                   Loading data wisudawan
                 </h2>
               </div>
             ) : dataWisudawan}
+          </div>
+
+          <div className="awan">
+            <img src={`${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`} alt="awan" className="awan-bawah" />
+            <img src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} alt="awan" className="awan-atas" />
           </div>
 
           <div className='pemisah'></div>
@@ -86,7 +92,7 @@ export default function Wisudawan(): JSX.Element {
             </div>
           </div>
           <div className='kirim-pesan-button-wrapper'>
-            <Link href={`/wisudawan/${nim}/kirim-pesan`}>
+            <Link href={`/hmj/${hmj}/${nim}/kirim-pesan`}>
               <button className='kirim-pesan-button'>Kirim Pesan</button>
             </Link>
           </div>

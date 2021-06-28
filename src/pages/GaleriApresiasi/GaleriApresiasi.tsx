@@ -77,7 +77,6 @@ const GaleriApresiasi = () => {
 
       <div className='apresiasi-wisudawan my-5'>
         <h2>Apresiasi Wisudawan</h2>
-        <h3>Judul/Keterangan</h3>
         <ApresiasiCarousel data={dataApresiasi.apresiasi} />
       </div>
 

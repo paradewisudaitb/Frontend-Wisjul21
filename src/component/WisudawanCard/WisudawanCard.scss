@@ -33,14 +33,14 @@
     margin-top: 0.1rem;
     font-size: 1.8vw;
     margin-bottom: 1.5vw;
+    z-index: 1;
   }
-
+  
   .image {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0.7rem 0.7rem;
-    margin-bottom: 0;
     
     .spark-bg {
       width: 17vw;
@@ -61,7 +61,6 @@
       width: 23vw;
       transform: translate(-13%, 15%);
     }
-
   }
   
   p {

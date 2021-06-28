@@ -33,7 +33,7 @@ const GaleriApresiasi = () => {
         'nim': '10117240',
         'jurusan': 'IF',
         'foto': 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Keqing.png',
-        'judulTA': 'Apel Kucing Pisang Mangga Buah Binatang Dhuar',
+        'judulTA': 'Apel Kucing Pisang Mangga Buah Binatang Dhuar Dhuar Dhuar Dhuar Dhuar Dhuar Dhuar',
         'listUnit': [{
           'logoUnit': 'ukj.png',
           'namaUnit': 'UKJ ITB'

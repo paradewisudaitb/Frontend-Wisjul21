@@ -9,11 +9,9 @@ import Awan from '../../images/bg/awan_3_01.png';
 
 const WisudawanCard = (data: DataWisudawan) => {
   const [match, params] = useRoute('/hmj/:hmj');
-
   const textLimit = 70;
   const showToolTip = data.judulTA.length > textLimit;
   const shownJudulTA = showToolTip ? data.judulTA.slice(0, textLimit) + '...' : data.judulTA; 
-  const [isToolTipVisible, setToolTipVisible] = useState(false);
   const [isLoaded, setLoaded] = useState(false);
 
   if (match && params) {
@@ -21,12 +19,18 @@ const WisudawanCard = (data: DataWisudawan) => {
       <Link href={`/hmj/${params.hmj}/${data.nim}`} className='card-container'>
         <h3>{data.nama}</h3>
         <h4>{data.nim} - {data.jurusan}</h4>
-        <div className='image'>
+        <div
+          style={isLoaded ? { opacity: 1 } : { height: 0, width:0 }}
+          onLoad={() => setLoaded(true)}
+          className='image'
+        >
           <img src={Spark} alt='' className='spark-bg' />
           <img src={data.foto} className='foto-wisudawan' />
           <img src={Awan} alt='' className='awan-bg' />
         </div>
-        <p>{shownJudulTA}</p>
+        <p>
+          {shownJudulTA}
+        </p>
         {data.listUnit.length > 0 ?
           <div className='unit-container'>
             <ol className='unit-list'>

@@ -1,0 +1,19 @@
+@import "../../App.scss";
+
+.sponsor {
+    background-color: transparent;
+}
+
+.sponsor-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    img {
+        max-height: 20vh;
+        max-width: 20vh;
+        margin: 1rem;
+    }
+}

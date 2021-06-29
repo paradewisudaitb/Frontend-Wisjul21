@@ -5,11 +5,12 @@ import { Route, Switch, Redirect, useRoute } from 'wouter';
 
 import { Footer } from './component/NavbarFooter/Footer';
 import { Navbar } from './component/NavbarFooter/Navbar';
+import Sponsor from './component/Sponsor/Sponsor';
+
 import { AllRoutes, HOME_PAGE, COMINGSOON_PAGE } from './routes/routes';
 import { Loading } from './pages/Loading/Loading';
 
 import { ScrollToTop } from './routes/ScrollToTop/ScrollToTop';
-
 function App() {
   const [isHomePage, _] = useRoute('/');
 
@@ -33,6 +34,8 @@ function App() {
           </Switch>
           {/* <Redirect to={ HOME_PAGE.path }/> */}
 
+          <Sponsor />
+          
         </div>
         <Footer />
       </Suspense>

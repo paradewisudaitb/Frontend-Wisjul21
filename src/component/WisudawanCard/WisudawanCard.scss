@@ -35,17 +35,17 @@
     margin-bottom: 1.5vw;
     z-index: 1;
   }
-  
+
   .image {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0.7rem 0.7rem;
-    
+
     .spark-bg {
-      width: 17vw;
+      width: 13.2vw;
       position: absolute;
-      transform: translate(30%, -28%);
+      transform: translate(38%, -33%);
     }
 
     .foto-wisudawan {
@@ -58,11 +58,11 @@
 
     .awan-bg {
       position: absolute;
-      width: 23vw;
-      transform: translate(-13%, 15%);
+      width: 18vw;
+      transform: translate(-20%, 90%);
     }
   }
-  
+
   p {
     margin: 0.5vw 0;
     margin-bottom: 1vw;

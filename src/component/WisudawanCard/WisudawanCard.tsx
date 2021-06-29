@@ -4,8 +4,7 @@ import { Link } from 'wouter';
 import { DataWisudawan, ListUnit } from './Interface';
 import './WisudawanCard.scss';
 import logo from '../../images/ukj.png';
-import Spark from '../../images/bg/spark_1_bawah_matahari.png';
-import Awan from '../../images/bg/awan_3_01.png';
+import { ASSET_URL } from '../../api';
 
 const WisudawanCard = (data: DataWisudawan) => {
   const [match, params] = useRoute('/hmj/:hmj');
@@ -13,6 +12,9 @@ const WisudawanCard = (data: DataWisudawan) => {
   const showToolTip = data.judulTA.length > textLimit;
   const shownJudulTA = showToolTip ? data.judulTA.slice(0, textLimit) + '...' : data.judulTA; 
   const [isLoaded, setLoaded] = useState(false);
+
+  const Awan = `${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`;
+  const Spark = `${ASSET_URL}/assets/images/vistock/main/spark%201%20bawah%20matahari.png`;
 
   if (match && params) {
     return (

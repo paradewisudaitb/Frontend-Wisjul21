@@ -9,11 +9,13 @@ const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
   const judul = data[slide].tipeKontenApresiasi;
 
   const RenderComponent = (data: Apresiasi) => {
-    if (data.tipeKontenApresiasi === 'video')
+    if (data.tipeKontenApresiasi == 'video')
       return <video controls src={data.linkKeKonten} />;
-    else if (data.tipeKontenApresiasi === 'audio') 
+    else if (data.tipeKontenApresiasi == 'audio')
       return <audio controls src={data.linkKeKonten} />;
-    else if (data.tipeKontenApresiasi === 'poster')
+    else if (data.tipeKontenApresiasi == 'poster'
+             || data.tipeKontenApresiasi == 'puisi'
+             || data.tipeKontenApresiasi == 'lainnya')
       return <img src={data.linkKeKonten} />;
   };
 
@@ -23,11 +25,11 @@ const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
         {judul.charAt(0).toUpperCase() + judul.slice(1)}
       </h3>
       <div className='carousel'>
-        <Carousel 
-          autoPlay 
-          infiniteLoop 
-          showThumbs={false} 
-          showStatus={false} 
+        <Carousel
+          autoPlay
+          infiniteLoop
+          showThumbs={false}
+          showStatus={false}
           showArrows={false}
           onChange={(e) => setSlide(e)}
         >

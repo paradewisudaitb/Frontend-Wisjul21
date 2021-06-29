@@ -1,12 +1,32 @@
 import React, { useState } from 'react';
-import { Carousel } from 'react-responsive-carousel';
 import { Apresiasi } from '../WisudawanCard/Interface';
+import { ASSET_URL } from '../../api';
+import { Carousel } from 'react-responsive-carousel';
+import Modal from 'react-modal';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ApresiasiCarousel.scss';
 
+
 const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
   const [slide, setSlide] = useState(0);
+  const [isImageOpen, setIsImageOpen] = useState(false);
+  const [openedImageIdx, setOpenedImageIdx] = useState(0);
+  const outsideElement = document.getElementById('img-01')!;
   const judul = data[slide].tipeKontenApresiasi;
+
+  document.addEventListener('mousedown', (e) => {
+    if (!(e.target == outsideElement)) {
+      setIsImageOpen(false);
+    }
+  });
+
+  const RenderImg = (data: string) => {
+    return(
+      <div className='opened-img2' >
+        <img src={data} className='clicked-img2' />
+      </div>
+    );
+  };
 
   const RenderComponent = (data: Apresiasi) => {
     if (data.tipeKontenApresiasi == 'video')
@@ -16,7 +36,21 @@ const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
     else if (data.tipeKontenApresiasi == 'poster'
              || data.tipeKontenApresiasi == 'puisi'
              || data.tipeKontenApresiasi == 'lainnya')
-      return <img src={data.linkKeKonten} />;
+      return <img
+        src={data.linkKeKonten}
+        id='img-01'
+        // onClick={() => setIsImageOpen(true)}
+      />;
+  };
+
+  const onClickCarousel = (i: number) => {
+    if (data[i].tipeKontenApresiasi == 'poster'
+      || data[i].tipeKontenApresiasi == 'puisi'
+      || data[i].tipeKontenApresiasi == 'lainnya'
+    ) {
+      setIsImageOpen(true);
+      setOpenedImageIdx(i);
+    }
   };
 
   return (
@@ -31,7 +65,10 @@ const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
           showThumbs={false}
           showStatus={false}
           showArrows={false}
+          // width={'75vw'}
+          // dynamicHeight={true}
           onChange={(e) => setSlide(e)}
+          onClickItem={(e) => onClickCarousel(e)}
         >
           {data.map((row: Apresiasi, i: number) => (
             <div
@@ -42,7 +79,14 @@ const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
           ))}
         </Carousel>
       </div>
+      {isImageOpen && 
+        <div className='opened-img'>
+          {/* // <div className={`${isImageOpen ? 'opened-img' : '*'}`}> */}
+          <img src={data[openedImageIdx].linkKeKonten} className='clicked-img' id='clicked-img' />
+        </div>
+      }
     </div>
+
   );
 };
 

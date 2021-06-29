@@ -9,7 +9,7 @@
     background-color: rgba($purple-medium, 0);
     display: flex;
     width: 35vw;
-    height: auto;
+    height: 50vh;
     justify-content: center;
     align-items: center;
 
@@ -27,6 +27,18 @@
       audio {
         width: 100%;
       }
+    }
+  }
+
+  .opened-img {
+    background-color: white;
+    position: absolute;
+    z-index: 5;
+    transform: translate(-10%, -70%);
+    
+    .clicked-img {
+      margin: 1rem;
+      width: 40vw;
     }
   }
 }

@@ -1,26 +1,45 @@
 [
   {
-    "namaFakultas": "STEI",
-    "namaHMJ": "HMIF ITB",
-    "jurusan": "Teknik Informatika & Sistem dan Teknologi Informasi",
-    "link": "https://bit.ly/HMIFterbaiksedunia"
+    "namaHimpunan": "Ikatan Mahasiswa Telekomunikasi",
+    "singkatanHimpunan": "IMT \"SIGNUM\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/STEI-IMT-300x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+      "Teknik Telekomunikasi"
+    ]
   },
   {
-    "namaFakultas": "STEI",
-    "namaHMJ": "HME ITB",
-    "jurusan": "Teknik Elektro, Teknik Biomedis, Teknik Tenaga Listrik",
-    "link": "bit.ly/HMIFterbaiksedunia"
+    "namaHimpunan": "Himpunan Mahasiswa Elektroteknik",
+    "singkatanHimpunan": "HME",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/STEI-HME-ITB-255x300.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+      "Teknik Elektro",
+      "Teknik Tenaga Listrik",
+      "Teknik Biomedis"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Informatika",
+    "singkatanHimpunan": "HMIF",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/STEI-HMIF-ITB-300x200.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+      "Teknik Informatika",
+      "Sistem dan Teknologi Informasi"
+    ]
+  },
+  {
+    "namaHimpunan": "TPB STEI",
+    "singkatanHimpunan": "TPB STEI",
+    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/STEI.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": []
   },
   {
     "namaFakultas": "FITB",
     "namaHMJ": "HMME \"ATMOSPHAIRA\" ITB",
     "jurusan": "Meteorologi",
-    "link": "bit.ly/FITBuhuyasoycihuy"
-  },
-  {
-    "namaFakultas": "STEI",
-    "namaHMJ": "IMT SIGNUM",
-    "jurusan": "Teknik Telekomunikasi",
     "link": "bit.ly/FITBuhuyasoycihuy"
   }
 ]

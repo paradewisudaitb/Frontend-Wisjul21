@@ -1,5 +1,516 @@
 [
   {
+    "namaHimpunan": "Himpunan Mahasiswa Meteorologi",
+    "singkatanHimpunan": "HMME \"ATMOSPHAIRA\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FITB-HMME-300x294.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Meteorologi"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Oseanografi",
+    "singkatanHimpunan": "HMO \"TRITON\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FITB-HMO-_TRITON_-ITB-268x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Oseanografi"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Teknik Geologi",
+    "singkatanHimpunan": "HMTG \"GEA\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FITB-HMTG-_GEA_-ITB-300x259.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Geologi"
+    ]
+  },
+  {
+    "namaHimpunan": "Ikatan Mahasiswa Geodesi",
+    "singkatanHimpunan": "IMG",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FITB-IMG-ITB.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Geodesi dan Geomatika"
+    ]
+  },
+  {
+    "namaHimpunan": "TPB FITB",
+    "singkatanHimpunan": "TPB FITB",
+    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FITB.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": []
+  },
+
+
+
+
+
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Fisika",
+    "singkatanHimpunan": "HIMAFI",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FMIPA-HIMAFI-ITB-300x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Fisika"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Astronomi",
+    "singkatanHimpunan": "HIMASTRON",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FMIPA-HIMASTRON-ITB-300x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Astronomi"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Matematika",
+    "singkatanHimpunan": "HIMATIKA",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FMIPA-HIMATIKA-ITB-300x260.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Matematika",
+        "Aktuaria"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Kimia",
+    "singkatanHimpunan": "HMK \"AMISCA\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FMIPA-HMK-_AMISCA_-ITB-300x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Kimia"
+    ]
+  },
+  {
+    "namaHimpunan": "TPB FMIPA",
+    "singkatanHimpunan": "TPB FMIPA",
+    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FMIPA.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": []
+  },
+
+
+
+
+
+  {
+    "namaHimpunan": "Ikatan Mahasiswa Desain Interior",
+    "singkatanHimpunan": "IMDI",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FSRD-IMDI-ITB-300x300.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Desain Interior"
+    ]
+  },
+  {
+    "namaHimpunan": "Keluarga Mahasiswa Desain Produk",
+    "singkatanHimpunan": "INDDES",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FSRD-INDDES-ITB-254x300.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Desain Produk"
+    ]
+  },
+  {
+    "namaHimpunan": "Ikatan Pemuda Pemudi Desain Grafis",
+    "singkatanHimpunan": "IPPDIG",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FSRD-IPPDIG.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Desain Komunikasi Visual"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Kriya",
+    "singkatanHimpunan": "TERIKAT",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FSRD-terikat-ITB-300x300.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Kriya"
+    ]
+  },
+  {
+    "namaHimpunan": "Visual Art Student Aggregate",
+    "singkatanHimpunan": "VASA",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FSRD-VASA-ITB-300x300.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Seni Rupa"
+    ]
+  },
+  {
+    "namaHimpunan": "TPB FSRD",
+    "singkatanHimpunan": "TPB FSRD",
+    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FSRD.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": []
+  },
+
+
+
+
+
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Teknik Kimia",
+    "singkatanHimpunan": "HIMATEK",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTI-HIMATEK-ITB-300x203.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Kimia"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Fisika Teknik",
+    "singkatanHimpunan": "HMFT",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTI-HMFT-ITB-300x276.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Fisika"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Teknik Pangan",
+    "singkatanHimpunan": "HMPG",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTI-HMPG-ITB-300x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Pangan"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Teknik Bioenergi dan Kemurgi",
+    "singkatanHimpunan": "HMTB",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTI-HMTB-ITB-300x297.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Bioenergi dan Kemurgi"
+    ]
+  },
+  {
+    "namaHimpunan": "Keluarga Mahasiswa Teknik Industri",
+    "singkatanHimpunan": "MTI",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTI-MTI-ITB-298x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Industri",
+        "Manajemen Rekayasa"
+    ]
+  },
+  {
+    "namaHimpunan": "TPB FTI",
+    "singkatanHimpunan": "TPB FTI",
+    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTI.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": []
+  },
+
+
+
+
+
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Mesin",
+    "singkatanHimpunan": "HMM",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTMD-HMM-ITB-300x292.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Mesin"
+    ]
+  },
+  {
+    "namaHimpunan": "Keluarga Mahasiswa Teknik Penerbangan",
+    "singkatanHimpunan": "KMPN  \"OTTO LILIENTHAL\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTMD-KMPN-ITB-300x247.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Dirgantara"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Teknik Material",
+    "singkatanHimpunan": "MTM",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTMD-MTM-ITB-300x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Material"
+    ]
+  },
+  {
+    "namaHimpunan": "TPB FTMD",
+    "singkatanHimpunan": "TPB FTMD",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/10/FTMD-20-300x300.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": []
+  },
+
+
+
+
+
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Sumber Daya Air",
+    "singkatanHimpunan": "HIMASDA",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTSL-HIMASDA-ITB-300x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik dan Pengelolaan Sumber Daya Air"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Sipil",
+    "singkatanHimpunan": "HMS",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTSL-HMS-ITB.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Sipil"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Teknik Lingkungan",
+    "singkatanHimpunan": "HMTL",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTSL-HMTL-ITB-228x300.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Lingkungan"
+    ]
+  },
+  {
+    "namaHimpunan": "Keluarga Mahasiswa Infrastruktur Lingkungan",
+    "singkatanHimpunan": "KMIL",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTSL-KMIL-ITB-300x300.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Rekayasa Infrastruktur Lingkungan"
+    ]
+  },
+  {
+    "namaHimpunan": "Keluarga Mahasiswa Teknik Kelautan",
+    "singkatanHimpunan": "KMKL",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTSL-KMKL-ITB-300x290.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Kelautan"
+    ]
+  },
+  {
+    "namaHimpunan": "TPB FTSL",
+    "singkatanHimpunan": "TPB FTSL",
+    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTSL.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": []
+  },
+
+
+
+
+
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Teknik Geofisika",
+    "singkatanHimpunan": "HIMATG \"TERRA\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTTM-HIMATG-_TERRA_-ITB-300x213.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Geofisika"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Tambang",
+    "singkatanHimpunan": "HMT",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTTM-HMT-ITB-267x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Pertambangan"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Teknik Perminyakan",
+    "singkatanHimpunan": "HMTM \"PATRA\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTTM-HMTM-_PATRA_-ITB-300x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Perminyakan"
+    ]
+  },
+  {
+    "namaHimpunan": "Ikatan Mahasiswa Teknik Metalurgi",
+    "singkatanHimpunan": "IMMG",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/FTTM-IMMG-300x300.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknik Metalurgi"
+    ]
+  },
+  {
+    "namaHimpunan": "TPB FTTM",
+    "singkatanHimpunan": "TPB FTTM",
+    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTTM.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": []
+  },
+
+
+
+
+
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Perencanaan Wilayah dan Kota Pangripta Loka",
+    "singkatanHimpunan": "HMP \"PANGRIPTA LOKA\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/SAPPK-HMP-PL-ITB-300x291.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Perencanaan Wilayah dan Kota"
+    ]
+  },
+  {
+    "namaHimpunan": "Ikatan Mahasiswa Arsitektur Gunadharma",
+    "singkatanHimpunan": "IMA-G",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/SAPPK-IMA-G-ITB-243x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Arsitektur"
+    ]
+  },
+  {
+    "namaHimpunan": "TPB SAPPK",
+    "singkatanHimpunan": "TPB SAPPK",
+    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SAPPK.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": []
+  },
+
+
+
+
+
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Farmasi",
+    "singkatanHimpunan": "HMF \"ARS PRAEPARANDI\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/SF-HMF-300x295.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Sains dan Teknologi Farmasi",
+        "Farmasi Klinik dan Komunitas"
+    ]
+  },
+  {
+    "namaHimpunan": "TPB SF",
+    "singkatanHimpunan": "TPB SF",
+    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SF.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": []
+  },
+
+
+
+
+
+  {
+    "namaHimpunan": "Keluarga Mahasiswa Manajemen",
+    "singkatanHimpunan": "KMM",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/SBM-KMM-ITB-150x150.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Manajemen"
+    ]
+  },
+  {
+    "namaHimpunan": "Ikatan Mahasiswa Kewirausahaan",
+    "singkatanHimpunan": "IMK \"Artha\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/SBM-IMK-_ARTHA_-ITB-300x300.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Kewirausahaan"
+    ]
+  },
+  {
+    "namaHimpunan": "TPB SBM",
+    "singkatanHimpunan": "TPB SBM",
+    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SBM.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": []
+  },
+
+
+
+
+
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Rekayasa Pertanian",
+    "singkatanHimpunan": "HIMAREKTA \"AGRAPANA\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/SITHR-HIMAREKTA-300x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Rekayasa Pertanian"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Rekayasa Kehutanan",
+    "singkatanHimpunan": "HMH \"SELVA\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/SITHR-HMH-_Selva_-ITB-300x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Rekayasa Kehutanan"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Rekayasa Hayati",
+    "singkatanHimpunan": "HMRH",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/SITHR-HMRH-300x297.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Rekayasa Hayati"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Teknologi Pascapanen",
+    "singkatanHimpunan": "HMPP \"VADRA\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/SITHR-HMPP-_VADRA_-ITB-232x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Teknologi Pasca Panen"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Mikrobiologi",
+    "singkatanHimpunan": "HIMAMIKRO \"ARCHAEA\"",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/SITHS-HIMAMIKRO-ITB-300x300.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Mikrobiologi"
+    ]
+  },
+  {
+    "namaHimpunan": "Himpunan Mahasiswa Biologi",
+    "singkatanHimpunan": "NYMPHAEA",
+    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/SITHS-HIMABIO-_Nymphaea_-ITB-300x300.jpg",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": [
+        "Biologi"
+    ]
+  },
+  {
+    "namaHimpunan": "TPB SITH-S",
+    "singkatanHimpunan": "TPB SITH-S",
+    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SITH-S.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": []
+  },
+  {
+    "namaHimpunan": "TPB SITH-R",
+    "singkatanHimpunan": "TPB SITH-R",
+    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SITH-S.png",
+    "linkGatherTown": "https://gather.town",
+    "jurusan": []
+  },
+
+
+
+  
+
+  {
     "namaHimpunan": "Ikatan Mahasiswa Telekomunikasi",
     "singkatanHimpunan": "IMT \"SIGNUM\"",
     "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/09/STEI-IMT-300x300.png",
@@ -35,11 +546,5 @@
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/STEI.png",
     "linkGatherTown": "https://gather.town",
     "jurusan": []
-  },
-  {
-    "namaFakultas": "FITB",
-    "namaHMJ": "HMME \"ATMOSPHAIRA\" ITB",
-    "jurusan": "Meteorologi",
-    "link": "bit.ly/FITBuhuyasoycihuy"
   }
 ]

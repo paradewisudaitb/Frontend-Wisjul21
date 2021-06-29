@@ -74,10 +74,6 @@ const HomePage = () => {
         {/* Clouds */}
         <img className='cloud-main1' src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} />
         <img className='cloud-main2' src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`} />
-
-        {/* Feathers */}
-        
-        
         
         {/* MAIN CONTENT */}  
         {/* Visi-Misi */}

@@ -1,103 +1,30 @@
 @use 'sass:math';
 @import '../../App.scss';
 
-$marginLR: 20vw;
-$borderradius: 3px;
-
-.navbar .main {
-  background-color: rgba($color: $blue-darker, $alpha: 1.0);
-}
-
 .homepage {
   background-image: url('../../images/bg/Filter.png'), radial-gradient(#532F65, #201125, #201125);
   background-blend-mode: overlay;
   margin-top: -$navbarheight;
   overflow-x: hidden;
   
-  .event-buttons {
-    margin: 5vw;
-    z-index: 100;
-  }
-  
-  @mixin event-btn() {
-    height: 400px;
-    width: 300px;
-    margin: 50px;
-    grid-row: 1;
-    text-align: center;
-    transition: 0.3s;
-    background-position: center;
-    background-size: 300px auto;
-    background-color: transparent;
-    z-index: 10;
-    padding-top: 100%;
-    &:hover {
-      filter: drop-shadow(10px 10px 7px $purple-darker);
-      transform: translateY(-10px);
-      transition: 0.3s;
-    }
-  }
-  
   button {
     border: none;
-    border-radius: $borderradius;
+    border-radius: 3px;
     &:hover {
       cursor: pointer;
     }
   }
-  
-  .upper-home {
-    position: relative;
-  }
-  
-  .bg-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    position: absolute;
-    top: -$navbarheight;
-    left: 0px;
-    height: calc(100vh + 4.4rem);
-    width: 100%;
-    background-repeat: repeat-x;
-    background-size: cover;
-    overflow: hidden;
-    .bg {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background-repeat: repeat-x;
+
+  //HEADER
+  //Cloud Animation
+  @keyframes wind {
+    from {
+      margin-left: -25vw;
     }
-    .volcano {
-      position: absolute;
-      justify-self: center;
-      bottom: -20vh;
-      height: 160vh;
-      z-index: 11;
-    }
-    .smoke {
-      position: absolute;
-      justify-self: center;
-      height: 125vh;
-      z-index: 11;
-    }
-    .volcanoes {
-      justify-self: center;
-      position: absolute;
-      bottom: 0px;
-      min-width: 100vw;
-      height: 125vh;
+    to {
+      transform: translateX(200vw);
     }
   }
-  
-  .cloud-wrapper {
-    position: absolute;
-    top: 80vh;
-    height: 120%;
-    width: 100%;
-    overflow-x: hidden;
-  }
-  
   .cloud-container {
     display: flex;
     flex-direction: column;
@@ -109,17 +36,6 @@ $borderradius: 3px;
     justify-content: start;
     overflow-x: hidden;
   }
-  
-  
-  @keyframes wind {
-    from {
-      margin-left: calc(-290px - 60vw);
-    }
-    to {
-      transform: translateX(200vw);
-    }
-  }
-  
   .cloud {
     position: absolute;
     animation-name: wind;
@@ -128,27 +44,65 @@ $borderradius: 3px;
     animation-fill-mode: backwards;
     filter: drop-shadow(10px 10px 10px #201125);
   }
-  
-  .cloud:nth-of-type(1) {
+  @mixin cloud-gacha() {
     width: #{random(250)/100+20}vw;
     top: percentage((random(70) + 10) / 100);
-    animation-duration: (random(60)+60) + s;
-    animation-delay: 0s;
+    animation-duration: #{random(60)+60}s;
     opacity: (random(30)+50)/100;
-    z-index: random($limit: 15);
+    z-index: random(15);
   }
-  
+  //1st cloud immediately shown
+  .cloud:nth-of-type(1) {
+    @include cloud-gacha();
+    animation-delay: 0s;
+  }
+  //2nd to 7th clouds
   @for $i from 2 through 7 {
     .cloud:nth-of-type(#{$i}) {
-      width: #{random(250)/100+20}vw;
-      top: percentage((random(70) + 10) / 100);
-      animation-duration: #{random(60)+60}s;
+      @include cloud-gacha();
       animation-delay: #{random(20)+($i - 2)*80}s;
-      opacity: (random(30)+50)/100;
-      z-index: random($limit: 15);
     }
   }
   
+  .bg-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    position: absolute;
+    top: -$navbarheight;
+    left: 0;
+    height: calc(100vh + 4.4rem);
+    width: 100%;
+    background-repeat: repeat-x;
+    background-size: cover;
+    overflow: hidden;
+    justify-items: center;
+    .bg {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-repeat: repeat-x;
+    }
+    .volcano {
+      position: absolute;
+      bottom: -20vh;
+      height: 160vh;
+      z-index: 11;
+    }
+    .smoke {
+      position: absolute;
+      height: 125vh;
+      z-index: 11;
+    }
+    .volcanoes {
+      position: absolute;
+      bottom: 0;
+      min-width: 100vw;
+      height: 125vh;
+    }
+  }
+  
+  //MAIN CONTENT
   .tagline-container {
     position: absolute;
     top: 4.4rem;
@@ -167,11 +121,11 @@ $borderradius: 3px;
       left: 20px;
       color: $red-darker;
     }
-    .tagline1, .tagline1-shadow {
+    .tagline1 {
       margin-right: 60%;
       margin-bottom: 80px;
     }
-    .tagline2, .tagline2-shadow {
+    .tagline2 {
       margin-left: 60%;
       margin-bottom: 200px;
     }
@@ -180,8 +134,7 @@ $borderradius: 3px;
       visibility: hidden;
     }
   }
-  
-  .home-container {
+  .header-container {
     position: relative;
     height: 100vh;
     width: 100%;
@@ -192,7 +145,6 @@ $borderradius: 3px;
     .logotagline {
       z-index: 15;
       text-align: center;
-      //display: flex;
       .logo {
         position: relative;
         margin-bottom: 10vh;
@@ -216,23 +168,31 @@ $borderradius: 3px;
     }
     .youtube {
       margin: 50px;
-      height: 125px;
-      width: 150px;
+      height: 120px;
+      width: 125px;
       background-position: center;
       background-repeat: no-repeat;
-      background-size: 100% auto;
+      background-size: contain;
       background-color: transparent;
       background-image: url('../../icons/YoutubeIcon.png');
       filter: drop-shadow(10px 10px 10px #201125);
       z-index: 15;
+      &:hover {
+        filter: brightness(90%) drop-shadow(5px 5px 5px #201125);
+      }
+      &:active {
+        filter: brightness(80%) drop-shadow(2px 2px 2px #201125);
+      }
       @include respond-to('phone') {
         margin: 20px 50% 15vh 50%;
-        height: 50px;
-        width: 50px;
+        height: 75px;
+        width: 80px;
       }
-      &:hover {
-        filter: drop-shadow(-10px -10px 10px #201125);
-        transition: 0.2s;
+      @media screen and (max-height: 430px){
+        margin-bottom: 5vh;
+        margin-top: auto;
+        height: 75px;
+        width: 80px;
       }
     }
   }
@@ -241,217 +201,212 @@ $borderradius: 3px;
     margin-top: 15vh;
     width: 100%;
     overflow-x: hidden;
-  }
-
-  .assets-container {
-    overflow-x: hidden;
-  }
-  
-  .cloud-main1 {
-    position: absolute;
-    top: 105vh;
-    left: -10vw;
-    width: 35vw;
-  }
-
-  .cloud-main2 {
-    position: absolute;
-    top: 130vh;
-    left: 50vw;
-    width: 40vw;
-    @include respond-to('phone') {
-      top: 200vh;
+    .cloud-main1 {
+      position: absolute;
+      top: 105vh;
+      left: -10vw;
+      width: 35vw;
     }
-  }
-
-  .cloud-main3 {
-    position: absolute;
-    top: 225vh;
-    left: 3vw;
-    width: 30vw;
-    @include respond-to('phone') {
+    .cloud-main2 {
+      position: absolute;
+      top: 130vh;
+      left: 50vw;
       width: 40vw;
-      top: 300vh;
+      @include respond-to('phone') {
+        top: 200vh;
+      }
     }
-  }
+    .cloud-main3 {
+      position: absolute;
+      top: 10em;
+      left: -1vw;
+      width: 30vw;
+    }
+    .feather1 {
+      position: absolute;
+      top: 20em;
+      left: -8vw;
+      width: 10vw;
+    }
+    .feather2 {
+      position: absolute;
+      top: -10em;
+      left: 80vw;
+      width: 10vw;
+      transform: rotate(190deg);
+    }
 
-  .feather1 {
-    position: absolute;
-    top: 160vh;
-    left: 8vw;
-    width: 10vw;
-    overflow-x: hidden;
-    @include respond-to('phone') {
-      top: 250vh;
-    }
-  }
-
-  .feather2 {
-    position: absolute;
-    top: 200vh;
-    left: 80vw;
-    width: 10vw;
-    transform: rotate(190deg);
-    overflow-x: hidden;
-    @include respond-to('phone') {
-      top: 300vh;
-    }
-  }
-  
-  .visi-misi {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 0.5fr);
-    margin: 50px $marginLR;
-    align-items: center;
-    z-index: 10;
-    h1 {
-      font-size: 5vw;
-    }
-    li {
-      text-align: left;
-    }
-    .VISI {
-      grid-column: 1;
-      grid-row: 1;
+    .visi-misi {
       position: relative;
-      top: -15px;
-      text-align: left;
-      z-index: 11;
-    }
-    .visi {
-      text-align: center;
-      padding: 30px;
-      grid-column: 2 / span 3;
-      grid-row: 1;
-      background-color: $red-darker;
-      z-index: 10;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      border-radius: 10px;
-      box-shadow: 20px 20px 2px $orange-darker;
-    }
-    .MISI {
-      grid-column: 4;
-      grid-row: 2;
-      position: relative;
-      top: -15px;
-      text-align: right;
-      z-index: 11;
-    }
-    .misi {
-      padding: 30px;
-      grid-column: 1 / span 3;
-      grid-row: 2;
-      background-color: $red-darker;
-      text-align: left;
-      z-index: 10;
-      border-radius: 10px;
-      box-shadow: 20px 20px 2px $orange-darker;
-    }
-    @media screen and (max-width: 1080px) {
-      margin: 50px 10vw;
       display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 50px auto 50px auto;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 0.5fr);
+      margin: 50px 20vw;
+      align-items: center;
+      z-index: 10;
       h1 {
-        font-size: 50px;
+        font-size: 5vw;
+      }
+      li {
+        text-align: left;
       }
       .VISI {
         grid-column: 1;
         grid-row: 1;
         position: relative;
-        top: 45%;
-        left: 10px;
+        top: -15px;
+        text-align: left;
+        z-index: 11;
       }
       .visi {
-        grid-column: 1;
-        grid-row: 2;
+        text-align: center;
+        padding: 30px;
+        grid-column: 2 / span 3;
+        grid-row: 1;
+        background-color: $red-darker;
+        z-index: 10;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        border-radius: 10px;
+        box-shadow: 20px 20px 2px $orange-darker;
       }
       .MISI {
-        grid-column: 1;
-        grid-row: 3;
+        grid-column: 4;
+        grid-row: 2;
         position: relative;
-        top: 45%;
-        right: 10px;
+        top: -15px;
+        text-align: right;
+        z-index: 11;
       }
       .misi {
-        grid-column: 1;
-        grid-row: 4;
+        padding: 30px;
+        grid-column: 1 / span 3;
+        grid-row: 2;
+        background-color: $red-darker;
+        text-align: left;
+        z-index: 10;
+        border-radius: 10px;
+        box-shadow: 20px 20px 2px $orange-darker;
+      }
+      @include respond-to('tablet','phone') {
+        margin: 50px 10vw;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50px auto 50px auto;
+        h1 {
+          font-size: 50px;
+        }
+        .VISI {
+          grid-column: 1;
+          grid-row: 1;
+          position: relative;
+          top: 45%;
+          left: 10px;
+        }
+        .visi {
+          grid-column: 1;
+          grid-row: 2;
+        }
+        .MISI {
+          grid-column: 1;
+          grid-row: 3;
+          position: relative;
+          top: 45%;
+          right: 10px;
+        }
+        .misi {
+          grid-column: 1;
+          grid-row: 4;
+        }
       }
     }
-  }
-
-  .btn-title {
-    z-index: 100;
-  }
-  
-  .btns {
-    display: grid;
-    justify-content: center;
-    grid-template-rows: 100%;
-    grid-template-columns: 1fr 1fr 1fr;
-    z-index: 10;
-    @media screen and (max-width: 1300px) {
-      grid-template-columns: 1fr 1fr;
-    }
-    @media screen and (max-width: 900px) {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  .button1 {
-    @include event-btn();
-    transform: grid-column(1);
-    transition: 0.5s;
-  }
-  
-  .button2 {
-    @include event-btn();
-    grid-column: 2;
-    @media screen and (max-width: 900px) {
-      display: none;
-    }
-  }
-  
-  .button3 {
-    @include event-btn();
-    grid-column: 3;
-    @media screen and (max-width: 1300px) {
-      display: none;
-    }
-  }
-  
-  .button1, 
-  .button2, 
-  .button3 {
-    @media screen and (max-width: 1300px) {
-      margin: 50px 30px;
-    }
-    @media screen and (max-width: 430px) {
-      width: 50vw;
-      height: 60vw;
-      background-size: 50vw auto;
-      margin-top: 0;
-    }
-  }
-  
-  .btn-container {
-    display: flex;
-    justify-content: center;
-    z-index: 10;
-  }
-  
-  .arrow {
-    height: 50px;
-    width: 50px;
-    grid-row: 1;
-    background-color: transparent;
-    align-self: center;
-    visibility: hidden;
-    @media screen and (max-width: 1300px) {
-      visibility: visible;
+    
+    .event-buttons {
+      margin: 5vw;
+      z-index: 100;
+      position: relative;
+      top: 0;
+      left: 0;
+      .btn-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        z-index: 10;
+      }
+      @mixin event-btn() {
+        height: 400px;
+        width: 300px;
+        margin: 50px;
+        grid-row: 1;
+        text-align: center;
+        transition: 0.3s;
+        background-position: center;
+        background-size: contain;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        z-index: 10;
+        padding-top: 100%;
+        &:hover {
+          filter: drop-shadow(10px 10px 7px $purple-darker);
+          transform: translateY(-10px);
+          transition: 0.3s;
+        }
+      }
+      .btns {
+        display: grid;
+        justify-content: center;
+        grid-template-rows: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+        z-index: 10;
+        @media screen and (max-width: 1300px) {
+          grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (max-width: 900px) {
+          grid-template-columns: 1fr;
+        }
+      }
+      .button1 {
+        @include event-btn();
+        transform: grid-column(1);
+        transition: 0.5s;
+      }
+      .button2 {
+        @include event-btn();
+        grid-column: 2;
+        @media screen and (max-width: 900px) {
+          display: none;
+        }
+      }
+      .button3 {
+        @include event-btn();
+        grid-column: 3;
+        @media screen and (max-width: 1300px) {
+          display: none;
+        }
+      }
+      .button1, 
+      .button2, 
+      .button3 {
+        @media screen and (max-width: 1300px) {
+          margin: 50px 30px;
+        }
+        @media screen and (max-width: 430px) {
+          width: 50vw;
+          height: 60vw;
+          margin-top: 0;
+        }
+      }
+      .arrow {
+        height: 50px;
+        width: 50px;
+        grid-row: 1;
+        background-color: transparent;
+        align-self: center;
+        visibility: hidden;
+        @media screen and (max-width: 1300px) {
+          visibility: visible;
+        }
+      }
     }
   }
 }

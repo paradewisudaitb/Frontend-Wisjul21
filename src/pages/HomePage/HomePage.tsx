@@ -18,10 +18,10 @@ const HomePage = () => {
   //Carousel
   const [clickCount, setClickCount] = useState(0);
   const prev = () => {
-    setClickCount(clickCount+2);
+    setClickCount(clickCount+1);
   };
   const next = () => {
-    setClickCount(clickCount+1);
+    setClickCount(clickCount+2);
   };
 
   return (
@@ -46,24 +46,24 @@ const HomePage = () => {
       </div>
 
       {/* HEADER CONTENT */}
-      {/* Tagline */}
+      {/* Desktop Tagline */}
       <div className='tagline-container'>
-        <h3 className='tagline1-shadow' style={{ transform: `translateY(${offsetY*230 - offsetY*offsetY*175}vh) translateX(${(offsetY * 32.5)%(window.innerWidth/41)}vw) scale(${1-(offsetY*0.6)})` }}>Metamorphose to find</h3>
-        <h3 className='tagline2-shadow' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%(window.innerWidth/41)}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h3>
+        <h3 className='tagline1' style={{ transform: `translateY(${offsetY*230 - offsetY*offsetY*175}vh) translateX(${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)})` }}>Metamorphose to find</h3>
+        <h3 className='tagline2' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h3>
       </div>
       <div className='tagline-container'>
         <h1 className='tagline1' style={{ transform: `translateY(${offsetY*230 - offsetY*offsetY*175}vh) translateX(${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)}` }}>Metamorphose to find</h1>
         <h1 className='tagline2' style={{ transform: `translateY(${offsetY*211 - offsetY*offsetY*175}vh) translateX(-${(offsetY * 32.5)%(window.innerWidth/40)}vw) scale(${1-(offsetY*0.6)}` }}>the path to the blossom</h1>
       </div>
       {/* Logo, Phone Tagline, and Youtube Button */}
-      <div className='home-container pt-5'>
+      <div className='header-container pt-5'>
         <div className='logotagline' style={{ transform: `translateY(${offsetY*215 - offsetY*offsetY*175}vh)` }}>
           <img src={`${ASSET_URL}/assets/logo/min.png`} alt='Logo Wisuda Juli 2021' className='logo' />
           <h6 className='tagline' style={{ backgroundImage: `url(${Stroke})` }}>Metamorphose to find <br /> the path to the blossom.</h6>
         </div>
         <a href='https://www.youtube.com' 
-          target="_blank" 
-          rel="noopener noreferrer"
+          target='_blank'
+          rel='noopener noreferrer'
           className='youtube mx-auto' 
           style={{ transform: `translateY(-${offsetY * 648}px)`, opacity: `${1-offsetY}` }}>
         </a>
@@ -74,14 +74,15 @@ const HomePage = () => {
         {/* Clouds */}
         <img className='cloud-main1' src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} />
         <img className='cloud-main2' src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`} />
-        <img className='cloud-main3' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`} />
+
         {/* Feathers */}
-        <img className='feather1' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
-        <img className='feather2' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} /> 
+        
+        
         
         {/* MAIN CONTENT */}  
         {/* Visi-Misi */}
         <div className='visi-misi'>
+          <img className='feather1' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
           <h1 className='VISI'>VISI</h1>
           <p className='visi'>“Perayaan Wisuda Juli 2021 sebagai wadah apresiasi purnastudi dengan kolaborasi seluruh elemen yang bergelora dan memberikan inspirasi dalam meraih mimpi.”</p> 
           <h1 className='MISI'>MISI</h1>
@@ -116,7 +117,8 @@ const HomePage = () => {
                
         {/* Buttons */}
         <div className='event-buttons'>
-          <h1 className='text-center'>Ada apa di Perayaan Wisuda Juli ITB 2021?</h1>
+          <h1 className='btn-title text-center'>Ada apa saja di Perayaan Wisuda Juli ITB 2021?</h1>
+          <img className='feather2' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} /> 
           <div className='btn-container'>
             <button className='arrow' onClick={prev}><i className="fa fa-chevron-left fa-lg"></i></button>
             <div className='btns'>
@@ -126,6 +128,7 @@ const HomePage = () => {
             </div>
             <button className='arrow' onClick={next}><i className="fa fa-chevron-right fa-lg"></i></button>
           </div>
+          <img className='cloud-main3' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`} />
         </div>
       </div>
     </div>

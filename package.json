@@ -17,6 +17,8 @@
     "@types/react-select": "^4.0.15",
     "@types/sass": "^1.16.0",
     "@types/wouter": "^2.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
     "bad-words": "^3.0.4",
     "bootstrap": "^5.0.1",
     "dotenv": "^10.0.0",
@@ -65,8 +67,6 @@
     ]
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.25.0",
-    "@typescript-eslint/parser": "^4.25.0",
     "eslint": "^7.27.0",
     "tslint-config-prettier": "^1.18.0"
   }

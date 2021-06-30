@@ -1,17 +1,11 @@
 import { FC } from 'react';
 import './ButtonFakultas.scss';
 import LIST_HMJ from '../../data/hmj.json';
-
-type HMJ = {
-  namaFakultas: string;
-  namaHMJ: string;
-  jurusan: string;
-  link: string;
-};
+import IHMJ from '../../interfaces/IHMJ';
 
 const ButtonFakultas: FC<{
   value: string;
-  onButtonClick: (listHMJ: HMJ[], namaFakultas: string) => void;
+  onButtonClick: (listHMJ: IHMJ[], namaFakultas: string) => void;
   className: string;
 }> = (props) => {
   const classNameList = props.className + ' button';
@@ -21,7 +15,7 @@ const ButtonFakultas: FC<{
       event.currentTarget.getAttribute('value') || 'default';
 
     const updatedHMJ = LIST_HMJ.filter(
-      (hmj) => hmj.namaFakultas == clickedFakultas
+      (hmj) => hmj.fakultas == clickedFakultas
     );
 
     props.onButtonClick(updatedHMJ, clickedFakultas);

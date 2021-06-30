@@ -2,16 +2,9 @@ import { useState, useEffect } from 'react';
 import HMJCardContainer from '../../component/ButtonFakultas/CardHMJ';
 import ButtonFakultas from '../../component/ButtonFakultas/ButtonFakultas';
 import './Gathertown.scss';
-import dummyImage from '../../images/ukj.png';
 import LIST_FAKULTAS from '../../data/fakultas.json';
 import LIST_HMJ from '../../data/hmj.json';
-
-type HMJ = {
-  namaFakultas: string;
-  namaHMJ: string;
-  jurusan: string;
-  link: string;
-};
+import IHMJ from '../../interfaces/IHMJ';
 
 const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
 
@@ -20,17 +13,17 @@ const Gathertown = () => {
   const [listGathertownHMJ, setListGathertownHMJ] = useState(LIST_HMJ);
 
 
-  const buttonFakultasClickHandler = (listHMJ: HMJ[], namaFakultas: string) => {
+  const buttonFakultasClickHandler = (listHMJ: IHMJ[], namaFakultas: string) => {
     setListGathertownHMJ(listHMJ);
     setActiveButton(namaFakultas);
   };
 
   useEffect(() => {
     const defaultFakultas = 'FITB';
-    setListGathertownHMJ(LIST_HMJ.filter(him => him.namaFakultas == defaultFakultas ));
+    setListGathertownHMJ(LIST_HMJ.filter(him => him.fakultas == defaultFakultas ));
     setActiveButton(defaultFakultas);
-  }, []); 
-  
+  }, []);
+
   const listButtonFakultas = LIST_FAKULTAS.map((fakultas) => (
     <ButtonFakultas
       onButtonClick={buttonFakultasClickHandler}
@@ -43,11 +36,11 @@ const Gathertown = () => {
   ));
 
   const listDisplayedHMJ = listGathertownHMJ.map((hmj) => (
-    <div key={hmj.namaHMJ}>
+    <div key={hmj.namaHimpunan}>
       <HMJCardContainer
-        namaHMJ={hmj.namaHMJ}
-        namaFakultas={hmj.namaFakultas}
-        link={hmj.link}
+        namaHMJ={hmj.namaHimpunan}
+        namaFakultas={hmj.fakultas}
+        link={hmj.linkGatherTown}
       />
     </div>
   ));

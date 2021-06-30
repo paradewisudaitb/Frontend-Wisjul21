@@ -60,7 +60,7 @@ const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
       </h3>
       <div className='carousel'>
         <Carousel
-          autoPlay
+          // autoPlay
           infiniteLoop
           showThumbs={false}
           showStatus={false}
@@ -79,7 +79,7 @@ const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
           ))}
         </Carousel>
       </div>
-      {isImageOpen && 
+      {isImageOpen &&
         <div className='opened-img'>
           {/* // <div className={`${isImageOpen ? 'opened-img' : '*'}`}> */}
           <img src={data[openedImageIdx].linkKeKonten} className='clicked-img' id='clicked-img' />

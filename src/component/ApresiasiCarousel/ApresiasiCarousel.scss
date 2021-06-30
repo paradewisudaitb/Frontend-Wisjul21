@@ -35,7 +35,7 @@
     position: absolute;
     z-index: 5;
     transform: translate(-10%, -70%);
-    
+
     .clicked-img {
       margin: 1rem;
       width: 40vw;
@@ -47,6 +47,7 @@
   .carousel-container {
     .carousel {
       width: 40vw;
+      height: 20vh;
     }
   }
 }

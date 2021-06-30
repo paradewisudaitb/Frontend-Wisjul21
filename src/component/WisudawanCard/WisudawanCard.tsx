@@ -3,14 +3,13 @@ import { useRoute } from 'wouter';
 import { Link } from 'wouter';
 import { DataWisudawan, ListUnit } from './Interface';
 import './WisudawanCard.scss';
-import logo from '../../images/ukj.png';
 import { ASSET_URL } from '../../api';
 
 const WisudawanCard = (data: DataWisudawan) => {
   const [match, params] = useRoute('/hmj/:hmj');
   const textLimit = 70;
   const showToolTip = data.judulTA.length > textLimit;
-  const shownJudulTA = showToolTip ? data.judulTA.slice(0, textLimit) + '...' : data.judulTA; 
+  const shownJudulTA = showToolTip ? data.judulTA.slice(0, textLimit) + '...' : data.judulTA;
   const [isLoaded, setLoaded] = useState(false);
 
   const Awan = `${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`;
@@ -30,24 +29,26 @@ const WisudawanCard = (data: DataWisudawan) => {
           <img src={data.foto} className='foto-wisudawan' />
           <img src={Awan} alt='' className='awan-bg' />
         </div>
-        <p>
+        <p className='judulTA'>
           {shownJudulTA}
         </p>
         {data.listUnit.length > 0 ?
           <div className='unit-container'>
+            <p>
+              Lembaga non-HMJ:
+            </p>
             <ol className='unit-list'>
               {data.listUnit.map((unit: ListUnit, i: number) => (
                 <li
                   key = {i}
                   className='unit-item'
                 >
-                  <img src={logo} className='unit-logo' />
                   <p>{unit.namaUnit}</p>
                 </li>
               ))}
             </ol>
           </div>
-          : <>Tidak ada unit</>
+          : <p>Tidak ada lembaga non-HMJ</p>
         }
       </Link>
     );

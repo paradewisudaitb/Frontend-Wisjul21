@@ -41,17 +41,28 @@ const GaleriApresiasi = () => {
         {
           'logoUnit': 'ukj.png',
           'namaUnit': 'UKJ ITB'
-        }]},
+        },
+        {
+          'logoUnit': 'ukj.png',
+          'namaUnit': 'UKJ ITB'
+        },
+        {
+          'logoUnit': 'ukj.png',
+          'namaUnit': 'UKJ ITB'
+        },
+        {
+          'logoUnit': 'ukj.png',
+          'namaUnit': 'UKJ ITB'
+        }]
+      },
       {
         'nama': 'Bukan John Doe',
         'nim': '10117241',
         'jurusan': 'IF',
         'foto': 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Xiao.png',
         'judulTA': 'Apel Kucing Pisang',
-        'listUnit': [{
-          'logoUnit': 'ukj.png',
-          'namaUnit': 'UKJ ITB'
-        }]},
+        'listUnit': []
+      },
       {
         'nama': 'Mungkin Doe',
         'nim': '10117242',

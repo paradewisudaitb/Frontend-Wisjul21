@@ -3,11 +3,11 @@
 
 .card-container {
   display: flex;
-  margin: 1rem;
+  margin: 2rem;
   flex-direction: column;
   text-align: center;
   text-decoration: none;
-  width: 28vw;
+  width: 25vw;
   height: auto;
   padding: 1vh 0;
   border-radius: 1rem;
@@ -25,13 +25,13 @@
     // color: $yellow-darker;
     margin-top: 1.5vh;
     margin-bottom: 0;
-    font-size: 2.5vw;
+    font-size: 2vw;
   }
 
   h4 {
     // color: $yellow-lighter;
     margin-top: 0.1rem;
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     margin-bottom: 1.5vw;
     z-index: 1;
   }
@@ -70,29 +70,57 @@
     padding: 0 2vw;
   }
 
+  .judulTA {
+    color: $yellow-darker;
+  }
+
   .unit-container {
     .unit-list {
       list-style: none;
       padding-left: 1.5rem;
+      // max-height: 16vh;
+
+      // overflow: scroll;
+      // scrollbar-width: thin;
+      // scrollbar-color: $blue-lighter transparent;
+
+      // &::-webkit-scrollbar {
+      //   background-color: transparent;
+      //   box-shadow: none;
+      //   -webkit-box-shadow: none;
+      // }
+
+      // &::-webkit-scrollbar-track {
+      //   background-color: transparent;
+      //   box-shadow: none;
+      //   -webkit-box-shadow: none;
+      // }
+
+      // &::-webkit-scrollbar-thumb {
+      //   background-color: $blue-lighter;
+      //   box-shadow: none;
+      //   -webkit-box-shadow: none;
+      // }
     }
 
     .unit-item {
       display: flex;
       flex-direction: row;
       align-items: center;
+      margin: 0 auto;
       margin-bottom: 0.7rem;
       justify-content: flex-start;
 
       .unit-logo {
         width: 2.7vw;
-        height: auto;
         margin-right: 1vw;
       }
 
       p {
         margin: 0 0;
         font-size: 1.2vw;
-        padding-left: 0.5vw;
+        // padding-left: 0.5vw;
+        text-align: center;
       }
     }
   }
@@ -105,7 +133,7 @@
     margin-bottom: 2rem;
     height: auto;
     border-radius: 2vw;
-  
+
     h3 {
       margin-top: 1vh;
       font-size: 4vw;
@@ -121,7 +149,7 @@
       margin-bottom: 0;
 
       .spark-bg {
-        width: 22vw;
+        width: 18vw;
         transform: translate(30%, -40%);
       }
 
@@ -130,8 +158,8 @@
       }
 
       .awan-bg {
-        width: 30vw;
-        transform: translate(-15%, 13%);
+        width: 23vw;
+        transform: translate(-21%, 100%);
       }
     }
 

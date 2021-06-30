@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import WisudawanCardContainer from './WisudawanCardContainer';
 import { DataWisudawan, ListHimpunan } from './Interface';
-import './FilterWisudawan.scss';
 
-const FilterWisudawan = ({ data } : { data: DataWisudawan[] }) => {
+import './FilterWisudawan.scss';
+import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
+
+const FilterWisudawan = ( { data } : { data: IGaleriWisudawan[] } ) => {
   const [wisudawan, setWisudawan] = useState(data);
   const [text, setText] = useState('');
 
   useEffect(() => {
     setWisudawan(
       data.filter(
-        (wisudawan: DataWisudawan) =>
-          wisudawan.nama.toLowerCase().includes(text.toLowerCase()) ||
+        (wisudawan: IGaleriWisudawan) =>
+          wisudawan.namaLengkap.toLowerCase().includes(text.toLowerCase()) ||
           ('' + wisudawan.nim).includes(text.toLowerCase())
       )
     );

@@ -13,6 +13,7 @@ const maxSenderNameLength = 30;
 
 export const KirimPesanPage = () => {
   const [match, params] = useRoute('/hmj/:fak/:nim/kirim-pesan');
+  // const [match, params] = useRoute(KIRIM_PESAN_PAGE.path);
   const limit = 200;
 
   if (match && params) {

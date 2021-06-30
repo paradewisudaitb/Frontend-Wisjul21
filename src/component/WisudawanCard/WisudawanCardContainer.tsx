@@ -3,7 +3,9 @@ import WisudawanCard from './WisudawanCard';
 import './WisudawanCardContainer.scss';
 import { ListUnit, DataWisudawan } from './Interface';
 
-const WisudawanCardContainer = ({ data } : { data: DataWisudawan[]}) => {
+import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
+
+const WisudawanCardContainer = ({ data } : { data: IGaleriWisudawan[]}) => {
 
   return (
     <div className='wisudawan-card-container'>
@@ -15,9 +17,9 @@ const WisudawanCardContainer = ({ data } : { data: DataWisudawan[]}) => {
           />
         )
       ) : (
-        <h4>
-          Tidak ditemukan wisudawan yang sesuai pada himpunan ini
-        </h4>
+        <h3>
+          Tidak ditemukan wisudawan untuk himpunan ini
+        </h3>
       )}
 
     </div>

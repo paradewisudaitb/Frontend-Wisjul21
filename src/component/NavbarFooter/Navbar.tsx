@@ -49,8 +49,7 @@ export const Navbar = ({ homePage }: INavbarHome) => {
     if (offsetY > 1) offsetY = 1;
     setOpacity(offsetY);
   };
-  // console.log(document.getElementById('navbar-home')?.style.backgroundColor);
-  console.log(opacity);
+  
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);

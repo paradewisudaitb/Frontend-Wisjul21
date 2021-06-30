@@ -5,7 +5,9 @@ import { DataWisudawan, ListUnit } from './Interface';
 import './WisudawanCard.scss';
 import { ASSET_URL } from '../../api';
 
-const WisudawanCard = (data: DataWisudawan) => {
+import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
+
+const WisudawanCard = (data: IGaleriWisudawan) => {
   const [match, params] = useRoute('/hmj/:hmj');
   const textLimit = 70;
   const showToolTip = data.judulTA.length > textLimit;
@@ -18,32 +20,32 @@ const WisudawanCard = (data: DataWisudawan) => {
   if (match && params) {
     return (
       <Link href={`/hmj/${params.hmj}/${data.nim}`} className='card-container'>
-        <h3>{data.nama}</h3>
-        <h4>{data.nim} - {data.jurusan}</h4>
+        <h3>{data.namaLengkap}</h3>
+        <h4>{data.nim} - {data.namaJurusan}</h4>
         <div
           style={isLoaded ? { opacity: 1 } : { height: 0, width:0 }}
           onLoad={() => setLoaded(true)}
           className='image'
         >
           <img src={Spark} alt='' className='spark-bg' />
-          <img src={data.foto} className='foto-wisudawan' />
+          <img src={data.pasfoto} className='foto-wisudawan' />
           <img src={Awan} alt='' className='awan-bg' />
         </div>
         <p className='judulTA'>
           {shownJudulTA}
         </p>
-        {data.listUnit.length > 0 ?
+        {(data.lembaga != undefined && data.lembaga.length > 0) ?
           <div className='unit-container'>
             <p>
               Lembaga non-HMJ:
             </p>
             <ol className='unit-list'>
-              {data.listUnit.map((unit: ListUnit, i: number) => (
+              {data.lembaga.map((unit: string, i: number) => (
                 <li
                   key = {i}
                   className='unit-item'
                 >
-                  <p>{unit.namaUnit}</p>
+                  <p>{unit}</p>
                 </li>
               ))}
             </ol>

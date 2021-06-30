@@ -12,6 +12,8 @@ import './GaleriApresiasi.scss';
 import { GALERI_APRESIASI_PAGE } from '../../routes/routes';
 import { Loading } from '../../component/Loading/Loading';
 import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
+import LIST_HMJ from '../../data/hmj.json';
+
 
 const dataApresiasi = {
   'himpunan': 'hmif',
@@ -30,58 +32,7 @@ const dataApresiasi = {
     },{
       'tipeKontenApresiasi': 'audio',
       'linkKeKonten': 'https://cdn.piapro.jp/mp3_a/s9/s9ihs6vgwgu9uv4u_20210306210143_audition.mp3'
-    }],
-  'wisudawan':
-  [
-    {
-      'nama': 'John Doe',
-      'nim': '10117240',
-      'jurusan': 'IF',
-      'foto': 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Keqing.png',
-      'judulTA': 'Apel Kucing Pisang Mangga Buah Binatang Dhuar Dhuar Dhuar Dhuar Dhuar Dhuar Dhuar',
-      'listUnit': [{
-        'logoUnit': 'ukj.png',
-        'namaUnit': 'UKJ ITB'
-      },
-      {
-        'logoUnit': 'ukj.png',
-        'namaUnit': 'UKJ ITB'
-      },
-      {
-        'logoUnit': 'ukj.png',
-        'namaUnit': 'UKJ ITB'
-      },
-      {
-        'logoUnit': 'ukj.png',
-        'namaUnit': 'UKJ ITB'
-      },
-      {
-        'logoUnit': 'ukj.png',
-        'namaUnit': 'UKJ ITB'
-      }]
-    },
-    {
-      'nama': 'Bukan John Doe',
-      'nim': '10117241',
-      'jurusan': 'IF',
-      'foto': 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Xiao.png',
-      'judulTA': 'Apel Kucing Pisang',
-      'listUnit': []
-    },
-    {
-      'nama': 'Mungkin Doe',
-      'nim': '10117242',
-      'jurusan': 'IF',
-      'foto': 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Albedo.png',
-      'judulTA': 'Apel Kucing Pisang Mangga Buah Binatang Dhuar',
-      'listUnit': [{
-        'logoUnit': 'ukj.png',
-        'namaUnit': 'UKJ ITB'
-      },
-      {
-        'logoUnit': 'ukj.png',
-        'namaUnit': 'UKJ ITB'
-      }]}]
+    }]
 };
 
 const removeDash = (text: string) => {
@@ -106,8 +57,12 @@ const GaleriApresiasi = () => {
   const [match, params] = useRoute(GALERI_APRESIASI_PAGE.path);
 
   if (match && params) {
-    const namaHimpunan = params.hmj;
-   
+    const namaHimpunan = removeDash(params.hmj);
+
+    const fotoHMJ = LIST_HMJ.filter(hmj => {
+      return (hmj.namaHimpunan == namaHimpunan);
+    })[0].linkFoto;
+
     const defaultWisudawan: IGaleriWisudawan[] = [];
 
     const [loading, setLoading] = useState(true);
@@ -116,7 +71,7 @@ const GaleriApresiasi = () => {
     );
 
     useEffect(() => {
-      getByHimpunan(namaHimpunan)
+      getByHimpunan(namaHimpunan.toLowerCase())
         .then(dataWisudawan => {
           setWisudawans(<FilterWisudawan data={dataWisudawan} />);
           setLoading(false);
@@ -129,8 +84,8 @@ const GaleriApresiasi = () => {
     return (
       <div className='galeri-apresiasi-page py-5 bg'>
         <div className='himpunan'>
-          <h1>{ removeDash(namaHimpunan) }</h1>
-          <img src={Logo} className='himpunan-logo'/>
+          <h1>{ namaHimpunan }</h1>
+          <img src={fotoHMJ} className='himpunan-logo'/>
         </div>
   
         <div className='apresiasi-wisudawan my-5'>

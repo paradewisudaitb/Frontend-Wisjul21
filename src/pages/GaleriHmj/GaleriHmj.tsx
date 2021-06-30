@@ -13,19 +13,13 @@ import slugify from 'slugify';
 import LIST_FAKULTAS from '../../data/fakultas.json';
 import LIST_HMJ from '../../data/hmj.json';
 import { useEffect } from 'react';
-
-type HMJ = {
-  namaFakultas: string;
-  namaHMJ: string;
-  jurusan: string;
-  link: string;
-};
+import IHMJ from '../../interfaces/IHMJ';
 
 const GaleriHmj = () => {
   const [activeButton, setActiveButton] = useState('');
   const [listGaleriHMJ, setListGaleriHMJ] = useState(LIST_HMJ);
 
-  const buttonFakultasClickHandler = (listHMJ: HMJ[], namaFakultas: string) => {
+  const buttonFakultasClickHandler = (listHMJ: IHMJ[], namaFakultas: string) => {
     setListGaleriHMJ(listHMJ);
     setActiveButton(namaFakultas);
   };
@@ -42,8 +36,8 @@ const GaleriHmj = () => {
   ));
 
   const listCardHMJ = listGaleriHMJ.map((hmj) => (
-    <Link className='himpunan-card' key={hmj.namaHMJ} href={`/hmj/${slugify(
-      hmj.namaHMJ, {
+    <Link className='himpunan-card' key={hmj.namaHimpunan} href={`/hmj/${slugify(
+      hmj.namaHimpunan, {
         lower:true,
         remove:/["']/g}
     )}`}>
@@ -51,7 +45,7 @@ const GaleriHmj = () => {
       <div className='himpunan-wrapper'>
         <img src={logoImage} className='logo-hmj' />
         <div className='himpunan-text'>
-          <h1 className='title'>{hmj.namaHMJ}</h1>
+          <h2 className='title'>{hmj.namaHimpunan}</h2>
         </div>
       </div>
     </Link>
@@ -59,7 +53,7 @@ const GaleriHmj = () => {
 
   useEffect(() => {
     const defaultFakultas = 'FITB';
-    setListGaleriHMJ(LIST_HMJ.filter(him => him.namaFakultas == defaultFakultas ));
+    setListGaleriHMJ(LIST_HMJ.filter(him => him.fakultas == defaultFakultas ));
     setActiveButton(defaultFakultas);
   }, []);
 

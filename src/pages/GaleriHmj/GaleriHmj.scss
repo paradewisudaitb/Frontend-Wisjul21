@@ -135,7 +135,7 @@ body {
         flex-direction: column;
 
         .logo-hmj {
-          width: 14em;
+          width: 11vw;
           margin: 20px;
           @include respond-to("phone") {
             width: 7em;

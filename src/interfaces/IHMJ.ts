@@ -5,6 +5,6 @@ interface IHMJ {
   linkFoto: string;
   linkGatherTown: string;
   jurusan: string[];
-};
+}
 
 export default IHMJ;

@@ -6,33 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { uploader } from '../../controller/kontenApresiasi';
 import ApresiasiSelection from '../../component/ApresiasiSelection/ApresiasiSelection';
 
-const SUPPORTED_FORMATS = [
-  'image/jpg', 'image/jpeg', 'image/gif', 'image/png',
-  'audio/mpeg', 'audio/webm', 'audio/wav', 'audio/m4a',
-  'video/mp4', 'video/webm'
-];
-
-const FILE_SIZE = 8E6; // 8 MB
-
-const validateFileType = (value: string): boolean => {
-  if(value) {
-    const type = value.match(/[^:]\w+\/[\w-+\d.]+(?=;|,)/);
-    if (!type)
-      return false;
-    return SUPPORTED_FORMATS.includes(type[0]);
-  }
-
-  return false;
-};
-
-enum ContentType {
-  img,
-  vid,
-  txt,
-}
-
 const errMsg = 'Ada kesalahan pada data. Jika data sudah benar dan masih gagal atau ingin melakukan perubahan data, harap hubungi panitia.';
-
 
 const schema = yup.object().shape({
   'himpunan': yup.string().required('Himpunan tidak boleh kosong.'),
@@ -54,7 +28,7 @@ export default function Form() {
   });
 
   const submitForm = async (data: any) => {
-    console.log(data);
+    window.alert('Sedang mengupload data apresiasi...');
     const __uploader = (tipeApresiasi: string, konten: any, angka: number) => {
       uploader(data.himpunan, tipeApresiasi, konten)
         .then(_ => window.alert(`Berhasil upload konten apresiasi ${angka}`))
@@ -71,7 +45,9 @@ export default function Form() {
       return;
     }
 
-    if (data.apresiasi1 == data.apresiasi2 || data.apresiasi1 == data.apresiasi3 || data.apresiasi2 == data.apresiasi3) {
+    if ((data.apresiasi1 == data.apresiasi2 && (data.apresiasi1 != 'batal' && data.apresiasi1 != 'tipe file'))
+        || (data.apresiasi1 == data.apresiasi3 && (data.apresiasi1 != 'batal' && data.apresiasi1 != 'tipe file'))
+        || (data.apresiasi2 == data.apresiasi3 && (data.apresiasi2 != 'batal' && data.apresiasi2 != 'tipe file'))) {
       window.alert('1 tipe konten cuman bisa muncul kali');
       return;
     }

@@ -11,25 +11,21 @@ const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
 
 const Gathertown = () => {
   const [activeButton, setActiveButton] = useState('');
-  const [listGathertownHMJ, setListGathertownHMJ] = useState(LIST_HMJ);
+  const hmjNoTPB = LIST_HMJ.filter(hmj => !hmj.namaHimpunan.includes('TPB'));
+  const [listGathertownHMJ, setListGathertownHMJ] = useState(hmjNoTPB);
 
   const buttonFakultasClickHandler = (
     listHMJ: IHMJ[],
     namaFakultas: string
   ) => {
-    setListGathertownHMJ(listHMJ);
+    setListGathertownHMJ(listHMJ.filter(hmj => !hmj.namaHimpunan.includes('TPB')));
     setActiveButton(namaFakultas);
   };
 
   useEffect(() => {
     const defaultFakultas = 'FITB';
     setListGathertownHMJ(
-      LIST_HMJ.filter(
-        (him) =>
-          him.fakultas == defaultFakultas &&
-          !him.singkatanHimpunan.includes('TPB')
-      )
-    );
+      hmjNoTPB.filter(him => him.fakultas == defaultFakultas));
     setActiveButton(defaultFakultas);
   }, []);
 

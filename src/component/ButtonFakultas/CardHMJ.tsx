@@ -1,6 +1,3 @@
-import { FC } from 'react';
-import { string } from 'yup';
-import dummyImage from '../../images/ukj.png';
 import './CardHMJ.scss';
 
 const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';

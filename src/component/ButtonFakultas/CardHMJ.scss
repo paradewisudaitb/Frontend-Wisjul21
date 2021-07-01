@@ -24,8 +24,8 @@
     width: auto;
 
     @media only screen and (max-width: 480px) {
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
     }
 
     .image-hmj {
@@ -44,25 +44,21 @@
     .info-hmj {
       width: 85%;
       text-align: start;
-      margin: 0.25rem 1rem 0.25rem 2.5rem;
-      position: relative;
+      margin: 1rem 1rem 1rem 2.5rem;
 
       h2 {
-        position: absolute;
-        top: 0;
         text-align: start;
-        overflow-wrap: break-word;
-        margin-bottom: 7.5rem;
+        word-break: break-word;
+        margin-bottom: 2.5rem;
       }
 
       .link-hmj {
-        width: 85%;
         text-align: start;
+        word-break: break-word;
         -webkit-hyphens: auto;
         -moz-hyphens: auto;
         hyphens: auto;
-        position: absolute;
-        bottom: 0;
+        margin: 0;
         padding: 0.5em;
         background-color: rgba($red-medium, 0.8);
         // ini pake rgba supaya bisa opacity tanpa ngaruh ke child
@@ -71,38 +67,34 @@
         a {
           text-decoration: none;
           color: $yellow-lighter;
-          overflow-wrap: break-word;
-        }
-      }
-    }
-
-    @include respond-to('phone') {
-      .info-hmj {
-        width: 85%;
-        text-align: start;
-        margin: 0.5rem 1rem 0.5rem 1.5rem;
-
-        h2 {
-          text-align: start;
-          overflow-wrap: break-word;
-          margin-bottom: 4rem;
-          position: static;
         }
       }
     }
 
     @media only screen and (max-width: 480px) {
       .info-hmj {
-        width: 95%;
+        width: 75%;
         text-align: start;
-        margin: 0.5rem 0rem 0.5rem 1rem;
+        margin: 0.5rem 0.5rem 0.5rem 2.5rem;
 
         h2 {
           text-align: start;
-          overflow-wrap: break-word;
-          margin-bottom: 4rem;
-          font-size: 18px;
-          position: static;
+          word-break: break-word;
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+
+    @include respond-to('phone') {
+      .info-hmj {
+        width: 75%;
+        text-align: start;
+        margin: 1rem 1rem 1rem 1.5rem;
+
+        h2 {
+          text-align: start;
+          word-break: break-word;
+          margin-bottom: 3rem;
         }
       }
     }

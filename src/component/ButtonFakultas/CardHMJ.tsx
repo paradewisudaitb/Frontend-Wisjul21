@@ -26,24 +26,32 @@ const HMJCardContainer = (props: {
   return (
     <div className='card-hmj-container'>
       <div className='card-hmj'>
-        <div className='image-hmj'>
-          <img
-            alt={'logo ' + props.namaHMJ}
-            src={props.linkFoto}
-            width='185'
-            height='185'
-          />
-        </div>
-        <div className='info-hmj'>
-          <h2>{props.namaHMJ}</h2>
-          {!isMobile ? (
-            <LinkGathertown linkGathertown={props.linkGathertown} />
-          ) : (
-            ''
-          )}
+        <div className='card-flex'>
+          <div className='image-hmj'>
+            <img
+              alt={'logo ' + props.namaHMJ}
+              src={props.linkFoto}
+              width='185'
+              height='185'
+            />
+          </div>
+          <div className='info-hmj'>
+            <h2>{props.namaHMJ}</h2>
+            {!isMobile ? (
+              <LinkGathertown
+                className='link-hmj-web'
+                linkGathertown={props.linkGathertown}
+              />
+            ) : (
+              ''
+            )}
+          </div>
         </div>
         {isMobile ? (
-          <LinkGathertown linkGathertown={props.linkGathertown} />
+          <LinkGathertown
+            className='link-hmj-mobile'
+            linkGathertown={props.linkGathertown}
+          />
         ) : (
           ''
         )}

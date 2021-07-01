@@ -1,6 +1,6 @@
 @import '../../styles/colorpalette.scss';
 
-.link-hmj {
+.link-hmj-web {
   text-align: start;
   word-break: break-word;
   -webkit-hyphens: auto;
@@ -11,6 +11,26 @@
   background-color: rgba($red-medium, 0.8);
   // ini pake rgba supaya bisa opacity tanpa ngaruh ke child
   box-shadow: 0 2px 5px black;
+
+  a {
+    text-decoration: none;
+    color: $yellow-lighter;
+  }
+}
+
+.link-hmj-mobile {
+  text-align: start;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  margin-bottom: 0.5rem;
+  padding: 0.5em;
+  background-color: rgba($red-medium, 0.8);
+  // ini pake rgba supaya bisa opacity tanpa ngaruh ke child
+  box-shadow: 0 2px 5px black;
+  width: 100%;
+  height: fit-content;
 
   a {
     text-decoration: none;

@@ -14,8 +14,7 @@
   }
 
   .card-hmj {
-    display: flex;
-    padding: 1rem;
+    padding: 0.75rem;
     margin: 1rem;
     box-shadow: 0 2px 8px black;
     border-radius: 30px;
@@ -24,8 +23,18 @@
     width: auto;
 
     @media only screen and (max-width: 480px) {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+      padding: 0.5rem 1rem 0.5rem 1rem;
+    }
+
+    .card-flex {
+      display: flex;
+      margin-bottom: 0.5rem;
+      width: auto;
+
+      @media only screen and (max-width: 480px) {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
     }
 
     .image-hmj {
@@ -51,38 +60,6 @@
         word-break: break-word;
         margin-bottom: 2.5rem;
       }
-
-      .link-hmj {
-        text-align: start;
-        word-break: break-word;
-        -webkit-hyphens: auto;
-        -moz-hyphens: auto;
-        hyphens: auto;
-        margin: 0;
-        padding: 0.5em;
-        background-color: rgba($red-medium, 0.8);
-        // ini pake rgba supaya bisa opacity tanpa ngaruh ke child
-        box-shadow: 0 2px 5px black;
-
-        a {
-          text-decoration: none;
-          color: $yellow-lighter;
-        }
-      }
-    }
-
-    @media only screen and (max-width: 480px) {
-      .info-hmj {
-        width: 75%;
-        text-align: start;
-        margin: 0.5rem 0.5rem 0.5rem 2.5rem;
-
-        h2 {
-          text-align: start;
-          word-break: break-word;
-          margin-bottom: 1.5rem;
-        }
-      }
     }
 
     @include respond-to('phone') {
@@ -95,6 +72,22 @@
           text-align: start;
           word-break: break-word;
           margin-bottom: 3rem;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .info-hmj {
+        width: 75%;
+        text-align: start;
+        align-self: center;
+        margin: 0rem 0.5rem 0.5rem 0.75rem;
+
+        h2 {
+          text-align: start;
+          word-break: break-word;
+          font-size: 18px;
+          margin: 0;
         }
       }
     }

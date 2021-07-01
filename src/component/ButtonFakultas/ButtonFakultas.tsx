@@ -15,7 +15,9 @@ const ButtonFakultas: FC<{
       event.currentTarget.getAttribute('value') || 'default';
 
     const updatedHMJ = LIST_HMJ.filter(
-      (hmj) => hmj.fakultas == clickedFakultas
+      (hmj) =>
+        hmj.fakultas == clickedFakultas &&
+        !hmj.singkatanHimpunan.includes('TPB')
     );
 
     props.onButtonClick(updatedHMJ, clickedFakultas);

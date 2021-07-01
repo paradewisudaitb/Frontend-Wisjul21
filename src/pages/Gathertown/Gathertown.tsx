@@ -23,7 +23,11 @@ const Gathertown = () => {
   useEffect(() => {
     const defaultFakultas = 'FITB';
     setListGathertownHMJ(
-      LIST_HMJ.filter((him) => him.fakultas == defaultFakultas)
+      LIST_HMJ.filter(
+        (him) =>
+          him.fakultas == defaultFakultas &&
+          !him.singkatanHimpunan.includes('TPB')
+      )
     );
     setActiveButton(defaultFakultas);
   }, []);

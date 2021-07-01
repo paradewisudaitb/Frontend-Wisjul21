@@ -9,11 +9,18 @@
   text-decoration: none;
   width: 25vw;
   height: auto;
-  padding: 1vh 0;
+  padding: 1vh 1vw;
   border-radius: 1rem;
   background-color: rgba($blue-darker, 80%);
   transition: transform 0.5s;
-  padding: 0 1vw;
+
+  @include respond-to('phone') {
+    width: 40vw;
+    margin: 0 2vw;
+    margin-bottom: 2rem;
+    height: auto;
+    border-radius: 2vw;
+  }
 
   &:hover {
     transform: translateY(-2%);
@@ -30,6 +37,12 @@
     margin-bottom: 0;
     font-size: 2vw;
     height: 10vh;
+
+    @include respond-to('phone') {
+      height: 5vh;
+      margin-top: 1vh;
+      font-size: 4vw;
+    }
   }
 
   h4 {
@@ -37,6 +50,10 @@
     font-size: 1.5vw;
     margin-bottom: 1.5vw;
     z-index: 1;
+
+    @include respond-to('phone') {
+      font-size: 2.5vw;
+    }
   }
 
   .image {
@@ -46,33 +63,39 @@
     margin: 0.7rem 0.7rem;
     position: relative;
     height: 15vw;
-    width: 15vw; 
+    width: 15vw;
 
-    // .spark-bg {
-    //   width: 13.2vw;
-    //   position: absolute;
-    //   bottom: 4rem;
-    //   left: 7rem;
-    //   // transform: translate(38%, -33%);
-    // }
+    @include respond-to('phone') {
+      margin: 1rem;
+      margin-top: 1.5vh;
+      height: 25vw;
+      width: 25vw;
+    }
 
     .foto-wisudawan {
       height: 100%;
       width: 100%;
-      // height: 12rem;
-      // width: 12rem;
       left: 20%;
       background-color: #C4C4C4;
       position: relative;
       object-fit: cover;
       border-radius: 50%;
+
+      @include respond-to('phone') {
+        left: 12%;
+      }
     }
 
     .awan-bg {
       position: absolute;
       width: 18vw;
       bottom: -1rem;
-      left: -1rem
+      left: -1rem;
+
+      @include respond-to('phone') {
+        width: 30vw;
+        bottom: -0.5rem;
+      }
     }
   }
 
@@ -81,6 +104,13 @@
     margin-bottom: 1vw;
     font-size: 1.3vw;
     padding: 0 2vw;
+
+    @include respond-to('phone') {
+      font-size: 2vw;
+      margin: 2vh 0;
+      margin-top: 0;
+      padding: 0 1vw;
+    }
   }
 
   .judulTA {
@@ -89,151 +119,10 @@
     justify-content: center;
     color: $yellow-darker;
     height: 10vh;
-  }
 
-  .unit-container {
-    .unit-list {
-      font-size: 1.2vw;
-      .unit-item {
-        margin: 0 auto;
-        margin-bottom: 1.5vh;
-
-        p {
-          text-align: left;
-          margin: 0 0;
-          // font-size: 1.2vw;
-        }
-      }
-    }
-  }
-  
-  // .unit-container {
-
-  //   .unit-list {
-  //     padding-left: 0;
-  //     list-style-type: upper-roman; 
-  //     // list-style: none;
-  //     // padding-left: 1.5rem;
-  //     // max-height: 16vh;
-
-  //     // overflow: scroll;
-  //     // scrollbar-width: thin;
-  //     // scrollbar-color: $blue-lighter transparent;
-
-  //     // &::-webkit-scrollbar {
-  //     //   background-color: transparent;
-  //     //   box-shadow: none;
-  //     //   -webkit-box-shadow: none;
-  //     // }
-
-  //     // &::-webkit-scrollbar-track {
-  //     //   background-color: transparent;
-  //     //   box-shadow: none;
-  //     //   -webkit-box-shadow: none;
-  //     // }
-
-  //     // &::-webkit-scrollbar-thumb {
-  //     //   background-color: $blue-lighter;
-  //     //   box-shadow: none;
-  //     //   -webkit-box-shadow: none;
-  //     // }
-  //     .unit-item {
-  //       display: flex;
-  //       flex-direction: row;
-  //       margin: 0 auto;
-  //       margin-bottom: 0.7rem;
-  //       justify-content: flex-start;
-
-  //       p {
-  //       margin: 0 0;
-  //       font-size: 1.2vw;
-  //       text-align: left;
-  //       }
-  //     }
-  //   }
-  // }
-}
-
-@include respond-to('phone') {
-  .card-container {
-    width: 40vw;
-    margin: 0 2vw;
-    margin-bottom: 2rem;
-    height: auto;
-    border-radius: 2vw;
-
-    h3 {
+    @include respond-to('phone') {
       height: 5vh;
-      margin-top: 1vh;
-      font-size: 4vw;
-    }
-
-    h4 {
-      font-size: 2.5vw;
-    }
-
-    .image {
-      margin: 1rem;
-      margin-top: 1.5vh;
-      height: 25vw;
-      width: 25vw;
-      // margin-bottom: 0;
-
-      // .spark-bg {
-      //   bottom: 4rem;
-      //   left: 6rem; 
-      //   width: 18vw;
-      // }
-
-      .foto-wisudawan {
-        // max-height: 10rem;
-        // width: 10rem;
-        left: 12%;
-      }
-
-      .awan-bg {
-        width: 30vw;
-        bottom: -0.5rem;
-      }
-    }
-
-  p {
-    font-size: 2vw;
-    margin: 2vh 0;
-    margin-top: 0;
-    padding: 0 1vw;
-    // height: 5vh;
-  }
-
-  .judulTA {
-    height: 5vh;
-    margin-bottom: 0;
-  }
-
-    .unit-container {
-      margin-top: 0.5vh;
-      margin-bottom: 0;
-
-      .unit-list {
-        padding-left: 2vw;
-        margin-bottom: 2vh;
-
-        .unit-item {
-          margin-bottom: 1vh;
-
-          .unit-logo {
-            width: 4.5vw;
-            margin-left: 1.7vw;
-            margin-right: 0;
-          }
-
-          p {
-            padding-left: 1.8vw;
-            font-size: 1.7vw;
-            letter-spacing: 0.2vw;
-          }
-        }
-      }
+      margin-bottom: 2rem;
     }
   }
 }

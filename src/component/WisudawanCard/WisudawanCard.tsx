@@ -34,24 +34,6 @@ const WisudawanCard = (data: IGaleriWisudawan) => {
         <p className='judulTA'>
           {shownJudulTA}
         </p>
-        {(data.lembaga != undefined && data.lembaga.length > 0 && data.lembaga[0] != '-') ?
-          <div className='unit-container'>
-            <p>
-              Lembaga non-HMJ:
-            </p>
-            <ol className='unit-list'>
-              {data.lembaga.map((unit: string, i: number) => (
-                <li
-                  key = {i}
-                  className='unit-item'
-                >
-                  <p>{unit}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-          : <p>Tidak ada lembaga non-HMJ</p>
-        }
       </Link>
     );
   } else {

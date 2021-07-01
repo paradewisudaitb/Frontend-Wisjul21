@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import HMJCardContainer from '../../component/ButtonFakultas/CardHMJ';
+import HMJCardContainer from '../../component/GathertownCard/GathertownCard';
 import ButtonFakultas from '../../component/ButtonFakultas/ButtonFakultas';
 
 import './Gathertown.scss';
@@ -33,16 +33,18 @@ const Gathertown = () => {
     setActiveButton(defaultFakultas);
   }, []);
 
-  const listButtonFakultas = LIST_FAKULTAS.map((fakultas) => (
-    <ButtonFakultas
-      onButtonClick={buttonFakultasClickHandler}
-      className={activeButton == fakultas ? 'active' : ''}
-      value={fakultas}
-      key={fakultas}
-    >
-      <p>{fakultas}</p>
-    </ButtonFakultas>
-  ));
+  const listButtonFakultas = LIST_FAKULTAS
+    .filter(fak => fak != 'ETC')
+    .map((fakultas) => (
+      <ButtonFakultas
+        onButtonClick={buttonFakultasClickHandler}
+        className={activeButton == fakultas ? 'active' : ''}
+        value={fakultas}
+        key={fakultas}
+      >
+        <p>{fakultas}</p>
+      </ButtonFakultas>
+    ));
 
   const listDisplayedHMJ = listGathertownHMJ.map((hmj) => (
     <div key={hmj.singkatanHimpunan}>

@@ -1,8 +1,7 @@
-import './CardHMJ.scss';
+import './GathertownCard.scss';
 import LinkGathertown from '../LinkGathertown/LinkGathertown';
 import { useState, useEffect } from 'react';
-
-const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
+import { ASSET_URL } from '../../api';
 
 const HMJCardContainer = (props: {
   namaHMJ: string;

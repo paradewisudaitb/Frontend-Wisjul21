@@ -12,15 +12,19 @@ const Gathertown = () => {
   const [activeButton, setActiveButton] = useState('');
   const [listGathertownHMJ, setListGathertownHMJ] = useState(LIST_HMJ);
 
-
-  const buttonFakultasClickHandler = (listHMJ: IHMJ[], namaFakultas: string) => {
+  const buttonFakultasClickHandler = (
+    listHMJ: IHMJ[],
+    namaFakultas: string
+  ) => {
     setListGathertownHMJ(listHMJ);
     setActiveButton(namaFakultas);
   };
 
   useEffect(() => {
     const defaultFakultas = 'FITB';
-    setListGathertownHMJ(LIST_HMJ.filter(him => him.fakultas == defaultFakultas ));
+    setListGathertownHMJ(
+      LIST_HMJ.filter((him) => him.fakultas == defaultFakultas)
+    );
     setActiveButton(defaultFakultas);
   }, []);
 
@@ -36,11 +40,12 @@ const Gathertown = () => {
   ));
 
   const listDisplayedHMJ = listGathertownHMJ.map((hmj) => (
-    <div key={hmj.namaHimpunan}>
+    <div key={hmj.singkatanHimpunan}>
       <HMJCardContainer
-        namaHMJ={hmj.namaHimpunan}
+        namaHMJ={hmj.singkatanHimpunan}
         namaFakultas={hmj.fakultas}
-        link={hmj.linkGatherTown}
+        linkGathertown={hmj.linkGatherTown}
+        linkFoto={hmj.linkFoto}
       />
     </div>
   ));

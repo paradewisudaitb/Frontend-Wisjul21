@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { string } from 'yup';
 import dummyImage from '../../images/ukj.png';
 import './CardHMJ.scss';
 
@@ -7,7 +8,8 @@ const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
 const HMJCardContainer = (props: {
   namaHMJ: string;
   namaFakultas: string;
-  link: string;
+  linkGathertown: string;
+  linkFoto: string;
 }) => {
   return (
     <div className='card-hmj-container'>
@@ -15,7 +17,7 @@ const HMJCardContainer = (props: {
         <div className='image-hmj'>
           <img
             alt={'logo ' + props.namaHMJ}
-            src={dummyImage}
+            src={props.linkFoto}
             width='185'
             height='185'
           />
@@ -23,8 +25,8 @@ const HMJCardContainer = (props: {
         <div className='info-hmj'>
           <h2>{props.namaHMJ}</h2>
           <div className='link-hmj'>
-            <a href={'https://' + props.link} target='_blank'>
-              {props.link}
+            <a href={'https://' + props.linkGathertown} target='_blank'>
+              {props.linkGathertown}
             </a>
           </div>
         </div>

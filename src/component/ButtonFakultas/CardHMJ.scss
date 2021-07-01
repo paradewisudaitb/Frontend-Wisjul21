@@ -24,8 +24,8 @@
     width: auto;
 
     @media only screen and (max-width: 480px) {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
     }
 
     .image-hmj {
@@ -45,20 +45,24 @@
       width: 85%;
       text-align: start;
       margin: 1rem 1rem 1rem 2.5rem;
+      position: relative;
 
       h2 {
+        position: absolute;
+        top: 0;
         text-align: start;
-        word-break: break-word;
-        margin-bottom: 2.5rem;
+        overflow-wrap: break-word;
+        margin-bottom: 7.5rem;
       }
 
       .link-hmj {
+        width: 85%;
         text-align: start;
-        word-break: break-word;
         -webkit-hyphens: auto;
         -moz-hyphens: auto;
         hyphens: auto;
-        margin: 0;
+        position: absolute;
+        bottom: 0;
         padding: 0.5em;
         background-color: rgba($red-medium, 0.8);
         // ini pake rgba supaya bisa opacity tanpa ngaruh ke child
@@ -67,20 +71,7 @@
         a {
           text-decoration: none;
           color: $yellow-lighter;
-        }
-      }
-    }
-
-    @media only screen and (max-width: 480px) {
-      .info-hmj {
-        width: 75%;
-        text-align: start;
-        margin: 0.5rem 0.5rem 0.5rem 2.5rem;
-
-        h2 {
-          text-align: start;
-          word-break: break-word;
-          margin-bottom: 1.5rem;
+          overflow-wrap: break-word;
         }
       }
     }
@@ -89,12 +80,28 @@
       .info-hmj {
         width: 75%;
         text-align: start;
-        margin: 1rem 1rem 1rem 1.5rem;
+        margin: 0.5rem 1rem 0.5rem 1.5rem;
 
         h2 {
           text-align: start;
-          word-break: break-word;
+          overflow-wrap: break-word;
           margin-bottom: 3rem;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .info-hmj {
+        width: 75%;
+        text-align: start;
+        margin: 0.5rem 0.5rem 0.5rem 1rem;
+
+        h2 {
+          text-align: start;
+          overflow-wrap: break-word;
+          margin-bottom: 5rem;
+          font-size: 18px;
+          position: static;
         }
       }
     }

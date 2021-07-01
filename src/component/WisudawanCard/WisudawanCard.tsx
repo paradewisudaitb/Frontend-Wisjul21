@@ -27,14 +27,14 @@ const WisudawanCard = (data: IGaleriWisudawan) => {
           onLoad={() => setLoaded(true)}
           className='image'
         >
-          <img src={Spark} alt='' className='spark-bg' />
+          {/* <img src={Spark} alt='' className='spark-bg' /> */}
           <img src={data.pasfoto} className='foto-wisudawan' />
           <img src={Awan} alt='' className='awan-bg' />
         </div>
         <p className='judulTA'>
           {shownJudulTA}
         </p>
-        {(data.lembaga != undefined && data.lembaga.length > 0) ?
+        {(data.lembaga != undefined && data.lembaga.length > 0 && data.lembaga[0] != '-') ?
           <div className='unit-container'>
             <p>
               Lembaga non-HMJ:

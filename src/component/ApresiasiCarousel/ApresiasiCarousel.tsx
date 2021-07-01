@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Apresiasi } from '../WisudawanCard/Interface';
 import { ASSET_URL } from '../../api';
 import { Carousel } from 'react-responsive-carousel';
-import Modal from 'react-modal';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ApresiasiCarousel.scss';
 
@@ -20,14 +19,6 @@ const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
     }
   });
 
-  const RenderImg = (data: string) => {
-    return(
-      <div className='opened-img2' >
-        <img src={data} className='clicked-img2' />
-      </div>
-    );
-  };
-
   const RenderComponent = (data: Apresiasi) => {
     if (data.tipeKontenApresiasi == 'video')
       return <video controls src={data.linkKeKonten} />;
@@ -39,7 +30,6 @@ const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
       return <img
         src={data.linkKeKonten}
         id='img-01'
-        // onClick={() => setIsImageOpen(true)}
       />;
   };
 
@@ -81,7 +71,6 @@ const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
       </div>
       {isImageOpen &&
         <div className='opened-img'>
-          {/* // <div className={`${isImageOpen ? 'opened-img' : '*'}`}> */}
           <img src={data[openedImageIdx].linkKeKonten} className='clicked-img' id='clicked-img' />
         </div>
       }

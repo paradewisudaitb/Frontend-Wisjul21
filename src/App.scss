@@ -53,7 +53,7 @@ h6 {
 
 .bg {
   background-image: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg');
-  background-size: cover;
+  background-size: 100% auto;
   background-repeat: repeat;
   position: inherit;
 }
@@ -61,5 +61,7 @@ h6 {
 $navbarheight: 4.4rem;
 
 .app-content {
+  @extend .bg;
+  min-height: 71vh;
   padding-top: $navbarheight;
 }

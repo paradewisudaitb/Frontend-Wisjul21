@@ -8,7 +8,7 @@ import IHMJ from '../../interfaces/IHMJ';
 
 const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
 
-const Gathertown = () => {
+const Gathertown = (): JSX.Element => {
   const [activeButton, setActiveButton] = useState('');
   const [listGathertownHMJ, setListGathertownHMJ] = useState(LIST_HMJ);
 

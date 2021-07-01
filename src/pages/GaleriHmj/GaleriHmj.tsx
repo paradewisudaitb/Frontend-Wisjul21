@@ -6,7 +6,7 @@ import logoImage from '../../images/ukj.png';
 
 import ButtonFakultas from '../../component/ButtonFakultas/ButtonFakultas';
 
-import { Link, Route } from 'wouter';
+import { Link } from 'wouter';
 import slugify from 'slugify';
 
 //Antara bikin data baru atau reuse data dari Gathertown
@@ -15,7 +15,7 @@ import LIST_HMJ from '../../data/hmj.json';
 import { useEffect } from 'react';
 import IHMJ from '../../interfaces/IHMJ';
 
-const GaleriHmj = () => {
+const GaleriHmj = (): JSX.Element => {
   const [activeButton, setActiveButton] = useState('');
   const [listGaleriHMJ, setListGaleriHMJ] = useState(LIST_HMJ);
 

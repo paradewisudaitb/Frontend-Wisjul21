@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useRoute } from 'wouter';
 import { Link } from 'wouter';
 import { DataWisudawan, ListUnit } from './Interface';
@@ -7,14 +7,14 @@ import logo from '../../images/ukj.png';
 import Spark from '../../images/bg/spark_1_bawah_matahari.png';
 import Awan from '../../images/bg/awan_3_01.png';
 
-const WisudawanCard = (data: DataWisudawan) => {
+const WisudawanCard = (data: DataWisudawan): JSX.Element => {
   const [match, params] = useRoute('/hmj/:hmj');
 
   const textLimit = 70;
   const showToolTip = data.judulTA.length > textLimit;
   const shownJudulTA = showToolTip ? data.judulTA.slice(0, textLimit) + '...' : data.judulTA; 
-  const [isToolTipVisible, setToolTipVisible] = useState(false);
-  const [isLoaded, setLoaded] = useState(false);
+  // const [isToolTipVisible, setToolTipVisible] = useState(false);
+  // const [isLoaded, setLoaded] = useState(false);
 
   if (match && params) {
     return (

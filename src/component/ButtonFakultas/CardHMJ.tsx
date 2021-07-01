@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import dummyImage from '../../images/ukj.png';
 import './CardHMJ.scss';
 
@@ -8,7 +7,7 @@ const HMJCardContainer = (props: {
   namaHMJ: string;
   namaFakultas: string;
   link: string;
-}) => {
+}): JSX.Element => {
   return (
     <div className='card-hmj-container'>
       <div className='card-hmj'>

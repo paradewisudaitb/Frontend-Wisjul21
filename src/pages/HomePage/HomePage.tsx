@@ -6,7 +6,7 @@ import { ASSET_URL } from '../../api';
 //Asset
 import Stroke from '../../images/bg/Stroke.png';
 
-const HomePage = () => {
+const HomePage = (): JSX.Element => {
   //Parallax
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset/window.innerHeight);
@@ -82,7 +82,7 @@ const HomePage = () => {
           <h1 className='VISI'>VISI</h1>
           <p className='visi'>“Perayaan Wisuda Juli 2021 sebagai wadah apresiasi purnastudi dengan kolaborasi seluruh elemen yang bergelora dan memberikan inspirasi dalam meraih mimpi.”</p> 
           <h1 className='MISI'>MISI</h1>
-          <p className='misi'>
+          <div className='misi'>
             <ol>
               <li>
                 Menjadikan Perayaan Wisuda Juli 2021 sebagai wadah apresiasi purnastudi dengan melibatkan elemen dalam ITB.
@@ -108,7 +108,7 @@ const HomePage = () => {
                 </ul>
               </li>
             </ol>
-          </p>
+          </div>
         </div>
                
         {/* Buttons */}

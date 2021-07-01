@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Jumbotron, Button, Modal } from 'react-bootstrap';
 import './Majalah.scss';
 import { ASSET_URL } from '../../api';
 
-export default function Majalah() {
+export default function Majalah(): JSX.Element {
   const [index, setIndex] = useState(1);
   const htmlTag = document.querySelector('html');
 
@@ -46,7 +46,7 @@ export default function Majalah() {
   }
 
   return (
-    <div className="outer-heaven bg">
+    <div className="outer-heaven">
       <img src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} className="awan-kiri" />
       <Jumbotron className="hero">
         <div className="container-page">

@@ -6,7 +6,7 @@ import { NavbarRoutes } from '../../routes/routes';
 import { NavLink } from './NavLink';
 
 
-export const NavbarLinks = () => {
+export const NavbarLinks = (): JSX.Element => {
   const contents = NavbarRoutes.map(({ content:route, children_routes, parentPath, isDropdown }) => (
     isDropdown ? (
       <Dropdown key={route.path} className="dropdown-nooutline">

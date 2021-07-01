@@ -6,7 +6,7 @@ type props ={
   nama: string,
 };
 
-const ApresiasiSelection = ({ register, watch, nama }: props) => {
+const ApresiasiSelection = ({ register, watch, nama }: props): JSX.Element => {
 
   const watchTipeApresiasi = watch(nama);
 

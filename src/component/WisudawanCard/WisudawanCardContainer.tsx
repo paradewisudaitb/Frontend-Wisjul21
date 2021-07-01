@@ -3,7 +3,7 @@ import WisudawanCard from './WisudawanCard';
 import './WisudawanCardContainer.scss';
 import { ListUnit, DataWisudawan } from './Interface';
 
-const WisudawanCardContainer = ({ data } : { data: DataWisudawan[]}) => {
+const WisudawanCardContainer = ({ data } : { data: DataWisudawan[]}): JSX.Element => {
 
   return (
     <div className='wisudawan-card-container'>

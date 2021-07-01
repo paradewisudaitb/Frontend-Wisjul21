@@ -133,6 +133,8 @@ $scroll-thumb-color: $red-medium;
       height: 2.5em;
       background-color: $blue-medium;
       transition: 0.3s;
+      border-style: none;
+      padding: 0 1rem;
 
       &:hover {
         background-color: $blue-lighter;

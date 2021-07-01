@@ -15,7 +15,6 @@ const WisudawanCard = (data: IGaleriWisudawan) => {
   const [isLoaded, setLoaded] = useState(false);
 
   const Awan = `${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`;
-  const Spark = `${ASSET_URL}/assets/images/vistock/main/spark%201%20bawah%20matahari.png`;
 
   if (match && params) {
     return (
@@ -27,7 +26,6 @@ const WisudawanCard = (data: IGaleriWisudawan) => {
           onLoad={() => setLoaded(true)}
           className='image'
         >
-          {/* <img src={Spark} alt='' className='spark-bg' /> */}
           <img src={data.pasfoto} className='foto-wisudawan' />
           <img src={Awan} alt='' className='awan-bg' />
         </div>

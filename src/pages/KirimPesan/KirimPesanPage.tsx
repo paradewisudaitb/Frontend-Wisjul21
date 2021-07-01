@@ -125,7 +125,7 @@ export const KirimPesanPage = () => {
                   </div>
                   <div className="mb-2 float-end">
                     <label className="message-char-counter small m-2" id='message-char-counter'>0/{maxMessageLength}</label>
-                    <input type="submit" value="Submit" className='btn btn-primary submit-button' />
+                    <input type="submit" value="Submit" className='submit-button' />
                   </div>
                 </form>
               </div>

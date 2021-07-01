@@ -3,19 +3,24 @@
 
 .card-container {
   display: flex;
-  margin: 2rem;
   flex-direction: column;
+  align-items: center;
+
   text-align: center;
   text-decoration: none;
+
   width: 25vw;
   height: auto;
+  margin: 2rem;
   padding: 1vh 1vw;
+
   border-radius: 1rem;
   background-color: rgba($blue-darker, 80%);
+
   transition: transform 0.5s;
 
   @include respond-to('phone') {
-    width: 40vw;
+    width: 80vw;
     margin: 0 2vw;
     margin-bottom: 2rem;
     height: auto;
@@ -30,29 +35,24 @@
   }
 
   h3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1.5vh;
+    margin-top: 2rem;
     margin-bottom: 0;
-    font-size: 2vw;
-    height: 10vh;
+    text-align: center;
+    font-size: 2rem;
 
     @include respond-to('phone') {
-      height: 5vh;
       margin-top: 1vh;
-      font-size: 4vw;
+      font-size: 1.75rem;
     }
   }
 
   h4 {
-    margin-top: 0.1rem;
-    font-size: 1.5vw;
-    margin-bottom: 1.5vw;
+    margin-top: 0;
+    font-size: 1.5rem;
     z-index: 1;
 
     @include respond-to('phone') {
-      font-size: 2.5vw;
+      font-size: 1.25rem;
     }
   }
 
@@ -60,7 +60,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0.7rem 0.7rem;
+    margin: 0.7rem auto;
     position: relative;
     height: 15vw;
     width: 15vw;
@@ -75,26 +75,22 @@
     .foto-wisudawan {
       height: 100%;
       width: 100%;
-      left: 20%;
       background-color: #C4C4C4;
       position: relative;
       object-fit: cover;
       border-radius: 50%;
-
-      @include respond-to('phone') {
-        left: 12%;
-      }
     }
 
     .awan-bg {
       position: absolute;
       width: 18vw;
       bottom: -1rem;
-      left: -1rem;
+      left: -5rem;
 
       @include respond-to('phone') {
         width: 30vw;
-        bottom: -0.5rem;
+        bottom: -.5rem;
+        left: -2rem;
       }
     }
   }
@@ -118,11 +114,12 @@
     align-items: center;
     justify-content: center;
     color: $yellow-darker;
-    height: 10vh;
+    height: 14vh;
 
     @include respond-to('phone') {
-      height: 5vh;
+      height: 7vh;
       margin-bottom: 2rem;
+      font-size: 14px;
     }
   }
 }

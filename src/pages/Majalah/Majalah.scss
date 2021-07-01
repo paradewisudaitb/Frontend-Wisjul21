@@ -129,19 +129,27 @@
 }
 
 .previous {
+  background-color: $blue-darker !important;
+  border-style: none;
   i {
     margin-right: 0.3rem;
+    color: $yellow-lighter !important;
   }
 }
 
 .next {
+  background-color: $blue-darker !important;
+  border-style: none;
   i {
     margin-left: 0.3rem;
+    color: $yellow-lighter !important;
   }
 }
 
 .dwn-btn {
-  background-color: $orange-lighter !important;
+  background-color: $blue-darker !important;
+  border-style: none;
+  color: $yellow-lighter !important;
 }
 
 iframe::-webkit-scrollbar {

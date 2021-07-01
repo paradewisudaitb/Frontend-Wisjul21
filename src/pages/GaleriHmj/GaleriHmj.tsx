@@ -42,7 +42,9 @@ const GaleriHmj = () => {
       )}`}>
         <img className='spark' src={`${ASSET_URL}/assets/images/vistock/main/spark%201%20kanan%20atas-01.png`} />
         <div className='himpunan-wrapper'>
-          <img src={hmj.linkFoto} className='logo-hmj' alt={`logo ${hmj.namaHimpunan}`} />
+          <div className='container-logo'>
+            <img src={hmj.linkFoto} className='logo-hmj' alt={`logo ${hmj.namaHimpunan}`} />
+          </div>
           <div className='himpunan-text'>
             <h2 className='title'>{hmj.singkatanHimpunan}</h2>
           </div>

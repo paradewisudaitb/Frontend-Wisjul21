@@ -1,0 +1,19 @@
+@import '../../styles/colorpalette.scss';
+
+.link-hmj {
+  text-align: start;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  margin: 0;
+  padding: 0.5em;
+  background-color: rgba($red-medium, 0.8);
+  // ini pake rgba supaya bisa opacity tanpa ngaruh ke child
+  box-shadow: 0 2px 5px black;
+
+  a {
+    text-decoration: none;
+    color: $yellow-lighter;
+  }
+}

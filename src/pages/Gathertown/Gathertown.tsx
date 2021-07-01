@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import HMJCardContainer from '../../component/ButtonFakultas/CardHMJ';
 import ButtonFakultas from '../../component/ButtonFakultas/ButtonFakultas';
+
 import './Gathertown.scss';
 import LIST_FAKULTAS from '../../data/fakultas.json';
 import LIST_HMJ from '../../data/hmj.json';

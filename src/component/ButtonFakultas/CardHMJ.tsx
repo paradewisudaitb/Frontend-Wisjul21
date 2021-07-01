@@ -1,4 +1,6 @@
 import './CardHMJ.scss';
+import LinkGathertown from '../LinkGathertown/LinkGathertown';
+import { useState, useEffect } from 'react';
 
 const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
 
@@ -8,6 +10,19 @@ const HMJCardContainer = (props: {
   linkGathertown: string;
   linkFoto: string;
 }) => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakpoint = 468;
+
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleWindowResize);
+
+    // Return a function from the effect that removes the event listener
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
+
+  const isMobile = width <= breakpoint;
+
   return (
     <div className='card-hmj-container'>
       <div className='card-hmj'>
@@ -21,12 +36,17 @@ const HMJCardContainer = (props: {
         </div>
         <div className='info-hmj'>
           <h2>{props.namaHMJ}</h2>
-          <div className='link-hmj'>
-            <a href={'https://' + props.linkGathertown} target='_blank'>
-              {props.linkGathertown}
-            </a>
-          </div>
+          {!isMobile ? (
+            <LinkGathertown linkGathertown={props.linkGathertown} />
+          ) : (
+            ''
+          )}
         </div>
+        {isMobile ? (
+          <LinkGathertown linkGathertown={props.linkGathertown} />
+        ) : (
+          ''
+        )}
       </div>
       <img
         src={`${ASSET_URL}/assets/images/vistock/main/spark%201%20kanan%20atas-01.png`}

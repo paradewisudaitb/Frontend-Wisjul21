@@ -8,7 +8,7 @@ function App(): JSX.Element {
   return (
     <div className="App">
       <Route path=''><HomePage /></Route>
-      <Route path='/form'><Form /></Route>
+      // <Route path='/form'><Form /></Route>
     </div>
   );
 }

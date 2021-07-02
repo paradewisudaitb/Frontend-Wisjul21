@@ -2,7 +2,7 @@ import { useEffect  } from 'react';
 import { useLocation } from 'wouter';
 
 export const ScrollToTop = () => {
-  const [pathname, setPath] = useLocation();
+  const [pathname, ] = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import WisudawanCardContainer from './WisudawanCardContainer';
-import { DataWisudawan, ListHimpunan } from './Interface';
+import { DataWisudawan } from './Interface';
 import './FilterWisudawan.scss';
 
-const FilterWisudawan = ({ data } : { data: DataWisudawan[] }) => {
+const FilterWisudawan = ({ data } : { data: DataWisudawan[] }): JSX.Element => {
   const [wisudawan, setWisudawan] = useState(data);
   const [text, setText] = useState('');
 

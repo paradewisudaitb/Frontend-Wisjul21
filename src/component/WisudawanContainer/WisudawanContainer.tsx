@@ -3,7 +3,7 @@ import './WisudawanContainer.scss';
 import IDataWisudawan from '../../interfaces/IDataWisudawan';
 import { ASSET_URL } from '../../api';
 
-const WisudawanContainer = (data: IDataWisudawan) => {
+const WisudawanContainer = (data: IDataWisudawan): JSX.Element => {
   const bulu = `${ASSET_URL}/assets/images/vistock/main/bulu.png`;
   const spark = `${ASSET_URL}/assets/images/vistock/main/spark%201%20bawah%20matahari.png`;
   return (

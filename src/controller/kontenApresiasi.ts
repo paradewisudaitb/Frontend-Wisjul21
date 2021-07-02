@@ -18,7 +18,7 @@ export const uploader = async (namaHimpunan: string, tipeApresiasi: string, kont
   const res =
     await (
       await fetch(`${API_URL}/kontenApresiasi/upload`, req)
-        .catch(err => {
+        .catch(_ => {
           throw new Error('Gagal mengupload konten apresiasi');
         })
     ).json();

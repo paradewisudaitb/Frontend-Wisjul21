@@ -2,7 +2,7 @@
 @import '../../App.scss';
 
 .homepage {
-  background-image: url('../../images/bg/Filter.png'), radial-gradient(#532F65, #201125, #201125);
+  // background-image: url('../../images/bg/Filter.png'), radial-gradient(#532F65, #201125, #201125);
   background-blend-mode: overlay;
   margin-top: -$navbarheight;
   overflow-x: hidden;
@@ -33,7 +33,7 @@
     top: 0;
     height: 100vh;
     width: 100%;
-    justify-content: start;
+    justify-content: flex-start;
     overflow-x: hidden;
   }
   .cloud {
@@ -45,10 +45,10 @@
     filter: drop-shadow(10px 10px 10px #201125);
   }
   @mixin cloud-gacha() {
-    width: #{random(250)/100+20}vw;
-    top: percentage((random(70) + 10) / 100);
+    width: #{math.div(random(250), 100)+20}vw;
+    top: percentage(math.div((random(70) + 10), 100));
     animation-duration: #{random(60)+60}s;
-    opacity: (random(30)+50)/100;
+    opacity: math.div((random(30)+50), 100);
     z-index: random(15);
   }
   //1st cloud immediately shown

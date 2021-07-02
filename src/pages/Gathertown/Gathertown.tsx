@@ -9,7 +9,7 @@ import IHMJ from '../../interfaces/IHMJ';
 
 const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
 
-const Gathertown = () => {
+const Gathertown = (): JSX.Element => {
   const [activeButton, setActiveButton] = useState('');
   const hmjNoTPB = LIST_HMJ.filter(hmj => !hmj.namaHimpunan.includes('TPB'));
   const [listGathertownHMJ, setListGathertownHMJ] = useState(hmjNoTPB);

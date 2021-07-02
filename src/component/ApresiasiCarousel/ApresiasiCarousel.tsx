@@ -4,7 +4,7 @@ import { Apresiasi } from '../WisudawanCard/Interface';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ApresiasiCarousel.scss';
 
-const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
+const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }): JSX.Element => {
 
   const RenderComponent = (data: Apresiasi) => {
     if (data.tipeKontenApresiasi === 'video') 

@@ -22,7 +22,7 @@ const schema = yup.object().shape({
 });
 
 
-export default function Form() {
+export default function Form(): JSX.Element {
   const { register, watch, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });

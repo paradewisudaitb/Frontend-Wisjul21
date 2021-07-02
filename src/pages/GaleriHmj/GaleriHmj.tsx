@@ -13,7 +13,7 @@ import LIST_HMJ from '../../data/hmj.json';
 import { useEffect } from 'react';
 import IHMJ from '../../interfaces/IHMJ';
 
-const GaleriHmj = () => {
+const GaleriHmj = (): JSX.Element => {
   const [activeButton, setActiveButton] = useState('');
   const [listGaleriHMJ, setListGaleriHMJ] = useState(LIST_HMJ);
 
@@ -70,6 +70,7 @@ const GaleriHmj = () => {
       <div className='fakultas-container'>
         {listButtonFakultas}
       </div>
+      
       <div className='himpunan-container'>
         {listCardHMJ}
       </div>

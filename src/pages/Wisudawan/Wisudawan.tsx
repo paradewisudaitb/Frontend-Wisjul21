@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useRoute } from 'wouter';
-import  { Loading } from '../Loading/Loading';
+import  { Loading } from '../../component/Loading/Loading';
 import './Wisudawan.scss';
 import PesanAnonim from '../../component/PesanAnonim/PesanAnonim';
 import WisudawanContainer from '../../component/WisudawanContainer/WisudawanContainer';

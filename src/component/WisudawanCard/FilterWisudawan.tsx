@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import WisudawanCardContainer from './WisudawanCardContainer';
-import { DataWisudawan, ListHimpunan } from './Interface';
 
 import './FilterWisudawan.scss';
 import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';

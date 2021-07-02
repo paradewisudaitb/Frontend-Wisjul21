@@ -19,6 +19,10 @@
 
   transition: transform 0.5s;
 
+  @include respond-to('tablet') {
+    width: 38vw;
+  }
+
   @include respond-to('phone') {
     width: 80vw;
     margin: 0 2vw;
@@ -35,13 +39,22 @@
   }
 
   h3 {
-    margin-top: 2rem;
+    display: flex;
+    margin-top: 1vh;
     margin-bottom: 0;
     text-align: center;
     font-size: 2rem;
+    height: 8rem;
+    align-items: center;
+
+    @include respond-to('tablet') {
+      height: 6rem;
+      margin-top: 1.5vh;
+    }
 
     @include respond-to('phone') {
-      margin-top: 1vh;
+      height: auto;
+      margin-bottom: 1rem;
       font-size: 1.75rem;
     }
   }
@@ -51,7 +64,8 @@
     font-size: 1.5rem;
     z-index: 1;
 
-    @include respond-to('phone') {
+    @include respond-to('tablet') {
+      margin-top: 1rem;
       font-size: 1.25rem;
     }
   }
@@ -65,11 +79,16 @@
     height: 15vw;
     width: 15vw;
 
+    @include respond-to('tablet') {
+      height: 20vw;
+      width: 20vw;
+    }
+
     @include respond-to('phone') {
       margin: 1rem;
       margin-top: 1.5vh;
-      height: 25vw;
-      width: 25vw;
+      height: 40vw;
+      width: 40vw;
     }
 
     .foto-wisudawan {
@@ -87,10 +106,14 @@
       bottom: -1rem;
       left: -5rem;
 
+      @include respond-to('tablet') {
+        width: 25vw;
+        left: -4rem;
+      }
+
       @include respond-to('phone') {
-        width: 30vw;
-        bottom: -.5rem;
-        left: -2rem;
+        width: 50vw;
+        left: -4rem;
       }
     }
   }
@@ -104,7 +127,6 @@
     @include respond-to('phone') {
       font-size: 2vw;
       margin: 2vh 0;
-      margin-top: 0;
       padding: 0 1vw;
     }
   }
@@ -116,10 +138,14 @@
     color: $yellow-darker;
     height: 14vh;
 
+    @include respond-to('tablet') {
+      font-size: 15px;
+    }
+
     @include respond-to('phone') {
       height: 7vh;
       margin-bottom: 2rem;
-      font-size: 14px;
+      font-size: 18px;
     }
   }
 }

@@ -23,12 +23,12 @@ $scroll-thumb-color: $red-medium;
     position: absolute;
     max-width: 30vw;
     left: 80vw;
-    top: 20vh;
+    top: 30vh;
     z-index: 0;
     @include respond-to('phone') {
-      width: 90vw;
-      top: 20vh;
-      left: 77vw;
+      max-width: 60vw;
+      top: 25vh;
+      left: 70vw;
     }
   }
 

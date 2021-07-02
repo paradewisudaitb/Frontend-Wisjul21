@@ -4,14 +4,14 @@ import { ASSET_URL } from '../../api';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ApresiasiCarousel.scss';
+import IKontenApresiasi from '../../interfaces/IKontenApresiasi';
 
-
-const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
+const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }) => {
   const [slide, setSlide] = useState(0);
   const [isImageOpen, setIsImageOpen] = useState(false);
   const [openedImageIdx, setOpenedImageIdx] = useState(0);
   const outsideElement = document.getElementById('img-01')!;
-  const judul = data[slide].tipeKontenApresiasi;
+  const judul = data[slide].tipeKonten;
 
   document.addEventListener('mousedown', (e) => {
     if (!(e.target == outsideElement)) {
@@ -19,24 +19,24 @@ const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
     }
   });
 
-  const RenderComponent = (data: Apresiasi) => {
-    if (data.tipeKontenApresiasi == 'video')
-      return <video controls src={data.linkKeKonten} />;
-    else if (data.tipeKontenApresiasi == 'audio')
-      return <audio controls src={data.linkKeKonten} />;
-    else if (data.tipeKontenApresiasi == 'poster'
-             || data.tipeKontenApresiasi == 'puisi'
-             || data.tipeKontenApresiasi == 'lainnya')
+  const RenderComponent = (data: IKontenApresiasi) => {
+    if (data.tipeKonten == 'video')
+      return <video controls src={data.linkKonten} />;
+    else if (data.tipeKonten == 'lagu')
+      return <audio controls src={data.linkKonten} />;
+    else if (data.tipeKonten == 'poster'
+             || data.tipeKonten  == 'puisi'
+             || data.tipeKonten == 'other')
       return <img
-        src={data.linkKeKonten}
+        src={data.linkKonten}
         id='img-01'
       />;
   };
 
   const onClickCarousel = (i: number) => {
-    if (data[i].tipeKontenApresiasi == 'poster'
-      || data[i].tipeKontenApresiasi == 'puisi'
-      || data[i].tipeKontenApresiasi == 'lainnya'
+    if (data[i].tipeKonten == 'poster'
+      || data[i].tipeKonten == 'puisi'
+      || data[i].tipeKonten == 'other'
     ) {
       setIsImageOpen(true);
       setOpenedImageIdx(i);
@@ -60,7 +60,7 @@ const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
           onChange={(e) => setSlide(e)}
           onClickItem={(e) => onClickCarousel(e)}
         >
-          {data.map((row: Apresiasi, i: number) => (
+          {data.map((row: IKontenApresiasi, i: number) => (
             <div
               key={i}
             >
@@ -71,7 +71,7 @@ const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }) => {
       </div>
       {isImageOpen &&
         <div className='opened-img'>
-          <img src={data[openedImageIdx].linkKeKonten} className='clicked-img' id='clicked-img' />
+          <img src={data[openedImageIdx].linkKonten} className='clicked-img' id='clicked-img' />
         </div>
       }
     </div>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useRoute } from 'wouter';
 import { Link } from 'wouter';
-import { DataWisudawan, ListUnit } from './Interface';
 import './WisudawanCard.scss';
 import { ASSET_URL } from '../../api';
 

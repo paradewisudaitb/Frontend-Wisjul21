@@ -1,39 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useRoute } from 'wouter';
-import WisudawanCardContainer from '../../component/WisudawanCard/WisudawanCardContainer';
 import FilterWisudawan from '../../component/WisudawanCard/FilterWisudawan';
-import Logo from '../../images/ukj.png';
 import ApresiasiCarousel from '../../component/ApresiasiCarousel/ApresiasiCarousel';
-import { ListHimpunan } from '../../component/WisudawanCard/Interface';
 
 import { getByHimpunan } from '../../controller/wisudawan';
+import { getKontenApresiasi } from '../../controller/kontenApresiasi';
 
 import './GaleriApresiasi.scss';
 import { GALERI_APRESIASI_PAGE } from '../../routes/routes';
 import { Loading } from '../../component/Loading/Loading';
 import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
+import IKontenApresiasi from '../../interfaces/IKontenApresiasi';
 import LIST_HMJ from '../../data/hmj.json';
-
-
-const dataApresiasi = {
-  'himpunan': 'hmif',
-  'apresiasi':
-  [
-    {
-      'tipeKontenApresiasi': 'poster',
-      'linkKeKonten': 'https://townsquare.media/site/442/files/2013/05/TheFW_Up.jpg?w=630&h=932&q=75',
-    },
-    {
-      'tipeKontenApresiasi': 'poster',
-      'linkKeKonten': 'https://image.freepik.com/free-vector/space-vintage-colorful-horizontal-poster_225004-2209.jpg'
-    },{
-      'tipeKontenApresiasi': 'video',
-      'linkKeKonten': 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com/kontenApresiasi/HMO%20TRITON_Video.mp4'
-    },{
-      'tipeKontenApresiasi': 'audio',
-      'linkKeKonten': 'https://cdn.piapro.jp/mp3_a/s9/s9ihs6vgwgu9uv4u_20210306210143_audition.mp3'
-    }]
-};
 
 const removeDash = (text: string) => {
   const tmp = text.split('-');
@@ -61,14 +39,16 @@ const GaleriApresiasi = () => {
 
     const fotoHMJ = LIST_HMJ.filter(hmj => {
       return (hmj.namaHimpunan == namaHimpunan);
-    })[0].linkFoto;
+    })[0]?.linkFoto || 'test' ;
 
     const defaultWisudawan: IGaleriWisudawan[] = [];
+    const defaultKontenApresiasi: IKontenApresiasi[] = [];
 
     const [loading, setLoading] = useState(true);
     const [wisudawans, setWisudawans] = useState(
       <FilterWisudawan data={defaultWisudawan} />
     );
+    const [kontenApresiasi, setKontenApresiasi] = useState(defaultKontenApresiasi);
 
     useEffect(() => {
       getByHimpunan(namaHimpunan.toLowerCase())
@@ -79,6 +59,15 @@ const GaleriApresiasi = () => {
         .catch(_ =>
           setLoading(false)
         );
+      
+      getKontenApresiasi(namaHimpunan.toLowerCase())
+        .then(dataApresiasi => {
+          setKontenApresiasi(dataApresiasi);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      
     }, []);
 
     return (
@@ -88,14 +77,15 @@ const GaleriApresiasi = () => {
           <img src={fotoHMJ} className='himpunan-logo'/>
         </div>
   
+        {(kontenApresiasi.length != 0) &&
         <div className='apresiasi-wisudawan my-5'>
           <h2>Apresiasi HMJ</h2>
-          <ApresiasiCarousel data={dataApresiasi.apresiasi} />
+          <ApresiasiCarousel data={kontenApresiasi} />
         </div>
+        }
   
         <div className='daftar-wisudawan'>
-          {!loading && wisudawans}
-          {loading && <Loading />}
+          {loading ? <Loading /> : wisudawans}
         </div>
   
       </div>

@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import './GaleriHmj.scss';
 import { ASSET_URL } from '../../api';
 
-import logoImage from '../../images/ukj.png';
-
 import ButtonFakultas from '../../component/ButtonFakultas/ButtonFakultas';
 
 import { Link } from 'wouter';
@@ -35,21 +33,24 @@ const GaleriHmj = (): JSX.Element => {
     </ButtonFakultas>
   ));
 
-  const listCardHMJ = listGaleriHMJ.map((hmj) => (
-    <Link className='himpunan-card' key={hmj.namaHimpunan} href={`/hmj/${slugify(
-      hmj.namaHimpunan, {
-        lower:true,
-        remove:/["']/g}
-    )}`}>
-      <img className='spark' src={`${ASSET_URL}/assets/images/vistock/main/spark%201%20kanan%20atas-01.png`} />
-      <div className='himpunan-wrapper'>
-        <img src={logoImage} className='logo-hmj' />
-        <div className='himpunan-text'>
-          <h2 className='title'>{hmj.namaHimpunan}</h2>
+  const listCardHMJ = listGaleriHMJ
+    .map((hmj) => (
+      <Link className='himpunan-card' key={hmj.namaHimpunan} href={`/hmj/${slugify(
+        hmj.namaHimpunan, {
+          lower:true,
+          remove:/["']/g}
+      )}`}>
+        <img className='spark' src={`${ASSET_URL}/assets/images/vistock/main/spark%201%20kanan%20atas-01.png`} />
+        <div className='himpunan-wrapper'>
+          <div className='container-logo'>
+            <img src={hmj.linkFoto} className='logo-hmj' alt={`logo ${hmj.namaHimpunan}`} />
+          </div>
+          <div className='himpunan-text'>
+            <h2 className='title'>{hmj.singkatanHimpunan}</h2>
+          </div>
         </div>
-      </div>
-    </Link>
-  ));
+      </Link>
+    ));
 
   useEffect(() => {
     const defaultFakultas = 'FITB';
@@ -69,6 +70,7 @@ const GaleriHmj = (): JSX.Element => {
       <div className='fakultas-container'>
         {listButtonFakultas}
       </div>
+      
       <div className='himpunan-container'>
         {listCardHMJ}
       </div>

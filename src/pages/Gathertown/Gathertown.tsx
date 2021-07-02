@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import HMJCardContainer from '../../component/ButtonFakultas/CardHMJ';
+import HMJCardContainer from '../../component/GathertownCard/GathertownCard';
 import ButtonFakultas from '../../component/ButtonFakultas/ButtonFakultas';
+
 import './Gathertown.scss';
 import LIST_FAKULTAS from '../../data/fakultas.json';
 import LIST_HMJ from '../../data/hmj.json';
@@ -10,37 +11,44 @@ const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
 
 const Gathertown = (): JSX.Element => {
   const [activeButton, setActiveButton] = useState('');
-  const [listGathertownHMJ, setListGathertownHMJ] = useState(LIST_HMJ);
+  const hmjNoTPB = LIST_HMJ.filter(hmj => !hmj.namaHimpunan.includes('TPB'));
+  const [listGathertownHMJ, setListGathertownHMJ] = useState(hmjNoTPB);
 
-
-  const buttonFakultasClickHandler = (listHMJ: IHMJ[], namaFakultas: string) => {
-    setListGathertownHMJ(listHMJ);
+  const buttonFakultasClickHandler = (
+    listHMJ: IHMJ[],
+    namaFakultas: string
+  ) => {
+    setListGathertownHMJ(listHMJ.filter(hmj => !hmj.namaHimpunan.includes('TPB')));
     setActiveButton(namaFakultas);
   };
 
   useEffect(() => {
     const defaultFakultas = 'FITB';
-    setListGathertownHMJ(LIST_HMJ.filter(him => him.fakultas == defaultFakultas ));
+    setListGathertownHMJ(
+      hmjNoTPB.filter(him => him.fakultas == defaultFakultas));
     setActiveButton(defaultFakultas);
   }, []);
 
-  const listButtonFakultas = LIST_FAKULTAS.map((fakultas) => (
-    <ButtonFakultas
-      onButtonClick={buttonFakultasClickHandler}
-      className={activeButton == fakultas ? 'active' : ''}
-      value={fakultas}
-      key={fakultas}
-    >
-      <p>{fakultas}</p>
-    </ButtonFakultas>
-  ));
+  const listButtonFakultas = LIST_FAKULTAS
+    .filter(fak => fak != 'ETC')
+    .map((fakultas) => (
+      <ButtonFakultas
+        onButtonClick={buttonFakultasClickHandler}
+        className={activeButton == fakultas ? 'active' : ''}
+        value={fakultas}
+        key={fakultas}
+      >
+        <p>{fakultas}</p>
+      </ButtonFakultas>
+    ));
 
   const listDisplayedHMJ = listGathertownHMJ.map((hmj) => (
-    <div key={hmj.namaHimpunan}>
+    <div key={hmj.singkatanHimpunan}>
       <HMJCardContainer
-        namaHMJ={hmj.namaHimpunan}
+        namaHMJ={hmj.singkatanHimpunan}
         namaFakultas={hmj.fakultas}
-        link={hmj.linkGatherTown}
+        linkGathertown={hmj.linkGatherTown}
+        linkFoto={hmj.linkFoto}
       />
     </div>
   ));

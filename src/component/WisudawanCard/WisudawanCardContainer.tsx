@@ -1,7 +1,6 @@
 import React from 'react';
 import WisudawanCard from './WisudawanCard';
 import './WisudawanCardContainer.scss';
-import { ListUnit, DataWisudawan } from './Interface';
 
 import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
 

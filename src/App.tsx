@@ -8,7 +8,7 @@ import { Navbar } from './component/NavbarFooter/Navbar';
 import { AllRoutes, HOME_PAGE, COMINGSOON_PAGE } from './routes/routes';
 import { Loading } from './component/Loading/Loading';
 
-import { ScrollToTop } from './routes/ScrollToTop/ScrollToTop';
+import { ScrollToTop } from './component/ScrollToTop/ScrollToTop';
 
 function App(): JSX.Element {
   const [isHomePage, _] = useRoute('/');
@@ -16,24 +16,24 @@ function App(): JSX.Element {
   return (
     <div className='App'>
       <Suspense fallback={<Loading />}>
-        <ScrollToTop />
+        <ScrollToTop>
 
-        { isHomePage ? <Navbar homePage={true} /> : <Navbar />}
-        {/* <Navbar /> */}
-        <div className="app-content">
+          { isHomePage ? <Navbar homePage={true} /> : <Navbar />}
+          {/* <Navbar /> */}
+          <div className="app-content">
 
-          <Switch>
-            { AllRoutes.map(({ label, path, component: Component}) => (
-              <Route
-                key={label}
-                path={path}
-                component={Component}
-              />
-            ))}
-          </Switch>
-          {/* <Redirect to={ HOME_PAGE.path }/> */}
-
-        </div>
+            <Switch>
+              { AllRoutes.map(({ label, path, component: Component}) => (
+                <Route
+                  key={label}
+                  path={path}
+                  component={Component}
+                />
+              ))}
+            </Switch>
+            {/* <Redirect to={ HOME_PAGE.path }/> */}
+          </div>
+        </ScrollToTop>
         <Footer />
       </Suspense>
     </div>

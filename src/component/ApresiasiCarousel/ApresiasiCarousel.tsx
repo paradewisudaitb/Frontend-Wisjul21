@@ -1,38 +1,80 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ASSET_URL } from '../../api';
 import { Carousel } from 'react-responsive-carousel';
-import { Apresiasi } from '../WisudawanCard/Interface';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ApresiasiCarousel.scss';
+import IKontenApresiasi from '../../interfaces/IKontenApresiasi';
 
-const ApresiasiCarousel = ({ data } : { data: Apresiasi[] }): JSX.Element => {
+const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element => {
+  const [slide, setSlide] = useState(0);
+  const [isImageOpen, setIsImageOpen] = useState(false);
+  const [openedImageIdx, setOpenedImageIdx] = useState(0);
+  const outsideElement = document.getElementById('img-01')!;
+  const judul = data[slide].tipeKonten;
 
-  const RenderComponent = (data: Apresiasi) => {
-    if (data.tipeKontenApresiasi === 'video') 
-      return <video controls src={data.linkKeKonten} />;
-    else if (data.tipeKontenApresiasi === 'audio') 
-      return <audio controls src={data.linkKeKonten} />;
-    else if (data.tipeKontenApresiasi === 'poster')
-      return <img src={data.linkKeKonten} />;
+  document.addEventListener('mousedown', (e) => {
+    if (!(e.target == outsideElement)) {
+      setIsImageOpen(false);
+    }
+  });
+
+  const RenderComponent = (data: IKontenApresiasi) => {
+    if (data.tipeKonten == 'video')
+      return <video controls src={data.linkKonten} />;
+    else if (data.tipeKonten == 'lagu')
+      return <audio controls src={data.linkKonten} />;
+    else if (data.tipeKonten == 'poster'
+             || data.tipeKonten  == 'puisi'
+             || data.tipeKonten == 'other')
+      return <img
+        src={data.linkKonten}
+        id='img-01'
+      />;
+  };
+
+  const onClickCarousel = (i: number) => {
+    if (data[i].tipeKonten == 'poster'
+      || data[i].tipeKonten == 'puisi'
+      || data[i].tipeKonten == 'other'
+    ) {
+      setIsImageOpen(true);
+      setOpenedImageIdx(i);
+    }
   };
 
   return (
-    <div className='carousel'>
-      <Carousel 
-        autoPlay 
-        infiniteLoop 
-        showThumbs={false} 
-        showStatus={false} 
-        showArrows={false}
-      >
-        {data.map((row: Apresiasi, i: number) => (
-          <div
-            key={i}
-          >
-            {RenderComponent(row)}
-          </div>
-        ))}
-      </Carousel>
+    <div className='carousel-container'>
+      <h3>
+        {judul.charAt(0).toUpperCase() + judul.slice(1)}
+      </h3>
+      <div className='carousel'>
+        <Carousel
+          // autoPlay
+          infiniteLoop
+          showThumbs={false}
+          showStatus={false}
+          showArrows={false}
+          // width={'75vw'}
+          // dynamicHeight={true}
+          onChange={(e) => setSlide(e)}
+          onClickItem={(e) => onClickCarousel(e)}
+        >
+          {data.map((row: IKontenApresiasi, i: number) => (
+            <div
+              key={i}
+            >
+              {RenderComponent(row)}
+            </div>
+          ))}
+        </Carousel>
+      </div>
+      {isImageOpen &&
+        <div className='opened-img'>
+          <img src={data[openedImageIdx].linkKonten} className='clicked-img' id='clicked-img' />
+        </div>
+      }
     </div>
+
   );
 };
 

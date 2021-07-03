@@ -58,7 +58,7 @@ body {
     display: flex;
     justify-content: center;
     .title {
-      font-size: 3.5rem;
+      // font-size: 3.5rem;
       margin: 1em;
       z-index: 1;
       @include respond-to("phone") {

@@ -5,13 +5,15 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 0 8vw;
+  margin: 0 9vw;
   box-sizing: border-box;
   width: 100vw;
-}
 
-@include respond-to('phone') {
-  .wisudawan-card-container {
+  @include respond-to('tablet') {
+    margin: 0 2vw;
+  }
+
+  @include respond-to('phone') {
     margin: 1vh 0.3vw;
   }
 }

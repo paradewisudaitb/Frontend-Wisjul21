@@ -18,17 +18,25 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
   });
 
   const RenderComponent = (data: IKontenApresiasi) => {
-    if (data.tipeKonten == 'video')
-      return <video controls src={data.linkKonten} />;
-    else if (data.tipeKonten == 'lagu')
-      return <audio controls src={data.linkKonten} />;
-    else if (data.tipeKonten == 'poster'
-             || data.tipeKonten  == 'puisi'
-             || data.tipeKonten == 'lainnya')
-      return <img
-        src={data.linkKonten}
-        id='img-01'
-      />;
+    switch (data.tipeKonten) {
+      case 'video':
+        return <video controls src={data.linkKonten} />;
+      case 'musik':
+        return <audio controls src={data.linkKonten} />;
+      case 'website':
+        return <a href={data.linkKonten}></a>;
+      default:
+        return <img
+          src={data.linkKonten}
+          id='img-01'
+        />;
+    }
+    // if (data.tipeKonten == 'video')
+    
+    // else if (data.tipeKonten == 'musik')
+    // else if (data.tipeKonten == 'poster'
+    //          || data.tipeKonten  == 'puisi'
+    //          || data.tipeKonten == 'lainnya')
   };
 
   const onClickCarousel = (i: number) => {

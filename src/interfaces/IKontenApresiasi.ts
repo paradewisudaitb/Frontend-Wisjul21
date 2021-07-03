@@ -2,7 +2,7 @@ type tipeApresiasi =
   |'poster'
   |'website'
   |'video'
-  |'lagu'
+  |'musik'
   |'puisi'
   |'lainnya';
 

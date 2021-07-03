@@ -13,13 +13,18 @@ import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
 import IKontenApresiasi from '../../interfaces/IKontenApresiasi';
 import LIST_HMJ from '../../data/hmj.json';
 
-const removeDash = (text: string) => {
+const slugToNamaHimpunanITB = (text: string) => {
   const tmp = text.split('-');
   let result = '';
 
   if (tmp[0] == 'tpb') {
     tmp.forEach(word => {
-      result += word.toUpperCase() + ' ';
+      result += word.toUpperCase();
+      if (word == 'sith') {
+        result += '-';
+      } else {
+        result += ' ';
+      }
     });
   } else {
     tmp.forEach(word => {
@@ -35,12 +40,12 @@ const GaleriApresiasi = (): JSX.Element => {
   const [match, params] = useRoute(GALERI_APRESIASI_PAGE.path);
 
   if (match && params) {
-    const namaHimpunan = removeDash(params.hmj);
+    const namaHimpunan = slugToNamaHimpunanITB(params.hmj);
 
     const fotoHMJ = LIST_HMJ.filter(hmj => {
       return (hmj.namaHimpunan == namaHimpunan);
     })[0]?.linkFoto || 'test' ;
-
+    
     const defaultWisudawan: IGaleriWisudawan[] = [];
     const defaultKontenApresiasi: IKontenApresiasi[] = [];
 

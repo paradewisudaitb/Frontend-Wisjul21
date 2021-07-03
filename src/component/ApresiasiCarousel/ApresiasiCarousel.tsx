@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ASSET_URL } from '../../api';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ApresiasiCarousel.scss';
@@ -25,7 +24,7 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }) => {
       return <audio controls src={data.linkKonten} />;
     else if (data.tipeKonten == 'poster'
              || data.tipeKonten  == 'puisi'
-             || data.tipeKonten == 'other')
+             || data.tipeKonten == 'lainnya')
       return <img
         src={data.linkKonten}
         id='img-01'
@@ -35,7 +34,7 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }) => {
   const onClickCarousel = (i: number) => {
     if (data[i].tipeKonten == 'poster'
       || data[i].tipeKonten == 'puisi'
-      || data[i].tipeKonten == 'other'
+      || data[i].tipeKonten == 'lainnya'
     ) {
       setIsImageOpen(true);
       setOpenedImageIdx(i);

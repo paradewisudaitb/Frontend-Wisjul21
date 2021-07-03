@@ -5,7 +5,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ApresiasiCarousel.scss';
 import IKontenApresiasi from '../../interfaces/IKontenApresiasi';
 
-const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }) => {
+const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element => {
   const [slide, setSlide] = useState(0);
   const [isImageOpen, setIsImageOpen] = useState(false);
   const [openedImageIdx, setOpenedImageIdx] = useState(0);

@@ -3,11 +3,12 @@ import { useRoute } from 'wouter';
 import { Link } from 'wouter';
 import './WisudawanCard.scss';
 import { ASSET_URL } from '../../api';
+import { GALERI_APRESIASI_PAGE } from '../../routes/routes';
 
 import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
 
 const WisudawanCard = (data: IGaleriWisudawan) => {
-  const [match, params] = useRoute('/hmj/:hmj');
+  const [match, params] = useRoute(GALERI_APRESIASI_PAGE.path);
   const textLimit = 70;
   const showToolTip = data.judulTA.length > textLimit;
   const shownJudulTA = showToolTip ? data.judulTA.slice(0, textLimit) + '...' : data.judulTA;

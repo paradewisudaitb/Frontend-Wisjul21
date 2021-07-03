@@ -23,7 +23,7 @@ type navroutes = {
   parentPath?: string,
 }
 
-export const toRoute = (label:string, path:string, component?:(props?: any | any[]) => JSX.Element): route => ({
+export const toRoute = (label:string, path:string, component?:(props?: JSX.Element) => JSX.Element): route => ({
   label, path, component
 });
 

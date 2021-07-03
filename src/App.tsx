@@ -6,11 +6,11 @@ import { Route, Switch, Redirect, useRoute } from 'wouter';
 import { Footer } from './component/NavbarFooter/Footer';
 import { Navbar } from './component/NavbarFooter/Navbar';
 import { AllRoutes, HOME_PAGE, COMINGSOON_PAGE } from './routes/routes';
-import { Loading } from './pages/Loading/Loading';
+import { Loading } from './component/Loading/Loading';
 
 import { ScrollToTop } from './component/ScrollToTop/ScrollToTop';
 
-function App() {
+function App(): JSX.Element {
   const [isHomePage, _] = useRoute('/');
 
   return (

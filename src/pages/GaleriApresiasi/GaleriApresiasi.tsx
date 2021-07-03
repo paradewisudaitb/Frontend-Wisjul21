@@ -31,7 +31,7 @@ const removeDash = (text: string) => {
   return result.trim();
 };
 
-const GaleriApresiasi = () => {
+const GaleriApresiasi = (): JSX.Element => {
   const [match, params] = useRoute(GALERI_APRESIASI_PAGE.path);
 
   if (match && params) {

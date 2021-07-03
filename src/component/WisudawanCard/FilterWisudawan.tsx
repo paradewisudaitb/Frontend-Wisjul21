@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import WisudawanCardContainer from './WisudawanCardContainer';
-
 import './FilterWisudawan.scss';
 import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
 
-const FilterWisudawan = ( { data } : { data: IGaleriWisudawan[] } ) => {
+const FilterWisudawan = ( { data } : { data: IGaleriWisudawan[] } ): JSX.Element => {
   const [wisudawan, setWisudawan] = useState(data);
   const [text, setText] = useState('');
 
@@ -19,7 +18,7 @@ const FilterWisudawan = ( { data } : { data: IGaleriWisudawan[] } ) => {
   }, [text]);
 
   return(
-    <div className='wisudawan-filter'>
+    <div className='wisudawan-filter mt-5'>
       <form>
         <h2>Daftar Wisudawan</h2>
         <input

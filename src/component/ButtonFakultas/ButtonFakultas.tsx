@@ -14,9 +14,7 @@ const ButtonFakultas: FC<{
     const clickedFakultas: string =
       event.currentTarget.getAttribute('value') || 'default';
 
-    const updatedHMJ = LIST_HMJ.filter(
-      (hmj) => hmj.fakultas == clickedFakultas
-    );
+    const updatedHMJ = LIST_HMJ.filter(hmj => hmj.fakultas == clickedFakultas);
 
     props.onButtonClick(updatedHMJ, clickedFakultas);
   };

@@ -267,7 +267,7 @@
     "fakultas": "FTMD",
     "namaHimpunan": "TPB FTMD",
     "singkatanHimpunan": "TPB FTMD",
-    "linkFoto": "https://km.itb.ac.id/wp/wp-content/uploads/2020/10/FTMD-20-300x300.jpg",
+    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTMD.jpg",
     "linkGatherTown": "gather.town",
     "jurusan": []
   },
@@ -554,7 +554,7 @@
     "fakultas": "SITH",
     "namaHimpunan": "TPB SITH-R",
     "singkatanHimpunan": "TPB SITH-R",
-    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SITH-S.png",
+    "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SITH-R.png",
     "linkGatherTown": "gather.town",
     "jurusan": []
   },
@@ -611,7 +611,7 @@
 
   {
     "fakultas": "ETC",
-    "namaHimpunan": "nonhim",
+    "namaHimpunan": "Non-himpunan",
     "singkatanHimpunan": "KM-ITB",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/KM.png",
     "linkGatherTown": "gather.town",

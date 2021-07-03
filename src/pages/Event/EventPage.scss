@@ -1,5 +1,12 @@
-@import '../../styles/base.scss';
-@import '../../styles/colorpalette.scss';
+// @import '../../styles/base.scss';
+// @import '../../styles/colorpalette.scss';
+@import "../../App.scss";
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 .event-page {
   background-image: url($bg);
@@ -11,8 +18,145 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 1em;
+  .bg-component {
+    position: absolute;
+  }
+  .cloud-sun {
+    width: 15em;
+    left: 2%;
+    top: 12%;
+    z-index: 2;
+  }
+  .cloud-1 {
+    width: 15em;
+    right: 2%;
+    top: 15%;
+    z-index: 2;
+  }
+  .cloud-2{
+    width: 10em;
+    right: 13%;
+    transform: rotate(10deg) scaleX(1);
+    top: 15%;
+    z-index: 1;
+  }
+  .spark {
+    width: 3em;
+    right: 28%;
+    top: 12%;
+    z-index: 2;
+  }
+  .bulu-1 {
+    width: 4em;
+    transform: rotate(15deg) scaleX(1);
+    left: 2%;
+    top: 40%;
+    z-index: 2;
+  }
+  .bulu-2{
+    width: 4em;
+    transform: rotate(-30deg) scaleX(-1);
+    right: 2%;
+    top: 40%;
+    z-index: 2;
+  }
+  .spark-sun {
+    width: 5em;
+    transform: rotate(15deg) scaleX(1);
+    left: 2%;
+    // top: 70%;
+    bottom: 15%;
+    z-index: 2;
+  }
+  .awan-203 {
+    width: 15em;
+    transform: rotate(0deg) scaleX(-1);
+    left: 1%;
+    top: 95%;
+    z-index: 2;
+  }
+  .awan-204 {
+    width: 12em;
+    right: 2%;
+    top: 90%;
+    z-index: 2;
+  }
+  .content-header {
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .content-body {
+    z-index: 20;
+    margin-bottom: 1rem;
+  }
 
-  .cloud {
-    animation: none;
+  @include respond-to("phone") {
+    .cloud-1,
+    .cloud-2,
+    .spark,
+    .bulu-1,
+    .bulu-2,
+    .spark-sun,
+    .awan-203,
+    .awan-204,
+    .cloud-sun
+     {
+      display: none;
+    }
+    .content-header h1 {
+      font-size: 35px;
+    }
+    .content-header p {
+      display: none;
+    }
+  }
+  @include respond-to("tablet") {
+    .cloud-1,
+    .cloud-2,
+    .awan-203,
+    .awan-204,
+    .cloud-sun
+     {
+      display: none;
+    }
+    .content-header h1 {
+      font-size: 35px;
+    }
+    .content-header p {
+      display: none;
+    }
+    .spark {
+      width: 3em;
+      right: 15%;
+      top: 20%;
+      z-index: 2;
+    }
+    .bulu-1 {
+      width: 4em;
+      transform: rotate(15deg) scaleX(1);
+      left: 2%;
+      top: 40%;
+      z-index: 2;
+    }
+    .bulu-2{
+      width: 4em;
+      transform: rotate(-30deg) scaleX(-1);
+      right: 3%;
+      top: 40%;
+      z-index: 2;
+    }
+    .spark-sun {
+      width: 5em;
+      transform: rotate(15deg) scaleX(1);
+      left: 2%;
+      top: 80%;
+      z-index: 2;
+    }
   }
 }

@@ -59,7 +59,7 @@ const GaleriApresiasi = (): JSX.Element => {
         .catch(_ =>
           setLoading(false)
         );
-      
+
       getKontenApresiasi(namaHimpunan.toLowerCase())
         .then(dataApresiasi => {
           setKontenApresiasi(dataApresiasi);
@@ -67,27 +67,26 @@ const GaleriApresiasi = (): JSX.Element => {
         .catch((err) => {
           console.log(err);
         });
-      
     }, []);
 
     return (
       <div className='galeri-apresiasi-page py-5 bg'>
         <div className='himpunan'>
           <h1>{ namaHimpunan }</h1>
-          <img src={fotoHMJ} className='himpunan-logo'/>
+          <img src={fotoHMJ} className='himpunan-logo' alt={`logo ${namaHimpunan}`}/>
         </div>
-  
+
         {(kontenApresiasi.length != 0) &&
         <div className='apresiasi-wisudawan my-5'>
           <h2>Apresiasi HMJ</h2>
           <ApresiasiCarousel data={kontenApresiasi} />
         </div>
         }
-  
+
         <div className='daftar-wisudawan'>
           {loading ? <Loading /> : wisudawans}
         </div>
-  
+
       </div>
     );
 

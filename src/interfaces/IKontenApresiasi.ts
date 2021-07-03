@@ -4,7 +4,7 @@ type tipeApresiasi =
   |'video'
   |'lagu'
   |'puisi'
-  |'other';
+  |'lainnya';
 
 interface IKontenApresiasi {
   idApresiasi: number;

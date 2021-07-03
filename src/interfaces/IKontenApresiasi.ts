@@ -2,9 +2,9 @@ type tipeApresiasi =
   |'poster'
   |'website'
   |'video'
-  |'lagu'
+  |'musik'
   |'puisi'
-  |'other';
+  |'lainnya';
 
 interface IKontenApresiasi {
   idApresiasi: number;

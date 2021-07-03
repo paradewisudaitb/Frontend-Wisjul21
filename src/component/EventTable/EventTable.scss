@@ -1,13 +1,5 @@
 @import '../../styles/colorpalette.scss';
 
-table {
-  padding: 0px;
-  position: relative;
-  width: 80%;
-  border-collapse: seperate;
-  border-spacing: 0 8px;
-}
-
 .rundown {
   height: 50px;
   // width: 700px;
@@ -19,7 +11,7 @@ table {
     padding-left: 35px;
     // text-align: center;
     height: 50px;
-    width: 150px;
+    width: 170px;
     font-style: normal;
     border-radius: 25px 0px 0px 25px;
     font-weight: normal;
@@ -36,13 +28,6 @@ table {
     text-shadow: 1px 1px 0px black;
     text-align: left;
     background-color: unquote($red-medium + 'c0');
-  }
-
-  .line {
-    width: 1px;
-    border-right: 5px solid $yellow-lighter;
-    // border-left: 2px solid $yellow-lighter;
-    height: 0px;
   }
 
   &-past-event {
@@ -68,7 +53,7 @@ table {
   }
   &-main-event {
     // outline: 2px solid $yellow-lighter;
-    border : 2px solid $yellow-darker;
+    // border : 2px solid $yellow-darker;
     border-radius: 25px;
     -moz-outline-radius: 25px;
   }

@@ -30,8 +30,13 @@ export const EVENTS: IEvent[] = [
     title: 'Charity Event',
   },
   {
-    date: new Date('2021-07-10'),
-    title: 'Parade Wisuda ITB 2021',
+    date: new Date('2021-07-16'),
+    title: 'Day-1 Parade Wisuda ITB 2021',
+    main: true, // dekorasi outline
+  },
+  {
+    date: new Date('2021-07-17'),
+    title: 'Day-2 Parade Wisuda ITB 2021',
     main: true, // dekorasi outline
   },
   {

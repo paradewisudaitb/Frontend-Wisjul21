@@ -29,7 +29,6 @@ const Event: any = ({
       }${isMainEvent ? ' rundown-main-event' : ''}`}
     >
       <td className="jam">{dateToText(date)}</td>
-      <td className="line"></td>
       <td className="keterangan">
         {title}
         {isComingSoon && getUpcomingText(date)}
@@ -39,4 +38,3 @@ const Event: any = ({
 };
 
 export default Event;
-export {};

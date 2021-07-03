@@ -7,7 +7,7 @@ import { GALERI_APRESIASI_PAGE } from '../../routes/routes';
 
 import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
 
-const WisudawanCard = (data: IGaleriWisudawan) => {
+const WisudawanCard = (data: IGaleriWisudawan): JSX.Element => {
   const [match, params] = useRoute(GALERI_APRESIASI_PAGE.path);
   const textLimit = 70;
   const showToolTip = data.judulTA.length > textLimit;

@@ -46,7 +46,9 @@ export default function Wisudawan(): JSX.Element {
           setDataWisudawan(<WisudawanContainer {...dataWisudawan}/>);
           setLoadingWisudawan(false);
         })
-        .catch(err => console.error(err));
+        .catch(
+          err => console.error(err)
+        );
 
       // bagian pesan
       getMessageToShow();

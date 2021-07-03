@@ -13,6 +13,8 @@ import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
 import IKontenApresiasi from '../../interfaces/IKontenApresiasi';
 import LIST_HMJ from '../../data/hmj.json';
 
+import { NotFoundHMJ } from '../NotFound/NotFound';
+
 const slugToNamaHimpunanITB = (text: string) => {
   const tmp = text.split('-');
   let result = '';
@@ -46,64 +48,69 @@ const GaleriApresiasi = (): JSX.Element => {
     const fotoHMJ = LIST_HMJ.filter(hmj => {
       return (hmj.namaHimpunan == namaHimpunan);
     })[0]?.linkFoto || 'test' ;
-    
-    const defaultWisudawan: IGaleriWisudawan[] = [];
-    const defaultKontenApresiasi: IKontenApresiasi[] = [];
 
-    const [loadingWisudawan, setLoadingWisudawan] = useState(true);
-    const [wisudawans, setWisudawans] = useState(
-      <FilterWisudawan data={defaultWisudawan} />
-    );
-    const [loadingApresiasi, setLoadingApresiasi] = useState(true);
-    const [kontenApresiasi, setKontenApresiasi] = useState(defaultKontenApresiasi);
-
-    useEffect(() => {
-      // kalau TPB, ga ada bagian wisudawannya
-      namaHimpunan.startsWith('TPB') ? setIsTPB(true) : setIsTPB(false);
-
-      getByHimpunan(namaHimpunan.toLowerCase())
-        .then(dataWisudawan => {
-          setWisudawans(<FilterWisudawan data={dataWisudawan} />);
-          setLoadingWisudawan(false);
-        })
-        .catch(_ =>
-          setLoadingWisudawan(false)
-        );
-
-      getKontenApresiasi(namaHimpunan.toLowerCase())
-        .then(dataApresiasi => {
-          setKontenApresiasi(dataApresiasi);
-          setLoadingApresiasi(false);
-        })
-        .catch((err) => {
-          console.log(err);
-          setLoadingWisudawan(false);
-        });
-    }, []);
-
-    return (
-      <div className='galeri-apresiasi-page py-5 bg'>
-        <div className='himpunan'>
-          <h1>{ namaHimpunan }</h1>
-          <img src={fotoHMJ} className='himpunan-logo' alt={`logo ${namaHimpunan}`}/>
-        </div>
-
-        {(kontenApresiasi.length != 0) &&
-        <div className='apresiasi-wisudawan my-5'>
-          <h2>Apresiasi HMJ</h2>
-          {loadingApresiasi ? <Loading /> : <ApresiasiCarousel data={kontenApresiasi} />}
-        </div>
-        }
-
-        {!isTPB && 
-          <div className='daftar-wisudawan'>
-            {loadingWisudawan ? <Loading /> : wisudawans}
+    if (fotoHMJ == 'test') {
+      return (
+        <NotFoundHMJ />
+      );
+    } else {
+      const defaultWisudawan: IGaleriWisudawan[] = [];
+      const defaultKontenApresiasi: IKontenApresiasi[] = [];
+  
+      const [loadingWisudawan, setLoadingWisudawan] = useState(true);
+      const [wisudawans, setWisudawans] = useState(
+        <FilterWisudawan data={defaultWisudawan} />
+      );
+      const [loadingApresiasi, setLoadingApresiasi] = useState(true);
+      const [kontenApresiasi, setKontenApresiasi] = useState(defaultKontenApresiasi);
+  
+      useEffect(() => {
+        // kalau TPB, ga ada bagian wisudawannya
+        namaHimpunan.startsWith('TPB') ? setIsTPB(true) : setIsTPB(false);
+  
+        getByHimpunan(namaHimpunan.toLowerCase())
+          .then(dataWisudawan => {
+            setWisudawans(<FilterWisudawan data={dataWisudawan} />);
+            setLoadingWisudawan(false);
+          })
+          .catch(_ =>
+            setLoadingWisudawan(false)
+          );
+  
+        getKontenApresiasi(namaHimpunan.toLowerCase())
+          .then(dataApresiasi => {
+            setKontenApresiasi(dataApresiasi);
+            setLoadingApresiasi(false);
+          })
+          .catch((err) => {
+            console.log(err);
+            setLoadingWisudawan(false);
+          });
+      }, []);
+  
+      return (
+        <div className='galeri-apresiasi-page py-5 bg'>
+          <div className='himpunan'>
+            <h1>{ namaHimpunan }</h1>
+            <img src={fotoHMJ} className='himpunan-logo' alt={`logo ${namaHimpunan}`}/>
           </div>
-        }
-
-      </div>
-    );
-
+  
+          {(kontenApresiasi.length != 0) &&
+          <div className='apresiasi-wisudawan my-5'>
+            <h2>Apresiasi HMJ</h2>
+            {loadingApresiasi ? <Loading /> : <ApresiasiCarousel data={kontenApresiasi} />}
+          </div>
+          }
+  
+          {!isTPB && 
+            <div className='daftar-wisudawan'>
+              {loadingWisudawan ? <Loading /> : wisudawans}
+            </div>
+          }
+  
+        </div>
+      );
+    }
   } else {
     return (<h1>Error</h1>);
   }

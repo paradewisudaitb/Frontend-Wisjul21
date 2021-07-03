@@ -9,6 +9,7 @@ import { KirimPesanPage } from '../pages/KirimPesan/KirimPesanPage';
 import Wisudawan from '../pages/Wisudawan/Wisudawan';
 import Gathertown from '../pages/Gathertown/Gathertown';
 import GaleriHmj from '../pages/GaleriHmj/GaleriHmj';
+import NotFound, { NotFoundHMJ } from '../pages/NotFound/NotFound';
 
 export type route = {
     label: string
@@ -36,7 +37,6 @@ export const GALERI_APRESIASI_PAGE = toRoute('Galeri Apresiasi', '/hmj/:hmj', Ga
 export const WISUDAWAN_PAGE = toRoute('Wisudawan', '/hmj/:hmj/:nim', Wisudawan);
 export const KIRIM_PESAN_PAGE = toRoute('Kirim Pesan', '/hmj/:hmj/:nim/kirim-pesan', KirimPesanPage);
 
-
 export const FORM_INDEX = toRoute('Forms', 'forms');
 export const FORM_PAGE = toRoute('Form', '/form', Form);
 export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', '/form-apresiasi', FormApresiasi);
@@ -47,6 +47,8 @@ export const GATHERTOWN_PAGE = toRoute('Gather Town', '/gathertown', Gathertown)
 export const MAJALAH_PAGE = toRoute('Majalah', '/majalah', Majalah);
 
 export const EVENT_PAGE = toRoute('Event', '/event', ComingSoon);
+
+export const NOTFOUND_PAGE = toRoute('Not Found', '/:rest*', NotFound);
 
 export const NavbarRoutes: navroutes[] = [
   {
@@ -83,4 +85,6 @@ export const AllRoutes = [
   GATHERTOWN_PAGE,
   FORM_APRESIASI_PAGE,
   FORM_PAGE,
+
+  NOTFOUND_PAGE,
 ];

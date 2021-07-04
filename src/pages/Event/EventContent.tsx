@@ -2,11 +2,11 @@ import IEvent from '../../interfaces/IEvent';
 
 export const EVENTS: IEvent[] = [
   {
-    date: new Date('2021-07-3'),
+    date: new Date('2021-07-03'),
     title: 'LIVE Instagram 1 WisShare',
   },
   {
-    date: new Date('2021-07-4'),
+    date: new Date('2021-07-04'),
     title: 'Live Instagram 2 WisShare',
   },
   {
@@ -63,7 +63,7 @@ export const getUpcomingText = (date: Date) => {
   } else if (days == 1) {
     text = 'Tomorrow';
   } else {
-    text = `${days + 1} days to go`;
+    text = `${days} days to go`;
   }
   return `\xa0\xa0\xa0[ ${text} ]`;
 };

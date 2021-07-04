@@ -1,4 +1,3 @@
-import React from 'react';
 import IEventTable from '../../interfaces/IEventTable';
 import { getUpcomingText } from '../../pages/Event/EventContent';
 import './EventTable.scss';

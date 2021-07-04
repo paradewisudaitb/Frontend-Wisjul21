@@ -5,7 +5,7 @@ export const ScrollToTop = ({ children  }: { children: any }) => {
   return children;
 };
 
-export const ToTop = () => {
+export const ToTop = (): void => {
   window.scrollTo(0, 0);
   // document.documentElement.scrollTop = 0;
 };

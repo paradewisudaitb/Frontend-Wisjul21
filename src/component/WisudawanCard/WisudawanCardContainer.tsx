@@ -4,7 +4,7 @@ import './WisudawanCardContainer.scss';
 
 import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
 
-const WisudawanCardContainer = ({ data } : { data: IGaleriWisudawan[]}) => {
+const WisudawanCardContainer = ({ data } : { data: IGaleriWisudawan[]}): JSX.Element => {
 
   return (
     <div className='wisudawan-card-container'>

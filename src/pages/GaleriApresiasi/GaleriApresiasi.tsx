@@ -38,6 +38,7 @@ const slugToNamaHimpunanITB = (text: string) => {
 
 const GaleriApresiasi = (): JSX.Element => {
   const [match, params] = useRoute(GALERI_APRESIASI_PAGE.path);
+  const [isTPB, setIsTPB] = useState(false);
 
   if (match && params) {
     const namaHimpunan = slugToNamaHimpunanITB(params.hmj);
@@ -49,28 +50,34 @@ const GaleriApresiasi = (): JSX.Element => {
     const defaultWisudawan: IGaleriWisudawan[] = [];
     const defaultKontenApresiasi: IKontenApresiasi[] = [];
 
-    const [loading, setLoading] = useState(true);
+    const [loadingWisudawan, setLoadingWisudawan] = useState(true);
     const [wisudawans, setWisudawans] = useState(
       <FilterWisudawan data={defaultWisudawan} />
     );
+    const [loadingApresiasi, setLoadingApresiasi] = useState(true);
     const [kontenApresiasi, setKontenApresiasi] = useState(defaultKontenApresiasi);
 
     useEffect(() => {
+      // kalau TPB, ga ada bagian wisudawannya
+      namaHimpunan.startsWith('TPB') ? setIsTPB(true) : setIsTPB(false);
+
       getByHimpunan(namaHimpunan.toLowerCase())
         .then(dataWisudawan => {
           setWisudawans(<FilterWisudawan data={dataWisudawan} />);
-          setLoading(false);
+          setLoadingWisudawan(false);
         })
         .catch(_ =>
-          setLoading(false)
+          setLoadingWisudawan(false)
         );
 
       getKontenApresiasi(namaHimpunan.toLowerCase())
         .then(dataApresiasi => {
           setKontenApresiasi(dataApresiasi);
+          setLoadingApresiasi(false);
         })
         .catch((err) => {
           console.log(err);
+          setLoadingWisudawan(false);
         });
     }, []);
 
@@ -84,13 +91,15 @@ const GaleriApresiasi = (): JSX.Element => {
         {(kontenApresiasi.length != 0) &&
         <div className='apresiasi-wisudawan my-5'>
           <h2>Apresiasi HMJ</h2>
-          <ApresiasiCarousel data={kontenApresiasi} />
+          {loadingApresiasi ? <Loading /> : <ApresiasiCarousel data={kontenApresiasi} />}
         </div>
         }
 
-        <div className='daftar-wisudawan'>
-          {loading ? <Loading /> : wisudawans}
-        </div>
+        {!isTPB && 
+          <div className='daftar-wisudawan'>
+            {loadingWisudawan ? <Loading /> : wisudawans}
+          </div>
+        }
 
       </div>
     );

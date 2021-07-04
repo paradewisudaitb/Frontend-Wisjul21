@@ -8,7 +8,7 @@ const HMJCardContainer = (props: {
   namaFakultas: string;
   linkGathertown: string;
   linkFoto: string;
-}) => {
+}): JSX.Element => {
   const [width, setWidth] = useState(window.innerWidth);
   const breakpoint = 468;
 

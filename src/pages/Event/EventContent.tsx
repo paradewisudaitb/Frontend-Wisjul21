@@ -22,10 +22,6 @@ export const EVENTS: IEvent[] = [
     title: 'Charity Concert',
   },
   {
-    date: new Date('2021-07-13'),
-    title: 'Charity Event',
-  },
-  {
     date: new Date('2021-07-15'),
     title: 'Taman Ekspresi',
   },
@@ -33,11 +29,7 @@ export const EVENTS: IEvent[] = [
     date: new Date('2021-07-18'),
     title: 'Parade Wisuda Juli ITB 2021',
     main: true, // dekorasi outline
-  },
-  {
-    date: new Date('2021-07-18'),
-    title: 'Virtual Photoshoot',
-  },
+  }
 ];
 
 export const isPastEvent = (event: { date: Date; }) => {

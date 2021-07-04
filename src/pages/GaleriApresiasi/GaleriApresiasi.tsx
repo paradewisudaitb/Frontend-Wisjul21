@@ -19,16 +19,22 @@ const slugToNamaHimpunanITB = (text: string) => {
 
   if (tmp[0] == 'tpb') {
     tmp.forEach(word => {
-      result += word.toUpperCase();
-      if (word == 'sith') {
-        result += '-';
-      } else {
-        result += ' ';
+      if (word != 'dan') {
+        result += word.toUpperCase();
+        if (word == 'sith') {
+          result += '-';
+        } else {
+          result += ' ';
+        }
       }
     });
   } else {
     tmp.forEach(word => {
-      result += word[0].toUpperCase() + word.slice(1) + ' ';
+      if (word == 'dan') {
+        result += word + ' ';
+      } else {
+        result += word[0].toUpperCase() + word.slice(1) + ' ';
+      }
     });
 
   }
@@ -89,7 +95,7 @@ const GaleriApresiasi = (): JSX.Element => {
         </div>
 
         {(kontenApresiasi.length != 0) &&
-        <div className='apresiasi-wisudawan my-5'>
+        <div className='apresiasi-wisudawan my-md-3'>
           <h2>Apresiasi HMJ</h2>
           {loadingApresiasi ? <Loading /> : <ApresiasiCarousel data={kontenApresiasi} />}
         </div>

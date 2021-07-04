@@ -17,33 +17,34 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
     }
   });
 
+  const isApresiasiImage = (tipeApresiasi: string) => {
+    return (tipeApresiasi == 'poster' || tipeApresiasi == 'puisi' || tipeApresiasi == 'lainnya');
+  };
+
   const RenderComponent = (data: IKontenApresiasi) => {
     switch (data.tipeKonten) {
       case 'video':
         return <video controls src={data.linkKonten} />;
       case 'musik':
-        return <audio controls src={data.linkKonten} />;
+        return <div className="audio-apresiasi"><audio controls src={data.linkKonten} /></div>;
       case 'website':
         return <a href={data.linkKonten}></a>;
       default:
-        return <img
-          src={data.linkKonten}
-          id='img-01'
-        />;
+        return (
+          <div className='apresiasi-image-container'>
+            <small className='apresiasi-warning-label'><i className="fa fa-exclamation-triangle"></i> Klik gambar untuk memperbesar</small>
+            <img
+              src={data.linkKonten}
+              id='img-01'
+            />
+          </div>
+
+        );
     }
-    // if (data.tipeKonten == 'video')
-    
-    // else if (data.tipeKonten == 'musik')
-    // else if (data.tipeKonten == 'poster'
-    //          || data.tipeKonten  == 'puisi'
-    //          || data.tipeKonten == 'lainnya')
   };
 
   const onClickCarousel = (i: number) => {
-    if (data[i].tipeKonten == 'poster'
-      || data[i].tipeKonten == 'puisi'
-      || data[i].tipeKonten == 'lainnya'
-    ) {
+    if (isApresiasiImage(data[i].tipeKonten)) {
       setIsImageOpen(true);
       setOpenedImageIdx(i);
     }
@@ -54,6 +55,7 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
       <h3>
         {judul.charAt(0).toUpperCase() + judul.slice(1)}
       </h3>
+      {/* <div className="warning-label"></div> */}
       <div className='carousel'>
         <Carousel
           // autoPlay
@@ -69,6 +71,7 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
           {data.map((row: IKontenApresiasi, i: number) => (
             <div
               key={i}
+              className='apresiasi-item'
             >
               {RenderComponent(row)}
             </div>

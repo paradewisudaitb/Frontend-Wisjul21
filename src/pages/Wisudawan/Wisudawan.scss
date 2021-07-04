@@ -1,23 +1,147 @@
-.pesan-anonim {
-  background-color: #dddddd;
-  margin: 2em;
-  
-  .pesan-anonim-wrapper {
-    padding: 15px;
+@import '../../styles/colorpalette.scss';
+@import '../../styles/responsive.scss';
+
+$scroll-thumb-color: $red-medium;
+
+.page-wisudawan {
+  // background-image: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg');
+  // background-size: cover;
+  // background-repeat: repeat;
+  padding: 40px;
+  min-height: 100vh;
+
+  @include respond-to('phone', 'tablet') {
+    padding: 40px 20px;
+    margin: auto 0;
   }
 
-  .kirim-button-wrapper {
+  .loading-msg {
+    text-align: center;
+  }
+
+  .awan-atas {
+    position: absolute;
+    max-width: 30vw;
+    left: 80vw;
+    top: 30vh;
+    z-index: 0;
+    @include respond-to('phone') {
+      max-width: 60vw;
+      top: 25vh;
+      left: 70vw;
+    }
+  }
+
+  .awan-bawah {
+    position: absolute;
+    width: 40vw;
+    right: 75vw;
+    z-index: 0;
+    @include respond-to('phone') {
+      width: 90vw;
+    }
+  }
+
+  .container {
+    background-color:unquote($blue-darker + '4D');
+    padding: 40px;
+    border-radius: 40px;
+    background-size: cover;
+    margin: 0 auto;
+  }
+
+  .judul-section {
+    text-align: center;
+    max-width: fit-content;
+    margin: auto;
+
+    @include respond-to('phone', 'tablet') {
+      max-width: 200px;
+    }
+  }
+
+  .pemisah {
+    background-color: $yellow-lighter;
+    margin-bottom: 2em;
+    height: 3px;
+  }
+
+  .pesan-anonim {
+    margin-bottom: 0;
+    max-height: 60vh;
+    overflow: auto;
+
+    scrollbar-color: $scroll-thumb-color transparent;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      background-color: transparent;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      padding-top: 1000px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $scroll-thumb-color;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      &:start {
+        margin-top: 17px;
+      }
+      &:end {
+        margin-bottom: 17px;
+      }
+    }
+
+    .pesan-anonim-wrapper {
+      padding: 15px;
+
+      @include respond-to('phone') {
+        padding: 15px 0;
+      }
+
+      .pesan-kosong {
+        margin: auto;
+        text-align: center;
+      }
+    }
+  }
+
+  .kirim-pesan-button-wrapper {
     display: flex;
     justify-content: flex-end;
-    margin: 0 15px;
-    padding: 20px 0;
-    padding-bottom: 35px;
-    
-    .kirim-button {
-      font-size: 20px;
-      width: 15em;
+    padding-top: 2vh;
+    padding-right: 15vw;
+
+    @include respond-to('phone', 'tablet') {
+      padding-right: 5vw;
+    }
+
+    .kirim-pesan-button {
+      width: fit-content;
+      border-radius: 10px;
       height: 2.5em;
-      background-color: #686363;
+      background-color: $blue-medium;
+      transition: 0.3s;
+      border-style: none;
+      padding: 0 1rem;
+
+      &:hover {
+        background-color: $blue-lighter;
+        color: $yellow-darker;
+
+        transition: 0.3s;
+      }
     }
   }
 }

@@ -23,23 +23,32 @@
     transition: 0.3s;
 }
 
-$navbarheight: 4.4rem;
+
+.navbar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.default-color {
+    background-color: rgba($red-darker, 1) !important;
+}
 
 .navbar {
-    // background-color: $teal;
-    background-color: $red-darker;
     width: 100%;
     height: $navbarheight;
-    z-index: 3;
+    z-index: 999;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    transition: 0.6s;
 }
 
 .navbar-nav {
     flex-direction: row !important;
 }
 
-$drops-top: -12rem;
+$drops-top: -15rem;
 
 .nav-item {
     float: left;
@@ -63,11 +72,13 @@ $drops-top: -12rem;
     cursor: pointer;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    border: none;
 }
 
 .drops {
     width: 100%;
     display: none;
+    transition: 0.6s;
 }
 
 @include respond-to('phone') {    
@@ -87,7 +98,7 @@ $drops-top: -12rem;
     .active {
         color: white !important;
     }
-
+    
     .toggle {
         width: 28px;
         height: 4px;
@@ -139,21 +150,26 @@ $drops-top: -12rem;
     .toggle-active {
         transition: 0.6s;
     }
-
+    
     .drops {
-        background-color: $red-darker;
         flex-direction: column !important;
-        align-items: flex-start;
+        align-items: flex-end;
         position: absolute;
         top: $drops-top;
         transition: 0.5s;
-        z-index: 2;
+        z-index: 998;
         display: flex;
+        background-color: rgba($red-darker, 0.7) !important;
     }
     
     .drops-active {
         width: 100%;
-        transform: translateY(-($drops-top) + $navbarheight);
+        transform: translateY(-($drops-top) + $navbarheight - 0.1rem);
+        transition: 0.6s;
+    }
+
+    .navbar-active {
+        background-color: rgba($red-darker, 1) !important;
         transition: 0.6s;
     }
 }

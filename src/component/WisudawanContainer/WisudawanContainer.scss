@@ -1,42 +1,87 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/colorpalette.scss';
+
 .wisudawan-container {
-    background-color:#facefa;
-    margin: 2em;
-    padding: 40px;
-    display: flex;
-    justify-content: space-evenly;
-}
-.list-kontribusi {
-    text-align: left;
-}
-.unit-wisudawan {
-    .unit-logo {
-        width: 2.3rem;
-        height: auto;
-        margin-right: 1rem;
-    }
-    .unit-item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 0.8rem;
-    }
-    
-    .unit-list {
-        margin-top: 2rem;
-    }
+  padding: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+
+  @include respond-to('phone', 'tablet') {
+    display:flex;
+    flex-direction: column;
+    padding: 0px;
+  }
 }
 
-.data-wisudawan p, .data-wisudawan h1, .data-wisudawan h2, .data-wisudawan h3, .data-wisudawan h4, .data-wisudawan li {
+.data-wisudawan p,
+.data-wisudawan h1,
+.data-wisudawan h2,
+.data-wisudawan h3,
+.data-wisudawan h4,
+.data-wisudawan li {
     text-align:left;
 }
 
-.foto-wisudawan img {
-    width: 16rem;
-    height: 16rem;
-    // width: 360px;
-    // height: 360px;
+#spark {
+  height: 20vh;
+  width: auto;
+  position: absolute;
+  right: -6vw;
+  top: -12vh;
+  @include respond-to('phone', 'tablet') {
+    right: -9vw;
+    top: -12vh;
+    overflow: hidden;
+  }
 }
 
 .wisudawan-left {
-    margin-right: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  @include respond-to('phone', 'tablet') {
+    margin-right: 0rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+
+  .foto-wisudawan {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    #pas-foto {
+      display: block;
+      height: 240px;
+      // width: 180px;
+      margin: 0 auto;
+    }
+
+    // 400 x 560
+    // 371 x 520
+    // 357 x 500
+    #bulu {
+      height: 15vh;
+      width: auto;
+      align-self: flex-start;
+      position: relative;
+      right: 4vw;
+      bottom: 12vh;
+      rotate: 12deg;
+
+      @include respond-to('phone') {
+        right: 15vw;
+        bottom: 12vh;
+      }
+
+      @include respond-to('tablet') {
+        right: 10vw;
+        bottom: 10vh;
+      }
+    }
+  }
 }

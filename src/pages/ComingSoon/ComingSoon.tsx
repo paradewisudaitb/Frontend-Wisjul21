@@ -1,7 +1,7 @@
 import './ComingSoon.scss';
 import { ASSET_URL } from '../../api';
 
-const ComingSoon = () => {
+const ComingSoon = (): JSX.Element => {
   return (
     <div className="CS-header">
       <img src={`${ASSET_URL}/assets/logo/min.png`} className="CS-logo" alt="logo" />

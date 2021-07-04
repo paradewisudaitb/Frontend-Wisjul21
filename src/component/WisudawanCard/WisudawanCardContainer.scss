@@ -1,22 +1,19 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/colorpalette.scss';
+
 .wisudawan-card-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 0 8vw;
+  margin: 0 9vw;
   box-sizing: border-box;
-  width: 44rem;
-}
+  width: 100vw;
 
-@media only screen and (max-width: 1080px) {
-  .wisudawan-card-container {
-    margin: 0 1vw;
-    width: 45rem;
+  @include respond-to('tablet') {
+    margin: 0 2vw;
   }
-}
 
-@media only screen and (max-width: 780px) {
-  .wisudawan-card-container {
+  @include respond-to('phone') {
     margin: 1vh 0.3vw;
-    width: 50rem;
   }
 }

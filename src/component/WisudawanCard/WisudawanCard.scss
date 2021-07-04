@@ -1,120 +1,151 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/colorpalette.scss';
+
 .card-container {
-  background-color: #C4C4C4;
   display: flex;
-  margin: 1rem;
   flex-direction: column;
+  align-items: center;
+
   text-align: center;
-  width: 20rem;
+  text-decoration: none;
+
+  width: 25vw;
   height: auto;
-  padding: 1vh 0;
+  margin: 2rem;
+  padding: 1vh 1vw;
+
+  border-radius: 1rem;
+  background-color: rgba($blue-darker, 80%);
+
+  transition: transform 0.5s;
+
+  @include respond-to('tablet') {
+    width: 38vw;
+  }
+
+  @include respond-to('phone') {
+    width: 80vw;
+    margin: 0 2vw;
+    margin-bottom: 2rem;
+    height: auto;
+    border-radius: 2vw;
+  }
+
+  &:hover {
+    transform: translateY(-2%);
+    cursor: pointer;
+    background-color: rgba($blue-medium, 80%);
+    box-shadow: 0px 2px 17px rgba($yellow-darker, 80%);
+  }
 
   h3 {
-    margin-top: 0.5rem;
+    display: flex;
+    margin-top: 1vh;
     margin-bottom: 0;
-    font-size: 2.1rem;
+    text-align: center;
+    font-size: 2rem;
+    height: 8rem;
+    align-items: center;
+
+    @include respond-to('tablet') {
+      height: 6rem;
+      margin-top: 1.5vh;
+    }
+
+    @include respond-to('phone') {
+      height: auto;
+      margin-bottom: 1rem;
+      font-size: 1.75rem;
+    }
   }
 
   h4 {
-    margin-top: 0.1rem;
-    font-size: 1.4rem;
-    margin-bottom: 0.2rem;
+    margin-top: 0;
+    font-size: 1.5rem;
+    z-index: 1;
+
+    @include respond-to('tablet') {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+    }
   }
 
   .image {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0.7rem 0.7rem;
-    
-    img {
-      max-width: 50%;
-    }
-  }
-  
-  p {
-    margin-top: 0.5rem;
-    font-size: 1.1rem;
-  }
+    margin: 0.7rem auto;
+    position: relative;
+    height: 15vw;
+    width: 15vw;
 
-  .unit-container {
-    .unit-list {
-      list-style: none;
-      padding-left: 1.5rem;
+    @include respond-to('tablet') {
+      height: 20vw;
+      width: 20vw;
     }
 
-    .unit-item {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-bottom: 0.7rem;
-      justify-content: flex-start;
-
-      .unit-logo {
-        width: 2.3rem;
-        height: auto;
-        margin-right: 1rem;
-      }
-
-      p {
-        margin-bottom: 0;
-        margin-top: 0;
-        font-size: 1rem;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 780px) {
-  .card-container {
-    width: 40vw;
-    margin: 0 2vw;
-    margin-bottom: 2rem;
-    height: auto;
-  
-    h3 {
-      margin-top: 0.1rem;
-      font-size: 4.8vw;
-    }
-
-    h4 {
-      font-size: 3.3vw;
-    }
-
-    .image {
+    @include respond-to('phone') {
       margin: 1rem;
-      img {
-        max-width: 60%;
-      }
+      margin-top: 1.5vh;
+      height: 40vw;
+      width: 40vw;
     }
 
-    p {
-      font-size: 2.5vw;
-      margin-top: -0.1rem;
-      padding: 0 1rem;
-      margin-bottom: 1vh;
+    .foto-wisudawan {
+      height: 100%;
+      width: 100%;
+      background-color: #C4C4C4;
+      position: relative;
+      object-fit: cover;
+      border-radius: 50%;
     }
 
-    .unit-container {
-      margin-top: 0.5vh;
+    .awan-bg {
+      position: absolute;
+      width: 18vw;
+      bottom: -1rem;
+      left: -5rem;
 
-      .unit-list {
-        padding-left: 2vw;
-        margin-bottom: 2vh;
-
-        .unit-item {
-          margin-bottom: 1vh;
-
-          .unit-logo {
-            width: 4.5vw;
-            margin-left: 1.7vw;
-            margin-right: 0;
-          }
-
-          p {
-            font-size: 2.1vw;
-          }
-        }
+      @include respond-to('tablet') {
+        width: 25vw;
+        left: -4rem;
       }
+
+      @include respond-to('phone') {
+        width: 50vw;
+        left: -4rem;
+      }
+    }
+  }
+
+  p {
+    margin: 0.5vw 0;
+    margin-bottom: 1vw;
+    font-size: 1.3vw;
+    padding: 0 2vw;
+
+    @include respond-to('phone') {
+      font-size: 2vw;
+      margin: 2vh 0;
+      padding: 0 1vw;
+    }
+  }
+
+  .judulTA {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $yellow-darker;
+    height: 14vh;
+
+    @include respond-to('tablet') {
+      font-size: 15px;
+    }
+
+    @include respond-to('phone') {
+      height: 7vh;
+      margin-bottom: 2rem;
+      font-size: 18px;
     }
   }
 }

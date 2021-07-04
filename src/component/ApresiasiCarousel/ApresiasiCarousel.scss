@@ -1,29 +1,54 @@
-.carousel {
-  display: flex;
-  width: 30rem;  
-  height: auto;
-  justify-content: center;
-  align-items: center;
+@import '../../styles/responsive.scss';
+@import '../../styles/colorpalette.scss';
 
-  div {
+.carousel-container {
+  margin-top: 1vh;
+
+  .carousel {
+    margin-top: 2vh;
+    background-color: rgba($purple-medium, 0);
     display: flex;
-    flex-direction: column;
+    width: 35vw;
+    height: 50vh;
     justify-content: center;
-    align-content: center;
-    height: 100%;
+    align-items: center;
 
-    video {
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      height: 100%;
       width: 100%;
+
+      video {
+        width: 100%;
+      }
+
+      audio {
+        width: 100%;
+      }
     }
+  }
 
-    audio {
-      width: 100%;
+  .opened-img {
+    background-color: white;
+    position: absolute;
+    z-index: 5;
+    transform: translate(-10%, -70%);
+
+    .clicked-img {
+      margin: 1rem;
+      width: 40vw;
     }
   }
 }
 
-@media only screen and (max-width: 780px) {
-  .carousel {
-    width: 40vw;
+@include respond-to('phone') {
+  .carousel-container {
+    .carousel {
+      width: 40vw;
+      height: 20vh;
+    }
   }
 }

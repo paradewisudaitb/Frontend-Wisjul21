@@ -8,6 +8,7 @@ import GaleriApresiasi from '../pages/GaleriApresiasi/GaleriApresiasi';
 import { KirimPesanPage } from '../pages/KirimPesan/KirimPesanPage';
 import Wisudawan from '../pages/Wisudawan/Wisudawan';
 import Gathertown from '../pages/Gathertown/Gathertown';
+import GaleriHmj from '../pages/GaleriHmj/GaleriHmj';
 
 export type route = {
     label: string
@@ -22,35 +23,46 @@ type navroutes = {
   parentPath?: string,
 }
 
-export const toRoute = (label:string, path:string, component?:() => JSX.Element): route => ({
+export const toRoute = (label:string, path:string, component?:(props?: JSX.Element) => JSX.Element): route => ({
   label, path, component
 });
 
-export const EVENT_PAGE = toRoute('Events', '/events', EventPage);
-export const HOME_PAGE = toRoute('Home', '/', HomePage);
 export const COMINGSOON_PAGE = toRoute('Coming Soon', '/coming-soon', ComingSoon);
-export const MAJALAH_PAGE = toRoute('Majalah', '/majalah', Majalah);
-export const GALERI_APRESIASI_PAGE = toRoute('Galeri Apresiasi', '/galeri-apresiasi', GaleriApresiasi);
-export const KIRIM_PESAN_PAGE = toRoute('Kirim Pesan', '/kirim-pesan', KirimPesanPage);
-export const WISUDAWAN_PAGE = toRoute('Wisudawan', '/wisudawan', Wisudawan);
-export const GATHERTOWN_PAGE = toRoute('Gather Town', '/gathertown', Gathertown);
+
+export const HOME_PAGE = toRoute('Home', '/', HomePage);
+
+export const GALERI_HMJ_PAGE = toRoute('Galeri HMJ', '/hmj', GaleriHmj);
+export const GALERI_APRESIASI_PAGE = toRoute('Galeri Apresiasi', '/hmj/:hmj', GaleriApresiasi);
+export const WISUDAWAN_PAGE = toRoute('Wisudawan', '/hmj/:hmj/:nim', Wisudawan);
+export const KIRIM_PESAN_PAGE = toRoute('Kirim Pesan', '/hmj/:hmj/:nim/kirim-pesan', KirimPesanPage);
+
+
+export const FORM_INDEX = toRoute('Forms', 'forms');
 export const FORM_PAGE = toRoute('Form', '/form', Form);
 export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', '/form-apresiasi', FormApresiasi);
 
-export const FORM_INDEX = toRoute('Forms', 'forms');
+
+export const PRODUK_INDEX = toRoute('Produk', '/produk');
+export const GATHERTOWN_PAGE = toRoute('Gather Town', '/gathertown', Gathertown);
+export const MAJALAH_PAGE = toRoute('Majalah', '/majalah', Majalah);
+
+export const EVENT_PAGE = toRoute('Event', '/event', ComingSoon);
 
 export const NavbarRoutes: navroutes[] = [
   {
-    content: MAJALAH_PAGE,
+    content: HOME_PAGE,
   },
   {
-    content: GALERI_APRESIASI_PAGE,
+    content: EVENT_PAGE,
   },
   {
-    content: KIRIM_PESAN_PAGE,
+    content: PRODUK_INDEX,
+    children_routes: [GATHERTOWN_PAGE, MAJALAH_PAGE],
+    isDropdown: true,
+    parentPath: '',
   },
   {
-    content: WISUDAWAN_PAGE,
+    content: GALERI_HMJ_PAGE,
   },
   {
     content: FORM_INDEX,
@@ -63,10 +75,15 @@ export const NavbarRoutes: navroutes[] = [
 export const AllRoutes = [
   HOME_PAGE,
   EVENT_PAGE,
+<<<<<<< HEAD
   MAJALAH_PAGE,
+=======
+  GALERI_HMJ_PAGE,
+>>>>>>> devel
   GALERI_APRESIASI_PAGE,
   KIRIM_PESAN_PAGE,
   WISUDAWAN_PAGE,
+  MAJALAH_PAGE,
   GATHERTOWN_PAGE,
   FORM_APRESIASI_PAGE,
   FORM_PAGE,

@@ -1,40 +1,41 @@
 import React, { Suspense } from 'react';
+
 import './App.scss';
-import EventPage from './pages/Event/EventPage';
-
-// import HomePage from './pages/HomePage/HomePage';
-import Form from './pages/Form/Form';
-import FormApresiasi from './pages/FormApresiasi/FormApresiasi';
-import Majalah from './pages/Majalah/Majalah';
-import GaleriApresiasi from './pages/GaleriApresiasi/GaleriApresiasi';
-import Wisudawan from './pages/Wisudawan/Wisudawan';
-import ComingSoon from './pages/ComingSoon/ComingSoon';
-
-import { KirimPesanPage } from './pages/KirimPesan/KirimPesanPage';
-import { Route, Switch, Redirect } from 'wouter';
+import { Route, Switch, Redirect, useRoute } from 'wouter';
 
 import { Footer } from './component/NavbarFooter/Footer';
 import { Navbar } from './component/NavbarFooter/Navbar';
-import { AllRoutes, HOME_PAGE } from './routes/routes';
-import { Loading } from './pages/Loading/Loading';
+import { AllRoutes, HOME_PAGE, COMINGSOON_PAGE } from './routes/routes';
+import { Loading } from './component/Loading/Loading';
 
-function App() {
+import { ScrollToTop } from './component/ScrollToTop/ScrollToTop';
+
+function App(): JSX.Element {
+  const [isHomePage, _] = useRoute('/');
+
   return (
     <div className='App'>
       <Suspense fallback={<Loading />}>
+        <ScrollToTop>
 
+          { isHomePage ? <Navbar homePage={true} /> : <Navbar />}
+          {/* <Navbar /> */}
+          <div className="app-content">
+
+            <Switch>
+              { AllRoutes.map(({ label, path, component: Component}) => (
+                <Route
+                  key={label}
+                  path={path}
+                  component={Component}
+                />
+              ))}
+            </Switch>
+            {/* <Redirect to={ HOME_PAGE.path }/> */}
+          </div>
+        </ScrollToTop>
+        <Footer />
       </Suspense>
-      <Navbar />
-      <Switch>
-        { AllRoutes.map(({ path, component: Component}) => (
-          <Route
-            path={ path }
-            component={ Component }
-          />
-        ))}
-        {/* <Redirect to={ HOME_PAGE.path }/> */}
-      </Switch>
-      <Footer />
     </div>
   );
 }

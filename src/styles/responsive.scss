@@ -11,6 +11,7 @@ $breakpoints: (
 /// Mixin to manage responsive breakpoints
 /// @author Hugo Giraudel
 /// @author Josep Marcello
+/// @author Jeremia Axel
 /// @param {String} $breakpoint - Breakpoint name
 /// @require $breakpoints
 @mixin respond-to($used_breakpoints...) {
@@ -44,10 +45,5 @@ $breakpoints: (
             + "Available breakpoints are: #{map-keys($breakpoints)}.";
       }
     }
-    }
   }
-
-
-  .App {
-    min-width: 380px;
-  }
+}

@@ -46,7 +46,7 @@ export const PRODUK_INDEX = toRoute('Produk', '/produk');
 export const GATHERTOWN_PAGE = toRoute('Gather Town', '/gathertown', Gathertown);
 export const MAJALAH_PAGE = toRoute('Majalah', '/majalah', Majalah);
 
-export const EVENT_PAGE = toRoute('Event', '/event', ComingSoon);
+export const EVENT_PAGE = toRoute('Event', '/event', EventPage);
 
 export const NavbarRoutes: navroutes[] = [
   {
@@ -75,11 +75,7 @@ export const NavbarRoutes: navroutes[] = [
 export const AllRoutes = [
   HOME_PAGE,
   EVENT_PAGE,
-<<<<<<< HEAD
-  MAJALAH_PAGE,
-=======
   GALERI_HMJ_PAGE,
->>>>>>> devel
   GALERI_APRESIASI_PAGE,
   KIRIM_PESAN_PAGE,
   WISUDAWAN_PAGE,

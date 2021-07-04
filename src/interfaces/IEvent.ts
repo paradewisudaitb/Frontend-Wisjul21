@@ -1,5 +1,7 @@
-export default interface IEvent {
+interface IEvent {
   date: Date;
   title: string;
   main?: boolean;
 }
+
+export default IEvent;

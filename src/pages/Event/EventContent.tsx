@@ -2,45 +2,40 @@ import IEvent from '../../interfaces/IEvent';
 
 export const EVENTS: IEvent[] = [
   {
-    date: new Date('2021-05-28'),
-    title: 'WISDOM #1111111',
+    date: new Date('2021-07-3'),
+    title: 'LIVE Instagram 1 WisShare',
   },
   {
-    date: new Date('2021-06-13'),
-    title: 'WISDOM #2',
+    date: new Date('2021-07-4'),
+    title: 'Live Instagram 2 WisShare',
   },
   {
-    date: new Date('2021-06-20'),
-    title: 'WISDOM #3',
+    date: new Date('2021-07-06'),
+    title: 'WisCinema',
   },
   {
-    date: new Date('2021-06-21'),
-    title: 'Nonton Bareng',
+    date: new Date('2021-07-10'),
+    title: 'Webinar WisShare',
   },
   {
-    date: new Date('2021-06-26'),
-    title: 'Reflection Night',
+    date: new Date('2021-07-11'),
+    title: 'Charity Concert',
   },
   {
-    date: new Date('2021-06-28'),
-    title: 'Charity Concert: Wispril x Apres! ITB',
-  },
-  {
-    date: new Date('2021-07-04'),
+    date: new Date('2021-07-13'),
     title: 'Charity Event',
   },
   {
-    date: new Date('2021-07-16'),
-    title: 'Day-1 Parade Wisuda ITB 2021',
+    date: new Date('2021-07-15'),
+    title: 'Taman Ekspresi',
+  },
+  {
+    date: new Date('2021-07-18'),
+    title: 'Parade Wisuda Juli ITB 2021',
     main: true, // dekorasi outline
   },
   {
-    date: new Date('2021-07-17'),
-    title: 'Day-2 Parade Wisuda ITB 2021',
-    main: true, // dekorasi outline
-  },
-  {
-    date: new Date('2021-08-10'),
+    date: new Date('2021-07-18'),
     title: 'Virtual Photoshoot',
   },
 ];

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useLocation, useRoute } from 'wouter';
 import { getByNIM } from '../../controller/wisudawan';
 import './KirimPesanPage.scss';
@@ -11,8 +11,9 @@ import sensor from '../../middleware/sensorKataKasar';
 const maxMessageLength = 255;
 const maxSenderNameLength = 30;
 
-export const KirimPesanPage = () => {
+export const KirimPesanPage = (): JSX.Element => {
   const [match, params] = useRoute('/hmj/:fak/:nim/kirim-pesan');
+  // const [match, params] = useRoute(KIRIM_PESAN_PAGE.path);
   const limit = 200;
 
   if (match && params) {
@@ -27,7 +28,7 @@ export const KirimPesanPage = () => {
     const nim = params.nim;
     const fak = params.fak;
 
-    const [location, setLocation] = useLocation();
+    const [_, setLocation] = useLocation();
     const [loading, setLoading] = useState(true);
     const [wisudawan, setWisudawan] = useState({
       nim: nim,
@@ -58,7 +59,7 @@ export const KirimPesanPage = () => {
       if (display) charCount(text, display, maxSenderNameLength);
     };
 
-    const submitPesan = (event: any) => {
+    const submitPesan = (event: FormEvent) => {
       event.preventDefault();
       const namaPengirimInput: HTMLInputElement | null = document.querySelector('#nameinput');
       const isiPesanInput: HTMLTextAreaElement | null = document.querySelector('#message-content');
@@ -88,7 +89,7 @@ export const KirimPesanPage = () => {
     };
 
     return (
-      <div className="kirimpesan bg p-5">
+      <div className="kirimpesan p-5">
         { loading ? (
           <div className='loading-screen'>
             <Loading />
@@ -124,7 +125,7 @@ export const KirimPesanPage = () => {
                   </div>
                   <div className="mb-2 float-end">
                     <label className="message-char-counter small m-2" id='message-char-counter'>0/{maxMessageLength}</label>
-                    <input type="submit" value="Submit" className='btn btn-primary submit-button' />
+                    <input type="submit" value="Submit" className='submit-button' />
                   </div>
                 </form>
               </div>

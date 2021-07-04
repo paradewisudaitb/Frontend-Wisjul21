@@ -7,6 +7,10 @@
     opacity: 80%;
   }
 
+  h2 {
+    margin-top: 1rem;
+  }
+
   form {
     position: relative;
     margin-bottom: 3vh;
@@ -14,14 +18,14 @@
     input[type='text'] {
       background: $red-darker;
       margin: 1rem;
-      font-size: 1.6vw;
+      font-size: 18px;
       width: 50vw;
       border-radius: 3rem;
       border: none;
       box-shadow: none;
-      height: 7.2vh;
+      height: 5vh;
       text-align: start;
-      padding-left: 2vw;
+      padding: 0 2vw;
     }
   }
 
@@ -30,7 +34,7 @@
     justify-content: center;
     flex-direction: row;
   }
-  
+
   *:focus {
     outline: none;
   }
@@ -41,10 +45,9 @@
     form {
       input[type='text'] {
         width: 60vw;
-        height: 7vh;
-        font-size: 1.1rem;
-        // font-size: 2.4vw;
-        padding-left: 8vw;
+        height: 4vh;
+        font-size: 12px;
+        padding: 0 8vw;
       }
     }
   }

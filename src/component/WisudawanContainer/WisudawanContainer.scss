@@ -24,15 +24,14 @@
 }
 
 #spark {
-  max-height: 20vh;
+  height: 20vh;
   width: auto;
   position: absolute;
-  right: -7vw;
-  top: -10vh;
+  right: -6vw;
+  top: -12vh;
   @include respond-to('phone', 'tablet') {
-    width: 40vw;
-    right: -23vw;
-    top: -13vh;
+    right: -9vw;
+    top: -12vh;
     overflow: hidden;
   }
 }

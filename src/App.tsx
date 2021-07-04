@@ -8,35 +8,35 @@ import { Navbar } from './component/NavbarFooter/Navbar';
 import Sponsor from './component/Sponsor/Sponsor';
 
 import { AllRoutes, HOME_PAGE, COMINGSOON_PAGE } from './routes/routes';
-import { Loading } from './pages/Loading/Loading';
+import { Loading } from './component/Loading/Loading';
 
-import { ScrollToTop } from './routes/ScrollToTop/ScrollToTop';
-function App() {
+import { ScrollToTop } from './component/ScrollToTop/ScrollToTop';
+
+function App(): JSX.Element {
   const [isHomePage, _] = useRoute('/');
 
   return (
     <div className='App'>
       <Suspense fallback={<Loading />}>
-        <ScrollToTop />
+        <ScrollToTop>
 
-        { isHomePage ? <Navbar homePage={true} /> : <Navbar />}
-        {/* <Navbar /> */}
-        <div className="app-content">
+          { isHomePage ? <Navbar homePage={true} /> : <Navbar />}
+          {/* <Navbar /> */}
+          <div className="app-content">
 
-          <Switch>
-            { AllRoutes.map(({ label, path, component: Component}) => (
-              <Route
-                key={label}
-                path={path}
-                component={Component}
-              />
-            ))}
-          </Switch>
-          {/* <Redirect to={ HOME_PAGE.path }/> */}
-
-          <Sponsor />
-          
-        </div>
+            <Switch>
+              { AllRoutes.map(({ label, path, component: Component}) => (
+                <Route
+                  key={label}
+                  path={path}
+                  component={Component}
+                />
+              ))}
+            </Switch>
+            {/* <Redirect to={ HOME_PAGE.path }/> */}
+            <Sponsor />
+          </div>
+        </ScrollToTop>
         <Footer />
       </Suspense>
     </div>

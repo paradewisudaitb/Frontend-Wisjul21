@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'wouter';
+import { ToTop } from '../ScrollToTop/ScrollToTop';
 
 const red_darker = '80, 10, 7'; // RGB of #590a07
 
@@ -8,9 +9,9 @@ import './Navbar.scss';
 
 import { NavbarLinks } from './NavbarLinks';
 
-export const Brand = () => {
+export const Brand = (): JSX.Element => {
   return (
-    <Link to='/' className="brand d-flex my-auto">          
+    <Link to='/' className="brand d-flex my-auto" onClick={ToTop}>
       <img src="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/logo/min.png" id="brand-logo" alt="Logo Wisjul" />
       <h2 className="" id="brand-text">WISJUL 2021</h2>
     </Link>
@@ -18,7 +19,7 @@ export const Brand = () => {
 };
 
 const toggleOpen = () => {
-  let open = false;
+  // let open = false;
   const drops = document.getElementById('drops');
   const navbar = document.getElementById('navbar');
   const but = document.getElementById('toggle');
@@ -28,12 +29,12 @@ const toggleOpen = () => {
       navbar.className += ' navbar-active';
       but.className += ' toggle-active';
       drops.className += ' drops-active';
-      open = true;
+      // open = true;
     } else {
       navbar.className = navbar.className.replace('navbar-active', '').trim();
       but.className = but.className.replace('toggle-active', '').trim();
       drops.className = drops.className.replace('drops-active', '').trim();
-      open = false;
+      // open = false;
     }
   }
 };
@@ -42,15 +43,14 @@ interface INavbarHome {
   homePage?: boolean
 }
 
-export const Navbar = ({ homePage }: INavbarHome) => {
+export const Navbar = ({ homePage }: INavbarHome): JSX.Element => {
   const [opacity, setOpacity] = useState(0);
   const handleScroll = () => {
     let offsetY = (window.pageYOffset / window.innerHeight);
     if (offsetY > 1) offsetY = 1;
     setOpacity(offsetY);
   };
-  // console.log(document.getElementById('navbar-home')?.style.backgroundColor);
-  console.log(opacity);
+  
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);

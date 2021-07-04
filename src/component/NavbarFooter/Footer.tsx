@@ -8,7 +8,7 @@ import { ReactComponent as SpotifyIcon } from '../../icons/spotify.svg';
 
 import './Footer.scss';
 
-export const Footer = () => {
+export const Footer = (): JSX.Element => {
   return (
     <footer className="footer">
       <div className="d-flex justify-content-between">

@@ -32,6 +32,8 @@ const slugToNamaHimpunanITB = (text: string) => {
     tmp.forEach(word => {
       if (word == 'dan') {
         result += word + ' ';
+      } else if (word == 'non') {
+        result += 'Non-';
       } else {
         result += word[0].toUpperCase() + word.slice(1) + ' ';
       }
@@ -51,7 +53,7 @@ const GaleriApresiasi = (): JSX.Element => {
 
     const fotoHMJ = LIST_HMJ.filter(hmj => {
       return (hmj.namaHimpunan == namaHimpunan);
-    })[0]?.linkFoto || 'test' ;
+    })[0]?.linkFoto;
 
     const defaultWisudawan: IGaleriWisudawan[] = [];
     const defaultKontenApresiasi: IKontenApresiasi[] = [];
@@ -76,7 +78,7 @@ const GaleriApresiasi = (): JSX.Element => {
           setLoadingWisudawan(false)
         );
 
-      if (namaHimpunan != 'Non Himpunan') {
+      if (namaHimpunan != 'Non-Himpunan') {
         console.log(namaHimpunan);
         getKontenApresiasi(namaHimpunan.toLowerCase())
           .then(dataApresiasi => {
@@ -97,12 +99,12 @@ const GaleriApresiasi = (): JSX.Element => {
           <img src={fotoHMJ} className='himpunan-logo' alt={`logo ${namaHimpunan}`}/>
         </div>
 
-        {(kontenApresiasi.length != 0) &&
         <div className='apresiasi-wisudawan my-md-3'>
-          <h2>Apresiasi HMJ</h2>
-          {loadingApresiasi ? <Loading /> : <ApresiasiCarousel data={kontenApresiasi} />}
+          <h2>Apresiasi {isTPB ? 'TPB' : 'HMJ'}</h2>
+          {loadingApresiasi ? <Loading /> :
+            ( kontenApresiasi.length == 0 ?
+              <h3>Tidak ada konten apresiasi</h3> : <ApresiasiCarousel data={kontenApresiasi} /> )}
         </div>
-        }
 
         {!isTPB &&
           <div className='daftar-wisudawan'>

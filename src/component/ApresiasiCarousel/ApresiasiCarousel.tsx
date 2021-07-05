@@ -55,16 +55,12 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
       <h3>
         {judul.charAt(0).toUpperCase() + judul.slice(1)}
       </h3>
-      {/* <div className="warning-label"></div> */}
       <div className='carousel'>
         <Carousel
-          // autoPlay
           infiniteLoop
           showThumbs={false}
           showStatus={false}
           showArrows={false}
-          // width={'75vw'}
-          // dynamicHeight={true}
           onChange={(e) => setSlide(e)}
           onClickItem={(e) => onClickCarousel(e)}
         >

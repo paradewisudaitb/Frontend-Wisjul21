@@ -158,7 +158,7 @@ export default function Form(): JSX.Element {
   // const warnMany = <span className="form-warn">* Jika ada lebih dari 1 prestasi, karya, kontribusi, atau lembaga non-HMJ, pisahkan dengan baris baru (enter).</span>;
   const warnManyInline = <span className="form-warn">Jika ada lebih dari 1, pisahkan dengan enter (baris baru); boleh kosong</span>;
 
-  const enabled = true;
+  const enabled = false;
 
   return ( enabled ? (
     <div className="form-page">

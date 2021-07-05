@@ -52,7 +52,7 @@ const GaleriApresiasi = (): JSX.Element => {
     const fotoHMJ = LIST_HMJ.filter(hmj => {
       return (hmj.namaHimpunan == namaHimpunan);
     })[0]?.linkFoto || 'test' ;
-    
+
     const defaultWisudawan: IGaleriWisudawan[] = [];
     const defaultKontenApresiasi: IKontenApresiasi[] = [];
 
@@ -76,15 +76,18 @@ const GaleriApresiasi = (): JSX.Element => {
           setLoadingWisudawan(false)
         );
 
-      getKontenApresiasi(namaHimpunan.toLowerCase())
-        .then(dataApresiasi => {
-          setKontenApresiasi(dataApresiasi);
-          setLoadingApresiasi(false);
-        })
-        .catch((err) => {
-          console.log(err);
-          setLoadingWisudawan(false);
-        });
+      if (namaHimpunan != 'Non Himpunan') {
+        console.log(namaHimpunan);
+        getKontenApresiasi(namaHimpunan.toLowerCase())
+          .then(dataApresiasi => {
+            setKontenApresiasi(dataApresiasi);
+            setLoadingApresiasi(false);
+          })
+          .catch((err) => {
+            console.log(err);
+            setLoadingWisudawan(false);
+          });
+      }
     }, []);
 
     return (
@@ -101,7 +104,7 @@ const GaleriApresiasi = (): JSX.Element => {
         </div>
         }
 
-        {!isTPB && 
+        {!isTPB &&
           <div className='daftar-wisudawan'>
             {loadingWisudawan ? <Loading /> : wisudawans}
           </div>

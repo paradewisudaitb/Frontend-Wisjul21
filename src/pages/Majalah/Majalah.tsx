@@ -7,7 +7,8 @@ import { ASSET_URL } from '../../api';
 export default function Majalah(): JSX.Element {
   const [index, setIndex] = useState(1);
   const htmlTag = document.querySelector('html');
-  const pageCount = 6;
+  const pageCount = 1;
+  const majalahFileName = 'pre';
 
   // Modal
   const [show, setShow] = useState(false);
@@ -26,7 +27,7 @@ export default function Majalah(): JSX.Element {
   };
 
   function getImage(index: number) {
-    return `${ASSET_URL}/Majalah/devel_page-000`+index+'.jpg';
+    return `${ASSET_URL}/Majalah/${majalahFileName}_page-0001.jpg`;
   }
 
   function next() {
@@ -41,7 +42,7 @@ export default function Majalah(): JSX.Element {
     if (index < 2) {
       setIndex(pageCount);
     } else {
-      setIndex(index-1);
+      setIndex(index - 1);
     }
   }
 
@@ -55,12 +56,10 @@ export default function Majalah(): JSX.Element {
               <Col xs={12} md={12} lg={6}>
                 <div className="header-jumbotron">
                   <h1 className="header-title"> Majalah <br/> Metamorfosis </h1>
-                  <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                  {/* <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> */}
                   <hr className="my-4" />
-                  <p>It uses utility classNamees for typography and spacing to space content out within the larger container.</p>
-                  <p className="lead">
-                    <a className="btn btn-success btn-lg mt-3 dwn-btn" href={`${ASSET_URL}/Majalah/devel.pdf`} role="button">Download</a>
-                  </p>
+                  <p className="header-sutitle">"The way to get started is to quit talking and begin doing" - Walt Disney</p>
+                  <a className="btn btn-success btn mt-3 dwn-btn" href={`${ASSET_URL}/Majalah/${majalahFileName}.pdf`} role="button">Download</a>
                 </div>
               </Col>
               <Col xs={12} md={12} lg={6}>
@@ -71,7 +70,7 @@ export default function Majalah(): JSX.Element {
                   </div>
                   <div className="d-flex justify-content-center">
                     <button className="doc-button previous" onClick={prev}> <i className="fa fa-chevron-left fa-lg text-white"></i> </button>
-                    <div className="index-majalah"> {index} / 6 </div>
+                    <div className="index-majalah"> {index} / {pageCount} </div>
                     <button className="doc-button next" onClick={next}> <i className="fa fa-chevron-right fa-lg text-white"></i> </button>
                   </div>
                 </div>
@@ -95,7 +94,7 @@ export default function Majalah(): JSX.Element {
                 <i className="fa fa-chevron-left text-white"></i>
               </Button>
               <Button variant="secondary" disabled onClick={handleClose}>
-                {index} / 6
+                {index} / {pageCount}
               </Button>
               <Button variant="primary" onClick={next}>
                 <i className="fa fa-chevron-right text-white"></i>

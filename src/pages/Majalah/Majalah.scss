@@ -101,7 +101,9 @@
 .majalah-pdf {
   margin-top: 5vh;
   text-align: center;
+
   img {
+    cursor: pointer;
     height: 70vh;
     margin-top: 10px;
     border: solid black 2px;

@@ -7,6 +7,7 @@ import { ASSET_URL } from '../../api';
 export default function Majalah(): JSX.Element {
   const [index, setIndex] = useState(1);
   const htmlTag = document.querySelector('html');
+  const pageCount = 6;
 
   // Modal
   const [show, setShow] = useState(false);
@@ -24,22 +25,21 @@ export default function Majalah(): JSX.Element {
     }
   };
 
-  function getImage(index: number)
-  {
+  function getImage(index: number) {
     return `${ASSET_URL}/Majalah/devel_page-000`+index+'.jpg';
   }
 
   function next() {
-    if (index > 5) {
+    if (index > (pageCount - 1)) {
       setIndex(1);
     } else {
-      setIndex(index+1);
+      setIndex(index + 1);
     }
   }
 
   function prev() {
     if (index < 2) {
-      setIndex(6);
+      setIndex(pageCount);
     } else {
       setIndex(index-1);
     }

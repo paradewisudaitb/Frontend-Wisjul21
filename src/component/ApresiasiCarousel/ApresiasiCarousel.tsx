@@ -32,7 +32,7 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
       default:
         return (
           <div className='apresiasi-image-container'>
-            <small className='apresiasi-warning-label'><i className="fa fa-exclamation-triangle"></i> Klik gambar untuk memperbesar</small>
+            <small className='apresiasi-warning-label'><i className="icon fa fa-exclamation-triangle"></i> Klik gambar untuk memperbesar</small>
             <img
               src={data.linkKonten}
               id='img-01'

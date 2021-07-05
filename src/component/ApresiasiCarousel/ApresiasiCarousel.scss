@@ -40,6 +40,14 @@
         width: 100%;
       }
     }
+
+    .apresiasi-image-container {
+      cursor: pointer;
+
+      .icon {
+        margin-right: 0.25rem;
+      }
+    }
   }
 
   .opened-img {

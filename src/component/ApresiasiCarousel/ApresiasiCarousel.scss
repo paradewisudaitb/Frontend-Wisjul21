@@ -8,7 +8,7 @@
     margin-top: 2vh;
     background-color: rgba($purple-medium, 0);
     display: flex;
-    
+
     width: 35vw;
 
     min-height: 20vh;
@@ -16,6 +16,11 @@
 
     justify-content: center;
     align-items: center;
+
+    @include respond-to('phone') {
+      width: 50vw;
+      height: 40vh;
+    }
 
     div {
       display: flex;
@@ -46,15 +51,6 @@
     .clicked-img {
       margin: 1rem;
       width: 40vw;
-    }
-  }
-}
-
-@include respond-to('phone') {
-  .carousel-container {
-    .carousel {
-      width: 50vw;
-      height: 40vh;
     }
   }
 }

@@ -87,8 +87,10 @@ const GaleriApresiasi = (): JSX.Element => {
           })
           .catch((err) => {
             console.log(err);
-            setLoadingWisudawan(false);
+            setLoadingApresiasi(false);
           });
+      } else {
+        setLoadingApresiasi(false);
       }
     }, []);
 

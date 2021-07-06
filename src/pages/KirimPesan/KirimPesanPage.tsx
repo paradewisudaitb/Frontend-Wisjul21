@@ -17,6 +17,8 @@ export const KirimPesanPage = (): JSX.Element => {
   const limit = 200;
 
   if (match && params) {
+    const [loadingImg, setLoadingImg] = useState(true);
+
     const nameinputresize = () => {
       const nameinput = document.getElementById('nameinput');
       if (nameinput) {
@@ -104,7 +106,14 @@ export const KirimPesanPage = (): JSX.Element => {
                   <div className="text-center my-2">{wisudawan.nim + ' ' + wisudawan.namaLengkap}</div>
                 </div>
                 <div className="foto-wisudawan-container">
-                  <img className='foto-wisudawan' src={wisudawan.pasfoto} alt="Foto Wisudawan" />
+                  {loadingImg && <Loading />}
+                  <img
+                    className='foto-wisudawan'
+                    src={wisudawan.pasfoto}
+                    alt="Foto Wisudawan"
+                    onLoad={() => setLoadingImg(false)}
+                    style={!loadingImg ? { opacity: 1 } : { height: 0, width: 0 }}
+                  />
                 </div>
               </div>
               <div className="message">

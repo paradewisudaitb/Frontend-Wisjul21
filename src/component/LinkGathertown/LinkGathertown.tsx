@@ -15,7 +15,7 @@ const LinkGathertown = (props: {
           {props.linkGathertown}
         </a> ||
         <p className='gathertown-nolink'>
-          Treasure Games dimulai tanggal 08 Juli 2021 Pukul 19.00 WIB!
+          Treasure Games dimulai tanggal 08 Juli 2021 Pukul 19.00 WIB
         </p>
       }
     </div>

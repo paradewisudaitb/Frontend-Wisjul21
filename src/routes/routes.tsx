@@ -9,6 +9,7 @@ import { KirimPesanPage } from '../pages/KirimPesan/KirimPesanPage';
 import Wisudawan from '../pages/Wisudawan/Wisudawan';
 import Gathertown from '../pages/Gathertown/Gathertown';
 import { Minigame } from '../pages/Minigame/Minigame';
+import Puzzle from '../pages/Minigame/Puzzle';
 
 export type route = {
     label: string
@@ -38,6 +39,7 @@ export const GATHERTOWN_PAGE = toRoute('Gather Town', '/gathertown', Gathertown)
 export const FORM_PAGE = toRoute('Form', '/form', Form);
 export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', '/form-apresiasi', FormApresiasi);
 export const MINIGAME_PAGE = toRoute('Puzzle Metamorphosis', '/minigame', Minigame);
+export const PUZZLE_PAGE = toRoute('Puzzle Metamorphosis', '/minigame/puzzle', Puzzle);
 export const FORM_INDEX = toRoute('Forms', 'forms');
 
 export const NavbarRoutes: navroutes[] = [
@@ -71,4 +73,5 @@ export const AllRoutes = [
   FORM_APRESIASI_PAGE,
   FORM_PAGE,
   MINIGAME_PAGE,
+  PUZZLE_PAGE
 ];

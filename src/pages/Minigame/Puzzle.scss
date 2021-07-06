@@ -1,0 +1,119 @@
+@import '../../App.scss';
+
+.puzzle-page {
+
+  background: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg");
+  background-size: cover;
+  background-position: center;
+
+
+  .title {
+    text-align: center;
+    padding: 1em 0;
+  }
+
+  .puzzle-container {
+    
+    display: grid;
+    grid-template-columns: auto 30%;
+    justify-content: center;
+
+    padding-bottom: 3em;
+
+    #board-1 {
+      background-color: #fff;
+      margin: 20px;
+      height: 35em;
+      width: 35em;
+      display: grid;
+      grid-template-columns: auto auto auto auto auto;
+      grid-template-rows: auto auto auto auto auto;
+    }
+
+    .puzzle-piece-container {
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      
+      .arrow-up, .arrow-down {
+        cursor: pointer;
+        transition: .3s ease-in-out;
+      }
+    
+      .arrow-up:hover {
+        transform: translateY(-3px);
+        filter: drop-shadow(0 5px 10px $red-lighter)  
+      }
+    
+      .arrow-down:hover {
+        transform: translateY(3px);
+        filter: drop-shadow(0 -5px 10px $red-lighter)  
+      }
+    
+      .arrow-up-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+        .arrow-up {
+          width: 0; 
+          height: 0; 
+      
+          border-left: 40px solid transparent;
+          border-right: 40px solid transparent;
+          
+          border-bottom: 30px solid $orange-lighter;
+        }
+      }
+    
+      .arrow-down-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        .arrow-down {
+          width: 0; 
+          height: 0; 
+      
+          border-left: 40px solid transparent;
+          border-right: 40px solid transparent;
+    
+          border-top: 30px solid $orange-lighter;
+        }
+      }
+      
+      #board-2 {
+        .board-2-container {
+          margin: 10px 0;
+          display: grid;
+          grid-template-columns: auto auto;
+          justify-content: center;
+          gap: 15px;
+          align-items: center;
+      
+          position: relative;
+          height: 27em;
+          overflow: hidden;
+      
+          scroll-behavior: smooth;
+        }
+        
+      
+        .arrow-up, .arrow-down {
+          background: $red-darker;
+        }
+      }
+    }
+
+    .puzzle-board {
+      .puzzle-piece {
+        height: 6em;
+        width: 6em;
+        cursor: grab;
+        padding: 0;
+        background-color: gray;
+      }
+    }
+  }
+
+}
+

@@ -53,6 +53,7 @@
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
+    position: relative;
 
     #pas-foto {
       display: block;
@@ -61,27 +62,14 @@
       margin: 0 auto;
     }
 
-    // 400 x 560
-    // 371 x 520
-    // 357 x 500
     #bulu {
-      height: 15vh;
+      height: 10rem;
       width: auto;
       align-self: flex-start;
-      position: relative;
-      right: 4vw;
-      bottom: 12vh;
+      position: absolute;
+      left: -5rem;
+      bottom: -3rem;
       rotate: 12deg;
-
-      @include respond-to('phone') {
-        right: 15vw;
-        bottom: 12vh;
-      }
-
-      @include respond-to('tablet') {
-        right: 10vw;
-        bottom: 10vh;
-      }
     }
   }
 }

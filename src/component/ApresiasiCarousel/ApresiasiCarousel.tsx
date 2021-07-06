@@ -22,6 +22,7 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
       case 'video':
         return <video controls src={data.linkKonten} />;
       case 'musik':
+      case 'lagu':
         return <audio controls src={data.linkKonten} />;
       case 'website':
         return <a href={data.linkKonten}></a>;
@@ -32,7 +33,7 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
         />;
     }
     // if (data.tipeKonten == 'video')
-    
+
     // else if (data.tipeKonten == 'musik')
     // else if (data.tipeKonten == 'poster'
     //          || data.tipeKonten  == 'puisi'

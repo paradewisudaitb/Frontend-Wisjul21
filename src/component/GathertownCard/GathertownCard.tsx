@@ -1,5 +1,6 @@
 import './GathertownCard.scss';
 import LinkGathertown from '../LinkGathertown/LinkGathertown';
+import { Loading } from '../../component/Loading/Loading';
 import { useState, useEffect } from 'react';
 import { ASSET_URL } from '../../api';
 
@@ -11,6 +12,7 @@ const HMJCardContainer = (props: {
 }): JSX.Element => {
   const [width, setWidth] = useState(window.innerWidth);
   const breakpoint = 468;
+  const [loadingImg, setLoadingImg] = useState(true);
 
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
@@ -27,11 +29,14 @@ const HMJCardContainer = (props: {
       <div className='card-hmj'>
         <div className='card-flex'>
           <div className='image-hmj'>
+            {loadingImg && <Loading />}
             <img
               alt={'logo ' + props.namaHMJ}
               src={props.linkFoto}
               width='185'
               height='185'
+              onLoad={() => setLoadingImg(false)}
+              style={!loadingImg ? { opacity: 1 } : { height: 0, width: 0 }}
             />
           </div>
           <div className='info-hmj'>

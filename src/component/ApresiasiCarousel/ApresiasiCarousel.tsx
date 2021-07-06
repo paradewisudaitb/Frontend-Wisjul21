@@ -27,7 +27,7 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
   const handleClose = () => {
     setShow(false);
     if (htmlTag) {
-      htmlTag.setAttribute('style', 'overflow-y: hidden;');
+      htmlTag.setAttribute('style', 'overflow-y: scroll;');
     }
   };
 

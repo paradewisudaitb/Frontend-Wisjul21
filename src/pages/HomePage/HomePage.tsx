@@ -28,7 +28,7 @@ const HomePage = (): JSX.Element => {
   };
 
   return (
-    <div className='homepage pb-5'>
+    <div className='homepage'>
       {/* HEADER ASSETS */}
       {/* Clouds */}
       <div className='cloud-container'>

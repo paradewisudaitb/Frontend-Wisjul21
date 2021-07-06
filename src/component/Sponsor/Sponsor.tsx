@@ -62,7 +62,7 @@ const sponsors = [
 
 const Sponsor = () => {
   return (
-    <div className="sponsor pt-2">
+    <div className="sponsor">
       {sponsors && <SponsorComponent nama='Our Sponsors' items={sponsors} />}
       {medpars && <SponsorComponent nama='Our Media Partners' items={medpars} />}
     </div>

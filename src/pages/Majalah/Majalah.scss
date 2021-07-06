@@ -13,7 +13,6 @@
   }
   p {
     margin-bottom: 0px;
-    font-size: 1.25rem;
   }
 
   .dwn-btn {
@@ -25,10 +24,15 @@
 }
 
 .hero {
-  h1,
-  p {
+  h1 {
     align-items: left;
     text-align: left;
+  }
+
+  p {
+    align-items: left;
+    text-align: justify;
+    margin-top: 1rem;
   }
 }
 

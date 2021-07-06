@@ -63,6 +63,7 @@ const Gathertown = (): JSX.Element => {
             alt='Percikan api'
           />
           <h1>Gather Town</h1>
+          <h3>Treasure Games</h3>
         </div>
         <div className='text'>
           <img
@@ -70,17 +71,23 @@ const Gathertown = (): JSX.Element => {
             alt='Awan'
             className='cloud-text'
           />
-          <p>
-            Ultricies leo integer malesuada nunc vel risus commodo. Mollis nunc
-            sed id semper risus in hendrerit gravida rutrum. Volutpat est velit
-            egestas dui. Purus semper eget duis at tellus at urna condimentum
-            mattis. Iaculis eu non diam phasellus vestibulum lorem. Est sit amet
-            facilisis magna etiam tempor orci. Nunc aliquet bibendum enim
-            facilisis. Laoreet id donec ultrices tincidunt arcu. Diam maecenas
-            ultricies mi eget mauris. Faucibus a pellentesque sit amet porttitor
-            eget. Diam donec adipiscing tristique risus nec feugiat in.
-            Sollicitudin aliquam ultrices sagittis orci a scelerisque purus
-            semper.
+          <p className='gathertown-text'>
+            Treasure Games merupakan salah satu permainan yang diadakan dalam Perayaan Wisuda Juli ITB 2021. Siapa yang tercepat dalam menemukan harta karun ialah pemenangnya! 
+            Aturan dan tata cara bermain di Treasure Games adalah sebagai berikut:
+            <ol>
+              <li>Pemain dapat mengakses tautan Gather Town pada website Perayaan Wisuda Joli 2021.</li>
+              <li>Pemain memasuki room Gather Town sesuai dengan himpunan masing-masing.</li>
+              <li>Jumlah pemain yang dapat memasuki room Gather Town maksimal 25 orang dari masing-masing himpunan. Pemain yang dapat masuk adalah yang tercepat.</li>
+              <li>Agar dapat masuk ke room Gather Town dengan lebih cepat, pemain dipersilahkan untuk membuat akun Gather Town sebelum Treasure Games dimulai.</li>
+              <li>Setiap pemain akan mengikuti Treasure games dengan clue awal yang diberikan melalui story instagram @paradewisudaitb</li>
+              <li>Clue-clue selanjutnya dapat ditemukan oleh pemain di dalam room Gather Town.</li>
+              <li>Dengan mengikuti rangkaian games berdasarkan clue, pemain akan diarahkan untuk menemukan harta karun yang ada di dalam Gather Town.</li>
+              <li>Pada Treasure Games, akan ditentukan 3 orang pemenang dengan catatan waktu paling cepat dalam menemukan harta karun.</li>
+              <li>Games dilaksanakan pada tanggal 8 Juli 2021, pukul 19.00 WIB.</li>
+              <li>Pemenang akan langsung dihubungi personal oleh panitia Perayaan Wisuda Juli ITB 2021.</li>
+            </ol> 
+            Selamat bermain!
+            <br/>Gather Town dapat diakses melalui tautan di bawah ini:
           </p>
         </div>
       </div>

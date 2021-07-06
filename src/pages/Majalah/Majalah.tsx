@@ -55,8 +55,12 @@ export default function Majalah(): JSX.Element {
             <Row>
               <Col xs={12} md={12} lg={6}>
                 <div className="header-jumbotron">
-                  <h1 className="header-title"> Majalah <br/> Metamorfosis </h1>
-                  {/* <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> */}
+                  <h1 className="header-title"> Buku Perjalanan <br/> Metamorfosis </h1>
+                  <div className="majalah-description">
+                    <p>Buku Perjalanan Metamorfosis berisi senarai kisah perjuangan insan Ganesha dalam karsa nya melalui perubahan.</p>
+                    <p>Menceritakan renjana dan tapak pertama di Jalan Ganesha serta rasa berbunga-bunga bagai <em>Petrea volubilis</em> Gerbang Selatan yang merekah. Pun tentang euforia GKUB yang nyatanya tak amerta dan lika liku perjuangan yang telah menunggu di ujung jalan panjang. Tentang berbagai rasa yang terkenang, seperti kisah di Sunken Court pada satu sandyakala. Tentang cahaya di ujung lorong; untuk rebah sebelum kembali bertualang. Hingga akhirnya berdiri di depan Sabuga, bukan untuk selesai selamanya; ini perayaan manis atas perjuangan di Ganesha.</p> 
+                    <p>Selamat membaca Buku Perjalanan Metamorfosis, sederet kisah penuh penghargaan terhadap setiap tahap perubahan para insan bestari dan memori-memori yang melengkapi cerita mereka menuju arunika.</p>
+                  </div>
                   <hr className="my-4" />
                   <p className="header-sutitle">"The way to get started is to quit talking and begin doing" - Walt Disney</p>
                   <a className="btn btn-success btn mt-3 dwn-btn" href={`${ASSET_URL}/Majalah/${majalahFileName}.pdf`} role="button">Download</a>

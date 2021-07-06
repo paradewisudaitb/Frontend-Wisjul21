@@ -9,6 +9,17 @@ const SPONSOR_URL = `${SPONSORSHIP_URL}/sponsor`;
 const MEDPAR_URL = `${SPONSORSHIP_URL}/medpar`;
 
 const medpars = [
+  `${MEDPAR_URL}/01_L_Kompas.com.png`,
+  `${MEDPAR_URL}/02_L_Republika.png`,
+
+
+  `${MEDPAR_URL}/03_M_inibaru.id(2).png`, // ini bingung yang mana yang dipake?
+  `${MEDPAR_URL}/04_M_Ayo Bandung.com.png`,
+  `${MEDPAR_URL}/05_M_LFM ITB (Hitam).png`,
+  `${MEDPAR_URL}/06_M_StudentsxCEOs Bandung(3).jpg`,
+  `${MEDPAR_URL}/07_M_8EH Radio ITB.png`,
+  `${MEDPAR_URL}/08_M_Radio Kampus ITB.jpeg`,
+
   `${MEDPAR_URL}/09_S_Event Bandung.png`,
   `${MEDPAR_URL}/10_S_Bandung Creative Media.jpg`,
   `${MEDPAR_URL}/11_S_BDG Today.png`,

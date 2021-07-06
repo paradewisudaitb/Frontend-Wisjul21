@@ -10,10 +10,30 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
     img {
-        max-height: 20vh;
-        max-width: 20vh;
+        // max-height: 20vh;
+        // max-width: 20vh;
         margin: 1rem;
     }
+    .item-xl img {
+        max-width: 50vh;
+        max-width: 50vh;
+        // border: 5px solid blue;
+    }
+    .item-l img {
+        max-width: 40vh;
+        max-height: 40vh;
+        // border: 5px solid green;
+    }
+    .item-m img {
+        max-width: 25vh;
+        max-height: 25vh;
+        // border: 5px solid yellow;
+    }
+    .item-s img {
+        max-width: 20vh;
+        max-height: 20vh;
+        // border: 5px solid red;
+    }
 }
+

@@ -41,9 +41,12 @@ const medpars = [
 ];
 
 const sponsors = [
-  `${SPONSOR_URL}/a`,
-  `${SPONSOR_URL}/b`,
-  `${SPONSOR_URL}/c`,
+  `${SPONSOR_URL}/XL_Chocolatos.png`,
+  `${SPONSOR_URL}/XL_Paragon.png`,
+  `${SPONSOR_URL}/L_Semen Gresik.png`,
+  `${SPONSOR_URL}/M_Pahamify.jpeg`,
+  `${SPONSOR_URL}/M_PDAM Tirta Perwitasari .JPG`,
+  `${SPONSOR_URL}/S_Cakap.png`
 ];
 
 const Sponsor = () => {

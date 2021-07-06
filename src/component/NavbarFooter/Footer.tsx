@@ -4,7 +4,10 @@ import { Brand } from './Navbar';
 
 import { ReactComponent as InstagramIcon } from '../../icons/instagram.svg';
 import { ReactComponent as TwitterIcon } from '../../icons/twitter.svg';
+import { ReactComponent as TiktokIcon } from '../../icons/tik-tok.svg';
 import { ReactComponent as SpotifyIcon } from '../../icons/spotify.svg';
+import { ReactComponent as LineIcon } from '../../icons/line.svg';
+import { ReactComponent as LinkedinIcon } from '../../icons/linkedin.svg';
 
 import './Footer.scss';
 
@@ -36,15 +39,32 @@ export const Footer = (): JSX.Element => {
             className="social-media-container d-flex twitter">
             <TwitterIcon className='social-media' />
           </a>
-          <a href="https://bit.ly/Phoenix1Wisjul" 
+          <a href="https://vt.tiktok.com/ZSJmyETDr/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="social-media-container d-flex tiktok">
+            <TiktokIcon className='social-media' />
+          </a>
+          <a href="https://open.spotify.com/user/huto1ycscch4bkj3fukhzssrr?si=UsvZwc51QGiSPgkjilCVWQ" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-media-container d-flex spotify">
             <SpotifyIcon className='social-media' />
           </a>
+          <a href="https://line.me/R/ti/p/%40mov0891c" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="social-media-container d-flex line">
+            <LineIcon className='social-media' />
+          </a>
+          <a href="https://www.linkedin.com/company/parade-wisuda-juli-itb-2021" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="social-media-container d-flex linkedin">
+            <LinkedinIcon className='social-media' />
+          </a>
         </div>
       </div>
-        
     </footer>
   );
 };

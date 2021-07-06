@@ -16,6 +16,9 @@
   height: 2.5rem;
   border-radius: 2rem;
   background-color: $red-medium;
+  path {
+    fill: white;
+  }
   margin: 0.2rem;
 
   @include respond-to('desktop', 'large') {
@@ -25,7 +28,6 @@
         height: 1px;
       }
     }
-
     width: 3rem;
     height: 3rem;
   }
@@ -33,9 +35,11 @@
 
 .social-media-sec {
   margin-top: 4vh;
-  margin-right: 4vw;
+  margin-right: 10vw;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 10rem;
 
   @include respond-to('desktop', 'large') {
     margin-top: 8vh;
@@ -62,10 +66,36 @@
   transition: 0.3s;
 }
 
+.tiktok:hover {
+  background: black;
+  path {
+    fill: white;
+    filter: drop-shadow(30px 30px #EE1D52) drop-shadow(-30px -30px #69C9D0);
+  }
+  
+  transition: 0.3s;
+}
+
 .spotify:hover {
   background: black;
   path {
     fill: #1ecf5f
+  }
+  transition: 0.3s;
+}
+
+.line:hover {
+  background: #00B900;
+  path {
+    fill: white;
+  }
+  transition: 0.3s;
+}
+
+.linkedin:hover {
+  background: #1278b3;
+  path {
+    fill: white;
   }
   transition: 0.3s;
 }

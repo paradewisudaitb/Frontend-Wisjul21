@@ -106,6 +106,13 @@
       padding: 10px;
       text-decoration: none;
       box-shadow: 10px 10px 5px rgba(black, 0.6);
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: translateY(-2%);
+        cursor: pointer;
+        background-color: rgba($blue-medium, 0.8);
+      }
 
       @include respond-to('phone') {
         width: 14em;

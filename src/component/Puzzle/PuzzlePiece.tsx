@@ -1,27 +1,7 @@
-import React, {useState, useRef} from 'react';
+import React, {useRef} from 'react';
 
 
 const PuzzlePiece = (props: any) => {
-
-  const listRef = useRef<HTMLInputElement>(null);
-
-  const scrollUp = () => {
-    if (listRef.current) {
-      listRef.current.scrollBy({
-        top: -150,
-        behavior: 'smooth',
-      });
-    }
-  };
-
-  const scrollDown = () => {
-    if (listRef.current) {
-      listRef.current.scrollBy({
-        top: 150,
-        behavior: 'smooth',
-      });
-    }
-  };
 
   const dragStart = (e: any) => {
     const target = e.target;

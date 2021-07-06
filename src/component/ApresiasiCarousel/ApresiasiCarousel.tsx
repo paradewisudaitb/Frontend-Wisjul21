@@ -62,7 +62,8 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
             <small className='apresiasi-warning-label'><i className="icon fa fa-exclamation-triangle"></i> Klik gambar untuk memperbesar</small>
             <img
               src={data.linkKonten}
-              id='img-01'              
+              id='img-01'
+              className='apresiasi-image'
             />
           </div>
         );

@@ -22,10 +22,15 @@
       height: 40vh;
     }
 
-    .apresiasi-item {
+    .apresiasi-image {
       object-fit: contain;
-      height: inherit;
-      width: auto;
+      min-height: 20vh;
+      max-height: 50vh;
+
+      @include respond-to('phone') {
+        width: 50vw;
+        height: 40vh;
+      }
     }
 
     div {
@@ -37,7 +42,7 @@
       width: 100%;
 
       video {
-        margin-top: 10vh;
+        // margin-top: 10vh;
         width: 100%;
       }
 

@@ -122,8 +122,8 @@ const HomePage = (): JSX.Element => {
             <button className='arrow' onClick={prev}><i className="fa fa-chevron-left fa-lg"></i></button>
             <div className='btns'>
               <Link onClick={ToTop} to={MAJALAH_PAGE.path}><button className={'button'+((clickCount)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/majalah.png')` }}><h2>Majalah Metamorfosis</h2></button></Link>
-              <Link onClick={ToTop} to={GALERI_HMJ_PAGE.path}><button className={'button'+((clickCount+1)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/hmj.png')` }}><h2>Galeri Apresiasi</h2></button></Link>
-              <Link onClick={ToTop} to={GATHERTOWN_PAGE.path}><button className={'button'+((clickCount+2)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/gathertown.png')` }}><h2>Gather Town</h2></button></Link>
+              <Link onClick={ToTop} to={GALERI_HMJ_PAGE.path}><button className={'button'+((clickCount+1)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/hmj.png')` }}><h2>Galeri HMJ</h2></button></Link>
+              <Link onClick={ToTop} to={GATHERTOWN_PAGE.path}><button className={'button'+((clickCount+2)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/gathertown.png')` }}><h2>Treasure Games</h2></button></Link>
             </div>
             <button className='arrow' onClick={next}><i className="fa fa-chevron-right fa-lg"></i></button>
           </div>

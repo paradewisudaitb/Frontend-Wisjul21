@@ -55,25 +55,24 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
       <h3>
         {judul.charAt(0).toUpperCase() + judul.slice(1)}
       </h3>
-      <div className='carousel'>
-        <Carousel
-          infiniteLoop
-          showThumbs={false}
-          showStatus={false}
-          showArrows={false}
-          onChange={(e) => setSlide(e)}
-          onClickItem={(e) => onClickCarousel(e)}
-        >
-          {data.map((row: IKontenApresiasi, i: number) => (
-            <div
-              key={i}
-              className='apresiasi-item'
-            >
-              {RenderComponent(row)}
-            </div>
-          ))}
-        </Carousel>
-      </div>
+      <Carousel
+        infiniteLoop
+        showThumbs={false}
+        showStatus={false}
+        showArrows={false}
+        onChange={(e) => setSlide(e)}
+        onClickItem={(e) => onClickCarousel(e)}
+        className='carousel'
+      >
+        {data.map((row: IKontenApresiasi, i: number) => (
+          <div
+            key={i}
+            className='apresiasi-item'
+          >
+            {RenderComponent(row)}
+          </div>
+        ))}
+      </Carousel>
       {isImageOpen &&
         <div className='opened-img'>
           <img src={data[openedImageIdx].linkKonten} className='clicked-img' id='clicked-img' />

@@ -27,38 +27,38 @@ export const Footer = (): JSX.Element => {
           </div>
         </div>
         <div className="social-media-sec">
-          <a href="https://www.instagram.com/paradewisudaitb/" 
-            target="_blank" 
+          <a href="https://www.instagram.com/paradewisudaitb/"
+            target="_blank"
             rel="noopener noreferrer"
             className="social-media-container d-flex instagram">
             <InstagramIcon className='social-media' />
           </a>
-          <a href="https://twitter.com/paradewisudaitb" 
-            target="_blank" 
+          <a href="https://twitter.com/paradewisudaitb"
+            target="_blank"
             rel="noopener noreferrer"
             className="social-media-container d-flex twitter">
             <TwitterIcon className='social-media' />
           </a>
-          <a href="https://vt.tiktok.com/ZSJmyETDr/" 
-            target="_blank" 
+          <a href="https://vt.tiktok.com/ZSJmyETDr/"
+            target="_blank"
             rel="noopener noreferrer"
             className="social-media-container d-flex tiktok">
             <TiktokIcon className='social-media' />
           </a>
-          <a href="https://open.spotify.com/user/huto1ycscch4bkj3fukhzssrr?si=UsvZwc51QGiSPgkjilCVWQ" 
-            target="_blank" 
+          <a href="https://open.spotify.com/user/huto1ycscch4bkj3fukhzssrr?si=UsvZwc51QGiSPgkjilCVWQ"
+            target="_blank"
             rel="noopener noreferrer"
             className="social-media-container d-flex spotify">
             <SpotifyIcon className='social-media' />
           </a>
-          <a href="https://line.me/R/ti/p/%40mov0891c" 
-            target="_blank" 
+          <a href="https://line.me/R/ti/p/%40mov0891c"
+            target="_blank"
             rel="noopener noreferrer"
             className="social-media-container d-flex line">
             <LineIcon className='social-media' />
           </a>
-          <a href="https://www.linkedin.com/company/parade-wisuda-juli-itb-2021" 
-            target="_blank" 
+          <a href="https://www.linkedin.com/company/parade-wisuda-juli-itb-2021"
+            target="_blank"
             rel="noopener noreferrer"
             className="social-media-container d-flex linkedin">
             <LinkedinIcon className='social-media' />

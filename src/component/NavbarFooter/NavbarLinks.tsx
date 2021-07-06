@@ -5,6 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { NavbarRoutes } from '../../routes/routes';
 import { NavLink } from './NavLink';
 
+import './NavbarLinks.scss';
 
 export const NavbarLinks = (): JSX.Element => {
   const contents = NavbarRoutes.map(({ content:route, children_routes, parentPath, isDropdown }) => (

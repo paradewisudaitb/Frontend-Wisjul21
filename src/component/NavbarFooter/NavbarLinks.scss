@@ -1,9 +1,31 @@
-@media (max-width: 765px) {
-  .dropdown-item {
-    display: none;
+@import '../../App.scss';
+
+.dropdown {
+  position: relative;
+
+  .dropdown-toggle {
+    background-color: transparent;
+    border: none;
+    color: $red-lighter;
+
+    &:hover {
+      color: white;
+    }
   }
 
-  .open {
-    display: block !important;
+  .dropdown-menu.show {
+    position: absolute;
+    background-color: $red-darker;
+    top: 55px;
+  }
+
+  .dropdown-item {
+    background-color: transparent;
+    color: $red-lighter;
+
+    &:hover {
+      background-color: transparent;
+      color: white;
+    }
   }
 }

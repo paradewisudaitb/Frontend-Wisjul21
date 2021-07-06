@@ -36,6 +36,7 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
             <img
               src={data.linkKonten}
               id='img-01'
+              className='apresiasi-image'
             />
           </div>
 

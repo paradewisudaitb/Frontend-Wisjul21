@@ -7,6 +7,7 @@ import { GALERI_APRESIASI_PAGE } from '../../routes/routes';
 
 import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
 import { Loading } from '../Loading/Loading';
+import { SyntheticEvent } from 'react';
 
 const WisudawanCard = (data: IGaleriWisudawan): JSX.Element => {
   const [match, params] = useRoute(GALERI_APRESIASI_PAGE.path);
@@ -14,8 +15,14 @@ const WisudawanCard = (data: IGaleriWisudawan): JSX.Element => {
   const showToolTip = data.judulTA.length > textLimit;
   const shownJudulTA = showToolTip ? data.judulTA.slice(0, textLimit) + '...' : data.judulTA;
   const [isLoaded, setLoaded] = useState(false);
+  const [imgSrc, setImgSrc] = useState(data.pasfoto);
 
   const Awan = `${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`;
+
+  const useFallbackImg = () => {
+    const fallbackImg = `${ASSET_URL}/fotoWisudawan/nophoto.png`;
+    setImgSrc(fallbackImg);
+  };
 
   if (match && params) {
     return (
@@ -29,8 +36,9 @@ const WisudawanCard = (data: IGaleriWisudawan): JSX.Element => {
           className='image'
         >
           <img
-            src={data.pasfoto}
+            src={imgSrc}
             className='foto-wisudawan'
+            onError={useFallbackImg}
           />
           <img src={Awan} alt='' className='awan-bg' />
         </div>

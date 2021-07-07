@@ -1,5 +1,5 @@
-@import '../../styles/responsive.scss';
-@import '../../styles/colorpalette.scss';
+@import "../../styles/responsive.scss";
+@import "../../styles/colorpalette.scss";
 
 .carousel-container {
   margin-top: 1vh;
@@ -11,8 +11,8 @@
 
     width: 35vw;
 
-    min-height: 20vh;
-    max-height: 50vh;
+    // min-height: 20vh;
+    // max-height: 50vh;
 
     justify-content: center;
     align-items: center;
@@ -60,15 +60,9 @@
     }
   }
 
-  .opened-img {
-    background-color: white;
-    position: absolute;
-    z-index: 5;
-    transform: translate(-10%, -70%);
-
-    .clicked-img {
-      margin: 1rem;
-      width: 40vw;
-    }
-  }
-}
+// .image-modal {
+//   width: 80vw;
+//   @include respond-to("phone") {
+//     width: 100vw;
+//   }
+// }

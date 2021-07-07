@@ -78,20 +78,16 @@ const GaleriApresiasi = (): JSX.Element => {
           setLoadingWisudawan(false)
         );
 
-      if (namaHimpunan != 'Non-Himpunan') {
-        console.log(namaHimpunan);
-        getKontenApresiasi(namaHimpunan.toLowerCase())
-          .then(dataApresiasi => {
-            setKontenApresiasi(dataApresiasi);
-            setLoadingApresiasi(false);
-          })
-          .catch((err) => {
-            console.log(err);
-            setLoadingApresiasi(false);
-          });
-      } else {
-        setLoadingApresiasi(false);
-      }
+      getKontenApresiasi(namaHimpunan.toLowerCase())
+        .then(dataApresiasi => {
+          setKontenApresiasi(dataApresiasi);
+          setLoadingApresiasi(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoadingApresiasi(false);
+        });
+
     }, []);
 
     return (

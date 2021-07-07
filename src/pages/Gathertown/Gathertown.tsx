@@ -62,6 +62,7 @@ const Gathertown = (): JSX.Element => {
             className='spark-title'
             alt='Percikan api'
           />
+
           <h1>Treasure Games</h1>
           <h3>Gather Town</h3>
         </div>

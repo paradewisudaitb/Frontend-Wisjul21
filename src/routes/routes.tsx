@@ -1,4 +1,4 @@
-
+import EventPage from '../pages/Event/EventPage';
 import HomePage from '../pages/HomePage/HomePage';
 import ComingSoon from '../pages/ComingSoon/ComingSoon';
 import Majalah from '../pages/Majalah/Majalah';
@@ -43,10 +43,10 @@ export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', '/form-apresiasi', 
 
 
 export const PRODUK_INDEX = toRoute('Produk', '/produk');
-export const GATHERTOWN_PAGE = toRoute('Gather Town', '/gathertown', Gathertown);
+export const GATHERTOWN_PAGE = toRoute('Treasure Games', '/treasuregames', Gathertown);
 export const MAJALAH_PAGE = toRoute('Majalah', '/majalah', Majalah);
 
-export const EVENT_PAGE = toRoute('Event', '/event', ComingSoon);
+export const EVENT_PAGE = toRoute('Event', '/event', EventPage);
 
 export const NOTFOUND_PAGE = toRoute('Not Found', '/:rest*', NotFound);
 
@@ -66,12 +66,12 @@ export const NavbarRoutes: navroutes[] = [
   {
     content: GALERI_HMJ_PAGE,
   },
-  {
-    content: FORM_INDEX,
-    children_routes: [FORM_PAGE, FORM_APRESIASI_PAGE],
-    isDropdown: true,
-    parentPath: '',
-  }
+  // {
+  //   content: FORM_INDEX,
+  //   children_routes: [FORM_PAGE, FORM_APRESIASI_PAGE],
+  //   isDropdown: true,
+  //   parentPath: '',
+  // }
 ];
 
 export const AllRoutes = [
@@ -83,8 +83,8 @@ export const AllRoutes = [
   WISUDAWAN_PAGE,
   MAJALAH_PAGE,
   GATHERTOWN_PAGE,
-  FORM_APRESIASI_PAGE,
-  FORM_PAGE,
+  // FORM_APRESIASI_PAGE,
+  // FORM_PAGE,
 
   NOTFOUND_PAGE,
 ];

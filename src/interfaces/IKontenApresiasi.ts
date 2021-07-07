@@ -3,6 +3,7 @@ type tipeApresiasi =
   |'website'
   |'video'
   |'musik'
+  |'lagu'
   |'puisi'
   |'lainnya';
 

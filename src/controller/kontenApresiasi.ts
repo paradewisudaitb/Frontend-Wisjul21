@@ -31,8 +31,12 @@ export const getKontenApresiasi = async (namaHimpunan: string): Promise<IKontenA
   try {
     const route = `${API_URL}/kontenApresiasi/get?namaHimpunan=${namaHimpunan}`;
     const res = await fetch(route);
-    const data: IKontenApresiasi[] = await res.json();
-    return data;
+    if (res.ok) {
+      const data: IKontenApresiasi[] = await res.json();
+      return data;
+    } else {
+      throw 'a';
+    }
   } catch {
     throw new Error('Gagal membuat koneksi ke backend atau terjadi kesalahan pada backend.');
   }

@@ -108,7 +108,7 @@ export default function Majalah(): JSX.Element {
           </Modal>
         </div>
       </Jumbotron>
-      </ Sponsor>
+      <Sponsor />
     </div>
   );
 }

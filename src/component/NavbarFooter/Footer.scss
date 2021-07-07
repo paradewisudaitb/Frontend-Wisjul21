@@ -1,14 +1,41 @@
 @import '../../App.scss';
 
 .footer {
+  display: flex;
   width: 100%;
   margin-top: auto;
+  margin-bottom: 0;
+  padding: 1.5rem 2rem;
+  justify-content: space-between;
   background: fixed $red-darker;
   min-height: $footerheight;
+
+
+  @include respond-to('phone') {
+    justify-content: center;
+    flex-direction: column;
+  }
+
 }
 
-.copyright {
+.left-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include respond-to('phone') {
+    // display: flex;
+    // justify-content: center;
+    align-items: center;
+  }
+}
+
+.footer-copyright {
   margin-top: 2rem;
+
+  @include respond-to('phone') {
+    margin-top: 1rem;
+  }
 }
 
 .social-media-container {
@@ -16,6 +43,9 @@
   height: 2.5rem;
   border-radius: 2rem;
   background-color: $red-medium;
+  path {
+    fill: white;
+  }
   margin: 0.2rem;
 
   @include respond-to('desktop', 'large') {
@@ -25,23 +55,24 @@
         height: 1px;
       }
     }
-
     width: 3rem;
     height: 3rem;
   }
 }
 
 .social-media-sec {
-  margin-top: 4vh;
-  margin-right: 4vw;
+  margin-top: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 10rem;
+  justify-content: center;
 
   @include respond-to('desktop', 'large') {
     margin-top: 8vh;
     margin-right: 20px;
     flex-direction: row;
   }
+
 }
 
 .social-media-container:hover {
@@ -62,10 +93,36 @@
   transition: 0.3s;
 }
 
+.tiktok:hover {
+  background: black;
+  path {
+    fill: white;
+    filter: drop-shadow(30px 30px #EE1D52) drop-shadow(-30px -30px #69C9D0);
+  }
+  
+  transition: 0.3s;
+}
+
 .spotify:hover {
   background: black;
   path {
     fill: #1ecf5f
+  }
+  transition: 0.3s;
+}
+
+.line:hover {
+  background: #00B900;
+  path {
+    fill: white;
+  }
+  transition: 0.3s;
+}
+
+.linkedin:hover {
+  background: #1278b3;
+  path {
+    fill: white;
   }
   transition: 0.3s;
 }

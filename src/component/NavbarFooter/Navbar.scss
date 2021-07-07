@@ -133,11 +133,11 @@
     
     .toggle-active::before {
         box-shadow: none;
-        transform: rotateZ(360 * 3 + 43deg) translateX(5px) translateY(7px);
+        transform: rotateZ(360 * 0 + 43deg) translateX(5px) translateY(7px);
     }
     .toggle-active::after {
         box-shadow: none;
-        transform: rotateZ(-(360 * 3 + 43deg)) translateX(5px) translateY(-7px);
+        transform: rotateZ(-(360 * 0 + 43deg)) translateX(5px) translateY(-7px);
     }
     
     .toggle-active {

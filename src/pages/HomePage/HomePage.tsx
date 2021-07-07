@@ -8,6 +8,8 @@ import { ToTop } from '../../component/ScrollToTop/ScrollToTop';
 
 import Sponsor from '../../component/Sponsor/Sponsor';
 
+import { Navbar } from '../../component/NavbarFooter/Navbar';
+
 //Asset
 import Stroke from '../../images/bg/Stroke.png';
 
@@ -31,6 +33,7 @@ const HomePage = (): JSX.Element => {
 
   return (
     <>
+      <Navbar homePage={true} />
       <div className='homepage'>
         {/* HEADER ASSETS */}
         {/* Clouds */}

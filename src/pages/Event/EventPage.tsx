@@ -8,11 +8,13 @@ import {
 } from './EventContent';
 import { ASSET_URL } from '../../api';
 import Sponsor from '../../component/Sponsor/Sponsor';
+import { Navbar } from '../../component/NavbarFooter/Navbar';
 
 const EventPage = () => {
   const comingSoonEvent = findUpcomingEvent(EVENTS)?.title;
   return (
     <>
+      <Navbar />
       <div className="event-page">
         <img className='bg-component cloud-sun' src={`${ASSET_URL}/assets/images/vistock/main/awan%20matahari-01.png`}  />
         <img className='bg-component cloud-1' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`}  />

@@ -5,7 +5,6 @@ import { Route, Switch, Redirect, useRoute } from 'wouter';
 
 import { Footer } from './component/NavbarFooter/Footer';
 import { Navbar } from './component/NavbarFooter/Navbar';
-import Sponsor from './component/Sponsor/Sponsor';
 
 import { AllRoutes, HOME_PAGE, COMINGSOON_PAGE } from './routes/routes';
 import { Loading } from './component/Loading/Loading';
@@ -34,7 +33,6 @@ function App(): JSX.Element {
               ))}
             </Switch>
             {/* <Redirect to={ HOME_PAGE.path }/> */}
-            <Sponsor />
           </div>
         </ScrollToTop>
         <Footer />

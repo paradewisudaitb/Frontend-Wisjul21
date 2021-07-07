@@ -13,6 +13,8 @@ import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
 import IKontenApresiasi from '../../interfaces/IKontenApresiasi';
 import LIST_HMJ from '../../data/hmj.json';
 
+import Sponsor from '../../component/Sponsor/Sponsor';
+
 const slugToNamaHimpunanITB = (text: string) => {
   const tmp = text.split('-');
   let result = '';
@@ -82,30 +84,38 @@ const GaleriApresiasi = (): JSX.Element => {
     }, []);
 
     return (
-      <div className='galeri-apresiasi-page py-5 bg'>
-        <div className='himpunan'>
-          <h1>{ namaHimpunan }</h1>
-          <img src={fotoHMJ} className='himpunan-logo' alt={`logo ${namaHimpunan}`}/>
-        </div>
-
-        {(kontenApresiasi.length != 0) &&
-        <div className='apresiasi-wisudawan my-5'>
-          <h2>Apresiasi HMJ</h2>
-          {loadingApresiasi ? <Loading /> : <ApresiasiCarousel data={kontenApresiasi} />}
-        </div>
-        }
-
-        {!isTPB && 
-          <div className='daftar-wisudawan'>
-            {loadingWisudawan ? <Loading /> : wisudawans}
+      <>
+        <div className='galeri-apresiasi-page py-5 bg'>
+          <div className='himpunan'>
+            <h1>{ namaHimpunan }</h1>
+            <img src={fotoHMJ} className='himpunan-logo' alt={`logo ${namaHimpunan}`}/>
           </div>
-        }
 
-      </div>
+          {(kontenApresiasi.length != 0) &&
+          <div className='apresiasi-wisudawan my-5'>
+            <h2>Apresiasi HMJ</h2>
+            {loadingApresiasi ? <Loading /> : <ApresiasiCarousel data={kontenApresiasi} />}
+          </div>
+          }
+
+          {!isTPB && 
+            <div className='daftar-wisudawan'>
+              {loadingWisudawan ? <Loading /> : wisudawans}
+            </div>
+          }
+
+        </div>
+
+        <Sponsor />
+      </>
     );
 
   } else {
-    return (<h1>Error</h1>);
+    return (
+      <>
+        <h1>Error</h1>
+      </>
+    );
   }
 
 };

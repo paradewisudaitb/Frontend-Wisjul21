@@ -116,6 +116,7 @@ const HomePage = (): JSX.Element => {
               </ol>
             </div>
           </div>
+        </div>
 
         {/* Buttons */}
         <div className='event-buttons'>

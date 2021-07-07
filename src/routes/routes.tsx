@@ -32,7 +32,7 @@ export const COMINGSOON_PAGE = toRoute('Coming Soon', '/coming-soon', ComingSoon
 export const HOME_PAGE = toRoute('Home', '/', HomePage);
 
 export const GALERI_HMJ_PAGE = toRoute('Galeri HMJ', '/hmj', GaleriHmj);
-export const GALERI_APRESIASI_PAGE = toRoute('Galeri Apresiasi', '/hmj/:hmj', GaleriApresiasi);
+export const GALERI_APRESIASI_PAGE = toRoute('Wisudawan dan Apresiasi', '/hmj/:hmj', GaleriApresiasi);
 export const WISUDAWAN_PAGE = toRoute('Wisudawan', '/hmj/:hmj/:nim', Wisudawan);
 export const KIRIM_PESAN_PAGE = toRoute('Kirim Pesan', '/hmj/:hmj/:nim/kirim-pesan', KirimPesanPage);
 
@@ -64,12 +64,12 @@ export const NavbarRoutes: navroutes[] = [
   {
     content: GALERI_HMJ_PAGE,
   },
-  {
-    content: FORM_INDEX,
-    children_routes: [FORM_PAGE, FORM_APRESIASI_PAGE],
-    isDropdown: true,
-    parentPath: '',
-  }
+  // {
+  //   content: FORM_INDEX,
+  //   children_routes: [FORM_PAGE, FORM_APRESIASI_PAGE],
+  //   isDropdown: true,
+  //   parentPath: '',
+  // }
 ];
 
 export const AllRoutes = [
@@ -81,6 +81,6 @@ export const AllRoutes = [
   WISUDAWAN_PAGE,
   MAJALAH_PAGE,
   GATHERTOWN_PAGE,
-  FORM_APRESIASI_PAGE,
-  FORM_PAGE,
+  // FORM_APRESIASI_PAGE,
+  // FORM_PAGE,
 ];

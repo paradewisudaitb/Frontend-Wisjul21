@@ -2,11 +2,11 @@
 @import '../../App.scss';
 
 .homepage {
-  // background-image: url('../../images/bg/Filter.png'), radial-gradient(#532F65, #201125, #201125);
+  background-image: url('../../images/bg/Filter.png'), radial-gradient(#532F65, #201125, #201125);
   background-blend-mode: overlay;
   margin-top: -$navbarheight;
   overflow-x: hidden;
-  
+
   button {
     border: none;
     border-radius: 3px;
@@ -63,7 +63,7 @@
       animation-delay: #{random(20)+($i - 2)*80}s;
     }
   }
-  
+
   .bg-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -101,7 +101,7 @@
       height: 125vh;
     }
   }
-  
+
   //MAIN CONTENT
   .tagline-container {
     position: absolute;
@@ -197,7 +197,7 @@
       }
     }
   }
-  
+
   .main-container {
     margin-top: 15vh;
     width: 100%;
@@ -321,7 +321,7 @@
         }
       }
     }
-    
+
     .event-buttons {
       margin: 5vw;
       z-index: 100;

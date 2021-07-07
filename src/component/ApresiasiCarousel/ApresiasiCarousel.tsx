@@ -3,6 +3,9 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ApresiasiCarousel.scss';
 import IKontenApresiasi from '../../interfaces/IKontenApresiasi';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Row, Col, Button, Modal } from 'react-bootstrap';
+
 
 const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element => {
   const [slide, setSlide] = useState(0);
@@ -11,39 +14,64 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
   const outsideElement = document.getElementById('img-01')!;
   const judul = data[slide].tipeKonten;
 
+  // Modal Start
+  const htmlTag = document.querySelector('html');
+  const [show, setShow] = useState(false);
+  const handleShow = () => {
+    setShow(true);
+    if (htmlTag) {
+      htmlTag.setAttribute('style', 'overflow-y: hidden;');
+    }
+  };
+
+  const handleClose = () => {
+    setShow(false);
+    if (htmlTag) {
+      htmlTag.setAttribute('style', 'overflow-y: scroll;');
+    }
+  };
+
+  const ngocok = () => {
+    alert('a');
+  };
+
+  // Modal End
+
+
   document.addEventListener('mousedown', (e) => {
     if (!(e.target == outsideElement)) {
       setIsImageOpen(false);
     }
   });
 
+  const isApresiasiImage = (tipeApresiasi: string) => {
+    return (tipeApresiasi == 'poster' || tipeApresiasi == 'puisi' || tipeApresiasi == 'lainnya');
+  };
+
   const RenderComponent = (data: IKontenApresiasi) => {
     switch (data.tipeKonten) {
       case 'video':
         return <video controls src={data.linkKonten} />;
       case 'musik':
-        return <audio controls src={data.linkKonten} />;
+        return <div className="audio-apresiasi"><audio controls src={data.linkKonten} /></div>;
       case 'website':
         return <a href={data.linkKonten}></a>;
       default:
-        return <img
-          src={data.linkKonten}
-          id='img-01'
-        />;
+        return (
+          <div className='apresiasi-image-container' onClick={handleShow}>
+            <small className='apresiasi-warning-label'><i className="icon fa fa-exclamation-triangle"></i> Klik gambar untuk memperbesar</small>
+            <img
+              src={data.linkKonten}
+              id='img-01'
+              className='apresiasi-image'
+            />
+          </div>
+        );
     }
-    // if (data.tipeKonten == 'video')
-    
-    // else if (data.tipeKonten == 'musik')
-    // else if (data.tipeKonten == 'poster'
-    //          || data.tipeKonten  == 'puisi'
-    //          || data.tipeKonten == 'lainnya')
   };
 
   const onClickCarousel = (i: number) => {
-    if (data[i].tipeKonten == 'poster'
-      || data[i].tipeKonten == 'puisi'
-      || data[i].tipeKonten == 'lainnya'
-    ) {
+    if (isApresiasiImage(data[i].tipeKonten)) {
       setIsImageOpen(true);
       setOpenedImageIdx(i);
     }
@@ -54,32 +82,38 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
       <h3>
         {judul.charAt(0).toUpperCase() + judul.slice(1)}
       </h3>
-      <div className='carousel'>
-        <Carousel
-          // autoPlay
-          infiniteLoop
-          showThumbs={false}
-          showStatus={false}
-          showArrows={false}
-          // width={'75vw'}
-          // dynamicHeight={true}
-          onChange={(e) => setSlide(e)}
-          onClickItem={(e) => onClickCarousel(e)}
-        >
-          {data.map((row: IKontenApresiasi, i: number) => (
-            <div
-              key={i}
-            >
-              {RenderComponent(row)}
-            </div>
-          ))}
-        </Carousel>
-      </div>
-      {isImageOpen &&
-        <div className='opened-img'>
-          <img src={data[openedImageIdx].linkKonten} className='clicked-img' id='clicked-img' />
-        </div>
-      }
+      <Carousel
+        infiniteLoop
+        showThumbs={false}
+        showStatus={false}
+        showArrows={false}
+        onChange={(e) => setSlide(e)}
+        onClickItem={(e) => onClickCarousel(e)}
+        className='carousel'
+      >
+        {data.map((row: IKontenApresiasi, i: number) => (
+          <div
+            key={i}
+            className='apresiasi-item'
+          >
+            {RenderComponent(row)}
+          </div>
+        ))}
+      </Carousel>
+      <Modal
+        show={show}
+        onHide={() => setShow(false)}
+        aria-labelledby="example-custom-modal-styling-title"
+        backdrop="static"
+        keyboard={false}
+      >
+        <Button variant="danger" className="modal-button mb-3" onClick={handleClose}>
+          <i className="fa fa-times fa-lg text-white me-1"></i>Close
+        </Button>
+        <img className="image-modal" src={data[openedImageIdx].linkKonten} />
+        <Modal.Footer>
+        </Modal.Footer>
+      </Modal>
     </div>
 
   );

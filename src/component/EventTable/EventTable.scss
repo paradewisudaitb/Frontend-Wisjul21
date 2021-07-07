@@ -1,0 +1,69 @@
+@import '../../styles/colorpalette.scss';
+@import '../../App.scss';
+
+.rundown {
+  height: 50px;
+  left: 0px;
+  top: 0px;
+  border-radius: 0px;
+  .jam {
+    padding-left: 35px;
+    // text-align: right;
+    height: 50px;
+    width: 170px;
+    font-style: normal;
+    border-radius: 25px 0px 0px 25px;
+    font-weight: normal;
+    line-height: 22px;
+    text-shadow: 1px 0px 0px black;
+    color: $blue-medium;
+    background-image: linear-gradient(84.2deg, $yellow-darker 10.06%, $orange-lighter 80.7%);
+
+    @include respond-to('phone'){
+      width: 40%;
+    }
+  }
+
+  .keterangan {
+    padding-left: 20px;
+    border-radius: 0px 25px 25px 0px;
+    text-shadow: 1px 0px 0px black;
+    text-align: left;
+    color: $blue-darker;
+    // background-image: linear-gradient(84.2deg, $orange-darker 80.06%, $yellow-darker 92.4%);
+    background-color: $orange-lighter;
+
+  }
+
+  &-past-event {
+    .jam,
+    .keterangan {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+  }
+  &-coming-soon {
+    // background: $red-medium;
+    .jam {
+      color: $yellow-darker;
+      font-weight: bold;
+      background-color: $orange-darker;
+      background-image: none;
+      background-size: 100%;
+    // background-image: linear-gradient(84.2deg, $yellow-darker 12.06%, $orange-darker 92.4%);
+    // background-size: 100%;
+    }
+    .keterangan {
+      color: $yellow-darker;
+      background-color: $orange-darker;
+      // background-color: unquote($red-medium + 'f0');
+      font-weight: bold;
+    }
+  }
+  &-main-event {
+    // outline: 2px solid $yellow-lighter;
+    // border : 2px solid $yellow-darker;
+    border-radius: 25px;
+    -moz-outline-radius: 25px;
+  }
+}

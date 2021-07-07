@@ -1,6 +1,11 @@
+@import 'styles/base.scss';
 @import 'styles/colorpalette.scss';
 @import 'styles/fonts.scss';
 @import 'styles/responsive.scss';
+
+$navbarheight: 4.4rem;
+$footerheight: 13rem;
+$drops-top: -15rem;
 
 * {
   font-family: 'Vollkorn';
@@ -58,10 +63,8 @@ h6 {
   position: inherit;
 }
 
-$navbarheight: 4.4rem;
-
 .app-content {
   @extend .bg;
-  min-height: 71vh;
+  min-height: calc(100vh - 13rem);
   padding-top: $navbarheight;
 }

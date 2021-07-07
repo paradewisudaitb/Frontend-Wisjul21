@@ -9,7 +9,9 @@ $scroll-thumb-color: $red-medium;
   // background-repeat: repeat;
   padding: 40px;
   min-height: 100vh;
+  position: relative;
 
+  
   @include respond-to('phone', 'tablet') {
     padding: 40px 20px;
     margin: auto 0;
@@ -22,9 +24,14 @@ $scroll-thumb-color: $red-medium;
   .awan-atas {
     position: absolute;
     max-width: 30vw;
-    left: 80vw;
-    top: 30vh;
+    right: -18vw;
+    top: 12rem;
     z-index: 0;
+
+    @include respond-to('tablet') {
+      right: 0rem;
+    }
+
     @include respond-to('phone') {
       max-width: 60vw;
       top: 25vh;
@@ -34,8 +41,9 @@ $scroll-thumb-color: $red-medium;
 
   .awan-bawah {
     position: absolute;
-    width: 40vw;
-    right: 75vw;
+    width: 30vw;
+    left: -10rem;
+    bottom: 0;
     z-index: 0;
     @include respond-to('phone') {
       width: 90vw;

@@ -1,0 +1,192 @@
+// @import '../../styles/base.scss';
+// @import '../../styles/colorpalette.scss';
+@import "../../App.scss";
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+table {
+  padding: 0px;
+  width: 80%;
+  border-collapse: separate !important;
+  border-spacing: 5px 1em;
+}
+
+.event-page {
+  position: relative;
+  background-image: url($bg);
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 1em;
+  .bg-component {
+    position: absolute;
+  }
+  .cloud-sun {
+    width: 15em;
+    left: 2%;
+    top: 2%;
+    z-index: 2;
+  }
+  .cloud-1 {
+    width: 15em;
+    right: 2%;
+    top: 3%;
+    z-index: 2;
+  }
+  .cloud-2{
+    width: 10em;
+    right: 13%;
+    transform: rotate(10deg) scaleX(1);
+    top: 3%;
+    z-index: 1;
+  }
+  .spark {
+    width: 3em;
+    right: 26%;
+    top: 1%;
+    z-index: 2;
+  }
+  .bulu-1 {
+    width: 4em;
+    transform: rotate(15deg) scaleX(1);
+    left: 2%;
+    top: 30%;
+    z-index: 2;
+  }
+  .bulu-2{
+    width: 4em;
+    transform: rotate(-30deg) scaleX(-1);
+    right: 2%;
+    top: 40%;
+    z-index: 2;
+  }
+  .spark-sun {
+    width: 5em;
+    transform: rotate(15deg) scaleX(1);
+    left: 2%;
+    bottom: 30%;
+    z-index: 2;
+  }
+  .awan-203 {
+    width: 15em;
+    transform: rotate(0deg) scaleX(-1);
+    left: 1%;
+    bottom: 2%;
+    z-index: 2;
+  }
+  .awan-204 {
+    width: 12em;
+    right: 2%;
+    bottom: 2%;
+    z-index: 2;
+  }
+  .content-header {
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .content-body {
+    z-index: 20;
+    margin-bottom: 1rem;
+  }
+
+  @include respond-to("phone") {
+    .cloud-1,
+    .cloud-2,
+    .spark,
+    .bulu-1,
+    .bulu-2,
+    .spark-sun,
+    .awan-203,
+    .awan-204,
+    .cloud-sun
+     {
+      display: none;
+    }
+    .content-header h1 {
+      font-size: 35px;
+    }
+    .content-header p {
+      display: none;
+    }
+  }
+  @include respond-to("tablet") {
+    .content-header h1 {
+      font-size: 35px;
+    }
+    .content-header p {
+      display: none;
+    }
+    .cloud-sun {
+    width: 10em;
+    left: 2%;
+    top: 2%;
+    z-index: 2;
+    } 
+    .cloud-1 {
+      width: 10em;
+      right: 2%;
+      top: 3%;
+      z-index: 2;
+    }
+    .cloud-2{
+      width: 6em;
+      right: 13%;
+      transform: rotate(10deg) scaleX(1);
+      top: 3%;
+      z-index: 1;
+    }
+    .spark {
+      width: 3em;
+      right: 20%;
+      top: 3%;
+      z-index: 2;
+    }
+    .bulu-1 {
+      width: 4em;
+      transform: rotate(15deg) scaleX(1);
+      left: 2%;
+      top: 30%;
+      z-index: 2;
+    }
+    .bulu-2{
+      width: 4em;
+      transform: rotate(-30deg) scaleX(-1);
+      right: 3%;
+      top: 30%;
+      z-index: 2;
+    }
+    .spark-sun {
+      width: 5em;
+      transform: rotate(15deg) scaleX(1);
+      left: 2%;
+      bottom: 25%;
+      z-index: 2;
+    }
+    .awan-203 {
+      width: 15em;
+      transform: rotate(0deg) scaleX(-1);
+      left: 1%;
+      bottom: 2%;
+      z-index: 2;
+    }
+    .awan-204 {
+      width: 12em;
+      right: 2%;
+      bottom: 2%;
+      z-index: 2;
+    }
+  }
+}

@@ -67,7 +67,7 @@ const HomePage = (): JSX.Element => {
             <img src={`${ASSET_URL}/assets/logo/min.png`} alt='Logo Wisuda Juli 2021' className='logo' />
             <h6 className='tagline' style={{ backgroundImage: `url(${Stroke})` }}>Metamorphose to find <br /> the path to the blossom.</h6>
           </div>
-          <a href='https://www.youtube.com'
+          <a href='https://www.youtube.com/channel/UCPWflerCf3yT4eItbxg7xJA'
             target='_blank'
             rel='noopener noreferrer'
             className='youtube mx-auto'

@@ -89,7 +89,7 @@ export const KirimPesanPage = (): JSX.Element => {
     };
 
     return (
-      <div className="kirimpesan p-5">
+      <div className="kirimpesan">
         { loading ? (
           <div className='loading-screen'>
             <Loading />
@@ -97,17 +97,17 @@ export const KirimPesanPage = (): JSX.Element => {
         ) : (
           <>
             <img className='jeduar' src={'https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/main/spark%202%20atas%20matahari.png'} alt="" />
-            <img className='kumo' src={'https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/header/awan%20kiri.png'} alt="" />
-            <div className="kirimpesan-container p-5">
+            <div className="kirimpesan-container">
               <div className="receiver">
                 <div className='nama-wisudawan'>
-                  <div className="text-center my-2">{wisudawan.nim + ' ' + wisudawan.namaLengkap}</div>
+                  {wisudawan.nim + ' ' + wisudawan.namaLengkap}
                 </div>
                 <div className="foto-wisudawan-container">
                   <img className='foto-wisudawan' src={wisudawan.pasfoto} alt="Foto Wisudawan" />
                 </div>
               </div>
               <div className="message">
+                <img className='kumo' src={'https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/header/awan%20kiri.png'} alt="" />
                 <form action="" className='mx-4' onSubmit={submitPesan}>
                   <div className="sender-name mt-4">
                     <label className='sender-name-label'>Dari</label>

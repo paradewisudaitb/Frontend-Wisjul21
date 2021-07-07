@@ -17,7 +17,7 @@ const NotFoundComponent = (hmj: boolean) => {
   );
 };
 
-export const NotFoundWisudawan = (hmjSlug: string) => {
+export const NotFoundWisudawan = ({hmjSlug}: {hmjSlug: string}) => {
   return (
     <div className="not-found">
       <h1 className='m-5'>Wisudawan tidak ditemukan</h1>

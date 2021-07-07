@@ -2,11 +2,6 @@
 @import '../../styles/colorpalette.scss';
 
 .wisudawan-filter {
-  ::placeholder {
-    color: $yellow-darker;
-    opacity: 80%;
-  }
-
   h2 {
     margin-top: 1rem;
   }
@@ -26,6 +21,11 @@
       height: 5vh;
       text-align: start;
       padding: 0 2vw;
+
+      ::placeholder {
+        color: $yellow-darker;
+        opacity: 80%;
+      }
     }
   }
 

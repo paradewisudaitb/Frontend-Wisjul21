@@ -1,11 +1,11 @@
 import React, { Suspense } from 'react';
 
 import './App.scss';
-import { Route, Switch, Redirect, useRoute } from 'wouter';
+import { Route, Switch, useRoute } from 'wouter';
 
 import { Footer } from './component/NavbarFooter/Footer';
 import { Navbar } from './component/NavbarFooter/Navbar';
-import { AllRoutes, HOME_PAGE, COMINGSOON_PAGE } from './routes/routes';
+import { AllRoutes } from './routes/routes';
 import { Loading } from './component/Loading/Loading';
 
 import { ScrollToTop } from './component/ScrollToTop/ScrollToTop';
@@ -31,7 +31,6 @@ function App(): JSX.Element {
                 />
               ))}
             </Switch>
-            {/* <Redirect to={ HOME_PAGE.path }/> */}
           </div>
         </ScrollToTop>
         <Footer />

@@ -7,12 +7,15 @@ import WisudawanContainer from '../../component/WisudawanContainer/WisudawanCont
 import { getPesan } from '../../controller/pesan';
 import { getByNIM } from '../../controller/wisudawan';
 import { ASSET_URL } from '../../api';
+import { NotFoundWisudawan } from '../../component/NotFound/NotFound';
+import { NotFoundHMJ } from '../../pages/NotFound/NotFound';
 
 export default function Wisudawan(): JSX.Element {
   const [match, params] = useRoute('/hmj/:hmj/:nim');
 
   const [loadingWisudawan, setLoadingWisudawan] = useState(true);
   const [dataWisudawan, setDataWisudawan] = useState<JSX.Element>();
+  const [isWisudawanExist, setWisudawanExist] = useState(true);
 
   const [loadingPesan, setLoadingPesan] = useState(true);
   const [pesanToShow, setPesanToShow] = useState<JSX.Element[]>([]);
@@ -46,7 +49,11 @@ export default function Wisudawan(): JSX.Element {
           setDataWisudawan(<WisudawanContainer {...dataWisudawan}/>);
           setLoadingWisudawan(false);
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+          console.error(err);
+          setWisudawanExist(false);
+          setLoadingWisudawan(false);
+        });
 
       // bagian pesan
       getMessageToShow();
@@ -54,52 +61,58 @@ export default function Wisudawan(): JSX.Element {
       setInterval(getMessageToShow, interval); // ambil pesan baru setiap `interval`
     }, []);
 
-    return (
-      <div className='page-wisudawan'>
-        <div className='container'>
-          <div className='wisudawan-tes'>
-            {loadingWisudawan ? (
-              <div>
-                <Loading />
-                <h2 className='loading-msg'>
-                  Loading data wisudawan
-                </h2>
+    if (isWisudawanExist) {
+      return (
+        <div className='page-wisudawan'>
+          <div className='container'>
+            <div className='wisudawan-tes'>
+              {loadingWisudawan ? (
+                <div>
+                  <Loading />
+                  <h2 className='loading-msg'>
+                    Loading data wisudawan
+                  </h2>
+                </div>
+              ) : dataWisudawan}
+            </div>
+  
+            <div className="awan">
+              <img src={`${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`} alt="awan" className="awan-bawah" />
+              <img src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} alt="awan" className="awan-atas" />
+            </div>
+  
+            <div className='pemisah'></div>
+  
+            <h3 className='judul-section'>
+              Pesan Untuk Wisudawan
+            </h3>
+            <div className='pesan-anonim'>
+              <div className='pesan-anonim-wrapper'>
+                {loadingPesan
+                  ? (
+                    <div>
+                      <Loading />
+                      <h2 className='loading-msg'>
+                        Loading pesan wisudawan
+                      </h2>
+                    </div>
+                  ) : pesanToShow}
               </div>
-            ) : dataWisudawan}
-          </div>
-
-          <div className="awan">
-            <img src={`${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`} alt="awan" className="awan-bawah" />
-            <img src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} alt="awan" className="awan-atas" />
-          </div>
-
-          <div className='pemisah'></div>
-
-          <h3 className='judul-section'>
-            Pesan Untuk Wisudawan
-          </h3>
-          <div className='pesan-anonim'>
-            <div className='pesan-anonim-wrapper'>
-              {loadingPesan
-                ? (
-                  <div>
-                    <Loading />
-                    <h2 className='loading-msg'>
-                      Loading pesan wisudawan
-                    </h2>
-                  </div>
-                ) : pesanToShow}
+            </div>
+            <div className='kirim-pesan-button-wrapper'>
+              <Link href={`/hmj/${hmj}/${nim}/kirim-pesan`}>
+                <button className='kirim-pesan-button'>Kirim Pesan</button>
+              </Link>
             </div>
           </div>
-          <div className='kirim-pesan-button-wrapper'>
-            <Link href={`/hmj/${hmj}/${nim}/kirim-pesan`}>
-              <button className='kirim-pesan-button'>Kirim Pesan</button>
-            </Link>
-          </div>
         </div>
-      </div>
-    );
+      );
+      
+    } else {
+      return <NotFoundWisudawan hmjSlug={params.hmj} />;
+    }
+
   } else {
-    return (<h1> cari apa mas? </h1>);
+    return <NotFoundHMJ />;
   }
 }

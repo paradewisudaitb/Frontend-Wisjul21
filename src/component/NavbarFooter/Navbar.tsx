@@ -50,7 +50,7 @@ export const Navbar = ({ homePage }: INavbarHome): JSX.Element => {
     if (offsetY > 1) offsetY = 1;
     setOpacity(offsetY);
   };
-  
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);

@@ -9,6 +9,7 @@ import { KirimPesanPage } from '../pages/KirimPesan/KirimPesanPage';
 import Wisudawan from '../pages/Wisudawan/Wisudawan';
 import Gathertown from '../pages/Gathertown/Gathertown';
 import GaleriHmj from '../pages/GaleriHmj/GaleriHmj';
+import NotFound, { NotFoundHMJ } from '../pages/NotFound/NotFound';
 
 export type route = {
     label: string
@@ -32,10 +33,9 @@ export const COMINGSOON_PAGE = toRoute('Coming Soon', '/coming-soon', ComingSoon
 export const HOME_PAGE = toRoute('Home', '/', HomePage);
 
 export const GALERI_HMJ_PAGE = toRoute('Galeri HMJ', '/hmj', GaleriHmj);
-export const GALERI_APRESIASI_PAGE = toRoute('Galeri Apresiasi', '/hmj/:hmj', GaleriApresiasi);
+export const GALERI_APRESIASI_PAGE = toRoute('Wisudawan dan Apresiasi', '/hmj/:hmj', GaleriApresiasi);
 export const WISUDAWAN_PAGE = toRoute('Wisudawan', '/hmj/:hmj/:nim', Wisudawan);
 export const KIRIM_PESAN_PAGE = toRoute('Kirim Pesan', '/hmj/:hmj/:nim/kirim-pesan', KirimPesanPage);
-
 
 export const FORM_INDEX = toRoute('Forms', 'forms');
 export const FORM_PAGE = toRoute('Form', '/form', Form);
@@ -43,10 +43,12 @@ export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', '/form-apresiasi', 
 
 
 export const PRODUK_INDEX = toRoute('Produk', '/produk');
-export const GATHERTOWN_PAGE = toRoute('Gather Town', '/gathertown', Gathertown);
-export const MAJALAH_PAGE = toRoute('Majalah', '/majalah', Majalah);
+export const GATHERTOWN_PAGE = toRoute('Treasure Games', '/treasuregames', Gathertown);
+export const MAJALAH_PAGE = toRoute('Majalah Metamorfosis', '/majalah', Majalah);
 
 export const EVENT_PAGE = toRoute('Event', '/event', EventPage);
+
+export const NOTFOUND_PAGE = toRoute('Not Found', '/:rest*', NotFound);
 
 export const NavbarRoutes: navroutes[] = [
   {
@@ -64,12 +66,12 @@ export const NavbarRoutes: navroutes[] = [
   {
     content: GALERI_HMJ_PAGE,
   },
-  {
-    content: FORM_INDEX,
-    children_routes: [FORM_PAGE, FORM_APRESIASI_PAGE],
-    isDropdown: true,
-    parentPath: '',
-  }
+  // {
+  //   content: FORM_INDEX,
+  //   children_routes: [FORM_PAGE, FORM_APRESIASI_PAGE],
+  //   isDropdown: true,
+  //   parentPath: '',
+  // }
 ];
 
 export const AllRoutes = [
@@ -81,6 +83,8 @@ export const AllRoutes = [
   WISUDAWAN_PAGE,
   MAJALAH_PAGE,
   GATHERTOWN_PAGE,
-  FORM_APRESIASI_PAGE,
-  FORM_PAGE,
+  // FORM_APRESIASI_PAGE,
+  // FORM_PAGE,
+
+  NOTFOUND_PAGE,
 ];

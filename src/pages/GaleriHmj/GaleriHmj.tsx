@@ -12,10 +12,14 @@ import LIST_FAKULTAS from '../../data/fakultas.json';
 import LIST_HMJ from '../../data/hmj.json';
 import { useEffect } from 'react';
 import IHMJ from '../../interfaces/IHMJ';
+import { Loading } from '../../component/Loading/Loading';
+
+import Sponsor from '../../component/Sponsor/Sponsor';
 
 const GaleriHmj = (): JSX.Element => {
   const [activeButton, setActiveButton] = useState('');
   const [listGaleriHMJ, setListGaleriHMJ] = useState(LIST_HMJ);
+  const [isLoaded, setLoaded] = useState(false);
 
   const buttonFakultasClickHandler = (listHMJ: IHMJ[], namaFakultas: string) => {
     setListGaleriHMJ(listHMJ);
@@ -43,7 +47,14 @@ const GaleriHmj = (): JSX.Element => {
         <img className='spark' src={`${ASSET_URL}/assets/images/vistock/main/spark%201%20kanan%20atas-01.png`} />
         <div className='himpunan-wrapper'>
           <div className='container-logo'>
-            <img src={hmj.linkFoto} className='logo-hmj' alt={`logo ${hmj.namaHimpunan}`} />
+            {!isLoaded && <Loading />}
+            <img
+              src={hmj.linkFoto}
+              className='logo-hmj'
+              alt={`logo ${hmj.namaHimpunan}`}
+              style={isLoaded ? { opacity: 1 } : { height: 0, width:0 }}
+              onLoad={() => setLoaded(true)}
+            />
           </div>
           <div className='himpunan-text'>
             <h2 className='title'>{hmj.singkatanHimpunan}</h2>
@@ -74,6 +85,7 @@ const GaleriHmj = (): JSX.Element => {
       <div className='himpunan-container'>
         {listCardHMJ}
       </div>
+      <Sponsor />
     </div>
   );
 };

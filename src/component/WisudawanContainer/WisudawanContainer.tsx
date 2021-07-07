@@ -2,10 +2,13 @@ import React from 'react';
 import './WisudawanContainer.scss';
 import IDataWisudawan from '../../interfaces/IDataWisudawan';
 import { ASSET_URL } from '../../api';
+import { useState } from 'react';
+import { Loading } from '../Loading/Loading';
 
 const WisudawanContainer = (data: IDataWisudawan): JSX.Element => {
   const bulu = `${ASSET_URL}/assets/images/vistock/main/bulu.png`;
   const spark = `${ASSET_URL}/assets/images/vistock/main/spark%201%20bawah%20matahari.png`;
+  const [isLoaded, setIsLoaded] = useState(false);
   return (
     <div className='wisudawan-container'>
       <img
@@ -14,7 +17,13 @@ const WisudawanContainer = (data: IDataWisudawan): JSX.Element => {
       />
       <div className='wisudawan-left'>
         <div className='foto-wisudawan'>
-          <img id='pas-foto' src={data.pasfoto}></img>
+          {!isLoaded && <Loading />}
+          <img
+            id='pas-foto'
+            src={data.pasfoto}
+            style={isLoaded ? { opacity: 1 } : { height: 0, width:0 }}
+            onLoad={() => setIsLoaded(true)}
+          ></img>
           <img id='bulu' src={bulu}/>
         </div>
 

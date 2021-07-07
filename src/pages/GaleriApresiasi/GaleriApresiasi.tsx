@@ -16,6 +16,8 @@ import LIST_HMJ from '../../data/hmj.json';
 import { NotFoundHMJ } from '../NotFound/NotFound';
 import Sponsor from '../../component/Sponsor/Sponsor';
 
+import { Navbar } from '../../component/NavbarFooter/Navbar';
+
 const slugToNamaHimpunanITB = (text: string) => {
   const tmp = text.split('-');
   let result = '';
@@ -99,6 +101,7 @@ const GaleriApresiasi = (): JSX.Element => {
 
     return (
       <>
+        <Navbar />
         <div className='galeri-apresiasi-page py-5 bg'>
           <div className='himpunan'>
             <h1>{ namaHimpunan }</h1>
@@ -125,7 +128,12 @@ const GaleriApresiasi = (): JSX.Element => {
     );
 
   } else {
-    return (<h1>Error</h1>);
+    return (
+      <>
+        <Navbar />
+        <h1>Error</h1>
+      </>
+    );
   }
 
 };

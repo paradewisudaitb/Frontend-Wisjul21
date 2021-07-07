@@ -8,6 +8,8 @@ import { ToTop } from '../../component/ScrollToTop/ScrollToTop';
 
 import Sponsor from '../../component/Sponsor/Sponsor';
 
+import { Navbar } from '../../component/NavbarFooter/Navbar';
+
 //Asset
 import Stroke from '../../images/bg/Stroke.png';
 
@@ -31,6 +33,7 @@ const HomePage = (): JSX.Element => {
 
   return (
     <>
+      <Navbar homePage={true} />
       <div className='homepage'>
         {/* HEADER ASSETS */}
         {/* Clouds */}
@@ -123,9 +126,9 @@ const HomePage = (): JSX.Element => {
             <div className='btn-container'>
               <button className='arrow' onClick={prev}><i className="fa fa-chevron-left fa-lg"></i></button>
               <div className='btns'>
-                <Link onClick={ToTop} to={MAJALAH_PAGE.path}><button className={'button'+((clickCount)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/majalah.png')` }}><h2>Majalah Metamorfosis</h2></button></Link>
-                <Link onClick={ToTop} to={GALERI_HMJ_PAGE.path}><button className={'button'+((clickCount+1)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/hmj.png')` }}><h2>Wisudawan dan Apresiasi</h2></button></Link>
-                <Link onClick={ToTop} to={GATHERTOWN_PAGE.path}><button className={'button'+((clickCount+2)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/gathertown.png')` }}><h2>Treasure Games</h2></button></Link>
+                <Link onClick={ToTop} to={MAJALAH_PAGE.path}><button className={'button'+((clickCount)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/majalah.png')` }}><h2>{MAJALAH_PAGE.label}</h2></button></Link>
+                <Link onClick={ToTop} to={GALERI_HMJ_PAGE.path}><button className={'button'+((clickCount+1)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/hmj.png')` }}><h2>{GALERI_HMJ_PAGE.label}</h2></button></Link>
+                <Link onClick={ToTop} to={GATHERTOWN_PAGE.path}><button className={'button'+((clickCount+2)%3+1)} style={{ backgroundImage: `url('${ASSET_URL}/assets/images/home-buttons/gathertown.png')` }}><h2>{GATHERTOWN_PAGE.label}</h2></button></Link>
               </div>
               <img className='cloud-main3' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`} />
             </div>

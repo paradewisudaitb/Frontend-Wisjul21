@@ -18,7 +18,7 @@ function App(): JSX.Element {
       <Suspense fallback={<Loading />}>
         <ScrollToTop>
 
-          { isHomePage ? <Navbar homePage={true} /> : <Navbar />}
+          {/* { isHomePage ? <Navbar homePage={true} /> : <Navbar />} */}
           {/* <Navbar /> */}
           <div className="app-content">
 

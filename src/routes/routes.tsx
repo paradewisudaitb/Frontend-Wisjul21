@@ -32,7 +32,7 @@ export const COMINGSOON_PAGE = toRoute('Coming Soon', '/coming-soon', ComingSoon
 
 export const HOME_PAGE = toRoute('Home', '/', HomePage);
 
-export const GALERI_HMJ_PAGE = toRoute('Galeri HMJ', '/hmj', GaleriHmj);
+export const GALERI_HMJ_PAGE = toRoute('Wisudawan & Apresiasi', '/hmj', GaleriHmj);
 export const GALERI_APRESIASI_PAGE = toRoute('Wisudawan dan Apresiasi', '/hmj/:hmj', GaleriApresiasi);
 export const WISUDAWAN_PAGE = toRoute('Wisudawan', '/hmj/:hmj/:nim', Wisudawan);
 export const KIRIM_PESAN_PAGE = toRoute('Kirim Pesan', '/hmj/:hmj/:nim/kirim-pesan', KirimPesanPage);

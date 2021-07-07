@@ -68,6 +68,7 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
           </div>
         );
     }
+  };
 
   const onClickCarousel = (i: number) => {
     if (isApresiasiImage(data[i].tipeKonten)) {

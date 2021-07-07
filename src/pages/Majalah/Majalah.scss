@@ -43,16 +43,16 @@
 }
 
 
-.awan-kiri {
-  position: absolute;
-  top: 100px;
-  left: -100px;
-  width: 700px;
-  z-index: 1;
-  @include respond-to("phone") {
-    width: 500px;
-  }
-}
+// .awan-kiri {
+//   position: absolute;
+//   top: 100px;
+//   left: -100px;
+//   width: 700px;
+//   z-index: 1;
+//   @include respond-to("phone") {
+//     width: 500px;
+//   }
+// }
 
 .awan-kanan {
   position: absolute !important;

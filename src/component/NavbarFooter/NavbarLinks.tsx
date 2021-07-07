@@ -13,7 +13,7 @@ export const NavbarLinks = (): JSX.Element => {
       <Dropdown key={route.path} className="shadow-none dropdown nav-item">
         <Dropdown.Toggle variant='' className="">
           { route.label }
-        </Dropdown.Toggle> 
+        </Dropdown.Toggle>
         <Dropdown.Menu className='custom-dropdown-style'>
           { children_routes?.map(route => (
             <Dropdown.Item key={ parentPath + route.path } href={ parentPath + route.path }>

@@ -87,6 +87,7 @@ const GaleriApresiasi = (): JSX.Element => {
           console.log(err);
           setLoadingApresiasi(false);
         });
+
     }, []);
 
     return (

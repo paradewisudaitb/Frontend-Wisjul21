@@ -62,8 +62,9 @@ const Gathertown = (): JSX.Element => {
             className='spark-title'
             alt='Percikan api'
           />
-          <h1>Gather Town</h1>
-          <h3>Treasure Games</h3>
+
+          <h1>Treasure Games</h1>
+          <h3>Gather Town</h3>
         </div>
         <div className='text'>
           <img
@@ -71,7 +72,7 @@ const Gathertown = (): JSX.Element => {
             alt='Awan'
             className='cloud-text'
           />
-          <p className='gathertown-text'>
+          <div className='gathertown-text'>
             Treasure Games merupakan salah satu permainan yang diadakan dalam Perayaan Wisuda Juli ITB 2021. Siapa yang tercepat dalam menemukan harta karun ialah pemenangnya! 
             Aturan dan tata cara bermain di Treasure Games adalah sebagai berikut:
             <ol>
@@ -85,10 +86,11 @@ const Gathertown = (): JSX.Element => {
               <li>Pada Treasure Games, akan ditentukan 3 orang pemenang dengan catatan waktu paling cepat dalam menemukan harta karun.</li>
               <li>Games dilaksanakan pada tanggal 8 Juli 2021, pukul 19.00 WIB.</li>
               <li>Pemenang akan langsung dihubungi personal oleh panitia Perayaan Wisuda Juli ITB 2021.</li>
-            </ol> 
+            </ol>
             Selamat bermain!
-            <br/>Gather Town dapat diakses melalui tautan di bawah ini:
-          </p>
+            <br/>
+            Gather Town dapat diakses melalui tautan di bawah ini:
+          </div>
         </div>
       </div>
       <div className='container'>

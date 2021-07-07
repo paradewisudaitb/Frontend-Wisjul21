@@ -3,10 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Jumbotron, Button, Modal } from 'react-bootstrap';
 import './Majalah.scss';
 import { ASSET_URL } from '../../api';
+
+import { Loading } from '../../component/Loading/Loading';
 import Sponsor from '../../component/Sponsor/Sponsor';
 
 export default function Majalah(): JSX.Element {
   const [index, setIndex] = useState(1);
+  const [isLoaded, setIsLoaded] = useState(false);
+
   const htmlTag = document.querySelector('html');
   const pageCount = 1;
   const majalahFileName = 'pre';
@@ -68,10 +72,22 @@ export default function Majalah(): JSX.Element {
                 </div>
               </Col>
               <Col xs={12} md={12} lg={6}>
-                <div className="majalah">
-                  <img src={`${ASSET_URL}/assets/images/vistock/main/spark%202%20atas%20matahari.png`} className="kembang-api" />
+                {!isLoaded && <Loading />}
+                <div
+                  className="majalah"
+                  onLoad={() => setIsLoaded(true)}
+                  style={isLoaded ? { opacity: 1 } : { height: 0, width: 0 }}
+                >
+                  <img
+                    src={`${ASSET_URL}/assets/images/vistock/main/spark%202%20atas%20matahari.png`}
+                    className="kembang-api"
+                  />
                   <div className="majalah-pdf" >
-                    <img id="img-majalah img-fluid" src={getImage(index)} onClick={handleShow} />
+                    <img
+                      id="img-majalah img-fluid"
+                      src={getImage(index)}
+                      onClick={handleShow}
+                    />
                   </div>
                   <div className="d-flex justify-content-center">
                     <button className="doc-button previous" onClick={prev}> <i className="fa fa-chevron-left fa-lg text-white"></i> </button>

@@ -6,6 +6,7 @@ import { ASSET_URL } from '../../api';
 import { GALERI_APRESIASI_PAGE } from '../../routes/routes';
 
 import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
+import { Loading } from '../Loading/Loading';
 
 const WisudawanCard = (data: IGaleriWisudawan): JSX.Element => {
   const [match, params] = useRoute(GALERI_APRESIASI_PAGE.path);
@@ -21,12 +22,16 @@ const WisudawanCard = (data: IGaleriWisudawan): JSX.Element => {
       <Link href={`/hmj/${params.hmj}/${data.nim}`} className='card-container'>
         <h3>{data.namaLengkap}</h3>
         <h4>{data.nim} - {data.namaJurusan}</h4>
+        {!isLoaded && <Loading />}
         <div
           style={isLoaded ? { opacity: 1 } : { height: 0, width:0 }}
           onLoad={() => setLoaded(true)}
           className='image'
         >
-          <img src={data.pasfoto} className='foto-wisudawan' />
+          <img
+            src={data.pasfoto}
+            className='foto-wisudawan'
+          />
           <img src={Awan} alt='' className='awan-bg' />
         </div>
         <p className='judulTA'>

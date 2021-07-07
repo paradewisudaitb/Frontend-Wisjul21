@@ -19,16 +19,24 @@ const slugToNamaHimpunanITB = (text: string) => {
 
   if (tmp[0] == 'tpb') {
     tmp.forEach(word => {
-      result += word.toUpperCase();
-      if (word == 'sith') {
-        result += '-';
-      } else {
-        result += ' ';
+      if (word != 'dan') {
+        result += word.toUpperCase();
+        if (word == 'sith') {
+          result += '-';
+        } else {
+          result += ' ';
+        }
       }
     });
   } else {
     tmp.forEach(word => {
-      result += word[0].toUpperCase() + word.slice(1) + ' ';
+      if (word == 'dan') {
+        result += word + ' ';
+      } else if (word == 'non') {
+        result += 'Non-';
+      } else {
+        result += word[0].toUpperCase() + word.slice(1) + ' ';
+      }
     });
 
   }
@@ -45,8 +53,8 @@ const GaleriApresiasi = (): JSX.Element => {
 
     const fotoHMJ = LIST_HMJ.filter(hmj => {
       return (hmj.namaHimpunan == namaHimpunan);
-    })[0]?.linkFoto || 'test' ;
-    
+    })[0]?.linkFoto;
+
     const defaultWisudawan: IGaleriWisudawan[] = [];
     const defaultKontenApresiasi: IKontenApresiasi[] = [];
 
@@ -77,8 +85,9 @@ const GaleriApresiasi = (): JSX.Element => {
         })
         .catch((err) => {
           console.log(err);
-          setLoadingWisudawan(false);
+          setLoadingApresiasi(false);
         });
+
     }, []);
 
     return (
@@ -88,14 +97,14 @@ const GaleriApresiasi = (): JSX.Element => {
           <img src={fotoHMJ} className='himpunan-logo' alt={`logo ${namaHimpunan}`}/>
         </div>
 
-        {(kontenApresiasi.length != 0) &&
-        <div className='apresiasi-wisudawan my-5'>
-          <h2>Apresiasi HMJ</h2>
-          {loadingApresiasi ? <Loading /> : <ApresiasiCarousel data={kontenApresiasi} />}
+        <div className='apresiasi-wisudawan my-md-3'>
+          <h2>Apresiasi {isTPB ? 'TPB' : 'HMJ'}</h2>
+          {loadingApresiasi ? <Loading /> :
+            ( kontenApresiasi.length == 0 ?
+              <h3>Tidak ada konten apresiasi</h3> : <ApresiasiCarousel data={kontenApresiasi} /> )}
         </div>
-        }
 
-        {!isTPB && 
+        {!isTPB &&
           <div className='daftar-wisudawan'>
             {loadingWisudawan ? <Loading /> : wisudawans}
           </div>

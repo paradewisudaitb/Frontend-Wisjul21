@@ -1,0 +1,112 @@
+@import '../../App.scss';
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.gathertown-container {
+  // background-image: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg');
+  // background-size: cover;
+
+  .info {
+    text-align: center;
+
+    .title {
+      position: relative;
+
+      .spark-title {
+        position: absolute;
+        top: -1rem;
+        right: 37.5%;
+        width: 7.5%;
+        height: auto;
+      }
+
+      h1 {
+        padding-top: 1em;
+        padding-bottom: 0.5em;
+      }
+    }
+
+    .text {
+      position: relative;
+
+      .cloud-text {
+        position: absolute;
+        width: 30%;
+        height: auto;
+        left: -10%;
+        bottom: -75%;
+        z-index: 1;
+      }
+
+      .gathertown-text {
+        text-align: justify;
+        position: relative;
+        z-index: 2;
+        padding-left: 15%;
+        padding-right: 15%;
+        margin-bottom: 1.5em;
+      }
+    }
+  }
+
+
+  .list-button {
+    position: relative;
+    z-index: 2;
+    margin: 3em 3.5em 5em 3.5em;
+    text-align: center;
+
+    @include respond-to('phone') {
+      margin: 3.5em 0.75em 3.5em 0.75em;
+    }
+  }
+
+  .list-hmj {
+    margin: 0em 2vw 0em 2vw;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    display: block;
+    text-align: center;
+
+    .cloud-hmj-01 {
+      position: absolute;
+      width: 25%;
+      top: -10%;
+      right: -7.5%;
+      z-index: 1;
+    }
+
+    .cloud-hmj-02 {
+      position: absolute;
+      width: 45%;
+      bottom: -3.5%;
+      right: -12.5%;
+      z-index: 1;
+    }
+
+    .feather-hmj {
+      position: absolute;
+      width: 10%;
+      height: auto;
+      transform: rotate(-90deg);
+      left: 47.5%;
+      top: 55%;
+      z-index: 1;
+    }
+
+    .card-hmj-container {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .gathertown-text {
+    text-align: justify;
+  }
+
+}

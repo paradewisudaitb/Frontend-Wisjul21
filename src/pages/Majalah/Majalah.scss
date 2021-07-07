@@ -1,0 +1,179 @@
+@import "../../styles/responsive.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/colorpalette.scss";
+
+.header-jumbotron {
+  z-index: 1;
+  position: relative;
+  margin-top: 10vh;
+  font-weight: bold;
+  h1 {
+    color: black;
+    font-weight: 800;
+  }
+  p {
+    margin-bottom: 0px;
+  }
+
+  .dwn-btn {
+    background-color: $blue-darker !important;
+    border-style: none;
+    color: $yellow-lighter !important;
+    font-size: 1.25rem;
+  }
+}
+
+.hero {
+  h1 {
+    align-items: left;
+    text-align: left;
+  }
+
+  p {
+    align-items: left;
+    text-align: justify;
+    margin-top: 1rem;
+  }
+}
+
+.container-page {
+  // background: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg");
+  background-size: cover;
+  position: relative;
+  /** Hapus bagian ini **/
+  color: white;
+  h1 {
+    color: white;
+  }
+  /** Sampai sini **/
+}
+.outer-heaven {
+  position: relative;
+  overflow: hidden;
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+}
+
+
+// .awan-kiri {
+//   position: absolute;
+//   top: 100px;
+//   left: -100px;
+//   width: 700px;
+//   z-index: 1;
+//   @include respond-to("phone") {
+//     width: 500px;
+//   }
+// }
+
+.awan-kanan {
+  position: absolute !important;
+  right: 0;
+  bottom: 200px;
+  width: 600px !important;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.kembang-api {
+  position: absolute;
+  left: 10px;
+  top: -80px;
+  height: 200px;
+  z-index: 0;
+  @include respond-to("phone") {
+    height: 120px;
+    top: -45px;
+    left: -10px;
+  }
+}
+
+.majalah {
+  position: relative;
+  z-index: 2;
+}
+
+.modal-button {
+  width: 100px;
+}
+
+.modal-content {
+  background-color: transparent !important;
+  border: none !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-backdrop {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+.majalah-pdf {
+  margin-top: 5vh;
+  text-align: center;
+
+  img {
+    cursor: pointer;
+    height: 70vh;
+    margin-top: 10px;
+    border: solid black 2px;
+    max-width: 95%;
+  }
+}
+
+.index-majalah {
+  color: white !important;
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.doc-button {
+  color: black;
+  // font-size: 30px !important;
+  border-radius: 30px;
+  margin-top: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 10px;
+  padding: 0.3rem 0.6rem;
+  background-color: rgba($orange-lighter, 0.85) !important;
+}
+
+.previous {
+  background-color: $blue-darker !important;
+  border-style: none;
+  i {
+    margin-right: 0.3rem;
+    color: $yellow-lighter !important;
+  }
+}
+
+.next {
+  background-color: $blue-darker !important;
+  border-style: none;
+  i {
+    margin-left: 0.3rem;
+    color: $yellow-lighter !important;
+  }
+}
+
+iframe::-webkit-scrollbar {
+  display: none;
+}
+
+footer {
+  clear: both;
+  position: relative;
+  height: 200px;
+  margin-top: -200px;
+}
+
+.image-modal {
+  width: 50vw;
+  @include respond-to("phone") {
+    width: 100vw;
+  }
+}

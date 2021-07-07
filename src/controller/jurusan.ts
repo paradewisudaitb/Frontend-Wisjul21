@@ -5,6 +5,7 @@ import { API_URL } from '../api';
  * Jika tidak diberikan argumen namaHimpunan maka mendapatkan semua jurusan di ITB.
  * @param {string} namaHimpunan nama himpunan pemilik jurusan (jika ada)
  * @returns {string[]} list seluruh jurusan suatu himpunan, jika tidak ada namaHimpunan, maka semua jurusan di ITB
+ * @throws {Error}
  * @async
  */
 export const get = async (namaHimpunan?: string): Promise<string[]> => {

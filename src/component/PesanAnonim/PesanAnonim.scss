@@ -1,0 +1,54 @@
+@import '../../styles/colorpalette.scss';
+@import '../../styles/responsive.scss';
+
+.pesan-container {
+  padding: 0 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em 0;
+
+  @include respond-to('phone') {
+    padding: 0;
+  }
+
+  .pesan-wrapper {
+    width: 60vw;
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 25px 50px;
+    background-color: unquote($red-darker + '70');
+
+    @include respond-to('phone') {
+      margin: 0;
+      padding: 25px;
+      max-width: 80vw;
+    }
+
+    .header-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: auto auto 1em auto;
+
+      @include respond-to('phone', 'tablet') {
+        justify-content: left;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+
+      .header-content {
+        text-align: center;
+        color: $yellow-darker;
+        word-wrap: anywhere;
+        margin: 0;
+      }
+    }
+
+    .pesan-content {
+      color: $yellow-lighter;
+      text-align: left;
+      word-wrap: break-word;
+    }
+  }
+}

@@ -1,48 +1,53 @@
-import React from 'react';
+import { useState } from 'react';
+import { useRoute } from 'wouter';
+import { Link } from 'wouter';
 import './WisudawanCard.scss';
-import logo from '../../images/ukj.png';
+import { ASSET_URL } from '../../api';
+import { GALERI_APRESIASI_PAGE } from '../../routes/routes';
 
-interface ListUnit {
-  logoUnit: string,
-  namaUnit: string
-}
+import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
+import { Loading } from '../Loading/Loading';
 
-interface Data {
-  nama: string,
-  nim: string,
-  jurusan: string,
-  foto: string,
-  judulTA: string,
-  listUnit: ListUnit[]
-}
+const WisudawanCard = (data: IGaleriWisudawan): JSX.Element => {
+  const [match, params] = useRoute(GALERI_APRESIASI_PAGE.path);
+  const textLimit = 70;
+  const showToolTip = data.judulTA.length > textLimit;
+  const shownJudulTA = showToolTip ? data.judulTA.slice(0, textLimit) + '...' : data.judulTA;
+  const [isLoaded, setLoaded] = useState(false);
 
-const WisudawanCard = (data: Data) => {
-  return (
-    <div className='card-container'>
-      <h1>{data.nama}</h1>
-      <h3>{data.nim} - {data.jurusan}</h3>
-      <div className='image'>
-        <img src={data.foto} />
-      </div>
-      <p>{data.judulTA}</p>
-      {data.listUnit.length > 0 ?
-        <div className='unit-container'>
-          <ol className='unit-list'>
-            {data.listUnit.map((unit: ListUnit, i: number) => (
-              <li
-                key = {i}
-                className='unit-item'
-              >
-                <img src={logo} className='unit-logo' />
-                <p>{unit.namaUnit}</p>
-              </li>
-            ))}
-          </ol>
+  const Awan = `${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`;
+
+  const useFallbackImg = (e: any) => {
+    const fallbackImg = `${ASSET_URL}/fotoWisudawan/nophoto.png`;
+    e.target.src = fallbackImg;
+  };
+
+  if (match && params) {
+    return (
+      <Link href={`/hmj/${params.hmj}/${data.nim}`} className='card-container'>
+        <h3>{data.namaLengkap}</h3>
+        <h4>{data.nim} - {data.namaJurusan}</h4>
+        {!isLoaded && <Loading />}
+        <div
+          style={isLoaded ? { opacity: 1 } : { height: 0, width:0 }}
+          onLoad={() => setLoaded(true)}
+          className='image'
+        >
+          <img
+            src={data.pasfoto}
+            className='foto-wisudawan'
+            onError={useFallbackImg}
+          />
+          <img src={Awan} alt='' className='awan-bg' />
         </div>
-        : <></>
-      }
-    </div>
-  );
+        <p className='judulTA'>
+          {shownJudulTA}
+        </p>
+      </Link>
+    );
+  } else {
+    return <h1>HMJ Not Found</h1>;
+  }
 };
 
 export default WisudawanCard;

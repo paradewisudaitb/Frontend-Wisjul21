@@ -1,0 +1,33 @@
+@import './colorpalette.scss';
+
+$asset_url: 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
+$bg: $asset_url + '/assets/images/background/main.jpg';
+
+* {
+  font-family: 'Vollkorn';
+  color: $yellow-lighter;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Aller';
+}
+
+h1 {
+  @include gradient-header-1;
+}
+
+h2 {
+  @include gradient-header-2;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: $red-medium;
+}

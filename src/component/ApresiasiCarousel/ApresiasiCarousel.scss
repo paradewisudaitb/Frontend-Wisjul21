@@ -1,6 +1,75 @@
-.carousel {
-  display: flex;
-  width: 25%;
-  height: auto;
-  transform: translateX(75%);
+@import "../../styles/responsive.scss";
+@import "../../styles/colorpalette.scss";
+
+.carousel-container {
+  margin-top: 1vh;
+
+  .carousel {
+    margin-top: 2vh;
+    background-color: rgba($purple-medium, 0);
+    display: flex;
+
+    width: 35vw;
+
+    // min-height: 20vh;
+    // max-height: 50vh;
+
+    justify-content: center;
+    align-items: center;
+
+    @include respond-to('phone') {
+      width: 50vw;
+      height: 40vh;
+    }
+
+    .apresiasi-image {
+      object-fit: contain;
+      min-height: 20vh;
+      max-height: 50vh;
+
+      @include respond-to('phone') {
+        width: 50vw;
+        height: 40vh;
+      }
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-content: center;
+      height: 100%;
+      width: 100%;
+      margin-bottom: 0.7rem;
+
+      video {
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 100%;
+      }
+
+      audio {
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 100%;
+      }
+    }
+
+    .apresiasi-image-container {
+      cursor: pointer;
+
+      .icon {
+        margin-right: 0.25rem;
+      }
+    }
+  }
+}
+
+.modal-carousel {
+  .image-modal {
+    width: 80vw;
+    @include respond-to("phone") {
+      width: 100vw;
+    }
+  }
 }

@@ -1,5 +1,6 @@
 import IDataWisudawan from '../interfaces/IDataWisudawan';
 import { ASSET_URL, API_URL } from '../api';
+import IGaleriWisudawan from '../interfaces/IGaleriWisudawan';
 
 type WisudawnIdty = {
   nim: string;
@@ -114,4 +115,20 @@ export const getByNIM = async (nim: string): Promise<IDataWisudawan> => {
   }
 
   return res[0];
+};
+
+export const getByHimpunan = async (namaHimpunan: string): Promise<IGaleriWisudawan[]> => {
+  const res: IGaleriWisudawan[] =
+    await (
+      await fetch(`${API_URL}/wisudawan/get?namaHimpunan=${namaHimpunan}`)
+        .catch(() => {
+          throw new Error('Gagal membuat koneksi ke backend atau terjadi kesalahan pada backend.');
+        })
+    ).json();
+
+  if (res.length == 0) {
+    throw new Error(`Tidak ada wisudawan dari himpunan ${namaHimpunan}.`);
+  }
+
+  return res;
 };

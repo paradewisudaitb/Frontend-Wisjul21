@@ -1,9 +1,10 @@
 # build environment
 FROM node:fermium-alpine as build
+
 COPY . /app
 WORKDIR /app
 
-RUN yarn install --frozen-lockfile
+RUN yarn install --production=true
 RUN yarn build
 
 # production environment

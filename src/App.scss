@@ -1,12 +1,17 @@
+@import 'styles/base.scss';
 @import 'styles/colorpalette.scss';
 @import 'styles/fonts.scss';
 @import 'styles/responsive.scss';
 
+$navbarheight: 4.4rem;
+$drops-top: -15rem;
+
 * {
+  --footerheight: 13rem;
   font-family: 'Vollkorn';
   color: $yellow-lighter;
-  font-size: 24px;
-  background-color: $blue-darker;
+  scrollbar-color: $red-medium $red-darker;
+  scrollbar-width: thin;
 }
 
 h1,
@@ -20,12 +25,10 @@ h6 {
 
 h1 {
   @include gradient-header-1;
-  font-size: 72px;
 }
 
 h2 {
   @include gradient-header-2;
-  font-size: 64px;
 }
 
 h3,
@@ -33,4 +36,36 @@ h4,
 h5,
 h6 {
   color: $red-medium;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 2rem !important;
+}
+
+::-webkit-scrollbar-track {
+  background: $red-darker;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $red-medium;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $red-lighter;
+}
+
+.bg {
+  // background-image: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg');
+  background-image: url('./images/bg/main.jpg');
+  background-size: 100% auto;
+  background-repeat: repeat;
+  position: inherit;
+}
+
+.app-content {
+  @extend .bg;
+  min-height: calc(100vh - var(--footerheight));
+  padding-top: $navbarheight;
 }

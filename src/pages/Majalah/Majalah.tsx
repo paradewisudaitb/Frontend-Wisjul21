@@ -3,7 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Jumbotron, Button, Modal } from 'react-bootstrap';
 import './Majalah.scss';
 import { ASSET_URL } from '../../api';
+
 import { Loading } from '../../component/Loading/Loading';
+import Sponsor from '../../component/Sponsor/Sponsor';
 
 export default function Majalah(): JSX.Element {
   const [index, setIndex] = useState(1);
@@ -122,6 +124,7 @@ export default function Majalah(): JSX.Element {
           </Modal>
         </div>
       </Jumbotron>
+      <Sponsor />
     </div>
   );
 }

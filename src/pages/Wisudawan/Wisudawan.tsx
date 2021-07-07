@@ -8,6 +8,7 @@ import { getPesan } from '../../controller/pesan';
 import { getByNIM } from '../../controller/wisudawan';
 import { ASSET_URL } from '../../api';
 import { NotFoundWisudawan } from '../../component/NotFound/NotFound';
+import { NotFoundHMJ } from '../../pages/NotFound/NotFound';
 
 export default function Wisudawan(): JSX.Element {
   const [match, params] = useRoute('/hmj/:hmj/:nim');
@@ -112,6 +113,6 @@ export default function Wisudawan(): JSX.Element {
     }
 
   } else {
-    return (<h1> cari apa mas? </h1>);
+    return <NotFoundHMJ />;
   }
 }

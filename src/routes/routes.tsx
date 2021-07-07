@@ -64,12 +64,12 @@ export const NavbarRoutes: navroutes[] = [
   {
     content: GALERI_HMJ_PAGE,
   },
-  {
-    content: FORM_INDEX,
-    children_routes: [FORM_PAGE, FORM_APRESIASI_PAGE],
-    isDropdown: true,
-    parentPath: '',
-  }
+  // {
+  //   content: FORM_INDEX,
+  //   children_routes: [FORM_PAGE, FORM_APRESIASI_PAGE],
+  //   isDropdown: true,
+  //   parentPath: '',
+  // }
 ];
 
 export const AllRoutes = [
@@ -81,6 +81,6 @@ export const AllRoutes = [
   WISUDAWAN_PAGE,
   MAJALAH_PAGE,
   GATHERTOWN_PAGE,
-  FORM_APRESIASI_PAGE,
-  FORM_PAGE,
+  // FORM_APRESIASI_PAGE,
+  // FORM_PAGE,
 ];

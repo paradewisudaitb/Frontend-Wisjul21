@@ -14,13 +14,25 @@
   p {
     margin-bottom: 0px;
   }
+
+  .dwn-btn {
+    background-color: $blue-darker !important;
+    border-style: none;
+    color: $yellow-lighter !important;
+    font-size: 1.25rem;
+  }
 }
 
 .hero {
-  h1,
-  p {
+  h1 {
     align-items: left;
     text-align: left;
+  }
+
+  p {
+    align-items: left;
+    text-align: justify;
+    margin-top: 1rem;
   }
 }
 
@@ -101,7 +113,9 @@
 .majalah-pdf {
   margin-top: 5vh;
   text-align: center;
+
   img {
+    cursor: pointer;
     height: 70vh;
     margin-top: 10px;
     border: solid black 2px;
@@ -144,12 +158,6 @@
     margin-left: 0.3rem;
     color: $yellow-lighter !important;
   }
-}
-
-.dwn-btn {
-  background-color: $blue-darker !important;
-  border-style: none;
-  color: $yellow-lighter !important;
 }
 
 iframe::-webkit-scrollbar {

@@ -1,5 +1,4 @@
-@import '../../styles/colorpalette.scss';
-@import '../../styles/responsive.scss';
+@import '../../App.scss';
 
 html,
 body {
@@ -19,7 +18,7 @@ body {
 
       .spark-title {
         position: absolute;
-        bottom: 5%;
+        top: -1rem;
         right: 37.5%;
         width: 7.5%;
         height: auto;
@@ -53,10 +52,11 @@ body {
     }
   }
 
+
   .list-button {
     position: relative;
     z-index: 2;
-    margin: 7.5em 3.5em 5em 3.5em;
+    margin: 3em 3.5em 5em 3.5em;
     text-align: center;
 
     @include respond-to('phone') {
@@ -104,4 +104,9 @@ body {
       z-index: 2;
     }
   }
+
+  .gathertown-text {
+    text-align: justify;
+  }
+
 }

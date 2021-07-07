@@ -44,6 +44,8 @@ interface INavbarHome {
 }
 
 export const Navbar = ({ homePage }: INavbarHome): JSX.Element => {
+  const [isOpen, setOpen]  = useState(false);
+  
   const [opacity, setOpacity] = useState(0);
   const handleScroll = () => {
     let offsetY = (window.pageYOffset / window.innerHeight);

@@ -15,6 +15,7 @@ import IHMJ from '../../interfaces/IHMJ';
 import { Loading } from '../../component/Loading/Loading';
 
 import Sponsor from '../../component/Sponsor/Sponsor';
+import { Navbar } from '../../component/NavbarFooter/Navbar';
 
 const GaleriHmj = (): JSX.Element => {
   const [activeButton, setActiveButton] = useState('');
@@ -71,6 +72,7 @@ const GaleriHmj = (): JSX.Element => {
 
   return (
     <>
+      <Navbar />
       <div className='galeri-hmj'>
         <img className='cloud-1' src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`} />
         <img className='cloud-2' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`} />

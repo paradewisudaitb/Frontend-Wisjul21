@@ -53,7 +53,7 @@ export default function Majalah(): JSX.Element {
 
   return (
     <div className="outer-heaven">
-      <img src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} className="awan-kiri" />
+      {/* <img src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} className="awan-kiri" /> */}
       <Jumbotron className="hero">
         <div className="container-page">
           <div className="container">

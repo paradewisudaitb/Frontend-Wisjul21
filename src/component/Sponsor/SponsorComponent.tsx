@@ -1,9 +1,5 @@
-import React from 'react';
-
-interface ISponsor {
-  nama: string,
-  items: string[],
-}
+import ISponsor from '../../interfaces/ISponsor';
+// import './SponsorComponent.scss';
 
 export const SponsorComponent = ({nama, items}: ISponsor) => {
   const itemS = items.filter(image => (image.includes('S_')));
@@ -12,7 +8,7 @@ export const SponsorComponent = ({nama, items}: ISponsor) => {
   const itemXL = items.filter(image => (image.includes('XL_')));
 
   return (
-    <div className='sponsors-group'>
+    <div className='sponsors-group pb-5'>
       <h1 className='text-center my-3'>{ nama }</h1>
       <div className="sponsor-container">
 

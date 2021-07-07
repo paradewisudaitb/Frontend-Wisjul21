@@ -12,8 +12,7 @@ const medpars = [
   `${MEDPAR_URL}/01_L_Kompas.com.png`,
   `${MEDPAR_URL}/02_L_Republika.png`,
 
-
-  `${MEDPAR_URL}/03_M_inibaru.id(2).png`, // ini bingung yang mana yang dipake?
+  `${MEDPAR_URL}/03_M_inibaru.id(2).png`,
   `${MEDPAR_URL}/04_M_Ayo Bandung.com.png`,
   `${MEDPAR_URL}/05_M_LFM ITB (Hitam).png`,
   `${MEDPAR_URL}/06_M_StudentsxCEOs Bandung(3).jpg`,

@@ -1,0 +1,38 @@
+@import '../../App.scss';
+
+
+.not-found {
+  background-image: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/main.jpg");
+  background-size: cover;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  .to-home-button {
+    text-decoration: none;
+    color: $yellow-lighter;
+    width: fit-content;
+    border-radius: 10px;
+    height: 2.5em;
+    background-color: $blue-medium;
+    transition: 0.3s;
+    border-style: none;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      background-color: $blue-lighter;
+      color: $yellow-darker;
+
+      transition: 0.3s;
+
+      .fa-arrow-left {
+        transform: translateX(-0.2rem);
+        transition: 0.3s;
+      }      
+    }
+  }
+}

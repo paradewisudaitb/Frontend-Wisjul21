@@ -7,6 +7,8 @@ import LIST_FAKULTAS from '../../data/fakultas.json';
 import LIST_HMJ from '../../data/hmj.json';
 import IHMJ from '../../interfaces/IHMJ';
 
+import Sponsor from '../../component/Sponsor/Sponsor';
+
 const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
 
 const Gathertown = (): JSX.Element => {
@@ -92,29 +94,30 @@ const Gathertown = (): JSX.Element => {
             Gather Town dapat diakses melalui tautan di bawah ini:
           </div>
         </div>
-      </div>
-      <div className='container'>
-        <div className='list-button'>{listButtonFakultas}</div>
-        <div className='list-hmj'>
-          <img
-            src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`}
-            alt='Bulu Phoenix'
-            className='feather-hmj'
-          />
-          <img
-            src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`}
-            className='cloud-hmj-01'
-            alt='Awan'
-          />
-          <img
-            src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`}
-            className='cloud-hmj-02'
-            alt='Awan'
-          />
-          {listDisplayedHMJ}
+        <div className='container'>
+          <div className='list-button'>{listButtonFakultas}</div>
+          <div className='list-hmj'>
+            <img
+              src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`}
+              alt='Bulu Phoenix'
+              className='feather-hmj'
+            />
+            <img
+              src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`}
+              className='cloud-hmj-01'
+              alt='Awan'
+            />
+            <img
+              src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`}
+              className='cloud-hmj-02'
+              alt='Awan'
+            />
+            {listDisplayedHMJ}
+          </div>
+          <br />
         </div>
-        <br />
       </div>
+      <Sponsor />
     </div>
   );
 };

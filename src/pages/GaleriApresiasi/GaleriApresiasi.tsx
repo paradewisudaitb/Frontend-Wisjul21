@@ -13,6 +13,8 @@ import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
 import IKontenApresiasi from '../../interfaces/IKontenApresiasi';
 import LIST_HMJ from '../../data/hmj.json';
 
+import Sponsor from '../../component/Sponsor/Sponsor';
+
 const slugToNamaHimpunanITB = (text: string) => {
   const tmp = text.split('-');
   let result = '';

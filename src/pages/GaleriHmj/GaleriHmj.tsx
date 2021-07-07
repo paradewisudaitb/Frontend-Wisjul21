@@ -13,6 +13,8 @@ import LIST_HMJ from '../../data/hmj.json';
 import { useEffect } from 'react';
 import IHMJ from '../../interfaces/IHMJ';
 
+import Sponsor from '../../component/Sponsor/Sponsor';
+
 const GaleriHmj = (): JSX.Element => {
   const [activeButton, setActiveButton] = useState('');
   const [listGaleriHMJ, setListGaleriHMJ] = useState(LIST_HMJ);
@@ -59,22 +61,25 @@ const GaleriHmj = (): JSX.Element => {
   }, []);
 
   return (
-    <div className='galeri-hmj'>
-      <img className='cloud-1' src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`} />
-      <img className='cloud-2' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`} />
-      <img className='cloud-3' src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} />
-      <img className='feather' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
-      <div className='galeri-hmj-title'>
-        <h1 className='title'>Himpunan (HMJ)</h1>
+    <>
+      <div className='galeri-hmj'>
+        <img className='cloud-1' src={`${ASSET_URL}/assets/images/vistock/main/awan%202-01.png`} />
+        <img className='cloud-2' src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`} />
+        <img className='cloud-3' src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} />
+        <img className='feather' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} />
+        <div className='galeri-hmj-title'>
+          <h1 className='title'>Himpunan (HMJ)</h1>
+        </div>
+        <div className='fakultas-container'>
+          {listButtonFakultas}
+        </div>
+        
+        <div className='himpunan-container'>
+          {listCardHMJ}
+        </div>
       </div>
-      <div className='fakultas-container'>
-        {listButtonFakultas}
-      </div>
-      
-      <div className='himpunan-container'>
-        {listCardHMJ}
-      </div>
-    </div>
+      <Sponsor />
+    </>
   );
 };
 

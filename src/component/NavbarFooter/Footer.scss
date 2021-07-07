@@ -8,7 +8,7 @@
   padding: 1.5rem 2rem;
   justify-content: space-between;
   background: fixed $red-darker;
-  min-height: $footerheight;
+  min-height: var(--footerheight);
 
 
   @include respond-to('phone') {

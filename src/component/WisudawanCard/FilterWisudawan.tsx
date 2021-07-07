@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import WisudawanCardContainer from './WisudawanCardContainer';
 import './FilterWisudawan.scss';
 import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useRoute } from 'wouter';
 import { Link } from 'wouter';
 import './WisudawanCard.scss';
@@ -7,7 +7,6 @@ import { GALERI_APRESIASI_PAGE } from '../../routes/routes';
 
 import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
 import { Loading } from '../Loading/Loading';
-import { SyntheticEvent } from 'react';
 
 const WisudawanCard = (data: IGaleriWisudawan): JSX.Element => {
   const [match, params] = useRoute(GALERI_APRESIASI_PAGE.path);
@@ -15,13 +14,12 @@ const WisudawanCard = (data: IGaleriWisudawan): JSX.Element => {
   const showToolTip = data.judulTA.length > textLimit;
   const shownJudulTA = showToolTip ? data.judulTA.slice(0, textLimit) + '...' : data.judulTA;
   const [isLoaded, setLoaded] = useState(false);
-  const [imgSrc, setImgSrc] = useState(data.pasfoto);
 
   const Awan = `${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`;
 
-  const useFallbackImg = () => {
+  const useFallbackImg = (e: any) => {
     const fallbackImg = `${ASSET_URL}/fotoWisudawan/nophoto.png`;
-    setImgSrc(fallbackImg);
+    e.target.src = fallbackImg;
   };
 
   if (match && params) {
@@ -36,7 +34,7 @@ const WisudawanCard = (data: IGaleriWisudawan): JSX.Element => {
           className='image'
         >
           <img
-            src={imgSrc}
+            src={data.pasfoto}
             className='foto-wisudawan'
             onError={useFallbackImg}
           />

@@ -1,4 +1,3 @@
-import React from 'react';
 import WisudawanCard from './WisudawanCard';
 import './WisudawanCardContainer.scss';
 

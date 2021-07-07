@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ApresiasiCarousel.scss';
 import IKontenApresiasi from '../../interfaces/IKontenApresiasi';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Row, Col, Button, Modal } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 
 
 const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element => {
   const [slide, setSlide] = useState(0);
-  const [isImageOpen, setIsImageOpen] = useState(false);
   const [openedImageIdx, setOpenedImageIdx] = useState(0);
-  const outsideElement = document.getElementById('img-01')!;
   const judul = data[slide].tipeKonten;
 
   // Modal Start
@@ -30,19 +28,7 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
       htmlTag.setAttribute('style', 'overflow-y: scroll;');
     }
   };
-
-  const ngocok = () => {
-    alert('a');
-  };
-
   // Modal End
-
-
-  document.addEventListener('mousedown', (e) => {
-    if (!(e.target == outsideElement)) {
-      setIsImageOpen(false);
-    }
-  });
 
   const isApresiasiImage = (tipeApresiasi: string) => {
     return (tipeApresiasi == 'poster' || tipeApresiasi == 'puisi' || tipeApresiasi == 'lainnya');
@@ -72,7 +58,6 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
 
   const onClickCarousel = (i: number) => {
     if (isApresiasiImage(data[i].tipeKonten)) {
-      setIsImageOpen(true);
       setOpenedImageIdx(i);
     }
   };
@@ -86,7 +71,7 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
         infiniteLoop
         showThumbs={false}
         showStatus={false}
-        showArrows={false}
+        showArrows={true}
         onChange={(e) => setSlide(e)}
         onClickItem={(e) => onClickCarousel(e)}
         className='carousel'
@@ -106,6 +91,7 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
         aria-labelledby="example-custom-modal-styling-title"
         backdrop="static"
         keyboard={false}
+        className='modal-carousel'
       >
         <Button variant="danger" className="modal-button mb-3" onClick={handleClose}>
           <i className="fa fa-times fa-lg text-white me-1"></i>Close

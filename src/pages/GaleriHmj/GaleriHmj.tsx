@@ -70,7 +70,7 @@ const GaleriHmj = (): JSX.Element => {
       <div className='fakultas-container'>
         {listButtonFakultas}
       </div>
-      
+
       <div className='himpunan-container'>
         {listCardHMJ}
       </div>

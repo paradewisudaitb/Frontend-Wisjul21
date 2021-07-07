@@ -59,10 +59,13 @@
       }
     }
   }
+}
 
-// .image-modal {
-//   width: 80vw;
-//   @include respond-to("phone") {
-//     width: 100vw;
-//   }
+.modal-carousel {
+  .image-modal {
+    width: 80vw;
+    @include respond-to("phone") {
+      width: 100vw;
+    }
+  }
 }

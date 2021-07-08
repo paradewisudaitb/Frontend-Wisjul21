@@ -125,7 +125,7 @@ export const getByHimpunan = async (namaHimpunan: string): Promise<IGaleriWisuda
           throw new Error('Gagal membuat koneksi ke backend atau terjadi kesalahan pada backend.');
         })
     ).json();
-  
+
   if (res.length == 0) {
     throw new Error(`Tidak ada wisudawan dari himpunan ${namaHimpunan}.`);
   }

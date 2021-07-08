@@ -21,10 +21,6 @@
       h1 {
         margin-bottom: 3vh;
       }
-
-      img {
-        max-width: 40vw;
-      }
     }
   }
 }
@@ -33,4 +29,9 @@
   margin-top: 1rem;
   // max-width: 300px;
   height: 300px;
+
+  @include respond-to('phone') {
+    max-height: 150px;
+    width: auto;
+  }
 }

@@ -39,6 +39,7 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
       case 'video':
         return <video controls src={data.linkKonten} />;
       case 'musik':
+      case 'lagu':
         return <div className="audio-apresiasi"><audio controls src={data.linkKonten} /></div>;
       case 'website':
         return <a href={data.linkKonten}></a>;

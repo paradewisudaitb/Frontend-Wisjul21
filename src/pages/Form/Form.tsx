@@ -158,7 +158,9 @@ export default function Form(): JSX.Element {
   // const warnMany = <span className="form-warn">* Jika ada lebih dari 1 prestasi, karya, kontribusi, atau lembaga non-HMJ, pisahkan dengan baris baru (enter).</span>;
   const warnManyInline = <span className="form-warn">Jika ada lebih dari 1, pisahkan dengan enter (baris baru); boleh kosong</span>;
 
-  return (
+  const enabled = false;
+
+  return ( enabled ? (
     <div className="form-page">
       <div className="form-container">
         <form className="form" onSubmit={handleSubmit(submitForm)}>
@@ -340,5 +342,11 @@ export default function Form(): JSX.Element {
         </form>
       </div>
     </div>
-  );
+  ) : (
+    <div className="form-page form-disabled">
+      <h1>
+        Sedang tidak menerima pengisian form wisudawan
+      </h1>
+    </div>
+  ));
 }

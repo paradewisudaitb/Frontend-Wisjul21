@@ -1,3 +1,6 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/colorpalette.scss';
+
 .galeri-apresiasi-page {
   display: flex;
   flex-direction: column;
@@ -10,37 +13,25 @@
     justify-content: center;
     align-items: center;
   }
+}
 
-  .daftar-wisudawan {
-    input {
-      margin: 1rem;
-      font-size: 1.3rem;
-      width: 40rem;
+@include respond-to('phone') {
+  .galeri-apresiasi-page {
+    .himpunan {
+      h1 {
+        margin-bottom: 3vh;
+      }
     }
   }
 }
 
-@media only screen and (max-width: 780px) {
-  .galeri-apresiasi-page {
-    .himpunan {
-      h1 {
-        font-size: 6vw;
-        margin-bottom: 3vh;
-      }
+.himpunan-logo {
+  margin-top: 1rem;
+  // max-width: 300px;
+  height: 300px;
 
-      img {
-        max-width: 40vw;
-      }
-    }
-
-    .apresiasi-wisudawan {
-      h1 {
-        font-size: 5vw;
-      }
-
-      h2 {
-        font-size: 4vw;
-      }
-    }
+  @include respond-to('phone') {
+    max-height: 150px;
+    width: auto;
   }
 }

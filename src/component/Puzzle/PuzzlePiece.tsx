@@ -1,13 +1,12 @@
 import React, {useRef} from 'react';
 
-
 const PuzzlePiece = (props: any) => {
 
   const dragStart = (e: any) => {
     const target = e.target;
 
     e.dataTransfer.setData('piece_id', target.id);
-    
+
     setTimeout(() => {
       target.style.display = 'none';
     }, 0);

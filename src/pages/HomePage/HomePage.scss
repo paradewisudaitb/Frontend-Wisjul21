@@ -1,260 +1,413 @@
-$marginLR: 20vw;
-$maincolour: rgb(4, 4, 37);
-$accentcolour1: rgb(218, 167, 0);
-$borderradius: 3px;
-$randomNumber: random(5);
+@use 'sass:math';
+@import '../../App.scss';
 
-@mixin event-btn() {
-  height: 500px;
-  width: 300px;
-  margin: 50px;
-  grid-row: 1;
-  text-align: center;
-  transition: 0.3s;
-  background-position: center;
-  &:hover {
-    transform: translateY(-10px);
-    transition: 0.3s;
+.homepage {
+  // background-image: url('./images/bg/Filter.png'), radial-gradient(#532F65, #201125, #201125);
+  // background-blend-mode: overlay;
+  margin-top: -$navbarheight;
+  overflow-x: hidden;
+
+  button {
+    border: none;
+    border-radius: 3px;
+    &:hover {
+      cursor: pointer;
+    }
   }
-}
 
-button {
-  border: none;
-  border-radius: $borderradius;
-  &:hover {
-    cursor: pointer;
+  //HEADER
+  //Cloud Animation
+  @keyframes wind {
+    from {
+      margin-left: -25vw;
+    }
+    to {
+      transform: translateX(200vw);
+    }
   }
-}
-
-.bg {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 100vh;
-  width: 100%;
-  background-repeat: repeat-x;
-  background-size: auto 100vh;
-  overflow: hidden;
-}
-
-@keyframes wind {
-  from {
-    margin-left: calc(-290px - 60vw);
-  }
-  to {
-    transform: translateX(550vw);
-  }
-}
-
-.cloud {
-  position: absolute;
-  animation-name: wind;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-fill-mode: backwards;
-}
-
-.cloud:nth-of-type(1) {
-  width: calc(#{random(10)}vw + #{random(90)+200}px);
-  top: percentage((random(80) - 10) / 100);
-  animation-duration: (random(120)+120) + s;
-  animation-delay: 0s;
-  opacity: (random(30)+50)/100;
-}
-
-@for $i from 2 through 7 {
-  .cloud:nth-of-type(#{$i}) {
-    width: calc(#{random(10)}vw + #{random(100)+200}px);
-    top: percentage((random(80) - 10) / 100);
-    animation-duration: #{random(120)+120}s;
-    animation-delay: #{random(20)+($i - 2)*60}s;
-    opacity: (random(30)+50)/100;
-  }
-}
-
-.volcano {
-  position: absolute;
-  justify-self: center;
-  transform: scale(1.4) translateY(-50px);
-}
-
-.smoke {
-  justify-self: center;
-}
-
-.volcanoes {
-  position: absolute;
-  transform: translateY(-200px);
-  width: 1920px;
-}
-
-.home-container {
-  height: 100vh;
-  width: 100%;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-
-  .logotagline {
+  .cloud-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    z-index: 5;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: hidden;
+  }
+  .cloud {
+    position: absolute;
+    animation-name: wind;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: backwards;
+    filter: drop-shadow(10px 10px 10px #201125);
+  }
+  @mixin cloud-gacha() {
+    width: #{math.div(random(250), 100)+20}vw;
+    top: percentage(math.div((random(70) + 10), 100));
+    animation-duration: #{random(60)+60}s;
+    opacity: math.div((random(30)+50), 100);
+    z-index: random(15);
+  }
+  //1st cloud immediately shown
+  .cloud:nth-of-type(1) {
+    @include cloud-gacha();
+    animation-delay: 0s;
+  }
+  //2nd to 7th clouds
+  @for $i from 2 through 7 {
+    .cloud:nth-of-type(#{$i}) {
+      @include cloud-gacha();
+      animation-delay: #{random(20)+($i - 2)*80}s;
+    }
+  }
 
-    .logo {
-      display: flex;
-      height: 300px;
-      width: 300px;
-      z-index: 100;
-    }
-    .tagline {
-      background-color: rgba($color: #FFFFFF, $alpha: 0.2);
-      width: 25%;
-      text-align: center;
-      font-style: italic;
-    }
-  }
-  .youtube {
-    margin: 50px 50px;
-    height: 50px;
-    width: 20vw;
-    color: $accentcolour1;
-    background-color: transparent;
-    outline: $accentcolour1 solid 3px;
-    z-index: 10;
-    @media screen and (max-width: 1080px) {
-      width: 0,2*1080px;
-    }
-    &:hover {
-      color: $maincolour;
-      background-color: $accentcolour1;
-      transition: 0.3s;
-    }
-  }
-}
-
-.visi-misi {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  margin: 50px $marginLR;
-  align-items: center;
-  h1 {
-    font-size: 5vw;
-  }
-  p {
-    color: $maincolour;
-  }
-  .VISI {
-    position: relative;
-    top: -15px;
-    text-align: left;
-  }
-  .visi {
-    padding: 30px;
-    grid-column: 2 / span 3;
-    grid-row: 1;
-    background-color: $accentcolour1;
-  }
-  .MISI {
-    position: relative;
-    top: -15px;
-    text-align: right;
-  }
-  .misi {
-    padding: 30px;
-    grid-column: 1 / span 3;
-    grid-row: 2;
-    background-color: $accentcolour1;
-  }
-  @media screen and (max-width: 1080px) {
-    margin: 50px 10vw;
+  .bg-container {
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 50px auto 50px auto;
-    h1 {
-      font-size: 50px;
-    }
-    .VISI {
-      position: relative;
-      top: 45%;
-      left: 10px;
-    }
-    .visi {
-      grid-column: 1;
-      grid-row: 2;
-    }
-    .MISI {
-      position: relative;
-      top: 45%;
-      right: 10px;
-    }
-    .misi {
-      grid-column: 1;
-      grid-row: 4;
-    }
-  }
-}
-
-.btns {
-  display: grid;
-  justify-content: center;
-  grid-template-rows: 100%;
-  grid-template-columns: 1fr 1fr 1fr;
-  @media screen and (max-width: 1300px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media screen and (max-width: 900px) {
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    position: absolute;
+    top: -$navbarheight;
+    left: 0;
+    height: calc(100vh + 4.4rem);
+    width: 100%;
+    background-repeat: repeat-x;
+    background-size: cover;
+    overflow: hidden;
+    justify-items: center;
+    .bg {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-repeat: repeat-x;
+    }
+    .volcano {
+      position: absolute;
+      bottom: -20vh;
+      height: 160vh;
+      z-index: 11;
+    }
+    .smoke {
+      position: absolute;
+      height: 125vh;
+      z-index: 11;
+    }
+    .volcanoes {
+      position: absolute;
+      bottom: 0;
+      min-width: 100vw;
+      height: 125vh;
+    }
   }
-}
 
-.button1 {
-  @include event-btn();
-  transform: grid-column(1);
-  transition: 0.5s;
-}
-
-.button2 {
-  @include event-btn();
-  grid-column: 2;
-  @media screen and (max-width: 900px) {
-    display: none;
+  //MAIN CONTENT
+  .tagline-container {
+    position: absolute;
+    top: 4.4rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    z-index: 15;
+    h1,h3 {
+      font-size: 3.5vw;
+      width: fit-content;
+    }
+    h3 {
+      position: relative;
+      top: 20px;
+      left: 20px;
+      color: $red-darker;
+    }
+    .tagline1 {
+      margin-right: 60%;
+      margin-bottom: 80px;
+    }
+    .tagline2 {
+      margin-left: 60%;
+      margin-bottom: 200px;
+    }
+    @include respond-to('tablet','phone') {
+      width: 0;
+      visibility: hidden;
+    }
   }
-}
-
-.button3 {
-  @include event-btn();
-  grid-column: 3;
-  @media screen and (max-width: 1300px) {
-    display: none;
+  .header-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .logotagline {
+      z-index: 15;
+      text-align: center;
+      .logo {
+        position: relative;
+        margin-bottom: 10vh;
+        height: 35vh;
+        width: 35vh;
+        z-index: 100;
+        filter: drop-shadow(5px 5px 4px #590A07);
+      }
+      .tagline {
+        padding: 20px;
+        transform: translateY(-10vh);
+        color: $red-darker;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 70vw 100%;
+        visibility: hidden;
+        @include respond-to('tablet','phone') {
+          visibility: visible;
+        }
+      }
+    }
+    .youtube {
+      margin: 50px;
+      height: 120px;
+      width: 125px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-color: transparent;
+      background-image: url('../../icons/YoutubeIcon.png');
+      filter: drop-shadow(10px 10px 10px #201125);
+      z-index: 15;
+      &:hover {
+        filter: brightness(90%) drop-shadow(5px 5px 5px #201125);
+      }
+      &:active {
+        filter: brightness(80%) drop-shadow(2px 2px 2px #201125);
+      }
+      @include respond-to('phone') {
+        margin: 20px 50% 15vh 50%;
+        height: 75px;
+        width: 80px;
+      }
+      @media screen and (max-height: 430px){
+        margin-bottom: 5vh;
+        margin-top: auto;
+        height: 75px;
+        width: 80px;
+      }
+    }
   }
-}
 
-.button1, 
-.button2, 
-.button3 {
-  @media screen and (max-width: 1300px) {
-    margin: 50px 30px;
-  }
-  @media screen and (max-width: 430px) {
-    width: 60vw;
-  }
-}
+  .main-container {
+    margin-top: 15vh;
+    width: 100%;
+    overflow-x: hidden;
+    .cloud-main1 {
+      position: absolute;
+      top: 105vh;
+      left: -10vw;
+      width: 35vw;
+    }
+    .cloud-main2 {
+      position: absolute;
+      top: 130vh;
+      left: 50vw;
+      width: 40vw;
+      @include respond-to('phone') {
+        top: 200vh;
+      }
+    }
+    .cloud-main3 {
+      position: absolute;
+      top: 5em;
+      left: -1vw;
+      width: 30vw;
+    }
+    .feather1 {
+      position: absolute;
+      top: 20em;
+      left: -8vw;
+      width: 10vw;
+    }
+    .feather2 {
+      position: absolute;
+      top: -10em;
+      left: 80vw;
+      width: 10vw;
+      transform: rotate(190deg);
+    }
 
-.btn-container {
-  display: flex;
-  justify-content: center;
-}
+    .visi-misi {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 0.5fr);
+      margin: 50px 20vw;
+      align-items: center;
+      z-index: 10;
+      h1 {
+        font-size: 5vw;
+      }
+      li {
+        text-align: left;
+      }
+      .VISI {
+        grid-column: 1;
+        grid-row: 1;
+        position: relative;
+        top: -15px;
+        text-align: left;
+        z-index: 11;
+      }
+      .visi {
+        text-align: center;
+        padding: 30px;
+        grid-column: 2 / span 3;
+        grid-row: 1;
+        background-color: $red-darker;
+        z-index: 10;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        border-radius: 10px;
+        box-shadow: 20px 20px 2px $orange-darker;
+      }
+      .MISI {
+        grid-column: 4;
+        grid-row: 2;
+        position: relative;
+        top: -15px;
+        text-align: right;
+        z-index: 11;
+      }
+      .misi {
+        padding: 30px;
+        grid-column: 1 / span 3;
+        grid-row: 2;
+        background-color: $red-darker;
+        text-align: left;
+        z-index: 10;
+        border-radius: 10px;
+        box-shadow: 20px 20px 2px $orange-darker;
+      }
+      @include respond-to('tablet','phone') {
+        margin: 50px 10vw;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50px auto 50px auto;
+        h1 {
+          font-size: 50px;
+        }
+        .VISI {
+          grid-column: 1;
+          grid-row: 1;
+          position: relative;
+          top: 45%;
+          left: 10px;
+        }
+        .visi {
+          grid-column: 1;
+          grid-row: 2;
+        }
+        .MISI {
+          grid-column: 1;
+          grid-row: 3;
+          position: relative;
+          top: 45%;
+          right: 10px;
+        }
+        .misi {
+          grid-column: 1;
+          grid-row: 4;
+        }
+      }
+    }
 
-.Arrow {
-  grid-row: 1;
-  visibility: hidden;
-  @media screen and (max-width: 1300px) {
-    visibility: visible;
+    .event-buttons {
+      margin: 5vw;
+      z-index: 100;
+      position: relative;
+      top: 0;
+      left: 0;
+      .btn-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        z-index: 10;
+      }
+      @mixin event-btn() {
+        height: 400px;
+        width: 300px;
+        margin: 50px;
+        grid-row: 1;
+        text-align: center;
+        transition: 0.3s;
+        background-position: center;
+        background-size: contain;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        z-index: 10;
+        padding-top: 100%;
+        &:hover {
+          filter: drop-shadow(10px 10px 7px $purple-darker);
+          transform: translateY(-10px);
+          transition: 0.3s;
+        }
+      }
+      .btns {
+        display: grid;
+        justify-content: center;
+        grid-template-rows: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+        z-index: 10;
+        @media screen and (max-width: 1300px) {
+          grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (max-width: 900px) {
+          grid-template-columns: 1fr;
+        }
+      }
+      .button1 {
+        @include event-btn();
+        transform: grid-column(1);
+        transition: 0.5s;
+      }
+      .button2 {
+        @include event-btn();
+        grid-column: 2;
+        @media screen and (max-width: 900px) {
+          display: none;
+        }
+      }
+      .button3 {
+        @include event-btn();
+        grid-column: 3;
+        @media screen and (max-width: 1300px) {
+          display: none;
+        }
+      }
+      .button1, 
+      .button2, 
+      .button3 {
+        @media screen and (max-width: 1300px) {
+          margin: 50px 30px;
+        }
+        @media screen and (max-width: 430px) {
+          width: 50vw;
+          height: 60vw;
+          margin-top: 0;
+        }
+      }
+      .arrow {
+        height: 50px;
+        width: 50px;
+        grid-row: 1;
+        background-color: transparent;
+        align-self: center;
+        visibility: hidden;
+        @media screen and (max-width: 1300px) {
+          visibility: visible;
+        }
+      }
+    }
   }
 }

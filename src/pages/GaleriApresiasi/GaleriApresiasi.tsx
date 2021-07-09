@@ -1,54 +1,140 @@
-import React from 'react';
-import WisudawanCardContainer from '../../component/WisudawanCard/WisudawanCardContainer';
+import React, { useEffect, useState } from 'react';
+import { useRoute } from 'wouter';
 import FilterWisudawan from '../../component/WisudawanCard/FilterWisudawan';
-import Logo from '../../images/ukj.png';
 import ApresiasiCarousel from '../../component/ApresiasiCarousel/ApresiasiCarousel';
-import './GaleriApresiasi.scss';
 
-import { Footer } from '../../component/NavbarFooter/Footer';
+import { getByHimpunan } from '../../controller/wisudawan';
+import { getKontenApresiasi } from '../../controller/kontenApresiasi';
+
+import './GaleriApresiasi.scss';
+import { GALERI_APRESIASI_PAGE } from '../../routes/routes';
+import { Loading } from '../../component/Loading/Loading';
+import IGaleriWisudawan from '../../interfaces/IGaleriWisudawan';
+import IKontenApresiasi from '../../interfaces/IKontenApresiasi';
+import LIST_HMJ from '../../data/hmj.json';
+
+import { NotFoundHMJ } from '../NotFound/NotFound';
+import Sponsor from '../../component/Sponsor/Sponsor';
+
 import { Navbar } from '../../component/NavbarFooter/Navbar';
 
-const GaleriApresiasi = () => {
-  // const logoHimpunan = '../../images/ukj.png';
+const slugToNamaHimpunanITB = (text: string) => {
+  const tmp = text.split('-');
+  let result = '';
 
-  const dataApresiasi = {
-    'himpunan': 'hmif',
-    'apresiasi':
-    [
-      {
-        'tipeKontenApresiasi': 'poster',
-        'linkKeKonten': 'https://townsquare.media/site/442/files/2013/05/TheFW_Up.jpg?w=630&h=932&q=75',
-      },
-      {
-        'tipeKontenApresiasi': 'poster',
-        'linkKeKonten': 'https://image.freepik.com/free-vector/space-vintage-colorful-horizontal-poster_225004-2209.jpg'
-      },{
-        'tipeKontenApresiasi': 'video',
-        'linkKeKonten': 'https://storage.googleapis.com/spatial-thinker-315205/POS2B5695_EE/22a_1623528845_163209.mp4'
-      },{
-        'tipeKontenApresiasi': 'audio',
-        'linkKeKonten': 'https://cdn.piapro.jp/mp3_a/s9/s9ihs6vgwgu9uv4u_20210306210143_audition.mp3'
-      }]};
+  if (tmp[0] == 'tpb') {
+    tmp.forEach(word => {
+      if (word != 'dan') {
+        result += word.toUpperCase();
+        if (word == 'sith') {
+          result += '-';
+        } else {
+          result += ' ';
+        }
+      }
+    });
+  } else {
+    tmp.forEach(word => {
+      if (word == 'dan') {
+        result += word + ' ';
+      } else if (word == 'non') {
+        result += 'Non-';
+      } else {
+        result += word[0].toUpperCase() + word.slice(1) + ' ';
+      }
+    });
 
-  return (
-    <div className='galeri-apresiasi-page py-5'>
-      <div className='himpunan'>
-        <h1>Himpunan A</h1>
-        <img src={Logo} className='himpunan-logo'/>
-      </div> 
+  }
+
+  return result.trim();
+};
+
+const GaleriApresiasi = (): JSX.Element => {
+  const [match, params] = useRoute(GALERI_APRESIASI_PAGE.path);
+  const [isTPB, setIsTPB] = useState(false);
+
+  if (match && params) {
+    const namaHimpunan = slugToNamaHimpunanITB(params.hmj);
+
+    const fotoHMJ = LIST_HMJ.filter(hmj => {
+      return (hmj.namaHimpunan == namaHimpunan);
+    })[0]?.linkFoto || 'notfound';
+
+    if (fotoHMJ == 'notfound') {
+      return (<NotFoundHMJ />);
+    }
+
+    const defaultWisudawan: IGaleriWisudawan[] = [];
+    const defaultKontenApresiasi: IKontenApresiasi[] = [];
+
+    const [loadingWisudawan, setLoadingWisudawan] = useState(true);
+    const [wisudawans, setWisudawans] = useState(
+      <FilterWisudawan data={defaultWisudawan} />
+    );
+    const [loadingApresiasi, setLoadingApresiasi] = useState(true);
+    const [kontenApresiasi, setKontenApresiasi] = useState(defaultKontenApresiasi);
+
+    useEffect(() => {
+      // kalau TPB, ga ada bagian wisudawannya
+      namaHimpunan.startsWith('TPB') ? setIsTPB(true) : setIsTPB(false);
+
+      getByHimpunan(namaHimpunan.toLowerCase())
+        .then(dataWisudawan => {
+          setWisudawans(<FilterWisudawan data={dataWisudawan} />);
+          setLoadingWisudawan(false);
+        })
+        .catch(() =>
+          setLoadingWisudawan(false)
+        );
+
+      getKontenApresiasi(namaHimpunan.toLowerCase())
+        .then(dataApresiasi => {
+          setKontenApresiasi(dataApresiasi);
+          setLoadingApresiasi(false);
+        })
+        .catch(() => {
+          setLoadingApresiasi(false);
+        });
+
+    }, []);
+
+    return (
+      <>
+        <Navbar />
+        <div className='galeri-apresiasi-page py-5 bg'>
+          <div className='himpunan'>
+            <h1>{ namaHimpunan }</h1>
+            <img src={fotoHMJ} className='himpunan-logo' alt={`logo ${namaHimpunan}`}/>
+          </div>
+
+          <div className='apresiasi-wisudawan my-md-3'>
+            <h2>Apresiasi {isTPB ? 'TPB' : 'HMJ'}</h2>
+            {loadingApresiasi ? <Loading /> :
+              ( kontenApresiasi.length == 0 ?
+                <h3>Tidak ada konten apresiasi</h3> : <ApresiasiCarousel data={kontenApresiasi} /> )}
+          </div>
+
+          {!isTPB &&
+            <div className='daftar-wisudawan'>
+              {loadingWisudawan ? <Loading /> : wisudawans}
+            </div>
+          } 
       
-      <div className='apresiasi-wisudawan my-5'>
-        <h1>Apresiasi Wisudawan</h1>
-        <h2>Judul/Keterangan</h2>
-        <ApresiasiCarousel {...dataApresiasi} />
-      </div>
-      
-      <div className='daftar-wisudawan'>
-        <FilterWisudawan />
-      </div>
+        </div>
+        <Sponsor />
 
-    </div>
-  );
+      </>
+    );
+
+  } else {
+    return (
+      <>
+        <Navbar />
+        <h1>Error</h1>
+      </>
+    );
+  }
+
 };
 
 export default GaleriApresiasi;

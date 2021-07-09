@@ -13,10 +13,11 @@ interface IDataWisudawan {
   funFact: string;
   pasfoto: string;
   nonhim: boolean;
-  karya?: string[];
-  kontribusi?: string[];
-  lembaga?: string[];
-  prestasi?: string[];
+  showAtWeb: boolean;
+  karya: string[];
+  kontribusi: string[];
+  lembaga: string[];
+  prestasi: string[];
 }
 
 export default IDataWisudawan;

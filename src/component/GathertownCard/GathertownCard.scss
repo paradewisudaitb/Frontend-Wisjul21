@@ -1,0 +1,106 @@
+@import '../../styles/colorpalette.scss';
+@import '../../styles/responsive.scss';
+
+.card-hmj-container {
+  position: relative;
+
+  .spark-card {
+    position: absolute;
+    top: -10%;
+    right: -1.5%;
+    width: 5%;
+    height: auto;
+    transform: rotate(-70deg);
+  }
+
+  .card-hmj {
+    padding: 0.75rem;
+    margin: 1rem;
+    box-shadow: 0 2px 8px black;
+    border-radius: 20px;
+    background: rgba($blue-darker, 0.8);
+    // ini pake rgba supaya bisa opacity tanpa ngaruh ke child
+    width: auto;
+
+    @media only screen and (max-width: 480px) {
+      padding: 0.5rem 1rem 0.5rem 1rem;
+    }
+
+    .card-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      width: auto;
+
+      @media only screen and (max-width: 480px) {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+    }
+
+    .image-hmj {
+      // background-color: rgba($color: whitesmoke, $alpha: 0.9);
+      // border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 0.5rem;
+      align-self: center;
+      width: 300px;
+
+      @include respond-to('phone') {
+        width: 130px;
+        height: 100px;
+      }
+
+      img {
+        height: 150px;
+        width: auto;
+        align-self: center;
+
+        @include respond-to('phone') {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    .info-hmj {
+      width: 85%;
+      text-align: start;
+      margin: 1rem 1rem 1rem 2.5rem;
+
+      @include respond-to('phone') {
+        width: 75%;
+        text-align: start;
+        margin: 1rem 1rem 1rem 1.5rem;
+      }
+
+      @media only screen and (max-width: 480px) {
+        width: 75%;
+        text-align: start;
+        align-self: center;
+        margin: 0rem 0.5rem 0.5rem 0.75rem;
+      }
+
+      h2 {
+        text-align: start;
+        word-break: break-word;
+        margin-bottom: 2.5rem;
+
+        @include respond-to('phone') {
+          text-align: start;
+          word-break: break-word;
+          margin-bottom: 3rem;
+        }
+
+        @media only screen and (max-width: 480px) {
+          text-align: start;
+          word-break: break-word;
+          font-size: 18px;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '../../styles/responsive.scss';
 @import '../../styles/colorpalette.scss';
 
@@ -11,7 +12,7 @@ $form-apresiasi-width: 50vw;
   background-color: #00000085;
   overflow-x: hidden;
   width: $form-apresiasi-width;
-  margin-left: (100vw - $form-apresiasi-width) / 2;
+  margin-left: math.div((100vw - $form-apresiasi-width), 2);
 
   * {
     background-color: transparent;
@@ -27,7 +28,7 @@ $form-apresiasi-width: 50vw;
     overflow-x: hidden;
     padding: 10px 1px;
     width: $form-apresiasi-width * 1.7;
-    margin-left: (100vw - ($form-apresiasi-width * 1.7)) / 2;
+    margin-left: math.div((100vw - ($form-apresiasi-width * 1.7)), 2);
   }
 }
 
@@ -40,6 +41,7 @@ $form-apresiasi-width: 50vw;
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 5px;
+  padding-bottom: 5px;
 
   @include respond-to('phone') {
     font-size: 12px;
@@ -49,11 +51,13 @@ $form-apresiasi-width: 50vw;
 .form-apresiasi-btn {
   border: none;
   margin-top: 30px;
+  margin-bottom: 30px;
   width: 100px;
   height: 40px;
   border-radius: 20px;
   color: #f4f4f4;
   background-color: $cyan-medium;
+  text-align: center;
   &:hover {
     background-color: #4aa96c;
     color: #ffffff;
@@ -86,9 +90,9 @@ $form-apresiasi-width: 50vw;
 .form-apresiasi-input {
   width: 100%;
   border-radius: 10px;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  // padding: 10px;
+  // margin-top: 0.3rem;
+  // margin-bottom: 5px;
 }
 
 .form-apresiasi-textarea {
@@ -113,9 +117,11 @@ $form-apresiasi-width: 50vw;
 }
 
 .form-apresiasi-select {
+  display: block;
   padding: 5px;
-  margin: 5px;
+  margin: 0px auto auto auto;
   font-size: 16px !important;
+  width: 100%;
 
   @include respond-to('phone') {
     font-size: 12px !important;
@@ -150,4 +156,10 @@ $form-apresiasi-width: 50vw;
 .form-apresiasi-warn {
   color: $red-medium;
   font-size: 20px;
+}
+
+.weblink-input {
+  // padding: 0.5rem;
+  border-style: solid;
+  outline: none;
 }

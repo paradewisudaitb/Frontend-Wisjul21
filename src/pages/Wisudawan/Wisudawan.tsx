@@ -1,91 +1,122 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
+import { Link, useRoute } from 'wouter';
+import  { Loading } from '../../component/Loading/Loading';
 import './Wisudawan.scss';
 import PesanAnonim from '../../component/PesanAnonim/PesanAnonim';
 import WisudawanContainer from '../../component/WisudawanContainer/WisudawanContainer';
+import { getPesan } from '../../controller/pesan';
+import { getByNIM } from '../../controller/wisudawan';
+import { ASSET_URL } from '../../api';
+import { NotFoundWisudawan } from '../../component/NotFound/NotFound';
+import { NotFoundHMJ } from '../../pages/NotFound/NotFound';
+import { Navbar } from '../../component/NavbarFooter/Navbar';
 
+export default function Wisudawan(): JSX.Element {
+  const [match, params] = useRoute('/hmj/:hmj/:nim');
 
-const dataDummy = [{
-  'nama': 'John Doe',
-  'nim': '13519001',
-  'jurusan': 'IF',
-  'himpunan': 'HMIF ITB',
-  'foto': 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Keqing.png',
-  'judulTA': 'Apel Kucing Pisang Mangga Buah Binatang Dhuar',
-  'listUnit': [{
-    'logoUnit': 'ukj.png',
-    'namaUnit': 'UKJ ITB'
-  },
-  {
-    'logoUnit': 'ukj.png',
-    'namaUnit': 'UKJ ITB'
+  const [loadingWisudawan, setLoadingWisudawan] = useState(true);
+  const [dataWisudawan, setDataWisudawan] = useState<JSX.Element>();
+  const [isWisudawanExist, setWisudawanExist] = useState(true);
+
+  const [loadingPesan, setLoadingPesan] = useState(true);
+  const [pesanToShow, setPesanToShow] = useState<JSX.Element[]>([]);
+
+  if (match && params) {
+    const nim = params.nim;
+    const hmj = params.hmj;
+
+    const getMessageToShow = () => {
+      const tmp: JSX.Element[] = [];
+      getPesan(nim)
+        .then(pesans => {
+          setLoadingPesan(true);
+          if (pesans.length != 0) {
+            pesans.forEach(pesan => {
+              tmp.push(<PesanAnonim key={pesan.idPesan} {...pesan} />);
+            });
+          } else {
+            tmp.push(<p className='pesan-kosong'>Tidak ada pesan untuk wisudawan</p>);
+          }
+
+          setLoadingPesan(false);
+          setPesanToShow(tmp);
+        });
+    };
+
+    useEffect(() => {
+      getByNIM(nim)
+        .then(dataWisudawan => {
+          // bagian data wisudawan
+          setDataWisudawan(<WisudawanContainer {...dataWisudawan}/>);
+          setLoadingWisudawan(false);
+        })
+        .catch(err => {
+          console.error(err);
+          setWisudawanExist(false);
+          setLoadingWisudawan(false);
+        });
+
+      // bagian pesan
+      getMessageToShow();
+      const interval = 5 * 60 * 1000;
+      setInterval(getMessageToShow, interval); // ambil pesan baru setiap `interval`
+    }, []);
+
+    if (isWisudawanExist) {
+      return (
+        <>
+          <Navbar />
+          <div className='page-wisudawan'>
+            <div className='container'>
+              <div className='wisudawan-tes'>
+                {loadingWisudawan ? (
+                  <div>
+                    <Loading />
+                    <h2 className='loading-msg'>
+                      Loading data wisudawan
+                    </h2>
+                  </div>
+                ) : dataWisudawan}
+              </div>
+    
+              <div className="awan">
+                <img src={`${ASSET_URL}/assets/images/vistock/main/awan%203-01.png`} alt="awan" className="awan-bawah" />
+                <img src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} alt="awan" className="awan-atas" />
+              </div>
+    
+              <div className='pemisah'></div>
+    
+              <h3 className='judul-section'>
+                Pesan Untuk Wisudawan
+              </h3>
+              <div className='pesan-anonim'>
+                <div className='pesan-anonim-wrapper'>
+                  {loadingPesan
+                    ? (
+                      <div>
+                        <Loading />
+                        <h2 className='loading-msg'>
+                          Loading pesan wisudawan
+                        </h2>
+                      </div>
+                    ) : pesanToShow}
+                </div>
+              </div>
+              <div className='kirim-pesan-button-wrapper'>
+                <Link href={`/hmj/${hmj}/${nim}/kirim-pesan`}>
+                  <button className='kirim-pesan-button'>Kirim Pesan</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </>
+      );
+      
+    } else {
+      return <NotFoundWisudawan hmjSlug={params.hmj} />;
+    }
+
+  } else {
+    return <NotFoundHMJ />;
   }
-  ],
-  'tipsSukses': 'Belajarlah sampai ga belajar, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est eu nisi pulvinar tincidunt. Aliquam tempus nisi libero, quis laoreet augue venenatis eget.  ',
-  'prestasi': ['Juara 1 International Makan Kerupuk Olympiad 2002',
-    'Juara 3 Kejuaraan Ghibah Nasional 2029',
-    'Juara 2 Lomba Blablabla'],
-  'kontribusi': ['Staf Divisi Website Wisjul 2021', 'Kadiv Divisi Website Wisjul 2021', 'Kabid IT Wisjul 2021'],
-  'karya': ['Karya seni 1','Karya seni 2','Karya seni 3']
-
-},{
-  'nama': 'John Doe',
-  'nim': '13519001',
-  'jurusan': 'IF',
-  'himpunan': 'HMIF ITB',
-  'foto': 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Xiao.png',
-  'judulTA': 'Apel Kucing Pisang',
-  'listUnit': [{
-    'logoUnit': 'ukj.png',
-    'namaUnit': 'UKJ ITB'
-  }],
-  'tipsSukses': 'Belajarlah sampai ga belajar',
-  'prestasi': ['Juara 1 International Makan Kerupuk Olympiad 2002',
-    'Juara 3 Kejuaraan Ghibah Nasional 2029',
-    'Juara 2 Lomba Blablabla'],
-  'kontribusi': ['Staf Divisi Website Wisjul 2021', 'Kadiv Divisi Website Wisjul 2021', 'Kabid IT Wisjul 2021'],
-  'karya': ['Karya seni 1','Karya seni 2','Karya seni 3']
-},{
-  'nama': 'John Doe',
-  'nim': '13519001',
-  'jurusan': 'IF',
-  'himpunan': 'HMIF ITB',
-  'foto': 'https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Albedo.png',
-  'judulTA': 'Apel Kucing Pisang Mangga Buah Binatang Dhuar',
-  'listUnit': [{
-    'logoUnit': 'ukj.png',
-    'namaUnit': 'UKJ ITB'
-  },
-  {
-    'logoUnit': 'ukj.png',
-    'namaUnit': 'UKJ ITB'
-  }
-  ],
-  'tipsSukses': 'Belajarlah sampai ga belajar',
-  'prestasi': ['Juara 1 International Makan Kerupuk Olympiad 2002',
-    'Juara 3 Kejuaraan Ghibah Nasional 2029',
-    'Juara 2 Lomba Blablabla'],
-  'kontribusi': ['Staf Divisi Website Wisjul 2021', 'Kadiv Divisi Website Wisjul 2021', 'Kabid IT Wisjul 2021'],
-  'karya': ['Karya seni 1','Karya seni 2','Karya seni 3']
-}];
-
-export default function Wisudawan() {
-  return (
-    <div className='wisudawan'>
-      <div className='wisudawan-tes'>
-        <WisudawanContainer {...dataDummy[0]}/>
-
-      </div>
-
-      {/* pesan anonim */}
-
-      <div className='pesan-anonim'>
-        <div className='pesan-anonim-wrapper'>
-          <PesanAnonim />
-        </div>
-        <div className='kirim-button-wrapper'>
-          <button className='kirim-button'>Kirim Ucapan</button>
-        </div>
-      </div>
-    </div>
-  );
 }

@@ -1,0 +1,43 @@
+@import "../../App.scss";
+
+.sponsor {
+    // background-color: rgba($color: $purple-lighter, $alpha: 0.1);
+    background-image: linear-gradient(rgba($purple-lighter, 0.1), rgba($purple-darker, 0.1));
+    box-shadow: 0 0 20px 30px rgba($purple-lighter, 0.1);
+    border: none;
+    margin-top: 4rem;
+}
+
+.sponsor-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    img {
+        // max-height: 20vh;
+        // max-width: 20vh;
+        margin: 1rem;
+    }
+    .item-xl img {
+        max-width: 50vh;
+        max-width: 50vh;
+        // border: 5px solid blue;
+    }
+    .item-l img {
+        max-width: 40vh;
+        max-height: 40vh;
+        // border: 5px solid green;
+    }
+    .item-m img {
+        max-width: 25vh;
+        max-height: 25vh;
+        // border: 5px solid yellow;
+    }
+    .item-s img {
+        max-width: 20vh;
+        max-height: 20vh;
+        // border: 5px solid red;
+    }
+}
+

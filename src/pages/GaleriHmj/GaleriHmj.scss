@@ -1,0 +1,188 @@
+@import "../../App.scss";
+
+.galeri-hmj {
+  max-width: 100%;
+  overflow-x: hidden;
+
+  height: 100%;
+  width: 100%;
+  // background: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg");
+  // background-size: cover;
+  // background-position: center;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  .cloud-1 {
+    position: absolute;
+    z-index: 1;
+    width: 27em;
+    top: 3rem;
+    left: 67%;
+  }
+  .cloud-2 {
+    position: absolute;
+    z-index: 1;
+    width: 28em;
+    top: 12rem;
+    left: 3%;
+  }
+  .cloud-3 {
+    position: absolute;
+    z-index: 1;
+    width: 30em;
+    right: 0rem;
+    // bottom: 120vh;
+    bottom: 0;
+  }
+  .feather {
+    position: absolute;
+    z-index: 8;
+    width: 13em;
+    transform: rotate(90deg) scaleX(-1);
+    top: 80%;
+    left: 1%;
+  }
+
+  @include respond-to("phone") {
+    .cloud-1,
+    .cloud-2,
+    .cloud-3,
+    .feather {
+      display: none;
+    }
+  }
+
+  .galeri-hmj-title {
+    display: flex;
+    justify-content: center;
+    .title {
+      // font-size: 3.5rem;
+      margin: 1em;
+      z-index: 1;
+      @include respond-to("phone") {
+        font-size: 2.4em;
+      }
+    }
+  }
+
+  .fakultas-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+    padding: 0 10em;
+    z-index: 1;
+
+    @include respond-to("phone") {
+      padding: 0 1em;
+      gap: 0.3em;
+    }
+
+    @include respond-to("tablet") {
+      padding: 0 1em;
+      gap: 0.3em;
+    }
+  }
+
+  .himpunan-container {
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+    gap: 3.5em;
+    flex-wrap: wrap;
+    padding: 1em 0 3em 0;
+
+    @include respond-to("phone") {
+      gap: 2em;
+    }
+
+    .himpunan-card {
+      height: 30em;
+      width: 22em;
+      background-color: rgba($blue-lighter, 0.5);
+      border-radius: 30px;
+      position: relative;
+      z-index: 10;
+      padding: 10px;
+      text-decoration: none;
+      box-shadow: 10px 10px 5px rgba(black, 0.6);
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: translateY(-2%);
+        cursor: pointer;
+        background-color: rgba($blue-medium, 0.8);
+      }
+
+      @include respond-to('phone') {
+        width: 14em;
+        height: 18em;
+        padding: 10px;
+      }
+
+      .spark {
+        position: absolute;
+        width: 7.5em;
+        z-index: 11;
+        transform: rotate(-74.62deg);
+        top: -5%;
+        right: -10%;
+
+        @include respond-to("phone") {
+          width: 4em;
+          right: -10vw;
+        }
+      }
+
+      .himpunan-wrapper {
+        display: flex;
+        height: inherit;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        padding-top: 4em;
+
+        @include respond-to("phone") {
+          padding-top: 2em;
+        }
+
+        .container-logo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          padding: 1em;
+
+          // background-color: rgba($color: whitesmoke, $alpha: 0.9);
+          // border: 1px solid #e5e5e5;
+          border-radius: 10px;
+
+          width: 250px;
+          height: 250px;
+
+          margin-bottom: 1em;
+
+          @include respond-to("phone") {
+            width: 150px;
+            height: 150px;
+          }
+
+          .logo-hmj {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+
+        .himpunan-text {
+          text-align: center;
+          align-self: center;
+          justify-self: center;
+          margin: auto;
+        }
+      }
+    }
+  }
+}

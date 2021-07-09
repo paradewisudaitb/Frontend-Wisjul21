@@ -1,76 +1,58 @@
 import React from 'react';
-// import WisudawanCard from './WisudawanCard';
-// import './WisudawanCardContainer.scss';
 import './WisudawanContainer.scss';
-import logo from '../../images/ukj.png';
+import IDataWisudawan from '../../interfaces/IDataWisudawan';
+import { ASSET_URL } from '../../api';
+import { useState } from 'react';
+import { Loading } from '../Loading/Loading';
 
-interface ListUnit {
-  logoUnit: string,
-  namaUnit: string
-}
+const WisudawanContainer = (data: IDataWisudawan): JSX.Element => {
+  const bulu = `${ASSET_URL}/assets/images/vistock/main/bulu.png`;
+  const spark = `${ASSET_URL}/assets/images/vistock/main/spark%201%20bawah%20matahari.png`;
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [imgSrc, setImgSrc] = useState(data.pasfoto);
 
-interface DataWisudawan {
-    foto: string,
-    himpunan: string,
-    jurusan: string,
-    nama: string,
-    nim: string,
-    judulTA: string,
-    tipsSukses: string,
-    prestasi: string[],
-    karya: string[],
-    kontribusi: string[],
-    listUnit: ListUnit[]
-}
+  const useFallbackImg = () => {
+    const fallbackImg = `${ASSET_URL}/fotoWisudawan/nophoto.png`;
+    setImgSrc(fallbackImg);
+  };
 
-// TODO tampilan mobile, image rapihin
-
-const WisudawanContainer = (data: DataWisudawan) => {
   return (
     <div className='wisudawan-container'>
-      {/* <div className='row'> */}
+      <img
+        src={spark}
+        id='spark'
+      />
       <div className='wisudawan-left'>
-         
         <div className='foto-wisudawan'>
-          <img src={data.foto} />
+          {!isLoaded && <Loading />}
+          <img
+            id='pas-foto'
+            src={imgSrc}
+            style={isLoaded ? { opacity: 1 } : { height: 0, width:0 }}
+            onLoad={() => setIsLoaded(true)}
+            onError={useFallbackImg}
+            alt='pas foto'
+          ></img>
+          <img id='bulu' src={bulu}/>
         </div>
 
-        <div className='unit-wisudawan'>
-
-          {data.listUnit.length > 0 ?
-            <ol className='unit-list'>
-              {data.listUnit.map((unit: ListUnit, i: number) => (
-                <li
-                  key = {i}
-                  className='unit-item'
-                >
-                  <img src={logo} className='unit-logo' />
-                  <p>{unit.namaUnit}</p>
-                </li>
-              ))}
-            </ol>
-            : <></>
-
-          }
+        <div className='biodata-wisudawan'>
+          <h2>{data.namaLengkap}</h2>
+          <p>{data.nim} / {data.namaJurusan}</p>
         </div>
-
 
       </div>
+
       <div className='wisudawan-right'>
         <div className='data-wisudawan'>
-          <h2>{data.himpunan}</h2>
-          <p>{data.jurusan}</p>
-
-          <h1>{data.nama}</h1>
-          <p>{data.nim}</p>
-
+          <h4>Judul Tugas Akhir</h4>
           <p>{data.judulTA}</p>
 
           <h4>Tips sukses ala wisudawan</h4>
           <p>{data.tipsSukses}</p>
 
           <h4>Prestasi</h4>
-          {data.prestasi.length > 0 ?
+          {((data.prestasi) && (data.prestasi[0] != '-')) ?
             <ol className='list-prestasi'>
               {data.prestasi.map((prestasi: string, idx: number) => (
                 <li key = {idx}>
@@ -80,9 +62,8 @@ const WisudawanContainer = (data: DataWisudawan) => {
             </ol>
             : <p>-</p>
           }
-  
           <h4>Karya</h4>
-          {data.karya.length > 0 ?
+          {((data.karya) && (data.karya[0] != '-')) ?
             <ol className='list-karya'>
               {data.karya.map((karya: string, idx: number) => (
                 <li key = {idx}>
@@ -92,10 +73,8 @@ const WisudawanContainer = (data: DataWisudawan) => {
             </ol>
             : <p>-</p>
           }
-          {/* <br></br>   */}
-
           <h4>Kontribusi di HMJ</h4>
-          {data.kontribusi.length > 0 ?
+          {((data.kontribusi) && (data.kontribusi[0] != '-')) ?
             <ol className='list-kontribusi'>
               {data.kontribusi.map((kontribusi: string, idx: number) => (
                 <li key = {idx}>
@@ -105,17 +84,20 @@ const WisudawanContainer = (data: DataWisudawan) => {
             </ol>
             : <p>-</p>
           }
-
-
-          {/* <br></br> */}
+          <h4>Keterlibatan pada Lembaga non-HMJ </h4>
+          {((data.lembaga) && (data.lembaga[0] != '-')) ?
+            <ol className='list-lembaga'>
+              {data.lembaga.map((lembaga: string, idx: number) => (
+                <li key = {idx}>
+                  {lembaga}
+                </li>
+              ))}
+            </ol>
+            : <p>-</p>
+          }
         </div>
       </div>
-
-
-
     </div>
-
-  // </div>
   );
 };
 

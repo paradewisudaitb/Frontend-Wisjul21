@@ -1,117 +1,139 @@
 @import '../../App.scss';
 
 .kirimpesan {
-    background-image: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg');
     background-size: cover;
     background-position: center;
-}
-
-.jeduar {
-    height: 15rem;
-
-    position: absolute;
-    top: 15px;
-    right: 0;
-
-    @include respond-to('phone') {
-        height: 8rem;
-        top: 44px;
-    }
-}
-
-.kumo {
-    
-    position: absolute;
-    
-    @include respond-to('large') {
-        height: 12rem;
-        left: 10vw;
-        bottom: 10vh;
-    }
-
-    @include respond-to('desktop') {
-        height: 10rem;
-        left: 6vw;
-        bottom: 13vh;
-    }
-
-    @include respond-to('tablet') {
-        height: 8rem;
-        left: -10vw;
-        bottom: -28vh;
-    }
-
-    @include respond-to('phone') {
-        height: 8rem;
-        bottom: -47vh;
-        left: -12vw;
-    }
-}
-
-.kirimpesan-container {
     overflow: hidden;
-}
+    position: relative !important;
 
-.foto-wisudawan {
-    max-height: 15rem;
-    max-width: 15rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.foto-wisudawan-container {
-    display: flex;
-    margin: 0;
-    margin-top: 1rem;
+    max-width: 80rem;
+    padding: 5rem 5vw;
+    margin: auto;
+   
+    .jeduar {
+        height: 15rem;
     
-    @include respond-to('desktop', 'large') {
         position: absolute;
-        float: left;
-        margin-left: 2rem;
-        top: 8rem;
+        top: -4rem;
+        right: 0;
+    
+        @include respond-to('phone') {
+            height: 8rem;
+            top: 44px;
+        }
     }
-
 }
 
-.nama-wisudawan {
-    overflow: hidden;
-    background: rgba($color: $blue-darker, $alpha: 0.7);
-    border-radius: 20px;
-    height: 2.5rem;
+$kirimpesan_foto-wisudawan-width: 13rem;
+
+.receiver {
+    position: relative;
     
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    .nama-wisudawan {
+        overflow: hidden;
+        background: rgba($color: $blue-darker, $alpha: 0.7);
+        border-radius: 20px;
+        height: 2.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        
+        // middleing text
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        width: 80%;
+        
+        @include respond-to('desktop', 'large') {
+            justify-content: left;
+            padding-left: $kirimpesan_foto-wisudawan-width + 2rem + 1rem;
+            
+            width: 47rem;
+            margin: 0;
+        }
+    }
     
-    @include respond-to('desktop', 'large') {
-        width: 70%;
+    .foto-wisudawan-container {
+        display: flex;
         margin: 0;
+        margin-top: 1rem;
+        
+        .foto-wisudawan {
+            height: 15rem;
+            max-width: $kirimpesan_foto-wisudawan-width;
+            object-fit: cover;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        @include respond-to('desktop', 'large') {
+            position: absolute;
+            float: left;
+            margin-left: 2rem;
+            top: 0;
+        }
+        
     }
 }
+
+
 
 
 .message {
     float: right;
     background: rgba($color: $blue-darker, $alpha: 0.7);
-    border-radius: 1rem;
+    border-radius: 1rem !important;
     margin-top: 2rem;
     
     width: 100%;
     @include respond-to('desktop', 'large') {
-        width: 75%;
+        width: 70%;
+    }
+    
+    .kumo {
+        position: absolute;
+        width: 25rem;
+        left: 10rem;
+        bottom: 0vw;
+    
+        @include respond-to('tablet') {
+            bottom: 0vw;
+            left: -12rem;
+        }
+    
+        @include respond-to('phone') {
+            bottom: 0vw;
+            left: -8rem;
+        }
     }
 }
 
 .submit-button {
-    background-color: $blue-medium !important;
-    border: none !important;
-    
-    &:hover {
-        background-color: $blue-lighter !important;
+    width: fit-content;
+    border-radius: 10px;
+      height: 2.5em;
+      background-color: $blue-medium;
+      transition: 0.3s;
+      border-style: none;
+      padding: 0 1rem;
+
+      &:hover {
+          background-color: $blue-lighter;
+        color: $yellow-darker;
+
         transition: 0.3s;
-    }
+      }
 }
 
+.sender-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.sender-name-input-container {
+    display: flex;
+    justify-content: space-between;
+}
 
 .sender-name-label {
     color: $yellow-darker;
@@ -121,19 +143,24 @@
 }
 
 
-.kirimpesan-line {
-    height: 3px;
-    background-color: $yellow-darker;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-}
-
-.sender-name-input {
+#nameinput {
     background: none;
     outline: none;
     border: none;
     text-align: left;
+    width: 80%;
+    resize: none;
+    overflow-y: hidden;
 }
+
+.kirimpesan-line {
+    float: start;
+    height: 3px;
+    background-color: $yellow-darker;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 
 .message-content-label {
     color: $yellow-darker;
@@ -153,15 +180,15 @@
     outline: none;
     resize: none;
     text-align: justify;
-    
+
     @include respond-to('desktop', 'large') {
         min-height: 7rem;
     }
-    
+
     @include respond-to('tablet') {
         min-height: 8rem;
     }
-    
+
     @include respond-to('phone') {
         min-height: 15rem;
         min-width: 15rem;

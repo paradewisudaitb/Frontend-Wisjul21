@@ -70,8 +70,6 @@ export const KirimPesanPage = (): JSX.Element => {
       const namaPengirim = namaPengirimInput?.value;
       const isiPesan = isiPesanInput?.value;
 
-      console.log(namaPengirim, isiPesan);
-
       if (isiPesan) {
         const pesan: IPesanOut = {
           nim: nim,

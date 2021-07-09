@@ -3,6 +3,7 @@ import './Puzzle.scss';
 
 import PuzzlePiece from '../../component/Puzzle/PuzzlePiece';
 import PuzzleBoard from '../../component/Puzzle/PuzzleBoard';
+import { Navbar } from '../../component/NavbarFooter/Navbar';
 
 type props = {
   stage: number,
@@ -75,6 +76,7 @@ const Puzzle = () => {
 
   return (
     <div className='puzzle-page'>
+      <Navbar />
       <h1 className='title'>STAGE {stage}</h1>
       <div className='puzzle-container'>
 

@@ -9,7 +9,7 @@ import { KirimPesanPage } from '../pages/KirimPesan/KirimPesanPage';
 import Wisudawan from '../pages/Wisudawan/Wisudawan';
 import Gathertown from '../pages/Gathertown/Gathertown';
 import { Minigame } from '../pages/Minigame/Minigame';
-import Puzzle from '../pages/Minigame/Puzzle';
+import PuzzlePage from '../pages/Minigame/PuzzlePage';
 import GaleriHmj from '../pages/GaleriHmj/GaleriHmj';
 import NotFound from '../pages/NotFound/NotFound';
 
@@ -17,7 +17,6 @@ export type route = {
   label: string
   path: string
   component?: () => JSX.Element
-  props?: {[k: string]: any}
 }
 
 type navroutes = {
@@ -27,8 +26,8 @@ type navroutes = {
   parentPath?: string,
 }
 
-export const toRoute = (label:string, path:string, component?:(props?: any) => JSX.Element, props?:{[k: string]: any}): route => ({
-  label, path, component, props
+export const toRoute = (label:string, path:string, component?:(props?: any) => JSX.Element): route => ({
+  label, path, component
 });
 
 export const COMINGSOON_PAGE = toRoute('Coming Soon', '/coming-soon', ComingSoon);
@@ -44,7 +43,7 @@ export const FORM_INDEX = toRoute('Forms', 'forms');
 export const FORM_PAGE = toRoute('Form', '/form', Form);
 export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', '/form-apresiasi', FormApresiasi);
 export const MINIGAME_PAGE = toRoute('Puzzle Metamorphosis', '/minigame', Minigame);
-export const PUZZLE_PAGE = toRoute('Puzzle Metamorphosis', '/minigame/puzzle', Puzzle, { stage: 1, n: 25 });
+export const PUZZLE_PAGE = toRoute('Puzzle Metamorphosis', '/minigame/puzzle', PuzzlePage);
 
 export const PRODUK_INDEX = toRoute('Produk', '/produk');
 export const GATHERTOWN_PAGE = toRoute('Treasure Games', '/treasuregames', Gathertown);
@@ -61,7 +60,7 @@ export const NavbarRoutes: navroutes[] = [
   },
   {
     content: PRODUK_INDEX,
-    children_routes: [GATHERTOWN_PAGE, MAJALAH_PAGE],
+    children_routes: [GATHERTOWN_PAGE, MAJALAH_PAGE, MINIGAME_PAGE],
     isDropdown: true,
     parentPath: '',
   },

@@ -1,19 +1,15 @@
 import React, {useRef} from 'react';
 import './Puzzle.scss';
 
-import PuzzlePiece from '../../component/Puzzle/PuzzlePiece';
-import PuzzleBoard from '../../component/Puzzle/PuzzleBoard';
-import { Navbar } from '../../component/NavbarFooter/Navbar';
+import PuzzlePiece from './PuzzlePiece';
+import PuzzleBoard from './PuzzleBoard';
 
 type props = {
   stage: number,
   n: number,
 };
 
-const Puzzle = () => {
-
-  const stage = 1;
-  const n = 4;
+const Puzzle = ({stage, n}: props) => {
 
   // PUZZLE SIZE
   const boardSize = 35;
@@ -73,7 +69,6 @@ const Puzzle = () => {
 
   return (
     <div className='puzzle-page'>
-      <Navbar />
       <h1 className='title'>STAGE {stage}</h1>
       <div className='puzzle-container'>
 

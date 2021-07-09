@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 
 const PuzzlePiece = (props: any) => {
 
@@ -16,6 +16,12 @@ const PuzzlePiece = (props: any) => {
     e.stopPropagation();
   };
 
+  const dragEnd = (e: any) => {
+    if (e.target.style.display == 'none') {
+      e.target.style.display = 'block';
+    }
+  };
+
 
   return (
     <div
@@ -24,6 +30,7 @@ const PuzzlePiece = (props: any) => {
       draggable={props.draggable}
       onDragStart={dragStart}
       onDragOver={dragOver}
+      onDragEnd={dragEnd}
       style={props.style}
     >
       {props.children}

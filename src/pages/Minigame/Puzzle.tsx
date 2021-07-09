@@ -1,4 +1,4 @@
-import React, {useRef, FC} from 'react';
+import React, {useRef} from 'react';
 import './Puzzle.scss';
 
 import PuzzlePiece from '../../component/Puzzle/PuzzlePiece';
@@ -44,6 +44,15 @@ const Puzzle = () => {
 
   const listRef = useRef<HTMLInputElement>(null);
 
+  const puzzleBoardBox = boards.map((board) => <PuzzleBoard key={board} id={board} className='puzzle-board'/>);
+
+  const puzzleBoardStyle = {
+    height: boardSize + boardSizeUnit,
+    width: boardSize + boardSizeUnit,
+    gridTemplateColumns: boardCellSize,
+    gridTemplateRows: boardCellSize,
+  };
+
   const scrollUp = () => {
     if (listRef.current) {
       listRef.current.scrollBy({
@@ -60,15 +69,6 @@ const Puzzle = () => {
         behavior: 'smooth',
       });
     }
-  };
-
-  const puzzleBoardBox = boards.map((board) => <PuzzleBoard key={board} id={board} className='puzzle-board'/>);
-
-  const puzzleBoardStyle = {
-    height: boardSize + boardSizeUnit,
-    width: boardSize + boardSizeUnit,
-    gridTemplateColumns: boardCellSize,
-    gridTemplateRows: boardCellSize,
   };
 
   return (

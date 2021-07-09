@@ -24,6 +24,7 @@ const PuzzlePiece = (props: any) => {
       draggable={props.draggable}
       onDragStart={dragStart}
       onDragOver={dragOver}
+      style={props.style}
     >
       {props.children}
     </div>

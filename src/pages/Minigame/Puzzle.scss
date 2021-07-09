@@ -20,11 +20,7 @@
     .puzzle-board-wrapper {
       background-color: #fff;
       margin: 20px;
-      height: 35em;
-      width: 35em;
       display: grid;
-      grid-template-columns: 7em 7em 7em 7em 7em;
-      grid-template-rows: 7em 7em 7em 7em 7em;
     }
 
     .puzzle-piece-container {
@@ -105,8 +101,8 @@
       // height: 2rem;
 
       .puzzle-piece {
-        height: 7em;
-        width: 7em;
+        // height: 7em;
+        // width: 7em;
         cursor: grab;
         padding: 0;
         background-color: gray;

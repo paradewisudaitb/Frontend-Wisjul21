@@ -23,11 +23,12 @@ function App(): JSX.Element {
           <div className="app-content">
 
             <Switch>
-              { AllRoutes.map(({ label, path, component: Component}) => (
+              { AllRoutes.map(({ label, path, component: Component}, props) => (
                 <Route
                   key={label}
                   path={path}
                   component={Component}
+                  {...props}
                 />
               ))}
             </Switch>

@@ -9,12 +9,40 @@ type props = {
   n: number,
 };
 
-const Puzzle = ({ stage, n }: props) => {
+const Puzzle = () => {
 
-  const boards: string[] = [];
-  for (let i = 1; i <= n; ++i) {
-    boards.push(`board-${i}`);
+  const stage = 1;
+  const n = 4;
+
+  // PUZZLE SIZE
+  const boardSize = 35;
+  const boardSizeUnit = 'em';
+  const puzzlePieceSize = boardSize / n;
+  let boardCellSize = '';
+  for (let i = 0; i < n; ++i) {
+    boardCellSize += puzzlePieceSize + boardSizeUnit + ' ';
   }
+  boardCellSize.trim();
+
+  const puzzlePieces: JSX.Element[] = [];
+  const boards: string[] = [];
+  for (let i = 1; i <= n * n; ++i) {
+    boards.push(`board-${i}`);
+    puzzlePieces.push(
+      <PuzzlePiece
+        id={`piece-${i}`}
+        className='puzzle-piece'
+        draggable='true'
+        style={{ width: puzzlePieceSize + boardSizeUnit, height: puzzlePieceSize + boardSizeUnit }}
+      >
+        <p className='text-center justify-content-middle'>{i}</p>
+      </PuzzlePiece>
+    );
+  }
+
+  // DEBUG
+  console.log(boards);
+  console.log(stage, n);
 
   const listRef = useRef<HTMLInputElement>(null);
 
@@ -36,18 +64,24 @@ const Puzzle = ({ stage, n }: props) => {
     }
   };
 
-  const puzzleBoardBox = boards.map((board) => (
-    <PuzzleBoard id={board} className='puzzle-board' />
-  ));
+  const puzzleBoardBox = boards.map((board) => <PuzzleBoard id={board} className='puzzle-board' />);
+
+  const puzzleBoardStyle = {
+    height: boardSize + boardSizeUnit,
+    width: boardSize + boardSizeUnit,
+    gridTemplateColumns: boardCellSize,
+    gridTemplateRow: boardCellSize,
+  };
 
   return (
     <div className='puzzle-page'>
-      <h1 className='title'>STAGE {stage.toString()}</h1>
+      <h1 className='title'>STAGE {stage}</h1>
       <div className='puzzle-container'>
 
         {/* Puzzle Board */}
         <div className='puzzle-wrapper-1'>
-          <div className='puzzle-board-wrapper'>
+          <div className='puzzle-board-wrapper' style={puzzleBoardStyle}>
+            {/* {boards.map((board) => <PuzzleBoard id={board} className='puzzle-board' />)} */}
             {puzzleBoardBox}
           </div>
         </div>
@@ -61,36 +95,7 @@ const Puzzle = ({ stage, n }: props) => {
           <div className='puzzle-wrapper-2'>
             <PuzzleBoard id='board-2' className='puzzle-board'>
               <div className='board-2-container' ref={listRef}>
-                <PuzzlePiece id='piece-1' className='puzzle-piece' draggable='true'>
-                  <p className='text-center justify-content-middle'>1</p>
-                </PuzzlePiece>
-                <PuzzlePiece id='piece-2' className='puzzle-piece' draggable='true'>
-                  <p className='text-center justify-content-middle'>2</p>
-                </PuzzlePiece>
-                <PuzzlePiece id='piece-3' className='puzzle-piece' draggable='true'>
-                  <p className='text-center justify-content-middle'>3</p>
-                </PuzzlePiece>
-                <PuzzlePiece id='piece-4' className='puzzle-piece' draggable='true'>
-                  <p className='text-center justify-content-middle'>4</p>
-                </PuzzlePiece>
-                <PuzzlePiece id='piece-5' className='puzzle-piece' draggable='true'>
-                  <p className='text-center justify-content-middle'>5</p>
-                </PuzzlePiece>
-                <PuzzlePiece id='piece-6' className='puzzle-piece' draggable='true'>
-                  <p className='text-center justify-content-middle'>6</p>
-                </PuzzlePiece>
-                <PuzzlePiece id='piece-7' className='puzzle-piece' draggable='true'>
-                  <p className='text-center justify-content-middle'>7</p>
-                </PuzzlePiece>
-                <PuzzlePiece id='piece-8' className='puzzle-piece' draggable='true'>
-                  <p className='text-center justify-content-middle'>8</p>
-                </PuzzlePiece>
-                <PuzzlePiece id='piece-9' className='puzzle-piece' draggable='true'>
-                  <p className='text-center justify-content-middle'>9</p>
-                </PuzzlePiece>
-                <PuzzlePiece id='piece-10' className='puzzle-piece' draggable='true'>
-                  <p className='text-center justify-content-middle'>6</p>
-                </PuzzlePiece>
+                {puzzlePieces}
               </div>
             </PuzzleBoard>
           </div>

@@ -10,7 +10,6 @@ const PuzzleBoard = (props: any) => {
     piece.style.display = 'block';
 
     e.target.appendChild(piece);
-
   };
 
   const dragOver = (e: any) => {

@@ -32,6 +32,7 @@ const Puzzle = () => {
     puzzlePieces.push(
       <PuzzlePiece
         id={`piece-${i}`}
+        key={`piece-${i}`}
         className='puzzle-piece'
         draggable='true'
         style={{ width: puzzlePieceSize + boardSizeUnit, height: puzzlePieceSize + boardSizeUnit }}
@@ -40,10 +41,6 @@ const Puzzle = () => {
       </PuzzlePiece>
     );
   }
-
-  // DEBUG
-  console.log(boards);
-  console.log(stage, n);
 
   const listRef = useRef<HTMLInputElement>(null);
 
@@ -65,13 +62,13 @@ const Puzzle = () => {
     }
   };
 
-  const puzzleBoardBox = boards.map((board) => <PuzzleBoard id={board} className='puzzle-board' />);
+  const puzzleBoardBox = boards.map((board) => <PuzzleBoard key={board} id={board} className='puzzle-board'/>);
 
   const puzzleBoardStyle = {
     height: boardSize + boardSizeUnit,
     width: boardSize + boardSizeUnit,
     gridTemplateColumns: boardCellSize,
-    gridTemplateRow: boardCellSize,
+    gridTemplateRows: boardCellSize,
   };
 
   return (

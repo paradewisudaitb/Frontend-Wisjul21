@@ -5,9 +5,7 @@
     "singkatanHimpunan": "HMME \"ATMOSPHAIRA\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FITB-HMME.png",
     "linkGatherTown": "bit.ly/HMME-GT",
-    "jurusan": [
-        "Meteorologi"
-    ]
+    "jurusan": ["Meteorologi"]
   },
   {
     "fakultas": "FITB",
@@ -15,9 +13,7 @@
     "singkatanHimpunan": "HMO \"TRITON\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FITB-HMO-_TRITON_-ITB-268x300.png",
     "linkGatherTown": "bit.ly/TRITON-GT",
-    "jurusan": [
-        "Oseanografi"
-    ]
+    "jurusan": ["Oseanografi"]
   },
   {
     "fakultas": "FITB",
@@ -25,9 +21,7 @@
     "singkatanHimpunan": "HMTG \"GEA\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FITB-HMTG-_GEA_-ITB.png",
     "linkGatherTown": "bit.ly/HMTG-GT",
-    "jurusan": [
-        "Teknik Geologi"
-    ]
+    "jurusan": ["Teknik Geologi"]
   },
   {
     "fakultas": "FITB",
@@ -35,9 +29,7 @@
     "singkatanHimpunan": "IMG",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FITB-IMG-ITB.png",
     "linkGatherTown": "bit.ly/IMG-GT",
-    "jurusan": [
-        "Teknik Geodesi dan Geomatika"
-    ]
+    "jurusan": ["Teknik Geodesi dan Geomatika"]
   },
   {
     "fakultas": "FITB",
@@ -48,19 +40,13 @@
     "jurusan": []
   },
 
-
-
-
-
   {
     "fakultas": "FMIPA",
     "namaHimpunan": "Himpunan Mahasiswa Fisika",
     "singkatanHimpunan": "HIMAFI",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FMIPA-HIMAFI-ITB.png",
     "linkGatherTown": "bit.ly/HIMAFI-GT",
-    "jurusan": [
-        "Fisika"
-    ]
+    "jurusan": ["Fisika"]
   },
   {
     "fakultas": "FMIPA",
@@ -68,9 +54,7 @@
     "singkatanHimpunan": "HIMASTRON",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FMIPA-HIMASTRON-ITB.png",
     "linkGatherTown": "bit.ly/Himastron-GT",
-    "jurusan": [
-        "Astronomi"
-    ]
+    "jurusan": ["Astronomi"]
   },
   {
     "fakultas": "FMIPA",
@@ -78,10 +62,7 @@
     "singkatanHimpunan": "HIMATIKA",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FMIPA-HIMATIKA-ITB.png",
     "linkGatherTown": "bit.ly/HIMATIKA-GT",
-    "jurusan": [
-        "Matematika",
-        "Aktuaria"
-    ]
+    "jurusan": ["Matematika", "Aktuaria"]
   },
   {
     "fakultas": "FMIPA",
@@ -89,9 +70,7 @@
     "singkatanHimpunan": "HMK \"AMISCA\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FMIPA-HMK-_AMISCA_-ITB.png",
     "linkGatherTown": "bit.ly/HMK-GT",
-    "jurusan": [
-        "Kimia"
-    ]
+    "jurusan": ["Kimia"]
   },
   {
     "fakultas": "FMIPA",
@@ -102,19 +81,13 @@
     "jurusan": []
   },
 
-
-
-
-
   {
     "fakultas": "FSRD",
     "namaHimpunan": "Ikatan Mahasiswa Desain Interior",
     "singkatanHimpunan": "IMDI",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FSRD-IMDI-ITB-150x150.jpg",
     "linkGatherTown": "bit.ly/IMDI-GT",
-    "jurusan": [
-        "Desain Interior"
-    ]
+    "jurusan": ["Desain Interior"]
   },
   {
     "fakultas": "FSRD",
@@ -122,9 +95,7 @@
     "singkatanHimpunan": "INDDES",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FSRD-INDDES-ITB.jpg",
     "linkGatherTown": "bit.ly/INDDES-GT",
-    "jurusan": [
-        "Desain Produk"
-    ]
+    "jurusan": ["Desain Produk"]
   },
   {
     "fakultas": "FSRD",
@@ -132,9 +103,7 @@
     "singkatanHimpunan": "IPPDIG",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FSRD-IPPDIG.jpg",
     "linkGatherTown": "bit.ly/IPPDIG-GT",
-    "jurusan": [
-        "Desain Komunikasi Visual"
-    ]
+    "jurusan": ["Desain Komunikasi Visual"]
   },
   {
     "fakultas": "FSRD",
@@ -142,9 +111,7 @@
     "singkatanHimpunan": "TERIKAT",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FSRD-terikat-ITB.jpg",
     "linkGatherTown": "bit.ly/TERIKAT-GT",
-    "jurusan": [
-        "Kriya"
-    ]
+    "jurusan": ["Kriya"]
   },
   {
     "fakultas": "FSRD",
@@ -152,9 +119,7 @@
     "singkatanHimpunan": "VASA",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FSRD-VASA-ITB.jpg",
     "linkGatherTown": "bit.ly/VASA-GT",
-    "jurusan": [
-        "Seni Rupa"
-    ]
+    "jurusan": ["Seni Rupa"]
   },
   {
     "fakultas": "FSRD",
@@ -165,19 +130,13 @@
     "jurusan": []
   },
 
-
-
-
-
   {
     "fakultas": "FTI",
     "namaHimpunan": "Himpunan Mahasiswa Teknik Kimia",
     "singkatanHimpunan": "HIMATEK",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTI-HIMATEK-ITB.jpg",
     "linkGatherTown": "bit.ly/HIMATEK-GT",
-    "jurusan": [
-        "Teknik Kimia"
-    ]
+    "jurusan": ["Teknik Kimia"]
   },
   {
     "fakultas": "FTI",
@@ -185,9 +144,7 @@
     "singkatanHimpunan": "HMFT",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTI-HMFT-ITB-300x276.png",
     "linkGatherTown": "bit.ly/HMFT-GT",
-    "jurusan": [
-        "Teknik Fisika"
-    ]
+    "jurusan": ["Teknik Fisika"]
   },
   {
     "fakultas": "FTI",
@@ -195,9 +152,7 @@
     "singkatanHimpunan": "HMPG",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTI-HMPG-ITB.png",
     "linkGatherTown": "bit.ly/HMPG-GT",
-    "jurusan": [
-        "Teknik Pangan"
-    ]
+    "jurusan": ["Teknik Pangan"]
   },
   {
     "fakultas": "FTI",
@@ -205,9 +160,7 @@
     "singkatanHimpunan": "HMTB",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTI-HMTB-ITB-150x150.png",
     "linkGatherTown": "bit.ly/HMTB-GT",
-    "jurusan": [
-        "Teknik Bioenergi dan Kemurgi"
-    ]
+    "jurusan": ["Teknik Bioenergi dan Kemurgi"]
   },
   {
     "fakultas": "FTI",
@@ -215,10 +168,7 @@
     "singkatanHimpunan": "MTI",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTI-MTI-ITB.png",
     "linkGatherTown": "bit.ly/MTI-GT",
-    "jurusan": [
-        "Teknik Industri",
-        "Manajemen Rekayasa"
-    ]
+    "jurusan": ["Teknik Industri", "Manajemen Rekayasa"]
   },
   {
     "fakultas": "FTI",
@@ -229,29 +179,21 @@
     "jurusan": []
   },
 
-
-
-
-
   {
     "fakultas": "FTMD",
     "namaHimpunan": "Himpunan Mahasiswa Mesin",
     "singkatanHimpunan": "HMM",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTMD-HMM-ITB.png",
     "linkGatherTown": "bit.ly/HMM-GT",
-    "jurusan": [
-        "Teknik Mesin"
-    ]
+    "jurusan": ["Teknik Mesin"]
   },
   {
     "fakultas": "FTMD",
     "namaHimpunan": "Keluarga Mahasiswa Teknik Penerbangan",
-    "singkatanHimpunan": "KMPN  \"OTTO LILIENTHAL\"",
+    "singkatanHimpunan": "KMPN",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTMD-KMPN-ITB.png",
     "linkGatherTown": "bit.ly/KMPN-GT",
-    "jurusan": [
-        "Teknik Dirgantara"
-    ]
+    "jurusan": ["Teknik Dirgantara"]
   },
   {
     "fakultas": "FTMD",
@@ -259,9 +201,7 @@
     "singkatanHimpunan": "MTM",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTMD-MTM-ITB-150x150.png",
     "linkGatherTown": "bit.ly/MTM-GT",
-    "jurusan": [
-        "Teknik Material"
-    ]
+    "jurusan": ["Teknik Material"]
   },
   {
     "fakultas": "FTMD",
@@ -272,19 +212,13 @@
     "jurusan": []
   },
 
-
-
-
-
   {
     "fakultas": "FTSL",
     "namaHimpunan": "Himpunan Mahasiswa Sumber Daya Air",
     "singkatanHimpunan": "HIMASDA",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTSL-HIMASDA-ITB.png",
     "linkGatherTown": "bit.ly/HIMASDA-GT",
-    "jurusan": [
-        "Teknik dan Pengelolaan Sumber Daya Air"
-    ]
+    "jurusan": ["Teknik dan Pengelolaan Sumber Daya Air"]
   },
   {
     "fakultas": "FTSL",
@@ -292,9 +226,7 @@
     "singkatanHimpunan": "HMS",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTSL-HMS-ITB.png",
     "linkGatherTown": "bit.ly/HMS-GT",
-    "jurusan": [
-        "Teknik Sipil"
-    ]
+    "jurusan": ["Teknik Sipil"]
   },
   {
     "fakultas": "FTSL",
@@ -302,9 +234,7 @@
     "singkatanHimpunan": "HMTL",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTSL-HMTL-ITB-228x300.jpg",
     "linkGatherTown": "bit.ly/HMTL-GT",
-    "jurusan": [
-        "Teknik Lingkungan"
-    ]
+    "jurusan": ["Teknik Lingkungan"]
   },
   {
     "fakultas": "FTSL",
@@ -312,9 +242,7 @@
     "singkatanHimpunan": "KMIL",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTSL-KMIL-ITB.jpg",
     "linkGatherTown": "bit.ly/KMIL-GT",
-    "jurusan": [
-        "Rekayasa Infrastruktur Lingkungan"
-    ]
+    "jurusan": ["Rekayasa Infrastruktur Lingkungan"]
   },
   {
     "fakultas": "FTSL",
@@ -322,9 +250,7 @@
     "singkatanHimpunan": "KMKL",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTSL-KMKL-ITB-300x290.png",
     "linkGatherTown": "bit.ly/KMKL-GT",
-    "jurusan": [
-        "Teknik Kelautan"
-    ]
+    "jurusan": ["Teknik Kelautan"]
   },
   {
     "fakultas": "FTSL",
@@ -335,19 +261,13 @@
     "jurusan": []
   },
 
-
-
-
-
   {
     "fakultas": "FTTM",
     "namaHimpunan": "Himpunan Mahasiswa Teknik Geofisika",
     "singkatanHimpunan": "HIMATG \"TERRA\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTTM-HIMATG-_TERRA_-ITB.jpg",
     "linkGatherTown": "bit.ly/HIMATG-GT",
-    "jurusan": [
-        "Teknik Geofisika"
-    ]
+    "jurusan": ["Teknik Geofisika"]
   },
   {
     "fakultas": "FTTM",
@@ -355,9 +275,7 @@
     "singkatanHimpunan": "HMT",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTTM-HMT-ITB.png",
     "linkGatherTown": "bit.ly/HMT-GT",
-    "jurusan": [
-        "Teknik Pertambangan"
-    ]
+    "jurusan": ["Teknik Pertambangan"]
   },
   {
     "fakultas": "FTTM",
@@ -365,9 +283,7 @@
     "singkatanHimpunan": "HMTM \"PATRA\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTTM-HMTM-_PATRA_-ITB.png",
     "linkGatherTown": "bit.ly/HMTM-GT",
-    "jurusan": [
-        "Teknik Perminyakan"
-    ]
+    "jurusan": ["Teknik Perminyakan"]
   },
   {
     "fakultas": "FTTM",
@@ -375,9 +291,7 @@
     "singkatanHimpunan": "IMMG",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FTTM-IMMG.jpg",
     "linkGatherTown": "bit.ly/IMMG-GT",
-    "jurusan": [
-        "Teknik Metalurgi"
-    ]
+    "jurusan": ["Teknik Metalurgi"]
   },
   {
     "fakultas": "FTTM",
@@ -388,19 +302,13 @@
     "jurusan": []
   },
 
-
-
-
-
   {
     "fakultas": "SAPPK",
     "namaHimpunan": "Himpunan Mahasiswa Perencanaan Wilayah dan Kota Pangripta Loka",
     "singkatanHimpunan": "HMP \"PANGRIPTA LOKA\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SAPPK-HMP-PL-ITB-300x291.png",
     "linkGatherTown": "bit.ly/HMP-GT",
-    "jurusan": [
-        "Perencanaan Wilayah dan Kota"
-    ]
+    "jurusan": ["Perencanaan Wilayah dan Kota"]
   },
   {
     "fakultas": "SAPPK",
@@ -408,9 +316,7 @@
     "singkatanHimpunan": "IMA-G",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SAPPK-IMA-G-ITB.png",
     "linkGatherTown": "bit.ly/IMAG-GT",
-    "jurusan": [
-        "Arsitektur"
-    ]
+    "jurusan": ["Arsitektur"]
   },
   {
     "fakultas": "SAPPK",
@@ -421,20 +327,13 @@
     "jurusan": []
   },
 
-
-
-
-
   {
     "fakultas": "SF",
     "namaHimpunan": "Himpunan Mahasiswa Farmasi",
     "singkatanHimpunan": "HMF \"ARS PRAEPARANDI\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SF-HMF.png",
     "linkGatherTown": "bit.ly/HMF-GT",
-    "jurusan": [
-        "Sains dan Teknologi Farmasi",
-        "Farmasi Klinik dan Komunitas"
-    ]
+    "jurusan": ["Sains dan Teknologi Farmasi", "Farmasi Klinik dan Komunitas"]
   },
   {
     "fakultas": "SF",
@@ -445,19 +344,13 @@
     "jurusan": []
   },
 
-
-
-
-
   {
     "fakultas": "SBM",
     "namaHimpunan": "Keluarga Mahasiswa Manajemen",
     "singkatanHimpunan": "KMM",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SBM-KMM-ITB.jpg",
     "linkGatherTown": "bit.ly/KMMxIMK-GT",
-    "jurusan": [
-        "Manajemen"
-    ]
+    "jurusan": ["Manajemen"]
   },
   {
     "fakultas": "SBM",
@@ -465,9 +358,7 @@
     "singkatanHimpunan": "IMK \"Artha\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SBM-IMK-_ARTHA_-ITB.jpg",
     "linkGatherTown": "bit.ly/KMMxIMK-GT",
-    "jurusan": [
-        "Kewirausahaan"
-    ]
+    "jurusan": ["Kewirausahaan"]
   },
   {
     "fakultas": "SBM",
@@ -478,19 +369,13 @@
     "jurusan": []
   },
 
-
-
-
-
   {
     "fakultas": "SITH",
     "namaHimpunan": "Himpunan Mahasiswa Rekayasa Pertanian",
     "singkatanHimpunan": "HIMAREKTA \"AGRAPANA\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SITHR-HIMAREKTA-150x150.png",
     "linkGatherTown": "bit.ly/HIMAREKTA-GT",
-    "jurusan": [
-        "Rekayasa Pertanian"
-    ]
+    "jurusan": ["Rekayasa Pertanian"]
   },
   {
     "fakultas": "SITH",
@@ -498,9 +383,7 @@
     "singkatanHimpunan": "HMH \"SELVA\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SITHR-HMH-_Selva_-ITB-150x150.png",
     "linkGatherTown": "bit.ly/HMH-GT",
-    "jurusan": [
-        "Rekayasa Kehutanan"
-    ]
+    "jurusan": ["Rekayasa Kehutanan"]
   },
   {
     "fakultas": "SITH",
@@ -508,9 +391,7 @@
     "singkatanHimpunan": "HMRH",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SITHR-HMRH-150x150.png",
     "linkGatherTown": "bit.ly/HMRH-GT",
-    "jurusan": [
-        "Rekayasa Hayati"
-    ]
+    "jurusan": ["Rekayasa Hayati"]
   },
   {
     "fakultas": "SITH",
@@ -518,9 +399,7 @@
     "singkatanHimpunan": "HMPP \"VADRA\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SITHR-HMPP-_VADRA_-ITB-232x300.png",
     "linkGatherTown": "bit.ly/HMPP-GT",
-    "jurusan": [
-        "Teknologi Pasca Panen"
-    ]
+    "jurusan": ["Teknologi Pasca Panen"]
   },
   {
     "fakultas": "SITH",
@@ -528,9 +407,7 @@
     "singkatanHimpunan": "HIMAMIKRO \"ARCHAEA\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SITHS-HIMAMIKRO-ITB-150x150.png",
     "linkGatherTown": "bit.ly/HIMAMIKRO",
-    "jurusan": [
-        "Mikrobiologi"
-    ]
+    "jurusan": ["Mikrobiologi"]
   },
   {
     "fakultas": "SITH",
@@ -538,9 +415,7 @@
     "singkatanHimpunan": "NYMPHAEA",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SITHS-HIMABIO-_Nymphaea_-ITB-150x150.jpg",
     "linkGatherTown": "bit.ly/HIMABIO-GT",
-    "jurusan": [
-        "Biologi"
-    ]
+    "jurusan": ["Biologi"]
   },
   {
     "fakultas": "SITH",
@@ -559,19 +434,13 @@
     "jurusan": []
   },
 
-
-
-
-
   {
     "fakultas": "STEI",
     "namaHimpunan": "Ikatan Mahasiswa Telekomunikasi",
     "singkatanHimpunan": "IMT \"SIGNUM\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/STEI-IMT-150x150.png",
     "linkGatherTown": "bit.ly/SIGNUM-GT",
-    "jurusan": [
-      "Teknik Telekomunikasi"
-    ]
+    "jurusan": ["Teknik Telekomunikasi"]
   },
   {
     "fakultas": "STEI",
@@ -579,11 +448,7 @@
     "singkatanHimpunan": "HME",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/STEI-HME-ITB-255x300.jpg",
     "linkGatherTown": "bit.ly/HME_GT",
-    "jurusan": [
-      "Teknik Elektro",
-      "Teknik Tenaga Listrik",
-      "Teknik Biomedis"
-    ]
+    "jurusan": ["Teknik Elektro", "Teknik Tenaga Listrik", "Teknik Biomedis"]
   },
   {
     "fakultas": "STEI",
@@ -591,10 +456,7 @@
     "singkatanHimpunan": "HMIF",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/STEI-HMIF-ITB-300x200.png",
     "linkGatherTown": "bit.ly/HMIF-GT",
-    "jurusan": [
-      "Teknik Informatika",
-      "Sistem dan Teknologi Informasi"
-    ]
+    "jurusan": ["Teknik Informatika", "Sistem dan Teknologi Informasi"]
   },
   {
     "fakultas": "STEI",
@@ -604,10 +466,6 @@
     "linkGatherTown": "gather.town",
     "jurusan": []
   },
-
-
-
-
 
   {
     "fakultas": "ETC",

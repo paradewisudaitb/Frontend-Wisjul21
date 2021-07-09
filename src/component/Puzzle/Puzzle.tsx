@@ -6,36 +6,49 @@ import PuzzleBoard from './PuzzleBoard';
 
 type props = {
   stage: string,
-  n: number,
+  size: number,
+  imageUrl: string,
 };
 
-const Puzzle = ({stage, n}: props) => {
-
+const Puzzle = ({stage, size, imageUrl}: props) => {
+  const n = size;
   // PUZZLE SIZE
   const boardSize = 35;
-  const boardSizeUnit = 'em';
+  const sizeUnit = 'em';
   const puzzlePieceSize = boardSize / n;
   let boardCellSize = '';
   for (let i = 0; i < n; ++i) {
-    boardCellSize += puzzlePieceSize + boardSizeUnit + ' ';
+    boardCellSize += puzzlePieceSize + sizeUnit + ' ';
   }
   boardCellSize.trim();
 
   const puzzlePieces: JSX.Element[] = [];
   const boards: string[] = [];
-  for (let i = 1; i <= n * n; ++i) {
-    boards.push(`board-${i}`);
-    puzzlePieces.push(
-      <PuzzlePiece
-        id={`piece-${i}`}
-        key={`piece-${i}`}
-        className='puzzle-piece'
-        draggable='true'
-        style={{ width: puzzlePieceSize + boardSizeUnit, height: puzzlePieceSize + boardSizeUnit }}
-      >
-        <p className='text-center justify-content-middle'>{i}</p>
-      </PuzzlePiece>
-    );
+  for (let i = 1; i <= n; ++i) {
+    for (let j = 1; j <= n; j+=1) {
+      const num = (n*(i-1))+j;
+      const offsetX = `${puzzlePieceSize*(n-j+1)}${sizeUnit}`;
+      const offsetY = `${puzzlePieceSize*(n-i+1)}${sizeUnit}`;
+
+      boards.push(`board-${num}`);
+      puzzlePieces.push(
+        <PuzzlePiece
+          id={`piece-${num}`}
+          key={`piece-${num}`}
+          className='puzzle-piece'
+          draggable='true'
+          style={{ 
+            backgroundImage: `url(${imageUrl})`,
+            width: puzzlePieceSize + sizeUnit, 
+            height: puzzlePieceSize + sizeUnit,
+            backgroundPositionX: offsetX,
+            backgroundPositionY: offsetY,
+          }}
+        >
+          <p className='text-center justify-content-middle'>{num}</p>
+        </PuzzlePiece>
+      );
+    }
   }
 
   const listRef = useRef<HTMLInputElement>(null);
@@ -43,8 +56,8 @@ const Puzzle = ({stage, n}: props) => {
   const puzzleBoardBox = boards.map((board) => <PuzzleBoard key={board} id={board} className='puzzle-board'/>);
 
   const puzzleBoardStyle = {
-    height: boardSize + boardSizeUnit,
-    width: boardSize + boardSizeUnit,
+    height: boardSize + sizeUnit,
+    width: boardSize + sizeUnit,
     gridTemplateColumns: boardCellSize,
     gridTemplateRows: boardCellSize,
   };
@@ -98,6 +111,7 @@ const Puzzle = ({stage, n}: props) => {
           </div>
         </div>
       </div>
+      <img src="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/puzzle/Stage%203/full.png" alt="" />
     </div>
   );
 };

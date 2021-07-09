@@ -3,18 +3,21 @@
       "name":"Stage 1",
       "url":"stage-1",
       "info": "Puzzle berisi 4x4 potongan",
-      "size": 4
+      "size": 4,
+      "image": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/puzzle/Stage%201/full.png"
     },
     {
       "name":"Stage 2",
       "url":"stage-2",
       "info": "Puzzle berisi 5x5 potongan",
-      "size": 5
+      "size": 5,
+      "image":"https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/puzzle/Stage%202/full.png"
     },
     {
       "name":"Stage 3",
       "url":"stage-3",
       "info": "Puzzle berisi 6x6 potongan",
-      "size": 6
+      "size": 6,
+      "image": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/puzzle/Stage%203/full.png"
     }
 ]

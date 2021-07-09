@@ -19,7 +19,7 @@ const PuzzlePage = () => {
       return (
         <>
           <Navbar />
-          <Puzzle stage={current_stage.name} n={current_stage.size}/>
+          <Puzzle stage={current_stage.name} size={current_stage.size} imageUrl={current_stage.image} />
         </>
       );
     }

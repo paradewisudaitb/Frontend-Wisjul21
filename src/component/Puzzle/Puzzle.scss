@@ -98,15 +98,13 @@
     }
 
     .puzzle-board {
-      // height: 2rem;
 
       .puzzle-piece {
-        // height: 7em;
-        // width: 7em;
         cursor: grab;
         padding: 0;
         background-color: gray;
         margin: 0;
+        background-size: 35em; // ga ada ini, imagenya berantakan :<
       }
     }
   }

@@ -83,7 +83,7 @@ const GaleriApresiasi = (): JSX.Element => {
           setWisudawans(<FilterWisudawan data={dataWisudawan} />);
           setLoadingWisudawan(false);
         })
-        .catch(_ =>
+        .catch(() =>
           setLoadingWisudawan(false)
         );
 
@@ -92,8 +92,7 @@ const GaleriApresiasi = (): JSX.Element => {
           setKontenApresiasi(dataApresiasi);
           setLoadingApresiasi(false);
         })
-        .catch((err) => {
-          console.log(err);
+        .catch(() => {
           setLoadingApresiasi(false);
         });
 

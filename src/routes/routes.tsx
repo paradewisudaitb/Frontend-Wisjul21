@@ -9,7 +9,7 @@ import { KirimPesanPage } from '../pages/KirimPesan/KirimPesanPage';
 import Wisudawan from '../pages/Wisudawan/Wisudawan';
 import Gathertown from '../pages/Gathertown/Gathertown';
 import GaleriHmj from '../pages/GaleriHmj/GaleriHmj';
-import NotFound, { NotFoundHMJ } from '../pages/NotFound/NotFound';
+import NotFound from '../pages/NotFound/NotFound';
 
 export type route = {
     label: string
@@ -84,7 +84,7 @@ export const AllRoutes = [
   MAJALAH_PAGE,
   GATHERTOWN_PAGE,
   // FORM_APRESIASI_PAGE,
-  // FORM_PAGE,
+  FORM_PAGE,
 
   NOTFOUND_PAGE,
 ];

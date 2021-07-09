@@ -81,7 +81,7 @@ const Gathertown = (): JSX.Element => {
               Treasure Games merupakan salah satu permainan yang diadakan dalam Perayaan Wisuda Juli ITB 2021. Siapa yang tercepat dalam menemukan harta karun ialah pemenangnya! 
               Aturan dan tata cara bermain di Treasure Games adalah sebagai berikut:
               <ol>
-                <li>Pemain dapat mengakses tautan Gather Town pada website Perayaan Wisuda Joli 2021.</li>
+                <li>Pemain dapat mengakses tautan Gather Town pada website Perayaan Wisuda Juli 2021.</li>
                 <li>Pemain memasuki room Gather Town sesuai dengan himpunan masing-masing.</li>
                 <li>Jumlah pemain yang dapat memasuki room Gather Town maksimal 25 orang dari masing-masing himpunan. Pemain yang dapat masuk adalah yang tercepat.</li>
                 <li>Agar dapat masuk ke room Gather Town dengan lebih cepat, pemain dipersilahkan untuk membuat akun Gather Town sebelum Treasure Games dimulai.</li>

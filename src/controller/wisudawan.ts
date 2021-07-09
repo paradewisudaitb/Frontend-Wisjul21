@@ -37,10 +37,11 @@ export const creator = async (data: IDataWisudawan): Promise<WisudawnIdty> => {
     tanggalLahir: data.tanggalLahir,
     angkatan: data.angkatan,
     nonhim: data.nonhim,
-    prestasi: data.prestasi?.join(',') || '-',
-    karya: data.karya?.join(',') || '-',
-    kontribusi: data.kontribusi?.join(',') || '-',
-    lembaga: data.lembaga?.join(',') || '-',
+    showAtWeb: data.showAtWeb,
+    prestasi: data.prestasi.length == 0 ? ['-'] : data.prestasi,
+    karya: data.karya.length == 0 ? ['-'] : data.karya,
+    kontribusi: data.kontribusi.length == 0 ? ['-'] : data.kontribusi,
+    lembaga: data.lembaga.length == 0 ? ['-'] : data.lembaga,
   };
 
   const req = {

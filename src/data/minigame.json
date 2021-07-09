@@ -1,0 +1,20 @@
+[
+    {
+      "name":"Stage 1",
+      "url":"stage-1",
+      "info": "Puzzle berisi 4x4 potongan",
+      "size": 4
+    },
+    {
+      "name":"Stage 2",
+      "url":"stage-2",
+      "info": "Puzzle berisi 5x5 potongan",
+      "size": 5
+    },
+    {
+      "name":"Stage 3",
+      "url":"stage-3",
+      "info": "Puzzle berisi 6x6 potongan",
+      "size": 6
+    }
+]

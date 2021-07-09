@@ -5,7 +5,7 @@ import PuzzlePiece from './PuzzlePiece';
 import PuzzleBoard from './PuzzleBoard';
 
 type props = {
-  stage: number,
+  stage: string,
   n: number,
 };
 
@@ -69,7 +69,7 @@ const Puzzle = ({stage, n}: props) => {
 
   return (
     <div className='puzzle-page'>
-      <h1 className='title'>STAGE {stage}</h1>
+      <h1 className='title'>{stage}</h1>
       <div className='puzzle-container'>
 
         {/* Puzzle Board */}

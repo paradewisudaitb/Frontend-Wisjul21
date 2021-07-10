@@ -7,6 +7,7 @@ import { MINIGAME_PAGE } from '../../routes/routes';
 import IStageCard from '../../interfaces/IStageCard';
 import { FC } from 'react';
 import { completedStageCount } from '../../store';
+import Sponsor from '../../component/Sponsor/Sponsor';
 
 const Stages: FC = () => {
   const res: IStageCard[] = [];
@@ -49,6 +50,7 @@ export const Minigame = () => {
         <h3>Choose your stage to play!</h3>
         <Stages />
       </div>
+      <Sponsor />
     </>
   );
 };

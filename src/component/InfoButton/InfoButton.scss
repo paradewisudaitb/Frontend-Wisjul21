@@ -1,34 +1,37 @@
-@import '../../App.scss';
+@import "../../App.scss";
 
 .infobutton {
-    width: 0.8rem;
-    height: 0.8rem;
+  width: 0.8rem;
+  height: 0.8rem;
 
-    
-    p {
-        text-align: center;
-        font-size: 0.5rem;
-        font-style: italic;
-    }
+  p {
+    text-align: center;
+    font-size: 0.5rem;
+    font-style: italic;
+  }
 
-    border-radius: 50%;
-    background-color: black;
-    margin-top: 0.3rem;
-    margin-left: 0.3rem;
+  border-radius: 50%;
+  background-color: black;
+  margin-top: 0.3rem;
+  margin-left: 0.3rem;
 
-    position: relative;
+  position: relative;
 }
 
 .infobutton:hover .info {
-    visibility: visible;
+  visibility: visible;
 }
 
 .info {
-    width: 9vw;
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 1rem;
-    text-align: justify;
-    font-size: 0.8rem;
+  width: 9vw;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  text-align: left;
+  font-size: 0.8rem;
+
+  background-color: $purple-darker;
+  border-radius: 0.5rem;
+  padding: 0 0.4rem;
 }

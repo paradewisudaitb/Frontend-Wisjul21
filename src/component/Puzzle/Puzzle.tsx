@@ -1,8 +1,8 @@
-import React, {useRef} from 'react';
-import './Puzzle.scss';
-
+import { useRef, FC } from 'react';
 import PuzzlePiece from './PuzzlePiece';
 import PuzzleBoard from './PuzzleBoard';
+import { completedStageCount } from '../../store';
+import './Puzzle.scss';
 
 type props = {
   stage: string,
@@ -10,7 +10,7 @@ type props = {
   imageUrl: string,
 };
 
-const Puzzle = ({stage, size, imageUrl}: props) => {
+const Puzzle: FC<props> = ({stage, size, imageUrl}: props) => {
   const n = size;
   // PUZZLE SIZE
   const boardSize = 35;
@@ -37,9 +37,9 @@ const Puzzle = ({stage, size, imageUrl}: props) => {
           key={`piece-${num}`}
           className='puzzle-piece'
           draggable='true'
-          style={{ 
+          style={{
             backgroundImage: `url(${imageUrl})`,
-            width: puzzlePieceSize + sizeUnit, 
+            width: puzzlePieceSize + sizeUnit,
             height: puzzlePieceSize + sizeUnit,
             backgroundPositionX: offsetX,
             backgroundPositionY: offsetY,
@@ -80,15 +80,18 @@ const Puzzle = ({stage, size, imageUrl}: props) => {
     }
   };
 
+  const unlockNextStage = () => {
+    completedStageCount.incCompletedStages();
+  };
+
   return (
     <div className='puzzle-page'>
       <h1 className='title'>{stage}</h1>
+      <button onClick={unlockNextStage}>Test</button>
       <div className='puzzle-container'>
-
         {/* Puzzle Board */}
         <div className='puzzle-wrapper-1'>
           <div className='puzzle-board-wrapper' style={puzzleBoardStyle}>
-            {/* {boards.map((board) => <PuzzleBoard id={board} className='puzzle-board' />)} */}
             {puzzleBoardBox}
           </div>
         </div>

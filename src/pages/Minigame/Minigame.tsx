@@ -7,6 +7,7 @@ import { Navbar } from '../../component/NavbarFooter/Navbar';
 
 import  stages  from '../../data/minigame.json';
 import { MINIGAME_PAGE } from '../../routes/routes';
+import Sponsor from '../../component/Sponsor/Sponsor';
 
 export const Minigame = () => {
   const info = 'Puzzle yang menggambarkan metamorfosis burung phoenix';
@@ -25,6 +26,7 @@ export const Minigame = () => {
           )) }
         </div>
       </div>
+      <Sponsor />
     </>
   );
 };

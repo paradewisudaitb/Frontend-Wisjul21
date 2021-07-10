@@ -4,6 +4,7 @@
   background: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg");
   background-size: cover;
   background-position: center;
+  padding: 1rem;
 
   .title {
     text-align: center;
@@ -11,16 +12,25 @@
   }
 
   .puzzle-container {
-    display: grid;
-    grid-template-columns: auto 30%;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
+  
+    gap: 2rem;
+    @include respond-to('phone') {
+      gap: 3vw;
+    }
 
     padding-bottom: 3em;
 
+    .puzzle-wrapper-1 {
+      display: flex;
+    }
+
     .puzzle-board-wrapper {
-      background-color: #fff;
-      margin: 20px;
       display: grid;
+      background-color: #fff;
     }
 
     .puzzle-piece-container {
@@ -75,8 +85,13 @@
       }
 
       #board-2 {
+        
         .board-2-container {
-          margin: 10px 0;
+          background-color: $red-darker;
+          padding: 1rem;
+          border-radius: 20px;
+          
+          min-width: max-content;
           display: grid;
           grid-template-columns: auto auto;
           justify-content: center;
@@ -84,7 +99,7 @@
           align-items: center;
 
           position: relative;
-          height: 27em;
+          height: 30vw;
           overflow: hidden;
 
           scroll-behavior: smooth;
@@ -104,7 +119,6 @@
         padding: 0;
         background-color: gray;
         margin: 0;
-        background-size: 35em; // ga ada ini, imagenya berantakan :<
       }
     }
   }

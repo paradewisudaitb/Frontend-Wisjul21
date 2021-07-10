@@ -6,6 +6,7 @@ import NotFound from '../NotFound/NotFound';
 import Puzzle from '../../component/Puzzle/Puzzle';
 import { PUZZLE_PAGE } from '../../routes/routes';
 import stages from '../../data/minigame.json';
+import Sponsor from '../../component/Sponsor/Sponsor';
 
 const PuzzlePage = () => {
   const [match, param] = useRoute(PUZZLE_PAGE.path);
@@ -19,7 +20,8 @@ const PuzzlePage = () => {
       return (
         <>
           <Navbar />
-          <Puzzle stage={current_stage.name} size={current_stage.size} imageUrl={current_stage.image} />
+          <Puzzle stage={current_stage.name} size={current_stage.size} folderUrl={current_stage.folder}/>
+          <Sponsor />
         </>
       );
     }
@@ -29,6 +31,7 @@ const PuzzlePage = () => {
     <>
       <Navbar />
       <NotFound />
+      <Sponsor />
     </>
   );
 };

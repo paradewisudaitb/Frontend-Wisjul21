@@ -3,24 +3,30 @@ import './Puzzle.scss';
 
 import PuzzlePiece from './PuzzlePiece';
 import PuzzleBoard from './PuzzleBoard';
+import { useEffect } from 'react';
 
 type props = {
   stage: string,
   size: number,
-  imageUrl: string,
+  folderUrl: string,
 };
 
-const Puzzle = ({stage, size, imageUrl}: props) => {
+const boardMinWidth = '200px';
+
+const Puzzle = ({stage, size, folderUrl}: props) => {
   const n = size;
   // PUZZLE SIZE
-  const boardSize = 35;
-  const sizeUnit = 'em';
+  const boardSize = 40;
+
+  const sizeUnit = 'vw';
   const puzzlePieceSize = boardSize / n;
   let boardCellSize = '';
   for (let i = 0; i < n; ++i) {
     boardCellSize += puzzlePieceSize + sizeUnit + ' ';
   }
   boardCellSize.trim();
+
+  const imageUrl = folderUrl + 'full.png';
 
   const puzzlePieces: JSX.Element[] = [];
   const boards: string[] = [];
@@ -38,16 +44,18 @@ const Puzzle = ({stage, size, imageUrl}: props) => {
           className='puzzle-piece'
           draggable='true'
           style={{ 
-            backgroundImage: `url(${imageUrl})`,
             width: puzzlePieceSize + sizeUnit, 
             height: puzzlePieceSize + sizeUnit,
+            backgroundImage: `url(${imageUrl})`,
+            backgroundSize: boardSize + sizeUnit,
             backgroundPositionX: offsetX,
             backgroundPositionY: offsetY,
           }}
         >
-          <p className='text-center justify-content-middle'>{num}</p>
         </PuzzlePiece>
       );
+
+      puzzlePieces.sort(() => Math.random() - 0.5);
     }
   }
 
@@ -58,6 +66,7 @@ const Puzzle = ({stage, size, imageUrl}: props) => {
   const puzzleBoardStyle = {
     height: boardSize + sizeUnit,
     width: boardSize + sizeUnit,
+    // minWidth: boardMinWidth,
     gridTemplateColumns: boardCellSize,
     gridTemplateRows: boardCellSize,
   };
@@ -80,6 +89,20 @@ const Puzzle = ({stage, size, imageUrl}: props) => {
     }
   };
 
+  const puzzleTray = () => {
+    const trayWidth = puzzlePieceSize * 2 + sizeUnit;
+
+    return (
+      <PuzzleBoard id='board-2' className='puzzle-board'>
+        <div className='board-2-container' ref={listRef} style={{
+          width: trayWidth
+        }}>
+          {puzzlePieces}
+        </div>
+      </PuzzleBoard>
+    );
+  };
+
   return (
     <div className='puzzle-page'>
       <h1 className='title'>{stage}</h1>
@@ -88,7 +111,6 @@ const Puzzle = ({stage, size, imageUrl}: props) => {
         {/* Puzzle Board */}
         <div className='puzzle-wrapper-1'>
           <div className='puzzle-board-wrapper' style={puzzleBoardStyle}>
-            {/* {boards.map((board) => <PuzzleBoard id={board} className='puzzle-board' />)} */}
             {puzzleBoardBox}
           </div>
         </div>
@@ -100,18 +122,13 @@ const Puzzle = ({stage, size, imageUrl}: props) => {
           </div>
 
           <div className='puzzle-wrapper-2'>
-            <PuzzleBoard id='board-2' className='puzzle-board'>
-              <div className='board-2-container' ref={listRef}>
-                {puzzlePieces}
-              </div>
-            </PuzzleBoard>
+            {puzzleTray()}
           </div>
           <div className='arrow-down-wrapper'>
             <div className='arrow-down' onClick={scrollDown}></div>
           </div>
         </div>
       </div>
-      <img src="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/puzzle/Stage%203/full.png" alt="" />
     </div>
   );
 };

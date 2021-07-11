@@ -1,0 +1,119 @@
+@import '../../App.scss';
+
+.page-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 7.5em;
+
+  @include respond-to('phone') {
+    flex-direction: column;
+    justify-content: start;
+    margin-bottom: 7.5em;
+  }
+
+  @include respond-to('tablet') {
+    flex-direction: column;
+    justify-content: start;
+    margin-bottom: 7.5em;
+  }
+
+  .congrats {
+    position: relative;
+
+    .info-icon {
+      position: absolute;
+      top: -300%;
+      left: 0%;
+    }
+
+    @include respond-to('phone') {
+      margin-top: 3em;
+
+      .info-icon {
+        position: absolute;
+        top: -50%;
+      }
+    }
+
+    @include respond-to('tablet') {
+      margin-top: 3em;
+
+      .info-icon {
+        position: absolute;
+        top: -50%;
+      }
+    }
+  }
+
+  .stage1 {
+    h1 {
+      margin-top: 2.5rem;
+    }
+
+    .stage1-image {
+      margin-top: 2.5rem;
+      width: 500px;
+      height: auto;
+    }
+
+    @include respond-to('phone') {
+      h1 {
+        margin-top: 1.5rem;
+      }
+
+      .stage1-image {
+        margin-top: 1rem;
+        width: 300px;
+      }
+    }
+
+    @include respond-to('tablet') {
+      h1 {
+        margin-top: 1.5rem;
+      }
+
+      .stage1-image {
+        margin-top: 1rem;
+        width: 400px;
+      }
+    }
+  }
+
+  .take-picture {
+    position: relative;
+
+    .cam-icon {
+      text-align: center;
+    }
+
+    .door-icon {
+      position: absolute;
+      bottom: -300%;
+    }
+
+    @include respond-to('phone') {
+      .door-icon {
+        position: absolute;
+        bottom: -50%;
+      }
+
+      h2 {
+        margin-top: 1.5rem;
+      }
+    }
+
+    @include respond-to('tablet') {
+      .door-icon {
+        position: absolute;
+        bottom: -50%;
+      }
+
+      h2 {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}

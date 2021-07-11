@@ -28,24 +28,31 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
   const puzzleBoardBoxRef = useRef<HTMLDivElement>(null);
   const checkWin = () => {
     const puzzleBoardBoxChildren = puzzleBoardBoxRef.current?.children;
+    const piecesList: number[] = [];
 
-    if (puzzleBoardBoxChildren && puzzleBoardBoxChildren.length == (n * n)) {
-      let isWin = true;
-      for (let i = 0; i < puzzleBoardBoxChildren.length && isWin; ++i) {
-        const currentChildChildren = puzzleBoardBoxChildren.item(i)?.children;
-        if (currentChildChildren && currentChildChildren.length != 0) {
-          const currentChildChildrenID = currentChildChildren.item(0)?.id.match(/\d+/);
-          if (currentChildChildrenID) {
-            isWin = parseInt(currentChildChildrenID[0]) == (i + 1);
-          } else {
-            isWin = false;
-          }
+    let winning = true;
+
+    if (puzzleBoardBoxChildren) {
+      for (let i = 0; i < puzzleBoardBoxChildren.length && winning; ++i) {
+        const currChild = puzzleBoardBoxChildren.item(i);
+        const tmp = currChild?.
+          children?.
+          item(0)?.
+          id?.
+          match(/\d+/);
+        if (tmp){
+          const currID = parseInt(tmp[0]);
+          winning = currID == (i + 1);
+          piecesList.push(currID);
         } else {
-          isWin = false;
+          winning = false;
         }
       }
 
-      isWin && window.alert('Menang bro!');
+      if (winning) {
+        console.log(piecesList);
+        window.alert('Menang anjay');
+      }
     }
   };
 

@@ -1,4 +1,4 @@
-import { useRef, useEffect, FC } from 'react';
+import { useRef, FC } from 'react';
 import PuzzlePiece from './PuzzlePiece';
 import PuzzleBoard from './PuzzleBoard';
 import { completedStageCount } from '../../store';
@@ -12,9 +12,9 @@ type props = {
 
 const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
   const n = size;
+
   // PUZZLE SIZE
   const boardSize = 40;
-
   const sizeUnit = 'vw';
   const puzzlePieceSize = boardSize / n;
   let boardCellSize = '';
@@ -24,6 +24,30 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
   boardCellSize.trim();
 
   const imageUrl = folderUrl + 'full.png';
+
+  const puzzleBoardBoxRef = useRef<HTMLDivElement>(null);
+  const checkWin = () => {
+    const puzzleBoardBoxChildren = puzzleBoardBoxRef.current?.children;
+
+    if (puzzleBoardBoxChildren && puzzleBoardBoxChildren.length == (n * n)) {
+      let isWin = true;
+      for (let i = 0; i < puzzleBoardBoxChildren.length && isWin; ++i) {
+        const currentChildChildren = puzzleBoardBoxChildren.item(i)?.children;
+        if (currentChildChildren && currentChildChildren.length != 0) {
+          const currentChildChildrenID = currentChildChildren.item(0)?.id.match(/\d+/);
+          if (currentChildChildrenID) {
+            isWin = parseInt(currentChildChildrenID[0]) == (i + 1);
+          } else {
+            isWin = false;
+          }
+        } else {
+          isWin = false;
+        }
+      }
+
+      isWin && window.alert('Menang bro!');
+    }
+  };
 
   const puzzlePieces: JSX.Element[] = [];
   const boards: string[] = [];
@@ -40,6 +64,7 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
           key={`piece-${num}`}
           className='puzzle-piece'
           draggable='true'
+          checkWin={checkWin}
           style={{
             width: puzzlePieceSize + sizeUnit,
             height: puzzlePieceSize + sizeUnit,
@@ -110,7 +135,7 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
       <div className='puzzle-container'>
         {/* Puzzle Board */}
         <div className='puzzle-wrapper-1'>
-          <div className='puzzle-board-wrapper' style={puzzleBoardStyle}>
+          <div className='puzzle-board-wrapper' ref={puzzleBoardBoxRef} style={puzzleBoardStyle}>
             {puzzleBoardBox}
           </div>
         </div>

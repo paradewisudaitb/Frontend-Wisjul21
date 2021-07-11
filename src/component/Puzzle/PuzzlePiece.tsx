@@ -1,5 +1,3 @@
-import React, { useRef } from 'react';
-
 const PuzzlePiece = (props: any) => {
 
   const dragStart = (e: any) => {
@@ -20,6 +18,7 @@ const PuzzlePiece = (props: any) => {
     if (e.target.style.display == 'none') {
       e.target.style.display = 'block';
     }
+    props.checkWin();
   };
 
 

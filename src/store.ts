@@ -1,7 +1,9 @@
 import STAGES from './data/minigame.json';
 
-localStorage.setItem('completedStageCount', '0');
 const tmp = localStorage.getItem('completedStageCount');
+if (!tmp) {
+  localStorage.setItem('completedStageCount', '0');
+}
 let isPersistant = !(!tmp);
 const getLockedStages = () => {
   const cscRaw = localStorage.getItem('completedStageCount');

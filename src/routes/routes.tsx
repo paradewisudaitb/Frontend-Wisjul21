@@ -12,6 +12,7 @@ import { Minigame } from '../pages/Minigame/Minigame';
 import PuzzlePage from '../pages/Minigame/PuzzlePage';
 import GaleriHmj from '../pages/GaleriHmj/GaleriHmj';
 import NotFound from '../pages/NotFound/NotFound';
+import FinishStage from '../component/FinishStage/FinishStage';
 
 export type route = {
   label: string
@@ -44,6 +45,7 @@ export const FORM_PAGE = toRoute('Form', '/form', Form);
 export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', '/form-apresiasi', FormApresiasi);
 export const MINIGAME_PAGE = toRoute('Puzzle Metamorphosis', '/minigame', Minigame);
 export const PUZZLE_PAGE = toRoute('Puzzle Metamorphosis', '/minigame/:stage', PuzzlePage);
+export const FINISHSTAGE_PAGE = toRoute('Puzzle Metamorphosis', '/minigame/:stage/finish', FinishStage);
 
 export const PRODUK_INDEX = toRoute('Produk', '/produk');
 export const GATHERTOWN_PAGE = toRoute('Treasure Games', '/treasuregames', Gathertown);
@@ -89,6 +91,7 @@ export const AllRoutes = [
 
   MINIGAME_PAGE,
   PUZZLE_PAGE,
+  FINISHSTAGE_PAGE,
 
   NOTFOUND_PAGE,
 ];

@@ -3,6 +3,8 @@ import PuzzlePiece from './PuzzlePiece';
 import PuzzleBoard from './PuzzleBoard';
 import { completedStageCount } from '../../store';
 import './Puzzle.scss';
+import { useState } from 'react';
+import FinishStage from '../FinishStage/FinishStage';
 
 type props = {
   stage: string,
@@ -26,6 +28,9 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
   const imageUrl = folderUrl + 'full.png';
 
   const puzzleBoardBoxRef = useRef<HTMLDivElement>(null);
+
+  const [isWin, setWin] = useState(false);
+
   const checkWin = () => {
     const puzzleBoardBoxChildren = puzzleBoardBoxRef.current?.children;
     const piecesList: number[] = [];
@@ -52,6 +57,7 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
       if (winning) {
         console.log(piecesList);
         window.alert('Menang anjay');
+        setWin(true);
       }
     }
   };
@@ -120,6 +126,7 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
 
   const unlockNextStage = () => {
     completedStageCount.incCompletedStages();
+    setWin(true);
   };
   const puzzleTray = () => {
     const trayWidth = puzzlePieceSize * 2 + sizeUnit;
@@ -138,29 +145,35 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
   return (
     <div className='puzzle-page'>
       <h1 className='title'>{stage}</h1>
-      <button onClick={unlockNextStage}>Test</button>
-      <div className='puzzle-container'>
-        {/* Puzzle Board */}
-        <div className='puzzle-wrapper-1'>
-          <div className='puzzle-board-wrapper' ref={puzzleBoardBoxRef} style={puzzleBoardStyle}>
-            {puzzleBoardBox}
-          </div>
-        </div>
+      {!isWin ? 
+        <>
+          <button onClick={unlockNextStage}>Test</button>
+          <div className='puzzle-container'>
+            {/* Puzzle Board */}
+            <div className='puzzle-wrapper-1'>
+              <div className='puzzle-board-wrapper' ref={puzzleBoardBoxRef} style={puzzleBoardStyle}>
+                {puzzleBoardBox}
+              </div>
+            </div>
 
-        {/* Puzzle Tray */}
-        <div className='puzzle-piece-container'>
-          <div className='arrow-up-wrapper'>
-            <div className='arrow-up' onClick={scrollUp}></div>
-          </div>
+            {/* Puzzle Tray */}
+            <div className='puzzle-piece-container'>
+              <div className='arrow-up-wrapper'>
+                <div className='arrow-up' onClick={scrollUp}></div>
+              </div>
 
-          <div className='puzzle-wrapper-2'>
-            {puzzleTray()}
+              <div className='puzzle-wrapper-2'>
+                {puzzleTray()}
+              </div>
+              <div className='arrow-down-wrapper'>
+                <div className='arrow-down' onClick={scrollDown}></div>
+              </div>
+            </div>
           </div>
-          <div className='arrow-down-wrapper'>
-            <div className='arrow-down' onClick={scrollDown}></div>
-          </div>
-        </div>
-      </div>
+        </>
+        : 
+        <FinishStage folderUrl={folderUrl} />
+      }
     </div>
   );
 };

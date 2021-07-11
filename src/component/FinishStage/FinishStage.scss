@@ -5,8 +5,6 @@
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  margin-top: 0.5em;
-  margin-bottom: 7.5em;
 
   @include respond-to('phone') {
     flex-direction: column;
@@ -49,12 +47,8 @@
   }
 
   .stage1 {
-    h1 {
-      margin-top: 2.5rem;
-    }
 
     .stage1-image {
-      margin-top: 2.5rem;
       width: 500px;
       height: auto;
     }
@@ -84,14 +78,36 @@
 
   .take-picture {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    .tombol-keluar {
+      text-decoration: none;
+      color: inherit;
+      background-color: $blue-darker;
+      padding: 0.5rem;
+      border-radius: 10px;
+
+      .fa-door-open {
+        display: none;
+      }
+    }
+
+    .tombol-keluar:hover {
+      background-color: $blue-medium;
+      transition: 0.6s;
+
+      .fa-door-closed {
+        display: none;
+      }
+      .fa-door-open {
+        display: initial;
+      }
+    }
 
     .cam-icon {
       text-align: center;
-    }
-
-    .door-icon {
-      position: absolute;
-      bottom: -300%;
     }
 
     @include respond-to('phone') {
@@ -115,5 +131,17 @@
         margin-top: 1.5rem;
       }
     }
+  }
+  
+  .camera-circle {
+    background-color: $blue-darker;
+    padding: 0.9rem 1rem;
+    border-radius: 50%;
+    transition: 0.6s;
+  }
+
+  .camera-circle:hover {
+    background-color: $blue-medium;
+    transition: 0.6s;
   }
 }

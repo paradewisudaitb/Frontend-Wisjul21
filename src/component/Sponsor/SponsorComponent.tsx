@@ -13,7 +13,7 @@ export const SponsorComponent = ({nama, items}: ISponsor) => {
       <div className="sponsor-container">
 
         { itemXL.map(image => (
-          <div className='item-xl'>
+          <div key={image} className='item-xl'>
             <img src={image} alt={
               image.split('/')[image.split('/').length - 1]
                 .replace(/.(((jpe?)|(pn))g)/gi, '')
@@ -24,7 +24,7 @@ export const SponsorComponent = ({nama, items}: ISponsor) => {
 
         { itemL.map(image => (
 
-          <div className='item-l'>
+          <div key={image} className='item-l'>
             <img src={image} alt={
               image.split('/')[image.split('/').length - 1]
                 .replace(/.(((jpe?)|(pn))g)/gi, '')
@@ -34,7 +34,7 @@ export const SponsorComponent = ({nama, items}: ISponsor) => {
         ) }
         { itemM.map(image => (
 
-          <div className='item-m'>
+          <div key={image} className='item-m'>
             <img src={image} alt={
               image.split('/')[image.split('/').length - 1]
                 .replace(/.(((jpe?)|(pn))g)/gi, '')
@@ -45,7 +45,7 @@ export const SponsorComponent = ({nama, items}: ISponsor) => {
 
         { itemS.map(image => (
 
-          <div className='item-s'>
+          <div key={image} className='item-s'>
             <img src={image} alt={
               image.split('/')[image.split('/').length - 1]
                 .replace(/.(((jpe?)|(pn))g)/gi, '')

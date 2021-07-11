@@ -86,7 +86,8 @@
         .board-2-container {
           background-color: $red-darker;
           padding: 1rem;
-          border-radius: 20px;
+          padding-left: 1.5rem;
+          border-radius: 10px 0px 0px 10px;
           
           min-width: max-content;
           display: grid;
@@ -97,9 +98,19 @@
 
           position: relative;
           height: 30vw;
-          overflow: hidden;
+          overflow-y: scroll;
 
           scroll-behavior: smooth;
+
+          &::-webkit-scrollbar-track-piece {
+            &:start {
+              margin-top: 17px;
+            }
+            &:end {
+              margin-bottom: 17px;
+            }
+          }
+        
         }
 
         .arrow-up,

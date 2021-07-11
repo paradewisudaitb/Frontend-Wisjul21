@@ -50,6 +50,7 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
           winning = currID == (i + 1);
           piecesList.push(currID);
         } else {
+          setWin(false);
           winning = false;
         }
       }
@@ -126,6 +127,7 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
 
   const unlockNextStage = () => {
     completedStageCount.incCompletedStages();
+    window.alert('Menang anjay');
     setWin(true);
   };
   const puzzleTray = () => {
@@ -147,7 +149,7 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
       <h1 className='title'>{stage}</h1>
       {!isWin ? 
         <>
-          <button onClick={unlockNextStage}>Test</button>
+          <button onClick={unlockNextStage}>Use Power of Orang Dalam</button>
           <div className='puzzle-container'>
             {/* Puzzle Board */}
             <div className='puzzle-wrapper-1'>

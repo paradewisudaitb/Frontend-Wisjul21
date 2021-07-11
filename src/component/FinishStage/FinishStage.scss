@@ -6,16 +6,9 @@
   align-items: center;
   text-align: center;
 
-  @include respond-to('phone') {
+  @include respond-to('phone', 'tablet') {
     flex-direction: column;
     justify-content: start;
-    margin-bottom: 7.5em;
-  }
-
-  @include respond-to('tablet') {
-    flex-direction: column;
-    justify-content: start;
-    margin-bottom: 7.5em;
   }
 
   .congrats {
@@ -25,24 +18,6 @@
       position: absolute;
       top: -300%;
       left: 0%;
-    }
-
-    @include respond-to('phone') {
-      margin-top: 3em;
-
-      .info-icon {
-        position: absolute;
-        top: -50%;
-      }
-    }
-
-    @include respond-to('tablet') {
-      margin-top: 3em;
-
-      .info-icon {
-        position: absolute;
-        top: -50%;
-      }
     }
   }
 
@@ -54,10 +29,6 @@
     }
 
     @include respond-to('phone') {
-      h1 {
-        margin-top: 1.5rem;
-      }
-
       .stage1-image {
         margin-top: 1rem;
         width: 300px;
@@ -65,9 +36,6 @@
     }
 
     @include respond-to('tablet') {
-      h1 {
-        margin-top: 1.5rem;
-      }
 
       .stage1-image {
         margin-top: 1rem;
@@ -81,6 +49,10 @@
     display: flex;
     flex-direction: column;
     gap: 5rem;
+
+    @include respond-to('tablet', 'phone') {
+      gap: 2rem;
+    }
 
     .tombol-keluar {
       text-decoration: none;

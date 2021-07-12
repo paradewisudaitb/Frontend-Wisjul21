@@ -15,7 +15,7 @@ const FinishStage = ({folderUrl}: {folderUrl:string}) => {
   // Modal
   const htmlTag = document.querySelector('html');
   const [show, setShow] = useState(true);
-  
+
   const handleClose = () => {
     setShow(false);
     if (htmlTag) {
@@ -23,7 +23,7 @@ const FinishStage = ({folderUrl}: {folderUrl:string}) => {
     }
   };
   // End Modal
-  
+
 
   return (
     <>
@@ -60,6 +60,7 @@ const FinishStage = ({folderUrl}: {folderUrl:string}) => {
         aria-labelledby="example-custom-modal-styling-title"
         backdrop="static"
         keyboard={false}
+        className="puzzle-modal"
       >
         <h1 className="header-title"> Congratulations </h1>
         <h3 className="header-subtitle"> You have completed this stage! </h3>

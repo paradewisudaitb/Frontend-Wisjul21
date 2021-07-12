@@ -121,81 +121,90 @@ html {
   }
 }
 
-.image-modal {
-  height: 80vh;
-  width: auto;
-}
+.puzzle-modal {
+  margin-top: 10em;
 
-.gambar-modal {
-  // position: absolute;
-  // z-index: 0;
-  // height: 300px;
+  .image-modal {
+    height: 80vh;
+    width: auto;
 
-  // Kiri
-  .kembang-api1 {
-    // @extend .gambar-modal; extend ga work
-    position: absolute;
-    height: 300px;
-    top: -50px;
-    left: -300px;
-    @include respond-to("phone") {
-      display: none;
+    @include respond-to('phone', 'tablet') {
+      width: 90vw;
+      height: auto;
     }
   }
 
-  .kembang-api2 {
-    // @extend.gambar-modal;
-    position: absolute;
-    height: 200px;
-    top: 300px;
-    left: -400px;
-    @include respond-to("phone") {
-      display: none;
-    }
-  }
+  .gambar-modal {
+    // position: absolute;
+    // z-index: 0;
+    // height: 300px;
 
-  .kembang-api3 {
-    // @extend.gambar-modal;
-    position: absolute;
-    height: 300px;
-    bottom: 0px;
-    left: -400px;
-    @include respond-to("phone") {
-      display: none;
+    // Kiri
+    .kembang-api1 {
+      // @extend .gambar-modal; extend ga work
+      position: absolute;
+      height: 300px;
+      top: -50px;
+      left: -300px;
+      @include respond-to("phone") {
+        display: none;
+      }
     }
-  }
 
-  // kNan
-  .kembang-api4 {
-    // @extend.gambar-modal;
-    position: absolute;
-    height: 200px;
-    top: 50px;
-    right: -250px;
-    @include respond-to("phone") {
-      display: none;
+    .kembang-api2 {
+      // @extend.gambar-modal;
+      position: absolute;
+      height: 200px;
+      top: 300px;
+      left: -400px;
+      @include respond-to("phone") {
+        display: none;
+      }
     }
-  }
 
-  .kembang-api5 {
-    // @extend.gambar-modal;
-    position: absolute;
-    height: 300px;
-    top: 300px;
-    right: -400px;
-    @include respond-to("phone") {
-      display: none;
+    .kembang-api3 {
+      // @extend.gambar-modal;
+      position: absolute;
+      height: 300px;
+      bottom: 0px;
+      left: -400px;
+      @include respond-to("phone") {
+        display: none;
+      }
     }
-  }
 
-  .kembang-api6 {
-    // @extend.gambar-modal;
-    position: absolute;
-    height: 300px;
-    bottom: 0px;
-    left: 550px;
-    @include respond-to("phone") {
-      display: none;
+    // kNan
+    .kembang-api4 {
+      // @extend.gambar-modal;
+      position: absolute;
+      height: 200px;
+      top: 50px;
+      right: -250px;
+      @include respond-to("phone") {
+        display: none;
+      }
+    }
+
+    .kembang-api5 {
+      // @extend.gambar-modal;
+      position: absolute;
+      height: 300px;
+      top: 300px;
+      right: -400px;
+      @include respond-to("phone") {
+        display: none;
+      }
+    }
+
+    .kembang-api6 {
+      // @extend.gambar-modal;
+      position: absolute;
+      height: 300px;
+      bottom: 0px;
+      left: 550px;
+      @include respond-to("phone") {
+        display: none;
+      }
     }
   }
 }

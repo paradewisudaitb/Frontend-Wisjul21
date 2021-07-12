@@ -1,10 +1,6 @@
 @import "../../App.scss";
 @import "../../styles/responsive.scss";
 
-html {
-  overflow-y: hidden;
-}
-
 .page-container {
   display: flex;
   justify-content: space-evenly;
@@ -122,7 +118,11 @@ html {
 }
 
 .puzzle-modal {
-  margin-top: 10em;
+  overflow: hidden;
+
+  @include respond-to('phone', 'tablet') {
+    margin-top: 10em;
+  }
 
   .image-modal {
     height: 80vh;

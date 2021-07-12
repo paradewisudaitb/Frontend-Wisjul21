@@ -147,7 +147,7 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
   return (
     <div className='puzzle-page'>
       <h1 className='title'>{stage}</h1>
-      {!isWin ? 
+      {!isWin ?
         <>
           <button onClick={unlockNextStage}>Use Power of Orang Dalam</button>
           <div className='puzzle-container'>
@@ -173,7 +173,7 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
             </div>
           </div>
         </>
-        : 
+        :
         <FinishStage folderUrl={folderUrl} />
       }
     </div>

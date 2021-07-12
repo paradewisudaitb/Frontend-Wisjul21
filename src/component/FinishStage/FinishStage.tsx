@@ -3,7 +3,7 @@ import './FinishStage.scss';
 import { Navbar } from '../NavbarFooter/Navbar';
 import Sponsor from '../Sponsor/Sponsor';
 import { Link, useRoute } from 'wouter';
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FINISHSTAGE_PAGE, MINIGAME_PAGE } from '../../routes/routes';
 import { Button, Modal } from 'react-bootstrap';
 import stages from '../../data/minigame.json';
@@ -22,7 +22,14 @@ const FinishStage = ({folderUrl}: {folderUrl:string}) => {
       htmlTag.setAttribute('style', 'overflow-y: scroll;');
     }
   };
+
   // End Modal
+
+  useEffect(() => {
+    if (htmlTag) {
+      htmlTag.setAttribute('style', 'overflow-y: hidden;');
+    }
+  }, []);
 
 
   return (
@@ -46,7 +53,7 @@ const FinishStage = ({folderUrl}: {folderUrl:string}) => {
               target='_blank'
               className='camera-circle'
             >
-              <i className="fa fa-download"></i> 
+              <i className="fa fa-download"></i>
             </a>
           </div>
           <Link to={MINIGAME_PAGE.path} className="tombol-keluar">

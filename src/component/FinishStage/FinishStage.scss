@@ -1,4 +1,8 @@
-@import '../../App.scss';
+@import "../../App.scss";
+
+html {
+  overflow-y: hidden;
+}
 
 .page-container {
   display: flex;
@@ -6,7 +10,7 @@
   align-items: center;
   text-align: center;
 
-  @include respond-to('phone', 'tablet') {
+  @include respond-to("phone", "tablet") {
     flex-direction: column;
     justify-content: start;
   }
@@ -22,21 +26,19 @@
   }
 
   .stage1 {
-
     .stage1-image {
       width: 500px;
       height: auto;
     }
 
-    @include respond-to('phone') {
+    @include respond-to("phone") {
       .stage1-image {
         margin-top: 1rem;
         width: 300px;
       }
     }
 
-    @include respond-to('tablet') {
-
+    @include respond-to("tablet") {
       .stage1-image {
         margin-top: 1rem;
         width: 400px;
@@ -50,7 +52,7 @@
     flex-direction: column;
     gap: 5rem;
 
-    @include respond-to('tablet', 'phone') {
+    @include respond-to("tablet", "phone") {
       gap: 2rem;
     }
 
@@ -82,7 +84,7 @@
       text-align: center;
     }
 
-    @include respond-to('phone') {
+    @include respond-to("phone") {
       .door-icon {
         position: absolute;
         bottom: -50%;
@@ -93,7 +95,7 @@
       }
     }
 
-    @include respond-to('tablet') {
+    @include respond-to("tablet") {
       .door-icon {
         position: absolute;
         bottom: -50%;
@@ -104,7 +106,7 @@
       }
     }
   }
-  
+
   .camera-circle {
     background-color: $blue-darker;
     padding: 0.9rem 1rem;
@@ -115,5 +117,66 @@
   .camera-circle:hover {
     background-color: $blue-medium;
     transition: 0.6s;
+  }
+}
+
+.image-modal {
+  height: 80vh;
+  width: auto;
+}
+
+.gambar-modal {
+  // position: absolute;
+  // z-index: 0;
+  // height: 300px;
+
+  // Kiri
+  .kembang-api1 {
+    // @extend .gambar-modal; extend ga work
+    position: absolute;
+    height: 300px;
+    top: -50px;
+    left: -300px;
+  }
+
+  .kembang-api2 {
+    // @extend.gambar-modal;
+    position: absolute;
+    height: 200px;
+    top: 300px;
+    left: -400px;
+  }
+
+  .kembang-api3 {
+    // @extend.gambar-modal;
+    position: absolute;
+    height: 300px;
+    bottom: 0px;
+    left: -400px;
+  }
+
+  // kNan
+  .kembang-api4 {
+    // @extend.gambar-modal;
+    position: absolute;
+    height: 200px;
+    top: 50px;
+    right: -250px;
+  }
+
+  .kembang-api5 {
+    // @extend.gambar-modal;
+    position: absolute;
+    height: 300px;
+    top: 300px;
+    right: -400px;
+  }
+
+  .kembang-api6 {
+    // @extend.gambar-modal;
+    position: absolute;
+    height: 300px;
+    bottom: 0px;
+    left: 550px;
   }
 }

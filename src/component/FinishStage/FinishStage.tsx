@@ -3,14 +3,27 @@ import './FinishStage.scss';
 import { Navbar } from '../NavbarFooter/Navbar';
 import Sponsor from '../Sponsor/Sponsor';
 import { Link, useRoute } from 'wouter';
-
+import React, { useState } from 'react';
 import { FINISHSTAGE_PAGE, MINIGAME_PAGE } from '../../routes/routes';
+import { Button, Modal } from 'react-bootstrap';
 import stages from '../../data/minigame.json';
 import NotFound from '../../pages/NotFound/NotFound';
-
+import { ASSET_URL } from '../../api';
 
 const FinishStage = ({folderUrl}: {folderUrl:string}) => {
 
+  // Modal
+  const htmlTag = document.querySelector('html');
+  const [show, setShow] = useState(true);
+  
+  const handleClose = () => {
+    setShow(false);
+    if (htmlTag) {
+      htmlTag.setAttribute('style', 'overflow-y: scroll;');
+    }
+  };
+  // End Modal
+  
 
   return (
     <>
@@ -41,6 +54,51 @@ const FinishStage = ({folderUrl}: {folderUrl:string}) => {
           </Link>
         </div>
       </div>
+      <Modal
+        show={show}
+        onHide={() => setShow(false)}
+        aria-labelledby="example-custom-modal-styling-title"
+        backdrop="static"
+        keyboard={false}
+      >
+        <h1 className="header-title"> Congratulations </h1>
+        <h3 className="header-subtitle"> You have completed this stage! </h3>
+        <div className="gambar-modal">
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/spark%202%20atas%20matahari.png`}
+            className="kembang-api1"
+          />
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/spark%201%20kanan%20atas-01.png`}
+            className="kembang-api2"
+          />
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/spark%203%20kanan-01.png`}
+            className="kembang-api3"
+          />
+        </div>
+        <img className="image-modal" src={`${folderUrl}full.png`} />
+        <div className="gambar-modal">
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/spark%201%20kanan%20atas-01.png`}
+            className="kembang-api4"
+          />
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/spark%203%20kanan-01.png`}
+            className="kembang-api5"
+          />
+          <img
+            src={`${ASSET_URL}/assets/images/vistock/main/spark%202%20atas%20matahari.png`}
+            className="kembang-api6"
+          />
+        </div>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
     </>
   );
 };

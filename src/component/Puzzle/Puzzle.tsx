@@ -18,7 +18,7 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
 
   // PUZZLE SIZE
   const [width, setWidth] = useState(window.innerWidth);
-  const boardSize = width > 960 ? 40 : width > 500 ? 50 : 60;
+  const boardSize = width > 960 ? 40 : width > 500 ? 50 : 80;
   const sizeUnit = 'vw';
   const puzzlePieceSize = boardSize / n;
   let boardCellSize = '';
@@ -48,7 +48,6 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
       }
 
       if (winning) {
-        window.alert('Menang anjay');
         setWin(true);
       }
     }
@@ -164,7 +163,7 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
       <h1 className='title'>{stage}</h1>
       {!isWin ?
         <>
-          <button onClick={unlockNextStage} className="tombol-orang-dalam">Use Power of Orang Dalam</button>
+          {/* <button onClick={unlockNextStage} className="tombol-orang-dalam">Use Power of Orang Dalam</button> */}
           <div className='puzzle-container'>
             {/* Puzzle Board */}
             <div className='puzzle-wrapper-1'>

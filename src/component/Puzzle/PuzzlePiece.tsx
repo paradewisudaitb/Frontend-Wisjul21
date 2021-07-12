@@ -30,6 +30,12 @@ const PuzzlePiece = (props: any) => {
       onDragStart={dragStart}
       onDragOver={dragOver}
       onDragEnd={dragEnd}
+      onTouchEnd={() => window.alert('idih')}
+      onTouchStart={(e) => {
+        console.log(e);
+        dragStart(e);
+        console.log('nngeng');
+      }}
       style={props.style}
     >
       {props.children}

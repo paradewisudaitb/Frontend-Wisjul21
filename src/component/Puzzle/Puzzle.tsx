@@ -115,6 +115,24 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
     }
   };
 
+  const scrollLeft = () => {
+    if (listRef.current) {
+      listRef.current.scrollBy({
+        left: -150,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (listRef.current) {
+      listRef.current.scrollBy({
+        left: 150,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   const unlockNextStage = () => {
     completedStageCount.incCompletedStages();
     window.alert('Menang anjay');
@@ -159,13 +177,14 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
             <div className='puzzle-piece-container'>
               <div className='arrow-up-wrapper'>
                 <div className='arrow-up' onClick={scrollUp}></div>
+                <div className='arrow-left' onClick={scrollLeft}></div>
               </div>
 
-              <div className='puzzle-wrapper-2'>
-                {puzzleTray()}
-              </div>
+              {puzzleTray()}
+
               <div className='arrow-down-wrapper'>
                 <div className='arrow-down' onClick={scrollDown}></div>
+                <div className='arrow-right' onClick={scrollRight}></div>
               </div>
             </div>
           </div>

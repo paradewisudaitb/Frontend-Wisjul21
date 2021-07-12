@@ -1,9 +1,8 @@
-import { useRef, FC } from 'react';
+import { useRef, FC, useEffect, useState } from 'react';
 import PuzzlePiece from './PuzzlePiece';
 import PuzzleBoard from './PuzzleBoard';
 import { completedStageCount } from '../../store';
 import './Puzzle.scss';
-import { useState } from 'react';
 import FinishStage from '../FinishStage/FinishStage';
 
 type props = {
@@ -15,8 +14,11 @@ type props = {
 const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
   const n = size;
 
+  const puzzleBoardBoxRef = useRef<HTMLDivElement>(null);
+
   // PUZZLE SIZE
-  const boardSize = 40;
+  const [width, setWidth] = useState(window.innerWidth);
+  const boardSize = width > 960 ? 40 : width > 500 ? 50 : 60;
   const sizeUnit = 'vw';
   const puzzlePieceSize = boardSize / n;
   let boardCellSize = '';
@@ -27,36 +29,25 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
 
   const imageUrl = folderUrl + 'full.png';
 
-  const puzzleBoardBoxRef = useRef<HTMLDivElement>(null);
-
   const [isWin, setWin] = useState(false);
 
   const checkWin = () => {
     const puzzleBoardBoxChildren = puzzleBoardBoxRef.current?.children;
-    const piecesList: number[] = [];
-
-    let winning = true;
 
     if (puzzleBoardBoxChildren) {
+      let winning = puzzleBoardBoxChildren.length == (n * n);
+
       for (let i = 0; i < puzzleBoardBoxChildren.length && winning; ++i) {
         const currChild = puzzleBoardBoxChildren.item(i);
-        const tmp = currChild?.
+        const currID = parseInt(currChild?.
           children?.
           item(0)?.
           id?.
-          match(/\d+/);
-        if (tmp){
-          const currID = parseInt(tmp[0]);
-          winning = currID == (i + 1);
-          piecesList.push(currID);
-        } else {
-          setWin(false);
-          winning = false;
-        }
+          match(/\d+$/)?.[0] ?? '-1');
+        winning = currID == (i + 1);
       }
 
       if (winning) {
-        console.log(piecesList);
         window.alert('Menang anjay');
         setWin(true);
       }
@@ -102,7 +93,6 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
   const puzzleBoardStyle = {
     height: boardSize + sizeUnit,
     width: boardSize + sizeUnit,
-    // minWidth: boardMinWidth,
     gridTemplateColumns: boardCellSize,
     gridTemplateRows: boardCellSize,
   };
@@ -144,12 +134,19 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
     );
   };
 
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
+
   return (
     <div className='puzzle-page'>
       <h1 className='title'>{stage}</h1>
       {!isWin ?
         <>
-          <button onClick={unlockNextStage}>Use Power of Orang Dalam</button>
+          <button onClick={unlockNextStage} className="tombol-orang-dalam">Use Power of Orang Dalam</button>
           <div className='puzzle-container'>
             {/* Puzzle Board */}
             <div className='puzzle-wrapper-1'>

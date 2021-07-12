@@ -8,6 +8,12 @@
     padding: 1em 0;
   }
 
+  .tombol-orang-dalam {
+    @include respond-to('phone', 'tablet') {
+      display: none;
+    }
+  }
+
   .puzzle-container {
     display: flex;
     flex-direction: row;
@@ -17,6 +23,7 @@
     gap: 2rem;
     @include respond-to('phone') {
       gap: 3vw;
+      flex-direction: column;
     }
 
     padding-bottom: 3em;
@@ -39,16 +46,10 @@
       .arrow-down {
         cursor: pointer;
         transition: 0.3s ease-in-out;
-      }
-
-      .arrow-up:hover {
-        transform: translateY(-3px);
-        filter: drop-shadow(0 5px 10px $red-lighter);
-      }
-
-      .arrow-down:hover {
-        transform: translateY(3px);
-        filter: drop-shadow(0 -5px 10px $red-lighter);
+        &:hover {
+          transform: translateY(3px);
+          filter: drop-shadow(0 -5px 10px $red-lighter);
+        }
       }
 
       .arrow-up-wrapper {
@@ -82,13 +83,20 @@
       }
 
       #board-2 {
-        
+
+        width: fit-content;
+        flex-grow: 1;
+
         .board-2-container {
           background-color: $red-darker;
-          padding: 1rem;
+          padding: 1.5rem 1rem;
           padding-left: 1.5rem;
           border-radius: 10px 0px 0px 10px;
-          
+
+          @include respond-to('phone', 'tablet') {
+            border-radius: 10px;
+          }
+
           min-width: max-content;
           display: grid;
           grid-template-columns: auto auto;
@@ -110,7 +118,10 @@
               margin-bottom: 17px;
             }
           }
-        
+
+          @include respond-to('phone', 'tablet') {
+            overflow-y: hidden;
+          }
         }
 
         .arrow-up,
@@ -121,7 +132,6 @@
     }
 
     .puzzle-board {
-
       .puzzle-piece {
         cursor: grab;
         padding: 0;

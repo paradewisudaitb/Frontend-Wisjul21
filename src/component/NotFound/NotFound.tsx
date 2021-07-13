@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HOME_PAGE, GALERI_HMJ_PAGE } from '../../routes/routes';
+import { HOME_PAGE, GALERI_HMJ_PAGE, MINIGAME_PAGE } from '../../routes/routes';
 import { Link } from 'wouter';
 
 import './NotFound.scss';
@@ -32,6 +32,21 @@ export const NotFoundWisudawan = ({hmjSlug}: {hmjSlug: string}) => {
         <Link href={ GALERI_HMJ_PAGE.path + '/' + hmjSlug } className='to-home-button m-2 m-md-5'>
           <i className="fa fa-arrow-left me-1"></i>
           Kembali ke himpunan
+        </Link>
+      </div>
+    </>
+  );
+};
+
+export const NotAvailableStage = () => {
+  return (
+    <>
+      <Navbar />
+      <div className="not-found">
+        <h1 className='m-5'>Selesaikan stage sebelumnya untuk memainkan stage ini</h1>
+        <Link href={ MINIGAME_PAGE.path } className='to-home-button m-2 m-md-5'>
+          <i className="fa fa-arrow-left me-1"></i>
+          Kembali ke pilih stage
         </Link>
       </div>
     </>

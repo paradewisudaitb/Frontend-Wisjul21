@@ -2,19 +2,20 @@ import EventPage from '../pages/Event/EventPage';
 import HomePage from '../pages/HomePage/HomePage';
 import ComingSoon from '../pages/ComingSoon/ComingSoon';
 import Majalah from '../pages/Majalah/Majalah';
-import Form from '../pages/Form/Form';
-import FormApresiasi from '../pages/FormApresiasi/FormApresiasi';
 import GaleriApresiasi from '../pages/GaleriApresiasi/GaleriApresiasi';
 import { KirimPesanPage } from '../pages/KirimPesan/KirimPesanPage';
 import Wisudawan from '../pages/Wisudawan/Wisudawan';
 import Gathertown from '../pages/Gathertown/Gathertown';
+import { Minigame } from '../pages/Minigame/Minigame';
+import PuzzlePage from '../pages/Minigame/PuzzlePage';
 import GaleriHmj from '../pages/GaleriHmj/GaleriHmj';
 import NotFound from '../pages/NotFound/NotFound';
-
+import FinishStage from '../component/FinishStage/FinishStage';
+        
 export type route = {
-    label: string
-    path: string
-    component?: () => JSX.Element
+  label: string
+  path: string
+  component?: () => JSX.Element
 }
 
 type navroutes = {
@@ -24,7 +25,7 @@ type navroutes = {
   parentPath?: string,
 }
 
-export const toRoute = (label:string, path:string, component?:(props?: JSX.Element) => JSX.Element): route => ({
+export const toRoute = (label:string, path:string, component?:(props?: any) => JSX.Element): route => ({
   label, path, component
 });
 
@@ -40,14 +41,14 @@ export const KIRIM_PESAN_PAGE = toRoute('Kirim Pesan', '/hmj/:hmj/:nim/kirim-pes
 export const FORM_INDEX = toRoute('Forms', 'forms');
 export const FORM_PAGE = toRoute('Form', '/form', Form);
 export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', '/form-apresiasi', FormApresiasi);
-
+export const MINIGAME_PAGE = toRoute('Puzzle Metamorfosis', '/minigame', Minigame);
+export const PUZZLE_PAGE = toRoute('Puzzle Metamorfosis', '/minigame/:stage', PuzzlePage);
+export const FINISHSTAGE_PAGE = toRoute('Puzzle Metamorfosis', '/minigame/:stage/finish', FinishStage);
 
 export const PRODUK_INDEX = toRoute('Produk', '/produk');
 export const GATHERTOWN_PAGE = toRoute('Treasure Games', '/treasuregames', Gathertown);
 export const MAJALAH_PAGE = toRoute('Majalah Metamorfosis', '/majalah', Majalah);
-
 export const EVENT_PAGE = toRoute('Event', '/event', EventPage);
-
 export const NOTFOUND_PAGE = toRoute('Not Found', '/:rest*', NotFound);
 
 export const NavbarRoutes: navroutes[] = [
@@ -59,19 +60,13 @@ export const NavbarRoutes: navroutes[] = [
   },
   {
     content: PRODUK_INDEX,
-    children_routes: [GATHERTOWN_PAGE, MAJALAH_PAGE],
+    children_routes: [GATHERTOWN_PAGE, MAJALAH_PAGE, MINIGAME_PAGE],
     isDropdown: true,
     parentPath: '',
   },
   {
     content: GALERI_HMJ_PAGE,
   },
-  // {
-  //   content: FORM_INDEX,
-  //   children_routes: [FORM_PAGE, FORM_APRESIASI_PAGE],
-  //   isDropdown: true,
-  //   parentPath: '',
-  // }
 ];
 
 export const AllRoutes = [
@@ -83,8 +78,10 @@ export const AllRoutes = [
   WISUDAWAN_PAGE,
   MAJALAH_PAGE,
   GATHERTOWN_PAGE,
-  // FORM_APRESIASI_PAGE,
-  FORM_PAGE,
+
+  MINIGAME_PAGE,
+  PUZZLE_PAGE,
+  FINISHSTAGE_PAGE,
 
   NOTFOUND_PAGE,
 ];

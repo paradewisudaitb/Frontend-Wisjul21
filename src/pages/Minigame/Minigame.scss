@@ -1,0 +1,20 @@
+@import '../../App.scss';
+
+.minigame-page {
+  margin-top: 2rem; 
+  margin-bottom: 2rem;
+  // min-height: 50vh;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.stages {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+  @include respond-to('phone') {
+    flex-direction: column;
+  }
+}

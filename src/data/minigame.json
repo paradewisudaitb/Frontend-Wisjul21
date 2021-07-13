@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Stage 1",
+    "url": "stage-1",
+    "info": "Puzzle berisi 4x4 potongan.",
+    "size": 4,
+    "folder": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/puzzle/Stage%201/"
+  },
+  {
+    "name": "Stage 2",
+    "url": "stage-2",
+    "info": "Puzzle berisi 5x5 potongan.",
+    "size": 5,
+    "folder": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/puzzle/Stage%202/",
+    "prereq": "stage1"
+  },
+  {
+    "name": "Stage 3",
+    "url": "stage-3",
+    "info": "Puzzle berisi 7x7 potongan.",
+    "size": 7,
+    "folder": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/puzzle/Stage%203/",
+    "prereq": "stage2"
+  }
+]

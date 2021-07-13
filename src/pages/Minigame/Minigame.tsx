@@ -45,7 +45,7 @@ export const Minigame = () => {
       <Navbar />
       <div className='minigame-page container'>
         <InfoButton info={info} />
-        <h1>Puzzle Metamorphosis</h1>
+        <h1>Puzzle Metamorfosis</h1>
         <h3>Choose your stage to play!</h3>
         <Stages />
       </div>

@@ -43,9 +43,9 @@ export const KIRIM_PESAN_PAGE = toRoute('Kirim Pesan', '/hmj/:hmj/:nim/kirim-pes
 export const FORM_INDEX = toRoute('Forms', 'forms');
 export const FORM_PAGE = toRoute('Form', '/form', Form);
 export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', '/form-apresiasi', FormApresiasi);
-export const MINIGAME_PAGE = toRoute('Puzzle Metamorphosis', '/minigame', Minigame);
-export const PUZZLE_PAGE = toRoute('Puzzle Metamorphosis', '/minigame/:stage', PuzzlePage);
-export const FINISHSTAGE_PAGE = toRoute('Puzzle Metamorphosis', '/minigame/:stage/finish', FinishStage);
+export const MINIGAME_PAGE = toRoute('Puzzle Metamorfosis', '/minigame', Minigame);
+export const PUZZLE_PAGE = toRoute('Puzzle Metamorfosis', '/minigame/:stage', PuzzlePage);
+export const FINISHSTAGE_PAGE = toRoute('Puzzle Metamorfosis', '/minigame/:stage/finish', FinishStage);
 
 export const PRODUK_INDEX = toRoute('Produk', '/produk');
 export const GATHERTOWN_PAGE = toRoute('Treasure Games', '/treasuregames', Gathertown);

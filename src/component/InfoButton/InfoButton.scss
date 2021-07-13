@@ -1,12 +1,12 @@
 @import "../../App.scss";
 
 .infobutton {
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 1rem;
+  height: 1rem;
 
   p {
     text-align: center;
-    font-size: 0.5rem;
+    font-size: 0.65rem;
     font-style: italic;
   }
 
@@ -23,7 +23,7 @@
 }
 
 .info {
-  width: 9vw;
+  width: fit-content;
   visibility: hidden;
   position: absolute;
   top: 0;

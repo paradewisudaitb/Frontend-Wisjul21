@@ -1,7 +1,3 @@
-import { polyfill } from 'mobile-drag-drop';
-
-polyfill({});
-
 const PuzzlePiece = (props: any) => {
 
   const dragStart = (e: any) => {
@@ -34,7 +30,6 @@ const PuzzlePiece = (props: any) => {
       onDragStart={dragStart}
       onDragOver={dragOver}
       onDragEnd={dragEnd}
-      onDragEnter={e => e.preventDefault()}
       style={props.style}
     >
       {props.children}

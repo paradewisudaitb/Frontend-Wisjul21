@@ -13,8 +13,8 @@ export default function Majalah(): JSX.Element {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const htmlTag = document.querySelector('html');
-  const pageCount = 1;
-  const majalahFileName = 'pre';
+  const pageCount = 74;
+  const majalahFileName = 'Buku Perjalanan Metamorfosis agak kecil';
 
   // Modal
   const [show, setShow] = useState(false);

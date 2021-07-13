@@ -1,30 +1,23 @@
-import { AnyAction } from 'redux';
-
-const stageInitialState = {
+const initialStageState ={
   stage1: false,
   stage2: false,
   stage3: false,
 };
 
 const initialState = {
-  ...stageInitialState,
+  ...initialStageState,
   action: '',
 };
 
-const stageReducer = (state: any = initialState, action: AnyAction): any => {
-  const _action = {
-    ['STAGE_WIN' as string]: () => {
+const stageReducer = (state: any = initialState, action: any): any => {
+  switch (action.type) {
+    case 'STAGE_WIN':
       return {
-        ...state,
-        action: action.type,
-        stage1: true,
-        stage2: true,
-        stage3: true,
+        ...action.stage,
       };
-    },
-    DEFAULT: () => state,
-  };
-  return (_action[action.type] || _action.DEFAULT());
+    default:
+      return state;
+  }
 };
 
 export default stageReducer;

@@ -1,0 +1,1 @@
+export const stageStateSelector = (state: any) => state.stage;

@@ -23,6 +23,7 @@
     "bad-words": "^3.0.4",
     "bootstrap": "^5.0.1",
     "dotenv": "^10.0.0",
+    "mobile-drag-drop": "^2.3.0-rc.2",
     "node-sass": "^6.0.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",

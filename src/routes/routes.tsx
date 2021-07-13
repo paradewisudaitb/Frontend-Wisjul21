@@ -2,8 +2,6 @@ import EventPage from '../pages/Event/EventPage';
 import HomePage from '../pages/HomePage/HomePage';
 import ComingSoon from '../pages/ComingSoon/ComingSoon';
 import Majalah from '../pages/Majalah/Majalah';
-import Form from '../pages/Form/Form';
-import FormApresiasi from '../pages/FormApresiasi/FormApresiasi';
 import GaleriApresiasi from '../pages/GaleriApresiasi/GaleriApresiasi';
 import { KirimPesanPage } from '../pages/KirimPesan/KirimPesanPage';
 import Wisudawan from '../pages/Wisudawan/Wisudawan';
@@ -40,9 +38,6 @@ export const GALERI_APRESIASI_PAGE = toRoute('Wisudawan dan Apresiasi', '/hmj/:h
 export const WISUDAWAN_PAGE = toRoute('Wisudawan', '/hmj/:hmj/:nim', Wisudawan);
 export const KIRIM_PESAN_PAGE = toRoute('Kirim Pesan', '/hmj/:hmj/:nim/kirim-pesan', KirimPesanPage);
 
-export const FORM_INDEX = toRoute('Forms', 'forms');
-export const FORM_PAGE = toRoute('Form', '/form', Form);
-export const FORM_APRESIASI_PAGE = toRoute('Form Apresiasi', '/form-apresiasi', FormApresiasi);
 export const MINIGAME_PAGE = toRoute('Puzzle Metamorfosis', '/minigame', Minigame);
 export const PUZZLE_PAGE = toRoute('Puzzle Metamorfosis', '/minigame/:stage', PuzzlePage);
 export const FINISHSTAGE_PAGE = toRoute('Puzzle Metamorfosis', '/minigame/:stage/finish', FinishStage);
@@ -69,12 +64,6 @@ export const NavbarRoutes: navroutes[] = [
   {
     content: GALERI_HMJ_PAGE,
   },
-  // {
-  //   content: FORM_INDEX,
-  //   children_routes: [FORM_PAGE, FORM_APRESIASI_PAGE],
-  //   isDropdown: true,
-  //   parentPath: '',
-  // }
 ];
 
 export const AllRoutes = [
@@ -86,8 +75,6 @@ export const AllRoutes = [
   WISUDAWAN_PAGE,
   MAJALAH_PAGE,
   GATHERTOWN_PAGE,
-  // FORM_APRESIASI_PAGE,
-  FORM_PAGE,
 
   MINIGAME_PAGE,
   PUZZLE_PAGE,

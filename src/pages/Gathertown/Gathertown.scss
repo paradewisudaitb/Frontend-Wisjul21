@@ -1,6 +1,8 @@
 @import '../../App.scss';
 
 .gathertown-container {
+  display: flex;
+  flex-direction: column;
   .info {
     text-align: center;
 

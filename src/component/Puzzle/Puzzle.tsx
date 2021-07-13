@@ -3,7 +3,6 @@ import PuzzlePiece from './PuzzlePiece';
 import PuzzleBoard from './PuzzleBoard';
 import { useDispatch, useSelector } from 'react-redux';
 import './Puzzle.scss';
-import { completedStageCount } from '../../store';
 import FinishStage from '../FinishStage/FinishStage';
 import { stageStateSelector } from '../../config/Redux/Stage/selector';
 
@@ -34,7 +33,7 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
 
   const imageUrl = folderUrl + 'full.png';
 
-  const [isWin, setWin] = useState(false);
+  const [isWin, setWin] = useState(stageState[stage.toLowerCase().replace(' ','')]);
 
   const checkWin = () => {
     const puzzleBoardBoxChildren = puzzleBoardBoxRef.current?.children;
@@ -53,16 +52,12 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
       }
 
       if (winning) {
-        console.log(stageState);
+        const newStageState = stageState;
+        newStageState[stage.toLowerCase().replace(' ', '')] = true;
         dispatch({
           type: 'STAGE_WIN',
-          stage: {
-            stage1: true,
-            stage2: true,
-            stage3: true,
-          }
+          stage: newStageState,
         });
-        console.log(stageState);
         setWin(true);
       }
     }
@@ -147,19 +142,6 @@ const Puzzle: FC<props> = ({stage, size, folderUrl}: props) => {
     }
   };
 
-  const unlockNextStage = () => {
-    completedStageCount.incCompletedStages();
-    window.alert('Menang anjay');
-    dispatch({
-      type: 'STAGE_WIN',
-      stage: {
-        stage1: true,
-        stage2: true,
-        stage3: true,
-      }
-    });
-    setWin(true);
-  };
   const puzzleTray = () => {
     const trayWidth = puzzlePieceSize * 2 + sizeUnit;
 

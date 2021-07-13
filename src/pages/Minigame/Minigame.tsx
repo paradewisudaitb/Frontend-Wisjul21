@@ -6,34 +6,33 @@ import STAGES from '../../data/minigame.json';
 import { MINIGAME_PAGE } from '../../routes/routes';
 import IStageCard from '../../interfaces/IStageCard';
 import { FC } from 'react';
-import { completedStageCount } from '../../store';
 import Sponsor from '../../component/Sponsor/Sponsor';
+import { useSelector } from 'react-redux';
+import { stageStateSelector } from '../../config/Redux/Stage/selector';
 
 const Stages: FC = () => {
   const res: IStageCard[] = [];
-  const lockedStagesName = completedStageCount.getLockedStages().map(e => e.name);
+  const stageState = useSelector(stageStateSelector);
 
   for (const stage of STAGES) {
     const tmp = {
       name: stage.name,
       url: stage.url,
       info: stage.info,
-      disabled: !lockedStagesName.includes(stage.name),
+      disabled: false,
     };
+    
+    if (stage.prereq) {
+      tmp.disabled = !stageState[stage.prereq];
+    }
 
     res.push(tmp);
   }
 
   return (
     <div className="stages container">
-      {completedStageCount.isPersistant ?
-        (res.map( ({name, url, info, disabled}) =>
-          <StageCard key={name} name={name} url={MINIGAME_PAGE.path + '/' + url} info={info} disabled={disabled}/>
-        )) : (
-          <p>
-            Tidak dapat menyimpan data untuk progress puzzle. Puzzle sudah ter-unlock semua.
-          </p>
-        )}
+      {res.map(({name, url, info, disabled}) =>
+        <StageCard key={name} name={name} url={MINIGAME_PAGE.path + '/' + url} info={info} disabled={disabled} />)}
     </div>
   );
 };

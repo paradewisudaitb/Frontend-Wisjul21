@@ -1,4 +1,4 @@
-const initialStageState ={
+const initialStageState = {
   stage1: false,
   stage2: false,
   stage3: false,

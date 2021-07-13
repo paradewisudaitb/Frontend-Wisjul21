@@ -1,0 +1,37 @@
+@import "../../App.scss";
+
+.infobutton {
+  width: 1rem;
+  height: 1rem;
+
+  p {
+    text-align: center;
+    font-size: 0.65rem;
+    font-style: italic;
+  }
+
+  border-radius: 50%;
+  background-color: black;
+  margin-top: 0.3rem;
+  margin-left: 0.3rem;
+
+  position: relative;
+}
+
+.infobutton:hover .info {
+  visibility: visible;
+}
+
+.info {
+  width: fit-content;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  text-align: left;
+  font-size: 0.8rem;
+
+  background-color: $purple-darker;
+  border-radius: 0.5rem;
+  padding: 0 0.4rem;
+}

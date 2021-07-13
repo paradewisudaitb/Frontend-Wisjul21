@@ -1,0 +1,196 @@
+@import "../../App.scss";
+
+.puzzle-page {
+  padding: 1rem;
+
+  .title {
+    text-align: center;
+    padding: 1em 0;
+  }
+
+  .tombol-orang-dalam {
+    @include respond-to('phone', 'tablet') {
+      display: none;
+    }
+  }
+
+  .puzzle-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+    @include respond-to('phone') {
+      gap: 3vw;
+      flex-direction: column;
+    }
+
+    padding-bottom: 3em;
+
+    .puzzle-wrapper-1 {
+      display: flex;
+    }
+
+    .puzzle-board-wrapper {
+      display: grid;
+      background-color: #fff;
+    }
+
+    .puzzle-piece-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      .arrow-up,
+      .arrow-down {
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        &:hover {
+          transform: translateY(3px);
+          filter: drop-shadow(0 -5px 10px $red-lighter);
+        }
+      }
+
+      .arrow-right,
+      .arrow-left {
+        display: none;
+      }
+
+      @include respond-to('phone') {
+        flex-direction: row;
+
+        .arrow-up,
+        .arrow-down {
+          display: none;
+        }
+
+        .arrow-left,
+        .arrow-right {
+          display: block;
+          margin: 1rem;
+        }
+      }
+
+      .arrow-up-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .arrow-up {
+          width: 0;
+          height: 0;
+
+          border-left: 40px solid transparent;
+          border-right: 40px solid transparent;
+
+          border-bottom: 30px solid $orange-lighter;
+        }
+
+        @include respond-to('phone') {
+          .arrow-left {
+            border-top: 2rem solid transparent;
+            border-bottom: 2rem solid transparent;
+
+            border-right: 1.7rem solid $orange-lighter;
+          }
+        }
+      }
+
+      .arrow-down-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .arrow-down {
+          width: 0;
+          height: 0;
+
+          border-left: 40px solid transparent;
+          border-right: 40px solid transparent;
+
+          border-top: 30px solid $orange-lighter;
+
+        }
+
+        @include respond-to('phone') {
+          .arrow-right {
+            border-top: 2rem solid transparent;
+            border-bottom: 2rem solid transparent;
+
+            border-left: 1.7rem solid $orange-lighter;
+          }
+        }
+      }
+
+      #board-2 {
+        width: fit-content;
+        flex-grow: 1;
+
+        margin: 15px 0px;
+
+        .board-2-container {
+          position: relative;
+          display: grid;
+          grid-auto-flow: row;
+          grid-template-columns: auto auto;
+
+          background-color: $red-darker;
+          padding: 1.5rem 1rem;
+          padding-left: 1.5rem;
+          border-radius: 10px 0px 0px 10px;
+          gap: 15px;
+
+          min-width: max-content;
+          height: 30vw;
+
+          justify-content: flex-start;
+
+          overflow-y: scroll;
+          scroll-behavior: smooth;
+
+          &::-webkit-scrollbar-track-piece {
+            &:start {
+              margin-top: 17px;
+            }
+            &:end {
+              margin-bottom: 17px;
+            }
+          }
+
+          @include respond-to('phone') {
+            border-radius: 10px;
+            grid-auto-flow: column;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(2, auto);
+            min-width: 75vw;
+            height: fit-content;
+            overflow-x: hidden;
+
+
+            &::-webkit-scrollbar {
+              display: none;
+            }
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+
+        }
+
+        .arrow-up,
+        .arrow-down {
+          background: $red-darker;
+        }
+      }
+    }
+
+    .puzzle-board {
+      .puzzle-piece {
+        cursor: grab;
+        padding: 0;
+        background-color: gray;
+        margin: 0;
+      }
+    }
+  }
+}

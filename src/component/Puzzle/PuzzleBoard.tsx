@@ -23,7 +23,6 @@ const PuzzleBoard = (props: any) => {
       className={props.className}
       onDrop={drop}
       onDragOver={dragOver}
-      onDragEnter={e => e.preventDefault()}
     >
       {props.children}
     </div>

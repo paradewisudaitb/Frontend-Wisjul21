@@ -10,11 +10,12 @@ import { Navbar } from '../../component/NavbarFooter/Navbar';
 
 export default function Majalah(): JSX.Element {
   const [index, setIndex] = useState(1);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isMajalahLoaded, setIsMajalahLoaded] = useState<boolean[]>([]);
 
   const htmlTag = document.querySelector('html');
-  const pageCount = 1;
-  const majalahFileName = 'pre';
+  const pageCount = 74;
+  const majalahFileName = 'Buku Perjalanan Metamorfosis';
+  const pathToMajalah = `${ASSET_URL}/assets/majalah`;
 
   // Modal
   const [show, setShow] = useState(false);
@@ -33,7 +34,8 @@ export default function Majalah(): JSX.Element {
   };
 
   function getImage(index: number) {
-    return `${ASSET_URL}/Majalah/${majalahFileName}_page-0001.jpg`;
+    const laman = index.toString().padStart(2, '0');
+    return `${pathToMajalah}/${majalahFileName}_page-${laman}.jpg`;
   }
 
   function next() {
@@ -52,11 +54,28 @@ export default function Majalah(): JSX.Element {
     }
   }
 
+  const semuaMajalah: JSX.Element[] = [];
+  for (let i = 0; i < pageCount; i++) {
+    isMajalahLoaded.push(false);
+    semuaMajalah.push(
+      <img
+        id='img-majalah img-fluid'
+        src={getImage(i + 1)}
+        onClick={handleShow}
+        onLoad={() => {
+          const newArr = [...isMajalahLoaded];
+          newArr[i] = true;
+          setIsMajalahLoaded([...newArr]);
+        }}
+        style={isMajalahLoaded[i] ? { opacity: 1 } : { height: 0, width: 0 }}
+      />
+    );
+  }
+
   return (
     <>
       <Navbar />
       <div className="outer-heaven">
-        {/* <img src={`${ASSET_URL}/assets/images/vistock/main/awan%204-01.png`} className="awan-kiri" /> */}
         <Jumbotron className="hero">
           <div className="container-page">
             <div className="container">
@@ -66,37 +85,28 @@ export default function Majalah(): JSX.Element {
                     <h1 className="header-title"> Buku Perjalanan <br/> Metamorfosis </h1>
                     <div className="majalah-description">
                       <p>Buku Perjalanan Metamorfosis berisi senarai kisah perjuangan insan Ganesha dalam karsa nya melalui perubahan.</p>
-                      <p>Menceritakan renjana dan tapak pertama di Jalan Ganesha serta rasa berbunga-bunga bagai <em>Petrea volubilis</em> Gerbang Selatan yang merekah. Pun tentang euforia GKUB yang nyatanya tak amerta dan lika liku perjuangan yang telah menunggu di ujung jalan panjang. Tentang berbagai rasa yang terkenang, seperti kisah di Sunken Court pada satu sandyakala. Tentang cahaya di ujung lorong; untuk rebah sebelum kembali bertualang. Hingga akhirnya berdiri di depan Sabuga, bukan untuk selesai selamanya; ini perayaan manis atas perjuangan di Ganesha.</p> 
+                      <p>Menceritakan renjana dan tapak pertama di Jalan Ganesha serta rasa berbunga-bunga bagai <em>Petrea volubilis</em> Gerbang Selatan yang merekah. Pun tentang euforia GKUB yang nyatanya tak amerta dan lika liku perjuangan yang telah menunggu di ujung jalan panjang. Tentang berbagai rasa yang terkenang, seperti kisah di Sunken Court pada satu sandyakala. Tentang cahaya di ujung lorong; untuk rebah sebelum kembali bertualang. Hingga akhirnya berdiri di depan Sabuga, bukan untuk selesai selamanya; ini perayaan manis atas perjuangan di Ganesha.</p>
                       <p>Selamat membaca Buku Perjalanan Metamorfosis, sederet kisah penuh penghargaan terhadap setiap tahap perubahan para insan bestari dan memori-memori yang melengkapi cerita mereka menuju arunika.</p>
+                      <p>Temukan lebih banyak kisah wisudawan lainnya di <a href="https://bit.ly/397Kisah" target="_blank">bit.ly/397Kisah</a>!</p>
                     </div>
                     <hr className="my-4" />
                     <p className="header-sutitle">"The way to get started is to quit talking and begin doing" - Walt Disney</p>
-                    <a className="btn btn-success btn mt-3 dwn-btn" href={`${ASSET_URL}/Majalah/${majalahFileName}.pdf`} role="button">Download</a>
+                    <a className="btn btn-success btn mt-3 dwn-btn" href={`${pathToMajalah}/${majalahFileName}.pdf`} role="button">Download</a>
                   </div>
                 </Col>
                 <Col xs={12} md={12} lg={6}>
-                  {!isLoaded && <Loading />}
-                  <div
-                    className="majalah"
-                    onLoad={() => setIsLoaded(true)}
-                    style={isLoaded ? { opacity: 1 } : { height: 0, width: 0 }}
-                  >
-                    <img
-                      src={`${ASSET_URL}/assets/images/vistock/main/spark%202%20atas%20matahari.png`}
-                      className="kembang-api"
-                    />
-                    <div className="majalah-pdf" >
-                      <img
-                        id="img-majalah img-fluid"
-                        src={getImage(index)}
-                        onClick={handleShow}
-                      />
-                    </div>
-                    <div className="d-flex justify-content-center">
-                      <button className="doc-button previous" onClick={prev}> <i className="fa fa-chevron-left fa-lg text-white"></i> </button>
-                      <div className="index-majalah"> {index} / {pageCount} </div>
-                      <button className="doc-button next" onClick={next}> <i className="fa fa-chevron-right fa-lg text-white"></i> </button>
-                    </div>
+                  <div className="majalah-pdf">
+                    {semuaMajalah.map((e, i) =>
+                      <div key={i} style={{ display: index == (i + 1) ? 'block' : 'none', }} className="majalah">
+                        {!isMajalahLoaded[i] && <Loading />}
+                        {e}
+                      </div>
+                    )}
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <button className="doc-button previous" onClick={prev}> <i className="fa fa-chevron-left fa-lg text-white"></i> </button>
+                    <div className="index-majalah"> {index} / {pageCount} </div>
+                    <button className="doc-button next" onClick={next}> <i className="fa fa-chevron-right fa-lg text-white"></i> </button>
                   </div>
                   <img src={`${ASSET_URL}/assets/images/vistock/main/awan%205-01.png`} className="awan-kanan" />
                 </Col>

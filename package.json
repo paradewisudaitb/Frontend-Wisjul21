@@ -2,6 +2,7 @@
   "name": "frontend-wisjul21",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://virtualfair.karir.itb.ac.id/wisjul2021",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",

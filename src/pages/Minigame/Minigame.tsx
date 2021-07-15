@@ -1,5 +1,4 @@
 import { StageCard } from '../../component/StageCard/StageCard';
-import { InfoButton } from '../../component/InfoButton/InfoButton';
 import './Minigame.scss';
 import { Navbar } from '../../component/NavbarFooter/Navbar';
 import STAGES from '../../data/minigame.json';
@@ -9,6 +8,7 @@ import { FC } from 'react';
 import Sponsor from '../../component/Sponsor/Sponsor';
 import { useSelector } from 'react-redux';
 import { stageStateSelector } from '../../config/Redux/Stage/selector';
+import { ASSET_URL } from '../../api';
 
 const Stages: FC = () => {
   const res: IStageCard[] = [];
@@ -38,14 +38,20 @@ const Stages: FC = () => {
 };
 
 export const Minigame = () => {
-  const info = 'Puzzle yang menggambarkan metamorfosis burung phoenix';
+  const info = 'Puzzle yang menggambarkan metamorfosis seekor burung phoenix. Metamorfosis dari lahir kemudian tumbuh dan berkembang sampai akhirnya siap untuk terbang menjelajahi dunia.';
 
   return (
     <>
       <Navbar />
       <div className='minigame-page container'>
-        <InfoButton info={info} />
+        {/* <InfoButton info={info} /> */}
         <h1>Puzzle Metamorfosis</h1>
+        <div className="minigame-description">
+          <img className='bulu1' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} alt="" />
+          <img className='bulu2' src={`${ASSET_URL}/assets/images/vistock/main/bulu.png`} alt="" />
+          <p>{info}</p>
+          <p>Setiap stage berisi puzzle dengan banyak potongan yang meningkat tiap stage-nya. <br />Stage 1 berisi 4x4 potongan. Stage 2 berisi 5x5 potongan. Stage 3 berisi 7x7 potongan.</p>
+        </div>
         <h3>Choose your stage to play!</h3>
         <Stages />
       </div>

@@ -6,7 +6,7 @@ import './StageCard.scss';
 
 export const StageCard = ({name, url, info, disabled}: IStageCard) => {
   return (
-    <div className={disabled ? 'stagecard-disabled' : 'stagecard'} >
+    <div className={`stagecard ${disabled ? 'disabled' : ''}`} >
       <Link href={disabled ? '' : url} className='stagecard-content'>
         <InfoButton info={info + (disabled ? ' STAGE INI BELUM TERBUKA.' : '')} />
         <h4>{name}</h4>

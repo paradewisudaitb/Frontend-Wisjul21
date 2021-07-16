@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { HOME_PAGE, GALERI_HMJ_PAGE, MINIGAME_PAGE } from '../../routes/routes';
 import { Link } from 'wouter';
 

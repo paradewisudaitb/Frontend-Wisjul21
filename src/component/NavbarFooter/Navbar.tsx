@@ -29,12 +29,10 @@ const toggleOpen = () => {
       navbar.className += ' navbar-active';
       but.className += ' toggle-active';
       drops.className += ' drops-active';
-      // open = true;
     } else {
       navbar.className = navbar.className.replace('navbar-active', '').trim();
       but.className = but.className.replace('toggle-active', '').trim();
       drops.className = drops.className.replace('drops-active', '').trim();
-      // open = false;
     }
   }
 };
@@ -44,7 +42,6 @@ interface INavbarHome {
 }
 
 export const Navbar = ({ homePage }: INavbarHome): JSX.Element => {
-  const [isOpen, setOpen]  = useState(false);
   
   const [opacity, setOpacity] = useState(0);
   const handleScroll = () => {

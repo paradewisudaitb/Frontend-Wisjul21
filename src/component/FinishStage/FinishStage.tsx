@@ -1,13 +1,9 @@
 import './FinishStage.scss';
 
-import { Navbar } from '../NavbarFooter/Navbar';
-import Sponsor from '../Sponsor/Sponsor';
-import { Link, useRoute } from 'wouter';
+import { Link } from 'wouter';
 import { useState, useEffect } from 'react';
-import { FINISHSTAGE_PAGE, MINIGAME_PAGE } from '../../routes/routes';
+import { MINIGAME_PAGE } from '../../routes/routes';
 import { Button, Modal } from 'react-bootstrap';
-import stages from '../../data/minigame.json';
-import NotFound from '../../pages/NotFound/NotFound';
 import { ASSET_URL } from '../../api';
 
 const FinishStage = ({folderUrl}: {folderUrl:string}) => {

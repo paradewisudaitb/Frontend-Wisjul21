@@ -14,7 +14,6 @@ import IKontenApresiasi from '../../interfaces/IKontenApresiasi';
 import LIST_HMJ from '../../data/hmj.json';
 
 import { NotFoundHMJ } from '../NotFound/NotFound';
-import Sponsor from '../../component/Sponsor/Sponsor';
 
 import { Navbar } from '../../component/NavbarFooter/Navbar';
 
@@ -121,7 +120,6 @@ const GaleriApresiasi = (): JSX.Element => {
           } 
       
         </div>
-        <Sponsor />
 
       </>
     );

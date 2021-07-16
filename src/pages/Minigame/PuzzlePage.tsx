@@ -4,8 +4,6 @@ import NotFound from '../NotFound/NotFound';
 import Puzzle from '../../component/Puzzle/Puzzle';
 import { PUZZLE_PAGE } from '../../routes/routes';
 import stages from '../../data/minigame.json';
-import Sponsor from '../../component/Sponsor/Sponsor';
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { stageStateSelector } from '../../config/Redux/Stage/selector';
 import { NotAvailableStage } from '../../component/NotFound/NotFound';
@@ -28,7 +26,6 @@ const PuzzlePage = () => {
           <>
             <Navbar />
             <Puzzle stage={current_stage.name} size={current_stage.size} folderUrl={current_stage.folder}/>
-            <Sponsor />
           </>
         );
       } else {
@@ -36,7 +33,6 @@ const PuzzlePage = () => {
           <>
             <Navbar />
             <NotAvailableStage />
-            <Sponsor />
           </>
         );
       }
@@ -47,7 +43,6 @@ const PuzzlePage = () => {
     <>
       <Navbar />
       <NotFound />
-      <Sponsor />
     </>
   );
 };

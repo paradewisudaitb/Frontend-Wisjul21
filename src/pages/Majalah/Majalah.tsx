@@ -5,7 +5,6 @@ import './Majalah.scss';
 import { ASSET_URL } from '../../api';
 
 import { Loading } from '../../component/Loading/Loading';
-import Sponsor from '../../component/Sponsor/Sponsor';
 import { Navbar } from '../../component/NavbarFooter/Navbar';
 
 export default function Majalah(): JSX.Element {
@@ -138,7 +137,6 @@ export default function Majalah(): JSX.Element {
           </div>
         </Jumbotron>
       </div>
-      <Sponsor />
     </>
   );
 }

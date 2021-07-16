@@ -5,7 +5,6 @@ import STAGES from '../../data/minigame.json';
 import { MINIGAME_PAGE } from '../../routes/routes';
 import IStageCard from '../../interfaces/IStageCard';
 import { FC } from 'react';
-import Sponsor from '../../component/Sponsor/Sponsor';
 import { useSelector } from 'react-redux';
 import { stageStateSelector } from '../../config/Redux/Stage/selector';
 import { ASSET_URL } from '../../api';
@@ -55,7 +54,6 @@ export const Minigame = () => {
         <h3>Choose your stage to play!</h3>
         <Stages />
       </div>
-      <Sponsor />
     </>
   );
 };

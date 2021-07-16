@@ -7,7 +7,6 @@ import LIST_FAKULTAS from '../../data/fakultas.json';
 import LIST_HMJ from '../../data/hmj.json';
 import IHMJ from '../../interfaces/IHMJ';
 
-import Sponsor from '../../component/Sponsor/Sponsor';
 import { Navbar } from '../../component/NavbarFooter/Navbar';
 
 const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
@@ -121,7 +120,6 @@ const Gathertown = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <Sponsor />
     </>
   );
 };

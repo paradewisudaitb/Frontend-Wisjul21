@@ -21,7 +21,6 @@ const PuzzlePage = () => {
 
     // Berarti stage 1 atau stage 2 atau stage 3
     if (current_stage) {
-      
       // Kalau stage-1, oke
       // Kalau stage-2 atau stage-3, cek state prereqnya
       if (current_stage.url == 'stage-1' || (current_stage.prereq && stageState[current_stage.prereq])) {
@@ -31,7 +30,7 @@ const PuzzlePage = () => {
             <Puzzle stage={current_stage.name} size={current_stage.size} folderUrl={current_stage.folder}/>
             <Sponsor />
           </>
-        ); 
+        );
       } else {
         return (
           <>

@@ -11,7 +11,7 @@ import PuzzlePage from '../pages/Minigame/PuzzlePage';
 import GaleriHmj from '../pages/GaleriHmj/GaleriHmj';
 import NotFound from '../pages/NotFound/NotFound';
 import FinishStage from '../component/FinishStage/FinishStage';
-
+        
 export type route = {
   label: string
   path: string

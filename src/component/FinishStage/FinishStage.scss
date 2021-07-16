@@ -125,7 +125,7 @@
   }
 
   .image-modal {
-    height: 80vh;
+    height: 75vh;
     width: auto;
 
     @include respond-to('phone', 'tablet') {

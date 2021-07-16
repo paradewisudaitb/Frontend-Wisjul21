@@ -67,7 +67,7 @@
   {
     "fakultas": "FMIPA",
     "namaHimpunan": "Himpunan Mahasiswa Kimia",
-    "singkatanHimpunan": "HMK \"AMISCA\"",
+    "singkatanHimpunan": "HMK 'AMISCA'",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/FMIPA-HMK-_AMISCA_-ITB.png",
     "linkGatherTown": "bit.ly/HMK-GT",
     "jurusan": ["Kimia"]
@@ -412,7 +412,7 @@
   {
     "fakultas": "SITH",
     "namaHimpunan": "Himpunan Mahasiswa Biologi",
-    "singkatanHimpunan": "NYMPHAEA",
+    "singkatanHimpunan": "HIMABIO \"NYMPHAEA\"",
     "linkFoto": "https://wisjul21.sgp1.cdn.digitaloceanspaces.com/logoHimpunan/SITHS-HIMABIO-_Nymphaea_-ITB-150x150.jpg",
     "linkGatherTown": "bit.ly/HIMABIO-GT",
     "jurusan": ["Biologi"]

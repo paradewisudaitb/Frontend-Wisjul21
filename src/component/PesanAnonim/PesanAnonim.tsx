@@ -36,7 +36,7 @@ const getMonthName = (num: number): string => {
 export default function PesanAnonim({ createdAt, namaPengirim, pesan }: IPesanIn): JSX.Element {
   const tanggal = new Date(createdAt);
   const tahun = tanggal.getFullYear();
-  const day = tanggal.getDay();
+  const day = tanggal.getDate();
   const bulan = getMonthName(tanggal.getMonth() + 1);
   const tmpJam = tanggal.getHours();
   const jam = tmpJam < 10 ? `0${tmpJam}` : tmpJam;

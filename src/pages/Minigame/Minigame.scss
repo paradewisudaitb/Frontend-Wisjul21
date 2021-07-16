@@ -7,14 +7,53 @@
   padding-top: 1.5rem;
   padding-bottom: 2rem;
   text-align: center;
+  
 }
 
 .stages {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
-
+  
   @include respond-to('phone') {
     flex-direction: column;
+  }
+}
+
+.minigame-description {
+  position: relative;
+  margin-bottom: 2rem;
+  
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @include respond-to('phone') {
+    width: auto;
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+  
+  p {
+    text-align: center;
+  }
+
+  img {
+    position: absolute;
+    
+    &.bulu1 {
+      left: -6rem;
+      width: 8rem;
+      bottom: -2rem;
+    }
+    
+    &.bulu2 {
+      width: 10rem;
+      right: -6rem;
+      top: -6rem;
+      transform: rotate(180deg);
+    }
+    
+    z-index: 0;
   }
 }

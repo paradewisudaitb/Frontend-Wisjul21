@@ -12,47 +12,53 @@ export const SponsorComponent = ({nama, items}: ISponsor) => {
       <h1 className='text-center my-3'>{ nama }</h1>
       <div className="sponsor-container">
 
-        { itemXL.map(image => (
-          <div key={image} className='item-xl'>
-            <img src={image} alt={
-              image.split('/')[image.split('/').length - 1]
-                .replace(/.(((jpe?)|(pn))g)/gi, '')
-            } />
-          </div>
-        )
-        ) }
+        <div className='item'>
+          { itemXL.map(image => (
+            <div key={image} className='item-xl'>
+              <img src={image} alt={
+                image.split('/')[image.split('/').length - 1]
+                  .replace(/.(((jpe?)|(pn))g)/gi, '')
+              } />
+            </div>
+          )
+          ) }
+        </div>
 
-        { itemL.map(image => (
+        <div className='item'>
+          { itemL.map(image => (
+            <div key={image} className='item-l'>
+              <img src={image} alt={
+                image.split('/')[image.split('/').length - 1]
+                  .replace(/.(((jpe?)|(pn))g)/gi, '')
+              } />
+            </div>
+          )
+          ) }
+        </div>
 
-          <div key={image} className='item-l'>
-            <img src={image} alt={
-              image.split('/')[image.split('/').length - 1]
-                .replace(/.(((jpe?)|(pn))g)/gi, '')
-            } />
-          </div>
-        )
-        ) }
-        { itemM.map(image => (
+        <div className='item'>
+          { itemM.map(image => (
+            <div key={image} className='item-m'>
+              <img src={image} alt={
+                image.split('/')[image.split('/').length - 1]
+                  .replace(/.(((jpe?)|(pn))g)/gi, '')
+              } />
+            </div>
+          )
+          ) }
+        </div>
 
-          <div key={image} className='item-m'>
-            <img src={image} alt={
-              image.split('/')[image.split('/').length - 1]
-                .replace(/.(((jpe?)|(pn))g)/gi, '')
-            } />
-          </div>
-        )
-        ) }
-
-        { itemS.map(image => (
-
-          <div key={image} className='item-s'>
-            <img src={image} alt={
-              image.split('/')[image.split('/').length - 1]
-                .replace(/.(((jpe?)|(pn))g)/gi, '')
-            } />
-          </div>
-        )
-        ) }
+        <div className='item'>
+          { itemS.map(image => (
+            <div key={image} className='item-s'>
+              <img src={image} alt={
+                image.split('/')[image.split('/').length - 1]
+                  .replace(/.(((jpe?)|(pn))g)/gi, '')
+              } />
+            </div>
+          )
+          ) }
+        </div>
 
       </div>
     </div>

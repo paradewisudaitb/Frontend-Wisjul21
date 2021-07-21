@@ -10,7 +10,7 @@
 
 .sponsor-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -19,9 +19,16 @@
         // max-width: 20vh;
         margin: 1rem;
     }
+    .item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
     .item-xl img {
         max-width: 50vh;
-        max-width: 50vh;
+        max-height: 50vh;
         // border: 5px solid blue;
     }
     .item-l img {
@@ -30,8 +37,8 @@
         // border: 5px solid green;
     }
     .item-m img {
-        max-width: 25vh;
-        max-height: 25vh;
+        max-width: 30vh;
+        max-height: 30vh;
         // border: 5px solid yellow;
     }
     .item-s img {

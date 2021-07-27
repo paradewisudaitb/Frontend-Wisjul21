@@ -32,7 +32,7 @@ const HMJCardContainer = (props: {
             {loadingImg && <Loading />}
             <img
               alt={'logo ' + props.namaHMJ}
-              src={props.linkFoto}
+              src={`${ASSET_URL}/${props.linkFoto}`}
               width='185'
               height='185'
               onLoad={() => setLoadingImg(false)}

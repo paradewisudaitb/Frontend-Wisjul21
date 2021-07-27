@@ -5,6 +5,7 @@ import './ApresiasiCarousel.scss';
 import IKontenApresiasi from '../../interfaces/IKontenApresiasi';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Modal } from 'react-bootstrap';
+import { ASSET_URL } from '../../api';
 
 
 const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element => {
@@ -35,20 +36,21 @@ const ApresiasiCarousel = ({ data } : { data: IKontenApresiasi[] }): JSX.Element
   };
 
   const RenderComponent = (data: IKontenApresiasi) => {
+    const link = `${ASSET_URL}/${data.linkKonten}`;
     switch (data.tipeKonten) {
       case 'video':
-        return <video controls src={data.linkKonten} />;
+        return <video controls src={link} />;
       case 'musik':
       case 'lagu':
-        return <div className="audio-apresiasi"><audio controls src={data.linkKonten} /></div>;
+        return <div className="audio-apresiasi"><audio controls src={link} /></div>;
       case 'website':
-        return <a href={data.linkKonten}></a>;
+        return <a href={link}></a>;
       default:
         return (
           <div className='apresiasi-image-container' onClick={handleShow}>
             <small className='apresiasi-warning-label'><i className="icon fa fa-exclamation-triangle"></i> Klik gambar untuk memperbesar</small>
             <img
-              src={data.linkKonten}
+              src={link}
               id='img-01'
               className='apresiasi-image'
             />

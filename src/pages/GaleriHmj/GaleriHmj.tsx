@@ -50,7 +50,7 @@ const GaleriHmj = (): JSX.Element => {
           <div className='container-logo'>
             {!isLoaded && <Loading />}
             <img
-              src={hmj.linkFoto}
+              src={`${ASSET_URL}/${hmj.linkFoto}`}
               className='logo-hmj'
               alt={`logo ${hmj.namaHimpunan}`}
               style={isLoaded ? { opacity: 1 } : { height: 0, width:0 }}

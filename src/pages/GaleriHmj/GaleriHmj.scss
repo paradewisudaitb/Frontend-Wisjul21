@@ -6,9 +6,6 @@
 
   height: 100%;
   width: 100%;
-  // background: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg");
-  // background-size: cover;
-  // background-position: center;
   margin: 0;
   overflow: hidden;
   position: relative;
@@ -115,7 +112,7 @@
         background-color: rgba($blue-medium, 0.8);
       }
 
-      @include respond-to('phone') {
+      @include respond-to("phone") {
         width: 14em;
         height: 18em;
         padding: 10px;

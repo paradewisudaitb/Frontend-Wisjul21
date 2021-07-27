@@ -1,8 +1,7 @@
-@import '../../App.scss';
-
+@import "../../App.scss";
 
 .not-found {
-  background-image: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/main.jpg");
+  background-image: url("../../images/bg/main.jpg");
   background-size: cover;
   min-height: 100vh;
 
@@ -32,7 +31,7 @@
       .fa-arrow-left {
         transform: translateX(-0.2rem);
         transition: 0.3s;
-      }      
+      }
     }
   }
 }

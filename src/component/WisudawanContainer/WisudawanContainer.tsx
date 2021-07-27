@@ -27,7 +27,7 @@ const WisudawanContainer = (data: IDataWisudawan): JSX.Element => {
           {!isLoaded && <Loading />}
           <img
             id='pas-foto'
-            src={imgSrc}
+            src={`${ASSET_URL}/${imgSrc}`}
             style={isLoaded ? { opacity: 1 } : { height: 0, width:0 }}
             onLoad={() => setIsLoaded(true)}
             onError={useFallbackImg}

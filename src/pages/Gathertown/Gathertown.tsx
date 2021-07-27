@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import HMJCardContainer from '../../component/GathertownCard/GathertownCard';
 import ButtonFakultas from '../../component/ButtonFakultas/ButtonFakultas';
+import { ASSET_URL } from '../../api';
 
 import './Gathertown.scss';
 import LIST_FAKULTAS from '../../data/fakultas.json';
@@ -8,8 +9,6 @@ import LIST_HMJ from '../../data/hmj.json';
 import IHMJ from '../../interfaces/IHMJ';
 
 import { Navbar } from '../../component/NavbarFooter/Navbar';
-
-const ASSET_URL = 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
 
 const Gathertown = (): JSX.Element => {
   const [activeButton, setActiveButton] = useState('');

@@ -1,14 +1,14 @@
-@import 'styles/base.scss';
-@import 'styles/colorpalette.scss';
-@import 'styles/fonts.scss';
-@import 'styles/responsive.scss';
+@import "styles/base.scss";
+@import "styles/colorpalette.scss";
+@import "styles/fonts.scss";
+@import "styles/responsive.scss";
 
 $navbarheight: 4.4rem;
 $drops-top: -15rem;
 
 * {
   --footerheight: 13rem;
-  font-family: 'Vollkorn';
+  font-family: "Vollkorn";
   color: $yellow-lighter;
   scrollbar-color: $red-medium $red-darker;
   scrollbar-width: thin;
@@ -20,7 +20,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Aller';
+  font-family: "Aller";
 }
 
 h1 {
@@ -57,8 +57,7 @@ h6 {
 }
 
 .bg {
-  background-image: url('https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/background/main.jpg');
-  // background-image: url('./images/bg/main.jpg');
+  background-image: url("./images/bg/main.jpg");
   background-size: 100% auto;
   background-repeat: repeat;
   position: inherit;

@@ -52,4 +52,4 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 print("Downloading in : " + dir_path)
 
 download_files(s3resource, settings.BUCKET_NAME,
-               local=os.path.join(dir_path, 'content_bucket'))
+               local=os.path.join(dir_path, 'assets'))

@@ -5,6 +5,7 @@
 - NodeJS 14+ (Other versions may work too)
 
 ## Setup untuk development:
+- Download assets dengan tools pada folder [ini](./src/bucket-downloader)
 - Run `yarn`
 - Run `yarn start`
 - Connect to `localhost:3000`

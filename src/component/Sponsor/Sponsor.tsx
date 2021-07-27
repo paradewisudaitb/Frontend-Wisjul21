@@ -56,7 +56,8 @@ const sponsors = [
   `${SPONSOR_URL}/L_Semen Gresik.png`,
   `${SPONSOR_URL}/M_Pahamify.jpeg`,
   `${SPONSOR_URL}/M_PDAM Tirta Perwitasari .JPG`,
-  `${SPONSOR_URL}/S_Cakap.png`
+  `${SPONSOR_URL}/S_Cakap.png`,
+  `${SPONSOR_URL}/S_U-Dictionary.png`,
 ];
 
 const Sponsor = () => {

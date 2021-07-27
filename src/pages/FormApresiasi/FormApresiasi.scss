@@ -1,6 +1,6 @@
 @use 'sass:math';
-@import '../../styles/responsive.scss';
-@import '../../styles/colorpalette.scss';
+@import "../../styles/responsive.scss";
+@import "../../styles/colorpalette.scss";
 
 $form-apresiasi-width: 50vw;
 
@@ -18,12 +18,12 @@ $form-apresiasi-width: 50vw;
     background-color: transparent;
     text-align: center;
     font-size: 16px;
-    @include respond-to('phone') {
+    @include respond-to("phone") {
       font-size: 12px;
     }
   }
 
-  @include respond-to('phone') {
+  @include respond-to("phone") {
     width: 100vw;
     overflow-x: hidden;
     padding: 10px 1px;
@@ -33,17 +33,11 @@ $form-apresiasi-width: 50vw;
 }
 
 .form-apresiasi-page {
-  background-image: url("https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/main.jpg");
-  background-repeat: repeat;
-  background-color: #adadad5b;
   height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   padding-top: 5px;
   padding-bottom: 5px;
 
-  @include respond-to('phone') {
+  @include respond-to("phone") {
     font-size: 12px;
   }
 }
@@ -63,7 +57,7 @@ $form-apresiasi-width: 50vw;
     color: #ffffff;
   }
 
-  @include respond-to('phone') {
+  @include respond-to("phone") {
     margin-right: 10vw;
   }
 }
@@ -72,7 +66,7 @@ $form-apresiasi-width: 50vw;
   max-width: 50%;
   background-color: transparent;
 
-  @include respond-to('phone') {
+  @include respond-to("phone") {
     max-width: 100%;
     width: 25em;
   }
@@ -123,7 +117,7 @@ $form-apresiasi-width: 50vw;
   font-size: 16px !important;
   width: 100%;
 
-  @include respond-to('phone') {
+  @include respond-to("phone") {
     font-size: 12px !important;
   }
 }
@@ -134,10 +128,10 @@ $form-apresiasi-width: 50vw;
 
 .form-apresiasi-title {
   text-align: center;
-  color: #FC690A;
+  color: #fc690a;
   font-size: 48px;
 
-  @include respond-to('phone') {
+  @include respond-to("phone") {
     font-size: 32px;
   }
 }

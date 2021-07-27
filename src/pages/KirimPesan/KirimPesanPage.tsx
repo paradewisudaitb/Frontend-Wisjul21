@@ -8,6 +8,7 @@ import { sendPesan } from '../../controller/pesan';
 import IPesanOut from '../../interfaces/IPesanOut';
 import sensor from '../../middleware/sensorKataKasar';
 import { Navbar } from '../../component/NavbarFooter/Navbar';
+import { ASSET_URL } from '../../api';
 
 const maxMessageLength = 255;
 const maxSenderNameLength = 30;
@@ -99,7 +100,7 @@ export const KirimPesanPage = (): JSX.Element => {
             </div>
           ) : (
             <>
-              <img className='jeduar' src={'https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/main/spark%202%20atas%20matahari.png'} alt="" />
+              <img className='jeduar' src={`${ASSET_URL}/assets/images/vistock/main/spark%202%20atas%20matahari.png`} alt="" />
               <div className="kirimpesan-container">
                 <div className="receiver">
                   <div className='nama-wisudawan'>
@@ -117,7 +118,7 @@ export const KirimPesanPage = (): JSX.Element => {
                   </div>
                 </div>
                 <div className="message">
-                  <img className='kumo' src={'https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/images/vistock/header/awan%20kiri.png'} alt="" />
+                  <img className='kumo' src={`${ASSET_URL}/assets/images/vistock/header/awan%20kiri.png`} alt="" />
                   <form action="" className='mx-4' onSubmit={submitPesan}>
                     <div className="sender-name mt-4">
                       <label className='sender-name-label'>Dari</label>

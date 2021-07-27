@@ -7,6 +7,7 @@ import stages from '../../data/minigame.json';
 import { useSelector } from 'react-redux';
 import { stageStateSelector } from '../../config/Redux/Stage/selector';
 import { NotAvailableStage } from '../../component/NotFound/NotFound';
+import { ASSET_URL } from '../../api';
 
 const PuzzlePage = () => {
   const [match, param] = useRoute(PUZZLE_PAGE.path);
@@ -25,7 +26,7 @@ const PuzzlePage = () => {
         return (
           <>
             <Navbar />
-            <Puzzle stage={current_stage.name} size={current_stage.size} folderUrl={current_stage.folder}/>
+            <Puzzle stage={current_stage.name} size={current_stage.size} folderUrl={ASSET_URL + '/' + current_stage.folder}/>
           </>
         );
       } else {

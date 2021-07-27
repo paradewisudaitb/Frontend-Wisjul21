@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'wouter';
 import { ToTop } from '../ScrollToTop/ScrollToTop';
+import { ASSET_URL } from '../../api';
 
 const red_darker = '80, 10, 7'; // RGB of #590a07
 
@@ -12,7 +13,7 @@ import { NavbarLinks } from './NavbarLinks';
 export const Brand = (): JSX.Element => {
   return (
     <Link to='/' className="brand d-flex my-auto" onClick={ToTop}>
-      <img src="https://wisjul21.sgp1.cdn.digitaloceanspaces.com/assets/logo/min.png" id="brand-logo" alt="Logo Wisjul" />
+      <img src={`${ASSET_URL}/assets/logo/min.png`} id="brand-logo" alt="Logo Wisjul" />
       <h2 className="" id="brand-text">WISJUL 2021</h2>
     </Link>
   );

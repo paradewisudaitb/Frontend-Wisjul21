@@ -1,10 +1,7 @@
-@import './colorpalette.scss';
-
-$asset_url: 'https://wisjul21.sgp1.cdn.digitaloceanspaces.com';
-$bg: $asset_url + '/assets/images/background/main.jpg';
+@import "./colorpalette.scss";
 
 * {
-  font-family: 'Vollkorn';
+  font-family: "Vollkorn";
   color: $yellow-lighter;
 }
 
@@ -14,7 +11,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Aller';
+  font-family: "Aller";
 }
 
 h1 {

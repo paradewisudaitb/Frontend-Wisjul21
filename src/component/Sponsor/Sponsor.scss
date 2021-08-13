@@ -26,6 +26,13 @@
         align-items: center;
         flex-wrap: wrap;
     }
+    .item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
     .item-xl img {
         // width: 45vh;
         max-height: 40vh;
